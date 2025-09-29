@@ -1,0 +1,102 @@
+version: '3.8'
+
+services:
+  # WordPress Service
+  wordpress:
+    image: wordpress:6.4-php8.2-apache
+    container_name: wordpress-dev
+    restart: unless-stopped
+    ports:
+      - "8081:80"  # פורט נפרד מ-TikTrack (8080)
+    environment:
+      WORDPRESS_DB_HOST: mysql:3306
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress123
+      WORDPRESS_DEBUG: 1
+      WORDPRESS_ENV: development
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_ENV', 'development');
+        define('WP_DEBUG', true);
+        define('WP_DEBUG_LOG', true);
+        define('WP_DEBUG_DISPLAY', false);
+        define('SCRIPT_DEBUG', true);
+    volumes:
+      - wordpress_data:/var/www/html
+      - ./wp-content:/var/www/html/wp-content
+      - ./uploads:/var/www/html/wp-content/uploads
+      - ./themes:/var/www/html/wp-content/themes
+      - ./plugins:/var/www/html/wp-content/plugins
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - wordpress-network
+
+  # MySQL Database Service
+  mysql:
+    image: mysql:8.0
+    container_name: wordpress-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress123
+      MYSQL_ROOT_PASSWORD: root123
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d
+    ports:
+      - "3307:3306"  # פורט נפרד מ-MySQL מקומי
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+    networks:
+      - wordpress-network
+
+  # phpMyAdmin for Database Management
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: wordpress-phpmyadmin
+    restart: unless-stopped
+    ports:
+      - "8082:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_USER: wordpress
+      PMA_PASSWORD: wordpress123
+      MYSQL_ROOT_PASSWORD: root123
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - wordpress-network
+
+  # Redis Cache (Optional - for performance)
+  redis:
+    image: redis:7-alpine
+    container_name: wordpress-redis
+    restart: unless-stopped
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - wordpress-network
+
+# Volumes for persistent data
+volumes:
+  wordpress_data:
+    driver: local
+  mysql_data:
+    driver: local
+  redis_data:
+    driver: local
+
+# Network for service communication
+networks:
+  wordpress-network:
+    driver: bridge
+

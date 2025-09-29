@@ -1,0 +1,119 @@
+# WordPress .gitignore for nimrod.bio
+# ====================================
+
+# WordPress Core Files (don't commit these)
+wp-admin/
+wp-includes/
+wp-*.php
+xmlrpc.php
+index.php
+license.txt
+readme.html
+
+# WordPress Configuration
+wp-config.php
+wp-config-local.php
+wp-config-production.php
+
+# WordPress Content (selective)
+wp-content/uploads/
+wp-content/cache/
+wp-content/backup*/
+wp-content/upgrade/
+wp-content/blogs.dir/
+wp-content/upgrade/
+wp-content/uploads/
+wp-content/wp-rocket-config/
+
+# WordPress Plugins (exclude problematic ones)
+wp-content/plugins/wp-rocket/
+wp-content/plugins/backup*/
+wp-content/plugins/cache*/
+
+# WordPress Themes (keep custom themes)
+# wp-content/themes/twenty*/
+
+# Database
+*.sql
+*.sql.gz
+database.sql
+backup*.sql
+
+# Logs
+*.log
+wp-content/debug.log
+error_log
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Composer
+vendor/
+composer.lock
+
+# Environment Files
+.env
+.env.local
+.env.production
+
+# Docker
+docker-compose.override.yml
+.docker/
+
+# Backup Files
+backups/
+*.backup
+*.bak
+
+# Temporary Files
+tmp/
+temp/
+*.tmp
+
+# Cache Files
+wp-content/cache/
+wp-content/w3tc-config/
+wp-content/et-cache/
+
+# Security
+.htaccess.backup
+wp-config-sample.php
+
+# Development Files
+wp-content/themes/*/node_modules/
+wp-content/plugins/*/node_modules/
+*.map
+*.scss
+*.sass
+*.less
+
+# Keep Important Files
+!wp-content/themes/nimrod-bio/
+!wp-content/plugins/custom-*/
+!wp-content/mu-plugins/
+!wp-config-environment.php
+!deploy-to-production.sh
+!wordpress-manager.sh
+!README.md
+
+
+

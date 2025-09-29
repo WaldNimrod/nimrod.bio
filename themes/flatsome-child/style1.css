@@ -1,0 +1,167 @@
+/*
+Theme Name: Flatsome Child
+Description: This is a child theme for Flatsome Theme
+Author: UX Themes
+Template: flatsome
+Version: 3.0
+*/
+
+/*************** ADD CUSTOM CSS HERE.   ***************/
+.header-bg-color,
+.box-blog-post .is-divider{
+   display: none!important;
+}
+.home .flickity-slider .post-meta{
+    text-align: left;
+}
+.container-width, .full-width .ubermenu-nav, .container, .row {
+   /* max-width: 100%!important;*/
+}
+.flickity-viewport .box-text .cat-label{
+    font-size: 20px!important;
+}
+.page-wrapper {
+    padding-top: 0px;
+}
+.archive-page-header {
+    text-align: right;
+    padding-top: 30px;
+
+}
+.from_the_blog_excerpt{
+    direction: rtl;
+}
+.single .article-inner{
+    padding-top: 30px;
+}
+.row-small>.col,
+.row.row-main>.col-sm-12{
+    padding-left: 0!important;
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+
+}
+.wpcf7-form .col{
+    padding: 0 9.8px 19.6px!important;
+}
+.box-vertical .box-text{
+    text-align: right;
+    padding-right: 30px;
+}
+.col:first-child .col-inner {
+    margin-right: auto;
+    margin-left: auto;
+}
+.medium-8>.col-inner>.slider-wrapper{
+    /*  margin-left: -26px;*/
+  }
+.row .row-small:not(.row-collapse), .container .row-small:not(.row-collapse) {
+    margin-left: 0!important;
+    margin-right: 0!important;
+}
+h3.section-title b{
+    display: none;
+}
+.wpcf7-form .col{
+    color: white!important;
+}
+.row-main>.large-12.col{
+    padding-bottom: 0;
+}
+.page-wrapper {
+    padding-bottom: 0;
+}
+.row-solid .col:before,
+.row-solid .col:after{
+    border-left-style: none!important;
+    display: none;
+}
+h3.section-title span{
+    color: #a3484d;
+    background-color: #facfca;
+    border: 5px solid #f38b7e;
+    border-radius: 59px;
+}
+.slider-nav-reveal .flickity-prev-next-button:hover, .slider-nav-reveal .flickity-prev-next-button{
+    background-color: transparent;
+}
+.wpcf7-form input[type='submit']{
+    float: left;
+    background-color: #8dbe59;
+}
+.footer-wrapper {
+    width: auto;
+    margin: 0 15px 0 15px;
+    max-width: 1670px;
+}
+body .absolute-footer .footer-primary{
+    float: none!important;
+}
+  @media only screen and (max-width: 48em) {
+  /*************** ADD MOBILE ONLY CSS HERE  ***************/
+     .medium-4.col > .col-inner{
+          padding: 4%!important;
+      }
+	.entry-header-text{padding:0}
+	.is-divider{max-width:100%}
+	.off-canvas-right .mfp-content {right: 0; left: auto;}
+	
+}
+.off-canvas-left .mfp-content {right: 0!important;
+    left: auto!important;}
+/*********nimrod - מחירון *******/
+.page-id-2939 .row{
+    max-width: 100%;
+}
+a.added_to_cart{
+    display: none!important;
+}
+body .add_to_cart_button.added{
+    display: inline-block!important;
+}
+
+.section-title-normal{border-bottom:none;}
+@media only print{
+	
+}
+.col-sm-12{width:100%!important;}
+.PrintCatalog .box-image, .PrintCatalog .category, .PrintCatalog .badge-container{
+	display: none;
+}
+.PrintCatalog .price Del {	display: none;}
+.PrintCatalog .title-wrapper{	border-bottom: black 1px dashed;}
+.PrintCatalog .product-title{
+}
+.PrintCatalog .price-wrapper {position: absolute; top: 15px;}
+.PrintCatalog .box-text{padding: 0px;}
+
+/*  **********nimrod 2020 - **********/
+.header-bottom {
+	min-height:0px;
+}
+.Header_shop_button{
+	position: relative;
+	max-width: 200px;
+	padding: 10px;
+/*	top: 70px;
+	background-color: rgba(255,255,255,0.7);
+	border: green solid 2px;
+	border-radius: 15px;*/
+}
+.wpforms-one-third{margin-left: 0 !important;}
+.wpforms-first{float: right !important;}
+div.wpforms-container-full .wpforms-form .wpforms-one-half, .wpforms-one-half{/*float: right!important;*/
+	margin-left: 0 !important;
+/*	margin-right: 4% !important;*/}
+div.wpforms-container-full .wpforms-form .wpforms-one-fourth {
+	loat: right;
+    	margin-right: 4%;
+    	margin-left: 0%;
+}
+
+input[type='email'], input[type='date'], input[type='search'], input[type='number'], input[type='text'], input[type='tel'], input[type='url'], input[type='password'], textarea, select, .select-resize-ghost, .select2-container .select2-choice, .select2-container .select2-selection {
+color:red!important;
+}
+.panel-group .panel-heading{background-color:#889732; color:#fff}
+.panel-group  .panel-body {background-color:#faefdf; font-size:14px}
+.panel-group  li{margin-bottom:2px;}
