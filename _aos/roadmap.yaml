@@ -1,0 +1,82 @@
+# roadmap.yaml — L0 Work Package State Registry (Schema v1.1)
+# -----------------------------------------------------------
+# This file is the SSOT for WP state in this project.
+# Mirrors AOS DB schema — enables clean L0→L2 migration.
+# One entry per work package.
+#
+# SSOT RULE: roadmap.yaml project.profile is AUTHORITATIVE.
+# dashboard_config.yaml profile = read-only mirror. Divergence → roadmap.yaml wins.
+#
+# ENUM VALUES (canonical):
+#   status:             PLANNED | IN_PROGRESS | COMPLETE | BLOCKED
+#   track:              A | B
+#   current_lean_gate:  L-GATE_ELIGIBILITY | L-GATE_CONCEPT | L-GATE_SPEC | L-GATE_BUILD | L-GATE_VALIDATE | COMPLETE
+#   lod_status:         LOD100 | LOD200 | LOD300 | LOD400 | LOD500
+#   profile:            L0 | L2 | L3
+
+project:
+  id: "nimrod-bio"
+  name: "nimrod.bio — Personal Site (WordPress)"
+  profile: L0
+  lifecycle_archetype: SOFTWARE
+  lean_kit_version: "3.3.0+163b156"
+  created: "2026-05-09"
+  owner: "nimrodbio_sd"
+  active_milestone: "V100"
+  notes: "WordPress site in Hebrew, hosted on uPress. Profile L0. V100: AOS init + environment bootstrap."
+
+# WP ID FORMAT: S[stage]-P[program]-WP[number]
+#
+#   S[stage]    — Major product milestone (e.g. S003, S004). Matches MILESTONE_MAP.md.
+#   P[program]  — Delivery stream within the stage (e.g. P001, P002). Groups related WPs.
+#                 Sequential within the stage. P001 = first program in stage.
+#   WP[number]  — Atomic execution unit (e.g. WP001, WP002). Sequential within program.
+#
+#   Example:    S003-P003-WP005
+#               Stage 3 (GATE-A milestone) → Program 3 (frontend cohort) → WP 5 (settings pages)
+#
+#   Full reference: lean-kit/modules/project-governance/WP_ID_STANDARD.md
+#
+# DIRECTORY:  _aos/work_packages/[WP-ID]/LOD400_spec.md  (per-WP, required at L-GATE_SPEC)
+# STAGE DOC:  _aos/work_packages/S[N]/LOD300_milestone.md (planning doc, covers all WPs in stage)
+#
+# REGISTRATION RULE:
+#   WP MUST be in roadmap.yaml no later than L-GATE_SPEC.
+#   Before per-WP LOD400 exists, spec_ref may point to the stage LOD300_milestone.md.
+#   At L-GATE_SPEC: spec_ref MUST point to per-WP LOD400_spec.md.
+
+work_packages:
+  # Hub DB: work_packages.id is global across projects; use NB- prefix to avoid collisions.
+- id: NB-S001-P001-WP001
+  label: "nimrod-bio — AOS Init + Port Registration"
+  status: IN_PROGRESS
+  track: A
+  current_lean_gate: L-GATE_BUILD
+  lod_status: LOD400
+  assigned_builder: nimrodbio_arch
+  assigned_validator: nimrodbio_val
+  created_at: "2026-05-09"
+  milestone_ref: V100
+  stage_mapping: ""
+  spec_ref: TBD
+  gate_history:
+  - gate: L-GATE_ELIGIBILITY
+    result: PASS
+    date: "2026-05-09"
+    notes: "AOS project init + port registry update. OPS/Express track."
+  notes: "OPS track (Express). Project skeleton created via execute_project_create. Port registration + hub projects.yaml update pending."
+
+- id: NB-S001-P002-WP001
+  label: "nimrod-bio — Environment Bootstrap (uPress pull + local dev setup)"
+  status: PLANNED
+  track: A
+  current_lean_gate: L-GATE_ELIGIBILITY
+  lod_status: LOD100
+  assigned_builder: nimrodbio_build
+  assigned_validator: nimrodbio_val
+  created_at: "2026-05-09"
+  milestone_ref: V100
+  stage_mapping: ""
+  spec_ref: TBD
+  gate_history: []
+  notes: "STANDARD track. Prerequisite: NB-S001-P001-WP001 complete + Team 00 exports backup ZIP+SQL from uPress → sources/."

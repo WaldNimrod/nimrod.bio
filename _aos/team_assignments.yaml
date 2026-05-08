@@ -1,0 +1,73 @@
+# team_assignments.yaml — L0 Team Registry (Schema v1.1)
+# ------------------------------------------------------
+# Declares all agents used in this project.
+# IRON RULE: builder_agent engine MUST differ from validator_agent engine.
+# Enforcement: validate_aos.sh Check 2 (automated) + System Designer at L-GATE_ELIGIBILITY (manual).
+#
+# SLUG FORMAT: ^[a-z][a-z0-9]*_[a-z]+$
+#   Prefix = project abbreviation (lowercase alphanumeric only, no hyphens)
+#   Suffix = role (reserved: _sd / _arch / _build / _val / _doc / _gate)
+#   Exactly one underscore separating prefix from suffix.
+#
+# ROLE TYPES (6 canonical):
+#   system_designer      — human orchestrator (required)
+#   architecture_agent   — spec author, LOD200/LOD400 (required)
+#   builder_agent        — implementation (required; engine MUST differ from validator)
+#   validator_agent      — cross-engine QA (required; engine MUST differ from builder)
+#   documentation_agent  — technical writing (optional)
+#   gateway_agent        — gate coordination, mandate generation (optional; EXEMPT from cross-engine rule)
+
+project_id: "nimrod-bio"
+lean_kit_version: "3.3.0"
+
+teams:
+  - id: "nimrodbio_sd"
+    role_type: system_designer
+    engine: human
+    name: "Nimrod"
+    skills:
+      - domain_knowledge
+      - decision_authority
+      - route_and_escalate
+    notes: "Orchestrator only. Never approves content. Never substitutes for validator."
+
+  - id: "nimrodbio_arch"
+    role_type: architecture_agent
+    engine: claude-code
+    skills:
+      - lod_spec_authoring
+      - iron_rule_knowledge
+      - mandate_issuance
+    notes: "Writes LOD200, LOD400. Reviews at L-GATE_VALIDATE when required."
+
+  - id: "nimrodbio_build"
+    role_type: builder_agent
+    engine: cursor
+    skills:
+      - lod400_execution
+      - lod500_authoring
+    notes: "Team 10 — WordPress environment and execution. Engine MUST differ from validator."
+
+  - id: "nimrodbio_val"
+    role_type: validator_agent
+    engine: codex
+    skills:
+      - independent_review
+      - test_execution
+      - finding_classification
+    notes: "Team 190 — constitutional validator at L-GATE_VALIDATE. IRON RULE: engine != builder."
+
+  - id: "nimrodbio_doc"
+    role_type: documentation_agent
+    engine: cursor
+    skills:
+      - template_completion
+      - governance_indexing
+    notes: "Team 191 — git, archive, and file governance per mandate."
+
+cross_engine_validator: "nimrodbio_val"
+
+# Iron Rule enforcement:
+# builder_agent engine MUST differ from validator_agent engine.
+# validate_aos.sh Check 2 enforces this programmatically.
+# gateway_agent is EXEMPT (does not build or validate).

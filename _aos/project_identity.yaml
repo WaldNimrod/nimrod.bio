@@ -1,0 +1,48 @@
+# _aos/project_identity.yaml — Cross-Project Boundary Declaration
+# ================================================================
+# SSoT for project identity and boundary enforcement.
+# Read by: validate_aos.sh (Check 12), .cursorrules, CLAUDE.md, activation prompts, prompt builder.
+# Managed by: Team 00 + Team 100.
+# Deployed to: _aos/project_identity.yaml in every AOS-managed project.
+#
+# TEMPLATE — replace placeholders with project-specific values.
+
+project_id: "nimrod-bio"
+display_name: "nimrod.bio — Personal Site (WordPress)"
+domain: "wordpress"
+profile: "L0"
+language: he
+hosting: upress
+
+# Hub-spoke topology
+is_hub: false
+managed_projects: []
+hub_path: /Users/nimrod/Documents/agents-os
+
+# Boundary enforcement
+boundaries:
+  # Directories this project's agents may write to (relative to repo root)
+  allowed_write_roots:
+    - "_aos/"
+    - "_COMMUNICATION/"
+    - "nimrod.bio/"
+    - "research/"
+    - "docs/"
+    - "scripts/"
+    - "sources/"
+
+  # Patterns that must NEVER appear in tracked files (other project names, domains, imports)
+  forbidden_patterns:
+    - tiktrack
+    - hobbithome
+    - eyalamit
+    - smallfarmsagents
+    - agros-insite
+    - microgreens
+
+  # Instruction for agents encountering cross-project work
+  cross_project_routing: "~/Documents/_agent_comm/outbox/"
+
+  push_scope: repo_only
+
+  hub_routing: "via_team_00"
