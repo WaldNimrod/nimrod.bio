@@ -67,10 +67,19 @@ rsync -a --delete \
   --exclude='databases/' \
   --exclude='agents/' \
   --exclude='Agents/' \
+  --exclude='famely_NL/' \
+  --exclude='sfa-hub/' \
+  --exclude='GitDirectory/' \
+  --exclude='pub/' \
   --exclude='README.md' \
   "$WORK/" "$ROOT/nimrod.bio/"
-# Never serve SQL or backup metadata from the web root; belt-and-suspenders cleanup after rsync
-rm -rf "$ROOT/nimrod.bio/databases" "$ROOT/nimrod.bio/agents" "$ROOT/nimrod.bio/Agents" 2>/dev/null || true
+# Belt-and-suspenders: remove cross-project dirs if they slipped through
+rm -rf \
+  "$ROOT/nimrod.bio/databases" \
+  "$ROOT/nimrod.bio/agents" "$ROOT/nimrod.bio/Agents" \
+  "$ROOT/nimrod.bio/famely_NL" "$ROOT/nimrod.bio/sfa-hub" \
+  "$ROOT/nimrod.bio/GitDirectory" "$ROOT/nimrod.bio/pub" \
+  2>/dev/null || true
 
 echo "=== Removing production wp-config.php (Docker + .env supply DB settings) ==="
 rm -f "$ROOT/nimrod.bio/wp-config.php" "$ROOT/nimrod.bio/wp-config-local.php" 2>/dev/null || true

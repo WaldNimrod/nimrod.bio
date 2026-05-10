@@ -1,0 +1,901 @@
+# Translation of Plugins - WP Accessibility - Stable (latest release) in Hebrew
+# This file is distributed under the same license as the Plugins - WP Accessibility - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2025-05-13 08:16:14+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.3\n"
+"Language: he_IL\n"
+"Project-Id-Version: Plugins - WP Accessibility - Stable (latest release)\n"
+
+#: wp-accessibility-admin.php:92
+msgid "Allow <code>h1</code> in the headings block"
+msgstr "אפשר <code>h1</code> בכותרות"
+
+#: wp-accessibility-settings.php:414
+msgid "Donate to WP Accessibility"
+msgstr "תרמו לתוסף הנגשת וורדפרס"
+
+#: wp-accessibility.php:570
+msgid "Log Out"
+msgstr "התנתק"
+
+#: wp-accessibility-settings.php:495
+msgid "Try the Course"
+msgstr "נסה את הקורס"
+
+#: wp-accessibility-settings.php:485
+msgid "Learn more about WordPress Accessibility"
+msgstr "מידע נוסף על הנגשת וורדפרס"
+
+#: wp-accessibility-admin.php:80
+msgid "* Accessibility problems accessing adminbar dropdowns were fixed in WordPress 6.5."
+msgstr "* בעיות הנגשה בגישה לתפריטים הנפתחים של סרגל הניהול תוקנו בוורדפרס 6.5."
+
+#: wp-accessibility-admin.php:80
+msgid "Disable top-level adminbar logout link"
+msgstr "השבתת קישור התנתקות מסרגל הניהול העליון"
+
+#. translators: link to accessibility content features documentation.
+#: wp-accessibility-settings.php:334
+msgid "Enable <a href=\"%s\">content features to improve site accessibility</a>."
+msgstr "הפעל <a href=\"%s\">תכונות תוכן כדי לשפר את הנגישות</a>."
+
+#. translators: link to accessibility fix documentation.
+#: wp-accessibility-overlay.php:102
+msgid "Settings that <a href=\"%s\">fix potential accessibility issues</a> on your site."
+msgstr "הגדרות אשר <a href=\"%s\">מתקנות בעיות הנגשה פוטנציאליות</a> באתר."
+
+#: wp-accessibility-settings.php:278
+msgid "Test with Grayscale"
+msgstr "בדיקה עם גווני אפור"
+
+#: wp-accessibility-settings.php:274
+msgid "Include Contrast button"
+msgstr "לכלול כפתור ניגודיות צבעים"
+
+#: wp-accessibility-settings.php:270
+msgid "Include Font size button"
+msgstr "כלול כפתור לגודל הטקסט"
+
+#: wp-accessibility-admin.php:103
+msgid "Disabled"
+msgstr "מושבת"
+
+#: wp-accessibility-admin.php:99
+msgid "Statistics Tracking"
+msgstr "מעקב אחרי סטטיסטיקות"
+
+#. translators: link to plugin documentation.
+#: wp-accessibility.php:75
+msgid "To learn more, check out the <a href=\"%s\">plugin documentation</a>."
+msgstr "למידע נוסף, ראו את <a href=\"%s\">התיעוד של התוסף</a>."
+
+#: wp-accessibility.php:72
+msgid "Visit the WP Accessibility Stats to view what WP Accessibility did on each page."
+msgstr "בקרו בסטטיסטיקות הנגשה כדי לראות מה התוסף עשה בכל עמוד."
+
+#: wp-accessibility.php:71
+msgid "Go to the Themes page and install a theme of your choice, then explore the site. Errors corrected are logged in the console and saved to stats."
+msgstr "עבור לעמוד התבניות והתקן תבנית לבחירתך, לאחר מכן גלה את האתר. שגיאות שתוקנו נרשמות בקונסולה ונשמרות בסטטיסטיקות."
+
+#: wp-accessibility.php:70
+msgid "Create a new post and add media to observe some WP Accessibility features."
+msgstr "צור פוסט חדש והוסף מדיה כדי לצפות בתכונות של WP Accessibility."
+
+#: wp-accessibility.php:68
+msgid "Let me give you a few quick things to try out while you're here:"
+msgstr "כמה דברים מהירים לנסות בזמן שאתם כאן:"
+
+#: wp-accessibility.php:67
+msgid "Thanks for trying out WP Accessibility!"
+msgstr "תודה שניסית את WP Accessibility!"
+
+#: wp-accessibility-stats.php:397
+msgid "View full record"
+msgstr "הצג רשומה מלאה"
+
+#: wp-accessibility-stats.php:512
+msgid "No data found"
+msgstr "לא נמצאו נתונים"
+
+#: wp-accessibility-stats.php:733
+msgid "WP Accessibility Statistics"
+msgstr "סטטיסטיקת נגישות"
+
+#. translators: Date of change.
+#: wp-accessibility-stats.php:712
+msgid "Found issues changed on %s"
+msgstr "נמצאו בעיות שהשתנו ב-%s"
+
+#: wp-accessibility-stats.php:708
+msgid "Page loaded"
+msgstr "הדף נטען"
+
+#. translators: Data expanded; either `alt` or `longdesc`.
+#: wp-accessibility-stats.php:703
+msgid "%s expanded on image."
+msgstr "%s מורחב בתמונה"
+
+#. translators: Action enabled.
+#: wp-accessibility-stats.php:698
+msgid "%s disabled"
+msgstr "%s מכובה"
+
+#. translators: Action enabled.
+#: wp-accessibility-stats.php:698
+msgid "%s enabled"
+msgstr "%s מופעל"
+
+#: wp-accessibility-stats.php:692
+msgid "Large Font Size"
+msgstr "גודל גופן גדול"
+
+#: wp-accessibility-stats.php:692
+msgid "High Contrast"
+msgstr "ניגודיות גבוה"
+
+#: wp-accessibility-stats.php:679
+msgid "Page View"
+msgstr "תצוגת העמוד"
+
+#: wp-accessibility-stats.php:679
+msgid "User Action"
+msgstr "פעולת משתמש"
+
+#: wp-accessibility-stats.php:664
+msgid "Info"
+msgstr "מידע"
+
+#: wp-accessibility-stats.php:663
+msgid "Last Action"
+msgstr "פעולה אחרונה"
+
+#: wp-accessibility-stats.php:662
+msgid "Statistic Type"
+msgstr "סוג סטטיסטיקה"
+
+#. translators: URL path.
+#: wp-accessibility-stats.php:636
+msgid "Page view: %s"
+msgstr "תוגת עמוד: %s"
+
+#. translators: Post ID.
+#: wp-accessibility-stats.php:633
+msgid "User: %d"
+msgstr "משתמש: %d"
+
+#: wp-accessibility-stats.php:585
+msgid "The language of the page was set."
+msgstr "הוגדרה שפה לעמוד."
+
+#: wp-accessibility-stats.php:584
+msgid "The language direction was set."
+msgstr "הוגדר כיוון כתיבה."
+
+#: wp-accessibility-stats.php:583
+msgid "The scalability of the viewport was fixed."
+msgstr "תוקן ה-scalability של ה-viewport."
+
+#: wp-accessibility-stats.php:582
+msgid "The viewport maximum scale was fixed."
+msgstr "תוקן ה-maximum scale של ה-viewport."
+
+#: wp-accessibility-stats.php:581
+msgid "Skiplinks added to the page."
+msgstr "קישורי דילוג נוספו לעמוד."
+
+#: wp-accessibility-stats.php:580
+msgid "<code>aria-current</code> was assigned to a link."
+msgstr "<code>aria-current</code> מצורף ללינק."
+
+#: wp-accessibility-stats.php:579
+msgid "Explicit <code>label</code> elements added to inputs."
+msgstr "תגית <code>label</code> יעודית נוספה לשדות טופס."
+
+#: wp-accessibility-stats.php:578
+msgid "Implicit <code>label</code> elements added to inputs."
+msgstr "תגית <code>label</code> כללית נוספה לשדות טופס."
+
+#: wp-accessibility-stats.php:577
+msgid "<code>title</code> attributes removed from images."
+msgstr "<code>title</code> הוסרו מתמונות."
+
+#: wp-accessibility-stats.php:576
+msgid "<code>title</code> attributes removed from inputs and buttons."
+msgstr "<code>title</code> הוסרו מכפתורים ושדות טופס."
+
+#: wp-accessibility-stats.php:575
+msgid "<code>title</code> attributes were removed from inputs."
+msgstr "<code>title</code> הוסרו משדות טופס."
+
+#: wp-accessibility-stats.php:574
+msgid "<code>target</code> attributes were removed from links."
+msgstr "<code>target</code> הוסרו מקישורים."
+
+#: wp-accessibility-stats.php:573
+msgid "<code>tabindex</code> were removed from links, inputs, and buttons."
+msgstr "<code>tabindex</code> הוסרו מקישורים, שדות טופס וכפתורים."
+
+#: wp-accessibility-stats.php:572
+msgid "<code>tabindex</code> was added to a fake button."
+msgstr "<code>tabindex</code> נוספו לכפתורים מזוייפים."
+
+#: wp-accessibility-stats.php:571
+msgid "<code>tabindex</code> was removed from a link."
+msgstr "<code>tabindex</code> הוסרו מקישורים."
+
+#: wp-accessibility-stats.php:556
+msgid "Unknown browser"
+msgstr "דפדפן לא מוכר"
+
+#. translators: Number of accessibility issues fixed.
+#: wp-accessibility-stats.php:475 wp-accessibility-stats.php:490
+msgid "%d issue fixed"
+msgid_plural "%d issues fixed"
+msgstr[0] "תוקנה בעיה %d"
+msgstr[1] "תוקנו %d בעיות"
+
+#. translators: 1) image link. 2) date 3) time.
+#: wp-accessibility-stats.php:387 wp-accessibility-stats.php:421
+msgid "Long description expanded on image %1$s on %2$s at %3$s"
+msgstr "תיאור ארוך הורחב בתמונה %1$s בתאריך %2$s בשעה %3$s"
+
+#. translators: 1) image link. 2) date 3) time.
+#. translators: 1) image ID. 2) date 3) time.
+#: wp-accessibility-stats.php:381 wp-accessibility-stats.php:416
+msgid "Alt text expanded on image %1$s on %2$s at %3$s"
+msgstr "תגית alt הורחבה בתמונה %1$s בתאריך %2$s בשעה %3$s"
+
+#. translators: date changed, time changed.
+#: wp-accessibility-stats.php:350
+msgid "Large font size disabled on %1$s at %2$s"
+msgstr "גופן גדול הוסר בתאריך %1$s בשעה %2$s"
+
+#. translators: date changed, time changed.
+#: wp-accessibility-stats.php:348
+msgid "High contrast disabled on %1$s at %2$s"
+msgstr "ניגודיות גבוהה הוסרה בתאריך %1$s בשעה %2$s"
+
+#. translators: date changed, time changed.
+#: wp-accessibility-stats.php:346
+msgid "Large font size enabled on %1$s at %2$s"
+msgstr "גופן גדול הופעל בתאריך %1$s בשעה %2$s"
+
+#. translators: date changed, time changed.
+#: wp-accessibility-stats.php:344
+msgid "High contrast enabled on %1$s at %2$s"
+msgstr "ניגודיות גבוהה הופעלה בתאריך %1$s בשעה %2$s"
+
+#. translators: Post ID.
+#: wp-accessibility-stats.php:329
+msgid "User %s"
+msgstr "משתמש %s"
+
+#. translators: path stats are related to.
+#: wp-accessibility-stats.php:323
+msgid "View: %s"
+msgstr "הצג: %s"
+
+#: wp-accessibility-stats.php:294
+msgid "User Stats"
+msgstr "סטטיסטיקות משתמש"
+
+#: wp-accessibility-stats.php:294
+msgid "User Actions"
+msgstr "פעולות משתמש"
+
+#: wp-accessibility-stats.php:292
+msgid "Page Stats"
+msgstr "סטטיסטיקות עמוד"
+
+#: wp-accessibility-stats.php:292
+msgid "Pages Viewed"
+msgstr "עמודים נצפים"
+
+#: wp-accessibility-stats.php:248
+msgid "WP Accessibility Stats"
+msgstr "סטטיסטיקות הנגשה"
+
+#: wp-accessibility-stats.php:60
+msgid "Stats Types"
+msgstr "סוגי סטטיסטיקות"
+
+#: wp-accessibility-stats.php:27
+msgid "No stats found in trash"
+msgstr "לא נמצאו סטטיסטיקות בפח."
+
+#: wp-accessibility-stats.php:26
+msgid "No stats found"
+msgstr "לא נמצאו סטטיסטיקות"
+
+#: wp-accessibility-stats.php:24
+msgid "View"
+msgstr "הצג"
+
+#: wp-accessibility-stats.php:23
+msgid "New"
+msgstr "חדש"
+
+#: wp-accessibility-stats.php:22
+msgid "Edit Stats"
+msgstr "עריכת סטטיסטיקות"
+
+#: wp-accessibility-stats.php:21
+msgid "Create New"
+msgstr "צור חדש"
+
+#: wp-accessibility-stats.php:20
+msgid "Add New"
+msgstr "הוספת חדש"
+
+#: wp-accessibility-stats.php:19
+msgid "Accessibility Stats"
+msgstr "סטטיסטיקות הנגשה"
+
+#: wp-accessibility-stats.php:18
+msgid "Stats"
+msgstr "סטטיסטיקות"
+
+#: wp-accessibility-stats.php:17
+msgid "WP Accessibility Stats Record"
+msgstr "רשומות נגישות"
+
+#: wp-accessibility-settings.php:548
+msgid "Affiliate Links"
+msgstr "קישורים ממומנים"
+
+#: wp-accessibility-settings.php:545
+msgid "Buy Accessibility Checker"
+msgstr "רכשו את Accessibility Checker"
+
+#: wp-accessibility-help.php:70
+msgid "Page statistics are collected when the page is initially viewed, then again if the accessibility values have changed since the last check."
+msgstr "סטטיסטיקות עמוד נאספות כאשר העמוד נצפה לראשונה, ואז שוב אם ערכי הנגישות השתנו מאז הבדיקה האחרונה."
+
+#: wp-accessibility-admin.php:111
+msgid "Site Administrators"
+msgstr "מנהלי אתר"
+
+#: wp-accessibility-admin.php:107
+msgid "All Visitors"
+msgstr "כל המשתמשים"
+
+#: wp-accessibility-alt.php:243
+msgid "Missing alt text"
+msgstr "חסר טקסט alt"
+
+#: wp-accessibility-alt.php:240
+msgid "Caption and alt text are the same"
+msgstr "הכיתוב והטקסט האלטרנטיבי זהים"
+
+#: wp-accessibility-alt.php:237
+msgid "Suspicious alt text"
+msgstr "טקסט alt. חשוד"
+
+#: wp-accessibility-alt.php:234
+msgid "Long alt text"
+msgstr "טקסט alt ארוך"
+
+#: wp-accessibility-settings.php:533
+msgid "Affiliate Link"
+msgstr "קישור ממומן"
+
+#: wp-accessibility-settings.php:530
+msgid "Get Accessibility Checker"
+msgstr "קבלו את Accessibility Checker"
+
+#: wp-accessibility-settings.php:528
+msgid "Use coupon code <code>WPAccessibility</code> for 20% off!"
+msgstr "השתמשו בקופון <code>WPAccessibility</code> לקבלת 20% הנחה!"
+
+#: wp-accessibility-settings.php:519
+msgid "Ready to fix your site?"
+msgstr "מוכן לתקן את האתר?"
+
+#: wp-accessibility-settings.php:516
+msgid "Try Accessibility Checker by Equalize Digital - fast and efficient accessibility testing for your site!"
+msgstr "נסו את Accessibility Checker של Equalize Digital - בדיקת נגישות מהירה ויעילה לאתר!"
+
+#: wp-accessibility-settings.php:516
+msgid "Finding Accessibility Checker useful? Go Pro for more advanced accessibility testing options!"
+msgstr "מצאתם את Accessibility Checker שימושי? לכו על גרסת Pro לאפשרויות בדיקת נגישות מתקדמות יותר!"
+
+#: wp-accessibility.php:1019
+msgid "Provide a simplified summary to aid comprehension of complex content."
+msgstr "ספק סיכום פשוט כדי לסייע בהבנה של תוכן מורכב."
+
+#: wp-accessibility.php:1017
+msgid "Simple Content Summary"
+msgstr "סיכום תוכן פשוט"
+
+#: wp-accessibility.php:1002
+msgid "Content Summary"
+msgstr "סיכום תוכן"
+
+#: wp-accessibility.php:956
+msgid "Summary"
+msgstr "סיכום"
+
+#: wp-accessibility-admin.php:119
+msgid "Update Accessibility Tools"
+msgstr "עדכון כלי הנגשה"
+
+#: wp-accessibility-admin.php:71
+msgid "These change the admin experience or help with testing."
+msgstr "שינויים אלה משנים את חוויית הניהול או עוזרים בבדיקות."
+
+#: wp-accessibility-admin.php:68
+msgid "Testing & Admin Experience"
+msgstr "בדיקות וחווית ניהול"
+
+#: wp-accessibility-settings.php:381
+msgid "Update Accessibility Features"
+msgstr "עדכון תכונות נגישות"
+
+#: wp-accessibility-settings.php:356
+msgid "Enable Content Summaries"
+msgstr "הפעלת סיכומי תוכן"
+
+#: wp-accessibility-settings.php:329
+msgid "Accessibility Features"
+msgstr "תכונות נגישות"
+
+#: wp-accessibility-overlay.php:162
+msgid "Excludes links inside <code>nav</code> elements."
+msgstr "להחריג קישורים בתוך רכיבי <code>nav</code>."
+
+#: wp-accessibility-overlay.php:138
+msgid "Your theme must have a search.php template"
+msgstr "התבנית חייבת לכלול קובץ search.php"
+
+#: wp-accessibility-overlay.php:138
+msgid "Force search error on empty search submission"
+msgstr "כפה שגיאת חיפוש בעת שליחת חיפוש ריק"
+
+#: wp-accessibility-overlay.php:134
+msgid "Prevent links from opening in new windows"
+msgstr "מניעת פתיחת קישורים בחלונות חדשים"
+
+#: wp-accessibility-overlay.php:118
+msgid "Continue reading prefix text"
+msgstr "קידומת טקסט להמשך קריאה"
+
+#: wp-accessibility-overlay.php:96 wp-accessibility.php:86
+msgid "Accessibility Fixes"
+msgstr "תיקוני הנגשה"
+
+#: wp-accessibility-settings.php:281
+msgid "Toolbar location (optional)"
+msgstr "מיקום סרגל הכלים (אופציונלי)"
+
+#: wp-accessibility-settings.php:262
+msgid "Enable Accessibility toolbar"
+msgstr "הפעלת סרגל הכלים של הנגישות"
+
+#: wp-accessibility-settings.php:228
+msgid "Styles for Skiplinks"
+msgstr "עיצוב קישורי דילוג"
+
+#: wp-accessibility-settings.php:220
+msgid "Use default Skiplink CSS"
+msgstr "השתמש ב-CSS ברירת מחדל עבור Skiplink"
+
+#: wp-accessibility-settings.php:175
+msgid "Skip to Navigation link target"
+msgstr "דלג ליעד קישור הניווט"
+
+#: wp-accessibility-settings.php:172 wp-accessibility-settings.php:176
+#: wp-accessibility-settings.php:282
+msgid "ID attribute starting with <code>#</code>"
+msgstr "מאפיין ID שמתחיל ב-<code>#</code>"
+
+#: wp-accessibility-settings.php:171
+msgid "Skip to Content link target"
+msgstr "דלג ליעד קישור התוכן"
+
+#: wp-accessibility-overlay.php:42 wp-accessibility-overlay.php:119
+msgid "Continue Reading"
+msgstr "המשך לקרוא"
+
+#: wp-accessibility-admin.php:43
+msgid "Accessibility Tools Updated"
+msgstr "כלי הנגשה עודכנו"
+
+#: wp-accessibility-settings.php:88
+msgid "Accessibility Features Updated"
+msgstr "תכונות הנגשה עודכנו"
+
+#: wp-accessibility-help.php:22
+msgid "WP Accessibility Help"
+msgstr "סיוע בהנגשת וורדפרס"
+
+#: wp-accessibility-alt.php:64
+msgid "Long <code>alt</code> text"
+msgstr "תגית <code>alt</code> ארוכה"
+
+#: wp-accessibility-help.php:54
+msgid "Set a custom long description template by adding <code>longdesc-template.php</code> to your theme directory."
+msgstr "הגדר תבנית מותאמת לתיאור ארוך על ידי הוספת קובץ <code>longdesc-template.php</code> בתבנית."
+
+#: wp-accessibility-help.php:51
+msgid "Set custom styles for large print using the body class <code>.fontsize</code> in your theme styles or the customizer."
+msgstr "הגדירו עיצובים מותאמים עבור הדפסה גדולה באמצעות body class של <code>.fontsize</code> בתבנית או באמצעות כלי ההתאמה האישית של וורדפרס."
+
+#: wp-accessibility-help.php:48
+msgid "Custom high-contrast styles go in <code>a11y-contrast.css</code> in your Theme's stylesheet directory."
+msgstr "עיצובים בעלי ניגודיות גבוהה נמצאים בקובץ <code>a11y-contrast.css</code> בתיקיית גיליון הסגנונות של התבנית."
+
+#: wp-accessibility-help.php:44
+msgid "Customization"
+msgstr "התאמה אישית"
+
+#: wp-accessibility-settings.php:342 wp-accessibility.php:743
+msgid "None"
+msgstr "ללא"
+
+#: wp-accessibility-admin.php:76
+msgid "* May cause slow searches on large media libraries."
+msgstr "* עלול לגרום לאיטיות בחיפושים בספריות מדיה גדולות."
+
+#: wp-accessibility-admin.php:76
+msgid "Include alt attribute in media library searches"
+msgstr "כלול alt בחיפושים של ספריית המדיה"
+
+#: wp-accessibility-admin.php:84
+msgid "Disable fullscreen block editor by default"
+msgstr "השבת את עורך הבלוקים במסך מלא כברירת מחדל"
+
+#: wp-accessibility-alt.php:62
+msgid "Suspicious <code>alt</code>"
+msgstr "תגית <code>alt</code> חשודה"
+
+#: wp-accessibility-alt.php:60
+msgid "Invalid <code>alt</code>"
+msgstr "תגית <code>alt</code> לא תקינה"
+
+#: wp-accessibility.php:550
+msgid "Long Description"
+msgstr "תיאור ארוך"
+
+#: wp-accessibility-longdesc.php:184
+msgid "Has Long Description"
+msgstr "יש תיאור ארוך"
+
+#: wp-accessibility.php:803
+msgid "Please describe your problem."
+msgstr "נא לתאר את הבעייה."
+
+#: wp-accessibility-help.php:68
+msgid "WP Accessibility does not collect any personally identifying information about users or visitors."
+msgstr "WP Accessibility אינו אוסף מידע המאפשר זיהוי אישי של משתמשים או מבקרים."
+
+#: wp-accessibility-help.php:67
+msgid "Information collected by WP Accessibility"
+msgstr "מידע שנאסף על ידי WP Accessibility"
+
+#: wp-accessibility-help.php:66
+msgid "The accessibility toolbar sets cookies to maintain awareness of the user's selected accessibility options. If the toolbar is not in use, WP Accessibility does not set any cookies."
+msgstr "סרגל הנגישות מגדיר קבצי עוגיות (cookies) כדי לשמור על מודעות לאפשרויות הנגישות שבחר המשתמש. אם סרגל הכלים אינו בשימוש, WP Accessibility אינו מגדיר קבצי עוגיות."
+
+#: wp-accessibility-help.php:65
+msgid "Cookies"
+msgstr "עוגיות"
+
+#: wp-accessibility-help.php:62
+msgid "Privacy"
+msgstr "פרטיות"
+
+#: wp-accessibility-settings.php:278
+msgid "Grayscale is intended for testing, and will appear only for logged-in administrators"
+msgstr "גווני אפור מיועדים לבדיקות, ויופיעו רק עבור המנהלים המחוברים"
+
+#: wp-accessibility-settings.php:349
+msgid "Support <code>longdesc</code> on featured images"
+msgstr "תמיכה ב- <code>longdesc</code> בתמונה ראשית"
+
+#: wp-accessibility.php:385
+msgid "Skip links"
+msgstr "דלג על קישורים"
+
+#: wp-accessibility-settings.php:324
+msgid "Update Toolbar Settings"
+msgstr "עדכן הגדרות סרגל הכלים"
+
+#: wp-accessibility-settings.php:316
+msgid "Hide toolbar on small screens."
+msgstr "הסתר סרגל כלים במסכים קטנים."
+
+#: wp-accessibility-settings.php:114
+msgid "Toolbar Settings Updated"
+msgstr "הגדרות סרגל הכלים עודכנו"
+
+#: wp-accessibility-settings.php:304
+msgid "Use alternate font resizing stylesheet"
+msgstr "השתמש בקובץ עיצוב חלופי לשינוי גודלי פונט"
+
+#: wp-accessibility-settings.php:312
+msgid "Place toolbar on opposite side of screen."
+msgstr "הצג את סרגל הכלים בצד הנגדי של המסך."
+
+#. Author URI of the plugin
+#: wp-accessibility.php
+msgid "https://www.joedolson.com/"
+msgstr "https://www.joedolson.com/"
+
+#. Author of the plugin
+#: wp-accessibility.php
+msgid "Joe Dolson"
+msgstr "ג'ו דולסון"
+
+#. Description of the plugin
+#: wp-accessibility.php
+msgid "Helps improve accessibility in your WordPress site, like removing title attributes."
+msgstr "עזור לנו לשפר את הנגישות באתר הוורדפרס שלך, כגון הסרת תכונות מכותרת."
+
+#. Plugin URI of the plugin
+#: wp-accessibility.php
+msgid "https://www.joedolson.com/wp-accessibility/"
+msgstr "https://www.joedolson.com/wp-accessibility/"
+
+#. Plugin Name of the plugin
+#: wp-accessibility.php wp-accessibility.php:85
+msgid "WP Accessibility"
+msgstr "WP Accessibility"
+
+#: wp-accessibility-alt.php:181
+msgid "All images must either have an alt attribute or be declared as decorative."
+msgstr "לכל התמונות חייב להיות תיאור alt או סימון כדקורטיביים."
+
+#: wp-accessibility-alt.php:70
+msgid "N/A"
+msgstr "לא זמין"
+
+#: wp-accessibility-alt.php:66
+msgid "Has <code>alt</code>"
+msgstr "קיים <code>alt</code>"
+
+#: wp-accessibility-alt.php:58 wp-accessibility-alt.php:178
+msgid "Decorative"
+msgstr "דקורטיבי"
+
+#: wp-accessibility-alt.php:55
+msgid "Add <code>alt</code> text"
+msgstr "הוספת <code>alt</code>"
+
+#: wp-accessibility-alt.php:26
+msgid "Accessibility"
+msgstr "הנגשה"
+
+#: wp-accessibility.php:834
+msgid "The following additional information will be sent with your support request:"
+msgstr "המידע הנוסף הזה ישלח ביחד עם בקשת התמיכה שלך:"
+
+#: wp-accessibility.php:832
+msgid "Send Support Request"
+msgstr "שלח בקשת תמיכה"
+
+#: wp-accessibility.php:829
+msgid "Support Request:"
+msgstr "בקשת תמיכה:"
+
+#. Translators: Donation URL.
+#: wp-accessibility.php:826
+msgid "I <a href=\"%s\">made a donation</a> to help support this plugin"
+msgstr "I <a href=\"%1$s\">תירמו</a> כדי לתמוך בתוסף"
+
+#: wp-accessibility.php:821
+msgid "From:"
+msgstr "שולח:"
+
+#: wp-accessibility.php:809
+msgid "I cannot provide support, but will treat your request as a bug report, and will incorporate any permanent solutions I discover into the plug-in."
+msgstr "אני לא יכול להעניק תמיכה אך אטפל בבקשתך כדיווח על באג ואטמיע פתרונות קבועים בתוסף"
+
+#: wp-accessibility.php:807
+msgid "Thank you for supporting the continuing development of this plug-in! I'll get back to you as soon as I can."
+msgstr "תודה על תמיכתך בפיתוח המתמשך של תוסף זה! אחזור אליך בהקדם האפשרי."
+
+#: wp-accessibility-settings.php:440
+msgid "Accessibility References"
+msgstr "הפניות נגישות"
+
+#. Translators: URL to read about the accessibility ready tag requirements.
+#: wp-accessibility-settings.php:464
+msgid "Read more about the <a href=\"%s\">WordPress accessibility-ready tag</a>"
+msgstr "מידע נוסף אודות <a href=\"%s\">תגית accessibility-ready של וורדפרס</a>"
+
+#: wp-accessibility-settings.php:455
+msgid "Your Theme"
+msgstr "התבנית שלך"
+
+#: wp-accessibility-settings.php:404
+msgid "Support this Plugin"
+msgstr "תמוך בתוסף"
+
+#: wp-accessibility-help.php:28
+msgid "Get Plug-in Support"
+msgstr "קבל תמיכה בתוסף"
+
+#: wp-accessibility-admin.php:189
+msgid "Check Color Contrast"
+msgstr "בדוק ניגודיות צבע"
+
+#: wp-accessibility-admin.php:179
+msgid "Background color"
+msgstr "צבע הרקע האחורי"
+
+#: wp-accessibility-admin.php:174
+msgid "Foreground color"
+msgstr "צבע הרקע הקדמי"
+
+#: wp-accessibility-admin.php:170
+msgid "Test of relative luminosity"
+msgstr "בוחן בהירות יחסית"
+
+#: wp-accessibility-admin.php:155
+msgid "Test another set of colors"
+msgstr "בחן עוד סט צבעים"
+
+#: wp-accessibility-admin.php:153
+msgid "The colors compared <strong>do not pass</strong> the relative luminosity test."
+msgstr "הצבעים בהשוואה <strong>אינם עוברים</strong> את מבחן הבהירות היחסית."
+
+#: wp-accessibility-admin.php:150
+msgid "The colors compared pass the relative luminosity test <strong>only when used in large print</strong> situations (greater than 18pt (24px) text or 14pt (18.66px) bold text.)"
+msgstr "הצבעים שהושוו עוברים את מבחן הבהירות היחסית <strong>רק כאשר משתמשים בהם במצבים של דפוס גדול</strong> (טקסט גדול מ-18pt (24 ​​פיקסלים) או טקסט מודגש ב-14pt (18.66 פיקסלים).)"
+
+#: wp-accessibility-admin.php:147
+msgid "The colors compared <strong>pass</strong> the relative luminosity test at level AA."
+msgstr "הצבעים שהושוו <strong>עוברים</strong> את מבחן עוצמת האור היחסית ברמה AA."
+
+#: wp-accessibility-admin.php:144
+msgid "The colors compared <strong>pass</strong> the relative luminosity test at level AAA."
+msgstr "הצבעים שהושוו <strong>עוברים</strong> את מבחן עוצמת האור היחסית ברמה AAA."
+
+#: wp-accessibility-admin.php:124
+msgid "Color Contrast Tester"
+msgstr "בוחן ניגודיות צבעים"
+
+#: wp-accessibility-overlay.php:173
+msgid "Update Miscellaneous Settings"
+msgstr "עדכן הגדרות שונות"
+
+#: wp-accessibility-overlay.php:166
+msgid "Add outline to elements on keyboard focus"
+msgstr "הוסף הדגשה חיצונית לאלמנטים בפוקוס של המקלדת"
+
+#: wp-accessibility-admin.php:96
+msgid "Enable diagnostic CSS"
+msgstr "הפעל CSS במצב איבחון"
+
+#: wp-accessibility-settings.php:308
+msgid "Support Accessibility toolbar as shortcode or widget"
+msgstr "תמוך בסרגל כלים לנגישות בתור שורטקוד או ווידג'ט"
+
+#: wp-accessibility-settings.php:290
+msgid "Default size"
+msgstr "גודל ברירת מחדל"
+
+#: wp-accessibility-settings.php:288
+msgid "Toolbar font size"
+msgstr "גודל גופן בסרגל"
+
+#: wp-accessibility-settings.php:343
+msgid "Link to description"
+msgstr "קישור לתיאור"
+
+#: wp-accessibility-settings.php:340
+msgid "Long Description UI"
+msgstr "ממשק תיאור ארוך"
+
+#: wp-accessibility-overlay.php:162
+msgid "Force underline on links"
+msgstr "הכרח קו תחתון על כל הקישורים"
+
+#: wp-accessibility-overlay.php:142
+msgid "Remove tabindex from focusable elements"
+msgstr "הסר את הטאב אינדקס מפריטים פעילים (בפוקוס)"
+
+#: wp-accessibility-overlay.php:128
+msgid "<strong>Three disabled features:</strong> Site language, continue reading text and standard form labels are provided in your <code>accessibility-ready</code> theme."
+msgstr "<strong>שלוש תכונות מושבתות:</strong> שפת האתר, טקסט המשך קריאה ותוויות טופס סטנדרטיות מסופקות בתבנית <code>accessibility-ready</code> שלך."
+
+#: wp-accessibility-overlay.php:115
+msgid "Add post title to \"more\" links."
+msgstr "הוסף את כותרת הפוסט לקישורי \"קרא עוד\""
+
+#: wp-accessibility-settings.php:242
+msgid "Update Skiplink Settings"
+msgstr "עדכן הגדרות קישורי קפיצה (Skiplinks)"
+
+#: wp-accessibility-settings.php:212
+msgid "Link text for your link"
+msgstr "טקסט עבור הקישור"
+
+#: wp-accessibility-settings.php:208
+msgid "Add your own link (link or container ID)"
+msgstr "הוסף קישור משלך (קישור או ID של הקונטיינר)"
+
+#: wp-accessibility-settings.php:191
+msgid "Site Map link target (URL for your site map)"
+msgstr "יעד קישור למפת אתר (כתובת URL של מפת האתר)"
+
+#: wp-accessibility-settings.php:168
+msgid "Skiplinks always visible"
+msgstr "דילוג קישורים (skiplinks) תמיד נראה"
+
+#: wp-accessibility-settings.php:164
+msgid "Enable Skiplinks"
+msgstr "הפעל דילוג קישורים (skiplinks)"
+
+#: wp-accessibility-settings.php:161
+msgid "Configure Skiplinks"
+msgstr "הגדר דילוג קישורים (skiplinks)"
+
+#: wp-accessibility-settings.php:146
+msgid "Your <code>accessibility-ready</code> theme has skip links built in."
+msgstr "התבנית מוגדרת כ- <code>accessibility-ready</code> כוללת קישורי דילוג מובנים."
+
+#: wp-accessibility-settings.php:139
+msgid "Add Skiplinks"
+msgstr "הוסף \"דלג קישורים\""
+
+#: wp-accessibility-overlay.php:71
+msgid "Miscellaneous Accessibility Settings Updated"
+msgstr "הגדרות נגישות שונות עודכנו"
+
+#: wp-accessibility-settings.php:74
+msgid "Skiplinks Settings Updated"
+msgstr "הגדרות קישורי דילוג עודכנו"
+
+#: wp-accessibility-settings.php:71
+msgid "WP Accessibility does not provide any styles for visible skiplinks. You can still set the look of the links using the textareas provided, but all other layout must be assigned in your theme."
+msgstr "התוסף אינו מספק סגנונות עיצוב עבור קישורי דילוג גלויים. עדיין ניתן להגדיר את מראה הקישורים באמצעות אזורי הטקסט המסופקים, אך כל שאר הפריסות חייבות להיות מוגדרת בתבנית של האתר."
+
+#: wp-accessibility.php:382
+msgid "Site map"
+msgstr "מפת אתר"
+
+#: wp-accessibility.php:381
+msgid "Skip to navigation"
+msgstr "דלג לניווט"
+
+#: wp-accessibility.php:380
+msgid "Skip to Content"
+msgstr "דלג לתוכן"
+
+#: wp-accessibility-toolbar.php:150 wp-accessibility-toolbar.php:202
+msgid "Toggle Font size"
+msgstr "מתג גודל גופן"
+
+#: wp-accessibility-toolbar.php:149 wp-accessibility-toolbar.php:201
+msgid "Toggle Grayscale"
+msgstr "מתג שחור-לבן"
+
+#: wp-accessibility-toolbar.php:148 wp-accessibility-toolbar.php:200
+msgid "Toggle High Contrast"
+msgstr "הפעל/כבה ניגודיות גבוהה"
+
+#: class-wp-accessibility-toolbar.php:66
+msgid "Title:"
+msgstr "כותרת:"
+
+#: class-wp-accessibility-toolbar.php:33 wp-accessibility-settings.php:250
+msgid "Accessibility Toolbar"
+msgstr "סרגל כלים לנגישות"
+
+#: wp-accessibility-stats.php:25
+msgid "Search"
+msgstr "חיפוש"
+
+#: wp-accessibility.php:158
+msgid "Accessibility Settings"
+msgstr "הגדרות נגישות"
+
+#: templates/longdesc-template.php:36
+msgid "Return to article."
+msgstr "חזור למאמר."

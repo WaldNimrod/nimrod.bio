@@ -1,0 +1,194 @@
+<?php
+// SmallFarmsAgent market report shortcode (M7 Go-Live)
+function sfagent_market_report_shortcode($atts) {
+    $upload_dir = wp_upload_dir();
+    $file = $upload_dir['basedir'] . '/market/public_report_body.html';
+    if (!file_exists($file)) {
+        return '<p style="color:red;">Market report not available.</p>';
+    }
+    return file_get_contents($file);
+}
+add_shortcode('sfagent_market_report', 'sfagent_market_report_shortcode');
+
+// SmallFarmsAgent shared CSS — loaded in <head> on pages with SFA shortcode
+function sfagent_enqueue_styles() {
+    global $post;
+    if (is_a($post, 'WP_Post') && has_shortcode($post->post_content, 'sfagent_market_report')) {
+        $css_file = get_stylesheet_directory() . '/sfagent-base.css';
+        if (file_exists($css_file)) {
+            wp_enqueue_style(
+                'sfagent-base',
+                get_stylesheet_directory_uri() . '/sfagent-base.css',
+                array(),
+                filemtime($css_file)
+            );
+        }
+    }
+}
+add_action('wp_enqueue_scripts', 'sfagent_enqueue_styles');
+
+// Security headers (M9)
+function sfagent_security_headers() {
+    if (!is_admin()) {
+        header('X-Content-Type-Options: nosniff');
+        header('X-Frame-Options: SAMEORIGIN');
+        header('Referrer-Policy: strict-origin-when-cross-origin');
+        header('Permissions-Policy: camera=(), microphone=(), geolocation=()');
+    }
+}
+add_action('send_headers', 'sfagent_security_headers');
+
+// Lightweight contact form shortcode (replaces WPForms)
+function sfagent_contact_form_shortcode($atts) {
+    $atts = shortcode_atts(array(
+        'to'      => 'nimrod@mezoo.co',
+        'subject' => 'הודעה חדשה מהאתר nimrod.bio',
+    ), $atts);
+
+    $msg = '';
+    if (isset($_GET['sfagent_form'])) {
+        if ($_GET['sfagent_form'] === 'ok') {
+            $msg = '<div class="sfa-form-msg sfa-form-ok">ההודעה נשלחה בהצלחה! נחזור אליך בהקדם.</div>';
+        } elseif ($_GET['sfagent_form'] === 'err') {
+            $msg = '<div class="sfa-form-msg sfa-form-err">שגיאה בשליחה. נסה שוב או פנה ישירות במייל.</div>';
+        } elseif ($_GET['sfagent_form'] === 'spam') {
+            $msg = '<div class="sfa-form-msg sfa-form-err">שגיאה בשליחה.</div>';
+        }
+    }
+
+    $nonce = wp_nonce_field('sfagent_contact', '_sfnonce', true, false);
+    $action_url = esc_url(admin_url('admin-post.php'));
+
+    $html = $msg . '
+    <form method="post" action="' . $action_url . '" class="sfa-contact-form" dir="rtl">
+        <input type="hidden" name="action" value="sfagent_contact">
+        <input type="hidden" name="sfagent_to" value="' . esc_attr($atts['to']) . '">
+        <input type="hidden" name="sfagent_subj" value="' . esc_attr($atts['subject']) . '">
+        ' . $nonce . '
+        <div class="sfa-form-row">
+            <label for="sfa-name">שם *</label>
+            <input type="text" id="sfa-name" name="sfagent_name" required maxlength="100" autocomplete="name">
+        </div>
+        <div class="sfa-form-row sfa-form-grid">
+            <div class="sfa-form-col">
+                <label for="sfa-email">אימייל *</label>
+                <input type="email" id="sfa-email" name="sfagent_email" required maxlength="150" autocomplete="email">
+            </div>
+            <div class="sfa-form-col">
+                <label for="sfa-phone">טלפון</label>
+                <input type="tel" id="sfa-phone" name="sfagent_phone" maxlength="20" autocomplete="tel">
+            </div>
+        </div>
+        <div class="sfa-form-row">
+            <label for="sfa-message">הודעה *</label>
+            <textarea id="sfa-message" name="sfagent_message" required rows="5" maxlength="2000"></textarea>
+        </div>
+        <div style="position:absolute;left:-9999px" aria-hidden="true">
+            <input type="text" name="sfagent_hp" tabindex="-1" autocomplete="off">
+        </div>
+        <div class="sfa-form-row">
+            <button type="submit" class="button primary">שלח הודעה</button>
+        </div>
+    </form>';
+
+    return $html;
+}
+add_shortcode('sfagent_contact_form', 'sfagent_contact_form_shortcode');
+
+// Contact form submission handler
+function sfagent_handle_contact_form() {
+    if (!isset($_POST['_sfnonce']) || !wp_verify_nonce($_POST['_sfnonce'], 'sfagent_contact')) {
+        wp_die('Unauthorized', 403);
+    }
+
+    // Honeypot check
+    if (!empty($_POST['sfagent_hp'])) {
+        $referer = wp_get_referer();
+        wp_safe_redirect($referer ? add_query_arg('sfagent_form', 'spam', $referer) : home_url());
+        exit;
+    }
+
+    $name    = sanitize_text_field($_POST['sfagent_name'] ?? '');
+    $email   = sanitize_email($_POST['sfagent_email'] ?? '');
+    $phone   = sanitize_text_field($_POST['sfagent_phone'] ?? '');
+    $message = sanitize_textarea_field($_POST['sfagent_message'] ?? '');
+    $to      = sanitize_email($_POST['sfagent_to'] ?? 'nimrod@mezoo.co');
+    $subject = sanitize_text_field($_POST['sfagent_subj'] ?? 'הודעה חדשה מהאתר');
+
+    if (empty($name) || empty($email) || empty($message)) {
+        $referer = wp_get_referer();
+        wp_safe_redirect($referer ? add_query_arg('sfagent_form', 'err', $referer) : home_url());
+        exit;
+    }
+
+    $body  = "שם: {$name}
+";
+    $body .= "אימייל: {$email}
+";
+    if (!empty($phone)) {
+        $body .= "טלפון: {$phone}
+";
+    }
+    $body .= "
+--- הודעה ---
+{$message}
+";
+
+    $headers = array(
+        'Content-Type: text/plain; charset=UTF-8',
+        'Reply-To: ' . $name . ' <' . $email . '>',
+    );
+
+    $sent = wp_mail($to, $subject, $body, $headers);
+
+    $referer = wp_get_referer();
+    $status = $sent ? 'ok' : 'err';
+    wp_safe_redirect($referer ? add_query_arg('sfagent_form', $status, $referer) : home_url());
+    exit;
+}
+add_action('admin_post_sfagent_contact', 'sfagent_handle_contact_form');
+add_action('admin_post_nopriv_sfagent_contact', 'sfagent_handle_contact_form');
+
+// Inline CSS for contact form (loaded only when form is present)
+function sfagent_contact_form_styles() {
+    global $post;
+    if (!is_a($post, 'WP_Post') || !has_shortcode($post->post_content, 'sfagent_contact_form')) return;
+    echo '<style>
+.sfa-contact-form{max-width:600px;margin:0 auto}
+.sfa-form-row{margin-bottom:16px}
+.sfa-form-row label{display:block;margin-bottom:4px;font-weight:600;font-size:14px}
+.sfa-form-row input,.sfa-form-row textarea{width:100%;padding:10px 12px;border:1px solid #ccc;border-radius:4px;font-size:15px;font-family:inherit;color:#333!important}
+.sfa-form-row textarea{resize:vertical}
+.sfa-form-row input:focus,.sfa-form-row textarea:focus{border-color:#4c3113;outline:none;box-shadow:0 0 0 2px rgba(76,49,19,.15)}
+.sfa-form-grid{display:flex;gap:12px}
+.sfa-form-col{flex:1}
+.sfa-form-row button{cursor:pointer;font-size:16px;padding:12px 32px}
+.sfa-form-msg{padding:14px 18px;border-radius:6px;margin-bottom:18px;font-size:15px;text-align:center}
+.sfa-form-ok{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+.sfa-form-err{background:#fce4ec;color:#c62828;border:1px solid #ef9a9a}
+@media(max-width:480px){.sfa-form-grid{flex-direction:column;gap:0}}
+</style>';
+}
+add_action('wp_head', 'sfagent_contact_form_styles');
+
+// M9: Dequeue heavy assets not needed on frontend
+function sfagent_optimize_frontend_assets() {
+    if (is_admin()) return;
+    global $post;
+
+    // Dequeue Toolset Views frontend assets when not needed
+    if (is_a($post, 'WP_Post') && !has_shortcode($post->post_content, 'wpv-view')) {
+        wp_dequeue_style('view_editor_gutenberg_frontend_assets');
+        wp_dequeue_script('view_editor_gutenberg_frontend_assets');
+    }
+
+    // Dequeue admin-only assets that leak to frontend
+    wp_dequeue_script('thickbox');
+    wp_dequeue_style('thickbox');
+    wp_dequeue_style('dashicons');
+    wp_dequeue_script('suggest');
+    wp_dequeue_script('wp-mediaelement');
+    wp_dequeue_style('wp-mediaelement');
+    wp_dequeue_style('mediaelement');
+}
+add_action('wp_enqueue_scripts', 'sfagent_optimize_frontend_assets', 999);
