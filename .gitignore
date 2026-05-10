@@ -22,6 +22,7 @@ nimrod.bio/xmlrpc.php
 nimrod.bio/wp-content/advanced-cache.php
 nimrod.bio/wp-content/object-cache.php
 nimrod.bio/wp-content/ezcache-config.json
+nimrod.bio/wp-content/cache/
 
 # === Secrets / production config ===
 nimrod.bio/wp-config.php

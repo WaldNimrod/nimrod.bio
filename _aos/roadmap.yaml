@@ -72,10 +72,10 @@ work_packages:
 
 - id: NB-S001-P002-WP001
   label: "nimrod-bio — Environment Bootstrap (uPress pull + local dev setup)"
-  status: IN_PROGRESS
+  status: COMPLETE
   track: A
-  current_lean_gate: L-GATE_VALIDATE
-  lod_status: LOD400
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
   assigned_builder: nimrodbio_build
   assigned_validator: nimrodbio_val
   created_at: "2026-05-09"
@@ -95,4 +95,8 @@ work_packages:
     result: PASS
     date: "2026-05-10"
     notes: "Team 10 deliverables: docker-compose (8085/3309), restore script, verify-connections, .gitignore. validate_aos.sh 32 PASS 0 FAIL. verify-connections ALL_CHECKS_PASSED after full restore from uPress backup (qvj_ prefix fix, agents/ exclusion). Local dev at http://localhost:8085. Team 100 reviewed 2026-05-10."
-  notes: "STANDARD track A. Build PASSED 2026-05-10. Pending L-GATE_VALIDATE (team_190). Production DB table prefix: qvj_."
+  - gate: L-GATE_VALIDATE
+    result: PASS
+    date: "2026-05-10"
+    notes: "Team 190 (nimrodbio_val/codex) independent cross-engine validation. 32 PASS 0 FAIL. ALL_CHECKS_PASSED. LOD400 manual checks all PASS incl. Hebrew/RTL. Minor: COMPLETION report stale deviations table — fixed post-verdict. Verdict: _COMMUNICATION/team_190/VERDICT_NB-S001-P002-WP001_VALIDATE_v1.0.0.md"
+  notes: "COMPLETE. STANDARD track A. All gates PASS. Production DB table prefix: qvj_."

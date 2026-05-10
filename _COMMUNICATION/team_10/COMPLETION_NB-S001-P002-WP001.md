@@ -118,8 +118,8 @@ network: nimrod_bio_net
 
 | נושא | חריגה | הסבר |
 |------|-------|-------|
-| verify-connections.sh | לא הורץ בפועל | Team 00 טרם סיפק backup — restore לא בוצע |
-| themes inventory | לא זמין | תלוי ב-restore |
+| WORDPRESS_TABLE_PREFIX | `qvj_` (לא `wp_`) | prefix ייצור שאינו ברירת מחדל — הוסף לdocker-compose |
+| agents/, Agents/ | נוספו exclude לrsync ול-.gitignore | backup מלא של hosting מכיל תתיקיות של פרויקטים אחרים |
 
 ---
 
