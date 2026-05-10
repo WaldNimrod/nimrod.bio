@@ -70,7 +70,7 @@ work_packages:
   label: "nimrod-bio — Environment Bootstrap (uPress pull + local dev setup)"
   status: IN_PROGRESS
   track: A
-  current_lean_gate: L-GATE_BUILD
+  current_lean_gate: L-GATE_VALIDATE
   lod_status: LOD400
   assigned_builder: nimrodbio_build
   assigned_validator: nimrodbio_val
@@ -87,4 +87,8 @@ work_packages:
     result: PASS
     date: "2026-05-09"
     notes: "LOD400 authored by team_100. Docker Compose 8085/3309, restore script, HobbitHome precedent."
-  notes: "STANDARD track A. Routed to Team 10 via MANDATE. Prerequisite: Team 00 places uPress backup ZIP+SQL in sources/."
+  - gate: L-GATE_BUILD
+    result: PASS
+    date: "2026-05-10"
+    notes: "Team 10 deliverables: docker-compose (8085/3309), restore script, verify-connections, .gitignore. validate_aos.sh 32 PASS 0 FAIL. verify-connections ALL_CHECKS_PASSED after full restore from uPress backup (qvj_ prefix fix, agents/ exclusion). Local dev at http://localhost:8085. Team 100 reviewed 2026-05-10."
+  notes: "STANDARD track A. Build PASSED 2026-05-10. Pending L-GATE_VALIDATE (team_190). Production DB table prefix: qvj_."

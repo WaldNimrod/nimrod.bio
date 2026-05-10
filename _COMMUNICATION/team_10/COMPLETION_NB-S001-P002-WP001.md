@@ -42,13 +42,12 @@ L-GATE_BUILD EXIT CRITERION: SATISFIED
 
 ---
 
-## verify-connections.sh — מצב נוכחי
+## verify-connections.sh — תוצאה בפועל
 
-> **השלב הנוכחי:** Team 00 טרם הניח `sources/*.zip` + `sources/*.sql`.
-> ה-stack לא הופעל ולא בוצע restore — לכן verify-connections.sh לא הורץ עדיין.
-> המצב הצפוי לאחר restore:
+> **סטטוס:** הורץ בהצלחה ב-2026-05-10 לאחר restore מ-`nimrod.bio_bm1778274742dm.zip`.
 
 ```
+=== nimrod.bio — verify-connections (2026-05-10T15:14Z) ===
 [PASS] Docker: nimrod-bio-wp is running
 [PASS] Docker: nimrod-bio-db is running
 [PASS] MySQL (container): SELECT 1 as wordpress
@@ -58,12 +57,19 @@ L-GATE_BUILD EXIT CRITERION: SATISFIED
 === Result: ALL_CHECKS_PASSED ===
 ```
 
-**להפעלה לאחר קבלת backup מ-Team 00:**
+**הפקודות שהורצו:**
 ```bash
 docker compose up -d
 bash scripts/restore-production-from-backup.sh
 bash scripts/verify-connections.sh
 ```
+
+**הערות restore:**
+- ZIP: `sources/nimrod.bio_bm1778274742dm.zip` (3.2GB, full hosting backup)
+- SQL: `databases/nimrodbi_sdblba.sql` (153MB, production DB snapshot 2026-05-09)
+- Table prefix גולה: `qvj_` (לא `wp_` ← הוסף `WORDPRESS_TABLE_PREFIX=qvj_` ל-docker-compose)
+- `agents/` + `Agents/` הוחרגו מה-rsync (cross-project boundary)
+- WP-CLI search-replace: https://nimrod.bio → http://localhost:8085 ✓
 
 ---
 
@@ -81,12 +87,17 @@ bash scripts/verify-connections.sh
 
 ## שמות תבניות ב-nimrod.bio/wp-content/themes/
 
-> ממתין לביצוע restore מ-backup.
-> לאחר `restore-production-from-backup.sh`, הריצה:
-> ```bash
-> ls nimrod.bio/wp-content/themes/
-> ```
-> ותוצאה תתווסף ל-report מעודכן.
+```
+flatsome/           ← תבנית ראשית (Flatsome)
+flatsome-child/     ← תבנית ילד (8 קבצים: _style.css, footer.php, functions.php,
+                       functions.php.bak, header.php, screenshot.png, sfagent-base.css, style.css)
+twentytwentyfive/   ← תבנית ברירת מחדל WordPress
+index.php           ← placeholder
+```
+
+**הערה:** `flatsome-child` בגיבוי מכיל 9 פריטים — 2 יותר מ-GitHub (Oct 2025):
+- `functions.php.bak` — backup ישן של functions.php
+- `sfagent-base.css` — CSS שנוסף ישירות על השרת (לא דרך ה-repo)
 
 ---
 
