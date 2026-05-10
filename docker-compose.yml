@@ -1,0 +1,57 @@
+# nimrod.bio — local WordPress (development only).
+# AOS Standard 11.2: host ports 8085 (HTTP) + 3309 (MySQL) — registered, Iron Rule #9.
+# Optional `.env` in repo root overrides LOCAL_*; cp .env.template .env.
+
+name: nimrod-bio
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: nimrod-bio-db
+    restart: unless-stopped
+    ports:
+      - "${LOCAL_MYSQL_HOST_PORT:-3309}:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${LOCAL_MYSQL_ROOT_PASSWORD:-local_root_only}
+      MYSQL_DATABASE: ${LOCAL_MYSQL_DATABASE:-wordpress}
+      MYSQL_USER: ${LOCAL_MYSQL_USER:-wordpress}
+      MYSQL_PASSWORD: ${LOCAL_MYSQL_PASSWORD:-wordpress}
+    volumes:
+      - nimrod_bio_db_data:/var/lib/mysql
+    networks:
+      - nimrod_bio_net
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  wordpress:
+    # Align PHP minor with uPress production (PHP 8.3); WordPress image pins core + Apache.
+    image: wordpress:6.7-php8.3-apache
+    container_name: nimrod-bio-wp
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "${LOCAL_WP_PORT:-8085}:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: ${LOCAL_MYSQL_USER:-wordpress}
+      WORDPRESS_DB_PASSWORD: ${LOCAL_MYSQL_PASSWORD:-wordpress}
+      WORDPRESS_DB_NAME: ${LOCAL_MYSQL_DATABASE:-wordpress}
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WPLANG', 'he_IL');
+    volumes:
+      # Full site root — same layout as production
+      - ./nimrod.bio:/var/www/html
+    networks:
+      - nimrod_bio_net
+
+volumes:
+  nimrod_bio_db_data:
+
+networks:
+  nimrod_bio_net:
+    name: nimrod_bio_net
