@@ -60,10 +60,17 @@ echo "=== SQL: $SQL_FILE ==="
 echo "=== Stopping WordPress container (file sync) ==="
 docker compose -f "$ROOT/docker-compose.yml" stop wordpress 2>/dev/null || true
 
-echo "=== Syncing files → nimrod.bio/ (excluding databases/; keep repo README) ==="
-rsync -a --delete --exclude='databases/' --exclude='README.md' "$WORK/" "$ROOT/nimrod.bio/"
-# Never serve SQL or backup metadata from the web root
-rm -rf "$ROOT/nimrod.bio/databases" 2>/dev/null || true
+echo "=== Syncing files → nimrod.bio/ (excluding databases/, agents/; keep repo README) ==="
+# agents/ is a full-hosting-backup artefact containing unrelated AOS projects (newsletter, sfa,
+# tiktrack, shaked-wg). Excluding it is a hard boundary requirement (project_identity.yaml §forbidden_patterns).
+rsync -a --delete \
+  --exclude='databases/' \
+  --exclude='agents/' \
+  --exclude='Agents/' \
+  --exclude='README.md' \
+  "$WORK/" "$ROOT/nimrod.bio/"
+# Never serve SQL or backup metadata from the web root; belt-and-suspenders cleanup after rsync
+rm -rf "$ROOT/nimrod.bio/databases" "$ROOT/nimrod.bio/agents" "$ROOT/nimrod.bio/Agents" 2>/dev/null || true
 
 echo "=== Removing production wp-config.php (Docker + .env supply DB settings) ==="
 rm -f "$ROOT/nimrod.bio/wp-config.php" "$ROOT/nimrod.bio/wp-config-local.php" 2>/dev/null || true
