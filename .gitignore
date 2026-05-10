@@ -1,6 +1,10 @@
 # nimrod.bio — WordPress local dev
 # LOD400 §3.4 canonical patterns
 
+# === SFA runtime output (written by sfagent-file-upload.php MU plugin) ===
+# Published via WP REST API from waldhomeserver. Not WordPress media — separate dir.
+nimrod.bio/smallfarmsagents/
+
 # === Cross-project subdirs on uPress hosting (not WordPress — never track) ===
 # These live under the same hosting root but belong to separate AOS projects.
 # Excluded from git AND from restore rsync (project_identity.yaml §forbidden_patterns).
