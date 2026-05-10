@@ -1,0 +1,32 @@
+# nimrod.bio — WordPress local dev
+# LOD400 §3.4 canonical patterns
+
+# === WordPress core (not tracked — rebuilt from backup or core download) ===
+nimrod.bio/wp-admin/
+nimrod.bio/wp-includes/
+nimrod.bio/wp-*.php
+nimrod.bio/index.php
+nimrod.bio/xmlrpc.php
+
+# === Secrets / production config ===
+nimrod.bio/wp-config.php
+nimrod.bio/wp-config-local.php
+.env
+.env.local
+
+# === Uploads (binary content — too large, not in source control) ===
+nimrod.bio/wp-content/uploads/
+
+# === Backup sources (never commit backups or DB dumps) ===
+sources/*.zip
+sources/*.sql
+sources/*.tar.gz
+sources/*.gz
+
+# === Restore work directory ===
+.restore-work/
+
+# === OS / editor ===
+.DS_Store
+Thumbs.db
+*.swp
