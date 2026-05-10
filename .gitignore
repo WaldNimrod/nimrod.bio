@@ -4,6 +4,8 @@
 # === Cross-project subdirs on uPress hosting (not WordPress — never track) ===
 # These live under the same hosting root but belong to separate AOS projects.
 # Excluded from git AND from restore rsync (project_identity.yaml §forbidden_patterns).
+nimrod.bio/agents/
+nimrod.bio/Agents/
 nimrod.bio/famely_NL/
 nimrod.bio/sfa-hub/
 nimrod.bio/GitDirectory/
