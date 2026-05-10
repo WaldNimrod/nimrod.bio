@@ -68,15 +68,23 @@ work_packages:
 
 - id: NB-S001-P002-WP001
   label: "nimrod-bio — Environment Bootstrap (uPress pull + local dev setup)"
-  status: PLANNED
+  status: IN_PROGRESS
   track: A
-  current_lean_gate: L-GATE_ELIGIBILITY
-  lod_status: LOD100
+  current_lean_gate: L-GATE_BUILD
+  lod_status: LOD400
   assigned_builder: nimrodbio_build
   assigned_validator: nimrodbio_val
   created_at: "2026-05-09"
   milestone_ref: V100
   stage_mapping: ""
-  spec_ref: TBD
-  gate_history: []
-  notes: "STANDARD track. Prerequisite: NB-S001-P001-WP001 complete + Team 00 exports backup ZIP+SQL from uPress → sources/."
+  spec_ref: "_aos/work_packages/NB-S001-P002-WP001/LOD400_NB-S001-P002-WP001.md"
+  gate_history:
+  - gate: L-GATE_ELIGIBILITY
+    result: PASS
+    date: "2026-05-09"
+    notes: "Scope clear; WordPress bootstrap; uPress backup method; ports registered."
+  - gate: L-GATE_SPEC
+    result: PASS
+    date: "2026-05-09"
+    notes: "LOD400 authored by team_100. Docker Compose 8085/3309, restore script, HobbitHome precedent."
+  notes: "STANDARD track A. Routed to Team 10 via MANDATE. Prerequisite: Team 00 places uPress backup ZIP+SQL in sources/."
