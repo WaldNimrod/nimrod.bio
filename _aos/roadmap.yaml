@@ -49,10 +49,10 @@ work_packages:
   # Hub DB: work_packages.id is global across projects; use NB- prefix to avoid collisions.
 - id: NB-S001-P001-WP001
   label: "nimrod-bio — AOS Init + Port Registration"
-  status: IN_PROGRESS
+  status: COMPLETE
   track: A
-  current_lean_gate: L-GATE_BUILD
-  lod_status: LOD400
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
   assigned_builder: nimrodbio_arch
   assigned_validator: nimrodbio_val
   created_at: "2026-05-09"
@@ -64,7 +64,11 @@ work_packages:
     result: PASS
     date: "2026-05-09"
     notes: "AOS project init + port registry update. OPS/Express track."
-  notes: "OPS track (Express). Project skeleton created via execute_project_create. Port registration + hub projects.yaml update pending."
+  - gate: L-GATE_BUILD
+    result: PASS
+    date: "2026-05-10"
+    notes: "OPS/Express: project skeleton created (execute_project_create), ports 8085/3309 registered in hub port-registry.yaml (Team 00 sign-off), projects.yaml updated (hub), validate_aos.sh 32 PASS 0 FAIL. Team 100 self-reviewed per Express track."
+  notes: "OPS/Express track — COMPLETE. No L-GATE_VALIDATE required (Express). All deliverables committed to main."
 
 - id: NB-S001-P002-WP001
   label: "nimrod-bio — Environment Bootstrap (uPress pull + local dev setup)"
