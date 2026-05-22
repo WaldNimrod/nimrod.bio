@@ -1,140 +1,98 @@
-# AOS Identity: nimrod.bio — Personal Site (WordPress) L0 Spoke
-## Mandatory session startup
-# 1. Read _aos/roadmap.yaml — active WPs and milestone
-# 2. Read _COMMUNICATION/team_00/ — any active mandates
-# 3. Read _aos/project_identity.yaml — boundary declarations
-# 4. DB probe: check hub _aos/db_connectivity_status.json (probe_database)
-#    — if offline notify Team 00 (ADR034 / Iron Rule #7)
+# nimrod-bio — Cursor Rules (AOS canonical)
 
-# .cursorrules — nimrod.bio — Personal Site (WordPress)
-# AOS Profile: L0
-# ================================================================
-# AI agent context rules for this project.
-# Instantiate by replacing all PLACEHOLDER values.
-# Two variants below — use L0 for minimal projects, L2 for full AOS.
-# Remove the variant you don't need before deploying.
-# ================================================================
+<!-- AOS-CANONICAL-TEMPLATE v1.0.0 — rendered by scripts/aos_sync_all.sh. DO NOT hand-edit content between aos:canonical markers. -->
 
-# ════════════════════════════════════════════════════════════════
-# VARIANT A — L0 (minimal, governance-only)
-# Use for: AOS-Sandbox-Lean, simple proof-of-concept projects
-# ════════════════════════════════════════════════════════════════
-#
-# ## Identity
-# **Repo:** nimrod-bio — nimrod.bio — Personal Site (WordPress)
-# **Path:** /Users/nimrod/Documents/nimrod-bio
-# **Owner:** Team 00 (Team 00)
-# **Profile:** L0 — lean governance only
-#
-# ## What this repo is
-# Update with one-line description.
-#
-# ## Mandatory session startup
-# 1. Read `_aos/roadmap.yaml` — active WPs and milestone
-# 2. Read `_COMMUNICATION/team_00/` — any active mandates
-#
-# ## Directory Authority
-#
-# | Team | May write to |
-# |------|-------------|
-# | Team 00 (Principal) | Anywhere |
-# | Team 100 (Architect) | `_COMMUNICATION/team_100/`, `_aos/roadmap.yaml`, `_aos/work_packages/` |
-# | Team 191 (Git/Files) | `_COMMUNICATION/team_191/`, `_archive/`, `_aos/` (bootstrap, under mandate) |
-# | ALL OTHER TEAMS | `_COMMUNICATION/team_[ID]/` and application source ONLY |
-#
-# `_aos/` is the governance layer — OFF LIMITS for all non-governance teams.
-# Do NOT write to `_aos/lean-kit/` (read-only snapshot).
-# Route required roadmap/gate updates via report artifact to Team 100.
-#
-# ## Iron Rules
-# 1. Physical lean-kit snapshots only — never symlinks
-# 2. Inter-team communication = artifact file in `_COMMUNICATION/`
-# 3. Spoke repos never modify hub files directly
-# 4. NEVER write to `_aos/` unless you are Team 00/100/191 under mandate
-#
-# ════════════════════════════════════════════════════════════════
-# END VARIANT A — delete from here up if using L2
-# ════════════════════════════════════════════════════════════════
+<!-- aos:canonical:start -->
+## ⚠ AOS Spoke Notice (READ FIRST)
 
+You are working inside an **AOS spoke** (`nimrod-bio`, profile `L0`). AOS is a multi-domain, multi-engine infrastructure for managing agents and projects across the organization. This repo's `_aos/` directory is a READ-ONLY snapshot of hub governance at `/Users/nimrod/Documents/agents-os`. Do NOT edit `_aos/` directly. To request changes, file a `GOVERNANCE_CHANGE_REQUEST` in `_COMMUNICATION/team_XX/` → route to `team_100`.
 
-# ════════════════════════════════════════════════════════════════
-# VARIANT B — L2 (full AOS: governance + engine + dashboard)
-# Use for: TikTrack, AOS-Sandbox-Full, production projects
-# ════════════════════════════════════════════════════════════════
+## Project Identity
 
-## Identity
-**Repo:** nimrod-bio — nimrod.bio — Personal Site (WordPress)
-**Path:** /Users/nimrod/Documents/nimrod-bio
-**Hub path:** /Users/nimrod/Documents/agents-os
-**Owner:** Team 00 (Team 00)
-**Profile:** L0
+- **Repo:** `nimrod-bio`
+- **Profile:** `L0`
+- **AOS hub:** `/Users/nimrod/Documents/agents-os`
 
-## What this repo is
-Update with one-line description.
+## Mandatory Session Startup (canonical uniform order)
 
-## §BOUNDARY — Cross-Project Isolation
-**SSoT:** `_aos/project_identity.yaml` (machine-readable boundary)
-- This is an AOS **spoke** project — governance files are read-only snapshots from hub
-- Do NOT modify `_aos/governance/` files (propagated from hub, overwritten on next sync)
-- Do NOT write to other project repos from here
-- Cross-project handoff only via: `~/Documents/_agent_comm/outbox/`
-- `validate_aos.sh` Check 12 enforces `forbidden_patterns` from `project_identity.yaml`
+1. Read `_aos/roadmap.yaml` — current WP and gate position
+2. Read `_aos/context/PROJECT_CONTEXT.md` — project background
+3. Read `_aos/definition.yaml` or `_aos/context/ACTIVATION_*.md` — your role
+4. **DB probe (mandatory):** `cat "/Users/nimrod/Documents/agents-os/_aos/db_connectivity_status.json"` — hub canonical DB status (refreshed by hub session). If `status: online` → structured mutations via API (Iron Rule #7 / ADR034). If `status: offline` → **STOP**: report `reason` field to Team 00, wait for Team 00 guidance (ADR034 R8 on a named branch — never main). **DB is always available in normal operation.** To refresh hub status: run the hub DB probe from a hub session.
+5. **Validation:** `bash _aos/lean-kit/modules/validation-quality/scripts/validate_aos.sh .`
+6. **AOS identity onboarding (first session):** read `/Users/nimrod/Documents/agents-os/methodology/AOS_IDENTITY_ONBOARDING_v1.0.0.md`
 
-## Mandatory session startup
-1. Read `_aos/roadmap.yaml` — active milestone, programs, WPs
-2. Read `_COMMUNICATION/team_00/` — architect working documents
-3. Read `_aos/context/PROJECT_CONTEXT.md` — project background
+## Iron Rules (IMMUTABLE — uniform across all AOS domains)
 
-## Directory Authority
+1. **Cross-engine validation:** builder engine ≠ validator engine
+2. **Physical lean-kit:** `_aos/lean-kit/` is a physical copy, never a symlink
+3. **Repo-internal refs:** `spec_ref` paths are always repo-internal
+4. **Roadmap single-writer:** one agent holds write authority at a time
+5. **L-GATE_VALIDATE independence:** always `team_190`, constitutional, cross-engine, immutable
+6. **Inter-team = artifact:** communication via canonical file in `_COMMUNICATION/`
+7. **Data authority:** when AOS v3 DB online, structured mutations via API + `deploy_cascade()` only (ADR034)
+8. **Port canon:** long-running listeners registered in `lean-kit/modules/12-home-server-infrastructure/deployment/port-registry.yaml` (Team 60 SSOT)
+9. **Universal team numbering:** single scheme across all domains
+10. **Governance flow:** source → snapshot only, never reverse (Iron Rule #11)
+11. **Iron Rule #12: gov-update + gov-sync locked to team_00 / team_100 only** (ADR040)
+12. **Iron Rule #13: AOS commands are thin orchestrators** over hub API (`core/modules/management/`); ≤150 lines + required frontmatter; SSoT per concern (ADR041). Canon: `/Users/nimrod/Documents/agents-os/methodology/AOS_COMMAND_ARCHITECTURE_v1.0.0.md`.
 
-| Team | May write to |
-|------|-------------|
-| Team 00 (Principal) | Anywhere |
-| Team 100 (Architect) | `_COMMUNICATION/team_100/`, `_aos/roadmap.yaml`, `_aos/work_packages/` |
-| Team 191 (Git/Files) | `_COMMUNICATION/team_191/`, `_archive/`, `_aos/` (bootstrap/propagation, under mandate) |
-| ALL OTHER TEAMS | `_COMMUNICATION/team_[ID]/` and application source ONLY |
+## Governance File Protection (IMMUTABLE)
 
-`_aos/` is the governance layer — **OFF LIMITS for all non-governance teams**.
-Non-AOS teams route required roadmap/gate updates via report artifact to Team 100.
-Canonical authority table: `methodology/AOS_DIRECTORY_CANON_v1.0.0.md` Part 5 (see hub).
+- `_aos/governance/team_*.md` are READ-ONLY snapshots propagated from hub
+- NEVER edit these files directly — they are overwritten on every `aos_sync_all.sh` run
+- To request governance changes: file `GOVERNANCE_CHANGE_REQUEST` in `_COMMUNICATION/team_XX/`, route to `team_100`
+- See: `/Users/nimrod/Documents/agents-os/methodology/AOS_GOVERNANCE_UPDATE_PROCEDURE_v1.1.0.md`
 
-## Key paths
-- Project source: `/Users/nimrod/Documents/nimrod-bio/`
-- AOS governance: `_aos/`
-- Inter-team comms: `_COMMUNICATION/`
-- Validation: `_aos/lean-kit/modules/validation-quality/scripts/validate_aos.sh`
+## §BOUNDARY — Cross-Project Isolation (IMMUTABLE)
 
-## Team model
-- Team 00: Team 00 (human, system designer)
-- Team 100: Claude Code (chief system architect)
-- Team 110: Claude Opus (domain architect / builder)
-- Team 190: OpenAI Codex (constitutional validator, cross-engine)
-- All communication = canonical artifact file in `_COMMUNICATION/`
+- **This repo is:** `nimrod-bio` (L0 spoke)
+- **This repo is NOT:** the AOS hub, any other spoke
+- **SSoT for boundaries:** `_aos/project_identity.yaml`
+- Do NOT create files that belong to another project here; do NOT import from other projects
+- Cross-project handoff: `~/Documents/_agent_comm/outbox/` or canonical artifact route
 
-## Iron Rules
-1. Cross-engine: builder engine MUST differ from validator engine
-2. Physical lean-kit snapshots only (no symlinks)
-3. Project owns its `roadmap.yaml`
-4. Inter-team = artifact file (present path to Team 00 for routing)
-5. Every agent needs activation prompt as trigger
-6. Team 190 validates at L-GATE_VALIDATE (independent)
-7. WP-scoped files go in `_COMMUNICATION/team_[ID]/[WP-ID]/[filename].md`
-8. Spoke repos never modify hub governance files directly
-9. NEVER write to `_aos/` unless you are Team 00/100/191 under mandate — all other teams use `_COMMUNICATION/team_[ID]/`
+## AOS Handoff (unified API across all engines)
 
-## Gate model
+`/AOS_handoff` is a thin client over the hub's prompt-generate API. All engines (Claude Code, Cursor, Codex, Claude Desktop) call the same endpoint and produce identical output (no drift, no copy-paste).
+
+**Claude Code:** invokes `.claude/commands/AOS_handoff.md` (thin orchestrator).
+**Cursor / Codex / Claude Desktop / other engines:** call the hub API directly via HTTP:
+
 ```
-L-GATE_ELIGIBILITY → L-GATE_SPEC → L-GATE_BUILD → L-GATE_VALIDATE
- (Entry)    (Spec)     (Build)    (Validate)
+GET {HUB_API_BASE}/api/prompts/generate
+    ?type=onboard_agent
+    &mode=handoff
+    &team_id={team_id}
+    &wp_id={wp_id}                         (optional)
+    &governance_depth={lean|full}          (default: lean)
+    &session_summary={url-encoded}         (optional, one-line)
+    &accomplishments={pipe|joined}         (optional)
+    &blockers={pipe|joined}                (optional)
+    &gate_state={mid_gate|gate_done|no_wp} (optional — server derives if omitted)
+    &next_gate={gate_name}                 (optional, used when gate_state=gate_done)
 ```
-Track B adds L-GATE_CONCEPT (Concept) for complex WPs.
 
-## Validate
-```bash
-bash _aos/lean-kit/modules/validation-quality/scripts/validate_aos.sh .
-```
-Expected: 12 PASS / 0 FAIL
+`HUB_API_BASE` defaults to `http://127.0.0.1:8090` for local dev; override via `AOS_API_BASE` env var when hub runs on waldhomeserver (V321).
 
-# ════════════════════════════════════════════════════════════════
-# END VARIANT B
-# ════════════════════════════════════════════════════════════════
+**Response (JSON):**
+- `artifact_markdown` — write verbatim to `_COMMUNICATION/team_{ID}/{suggested_filename}`
+- `activation_block` — display **inline in chat** per ADR032 v1.2.0 (always inline, no path-only)
+- `suggested_filename` — `HANDOFF_SELF_{NUM}_{CONTEXT}_{YYYY-MM-DD}_v1.md`
+- `first_action` — FIRST ACTION line for sanity-check (already included in `activation_block`)
+
+**Determinism scope:** Sections 1–7 content in `artifact_markdown` is deterministic for fixed inputs. Provenance metadata (`generated_at` timestamp + date portion of `suggested_filename`) is call-time and excluded from determinism claim.
+
+**Single source of truth:** canonical options (Section 7) + FIRST ACTION MATRIX live in `core/modules/management/team_options.py` on the hub. Do not duplicate these tables in engine-specific commands.
+
+**Prerequisite:** hub DB online (ADR034) + hub API reachable. If API unreachable: STOP and instruct user to bring up the hub server (`bash scripts/start_aos_api_local.sh`). **Do NOT re-implement the 7-section assembly locally — that reintroduces drift against the API SSoT.**
+<!-- aos:canonical:end -->
+
+<!-- aos:project-specific:start -->
+
+## Domain rules
+
+<!-- Project-specific rules, commands, paths, and conventions go here.
+     This section is PRESERVED across aos_sync_all.sh runs. -->
+
+<!-- aos:project-specific:end -->
