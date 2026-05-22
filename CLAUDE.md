@@ -69,5 +69,4 @@ You are working inside an **AOS spoke** — repo `nimrod-bio`, profile `L0`.
 
 <!-- Project-specific rules, commands, paths, and conventions go here.
      This section is PRESERVED across aos_sync_all.sh runs. -->
-
 <!-- aos:project-specific:end -->

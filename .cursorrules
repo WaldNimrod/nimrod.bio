@@ -94,5 +94,4 @@ GET {HUB_API_BASE}/api/prompts/generate
 
 <!-- Project-specific rules, commands, paths, and conventions go here.
      This section is PRESERVED across aos_sync_all.sh runs. -->
-
 <!-- aos:project-specific:end -->
