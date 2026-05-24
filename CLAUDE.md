@@ -67,6 +67,31 @@ You are working inside an **AOS spoke** — repo `nimrod-bio`, profile `L0`.
 
 ## Domain rules
 
-<!-- Project-specific rules, commands, paths, and conventions go here.
-     This section is PRESERVED across aos_sync_all.sh runs. -->
+### uPress hosting — operational notes
+
+**Production:** `https://nimrod.bio` (valid SSL via uPress free cert, Cloudflare in front).
+
+**Dev environment (V200 rebuild):** `https://nimrod-bio-2026.s887.upress.link`
+- Reachable on both HTTP and HTTPS, but **HTTPS uses an expired/invalid certificate**. Browsers will show a security warning; `curl` requires `-k`. uPress' free SSL is only issued on the primary domain, not on `*.upress.link` dev URLs.
+- `X-Robots-Tag: noindex, nofollow` is set by uPress at the edge — search engines will not index the dev URL.
+- Plan for testing: use HTTP for routine work; for any cookie/SameSite/secure-context check, deploy to staging on the primary domain or run a localhost reverse-proxy with a self-signed cert.
+
+**Built-in uPress capabilities** (decision matrix in `docs/upress_capabilities_matrix.md`):
+- SuperCache (page + object cache) — replaces need for WP Super Cache / W3TC / EzCache
+- CDN, HTTP/2, free SSL on primary domain
+- Web Firewall — replaces need for Wordfence / Sucuri
+- Auto backups (30-day retention) + one-click manual snapshot — replaces UpdraftPlus
+- Staging via temp domains (`*.s###.upress.link`) — already in use for V200
+- Migration tools: DirectAdmin, cPanel, GIT, BitBucket, Duplicator
+
+### Operational quirks (must read before action)
+
+1. **zip files with Hebrew filenames** — macOS `unzip` corrupts the encoding (filename becomes `????????.html`). Always use `ditto -x -k <zip> <dest>` for design/handoff packages from team_35.
+2. **Local DB** — Docker stack on ports 8085 (WP) / 3309 (MySQL). Root password `local_root_only`, WP user password `wordpress` (per `docker-compose.yml`). Production DB table prefix: `qvj_`.
+3. **Always commit local DB changes via `restore-production-from-backup.sh`** — never edit live DB directly. The script is idempotent and handles the `qvj_` prefix correctly.
+
+### Active milestones
+
+- **V100** — COMPLETE (AOS init + Docker bootstrap + MU plugin deploy)
+- **V200** — Site Rebuild (in planning). LOD300 stage doc: `_aos/work_packages/S002/LOD300_V200_milestone.md`
 <!-- aos:project-specific:end -->
