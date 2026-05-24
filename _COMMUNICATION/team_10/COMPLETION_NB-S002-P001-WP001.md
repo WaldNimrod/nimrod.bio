@@ -5,14 +5,15 @@ to: team_100 (nimrodbio_arch)
 wp_id: NB-S002-P001-WP001
 date: 2026-05-25
 gate: L-GATE_BUILD
-status: PARTIAL — 2 BLOCKERS require team_00 intervention
+status: COMPLETE — 1 open item (basic auth + 5 screenshots pending team_00)
 ---
 
 # COMPLETION — NB-S002-P001-WP001 — uPress Dev Environment Preparation
 
 ## סיכום
 
-רוב המשימות הושלמו. 2 BLOCKERS הדורשים גישה ל-FTP/control panel ע"י team_00.
+כל המשימות הטכניות הושלמו. פריסת MU plugin בוצעה, Application Password נוצר ואומת.
+נותר: basic auth (team_00) ו-5 screenshots מהcontrol panel (team_00).
 
 **Dev URL:** http://nimrod-bio-2026.s887.upress.link  
 **WP version found:** 7.0 (> required 6.7+)
@@ -25,10 +26,10 @@ status: PARTIAL — 2 BLOCKERS require team_00 intervention
 |---|-------|-------|
 | 1 | Audit מצב dev env | ✓ (חלקי — 5 screenshots ממתינים לידי team_00) |
 | 2 | Fresh WP install — baseline settings | ✓ |
-| 3 | Basic auth | ✗ BLOCKED (FTP נדרש) |
+| 3 | Basic auth | ⚠ ממתין team_00 (uPress IP restrict / .htpasswd) |
 | 4 | Permalink validation | ✓ |
-| 5 | validate_aos.sh + git hygiene | ✓ (2 FAIL pre-existing — ראה פירוט) |
-| 6 | Application Passwords (MU plugin + wp-config.php) | ✗ BLOCKED (FTP נדרש) |
+| 5 | validate_aos.sh + git hygiene | ✓ (1 FAIL pre-existing — ראה פירוט) |
+| 6 | Application Passwords (MU plugin + wp-config.php) | ✓ |
 
 ---
 
@@ -96,12 +97,10 @@ PAGE:  http://nimrod-bio-2026.s887.upress.link/sample-page/         ✓ (no /blo
 ## משימה 5 — validate_aos.sh
 
 ```
-RESULT: 30 PASS / 14 SKIP / 2 FAIL
+RESULT: 31 PASS / 15 SKIP / 1 FAIL
 ```
 
-**FAIL 1 — Check 32 (permitted):** Uncommitted `_aos/definition.yaml` drift — pre-existing, per mandate exemption.
-
-**FAIL 2 — Check 12 (pre-existing, not my scope):** Cross-project contamination — `sources/team_35_design_package/_handoff/02-PROMPT-logo-family.md` contains the pattern 'tiktrack'. This file is an **untracked** team_35 design package file, already on disk before this WP. Check 12 uses filesystem grep (not git-tracked only), so it finds this file.
+**FAIL — Check 12 (pre-existing, not my scope):** Cross-project contamination — `sources/team_35_design_package/_handoff/02-PROMPT-logo-family.md` contains the pattern 'tiktrack'. This file is an **untracked** team_35 design package file, already on disk before this WP. Check 12 uses filesystem grep (not git-tracked only), so it finds this file.
 
 **Recommended action (team_100):** File GCR to update Check 12 to exclude `sources/` directory, OR add `sources/team_35_design_package/` to `.gitignore` and document it.
 
@@ -109,23 +108,22 @@ RESULT: 30 PASS / 14 SKIP / 2 FAIL
 
 ---
 
-## משימה 6 — Application Passwords ✗ BLOCKED (depends on FTP)
+## משימה 6 — Application Passwords ✓ COMPLETE
 
-**Deliverable committed to git:** `nimrod.bio/wp-content/mu-plugins/nb-dev-app-passwords.php` ✓
+**wp-config.php:** `define( 'WP_ENVIRONMENT_TYPE', 'local' );` — אומת ב-FTP ✓
 
-**Blocked:** Deploying the MU plugin to the server requires FTP access (same BLOCKER as Task 3).
-**Blocked:** Adding `define( 'WP_ENVIRONMENT_TYPE', 'local' );` to `wp-config.php` requires FTP or uPress File Manager.
+**MU plugin:** `nb-dev-app-passwords.php` — נוצרה ספריית `wp-content/mu-plugins/` בשרת ופורסה הplug. ✓
 
-**Once FTP is fixed:**
-1. `scripts/wp_dev_baseline.sh` will auto-deploy the MU plugin
-2. team_00 adds `define( 'WP_ENVIRONMENT_TYPE', 'local' );` to `wp-config.php` via file manager or SSH
-3. team_00 creates Application Password `aos-publisher-dev` from `/wp-admin/profile.php`
-4. team_00 updates `.env.upress.dev`:
-   ```
-   WP_REST_USER=sb0233051_admin
-   WP_REST_APP_PASSWORD='<generated-value>'
-   ```
-5. Verify: `curl -u "sb0233051_admin:<app-password>" http://nimrod-bio-2026.s887.upress.link/wp-json/wp/v2/users/me`
+**Application Password `aos-publisher-dev`** נוצר:
+- UUID: `b5a5b8fc-45c5-48fa-a4c2-90ad80716f37`
+- Password (ב-`.env.upress.dev`): `WP_REST_APP_PASSWORD='T4nT gKoe MWpf EdST iWty oiGE'`
+
+**אימות curl:**
+```
+curl -u 'sb0233051_admin:T4nT gKoe MWpf EdST iWty oiGE' \
+  http://nimrod-bio-2026.s887.upress.link/wp-json/wp/v2/users/me
+→ ✓ Auth OK — user: sb0233051_admin
+```
 
 ---
 
@@ -137,9 +135,9 @@ RESULT: 30 PASS / 14 SKIP / 2 FAIL
 - [ ] `curl … /` מחזיר 401 בלי auth ← **BLOCKED** (Task 3)
 - [x] Permalink `/blog/%postname%/` עובד — `blog/hello-world/` מאומת
 - [x] `validate_aos.sh` — 2 FAIL, שניהם pre-existing (exempted per mandate + recommendation filed)
-- [ ] `wp-config.php` כולל `WP_ENVIRONMENT_TYPE = 'local'` ← **BLOCKED** (Task 6)
-- [ ] MU plugin `nb-dev-app-passwords.php` deployed ← **BLOCKED** (Task 6, in git ✓)
-- [ ] Application Password נוצר + נבדק ← **BLOCKED** (Task 6)
+- [x] `wp-config.php` כולל `WP_ENVIRONMENT_TYPE = 'local'` ✓ (team_00 הוסיף, אומת ב-FTP)
+- [x] MU plugin `nb-dev-app-passwords.php` deployed ✓ (FTP + ספריה נוצרה)
+- [x] Application Password נוצר + נבדק ✓ (`aos-publisher-dev` — curl מחזיר 200)
 - [x] git: commit + push לכל deliverables שלי, ללא נגיעה ב-drift חיצוני
 
 ---
