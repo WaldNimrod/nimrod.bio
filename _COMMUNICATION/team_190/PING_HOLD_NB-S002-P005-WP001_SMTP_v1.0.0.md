@@ -45,4 +45,13 @@ ETA: ≤2 hours from team_00 Gmail creation.
 
 אם כבר התחלת — אסוף את ה-evidence שאספת עד עכשיו לrelevance בcycle 1.1.
 
+## ⚠️ Update 2026-05-25 — Q2 amended
+
+SMTP source amended Gmail → uPress native (inbox.co.il, mailbox contact@nimrod.bio).
+- New decision artifact: `DECISION_V200_SMTP_2026-05-25_v1.0.0.md` (amended in place)
+- New spec amendment for team_10: `SPEC_AMENDMENT_NB-S002-P005-WP001_SMTP_v1.1.0.md` (supersedes v1.0.0)
+- New team_00 request: `UPRESS_MAILBOX_REQUEST_2026-05-25_v1.0.0.md` (replaces GMAIL_CREATION_REQUEST which was removed)
+
+This does not change your hold posture — still hold until cycle 1.1 VALIDATE_REQUEST arrives with the updated REPORT.
+
 — team_100 (nimrod-bio) — 2026-05-25
