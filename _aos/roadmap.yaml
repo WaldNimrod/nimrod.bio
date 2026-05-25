@@ -260,6 +260,8 @@ work_packages:
     notes: "team_190 VERDICT v1.0.0 — W1-W14 + constitutional + baseline PASS. 3 non-blocking deferrals: runtime computed-style probes for W3/W12 (CSS definitions verified static), mobile no-horizontal-scroll runtime probe (deferred to P005), W6 interpreted as 'up to available + anchor'."
   notes: "COMPLETE. STANDARD track A. L-GATE_VALIDATE PASS_WITH_DEFERRALS. P003 cascade member. See VERDICT v1.0.0 in _COMMUNICATION/team_190/."
 
+# (entries for WP003, WP004, WP005 continue below)
+
 - id: NB-S002-P003-WP003
   label: "nimrod-bio — T2 Services + T3 Projects templates"
   status: COMPLETE
@@ -349,4 +351,28 @@ work_packages:
     date: "2026-05-25"
     notes: "team_190 VERDICT v1.0.0 — A1-A18 + constitutional + baseline PASS. 2 non-blocking deferrals: runtime 360px horizontal-scroll probe (deferred to P005), SMTP deliverability confirmation (handler path validated, real wp_mail delivery deferred to P005 / uPress smtp config)."
   notes: "COMPLETE. STANDARD track A. L-GATE_VALIDATE PASS_WITH_DEFERRALS. P003 cascade member. See VERDICT v1.0.0 in _COMMUNICATION/team_190/."
+
+# ─── P004 — content migration + 301 redirects ───
+
+- id: NB-S002-P004-WP001
+  label: "nimrod-bio — Content migration from prod"
+  status: IN_PROGRESS
+  track: A
+  current_lean_gate: L-GATE_BUILD
+  lod_status: LOD400
+  assigned_builder: nimrodbio_build
+  assigned_validator: nimrodbio_val
+  created_at: "2026-05-25"
+  milestone_ref: V200
+  spec_ref: "_aos/work_packages/NB-S002-P004-WP001/LOD400_NB-S002-P004-WP001.md"
+  gate_history:
+  - gate: L-GATE_ELIGIBILITY
+    result: PASS
+    date: "2026-05-25"
+    notes: "P003 cascade COMPLETE. Templates render real content. Triage decisions filled (23 redirects + 2 keeps + 6 drops). Prod App Password verified — NimrodAdmin authenticated against www.nimrod.bio REST (24 posts + 7 pages confirmed)."
+  - gate: L-GATE_SPEC
+    result: PASS
+    date: "2026-05-25"
+    notes: "LOD400 by team_100. 7 deliverables: 6 scripts in scripts/migration/ + tagging triage HTML. 6 phases (Phase 1 creds DONE by team_00). 19 acceptance tests M1-M19. Risks: CF rate-limit (mitigated by --wait), Hebrew slug encoding (test M6), www redirect (memory feedback_prod_www_redirect)."
+  notes: "IN_PROGRESS. MANDATE: _COMMUNICATION/team_10/MANDATE_NB-S002-P004-WP001_v1.0.0.md. Target: 3 working days. Phase 1 (.env.upress provision) DONE. Team_00 will need to fill content_tagging_triage.html when Phase 3 produces it (~10 min interactive work). Blocks P004-WP002 and P005."
 
