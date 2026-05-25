@@ -414,3 +414,25 @@ work_packages:
     notes: "team_190 (Codex) VERDICT v1.0.0 cycle 1 PASS. team_100 independent re-verify: 5/5 sampled redirects return 301 with correct Location (incl. video1 → /blog/יום-בגינה/), 2/2 drops return 410, Yoast wordpress-seo/wp-seo active, sitemap_index.xml 200, MU plugin deployed (5.2KB). validate_aos.sh 32/16/0. Canonical completion artifact: _COMMUNICATION/team_100/COMPLETION_CANONICAL_NB-S002-P004-WP002_v1.0.0.md (ratifies MU plugin as canonical runtime mechanism for this WP, with .htaccess retained as portable audit artifact). Architecture lesson saved: feedback_lod400_infra_assumptions."
   notes: "COMPLETE. STANDARD track A. L-GATE_VALIDATE PASS cycle 1. P004 program fully closed (content migration + redirect enforcement). Unblocks P005-WP001 (QA) and P005-WP002 (cutover). Carry-forward to cutover: MU plugin + .htaccess block must both deploy to prod per COMPLETION_CANONICAL §6."
 
+- id: NB-S002-P005-WP001
+  label: "nimrod-bio — QA pass + cutover readiness gate"
+  status: IN_PROGRESS
+  track: A
+  current_lean_gate: L-GATE_BUILD
+  lod_status: LOD400
+  assigned_builder: nimrodbio_build
+  assigned_validator: nimrodbio_val
+  created_at: "2026-05-25"
+  milestone_ref: V200
+  spec_ref: "_aos/work_packages/NB-S002-P005-WP001/LOD400_NB-S002-P005-WP001.md"
+  gate_history:
+  - gate: L-GATE_ELIGIBILITY
+    result: PASS
+    date: "2026-05-25"
+    notes: "P004 program fully closed (content migration + redirect enforcement). 12/13 V200 WPs COMPLETE. Strategic decision recorded: team_00 directive 2026-05-25 — V200 closes with migrated content only; new content + updates deferred to V300 post-launch. TBC markers on about/heritage remain visible at cutover."
+  - gate: L-GATE_SPEC
+    result: PASS
+    date: "2026-05-25"
+    notes: "LOD400 by team_100. QA sweep across 9 sections: responsive 28 probes (7 templates × 4 viewports), Lighthouse 8 URLs, RTL bidi 3 browsers, axe-core a11y, contact form + SMTP, redirect re-verify, broken-link crawl, visual regression vs design, perf baseline. Final deliverable: CUTOVER_READINESS_REPORT with GO / CONDITIONAL GO / NO-GO signal."
+  notes: "IN_PROGRESS. MANDATE: _COMMUNICATION/team_10/MANDATE_NB-S002-P005-WP001_v1.0.0.md. Target: 3 working days. No code changes beyond QA tools; defects route to V300 or fix-cycle. Blocks P005-WP002 (cutover) until REPORT signals GO."
+
