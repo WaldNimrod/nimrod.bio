@@ -1,0 +1,265 @@
+<!doctype html>
+<html dir="rtl" lang="he">
+<head>
+<meta charset="utf-8">
+<title>nimrod.bio · Content Tagging · V200</title>
+<style>
+  :root {
+    --paper:#f5f3ec; --paper-2:#e8e7df; --ink:#1f1e1c; --ink-soft:#4a4844;
+    --line:#d6d2c2; --soil:#6a8a3a; --know:#c46a3e; --code:#2d8a8c; --spark:#d23a2e;
+  }
+  * { box-sizing:border-box }
+  body {
+    font-family:"Assistant","Heebo",system-ui,sans-serif;
+    background:var(--paper); color:var(--ink); margin:0; padding:0;
+    font-size:15px; line-height:1.55;
+  }
+  header {
+    background:var(--ink); color:var(--paper); padding:18px 28px;
+    position:sticky; top:0; z-index:10; display:flex; align-items:center; gap:24px;
+    flex-wrap:wrap; border-block-end:3px solid var(--spark);
+  }
+  header h1 { font-family:"Frank Ruhl Libre",serif; font-size:24px; margin:0; font-weight:700 }
+  header .stats { font-family:"JetBrains Mono",monospace; font-size:13px; opacity:.85 }
+  header .stats b { color:var(--spark) }
+  .actions { margin-inline-start:auto; display:flex; gap:10px; flex-wrap:wrap }
+  button {
+    font-family:inherit; font-size:14px; font-weight:600;
+    padding:10px 18px; border-radius:100px; border:1px solid transparent; cursor:pointer;
+    background:var(--paper); color:var(--ink);
+  }
+  .btn-copy { background:var(--spark); color:#fff }
+  .btn-ghost { background:transparent; color:var(--paper); border-color:var(--paper) }
+  main { max-width:1400px; margin:0 auto; padding:28px }
+  .progress { height:8px; background:var(--paper-2); border-radius:100px; overflow:hidden; margin-block:8px 18px }
+  .progress > div { height:100%; background:var(--spark); transition:width .2s }
+  table { width:100%; border-collapse:collapse; background:#fff; border-radius:14px; overflow:hidden; box-shadow:0 10px 30px -14px rgba(60,40,10,.18) }
+  th, td { padding:11px 14px; text-align:right; border-block-end:1px solid var(--line); vertical-align:top }
+  th { background:var(--paper-2); font-size:12px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-soft); position:sticky; top:74px; z-index:5 }
+  tr.done { background:rgba(106,138,58,.06) }
+  tr.invalid { background:rgba(210,58,46,.08) }
+  .title { font-weight:600; max-width:320px }
+  .excerpt { color:var(--ink-soft); font-size:13px; max-width:360px }
+  .slug { font-family:"JetBrains Mono",monospace; font-size:12px; color:var(--ink-soft); word-break:break-all }
+  .worlds { display:flex; gap:10px; flex-wrap:wrap }
+  .worlds label { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600 }
+  .worlds .soil { color:var(--soil) }
+  .worlds .know { color:var(--know) }
+  .worlds .code { color:var(--code) }
+  select, textarea, input[type=text] {
+    font-family:inherit; font-size:14px; padding:8px 10px;
+    border:1.5px solid var(--line); border-radius:8px; background:#fff; width:100%;
+  }
+  textarea { min-height:54px; resize:vertical }
+  .toast {
+    position:fixed; bottom:24px; inset-inline-start:24px;
+    background:var(--ink); color:var(--paper); padding:14px 22px; border-radius:14px;
+    transform:translateY(120%); transition:transform .25s; z-index:100; font-weight:600;
+  }
+  .toast.show { transform:translateY(0) }
+  details summary { cursor:pointer; font-weight:600; padding:8px 0 }
+  pre { background:var(--paper-2); padding:14px; border-radius:8px; font-size:11px; max-height:280px; overflow:auto; direction:ltr; text-align:left }
+</style>
+</head>
+<body>
+<header>
+  <h1>Content Tagging · V200</h1>
+  <div class="stats">
+    <span id="cnt-total">22</span> פוסטים ·
+    תויגו: <b id="cnt-done">0</b>/22
+  </div>
+  <div class="actions">
+    <button class="btn-copy" onclick="copyJSON()">📋 העתק JSON</button>
+    <button class="btn-ghost" onclick="downloadJSON()">💾 הורד</button>
+    <button class="btn-ghost" onclick="loadFromClipboard()">📥 טען מ-clipboard</button>
+  </div>
+</header>
+<main>
+  <div class="progress"><div id="progress-bar" style="width:0%"></div></div>
+  <p style="color:var(--ink-soft);margin-top:0">בחר לפחות עולם אחד + flow_style לכל פוסט. ברירת מחדל: <code>feature</code>. שמור כ-<code>docs/content_tagging_decisions_2026-05-25.json</code>.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>כותרת / תקציר</th>
+        <th>URL חדש</th>
+        <th>עולמות</th>
+        <th>flow_style</th>
+        <th>Featured?</th>
+        <th>הערות</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+  <details style="margin-top:24px">
+    <summary>Preview JSON output</summary>
+    <pre id="json-preview"></pre>
+  </details>
+</main>
+<div id="toast" class="toast"></div>
+<script>
+const DATA = [{"id": "91178", "title": "פטריות יער בגינה", "slug": "פטריות-יער-בגינה", "new_url": "/blog/פטריות-יער-בגינה/", "date": "2023-03-06", "excerpt": "#gap-2112399263 { padding-top: 80px; } חדש בגינה שלנו עולם מופלא של פטריות #text-1436870737 { font-size: 2.75rem; } בשיתוף פעולה עם פטריות מזור התחלנו השנה לגדל את הפטריות שאנחנו מוכרים אצלנו בגינה ממ", "categories": ["blog"], "tags": ["%d7%90%d7%95%d7%99%d7%a1%d7%98%d7%a8", "%d7%92%d7%99%d7%93%d7%95%d7%9c-%d7%a4%d7%98%d7%a8%d7%99%d7%95%d7%aa", "%d7%97%d7%a7%d7%9c%d7%90%d7%95%d7%aa-%d7%9e%d7%a7%d7%95%d7%9e%d7%99%d7%aa", "%d7%a4%d7%98%d7%a8%d7%99%d7%95%d7%aa", "%d7%a4%d7%98%d7%a8%d7%99%d7%95%d7%aa-%d7%99%d7%a2%d7%a8"]}, {"id": "91019", "title": "מבוא לגידול הידרופוני", "slug": "מבוא-לגידול-הידרופוני", "new_url": "/blog/מבוא-לגידול-הידרופוני/", "date": "2023-03-01", "excerpt": "#text-box-318224275 { width: 60%; } #text-box-318224275 .text-box-content { font-size: 100%; } #banner-1967577861 { padding-top: 99.99%; background-color: rgb(255, 255, 255); } #banner-1967577861 .bg.", "categories": ["blog", "homegrow"], "tags": ["%d7%92%d7%99%d7%93%d7%95%d7%9c-%d7%99%d7%a8%d7%a7%d7%95%d7%aa", "%d7%94%d7%99%d7%93%d7%a8%d7%95%d7%a4%d7%95%d7%a0%d7%99%d7%a7%d7%94", "%d7%9e%d7%93%d7%a8%d7%99%d7%9a"]}, {"id": "90935", "title": "מדריך שתילה נכונה", "slug": "מדריך-שתילה-נכונה", "new_url": "/blog/מדריך-שתילה-נכונה/", "date": "2023-02-24", "excerpt": "שתילה לצמח היא כמו מעבר דירה, ודורש עזרה ונוחיות בתקופת האיקלום. בנינו עבורכם מדריך מצולם קצר ֿופשוט לטיפול בשתילים בין המגש והאדמה (או המערכת ההידרופונית)", "categories": ["featured", "blog", "homegrow"], "tags": ["%d7%92%d7%99%d7%93%d7%95%d7%9c-%d7%99%d7%a8%d7%a7%d7%95%d7%aa", "%d7%9e%d7%93%d7%a8%d7%99%d7%9a", "%d7%a9%d7%aa%d7%99%d7%9c%d7%94"]}, {"id": "90917", "title": "מדריך ״שליפת״ שתילים", "slug": "מדריך-שליפת-שתילים", "new_url": "/blog/מדריך-שליפת-שתילים/", "date": "2023-02-24", "excerpt": "בנינו עבורכם מדריך מצולם קצר ֿופשוט לטיפול בשתילים בין המגש והאדמה (או המערכת ההידרופונית)", "categories": ["blog", "homegrow"], "tags": ["%d7%92%d7%99%d7%93%d7%95%d7%9c-%d7%99%d7%a8%d7%a7%d7%95%d7%aa", "%d7%9e%d7%93%d7%a8%d7%99%d7%9a", "%d7%a9%d7%aa%d7%99%d7%9c%d7%94", "%d7%a9%d7%aa%d7%99%d7%9c%d7%99-%d7%99%d7%a8%d7%a7%d7%95%d7%aa", "%d7%a9%d7%aa%d7%99%d7%9c%d7%99%d7%9d"]}, {"id": "90592", "title": "הקהילה החקלאית - החברים של הגינה", "slug": "קהילה_חקלאית", "new_url": "/blog/קהילה-חקלאית/", "date": "2023-02-21", "excerpt": "הקהילה החקלאית הנה מודל חדשני לגינון קהילתי מנוהל המניב שפע לכולם", "categories": ["featured", "blog"], "tags": ["%d7%92%d7%99%d7%93%d7%95%d7%9c-%d7%99%d7%a8%d7%a7%d7%95%d7%aa", "%d7%94%d7%aa%d7%a0%d7%93%d7%91%d7%95%d7%aa", "%d7%97%d7%a7%d7%9c%d7%90%d7%95%d7%aa-%d7%9e%d7%a7%d7%95%d7%9e%d7%99%d7%aa", "%d7%a2%d7%91%d7%95%d7%93%d7%94-%d7%97%d7%a7%d7%9c%d7%90%d7%99%d7%aa", "%d7%a7%d7%94%d7%99%d7%9c%d7%94-%d7%97%d7%a7%d7%9c%d7%90%d7%99%d7%aa"]}, {"id": "90724", "title": "מדריך המקיף לגידול דלועים אורגניים בבית ובשדה", "slug": "מדריך-המקיף-לגידול-דלועים-אורגניים-בב-2", "new_url": "/blog/מדריך-המקיף-לגידול-דלועים-אורגניים-בב-2/", "date": "2023-02-12", "excerpt": "#gap-1788039244 { padding-top: 30px; } מדריך המקיף לגידול דלועים אורגניים בבית ובשדה המדריך נכתב מהגינה של נימרוד שדה אורגני מקומי בשיתוף קב' מקימים גינה ביחד וקב' הדלועים לרכישת שתילים וזרעים #sectio", "categories": ["featured", "blog", "homegrow"], "tags": ["%d7%92%d7%99%d7%93%d7%95%d7%9c-%d7%93%d7%9c%d7%a2%d7%aa", "%d7%92%d7%99%d7%93%d7%95%d7%9c-%d7%99%d7%a8%d7%a7%d7%95%d7%aa", "%d7%93%d7%9c%d7%95%d7%a2%d7%99%d7%9d", "%d7%93%d7%9c%d7%a2%d7%aa", "%d7%93%d7%9c%d7%a2%d7%aa-%d7%98%d7%a8%d7%99%d7%a4%d7%95%d7%9c%d7%99", "%d7%93%d7%9c%d7%a2%d7%aa-%d7%99%d7%a4%d7%90%d7%a0%d7%99%d7%aa", "%d7%93%d7%9c%d7%a2%d7%aa-%d7%9b%d7%aa%d7%a8-%d7%94%d7%9e%d7%9c%d7%9b%d7%94", "%d7%93%d7%9c%d7%a2%d7%aa-%d7%a2%d7%a0%d7%a7%d7%99%d7%aa", "%d7%99%d7%a8%d7%a7%d7%95%d7%aa-%d7%90%d7%95%d7%a8%d7%92%d7%a0%d7%99%d7%99%d7%9d", "%d7%9e%d7%94%d7%92%d7%99%d7%a0%d7%94"]}, {"id": "90677", "title": "למה אנחנו קמים בבוקר? יום בגינה", "slug": "video1", "new_url": "/blog/יום-בגינה/", "date": "2023-01-29", "excerpt": "מנסים לדמיין איך נראה יום בגינה? אז, עומרי האלוף מפרונט צילום הכין עלינו סרט קצר &#8211; תמונה שווה אלף מילים", "categories": ["featured", "blog"], "tags": ["%d7%94%d7%99%d7%93%d7%a8%d7%95%d7%a4%d7%95%d7%a0%d7%99%d7%a7%d7%94", "%d7%99%d7%95%d7%9d-%d7%91%d7%92%d7%99%d7%a0%d7%94", "%d7%99%d7%a8%d7%a7%d7%95%d7%aa-%d7%90%d7%95%d7%a8%d7%92%d7%a0%d7%99%d7%99%d7%9d", "%d7%9e%d7%94%d7%92%d7%99%d7%a0%d7%94", "%d7%a1%d7%a8%d7%98-%d7%aa%d7%93%d7%9e%d7%99%d7%aa", "%d7%a4%d7%a8%d7%93%d7%a1-%d7%97%d7%a0%d7%94"]}, {"id": "90635", "title": "חריש למאכל", "slug": "harish2021", "new_url": "/blog/harish2021/", "date": "2021-10-07", "excerpt": "חדש לתושבי חריש &#8211; וללא קשר לשתילים:ניתן להזמין מכל המגוון הירקות והפירות בחנות ולקבל במשלוח עד הבית בכל יום ה׳לכניסה לחנות הירקות לחצו כאן.", "categories": ["blog", "%d7%9b%d7%9c%d7%9c%d7%99"], "tags": []}, {"id": "90589", "title": "ידידי מהגינה - קומון המהפכה החקלאית השלישית", "slug": "common", "new_url": "/blog/common/", "date": "2021-03-21", "excerpt": "חקלאות בשיתוף הקהילה, בלי להתחייב לסל קבוע. אתם המשקיעים אתם אלו שקובעים! להיות חלק מהמהפכה, לקדם מזון מקומי אקולוגי מצטרפים למשפחת הגינה. תומכים בחקלאות החדשה ונהנים ממגוון הנחות והטבות לחברים [conta", "categories": ["blog"], "tags": []}, {"id": "90510", "title": "שתילי אוכמניות וגידול אוכמניות בבית", "slug": "אוכמניות", "new_url": "/blog/אוכמניות/", "date": "2021-01-20", "excerpt": "אוכמניות &#8211; מדריך למגדל העונה התחלנו בגינה בניסוי לגידול אוכמניות במגוון שיטות. מצאנו זנים המתאימים למזג אוויר ים תיכוני מומוצע &#8211; כלומר אינם דורשים מנות קור רבות. עקב הביקוש, אנו מציעים ללק", "categories": ["featured", "blog"], "tags": []}, {"id": "90444", "title": "גידולי ירקות חורף - מרווחים וזמנים", "slug": "spaces_dtm-winter", "new_url": "/blog/spaces_dtm-winter/", "date": "2020-11-08", "excerpt": "ירק ותבלין חסה משך גידול: [types field='specie-growth-duration' id='1167'][/types]יום משך קטיף: [types field='specie-harvest-duration' id='1167'][/types]יום מרווח בשורה: [types field='specie-inline-sp", "categories": ["blog", "homegrow"], "tags": []}, {"id": "90361", "title": "שתילות חורף - הדרכה לגני ילדים", "slug": "שתילות-חורף-הדרכה-לגני-ילדים", "new_url": "/blog/שתילות-חורף-הדרכה-לגני-ילדים/", "date": "2020-11-04", "excerpt": "גינת ירק חלומית בגן הילדים דמיינו לכן עולם שהילדים לומדים איך נראה ירק שגדל ישירות באדמה וגדל יחד עם עונות השנה עם תהליכי הגדילה של הילדים, דמיינו איך ילד חווה זריעה של זרע וצמיחה לא רק מהסיפורים וגננ", "categories": ["blog", "homegrow"], "tags": []}, {"id": "90248", "title": "שתילי חורף לכווולם!", "slug": "transplant-spread", "new_url": "/blog/transplant-spread/", "date": "2020-10-08", "excerpt": "משלוחי שתילים למגוון נקודות חלוקה &#8211; הזדמנות אחרונה עד האביב הזמנת שתילי ירקות אורגניים לנקודות איסוף ברחבי הארץ פרטים בהמשך העמוד, להזמנה לחצו כאן המשלוחים בתאריכים 11-12.11.2020 8.11 הזמנות עד ", "categories": ["blog", "homegrow"], "tags": []}, {"id": "90156", "title": "גידולי חורף בזריעה ישירה", "slug": "direct-seeding", "new_url": "/blog/direct-seeding/", "date": "2020-10-05", "excerpt": "גם כשהכול לא ברור מסביב, יש דברים עתיקים שלא משתנים &#8211; זרעים הם אחד מהם. בחורף ישלנו הזדמנות לגדל בקלות מגוון גידולים בזריעה ישירה באדמה. לשם כך הכנו בחרנו שישה גידולים אותם קלים לגידול אותם מומל", "categories": ["blog", "homegrow"], "tags": []}, {"id": "90109", "title": "איזה שתילים קניתי? - מדריך מצולם", "slug": "transpantphotoindex", "new_url": "/blog/transpantphotoindex/", "date": "2020-09-30", "excerpt": ".row-small>.col, .row.row-main>.col-sm-12 {padding-bottom: 10px!important; } כוסברה #text-box-1451134636 .text-box-content { border-radius: 141px; font-size: 100%; } #text-box-1451134636 { width: 60%;", "categories": ["featured", "blog"], "tags": []}, {"id": "90085", "title": "שתילי חורף - מידע לשותלים", "slug": "transplantinfo2020", "new_url": "/blog/transplantinfo2020/", "date": "2020-09-24", "excerpt": "איך לתכנן ערוגה?&nbsp; &#8211; חשיבות מרווחי השתילה לא פעם שאלו אותנו ״כמה שתילים אני צריך״, כמה אפשר&nbsp; להכניחס בערוגה? אז נעשה רגע סדר, כמה צריך תלוי בשתי שאלות &#8211; כמה אני צריךרוצה במטבח?כמה", "categories": ["blog", "homegrow"], "tags": []}, {"id": "90026", "title": "מהגינה לגנן - שתילי חורף 2020", "slug": "transplants2020", "new_url": "/blog/transplants2020/", "date": "2020-09-21", "excerpt": "יש מלא סיבות להתבאס, אבל בינינו, הסגר נפל (שוב) בדיוק בזמן להכין מחדש את הערוגות בבית. וכמו באביב, גם הפעם ב״מהגינה של נימרוד״ החלטנו לעזור לגנניות וגנני הקהילה והשכונה ליצר שפע מהאדמה. והפעם &#8211;&", "categories": ["blog"], "tags": []}, {"id": "2760", "title": "זיו רייף (כאן 11) מבקר בגינה", "slug": "זיו-רייף-כאן-11-מבקר-בגינה", "new_url": "/blog/זיו-רייף-כאן-11-מבקר-בגינה/", "date": "2019-08-12", "excerpt": "מוזמנים להציץ לכתבה בה השתתפנו על שינוי באמצע החיים.", "categories": ["featured", "blog"], "tags": []}, {"id": "2233", "title": "עדכון שבועי מהגינה", "slug": "עדכון-שבועי-מהגינה", "new_url": "/blog/עדכון-שבועי-מהגינה/", "date": "2019-07-10", "excerpt": "יש לנו כמה עדכונים משמחים וטעימים: ?אז כבר עדכנו אתכם שהחל מהשבוע הגינה הופכת להיות נקודת איסוף למשלוחים בחינם וללא מינימום הזמנה מ מחסני הטבעונות איך זה עובד? מזמינים כל שבוע עד יום רביעי בצהריים דרך", "categories": ["blog"], "tags": []}, {"id": "2187", "title": "סדנת ליקוט עם אביבית ברקוביץ", "slug": "סדנת-ליקוט-עם-אביבית-ברקוביץ", "new_url": "/blog/סדנת-ליקוט-עם-אביבית-ברקוביץ/", "date": "2019-07-07", "excerpt": "אביבית תיקח אותנו לטיול בין הערוגות תרתי משמע &#8211; נגלה את המזון שגדל לבד בין ערוגות הגינה &#8211; נלמד על סגולות המרפה והייחוד של מגוון צמחי העונה. מצויידים בידע נצא לקטיף ונכין ביחד ארוחה קלה מהש", "categories": ["blog"], "tags": []}, {"id": "1233", "title": "מועדי זריעה ושתילה", "slug": "מועדי-זריעה-ושתילה", "new_url": "/blog/מועדי-זריעה-ושתילה/", "date": "2017-09-24", "excerpt": "טבלת זריעה _לקט מועדי זריעה לפי חודשים &#8211; בא במייל", "categories": ["featured", "blog", "%d7%9b%d7%9c%d7%9c%d7%99", "homegrow"], "tags": []}, {"id": "1218", "title": "צמחים חברים", "slug": "צמחים-חברים", "new_url": "/blog/צמחים-חברים/", "date": "2017-09-24", "excerpt": "צמחים חברים מועדי זריעה ונתוני בסיס &#8211; groworganic.info", "categories": ["%d7%9b%d7%9c%d7%9c%d7%99"], "tags": []}];
+const WORLDS = ["soil", "know", "code"];
+const WORLD_LABELS = {"soil": "אדמה", "know": "ייעוץ והוראה", "code": "קוד"};
+const STORAGE_KEY = 'nb_content_tagging_v1';
+
+function loadState() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) return JSON.parse(saved);
+  } catch(e) {}
+  return {};
+}
+function saveState(state) {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) {}
+}
+const STATE = loadState();
+
+function isValid(s) {
+  return s && Array.isArray(s.worlds) && s.worlds.length > 0 && s.flow_style;
+}
+
+function render() {
+  const tb = document.getElementById('tbody');
+  tb.innerHTML = '';
+  DATA.forEach((r, idx) => {
+    const s = STATE[r.id] || { flow_style: 'feature', worlds: [], featured: false, notes: '' };
+    if (!s.flow_style) s.flow_style = 'feature';
+    const tr = document.createElement('tr');
+    tr.className = isValid(s) ? 'done' : (s.worlds?.length ? 'invalid' : '');
+    const worldsHtml = WORLDS.map(w => `
+      <label class="${w}">
+        <input type="checkbox" data-id="${r.id}" data-field="world" value="${w}"
+          ${ (s.worlds||[]).includes(w) ? 'checked' : '' }>
+        ${WORLD_LABELS[w] || w}
+      </label>`).join('');
+    tr.innerHTML = `
+      <td>${idx+1}</td>
+      <td>
+        <div class="title">${escapeHtml(r.title)}</div>
+        <div class="excerpt">${escapeHtml(r.excerpt || '')}</div>
+        <small style="color:#888">${r.date || ''}</small>
+      </td>
+      <td><span class="slug">${escapeHtml(r.new_url || r.slug || '')}</span></td>
+      <td><div class="worlds">${worldsHtml}</div></td>
+      <td>
+        <select data-id="${r.id}" data-field="flow_style">
+          <option value="lead">lead</option><option value="wide">wide</option><option value="tall">tall</option><option value="typo">typo</option><option value="quote">quote</option><option value="feature" selected>feature</option><option value="brief">brief</option>
+        </select>
+      </td>
+      <td style="width:90px;text-align:center">
+        <input type="checkbox" data-id="${r.id}" data-field="featured" ${s.featured ? 'checked' : ''}>
+      </td>
+      <td><textarea data-id="${r.id}" data-field="notes">${escapeHtml(s.notes || '')}</textarea></td>
+    `;
+    const flowSel = tr.querySelector('select[data-field="flow_style"]');
+    if (flowSel) flowSel.value = s.flow_style || 'feature';
+    tb.appendChild(tr);
+  });
+
+  tb.querySelectorAll('select, textarea, input').forEach(el => {
+    el.addEventListener('change', onFieldChange);
+    if (el.tagName === 'TEXTAREA') el.addEventListener('input', onFieldChange);
+  });
+  updateCounts();
+  updatePreview();
+}
+
+function onFieldChange(e) {
+  const id = e.target.dataset.id;
+  const field = e.target.dataset.field;
+  if (!STATE[id]) STATE[id] = { flow_style: 'feature', worlds: [], featured: false, notes: '' };
+  if (field === 'world') {
+    const checked = Array.from(document.querySelectorAll(`input[data-id="${id}"][data-field="world"]:checked`)).map(x => x.value);
+    STATE[id].worlds = checked;
+  } else if (field === 'featured') {
+    STATE[id].featured = e.target.checked;
+  } else {
+    STATE[id][field] = e.target.value;
+  }
+  saveState(STATE);
+  render();
+}
+
+function updateCounts() {
+  const done = DATA.filter(r => isValid(STATE[r.id])).length;
+  document.getElementById('cnt-done').textContent = done;
+  document.getElementById('progress-bar').style.width = `${(done/DATA.length)*100}%`;
+}
+
+function buildOutput() {
+  return {
+    project: 'nimrod-bio',
+    milestone: 'V200',
+    matrix_version: 'v1',
+    filled_by: 'team_00',
+    generated_at: new Date().toISOString(),
+    posts: DATA.map(r => ({
+      id: r.id,
+      title: r.title,
+      slug: r.slug,
+      new_url: r.new_url,
+      worlds: STATE[r.id]?.worlds || [],
+      flow_style: STATE[r.id]?.flow_style || 'feature',
+      featured: !!STATE[r.id]?.featured,
+      notes: STATE[r.id]?.notes || '',
+    })),
+  };
+}
+
+function updatePreview() {
+  document.getElementById('json-preview').textContent = JSON.stringify(buildOutput(), null, 2);
+}
+
+function escapeHtml(s) {
+  if (s === null || s === undefined) return '';
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+async function copyJSON() {
+  const txt = JSON.stringify(buildOutput(), null, 2);
+  await navigator.clipboard.writeText(txt);
+  toast('✓ הועתק');
+}
+
+function downloadJSON() {
+  const blob = new Blob([JSON.stringify(buildOutput(), null, 2)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `content_tagging_decisions_${new Date().toISOString().slice(0,10)}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+  toast('✓ הורד');
+}
+
+async function loadFromClipboard() {
+  const txt = await navigator.clipboard.readText();
+  const obj = JSON.parse(txt);
+  const rows = obj.posts || obj.decisions || [];
+  rows.forEach(d => {
+    if (d.id) {
+      STATE[d.id] = {
+        worlds: d.worlds || [],
+        flow_style: d.flow_style || 'feature',
+        featured: !!d.featured,
+        notes: d.notes || '',
+      };
+    }
+  });
+  saveState(STATE);
+  render();
+  toast('✓ נטען');
+}
+
+render();
+</script>
+</body>
+</html>

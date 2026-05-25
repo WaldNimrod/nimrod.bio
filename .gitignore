@@ -51,6 +51,9 @@ sources/*.gz
 # Re-extract from the design ZIP under ~/Downloads via `ditto -x -k` if needed.
 sources/team_35_design_package/
 
+# === Migration cache (P004 intermediate artefacts) ===
+.migration-cache/
+
 # === Restore work directory ===
 .restore-work/
 
