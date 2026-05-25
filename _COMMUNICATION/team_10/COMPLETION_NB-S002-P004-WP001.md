@@ -148,7 +148,7 @@ Note: 7 legacy seeds found (not 4) — all `_nb_seed='v200'` removed; 22 `_nb_se
 
 ## Git
 
-- Commit: _(filled after push)_
+- Commit: `b90b9c4c` pushed to `origin/main` (2026-05-25)
 - Branch: `main`
 
 ---
