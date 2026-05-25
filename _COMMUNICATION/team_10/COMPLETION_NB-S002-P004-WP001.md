@@ -96,7 +96,7 @@ python3 scripts/migration/cleanup_seeds.py
 
 ## Git
 
-- Commit + push verified in this session (see git log).
+- Commit `1edda7d0` pushed to `origin/main` (2026-05-25).
 
 ---
 
