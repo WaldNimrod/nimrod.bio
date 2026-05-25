@@ -167,7 +167,7 @@ work_packages:
   label: "nimrod-bio — CPTs + taxonomies + meta boxes (native)"
   status: IN_PROGRESS
   track: A
-  current_lean_gate: L-GATE_BUILD
+  current_lean_gate: L-GATE_VALIDATE
   lod_status: LOD400
   assigned_builder: nimrodbio_build
   assigned_validator: nimrodbio_val
@@ -184,5 +184,9 @@ work_packages:
     result: PASS
     date: "2026-05-25"
     notes: "LOD400 authored by team_100. 9 inc/ files speced (helpers-cpt, taxonomies, cpt-service, cpt-project, meta-registration, meta-box-service, meta-box-project, world-pages-bootstrap, rewrites). 11 LOD400 decisions locked (post_meta storage, JSON repeater pattern, world parent page status=private, conditional fields always-render, NB_THEME_VERSION bump strategy). 16 acceptance tests C1-C16 defined. team_00 approved 2026-05-25."
-  notes: "IN_PROGRESS. MANDATE issued: _COMMUNICATION/team_10/MANDATE_NB-S002-P002-WP002_v1.0.0.md. Target: 2.5 working days. Requires L-GATE_VALIDATE by team_190 before P003 templates cascade can begin. Unblocks 5 parallel template WPs upon PASS."
+  - gate: L-GATE_BUILD
+    result: PASS
+    date: "2026-05-25"
+    notes: "Team 10 deliverables deployed via FTPS: 9 inc/ files (helpers-cpt, taxonomies, cpt-service, cpt-project, meta-registration, meta-box-service, meta-box-project, world-pages-bootstrap, rewrites). NB_THEME_VERSION 0.1.1→0.2.0. Bootstrap created /world/ parent (private) + 3 children (soil/know/code, publish). team_100 independent self-review: C1 services REST 200/list, C2 projects REST 200/list, C3 world 3 terms, C4 flow_style 7 terms, C5-C6 all /world/<slug>/ return 200, regression PASS (Shell + Footer still render, ver=0.2.0 active). Known deviation: POST /wp/v2/themes/... returns rest_no_route; team_10 used REST-authenticated bootstrap workaround (functionally equivalent). Git tracking gap: team_10 deployed but skipped git add/commit/push — team_100 committed deliverables in f386c187 + gitignored .claude/worktrees|sessions|cache. validate_aos.sh: 32 PASS / 16 SKIP / 0 FAIL. VALIDATE_REQUEST issued to team_190."
+  notes: "L-GATE_BUILD PASS. VALIDATE_REQUEST issued to team_190 (cross-engine: Codex) for full C1-C16 replay + constitutional checks. Build commit: f386c187. Unblocks 5 parallel P003 template WPs upon VALIDATE PASS."
 
