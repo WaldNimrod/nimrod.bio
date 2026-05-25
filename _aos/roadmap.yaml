@@ -384,3 +384,25 @@ work_packages:
     notes: "team_190 cycle 1 VERDICT v1.0.0 — initial run found M11 (media 46/91 resolved), M17 (T7 home not showing migrated posts due to hello-world fallback), M12 (URL leakage). team_10 cycle 1 remediation: a6efc102 (rerun uploads_transfer + hello-world delete + front-page meta_query restriction). team_190 v1.0.1 PASS — M11/M17/M12 independently re-verified. Final: 22 migrated posts + /shook/ + /blog/יום-בגינה/ all 200. team_100 independent re-verify same day: 22/22 posts _nb_seed=v200-migrated, 4 .post-card on /, /shook/ 200."
   notes: "COMPLETE. STANDARD track A. L-GATE_VALIDATE PASS cycle 2. Content layer LIVE: 22 real posts + restored /shook/ page. Heritage URL (2516) deferred to P004-WP002 via 301 only (heritage content hardcoded in T8). Carry-overs to P005: .btn-primary contrast 3.83:1 (a11y waiver decision), 360px anonymous probe, .tbc markers about/heritage (team_00 content), wp_mail SMTP deliverability."
 
+- id: NB-S002-P004-WP002
+  label: "nimrod-bio — 301 redirect enforcement + Yoast sitemap"
+  status: IN_PROGRESS
+  track: A
+  current_lean_gate: L-GATE_BUILD
+  lod_status: LOD400
+  assigned_builder: nimrodbio_build
+  assigned_validator: nimrodbio_val
+  created_at: "2026-05-25"
+  milestone_ref: V200
+  spec_ref: "_aos/work_packages/NB-S002-P004-WP002/LOD400_NB-S002-P004-WP002.md"
+  gate_history:
+  - gate: L-GATE_ELIGIBILITY
+    result: PASS
+    date: "2026-05-25"
+    notes: "P004-WP001 COMPLETE. 22 posts + /shook/ on dev with final slugs. id_mapping cached. Triage decisions filled (23 redirect + 2 keep + 6 drop). team_00 confirmed defaults: 410 for drops, additive .htaccess block, automated Yoast regen, Yoast as sitemap source."
+  - gate: L-GATE_SPEC
+    result: PASS
+    date: "2026-05-25"
+    notes: "LOD400 by team_100. 4 scripts (generate/deploy/verify htaccess + _lib) + 2 docs (htaccess block + search console runbook). 17 acceptance tests R1-R17. Hebrew slug URL encoding via Python urllib. uPress .htaccess preservation via START/END markers. Search Console execution deferred to P005-WP002 (cutover scope)."
+  notes: "IN_PROGRESS. MANDATE: _COMMUNICATION/team_10/MANDATE_NB-S002-P004-WP002_v1.0.0.md. Target: 1.5-2 working days. Final P004 WP — closes content/SEO chapter. Unblocks P005 (QA + cutover)."
+
