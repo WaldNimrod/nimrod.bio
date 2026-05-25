@@ -22,8 +22,8 @@ project:
   lean_kit_version: "3.3.0+163b156"
   created: "2026-05-09"
   owner: "nimrodbio_sd"
-  active_milestone: "V100"
-  notes: "WordPress site in Hebrew, hosted on uPress. Profile L0. V100: AOS init + environment bootstrap."
+  active_milestone: "V200"
+  notes: "WordPress site in Hebrew, hosted on uPress. Profile L0. V100 COMPLETE 2026-05-11 (AOS init + bootstrap + MU plugin). V200 IN PROGRESS 2026-05-25 (Site Rebuild — fresh WP install on uPress + custom theme + CPTs + 7 templates + content migration + cutover)."
 
 # WP ID FORMAT: S[stage]-P[program]-WP[number]
 #
@@ -202,10 +202,10 @@ work_packages:
 
 - id: NB-S002-P003-WP001
   label: "nimrod-bio — T7 Home template"
-  status: IN_PROGRESS
+  status: COMPLETE
   track: A
-  current_lean_gate: L-GATE_BUILD
-  lod_status: LOD400
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
   assigned_builder: nimrodbio_build
   assigned_validator: nimrodbio_val
   created_at: "2026-05-25"
@@ -224,14 +224,18 @@ work_packages:
     result: PASS
     date: "2026-05-25"
     notes: "Team 10 deliverables: front-page.php + t7.css + template-styles-t7.php + glob() loader in functions.php. H1-H10 PASS. Hero=statement + Unless=ribbon (locked). Version 0.3.0 set. Bundled into commit 4423d3eb (with WP005). VALIDATE_REQUEST issued."
-  notes: "L-GATE_BUILD PASS. VALIDATE_REQUEST in batch _COMMUNICATION/team_190/VALIDATE_REQUEST_P003_BATCH_v1.0.0.md."
+  - gate: L-GATE_VALIDATE
+    result: PASS_WITH_DEFERRALS
+    date: "2026-05-25"
+    notes: "team_190 VERDICT v1.0.0 cycle 1 — full independent replay of H1-H10 + constitutional (a-f) + LOD300 §11 baseline PASS on live dev + code inspection. 2 non-blocking carry-overs: version ladder drift 0.4.1 active (accepted advisory), 360px overflow signal only in authenticated admin-toolbar context (anonymous spot-check deferred to P005-WP001 QA). validate_aos.sh 32/16/0."
+  notes: "COMPLETE. STANDARD track A. L-GATE_VALIDATE PASS_WITH_DEFERRALS. P003 cascade member. See VERDICT v1.0.0 in _COMMUNICATION/team_190/."
 
 - id: NB-S002-P003-WP002
   label: "nimrod-bio — T1 World pages (×3, Variant C)"
-  status: IN_PROGRESS
+  status: COMPLETE
   track: A
-  current_lean_gate: L-GATE_BUILD
-  lod_status: LOD400
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
   assigned_builder: nimrodbio_build
   assigned_validator: nimrodbio_val
   created_at: "2026-05-25"
@@ -250,14 +254,18 @@ work_packages:
     result: PASS
     date: "2026-05-25"
     notes: "Team 10 deliverables: page-{soil,know,code}.php + t1-body + 4 partials + t1.css. Variant C + seam locked. Helper nb_get_bridges_for_world() added to template-helpers.php (documented in COMPLETION). W1-W14 PASS. Version 0.4.1 (parallel bump drift documented). Commit 17103af6. VALIDATE_REQUEST issued."
-  notes: "L-GATE_BUILD PASS. VALIDATE_REQUEST in batch _COMMUNICATION/team_190/VALIDATE_REQUEST_P003_BATCH_v1.0.0.md."
+  - gate: L-GATE_VALIDATE
+    result: PASS_WITH_DEFERRALS
+    date: "2026-05-25"
+    notes: "team_190 VERDICT v1.0.0 — W1-W14 + constitutional + baseline PASS. 3 non-blocking deferrals: runtime computed-style probes for W3/W12 (CSS definitions verified static), mobile no-horizontal-scroll runtime probe (deferred to P005), W6 interpreted as "up to available + anchor"."
+  notes: "COMPLETE. STANDARD track A. L-GATE_VALIDATE PASS_WITH_DEFERRALS. P003 cascade member. See VERDICT v1.0.0 in _COMMUNICATION/team_190/."
 
 - id: NB-S002-P003-WP003
   label: "nimrod-bio — T2 Services + T3 Projects templates"
-  status: IN_PROGRESS
+  status: COMPLETE
   track: A
-  current_lean_gate: L-GATE_BUILD
-  lod_status: LOD400
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
   assigned_builder: nimrodbio_build
   assigned_validator: nimrodbio_val
   created_at: "2026-05-25"
@@ -276,14 +284,18 @@ work_packages:
     result: PASS
     date: "2026-05-25"
     notes: "Team 10 deliverables: single-service.php + single-project.php + 10 partials + t2/t3.css + 6 REST-seeded instances (3 services produce/consulting-hydro/sfa + 3 projects). Heritage strip on produce only, SFA origin on sfa only, seeking/legacy ribbons. Extended template-helpers.php + meta-registration.php (REST meta for T2/T3 documented in COMPLETION). S1-S15 PASS. Commit a32a4934. VALIDATE_REQUEST issued."
-  notes: "L-GATE_BUILD PASS. VALIDATE_REQUEST in batch _COMMUNICATION/team_190/VALIDATE_REQUEST_P003_BATCH_v1.0.0.md."
+  - gate: L-GATE_VALIDATE
+    result: PASS
+    date: "2026-05-25"
+    notes: "team_190 VERDICT v1.0.0 — S1-S15 + constitutional + baseline ALL PASS. No deferrals. 6 seed instances verified via REST. Heritage strip + SFA origin + ribbons (seeking/legacy) all rendered correctly. Cross-engine integrity confirmed."
+  notes: "COMPLETE. STANDARD track A. L-GATE_VALIDATE PASS. P003 cascade member. See VERDICT v1.0.0 in _COMMUNICATION/team_190/."
 
 - id: NB-S002-P003-WP004
   label: "nimrod-bio — T4 Post + T5 Blog index templates"
-  status: IN_PROGRESS
+  status: COMPLETE
   track: A
-  current_lean_gate: L-GATE_BUILD
-  lod_status: LOD400
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
   assigned_builder: nimrodbio_build
   assigned_validator: nimrodbio_val
   created_at: "2026-05-25"
@@ -302,14 +314,18 @@ work_packages:
     result: PASS_WITH_SPEC_AMENDMENT
     date: "2026-05-25"
     notes: "Team 10 deliverables: single.php + home.php + 5 partials + t4/t5.css + t5-filter.js + 4 seeded posts (flow_styles lead/wide/tall/brief) + nb_extract_toc() helper + /blog/?world= exception in taxonomies.php (documented). B1-B6, B8-B14 PASS. B7 ⚠ — flagged as LOD400 spec defect by team_100 (§6 lead seed has world=know, contradicts §7 B7 empty-state premise). SPEC_AMENDMENT_NB-S002-P003-WP004_B7_v1.0.0.md issued: B7 retracted, replaced with code-inspection test of empty-state markup. team_100 saved feedback memory feedback_lod400_self_consistency. Commits 58af7f61 + 7e7515a5 (pushed by team_100 in 9b1076a4). VALIDATE_REQUEST issued with B7 amendment ref."
-  notes: "L-GATE_BUILD PASS_WITH_SPEC_AMENDMENT. VALIDATE_REQUEST in batch _COMMUNICATION/team_190/VALIDATE_REQUEST_P003_BATCH_v1.0.0.md. B7 amendment to be honored by team_190 per SPEC_AMENDMENT artifact."
+  - gate: L-GATE_VALIDATE
+    result: PASS
+    date: "2026-05-25"
+    notes: "team_190 VERDICT v1.0.0 — B1-B14 PASS with B7 honored per SPEC_AMENDMENT (code-inspection of empty-state markup). No deferrals beyond the amendment. Filter via URL params (server-side) + JS enhancement verified. 4 seed posts verified."
+  notes: "COMPLETE. STANDARD track A. L-GATE_VALIDATE PASS. P003 cascade member. See VERDICT v1.0.0 in _COMMUNICATION/team_190/."
 
 - id: NB-S002-P003-WP005
   label: "nimrod-bio — T8 Static (about + heritage + contact)"
-  status: IN_PROGRESS
+  status: COMPLETE
   track: A
-  current_lean_gate: L-GATE_BUILD
-  lod_status: LOD400
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
   assigned_builder: nimrodbio_build
   assigned_validator: nimrodbio_val
   created_at: "2026-05-25"
@@ -328,5 +344,9 @@ work_packages:
     result: PASS
     date: "2026-05-25"
     notes: "Team 10 deliverables: page-{about,heritage,contact}.php + 8 partials + t8.css + t8-contact.js + contact-form-handler.php (authorized last functions.php edit) + nb_bootstrap_static_pages() + nb_img_ph() helper. A1-A18 PASS including A12 form submit, A14 honeypot, A15 nonce. NB_THEME_VERSION=0.4.0 (later bumped to 0.4.1 by parallel WP002). Commit 4423d3eb. VALIDATE_REQUEST issued."
-  notes: "L-GATE_BUILD PASS. VALIDATE_REQUEST in batch _COMMUNICATION/team_190/VALIDATE_REQUEST_P003_BATCH_v1.0.0.md."
+  - gate: L-GATE_VALIDATE
+    result: PASS_WITH_DEFERRALS
+    date: "2026-05-25"
+    notes: "team_190 VERDICT v1.0.0 — A1-A18 + constitutional + baseline PASS. 2 non-blocking deferrals: runtime 360px horizontal-scroll probe (deferred to P005), SMTP deliverability confirmation (handler path validated, real wp_mail delivery deferred to P005 / uPress smtp config)."
+  notes: "COMPLETE. STANDARD track A. L-GATE_VALIDATE PASS_WITH_DEFERRALS. P003 cascade member. See VERDICT v1.0.0 in _COMMUNICATION/team_190/."
 
