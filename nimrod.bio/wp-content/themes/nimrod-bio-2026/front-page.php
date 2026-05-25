@@ -122,6 +122,12 @@ get_header();
 					'post_type'      => 'post',
 					'posts_per_page' => 4,
 					'post_status'    => 'publish',
+					'meta_query'     => array(
+						array(
+							'key'   => '_nb_seed',
+							'value' => 'v200-migrated',
+						),
+					),
 					'orderby'        => 'date',
 					'order'          => 'DESC',
 				)
