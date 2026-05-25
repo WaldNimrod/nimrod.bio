@@ -145,5 +145,9 @@ work_packages:
     result: PASS
     date: "2026-05-25"
     notes: "LOD400 authored by team_100. 16 files speced (style.css, theme.json, functions.php, header/footer/index/404.php, inc/ enqueue+helpers+nav-walker stub, assets/ system+shell css + shell.js + home.svg, template-parts/ shell-nav + shell-footer). Shell HTML traced 1:1 from T1-data.jsx lines 311–375. 15 acceptance tests T1–T15 defined. team_00 approved 2026-05-25."
-  notes: "IN_PROGRESS. MANDATE issued to team_10 at _COMMUNICATION/team_10/MANDATE_NB-S002-P002-WP001_v1.0.0.md. Target: 3 working days. Requires L-GATE_VALIDATE by team_190 (cross-engine) before successor WP002-WP002 can begin."
+  - gate: L-GATE_BUILD
+    result: PASS
+    date: "2026-05-25"
+    notes: "Team 10 deliverables: theme nimrod-bio-2026 active on dev, lang=he-IL, RTL clean, Shell nav + Footer render verbatim from T1-data.jsx JSX, system.css + shell.css enqueued in correct order, world active-state works (/world/soil/ shows nav-world soil is-active). 14/15 acceptance tests PASS; T10 SEO=63 due to uPress edge X-Robots-Tag noindex on *.upress.link (environmental, not code defect — Lighthouse Performance=88, A11y=98, Best Practices=100). Bonus: SFA-FTPS canonical procedure documented at docs/UPRESS_FTPS_MANDATORY_PROCEDURE.md + scripts/upress_ftps_upload.py. team_100 self-reviewed and verified theme active via REST + Shell HTML render via curl 2026-05-25."
+  notes: "L-GATE_BUILD PASS. VALIDATE_REQUEST issued to team_190 (cross-engine: Codex). Pending VERDICT before WP002-2 (CPTs) can start. T10 SEO deferred to P005-WP001 QA on production URL."
 
