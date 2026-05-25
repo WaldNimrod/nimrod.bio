@@ -1,0 +1,155 @@
+{
+  "generated_at": "2026-05-25",
+  "results": [
+    {
+      "browser": "chromium",
+      "path": "/",
+      "lang": "he-IL",
+      "html_dir": "rtl",
+      "direction": "rtl",
+      "body_direction": "rtl",
+      "title": "בית - nimrod.bio · V200 dev",
+      "mixed_ltr_issue_detected": false
+    },
+    {
+      "browser": "chromium",
+      "path": "/blog/",
+      "lang": "he-IL",
+      "html_dir": "rtl",
+      "direction": "rtl",
+      "body_direction": "rtl",
+      "title": "בלוג - nimrod.bio · V200 dev",
+      "mixed_ltr_issue_detected": false
+    },
+    {
+      "browser": "chromium",
+      "path": "/services/produce/",
+      "lang": "he-IL",
+      "html_dir": "rtl",
+      "direction": "rtl",
+      "body_direction": "rtl",
+      "title": "תוצרת מקצועית - nimrod.bio · V200 dev",
+      "mixed_ltr_issue_detected": false
+    },
+    {
+      "browser": "chromium",
+      "path": "/blog/יום-בגינה/",
+      "lang": "he-IL",
+      "html_dir": "rtl",
+      "direction": "rtl",
+      "body_direction": "rtl",
+      "title": "למה אנחנו קמים בבוקר? יום בגינה - nimrod.bio · V200 dev",
+      "mixed_ltr_issue_detected": false
+    },
+    {
+      "browser": "chromium",
+      "path": "/contact/",
+      "lang": "he-IL",
+      "html_dir": "rtl",
+      "direction": "rtl",
+      "body_direction": "rtl",
+      "title": "צור קשר - nimrod.bio · V200 dev",
+      "mixed_ltr_issue_detected": false
+    },
+    {
+      "browser": "firefox",
+      "path": "/",
+      "lang": "he-IL",
+      "html_dir": "rtl",
+      "direction": "rtl",
+      "body_direction": "rtl",
+      "title": "בית - nimrod.bio · V200 dev",
+      "mixed_ltr_issue_detected": false
+    },
+    {
+      "browser": "firefox",
+      "path": "/blog/",
+      "lang": "he-IL",
+      "html_dir": "rtl",
+      "direction": "rtl",
+      "body_direction": "rtl",
+      "title": "בלוג - nimrod.bio · V200 dev",
+      "mixed_ltr_issue_detected": false
+    },
+    {
+      "browser": "firefox",
+      "path": "/services/produce/",
+      "lang": "he-IL",
+      "html_dir": "rtl",
+      "direction": "rtl",
+      "body_direction": "rtl",
+      "title": "תוצרת מקצועית - nimrod.bio · V200 dev",
+      "mixed_ltr_issue_detected": false
+    },
+    {
+      "browser": "firefox",
+      "path": "/blog/יום-בגינה/",
+      "lang": "he-IL",
+      "html_dir": "rtl",
+      "direction": "rtl",
+      "body_direction": "rtl",
+      "title": "למה אנחנו קמים בבוקר? יום בגינה - nimrod.bio · V200 dev",
+      "mixed_ltr_issue_detected": false
+    },
+    {
+      "browser": "firefox",
+      "path": "/contact/",
+      "lang": "he-IL",
+      "html_dir": "rtl",
+      "direction": "rtl",
+      "body_direction": "rtl",
+      "title": "צור קשר - nimrod.bio · V200 dev",
+      "mixed_ltr_issue_detected": false
+    },
+    {
+      "browser": "webkit",
+      "path": "/",
+      "lang": "he-IL",
+      "html_dir": "rtl",
+      "direction": "rtl",
+      "body_direction": "rtl",
+      "title": "בית - nimrod.bio · V200 dev",
+      "mixed_ltr_issue_detected": false
+    },
+    {
+      "browser": "webkit",
+      "path": "/blog/",
+      "lang": "he-IL",
+      "html_dir": "rtl",
+      "direction": "rtl",
+      "body_direction": "rtl",
+      "title": "בלוג - nimrod.bio · V200 dev",
+      "mixed_ltr_issue_detected": false
+    },
+    {
+      "browser": "webkit",
+      "path": "/services/produce/",
+      "lang": "he-IL",
+      "html_dir": "rtl",
+      "direction": "rtl",
+      "body_direction": "rtl",
+      "title": "תוצרת מקצועית - nimrod.bio · V200 dev",
+      "mixed_ltr_issue_detected": false
+    },
+    {
+      "browser": "webkit",
+      "path": "/blog/יום-בגינה/",
+      "lang": "he-IL",
+      "html_dir": "rtl",
+      "direction": "rtl",
+      "body_direction": "rtl",
+      "title": "למה אנחנו קמים בבוקר? יום בגינה - nimrod.bio · V200 dev",
+      "mixed_ltr_issue_detected": false
+    },
+    {
+      "browser": "webkit",
+      "path": "/contact/",
+      "lang": "he-IL",
+      "html_dir": "rtl",
+      "direction": "rtl",
+      "body_direction": "rtl",
+      "title": "צור קשר - nimrod.bio · V200 dev",
+      "mixed_ltr_issue_detected": false
+    }
+  ]
+}

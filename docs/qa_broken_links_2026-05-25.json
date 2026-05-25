@@ -1,0 +1,500 @@
+{
+  "generated_at": "2026-05-25T20:25:19Z",
+  "base_url": "https://nimrod-bio-2026.s887.upress.link",
+  "crawl_depth": 3,
+  "pages_crawled": [
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/",
+      "status": 200,
+      "depth": 0
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/blog/",
+      "status": 200,
+      "depth": 0
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/contact/",
+      "status": 200,
+      "depth": 0
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/world/soil/",
+      "status": 200,
+      "depth": 0
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/services/produce/",
+      "status": 200,
+      "depth": 0
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/world/know/",
+      "status": 200,
+      "depth": 1
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/world/code/",
+      "status": 200,
+      "depth": 1
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/about/",
+      "status": 200,
+      "depth": 1
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/project/coop-sharon/",
+      "status": 200,
+      "depth": 1
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/project/restaurant-supply/",
+      "status": 200,
+      "depth": 1
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/project/farm-y-bcs/",
+      "status": 200,
+      "depth": 1
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/blog/%d7%a4%d7%98%d7%a8%d7%99%d7%95%d7%aa-%d7%99%d7%a2%d7%a8-%d7%91%d7%92%d7%99%d7%a0%d7%94/",
+      "status": 200,
+      "depth": 1
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/blog/%d7%9e%d7%91%d7%95%d7%90-%d7%9c%d7%92%d7%99%d7%93%d7%95%d7%9c-%d7%94%d7%99%d7%93%d7%a8%d7%95%d7%a4%d7%95%d7%a0%d7%99/",
+      "status": 200,
+      "depth": 1
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/blog/%d7%9e%d7%93%d7%a8%d7%99%d7%9a-%d7%a9%d7%aa%d7%99%d7%9c%d7%94-%d7%a0%d7%9b%d7%95%d7%a0%d7%94/",
+      "status": 200,
+      "depth": 1
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/blog/%d7%9e%d7%93%d7%a8%d7%99%d7%9a-%d7%a9%d7%9c%d7%99%d7%a4%d7%aa-%d7%a9%d7%aa%d7%99%d7%9c%d7%99%d7%9d/",
+      "status": 200,
+      "depth": 1
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/services/sfa/",
+      "status": 200,
+      "depth": 1
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/blog/%d7%a7%d7%94%d7%99%d7%9c%d7%94-%d7%97%d7%a7%d7%9c%d7%90%d7%99%d7%aa/",
+      "status": 200,
+      "depth": 1
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/blog/%d7%9e%d7%93%d7%a8%d7%99%d7%9a-%d7%94%d7%9e%d7%a7%d7%99%d7%a3-%d7%9c%d7%92%d7%99%d7%93%d7%95%d7%9c-%d7%93%d7%9c%d7%95%d7%a2%d7%99%d7%9d-%d7%90%d7%95%d7%a8%d7%92%d7%a0%d7%99%d7%99%d7%9d-%d7%91%d7%91-2/",
+      "status": 200,
+      "depth": 1
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/blog/%d7%99%d7%95%d7%9d-%d7%91%d7%92%d7%99%d7%a0%d7%94/",
+      "status": 200,
+      "depth": 1
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/blog/harish2021/",
+      "status": 200,
+      "depth": 1
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/blog/common/",
+      "status": 200,
+      "depth": 1
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/blog/%d7%90%d7%95%d7%9b%d7%9e%d7%a0%d7%99%d7%95%d7%aa/",
+      "status": 200,
+      "depth": 1
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/wp-content/themes/nimrod-bio-2026/assets/icons/home.svg",
+      "status": 200,
+      "depth": 1
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/services/seed-t7-consulting-hydro/",
+      "status": 200,
+      "depth": 1
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/services/hydro-greenhouse/",
+      "status": 200,
+      "depth": 1
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/services/seed-t7-produce/",
+      "status": 200,
+      "depth": 1
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/services/consulting-hydro/",
+      "status": 200,
+      "depth": 1
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/project/hagina-shel-nimrod/",
+      "status": 200,
+      "depth": 1
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/about/heritage/",
+      "status": 200,
+      "depth": 1
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/services/tiktrack/",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/services/consulting-agro/",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/services/seed-t7-sfa/",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/blog/back-to-mud/",
+      "status": 404,
+      "depth": 2
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/project/rest-x-greenhouse/",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/03/IMG_0796-225x300.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/03/6FBD756A-95DC-47FE-8D5E-F5BB90351704-169x300.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/03/WhatsApp-Image-2023-03-05-at-07.58.16-300x169.jpeg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/03/WhatsApp-Image-2023-03-05-at-07.57.23-1-300x138.jpeg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/03/WhatsApp-Image-2023-03-05-at-07.57.23-2-300x138.jpeg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/03/WhatsApp-Image-2023-03-05-at-07.57.23-3-300x138.jpeg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/03/WhatsApp-Image-2023-03-06-at-21.01.07-2-138x300.jpeg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/03/WhatsApp-Image-2023-03-06-at-21.01.06-300x138.jpeg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/03/WhatsApp-Image-2023-03-06-at-21.01.06-1-300x138.jpeg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/03/WhatsApp-Image-2023-03-06-at-21.01.04-300x138.jpeg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/03/WhatsApp-Image-2023-03-06-at-21.01.05-300x138.jpeg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/services/teaching/",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/02/image6.png",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/02/image9.png",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/03/aeroponics-1200x800-1.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/03/Aquaponics-Media-Grow-Bed.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/03/what-aquaponics-definition-system-benefits.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/03/Aquaponics1.png",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/02/7da05782-f999-40f6-9bbc-fc7198c9821c-1024x768.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/02/IMG-20210201-WA0064-768x1024.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/02/6afebb86-1cf1-4bcf-9cdf-b08e1b38701b-e1676251151932.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/02/2d43f882-1c3d-4c8b-8bb5-0c01f4f2c089-1024x768.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/02/7c3c6b3f-6b39-4033-a681-ab2745a9cac8-1024x768.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/02/WhatsApp-Image-2019-07-29-at-13.10.39-768x1024.jpeg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/02/300204c5-4817-4fed-bd25-f44d698becd1-768x1024.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/02/בלוגין-דלעות.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/02/דלויים-פייסבוק.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/02/סיפור-דלעת.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/02/אסף.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/02/קשתות.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2023/02/קבוצה-דלעת.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2020/10/סידור-שתילה-אדנית-10030-סלט-ועלים-scaled.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2020/10/סידור-שתילה-אדנית-10030-חורף-scaled.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2020/10/סידור-שתילה-אדנית-10030-תבלינים-scaled.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2021/10/WhatsApp-Image-2021-10-10-at-8.24.59-PM-1024x1024.jpeg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2019/07/logo-300x106.png",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2020/10/כפתור-כניסה-לחנות-רגיל.png",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2020/10/חריש-21-300x230.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2021/10/חבילה22-270x300.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2021/10/חבילה23-296x300.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2021/10/חבילה24-300x273.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2021/10/חבילה25-300x285.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2021/10/חבילה26-270x300.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2021/10/חבילהזרעים-300x252.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2020/10/סידור-שתילה-אדנית-10030-סלט-ועלים-300x88.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2020/10/סידור-שתילה-אדנית-10030-חורף-300x88.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2020/10/סידור-שתילה-אדנית-10030-תבלינים-300x88.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2019/07/34c5b336-b59c-4c91-b57a-d3ef265800fe-768x1024.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2019/07/WhatsApp-Image-2019-05-04-at-13.31.17-1024x768.jpeg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2019/07/LND_136ED2E5-466A-4484-99CC-AF11FA285E69-1024x591.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2019/07/34c5b336-b59c-4c91-b57a-d3ef265800fe-225x300.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2019/07/WhatsApp-Image-2019-05-04-at-13.31.17-300x225.jpeg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2019/07/LND_136ED2E5-466A-4484-99CC-AF11FA285E69-300x173.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2020/09/image13-768x1024.jpg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2021/02/WhatsApp-Image-2021-02-11-at-13.55.27.jpeg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2021/01/WhatsApp-Image-2021-01-21-at-14.41.50-225x300.jpeg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2021/01/WhatsApp-Image-2021-01-20-at-19.04.56.jpeg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2021/01/WhatsApp-Image-2021-01-20-at-19.02.32-1.jpeg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2021/01/WhatsApp-Image-2021-01-21-at-17.01.10-768x1024.jpeg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2021/01/WhatsApp-Image-2021-01-21-at-17.01.10-225x300.jpeg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2021/01/WhatsApp-Image-2021-01-21-at-14.42.07-768x1024.jpeg",
+      "status": 200,
+      "depth": 2
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2021/01/סט-מוצרים.jpeg",
+      "status": 200,
+      "depth": 2
+    }
+  ],
+  "links_checked_total": 96,
+  "assets_discovered_total": 56,
+  "broken_links": [
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/blog/back-to-mud/",
+      "status": 404
+    }
+  ],
+  "summary": {
+    "ok_links": 95,
+    "planned_410": 0,
+    "broken_count": 1
+  }
+}

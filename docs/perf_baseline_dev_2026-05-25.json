@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-05-25T20:19:26Z",
+  "base_url": "https://nimrod-bio-2026.s887.upress.link",
+  "rows": [
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/",
+      "status": 200,
+      "ttfb_ms": 260.36,
+      "bytes": 32708,
+      "request_count": null,
+      "lcp_ms": null,
+      "cache_header": null
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/blog/",
+      "status": 200,
+      "ttfb_ms": 266.07,
+      "bytes": 39022,
+      "request_count": null,
+      "lcp_ms": null,
+      "cache_header": null
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/services/produce/",
+      "status": 200,
+      "ttfb_ms": 258.16,
+      "bytes": 29749,
+      "request_count": null,
+      "lcp_ms": null,
+      "cache_header": null
+    }
+  ],
+  "notes": "TTFB/bytes captured via requests; request_count and LCP require browser tracing and are left null."
+}

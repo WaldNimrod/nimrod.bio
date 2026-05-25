@@ -1,0 +1,93 @@
+{
+  "generated_at": "2026-05-25T20:21:06Z",
+  "base_url": "https://nimrod-bio-2026.s887.upress.link",
+  "urls_tested": 8,
+  "results": [
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/",
+      "status": "ok",
+      "scores": {
+        "performance": 89,
+        "accessibility": 93,
+        "best_practices": 100,
+        "seo": 66
+      }
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/world/soil/",
+      "status": "ok",
+      "scores": {
+        "performance": 88,
+        "accessibility": 92,
+        "best_practices": 100,
+        "seo": 66
+      }
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/services/produce/",
+      "status": "ok",
+      "scores": {
+        "performance": 88,
+        "accessibility": 93,
+        "best_practices": 100,
+        "seo": 66
+      }
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/blog/",
+      "status": "ok",
+      "scores": {
+        "performance": 87,
+        "accessibility": 93,
+        "best_practices": 100,
+        "seo": 69
+      }
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/contact/",
+      "status": "ok",
+      "scores": {
+        "performance": 89,
+        "accessibility": 93,
+        "best_practices": 100,
+        "seo": 66
+      }
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/project/coop-sharon/",
+      "status": "ok",
+      "scores": {
+        "performance": 87,
+        "accessibility": 93,
+        "best_practices": 100,
+        "seo": 69
+      }
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/blog/%d7%a4%d7%98%d7%a8%d7%99%d7%95%d7%aa-%d7%99%d7%a2%d7%a8-%d7%91%d7%92%d7%99%d7%a0%d7%94/",
+      "status": "ok",
+      "scores": {
+        "performance": 86,
+        "accessibility": 94,
+        "best_practices": 73,
+        "seo": 69
+      }
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/blog/%d7%9e%d7%91%d7%95%d7%90-%d7%9c%d7%92%d7%99%d7%93%d7%95%d7%9c-%d7%94%d7%99%d7%93%d7%a8%d7%95%d7%a4%d7%95%d7%a0%d7%99/",
+      "status": "ok",
+      "scores": {
+        "performance": 87,
+        "accessibility": 88,
+        "best_practices": 73,
+        "seo": 69
+      }
+    }
+  ],
+  "averages": {
+    "performance": 87.62,
+    "accessibility": 92.38,
+    "best_practices": 93.25,
+    "seo": 67.5
+  }
+}

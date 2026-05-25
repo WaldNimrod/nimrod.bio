@@ -434,5 +434,9 @@ work_packages:
     result: PASS
     date: "2026-05-25"
     notes: "LOD400 by team_100. QA sweep across 9 sections: responsive 28 probes (7 templates × 4 viewports), Lighthouse 8 URLs, RTL bidi 3 browsers, axe-core a11y, contact form + SMTP, redirect re-verify, broken-link crawl, visual regression vs design, perf baseline. Final deliverable: CUTOVER_READINESS_REPORT with GO / CONDITIONAL GO / NO-GO signal."
-  notes: "IN_PROGRESS. MANDATE: _COMMUNICATION/team_10/MANDATE_NB-S002-P005-WP001_v1.0.0.md. Target: 3 working days. No code changes beyond QA tools; defects route to V300 or fix-cycle. Blocks P005-WP002 (cutover) until REPORT signals GO."
+  - gate: L-GATE_BUILD
+    result: PASS_WITH_CONDITIONS
+    date: "2026-05-25"
+    notes: "Team 10 QA sweep completed. 5 scripts in scripts/qa/ + 9 evidence docs + visual screenshots + CUTOVER_READINESS_REPORT_2026-05-25.md. Results — Responsive: 28/28 PASS; RTL bidi: 5/5 PASS (Chrome+Firefox+WebKit); axe-core: PASS (blocking threshold); Redirects: 23/6/2 PASS; Lighthouse averages Perf 87.6, A11y 92.4, BP 93.3, SEO 67.5 (SEO capped by dev noindex). Findings: 1 medium broken link /blog/back-to-mud/ (template hardcode, routed to V300), Lighthouse A11y target 95 missed (range 88-94), BP target 90 missed on 2 posts (73). SMTP deliverability deferred to V300. Final signature: CONDITIONAL GO. validate_aos.sh 32/16/0. team_100 self-reviewed evidence."
+  notes: "L-GATE_BUILD PASS_WITH_CONDITIONS (CONDITIONAL GO from CUTOVER_READINESS_REPORT). VALIDATE_REQUEST issued to team_190 to confirm or contest the CONDITIONAL GO decision. Awaiting cross-engine sign-off before P005-WP002 (cutover) opens."
 
