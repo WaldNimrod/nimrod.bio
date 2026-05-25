@@ -468,5 +468,25 @@ work_packages:
     result: PASS
     date: "2026-05-26"
     notes: "LOD400 by team_100. Cutover strategy: in-place swap on same uPress account (dev was provisioned within prod uPress for this purpose). 5 phases (D-1 prep, D-0 cutover, smoke, Search Console, 48h monitor, closure). 19 acceptance tests K1-K19. 6 cutover scripts in scripts/cutover/. Effort: ~6 active hours over 3-4 calendar days. Awaiting team_00 confirmation of D-day window before opening to team_10."
-  notes: "PLANNED — pending team_00 D-day confirmation. After team_00 picks D-day window, team_100 issues MANDATE to team_10 for D-1 prep. This is V200's final WP — upon PASS, V200 milestone closes."
+  notes: "DEFERRED 2026-05-26 by team_00 directive — production cutover is on hold until content expansion phase (P006) completes on dev URL. LOD400 stays authored and ready; MANDATE to team_10 not issued. team_110 (Domain Architect) was handed off via /AOS_handoff to lead content phase interactively with team_00. Cutover re-activates only after team_110 signals COMPLETION_CONTENT_PHASE."
+
+# ─── P006 — content expansion phase (pre-cutover) — opened 2026-05-26 ───
+
+- id: NB-S002-P006-PROGRAM
+  label: "nimrod-bio — Content Expansion Phase (pre-cutover)"
+  status: IN_PROGRESS
+  track: A
+  current_lean_gate: L-GATE_DISCOVERY
+  lod_status: LOD200
+  assigned_builder: team_110_arch
+  assigned_validator: nimrodbio_val
+  created_at: "2026-05-26"
+  milestone_ref: V200
+  spec_ref: "_COMMUNICATION/team_110/MISSION_BRIEF_CONTENT_PHASE_2026-05-26_v1.0.0.md"
+  gate_history:
+  - gate: L-GATE_DISCOVERY
+    result: PENDING
+    date: "2026-05-26"
+    notes: "AOS_handoff to team_110 executed 2026-05-26. Mission Brief + canonical handoff artifact written to _COMMUNICATION/team_110/. team_110 to run Discovery (interview team_00 on Q1-Q11) → Architecture pass per content item → batch MANDATEs to team_10 → final COMPLETION_CONTENT_PHASE signals cutover unblock."
+  notes: "IN_PROGRESS as program-level placeholder. WPs to be opened as content batches mature (NB-S002-P006-WP001 first batch, NB-S002-P006-WP002 second batch, etc). Backlog seed: 5 TBC content blocks (Q-05/Q-NEW-03/Q-11/Q-02/Q-03), broken link /blog/back-to-mud/, new posts, content updates to 22 migrated posts, possible new services/projects. team_110 handoff: HANDOFF_SELF_110_GENERAL_2026-05-25_v1.md + MISSION_BRIEF_CONTENT_PHASE_2026-05-26_v1.0.0.md."
 
