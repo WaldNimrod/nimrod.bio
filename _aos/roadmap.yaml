@@ -257,7 +257,7 @@ work_packages:
   - gate: L-GATE_VALIDATE
     result: PASS_WITH_DEFERRALS
     date: "2026-05-25"
-    notes: "team_190 VERDICT v1.0.0 — W1-W14 + constitutional + baseline PASS. 3 non-blocking deferrals: runtime computed-style probes for W3/W12 (CSS definitions verified static), mobile no-horizontal-scroll runtime probe (deferred to P005), W6 interpreted as "up to available + anchor"."
+    notes: "team_190 VERDICT v1.0.0 — W1-W14 + constitutional + baseline PASS. 3 non-blocking deferrals: runtime computed-style probes for W3/W12 (CSS definitions verified static), mobile no-horizontal-scroll runtime probe (deferred to P005), W6 interpreted as 'up to available + anchor'."
   notes: "COMPLETE. STANDARD track A. L-GATE_VALIDATE PASS_WITH_DEFERRALS. P003 cascade member. See VERDICT v1.0.0 in _COMMUNICATION/team_190/."
 
 - id: NB-S002-P003-WP003
