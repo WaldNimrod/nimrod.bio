@@ -1,0 +1,31 @@
+{
+  "project": "nimrod-bio",
+  "milestone": "V200",
+  "matrix_version": "v1",
+  "filled_by": "team_00",
+  "generated_at": "2026-05-25T17:17:01.293Z",
+  "posts": [
+    {"id": "91178", "title": "פטריות יער בגינה", "slug": "פטריות-יער-בגינה", "new_url": "/blog/פטריות-יער-בגינה/", "worlds": ["soil"], "flow_style": "brief", "featured": false, "notes": ""},
+    {"id": "91019", "title": "מבוא לגידול הידרופוני", "slug": "מבוא-לגידול-הידרופוני", "new_url": "/blog/מבוא-לגידול-הידרופוני/", "worlds": ["soil", "know"], "flow_style": "wide", "featured": true, "notes": ""},
+    {"id": "90935", "title": "מדריך שתילה נכונה", "slug": "מדריך-שתילה-נכונה", "new_url": "/blog/מדריך-שתילה-נכונה/", "worlds": ["soil", "know"], "flow_style": "feature", "featured": false, "notes": ""},
+    {"id": "90917", "title": "מדריך ״שליפת״ שתילים", "slug": "מדריך-שליפת-שתילים", "new_url": "/blog/מדריך-שליפת-שתילים/", "worlds": ["soil", "know"], "flow_style": "brief", "featured": false, "notes": ""},
+    {"id": "90592", "title": "הקהילה החקלאית - החברים של הגינה", "slug": "קהילה_חקלאית", "new_url": "/blog/קהילה-חקלאית/", "worlds": ["soil"], "flow_style": "quote", "featured": false, "notes": ""},
+    {"id": "90724", "title": "מדריך המקיף לגידול דלועים אורגניים בבית ובשדה", "slug": "מדריך-המקיף-לגידול-דלועים-אורגניים-בב-2", "new_url": "/blog/מדריך-המקיף-לגידול-דלועים-אורגניים-בב-2/", "worlds": ["soil", "know"], "flow_style": "wide", "featured": false, "notes": ""},
+    {"id": "90677", "title": "למה אנחנו קמים בבוקר? יום בגינה", "slug": "video1", "new_url": "/blog/יום-בגינה/", "worlds": ["soil", "know"], "flow_style": "feature", "featured": true, "notes": ""},
+    {"id": "90635", "title": "חריש למאכל", "slug": "harish2021", "new_url": "/blog/harish2021/", "worlds": ["soil"], "flow_style": "brief", "featured": false, "notes": ""},
+    {"id": "90589", "title": "ידידי מהגינה - קומון המהפכה החקלאית השלישית", "slug": "common", "new_url": "/blog/common/", "worlds": ["soil"], "flow_style": "brief", "featured": false, "notes": ""},
+    {"id": "90510", "title": "שתילי אוכמניות וגידול אוכמניות בבית", "slug": "אוכמניות", "new_url": "/blog/אוכמניות/", "worlds": ["soil"], "flow_style": "feature", "featured": true, "notes": ""},
+    {"id": "90444", "title": "גידולי ירקות חורף - מרווחים וזמנים", "slug": "spaces_dtm-winter", "new_url": "/blog/spaces_dtm-winter/", "worlds": ["soil", "know"], "flow_style": "wide", "featured": false, "notes": ""},
+    {"id": "90361", "title": "שתילות חורף - הדרכה לגני ילדים", "slug": "שתילות-חורף-הדרכה-לגני-ילדים", "new_url": "/blog/שתילות-חורף-הדרכה-לגני-ילדים/", "worlds": ["soil", "know"], "flow_style": "quote", "featured": false, "notes": ""},
+    {"id": "90248", "title": "שתילי חורף לכווולם!", "slug": "transplant-spread", "new_url": "/blog/transplant-spread/", "worlds": ["soil"], "flow_style": "brief", "featured": false, "notes": ""},
+    {"id": "90156", "title": "גידולי חורף בזריעה ישירה", "slug": "direct-seeding", "new_url": "/blog/direct-seeding/", "worlds": ["soil", "know"], "flow_style": "wide", "featured": false, "notes": ""},
+    {"id": "90109", "title": "איזה שתילים קניתי? - מדריך מצולם", "slug": "transpantphotoindex", "new_url": "/blog/transpantphotoindex/", "worlds": ["soil", "know"], "flow_style": "tall", "featured": false, "notes": ""},
+    {"id": "90085", "title": "שתילי חורף - מידע לשותלים", "slug": "transplantinfo2020", "new_url": "/blog/transplantinfo2020/", "worlds": ["soil", "know"], "flow_style": "tall", "featured": false, "notes": ""},
+    {"id": "90026", "title": "מהגינה לגנן - שתילי חורף 2020", "slug": "transplants2020", "new_url": "/blog/transplants2020/", "worlds": ["soil"], "flow_style": "quote", "featured": false, "notes": ""},
+    {"id": "2760", "title": "זיו רייף (כאן 11) מבקר בגינה", "slug": "זיו-רייף-כאן-11-מבקר-בגינה", "new_url": "/blog/זיו-רייף-כאן-11-מבקר-בגינה/", "worlds": ["soil", "know"], "flow_style": "feature", "featured": true, "notes": ""},
+    {"id": "2233", "title": "עדכון שבועי מהגינה", "slug": "עדכון-שבועי-מהגינה", "new_url": "/blog/עדכון-שבועי-מהגינה/", "worlds": ["soil"], "flow_style": "quote", "featured": false, "notes": ""},
+    {"id": "2187", "title": "סדנת ליקוט עם אביבית ברקוביץ", "slug": "סדנת-ליקוט-עם-אביבית-ברקוביץ", "new_url": "/blog/סדנת-ליקוט-עם-אביבית-ברקוביץ/", "worlds": ["soil", "know"], "flow_style": "brief", "featured": false, "notes": ""},
+    {"id": "1233", "title": "מועדי זריעה ושתילה", "slug": "מועדי-זריעה-ושתילה", "new_url": "/blog/מועדי-זריעה-ושתילה/", "worlds": ["soil", "know"], "flow_style": "typo", "featured": false, "notes": ""},
+    {"id": "1218", "title": "צמחים חברים", "slug": "צמחים-חברים", "new_url": "/blog/צמחים-חברים/", "worlds": ["soil", "know"], "flow_style": "wide", "featured": true, "notes": ""}
+  ]
+}

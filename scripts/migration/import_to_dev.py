@@ -7,6 +7,7 @@ import json
 import sys
 import time
 from pathlib import Path
+from urllib.parse import urlencode
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
@@ -64,7 +65,8 @@ def should_import(row: dict) -> bool:
 
 
 def delete_existing_by_slug(base: str, user: str, password: str, collection: str, slug: str) -> None:
-    existing = rest_request("GET", f"{base}/{collection}?slug={slug}&status=any", user, password)
+    query = urlencode({"slug": slug, "status": "any"})
+    existing = rest_request("GET", f"{base}/{collection}?{query}", user, password)
     for item in existing or []:
         rest_request("DELETE", f"{base}/{collection}/{item['id']}?force=true", user, password, sleep_ms=100)
 

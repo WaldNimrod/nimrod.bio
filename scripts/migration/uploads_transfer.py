@@ -9,6 +9,7 @@ import subprocess
 import sys
 import urllib.request
 from pathlib import Path
+from urllib.parse import quote, urlsplit, urlunsplit
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
@@ -41,7 +42,10 @@ def download_file(url: str, dest: Path) -> bool:
     dest.parent.mkdir(parents=True, exist_ok=True)
     if dest.exists() and dest.stat().st_size > 0:
         return True
-    req = urllib.request.Request(url, headers={"User-Agent": "nimrod-bio-migration/1.0"})
+    parts = urlsplit(url)
+    safe_path = quote(parts.path, safe="/%")
+    safe_url = urlunsplit((parts.scheme, parts.netloc, safe_path, parts.query, parts.fragment))
+    req = urllib.request.Request(safe_url, headers={"User-Agent": "nimrod-bio-migration/1.0"})
     try:
         with urllib.request.urlopen(req, timeout=120) as resp:
             dest.write_bytes(resp.read())

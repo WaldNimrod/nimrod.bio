@@ -64,7 +64,8 @@ def dev_rest_base() -> str:
 
 
 def dev_site_url() -> str:
-    return os.environ.get("UPRESS_DEV_URL", os.environ.get("UPRESS_DEV_URL_HTTP", "")).rstrip("/")
+    # Prefer HTTP on dev — uPress *.upress.link HTTPS cert is invalid (see CLAUDE.md).
+    return os.environ.get("UPRESS_DEV_URL_HTTP", os.environ.get("UPRESS_DEV_URL", "")).rstrip("/")
 
 
 def prod_auth() -> tuple[str, str]:
@@ -83,6 +84,7 @@ def rest_request(
     payload: dict | None = None,
     *,
     sleep_ms: int = 0,
+    retries: int = 3,
 ) -> Any:
     if sleep_ms:
         time.sleep(sleep_ms / 1000.0)
@@ -94,16 +96,25 @@ def rest_request(
     if payload is not None:
         data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
         headers["Content-Type"] = "application/json; charset=utf-8"
-    req = urllib.request.Request(url, data=data, headers=headers, method=method)
     cred = base64.b64encode(f"{user}:{password}".encode()).decode()
-    req.add_header("Authorization", f"Basic {cred}")
-    try:
-        with urllib.request.urlopen(req, timeout=60) as resp:
-            body = resp.read().decode("utf-8")
-            return json.loads(body) if body else {}
-    except urllib.error.HTTPError as exc:
-        detail = exc.read().decode("utf-8", "replace")
-        raise RuntimeError(f"{method} {url} -> HTTP {exc.code}: {detail[:400]}") from exc
+    last_exc: Exception | None = None
+    for attempt in range(retries):
+        req = urllib.request.Request(url, data=data, headers=headers, method=method)
+        req.add_header("Authorization", f"Basic {cred}")
+        try:
+            with urllib.request.urlopen(req, timeout=90) as resp:
+                body = resp.read().decode("utf-8")
+                return json.loads(body) if body else {}
+        except (urllib.error.URLError, TimeoutError) as exc:
+            last_exc = exc
+            if attempt + 1 < retries:
+                time.sleep(2 ** attempt)
+                continue
+            raise RuntimeError(f"{method} {url} -> network error after {retries} attempts: {exc}") from exc
+        except urllib.error.HTTPError as exc:
+            detail = exc.read().decode("utf-8", "replace")
+            raise RuntimeError(f"{method} {url} -> HTTP {exc.code}: {detail[:400]}") from exc
+    raise RuntimeError(f"{method} {url} failed") from last_exc
 
 
 def load_decisions() -> dict:
