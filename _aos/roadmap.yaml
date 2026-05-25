@@ -149,5 +149,9 @@ work_packages:
     result: PASS
     date: "2026-05-25"
     notes: "Team 10 deliverables: theme nimrod-bio-2026 active on dev, lang=he-IL, RTL clean, Shell nav + Footer render verbatim from T1-data.jsx JSX, system.css + shell.css enqueued in correct order, world active-state works (/world/soil/ shows nav-world soil is-active). 14/15 acceptance tests PASS; T10 SEO=63 due to uPress edge X-Robots-Tag noindex on *.upress.link (environmental, not code defect — Lighthouse Performance=88, A11y=98, Best Practices=100). Bonus: SFA-FTPS canonical procedure documented at docs/UPRESS_FTPS_MANDATORY_PROCEDURE.md + scripts/upress_ftps_upload.py. team_100 self-reviewed and verified theme active via REST + Shell HTML render via curl 2026-05-25."
-  notes: "L-GATE_BUILD PASS. VALIDATE_REQUEST issued to team_190 (cross-engine: Codex). Pending VERDICT before WP002-2 (CPTs) can start. T10 SEO deferred to P005-WP001 QA on production URL."
+  - gate: L-GATE_VALIDATE
+    result: FAIL
+    date: "2026-05-25"
+    notes: "team_190 (Codex) cycle 1 — 14/15 tests PASS but 4 constitutional/governance blockers: (a) T8 H1 computed font Assistant not Frank Ruhl Libre — h1 element rule missing; (b) system.css drift — TikTrack lowercased to tiktrack, violates verbatim contract; (c) shell.css footer values diverge from T1-styles.css lines 468-501 (opacity .72/.82/.74/.82 vs source .5/.6/.45/.55, Unless em paper-tinted vs source var(--spark)); (d) theme directory not tracked in git. T10 SEO=63 + Check 32 drift accepted as deferrals. VERDICT: _COMMUNICATION/team_190/VERDICT_NB-S002-P002-WP001_VALIDATE_v1.0.0.md. Fix cycle 1 mandate issued: _COMMUNICATION/team_10/MANDATE_FIX_NB-S002-P002-WP001_v1.1.0.md."
+  notes: "L-GATE_VALIDATE FAIL cycle 1. Fix cycle in progress with team_10 — 4 blockers, all file-state defects, scoped to ≤4 hours per AOS_FIX_CYCLE_DISCIPLINE §3. WP002-2 and WP003+ remain blocked until cycle 2 PASS."
 
