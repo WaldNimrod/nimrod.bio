@@ -63,3 +63,7 @@ Thumbs.db
 .claude/worktrees/
 .claude/sessions/
 .claude/cache/
+
+# === Python bytecode (test/automation scripts) ===
+__pycache__/
+*.pyc
