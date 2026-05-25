@@ -1,13 +1,13 @@
 {
   "base_url": "http://nimrod-bio-2026.s887.upress.link",
-  "generated_at": "2026-05-25T19:11:24Z",
+  "generated_at": "2026-05-25T19:52:41Z",
   "summary": {
     "redirect": {
-      "pass": 0,
+      "pass": 23,
       "total": 23
     },
     "drop": {
-      "pass": 0,
+      "pass": 6,
       "total": 6
     },
     "keep": {
@@ -15,7 +15,7 @@
       "total": 2
     }
   },
-  "all_pass": false,
+  "all_pass": true,
   "results": [
     {
       "id": "1144",
@@ -24,9 +24,10 @@
       "decision": "drop",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%98%D7%91%D7%9C%D7%AA-%D7%9E%D7%99%D7%A0%D7%99%D7%9D/",
       "expected": "410",
-      "actual_status": 404,
+      "actual_status": 410,
       "actual_location": "",
-      "pass": false
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "1154",
@@ -35,9 +36,10 @@
       "decision": "drop",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%A2%D7%93%D7%9B%D7%95%D7%9F-%D7%9E%D7%99%D7%A0%D7%99%D7%9D-%D7%95%D7%96%D7%A0%D7%99%D7%9D/",
       "expected": "410",
-      "actual_status": 404,
+      "actual_status": 410,
       "actual_location": "",
-      "pass": false
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "1571",
@@ -46,9 +48,10 @@
       "decision": "drop",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/grow/",
       "expected": "410",
-      "actual_status": 404,
+      "actual_status": 410,
       "actual_location": "",
-      "pass": false
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "2516",
@@ -57,9 +60,10 @@
       "decision": "redirect",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%94%D7%96%D7%9E%D7%A0%D7%AA-%D7%A1%D7%9C-%D7%99%D7%A8%D7%A7%D7%95%D7%AA-%D7%90%D7%95%D7%A8%D7%92%D7%90%D7%A0%D7%99-%D7%A4%D7%A8%D7%93%D7%A1-%D7%97%D7%A0%D7%94-2-2-2-2-2/",
       "expected": "/about/heritage/",
-      "actual_status": 404,
-      "actual_location": "",
-      "pass": false
+      "actual_status": 301,
+      "actual_location": "/about/heritage/",
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "90533",
@@ -70,6 +74,7 @@
       "expected": "200",
       "actual_status": 200,
       "actual_location": "",
+      "network_error": "",
       "pass": true
     },
     {
@@ -81,6 +86,7 @@
       "expected": "200",
       "actual_status": 200,
       "actual_location": "",
+      "network_error": "",
       "pass": true
     },
     {
@@ -90,9 +96,10 @@
       "decision": "drop",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/smallfarmsagent/",
       "expected": "410",
-      "actual_status": 404,
+      "actual_status": 410,
       "actual_location": "",
-      "pass": false
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "91178",
@@ -101,9 +108,10 @@
       "decision": "redirect",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%A4%D7%98%D7%A8%D7%99%D7%95%D7%AA-%D7%99%D7%A2%D7%A8-%D7%91%D7%92%D7%99%D7%A0%D7%94/",
       "expected": "/blog/פטריות-יער-בגינה/",
-      "actual_status": 404,
-      "actual_location": "",
-      "pass": false
+      "actual_status": 301,
+      "actual_location": "/blog/%D7%A4%D7%98%D7%A8%D7%99%D7%95%D7%AA-%D7%99%D7%A2%D7%A8-%D7%91%D7%92%D7%99%D7%A0%D7%94/",
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "91019",
@@ -112,9 +120,10 @@
       "decision": "redirect",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%9E%D7%91%D7%95%D7%90-%D7%9C%D7%92%D7%99%D7%93%D7%95%D7%9C-%D7%94%D7%99%D7%93%D7%A8%D7%95%D7%A4%D7%95%D7%A0%D7%99/",
       "expected": "/blog/מבוא-לגידול-הידרופוני/",
-      "actual_status": 404,
-      "actual_location": "",
-      "pass": false
+      "actual_status": 301,
+      "actual_location": "/blog/%D7%9E%D7%91%D7%95%D7%90-%D7%9C%D7%92%D7%99%D7%93%D7%95%D7%9C-%D7%94%D7%99%D7%93%D7%A8%D7%95%D7%A4%D7%95%D7%A0%D7%99/",
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "90935",
@@ -123,9 +132,10 @@
       "decision": "redirect",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%A9%D7%AA%D7%99%D7%9C%D7%94-%D7%A0%D7%9B%D7%95%D7%A0%D7%94/",
       "expected": "/blog/מדריך-שתילה-נכונה/",
-      "actual_status": 404,
-      "actual_location": "",
-      "pass": false
+      "actual_status": 301,
+      "actual_location": "/blog/%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%A9%D7%AA%D7%99%D7%9C%D7%94-%D7%A0%D7%9B%D7%95%D7%A0%D7%94/",
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "90917",
@@ -134,9 +144,10 @@
       "decision": "redirect",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%A9%D7%9C%D7%99%D7%A4%D7%AA-%D7%A9%D7%AA%D7%99%D7%9C%D7%99%D7%9D/",
       "expected": "/blog/מדריך-שליפת-שתילים/",
-      "actual_status": 404,
-      "actual_location": "",
-      "pass": false
+      "actual_status": 301,
+      "actual_location": "/blog/%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%A9%D7%9C%D7%99%D7%A4%D7%AA-%D7%A9%D7%AA%D7%99%D7%9C%D7%99%D7%9D/",
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "90592",
@@ -145,9 +156,10 @@
       "decision": "redirect",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%A7%D7%94%D7%99%D7%9C%D7%94_%D7%97%D7%A7%D7%9C%D7%90%D7%99%D7%AA/",
       "expected": "/blog/קהילה-חקלאית/",
-      "actual_status": 404,
-      "actual_location": "",
-      "pass": false
+      "actual_status": 301,
+      "actual_location": "/blog/%D7%A7%D7%94%D7%99%D7%9C%D7%94-%D7%97%D7%A7%D7%9C%D7%90%D7%99%D7%AA/",
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "90724",
@@ -156,9 +168,10 @@
       "decision": "redirect",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%94%D7%9E%D7%A7%D7%99%D7%A3-%D7%9C%D7%92%D7%99%D7%93%D7%95%D7%9C-%D7%93%D7%9C%D7%95%D7%A2%D7%99%D7%9D-%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99%D7%99%D7%9D-%D7%91%D7%91-2/",
       "expected": "/blog/מדריך-המקיף-לגידול-דלועים-אורגניים-בב-2/",
-      "actual_status": 404,
-      "actual_location": "",
-      "pass": false
+      "actual_status": 301,
+      "actual_location": "/blog/%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%94%D7%9E%D7%A7%D7%99%D7%A3-%D7%9C%D7%92%D7%99%D7%93%D7%95%D7%9C-%D7%93%D7%9C%D7%95%D7%A2%D7%99%D7%9D-%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99%D7%99%D7%9D-%D7%91%D7%91-2/",
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "90677",
@@ -167,9 +180,10 @@
       "decision": "redirect",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/video1/",
       "expected": "/blog/יום-בגינה/",
-      "actual_status": 404,
-      "actual_location": "",
-      "pass": false
+      "actual_status": 301,
+      "actual_location": "/blog/%D7%99%D7%95%D7%9D-%D7%91%D7%92%D7%99%D7%A0%D7%94/",
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "90635",
@@ -178,9 +192,10 @@
       "decision": "redirect",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/harish2021/",
       "expected": "/blog/harish2021/",
-      "actual_status": 404,
-      "actual_location": "",
-      "pass": false
+      "actual_status": 301,
+      "actual_location": "/blog/harish2021/",
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "90589",
@@ -189,9 +204,10 @@
       "decision": "redirect",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/common/",
       "expected": "/blog/common/",
-      "actual_status": 404,
-      "actual_location": "",
-      "pass": false
+      "actual_status": 301,
+      "actual_location": "/blog/common/",
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "90510",
@@ -200,9 +216,10 @@
       "decision": "redirect",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%90%D7%95%D7%9B%D7%9E%D7%A0%D7%99%D7%95%D7%AA/",
       "expected": "/blog/אוכמניות/",
-      "actual_status": 404,
-      "actual_location": "",
-      "pass": false
+      "actual_status": 301,
+      "actual_location": "/blog/%D7%90%D7%95%D7%9B%D7%9E%D7%A0%D7%99%D7%95%D7%AA/",
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "90444",
@@ -211,9 +228,10 @@
       "decision": "redirect",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/spaces_dtm-winter/",
       "expected": "/blog/spaces_dtm-winter/",
-      "actual_status": 404,
-      "actual_location": "",
-      "pass": false
+      "actual_status": 301,
+      "actual_location": "/blog/spaces_dtm-winter/",
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "90361",
@@ -222,9 +240,10 @@
       "decision": "redirect",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%A9%D7%AA%D7%99%D7%9C%D7%95%D7%AA-%D7%97%D7%95%D7%A8%D7%A3-%D7%94%D7%93%D7%A8%D7%9B%D7%94-%D7%9C%D7%92%D7%A0%D7%99-%D7%99%D7%9C%D7%93%D7%99%D7%9D/",
       "expected": "/blog/שתילות-חורף-הדרכה-לגני-ילדים/",
-      "actual_status": 404,
-      "actual_location": "",
-      "pass": false
+      "actual_status": 301,
+      "actual_location": "/blog/%D7%A9%D7%AA%D7%99%D7%9C%D7%95%D7%AA-%D7%97%D7%95%D7%A8%D7%A3-%D7%94%D7%93%D7%A8%D7%9B%D7%94-%D7%9C%D7%92%D7%A0%D7%99-%D7%99%D7%9C%D7%93%D7%99%D7%9D/",
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "90248",
@@ -233,9 +252,10 @@
       "decision": "redirect",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/transplant-spread/",
       "expected": "/blog/transplant-spread/",
-      "actual_status": 404,
-      "actual_location": "",
-      "pass": false
+      "actual_status": 301,
+      "actual_location": "/blog/transplant-spread/",
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "90156",
@@ -244,9 +264,10 @@
       "decision": "redirect",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/direct-seeding/",
       "expected": "/blog/direct-seeding/",
-      "actual_status": 404,
-      "actual_location": "",
-      "pass": false
+      "actual_status": 301,
+      "actual_location": "/blog/direct-seeding/",
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "90109",
@@ -255,9 +276,10 @@
       "decision": "redirect",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/transpantphotoindex/",
       "expected": "/blog/transpantphotoindex/",
-      "actual_status": 404,
-      "actual_location": "",
-      "pass": false
+      "actual_status": 301,
+      "actual_location": "/blog/transpantphotoindex/",
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "90085",
@@ -266,9 +288,10 @@
       "decision": "redirect",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/transplantinfo2020/",
       "expected": "/blog/transplantinfo2020/",
-      "actual_status": 404,
-      "actual_location": "",
-      "pass": false
+      "actual_status": 301,
+      "actual_location": "/blog/transplantinfo2020/",
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "90026",
@@ -277,9 +300,10 @@
       "decision": "redirect",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/transplants2020/",
       "expected": "/blog/transplants2020/",
-      "actual_status": 404,
-      "actual_location": "",
-      "pass": false
+      "actual_status": 301,
+      "actual_location": "/blog/transplants2020/",
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "6516",
@@ -288,9 +312,10 @@
       "decision": "drop",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%97%D7%93%D7%A9-%D7%94%D7%96%D7%9E%D7%A0%D7%95%D7%AA-%D7%9E%D7%94%D7%92%D7%99%D7%A0%D7%94-%D7%91%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%99%D7%AA-farmer/",
       "expected": "410",
-      "actual_status": 404,
+      "actual_status": 410,
       "actual_location": "",
-      "pass": false
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "2760",
@@ -299,9 +324,10 @@
       "decision": "redirect",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%96%D7%99%D7%95-%D7%A8%D7%99%D7%99%D7%A3-%D7%9B%D7%90%D7%9F-11-%D7%9E%D7%91%D7%A7%D7%A8-%D7%91%D7%92%D7%99%D7%A0%D7%94/",
       "expected": "/blog/זיו-רייף-כאן-11-מבקר-בגינה/",
-      "actual_status": 404,
-      "actual_location": "",
-      "pass": false
+      "actual_status": 301,
+      "actual_location": "/blog/%D7%96%D7%99%D7%95-%D7%A8%D7%99%D7%99%D7%A3-%D7%9B%D7%90%D7%9F-11-%D7%9E%D7%91%D7%A7%D7%A8-%D7%91%D7%92%D7%99%D7%A0%D7%94/",
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "2236",
@@ -310,9 +336,10 @@
       "decision": "drop",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%A9%D7%99%D7%AA%D7%95%D7%A3-%D7%A4%D7%A2%D7%95%D7%9C%D7%94-%D7%97%D7%93%D7%A9-%D7%91%D7%99%D7%9F-%D7%94%D7%92%D7%99%D7%A0%D7%94-%D7%95%D7%9E%D7%97%D7%A1%D7%A0%D7%99-%D7%94%D7%98%D7%91%D7%A2%D7%95/",
       "expected": "410",
-      "actual_status": 404,
+      "actual_status": 410,
       "actual_location": "",
-      "pass": false
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "2233",
@@ -321,9 +348,10 @@
       "decision": "redirect",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%A2%D7%93%D7%9B%D7%95%D7%9F-%D7%A9%D7%91%D7%95%D7%A2%D7%99-%D7%9E%D7%94%D7%92%D7%99%D7%A0%D7%94/",
       "expected": "/blog/עדכון-שבועי-מהגינה/",
-      "actual_status": 404,
-      "actual_location": "",
-      "pass": false
+      "actual_status": 301,
+      "actual_location": "/blog/%D7%A2%D7%93%D7%9B%D7%95%D7%9F-%D7%A9%D7%91%D7%95%D7%A2%D7%99-%D7%9E%D7%94%D7%92%D7%99%D7%A0%D7%94/",
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "2187",
@@ -332,9 +360,10 @@
       "decision": "redirect",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%A1%D7%93%D7%A0%D7%AA-%D7%9C%D7%99%D7%A7%D7%95%D7%98-%D7%A2%D7%9D-%D7%90%D7%91%D7%99%D7%91%D7%99%D7%AA-%D7%91%D7%A8%D7%A7%D7%95%D7%91%D7%99%D7%A5/",
       "expected": "/blog/סדנת-ליקוט-עם-אביבית-ברקוביץ/",
-      "actual_status": 404,
-      "actual_location": "",
-      "pass": false
+      "actual_status": 301,
+      "actual_location": "/blog/%D7%A1%D7%93%D7%A0%D7%AA-%D7%9C%D7%99%D7%A7%D7%95%D7%98-%D7%A2%D7%9D-%D7%90%D7%91%D7%99%D7%91%D7%99%D7%AA-%D7%91%D7%A8%D7%A7%D7%95%D7%91%D7%99%D7%A5/",
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "1233",
@@ -343,9 +372,10 @@
       "decision": "redirect",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%9E%D7%95%D7%A2%D7%93%D7%99-%D7%96%D7%A8%D7%99%D7%A2%D7%94-%D7%95%D7%A9%D7%AA%D7%99%D7%9C%D7%94/",
       "expected": "/blog/מועדי-זריעה-ושתילה/",
-      "actual_status": 404,
-      "actual_location": "",
-      "pass": false
+      "actual_status": 301,
+      "actual_location": "/blog/%D7%9E%D7%95%D7%A2%D7%93%D7%99-%D7%96%D7%A8%D7%99%D7%A2%D7%94-%D7%95%D7%A9%D7%AA%D7%99%D7%9C%D7%94/",
+      "network_error": "",
+      "pass": true
     },
     {
       "id": "1218",
@@ -354,9 +384,10 @@
       "decision": "redirect",
       "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%A6%D7%9E%D7%97%D7%99%D7%9D-%D7%97%D7%91%D7%A8%D7%99%D7%9D/",
       "expected": "/blog/צמחים-חברים/",
-      "actual_status": 404,
-      "actual_location": "",
-      "pass": false
+      "actual_status": 301,
+      "actual_location": "/blog/%D7%A6%D7%9E%D7%97%D7%99%D7%9D-%D7%97%D7%91%D7%A8%D7%99%D7%9D/",
+      "network_error": "",
+      "pass": true
     }
   ]
 }

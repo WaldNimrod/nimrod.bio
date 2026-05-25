@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import json
+import socket
+import time
 import urllib.error
 import urllib.request
 from datetime import datetime
@@ -16,7 +18,7 @@ class NoRedirectHandler(urllib.request.HTTPRedirectHandler):
         return None
 
 
-def request_once(url: str) -> tuple[int, str]:
+def request_once(url: str) -> tuple[int, str, str]:
     opener = urllib.request.build_opener(NoRedirectHandler())
     req = urllib.request.Request(
         url,
@@ -25,9 +27,27 @@ def request_once(url: str) -> tuple[int, str]:
     )
     try:
         with opener.open(req, timeout=30) as resp:
-            return int(resp.status), ""
+            return int(resp.status), "", ""
     except urllib.error.HTTPError as exc:
-        return int(exc.code), (exc.headers.get("Location") or "")
+        return int(exc.code), (exc.headers.get("Location") or ""), ""
+    except urllib.error.URLError as exc:
+        return 0, "", str(exc.reason)
+    except TimeoutError:
+        return 0, "", "timeout"
+    except socket.timeout:
+        return 0, "", "timeout"
+
+
+def request_with_retries(url: str, retries: int = 2) -> tuple[int, str, str]:
+    last = (0, "", "unknown")
+    for attempt in range(retries + 1):
+        code, location, error = request_once(url)
+        last = (code, location, error)
+        if code != 0:
+            return last
+        if attempt < retries:
+            time.sleep(1.5)
+    return last
 
 
 def make_url(base: str, slug: str) -> str:
@@ -66,7 +86,7 @@ def main() -> int:
         summary[decision]["total"] += 1
         slug = row.get("slug", "")
         url = make_url(base, slug)
-        code, location = request_once(url)
+        code, location, net_error = request_with_retries(url, retries=2)
 
         ok = False
         expected = ""
@@ -93,6 +113,7 @@ def main() -> int:
                 "expected": expected,
                 "actual_status": code,
                 "actual_location": location,
+                "network_error": net_error,
                 "pass": ok,
             }
         )
