@@ -165,10 +165,10 @@ work_packages:
 
 - id: NB-S002-P002-WP002
   label: "nimrod-bio — CPTs + taxonomies + meta boxes (native)"
-  status: IN_PROGRESS
+  status: COMPLETE
   track: A
-  current_lean_gate: L-GATE_VALIDATE
-  lod_status: LOD400
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
   assigned_builder: nimrodbio_build
   assigned_validator: nimrodbio_val
   created_at: "2026-05-25"
@@ -192,5 +192,9 @@ work_packages:
     result: FAIL
     date: "2026-05-25"
     notes: "team_190 (Codex) cycle 1 VERDICT — most of C1-C16 PASS including REST CRUD/meta, slugs, world pages, validate_aos.sh 0 FAIL, PHP lint, C16 regression. 2 constitutional blockers: B1 /?world=slug renders public archive (body_class 'archive tax-world') — contradicts spec; root cause is LOD400 spec defect (query_var='world') inherited verbatim by team_10. B2 leftover test service id=12 (wp002-acceptance-service) not cleaned post-build. VERDICT: _COMMUNICATION/team_190/VERDICT_NB-S002-P002-WP002_VALIDATE_v1.0.0.md. MANDATE_FIX cycle 1 issued: _COMMUNICATION/team_10/MANDATE_FIX_NB-S002-P002-WP002_v1.1.0.md."
-  notes: "L-GATE_VALIDATE FAIL cycle 1 — fix cycle in progress. 2 blockers, ≤30 min remediation (B1 = 2-line edit to taxonomies.php publicly_queryable+query_var; B2 = REST DELETE service/12). team_100 acknowledges LOD400 defect on B1 root cause. WP002-2 unblock to P003 cascade still pending cycle 2 PASS."
+  - gate: L-GATE_VALIDATE
+    result: PASS
+    date: "2026-05-25"
+    notes: "team_190 (Codex) VERDICT v1.1.0 cycle 2 PASS after fix commit ebc2b481. B1 fixed via taxonomies.php publicly_queryable=false + query_var=false (LOD400 defect originally by team_100, acknowledged in feedback_lod400_taxonomy_query_var memory). B2 fixed via REST DELETE services/12. Independent verification: /?world=soil → 404 body class 'error404' (no archive/tax-world); services/12 → 404; world REST 200 with 3 terms; /world/soil/ → 200; validate_aos.sh 32 PASS / 16 SKIP / 0 FAIL. Cross-engine Iron Rule #1 maintained. Verdict preflight: PASS."
+  notes: "COMPLETE. STANDARD track A. L-GATE_VALIDATE PASS cycle 2 (after fix-cycle-1 closed B1 spec defect + B2 hygiene). CPTs services+projects active with REST exposure; world + flow_style taxonomies seeded; native meta boxes operational; /world/ page hierarchy bootstrapped. Unblocks ALL 5 P003 template WPs (T7/T1/T2-T3/T4-T5/T8) for parallel execution per team_00 strategy B decision."
 
