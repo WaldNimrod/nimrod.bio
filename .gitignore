@@ -33,6 +33,8 @@ nimrod.bio/wp-config.php
 nimrod.bio/wp-config-local.php
 .env
 .env.local
+.env.upress
+.env.upress.dev
 
 # === Uploads (binary content — too large, not in source control) ===
 nimrod.bio/wp-content/uploads/
@@ -42,6 +44,12 @@ sources/*.zip
 sources/*.sql
 sources/*.tar.gz
 sources/*.gz
+
+# === Design package — sealed snapshot, reference-only, never edited locally ===
+# Contains legitimate cross-project mentions in design copy.
+# Excluded to keep validate_aos.sh Check 12 clean for tracked-file scans.
+# Re-extract from the design ZIP under ~/Downloads via `ditto -x -k` if needed.
+sources/team_35_design_package/
 
 # === Restore work directory ===
 .restore-work/

@@ -1,0 +1,312 @@
+{
+  "project": "nimrod-bio",
+  "milestone": "V200",
+  "matrix_version": "v1",
+  "filled_by": "team_00 (Nimrod)",
+  "filled_at": "2026-05-25T00:39:53.357Z",
+  "decisions": [
+    {
+      "id": "1144",
+      "type": "page",
+      "slug": "טבלת-מינים",
+      "title": "טבלת מינים",
+      "decision": "drop",
+      "new_url": null,
+      "notes": null
+    },
+    {
+      "id": "1154",
+      "type": "page",
+      "slug": "עדכון-מינים-וזנים",
+      "title": "עדכון מינים וזנים",
+      "decision": "drop",
+      "new_url": null,
+      "notes": null
+    },
+    {
+      "id": "1571",
+      "type": "page",
+      "slug": "grow",
+      "title": "נתוני גידול",
+      "decision": "drop",
+      "new_url": null,
+      "notes": null
+    },
+    {
+      "id": "2516",
+      "type": "page",
+      "slug": "הזמנת-סל-ירקות-אורגאני-פרדס-חנה-2-2-2-2-2",
+      "title": "מהגינה של נימרוד",
+      "decision": "redirect",
+      "new_url": "/about/heritage/",
+      "notes": "old: -2-2-2-2-2 messy slug → canonical heritage page"
+    },
+    {
+      "id": "90533",
+      "type": "page",
+      "slug": "shook",
+      "title": "שוק הירוקה",
+      "flagged_seo": true,
+      "decision": "keep",
+      "new_url": null,
+      "notes": null
+    },
+    {
+      "id": "90896",
+      "type": "page",
+      "slug": "blog",
+      "title": "בלוג מהגינה",
+      "flagged_seo": true,
+      "decision": "keep",
+      "new_url": null,
+      "notes": "זה עמוד בלוג שלנו"
+    },
+    {
+      "id": "91325",
+      "type": "page",
+      "slug": "smallfarmsagent",
+      "title": "MyFarmAgents — Market Report",
+      "flagged_seo": true,
+      "decision": "drop",
+      "new_url": null,
+      "notes": null
+    },
+    {
+      "id": "91178",
+      "type": "post",
+      "slug": "פטריות-יער-בגינה",
+      "title": "פטריות יער בגינה",
+      "decision": "redirect",
+      "new_url": "/blog/פטריות-יער-בגינה/",
+      "notes": "[auto: /blog/ prefix per Team 00 directive 2026-05-25]"
+    },
+    {
+      "id": "91019",
+      "type": "post",
+      "slug": "מבוא-לגידול-הידרופוני",
+      "title": "מבוא לגידול הידרופוני",
+      "decision": "redirect",
+      "new_url": "/blog/מבוא-לגידול-הידרופוני/",
+      "notes": "[auto: /blog/ prefix per Team 00 directive 2026-05-25]"
+    },
+    {
+      "id": "90935",
+      "type": "post",
+      "slug": "מדריך-שתילה-נכונה",
+      "title": "מדריך שתילה נכונה",
+      "decision": "redirect",
+      "new_url": "/blog/מדריך-שתילה-נכונה/",
+      "notes": "[auto: /blog/ prefix per Team 00 directive 2026-05-25]"
+    },
+    {
+      "id": "90917",
+      "type": "post",
+      "slug": "מדריך-שליפת-שתילים",
+      "title": "מדריך ״שליפת״ שתילים",
+      "decision": "redirect",
+      "new_url": "/blog/מדריך-שליפת-שתילים/",
+      "notes": "[auto: /blog/ prefix per Team 00 directive 2026-05-25]"
+    },
+    {
+      "id": "90592",
+      "type": "post",
+      "slug": "קהילה_חקלאית",
+      "title": "הקהילה החקלאית - החברים של הגינה",
+      "decision": "redirect",
+      "new_url": "/blog/קהילה-חקלאית/",
+      "notes": "old: underscore → canonical hyphen"
+    },
+    {
+      "id": "90724",
+      "type": "post",
+      "slug": "מדריך-המקיף-לגידול-דלועים-אורגניים-בב-2",
+      "title": "מדריך המקיף לגידול דלועים אורגניים בבית ובשדה",
+      "decision": "redirect",
+      "new_url": "/blog/מדריך-המקיף-לגידול-דלועים-אורגניים-בב-2/",
+      "notes": "[auto: /blog/ prefix per Team 00 directive 2026-05-25]"
+    },
+    {
+      "id": "90677",
+      "type": "post",
+      "slug": "video1",
+      "title": "למה אנחנו קמים בבוקר? יום בגינה",
+      "flagged_seo": true,
+      "decision": "redirect",
+      "new_url": "/blog/יום-בגינה/",
+      "notes": "video1 → semantic Hebrew slug"
+    },
+    {
+      "id": "90635",
+      "type": "post",
+      "slug": "harish2021",
+      "title": "חריש למאכל",
+      "flagged_seo": true,
+      "decision": "redirect",
+      "new_url": "/blog/harish2021/",
+      "notes": "[auto: /blog/ prefix per Team 00 directive 2026-05-25]"
+    },
+    {
+      "id": "90589",
+      "type": "post",
+      "slug": "common",
+      "title": "ידידי מהגינה - קומון המהפכה החקלאית השלישית",
+      "flagged_seo": true,
+      "decision": "redirect",
+      "new_url": "/blog/common/",
+      "notes": "[auto: /blog/ prefix per Team 00 directive 2026-05-25]"
+    },
+    {
+      "id": "90510",
+      "type": "post",
+      "slug": "אוכמניות",
+      "title": "שתילי אוכמניות וגידול אוכמניות בבית",
+      "decision": "redirect",
+      "new_url": "/blog/אוכמניות/",
+      "notes": "עמוד סופר חשוב!!! [auto: /blog/ prefix per Team 00 directive 2026-05-25]"
+    },
+    {
+      "id": "90444",
+      "type": "post",
+      "slug": "spaces_dtm-winter",
+      "title": "גידולי ירקות חורף - מרווחים וזמנים",
+      "decision": "redirect",
+      "new_url": "/blog/spaces_dtm-winter/",
+      "notes": "[auto: /blog/ prefix per Team 00 directive 2026-05-25]"
+    },
+    {
+      "id": "90361",
+      "type": "post",
+      "slug": "שתילות-חורף-הדרכה-לגני-ילדים",
+      "title": "שתילות חורף - הדרכה לגני ילדים",
+      "decision": "redirect",
+      "new_url": "/blog/שתילות-חורף-הדרכה-לגני-ילדים/",
+      "notes": "[auto: /blog/ prefix per Team 00 directive 2026-05-25]"
+    },
+    {
+      "id": "90248",
+      "type": "post",
+      "slug": "transplant-spread",
+      "title": "שתילי חורף לכווולם!",
+      "flagged_seo": true,
+      "decision": "redirect",
+      "new_url": "/blog/transplant-spread/",
+      "notes": "[auto: /blog/ prefix per Team 00 directive 2026-05-25]"
+    },
+    {
+      "id": "90156",
+      "type": "post",
+      "slug": "direct-seeding",
+      "title": "גידולי חורף בזריעה ישירה",
+      "flagged_seo": true,
+      "decision": "redirect",
+      "new_url": "/blog/direct-seeding/",
+      "notes": "[auto: /blog/ prefix per Team 00 directive 2026-05-25]"
+    },
+    {
+      "id": "90109",
+      "type": "post",
+      "slug": "transpantphotoindex",
+      "title": "איזה שתילים קניתי? - מדריך מצולם",
+      "flagged_seo": true,
+      "decision": "redirect",
+      "new_url": "/blog/transpantphotoindex/",
+      "notes": "[auto: /blog/ prefix per Team 00 directive 2026-05-25]"
+    },
+    {
+      "id": "90085",
+      "type": "post",
+      "slug": "transplantinfo2020",
+      "title": "שתילי חורף - מידע לשותלים",
+      "flagged_seo": true,
+      "decision": "redirect",
+      "new_url": "/blog/transplantinfo2020/",
+      "notes": "[auto: /blog/ prefix per Team 00 directive 2026-05-25]"
+    },
+    {
+      "id": "90026",
+      "type": "post",
+      "slug": "transplants2020",
+      "title": "מהגינה לגנן - שתילי חורף 2020",
+      "flagged_seo": true,
+      "decision": "redirect",
+      "new_url": "/blog/transplants2020/",
+      "notes": "[auto: /blog/ prefix per Team 00 directive 2026-05-25]"
+    },
+    {
+      "id": "6516",
+      "type": "post",
+      "slug": "חדש-הזמנות-מהגינה-באפליקציית-farmer",
+      "title": "חדש - הזמנות מהגינה באפליקציית Farmer",
+      "decision": "drop",
+      "new_url": null,
+      "notes": null
+    },
+    {
+      "id": "2760",
+      "type": "post",
+      "slug": "זיו-רייף-כאן-11-מבקר-בגינה",
+      "title": "זיו רייף (כאן 11) מבקר בגינה",
+      "decision": "redirect",
+      "new_url": "/blog/זיו-רייף-כאן-11-מבקר-בגינה/",
+      "notes": "[auto: /blog/ prefix per Team 00 directive 2026-05-25]"
+    },
+    {
+      "id": "2236",
+      "type": "post",
+      "slug": "שיתוף-פעולה-חדש-בין-הגינה-ומחסני-הטבעו",
+      "title": "שיתוף פעולה חדש בין הגינה ומחסני הטבעונות",
+      "decision": "drop",
+      "new_url": null,
+      "notes": null
+    },
+    {
+      "id": "2233",
+      "type": "post",
+      "slug": "עדכון-שבועי-מהגינה",
+      "title": "עדכון שבועי מהגינה",
+      "decision": "redirect",
+      "new_url": "/blog/עדכון-שבועי-מהגינה/",
+      "notes": "[auto: /blog/ prefix per Team 00 directive 2026-05-25]"
+    },
+    {
+      "id": "2187",
+      "type": "post",
+      "slug": "סדנת-ליקוט-עם-אביבית-ברקוביץ",
+      "title": "סדנת ליקוט עם אביבית ברקוביץ",
+      "decision": "redirect",
+      "new_url": "/blog/סדנת-ליקוט-עם-אביבית-ברקוביץ/",
+      "notes": "[auto: /blog/ prefix per Team 00 directive 2026-05-25]"
+    },
+    {
+      "id": "1233",
+      "type": "post",
+      "slug": "מועדי-זריעה-ושתילה",
+      "title": "מועדי זריעה ושתילה",
+      "decision": "redirect",
+      "new_url": "/blog/מועדי-זריעה-ושתילה/",
+      "notes": "[auto: /blog/ prefix per Team 00 directive 2026-05-25]"
+    },
+    {
+      "id": "1218",
+      "type": "post",
+      "slug": "צמחים-חברים",
+      "title": "צמחים חברים",
+      "decision": "redirect",
+      "new_url": "/blog/צמחים-חברים/",
+      "notes": "[auto: /blog/ prefix per Team 00 directive 2026-05-25]"
+    }
+  ],
+  "finalized_at": "2026-05-25",
+  "finalized_by": "team_00 + team_100 (nimrod-bio)",
+  "stats": {
+    "keep": 2,
+    "drop": 6,
+    "redirect": 23
+  },
+  "policy": {
+    "post_url_pattern": "/blog/{slug}/",
+    "page_url_pattern": "/{slug}/  (root, except heritage subpath)",
+    "redirect_strategy": "301 permanent via Redirection plugin (NB-S002-P004-WP002)",
+    "drop_strategy": "410 Gone (no SEO value preserved)"
+  }
+}
