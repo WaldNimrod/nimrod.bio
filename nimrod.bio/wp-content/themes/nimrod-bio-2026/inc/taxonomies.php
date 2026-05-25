@@ -78,6 +78,12 @@ add_action(
 		}
 
 		if ( isset( $_GET['world'] ) && '' !== trim( (string) $_GET['world'] ) ) {
+			$path = trim( (string) wp_parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH ), '/' );
+			// T5 blog index uses ?world= for server-side filter (WP004) — not a public taxonomy archive.
+			if ( 'blog' === $path || 0 === strpos( $path, 'blog/' ) ) {
+				return;
+			}
+
 			global $wp_query;
 
 			$wp_query->set_404();

@@ -1,0 +1,473 @@
+/* ============================================================
+   T5 · Blog index · Stage 3 prototype
+   Single category. Filters by world-tag (multi) + free tags.
+   Featured (latest) + list/grid.
+   ============================================================ */
+
+:root {
+  --t5-max: 1240px;
+  --t5-gutter: clamp(20px, 4vw, 56px);
+}
+
+.t5-wrap { max-width: var(--t5-max); margin: 0 auto; padding-inline: var(--t5-gutter); }
+.t5-section { padding-block: clamp(32px, 4vw, 64px); }
+.t5-section.first { padding-top: clamp(28px, 4vw, 56px); }
+
+/* ============================================================
+   BLOG HEADER
+   ============================================================ */
+.blog-header {
+  padding-block: clamp(40px, 5vw, 72px) clamp(24px, 3vw, 40px);
+  border-bottom: 1px solid var(--line);
+}
+.blog-header h1 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 900;
+  font-size: clamp(56px, 8vw, 112px); line-height: .92;
+  margin: 0 0 14px; letter-spacing: -.03em;
+  color: var(--ink);
+}
+.blog-header .lede {
+  font-family: "Frank Ruhl Libre", serif; font-style: italic;
+  font-size: clamp(18px, 2vw, 24px); line-height: 1.5;
+  color: var(--ink-soft); margin: 0; max-width: 56ch; font-weight: 500;
+}
+.blog-header .lede em { color: var(--ink); font-style: italic; }
+.blog-header-grid {
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; align-items: end;
+}
+.blog-header .stats {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  color: var(--ink-soft); letter-spacing: .04em;
+  display: grid; gap: 8px;
+  text-align: end;
+}
+.blog-header .stats .v { font-family: "Frank Ruhl Libre", serif; font-size: 24px; font-weight: 700; color: var(--ink); }
+
+/* ============================================================
+   FILTER BAR — sticky beneath blog header
+   ============================================================ */
+.filter-bar {
+  position: sticky; top: 53px; z-index: 50;
+  background: rgba(245,243,236,.92); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  padding: 14px var(--t5-gutter);
+}
+.filter-bar-inner {
+  max-width: var(--t5-max); margin: 0 auto;
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.filter-label {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft);
+}
+.filter-chip {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid var(--line); background: var(--paper);
+  cursor: pointer;
+  font-family: "Assistant", sans-serif; font-size: 13.5px; font-weight: 500;
+  color: var(--ink);
+  transition: background .15s, border-color .15s, color .15s;
+}
+.filter-chip::before {
+  content: ""; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--ink-soft);
+}
+.filter-chip.soil::before { background: var(--w-soil); }
+.filter-chip.know::before { background: var(--w-know); }
+.filter-chip.code::before { background: var(--w-code); }
+.filter-chip:hover { border-color: var(--ink-soft); }
+.filter-chip.is-on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.filter-chip.is-on.soil { background: var(--w-soil-deep); border-color: var(--w-soil-deep); }
+.filter-chip.is-on.know { background: var(--w-know-deep); border-color: var(--w-know-deep); }
+.filter-chip.is-on.code { background: var(--w-code-deep); border-color: var(--w-code-deep); }
+.filter-chip.is-on::before { background: rgba(255,255,255,.85); }
+
+.filter-sep { width: 1px; height: 20px; background: var(--line); margin: 0 4px; }
+
+.filter-count {
+  margin-inline-start: auto;
+  font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--ink-soft);
+  letter-spacing: .06em;
+}
+.filter-count b { color: var(--ink); font-weight: 700; }
+
+.filter-reset {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  background: none; border: none; cursor: pointer;
+  color: var(--ink-soft); text-decoration: underline; padding: 0;
+}
+.filter-reset:hover { color: var(--ink); }
+
+/* ============================================================
+   FEATURED — first post above the list
+   ============================================================ */
+.blog-featured {
+  padding-block: clamp(32px, 4vw, 56px);
+  border-bottom: 1px solid var(--line);
+}
+.blog-featured-grid {
+  display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(28px, 4vw, 48px); align-items: center;
+}
+.blog-featured .feat-img { aspect-ratio: 16/10; border-radius: var(--radius-l); }
+.blog-featured .feat-eyebrow {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--w-soil-deep); margin-bottom: 14px;
+  display: inline-flex; gap: 14px; align-items: center;
+}
+.blog-featured h2 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 800;
+  font-size: clamp(32px, 4vw, 52px); line-height: 1.05;
+  margin: 0 0 18px; letter-spacing: -.015em;
+  color: var(--ink);
+}
+.blog-featured h2 a { color: inherit; text-decoration: none; }
+.blog-featured h2 a:hover { color: var(--w-soil-deep); }
+.blog-featured p {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 18px; line-height: 1.65; color: var(--ink); margin: 0 0 22px;
+  max-width: 52ch;
+}
+.blog-featured .meta {
+  display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  color: var(--ink-soft); letter-spacing: .03em;
+}
+.blog-featured .meta .dot { opacity: .5; }
+.blog-featured .read-more {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 20px;
+  font-family: "Assistant", sans-serif; font-size: 14.5px; font-weight: 600;
+  color: var(--w-know-deep); text-decoration: none;
+  border-bottom: 1.5px solid var(--w-know-deep);
+  padding-bottom: 2px;
+}
+.blog-featured .read-more:hover { color: var(--ink); border-color: var(--ink); }
+.blog-featured .read-more::after { content: " ←"; }
+
+/* ============================================================
+   POST GRID — list view
+   ============================================================ */
+.posts-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 2.5vw, 36px);
+}
+.post-tile {
+  display: flex; flex-direction: column; gap: 14px;
+  text-decoration: none; color: inherit;
+  padding-block: 24px;
+  border-top: 1px solid var(--line);
+}
+.post-tile .img-ph { aspect-ratio: 16/10; border-radius: var(--radius-m); }
+.post-tile .tile-meta {
+  display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  color: var(--ink-soft); letter-spacing: .03em;
+}
+.post-tile .tile-meta .dot { opacity: .5; }
+.post-tile h3 {
+  font-family: "Frank Ruhl Libre", serif; font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: 700; margin: 0; line-height: 1.2; letter-spacing: -.005em;
+  color: var(--ink); transition: color .15s;
+}
+.post-tile:hover h3 { color: var(--w-soil-deep); }
+.post-tile p { font-size: 15.5px; line-height: 1.6; color: var(--ink-soft); margin: 0; }
+.post-tile .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+
+/* hidden by filter */
+.post-tile.filtered-out { display: none; }
+
+/* ============================================================
+   PAGINATION / END-MARKER
+   ============================================================ */
+.blog-end {
+  padding-block: 48px; text-align: center;
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  color: var(--ink-soft); letter-spacing: .04em;
+}
+.blog-end .rule {
+  display: block; width: 60px; height: 1px;
+  background: var(--ink-soft); margin: 24px auto 0; opacity: .4;
+}
+
+/* ============================================================
+   VIEW TOGGLE — buttons in filter bar
+   ============================================================ */
+.view-toggle {
+  display: flex; gap: 0; align-items: center;
+  background: var(--paper); border: 1px solid var(--line);
+  border-radius: 100px; padding: 3px;
+}
+.view-toggle button {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 5px 12px; border: none;
+  background: transparent; color: var(--ink-soft);
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  letter-spacing: .06em; cursor: pointer;
+  border-radius: 100px;
+  transition: background .15s, color .15s;
+}
+.view-toggle button:hover { color: var(--ink); }
+.view-toggle button.is-on { background: var(--ink); color: var(--paper); }
+.view-toggle button svg { display: block; }
+
+/* ============================================================
+   POST FLOW — bold editorial / magazine layout
+   6-col grid · auto-flow dense · varied spans + heights
+   ============================================================ */
+.post-flow {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-flow: row dense;
+  gap: clamp(20px, 2.5vw, 36px);
+  align-items: stretch;
+}
+
+/* ───── base item ───── */
+.flow-item {
+  text-decoration: none; color: inherit;
+  display: flex; flex-direction: column; gap: 14px;
+  transition: transform .18s ease, box-shadow .18s ease;
+  min-width: 0;
+}
+.flow-item:hover { transform: translateY(-2px); }
+
+/* ───── LEAD — full row, horizontal, dramatic ───── */
+.flow-item.flow-lead {
+  grid-column: span 6;
+  flex-direction: row;
+  gap: clamp(28px, 4vw, 56px);
+  padding: clamp(28px, 4vw, 52px);
+  background: var(--paper-2);
+  border-radius: var(--radius-l);
+  align-items: stretch;
+  margin-bottom: 8px;
+}
+.flow-item.flow-lead .flow-img {
+  flex: 0 0 52%; align-self: stretch;
+}
+.flow-item.flow-lead .flow-img .img-ph {
+  height: 100%; min-height: 360px; border-radius: var(--radius-m);
+  aspect-ratio: auto;
+}
+.flow-item.flow-lead .flow-body { flex: 1; justify-content: center; }
+
+/* ───── WIDE — span 4, horizontal img-text split ───── */
+.flow-item.flow-wide {
+  grid-column: span 4;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  align-items: stretch;
+}
+.flow-item.flow-wide .flow-img .img-ph {
+  height: 100%; min-height: 280px; aspect-ratio: auto;
+  border-radius: var(--radius-m);
+}
+.flow-item.flow-wide .flow-body { justify-content: center; padding-block: 8px; }
+
+/* ───── TALL — span 2 col, span 2 row, vertical, tall image ───── */
+.flow-item.flow-tall {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.flow-item.flow-tall .img-ph {
+  aspect-ratio: 3/4; border-radius: var(--radius-m);
+  min-height: 360px;
+}
+
+/* ───── TYPO — span 3, no image, dark dramatic typography ───── */
+.flow-item.flow-typo {
+  grid-column: span 3;
+  background: var(--ink); color: var(--paper);
+  padding: clamp(28px, 3vw, 40px);
+  border-radius: var(--radius-l);
+  justify-content: space-between; gap: 18px;
+  min-height: 340px;
+}
+.flow-item.flow-typo .flow-eyebrow { color: rgba(245,243,236,.55); }
+.flow-item.flow-typo .flow-eyebrow time b { color: var(--paper); }
+
+/* ───── QUOTE — span 3, pull-quote on paper-2 ───── */
+.flow-item.flow-quote {
+  grid-column: span 3;
+  background: var(--paper-2);
+  padding: clamp(28px, 3vw, 40px);
+  border-radius: var(--radius-l);
+  justify-content: center; gap: 14px;
+  min-height: 280px;
+  position: relative;
+}
+.flow-quote-mark {
+  position: absolute; top: 12px; inset-inline-start: 24px;
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 96px; line-height: 1; color: var(--w-soil);
+  opacity: .35;
+}
+.flow-quote-text {
+  font-family: "Frank Ruhl Libre", serif; font-style: italic;
+  font-size: clamp(22px, 2.4vw, 30px); line-height: 1.35;
+  color: var(--ink); margin: 0; padding-top: 32px;
+  position: relative; z-index: 1;
+}
+.flow-quote-meta {
+  display: flex; flex-direction: column; gap: 4px;
+  border-top: 1px solid var(--line); padding-top: 14px;
+  margin-top: auto;
+}
+.flow-title-quote {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 700;
+  font-size: 17px; color: var(--ink); line-height: 1.3;
+}
+
+/* ───── FEATURE — span 3, standard vertical ───── */
+.flow-item.flow-feature {
+  grid-column: span 3;
+}
+.flow-item.flow-feature > .img-ph {
+  aspect-ratio: 16/10; border-radius: var(--radius-m);
+}
+
+/* ───── BRIEF — span 2, compact ───── */
+.flow-item.flow-brief {
+  grid-column: span 2;
+  padding-block: 24px;
+  border-top: 1px solid var(--line);
+  justify-content: flex-start;
+}
+
+/* ───── TITLES ───── */
+.flow-title-lead {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 900;
+  font-size: clamp(36px, 4.5vw, 64px); line-height: 1.02;
+  margin: 0; letter-spacing: -.022em; color: var(--ink);
+  transition: color .15s;
+}
+.flow-item.flow-lead:hover .flow-title-lead { color: var(--w-soil-deep); }
+
+.flow-title-feature {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 700;
+  font-size: clamp(20px, 2.3vw, 28px); line-height: 1.15;
+  margin: 0; letter-spacing: -.01em; color: var(--ink);
+  transition: color .15s;
+}
+.flow-item.flow-feature:hover .flow-title-feature,
+.flow-item.flow-wide:hover .flow-title-feature,
+.flow-item.flow-tall:hover .flow-title-feature { color: var(--w-soil-deep); }
+
+.flow-title-typo {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 800;
+  font-size: clamp(28px, 3.4vw, 42px); line-height: 1.05;
+  margin: 0; letter-spacing: -.018em; color: var(--paper);
+}
+.flow-item.flow-typo:hover .flow-title-typo { color: var(--b-teach); }
+
+.flow-title-brief {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 700;
+  font-size: 17px; line-height: 1.25; margin: 0;
+  color: var(--ink); transition: color .15s;
+}
+.flow-item.flow-brief:hover .flow-title-brief { color: var(--w-soil-deep); }
+
+/* ───── EXCERPTS ───── */
+.flow-excerpt-lead {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 20px; line-height: 1.6; color: var(--ink);
+  margin: 0; max-width: 56ch;
+}
+.flow-excerpt {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 15.5px; line-height: 1.55; color: var(--ink-soft);
+  margin: 0;
+}
+.flow-excerpt-typo {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 16px; line-height: 1.6;
+  color: rgba(245,243,236,.78); margin: 0; max-width: 38ch;
+}
+.flow-excerpt-brief {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 13.5px; line-height: 1.5; color: var(--ink-soft);
+  margin: 0;
+}
+
+/* ───── EYEBROW + TAGS ───── */
+.flow-eyebrow {
+  display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  color: var(--ink-soft); letter-spacing: .04em;
+}
+.flow-eyebrow time b { color: var(--ink); }
+.flow-eyebrow .lead-badge {
+  background: var(--w-soil-deep); color: #fff;
+  padding: 3px 9px; border-radius: 100px;
+  font-size: 10px; letter-spacing: .1em; font-weight: 600;
+  text-transform: uppercase;
+}
+
+.flow-tags { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.flow-tags .ftag {
+  font-family: "JetBrains Mono", monospace; font-size: 10px;
+  color: var(--ink-soft); letter-spacing: .03em;
+}
+
+.flow-read-more {
+  display: inline-block; align-self: start;
+  font-family: "Assistant", sans-serif; font-size: 14.5px; font-weight: 600;
+  color: var(--w-know-deep);
+  border-bottom: 1.5px solid var(--w-know-deep);
+  padding-bottom: 2px;
+}
+.flow-read-more.typo {
+  color: var(--b-teach); border-color: var(--b-teach);
+}
+
+/* hidden by filter */
+.flow-item.filtered-out { display: none; }
+
+/* ───── RESPONSIVE ───── */
+@media (max-width: 1100px) {
+  .flow-item.flow-tall    { grid-column: span 3; grid-row: auto; }
+  .flow-item.flow-tall .img-ph { aspect-ratio: 16/10; min-height: auto; }
+  .flow-item.flow-wide    { grid-column: span 6; }
+  .flow-item.flow-feature { grid-column: span 3; }
+  .flow-item.flow-typo, .flow-item.flow-quote { grid-column: span 3; }
+  .flow-item.flow-brief   { grid-column: span 3; }
+}
+@media (max-width: 760px) {
+  .post-flow { grid-template-columns: 1fr; gap: 24px; }
+  .flow-item.flow-lead, .flow-item.flow-feature, .flow-item.flow-brief,
+  .flow-item.flow-tall, .flow-item.flow-wide, .flow-item.flow-typo, .flow-item.flow-quote {
+    grid-column: 1; grid-row: auto;
+  }
+  .flow-item.flow-lead, .flow-item.flow-wide { flex-direction: column; display: flex; }
+  .flow-item.flow-lead .flow-img, .flow-item.flow-wide .flow-img { flex: 0 0 auto; }
+  .flow-item.flow-lead .flow-img .img-ph,
+  .flow-item.flow-wide .flow-img .img-ph { min-height: 220px; aspect-ratio: 16/10; }
+}
+
+.blog-empty {
+  padding: 56px 32px; text-align: center;
+  font-family: "Frank Ruhl Libre", serif; font-style: italic;
+  font-size: 18px; color: var(--ink-soft);
+  border: 1px dashed var(--line); border-radius: var(--radius-m);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .blog-header-grid, .blog-featured-grid { grid-template-columns: 1fr; }
+  .blog-header .stats { text-align: start; }
+  .posts-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .posts-grid { grid-template-columns: 1fr; }
+}
+
+/* WP004 theme overrides */
+.img-ph { position: relative; overflow: hidden; border-radius: var(--radius-m); background: linear-gradient(135deg, var(--paper-2), var(--line)); display: grid; place-items: center; min-height: 120px; }
+.img-ph .img-subj { position: absolute; inset-inline-start: 12px; bottom: 10px; font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--ink-soft); }
+.post-thumb { width: 100%; height: auto; object-fit: cover; border-radius: var(--radius-m); display: block; }
+.filter-chip { font: inherit; }
+.view-toggle-btn { display: inline-flex; align-items: center; gap: 7px; padding: 5px 12px; border: none; background: transparent; color: var(--ink-soft); font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: .06em; cursor: pointer; border-radius: 100px; }
+.view-toggle-btn.is-on { background: var(--ink); color: var(--paper); }
