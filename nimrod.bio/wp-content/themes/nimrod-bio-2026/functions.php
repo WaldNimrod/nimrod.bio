@@ -5,7 +5,7 @@
 defined( 'ABSPATH' ) || exit;
 
 // Constants
-define( 'NB_THEME_VERSION', '0.1.1' );
+define( 'NB_THEME_VERSION', '0.2.0' );
 define( 'NB_THEME_DIR', get_template_directory() );
 define( 'NB_THEME_URI', get_template_directory_uri() );
 
@@ -37,6 +37,15 @@ add_action(
 require_once NB_THEME_DIR . '/inc/enqueue.php';
 require_once NB_THEME_DIR . '/inc/template-helpers.php';
 require_once NB_THEME_DIR . '/inc/nav-walker.php';
+require_once NB_THEME_DIR . '/inc/helpers-cpt.php';
+require_once NB_THEME_DIR . '/inc/taxonomies.php';
+require_once NB_THEME_DIR . '/inc/cpt-service.php';
+require_once NB_THEME_DIR . '/inc/cpt-project.php';
+require_once NB_THEME_DIR . '/inc/meta-registration.php';
+require_once NB_THEME_DIR . '/inc/meta-box-service.php';
+require_once NB_THEME_DIR . '/inc/meta-box-project.php';
+require_once NB_THEME_DIR . '/inc/world-pages-bootstrap.php';
+require_once NB_THEME_DIR . '/inc/rewrites.php';
 
 // Disable comments globally for V200 (design has no comment UI).
 add_filter( 'comments_open', '__return_false', 20, 2 );

@@ -1,0 +1,329 @@
+<!doctype html>
+<html dir="rtl" lang="he">
+<head>
+<meta charset="utf-8">
+<title>nimrod.bio · 301 Triage · V200</title>
+<style>
+  :root {
+    --paper:#f5f3ec; --paper-2:#e8e7df; --ink:#1f1e1c; --ink-soft:#4a4844;
+    --line:#d6d2c2; --soil:#6a8a3a; --know:#c46a3e; --code:#2d8a8c;
+    --spark:#d23a2e; --keep:#6a8a3a; --redirect:#c46a3e; --drop:#8a2820;
+  }
+  * { box-sizing:border-box }
+  body {
+    font-family:"Assistant","Heebo",system-ui,sans-serif;
+    background:var(--paper); color:var(--ink); margin:0; padding:0;
+    font-size:15px; line-height:1.55;
+  }
+  header {
+    background:var(--ink); color:var(--paper); padding:18px 28px;
+    position:sticky; top:0; z-index:10; display:flex; align-items:center; gap:24px;
+    flex-wrap:wrap; border-block-end:3px solid var(--spark);
+  }
+  header h1 { font-family:"Frank Ruhl Libre",serif; font-size:24px; margin:0; font-weight:700 }
+  header .stats { font-family:"JetBrains Mono",monospace; font-size:13px; opacity:.85 }
+  header .stats b { color:var(--spark); font-weight:600 }
+  .actions { margin-inline-start:auto; display:flex; gap:10px }
+  button {
+    font-family:inherit; font-size:14px; font-weight:600;
+    padding:10px 18px; border-radius:100px; border:1px solid transparent; cursor:pointer;
+    background:var(--paper); color:var(--ink); transition:transform .15s;
+  }
+  button:hover { transform:translateY(-1px) }
+  .btn-copy { background:var(--spark); color:#fff; box-shadow:3px 3px 0 #8a2820 }
+  .btn-ghost { background:transparent; color:var(--paper); border-color:var(--paper) }
+  main { max-width:1400px; margin:0 auto; padding:28px }
+  .filters {
+    display:flex; gap:10px; flex-wrap:wrap; margin-bottom:18px;
+    padding:14px; background:var(--paper-2); border-radius:14px;
+  }
+  .filter-chip {
+    padding:8px 16px; border-radius:100px; background:#fff;
+    border:1.5px solid var(--line); cursor:pointer; font-size:13px; font-weight:600;
+  }
+  .filter-chip.active { background:var(--ink); color:var(--paper); border-color:var(--ink) }
+  table { width:100%; border-collapse:collapse; background:#fff; border-radius:14px; overflow:hidden; box-shadow:0 10px 30px -14px rgba(60,40,10,.18) }
+  th, td { padding:11px 14px; text-align:right; border-block-end:1px solid var(--line); vertical-align:top }
+  th { background:var(--paper-2); font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-soft); position:sticky; top:74px; z-index:5 }
+  tr.flagged td:first-child { border-inline-start:4px solid var(--spark) }
+  tr.decided-keep { background:rgba(106,138,58,.05) }
+  tr.decided-redirect { background:rgba(196,106,62,.05) }
+  tr.decided-drop { background:rgba(138,40,32,.05) }
+  .slug { font-family:"JetBrains Mono",monospace; font-size:12px; color:var(--ink-soft); word-break:break-all; max-width:280px; display:inline-block }
+  .title { font-weight:600; max-width:340px }
+  .badge { display:inline-block; padding:2px 8px; border-radius:100px; font-size:11px; font-weight:600 }
+  .badge-page { background:var(--code); color:#fff }
+  .badge-post { background:var(--soil); color:#fff }
+  .badge-flag { background:var(--spark); color:#fff; margin-inline-start:6px }
+  select, input[type=text] {
+    font-family:inherit; font-size:14px; padding:8px 10px;
+    border:1.5px solid var(--line); border-radius:8px; background:#fff; width:100%;
+  }
+  select:focus, input:focus { outline:2px solid var(--know); outline-offset:1px }
+  select.dec-keep { background:rgba(106,138,58,.15); border-color:var(--keep) }
+  select.dec-redirect { background:rgba(196,106,62,.15); border-color:var(--redirect) }
+  select.dec-drop { background:rgba(138,40,32,.15); border-color:var(--drop) }
+  .col-url { width:280px }
+  .col-decision { width:160px }
+  .col-newurl { width:240px }
+  .col-notes { width:200px }
+  a { color:var(--code); text-decoration:none }
+  a:hover { text-decoration:underline }
+  .toast {
+    position:fixed; bottom:24px; inset-inline-start:24px;
+    background:var(--ink); color:var(--paper); padding:14px 22px; border-radius:14px;
+    box-shadow:0 20px 40px -10px rgba(0,0,0,.3); font-weight:600;
+    transform:translateY(120%); transition:transform .25s; z-index:100;
+  }
+  .toast.show { transform:translateY(0) }
+  details summary { cursor:pointer; padding:8px 0; font-weight:600 }
+  pre { background:var(--paper-2); padding:14px; border-radius:8px; font-size:11px; max-height:280px; overflow:auto; direction:ltr; text-align:left }
+  .progress {
+    height:8px; background:var(--paper-2); border-radius:100px; overflow:hidden; margin-block:8px;
+  }
+  .progress > div { height:100%; background:var(--spark); transition:width .2s }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>301 Triage · V200</h1>
+  <div class="stats">
+    <span id="cnt-total">31</span> URLs ·
+    החלטות: <b id="cnt-done">0</b>/31 ·
+    <span id="cnt-keep" style="color:#6a8a3a">keep:0</span> ·
+    <span id="cnt-redirect" style="color:#c46a3e">redirect:0</span> ·
+    <span id="cnt-drop" style="color:#8a2820">drop:0</span>
+  </div>
+  <div class="actions">
+    <button class="btn-copy" onclick="copyJSON()">📋 העתק JSON</button>
+    <button class="btn-ghost" onclick="downloadJSON()">💾 הורד</button>
+    <button class="btn-ghost" onclick="loadFromClipboard()">📥 טען מ-clipboard</button>
+  </div>
+</header>
+
+<main>
+  <div class="progress"><div id="progress-bar" style="width:0%"></div></div>
+
+  <div class="filters">
+    <button class="filter-chip active" data-filter="all">הכל (<span class="f-count">31</span>)</button>
+    <button class="filter-chip" data-filter="page">עמודים (7)</button>
+    <button class="filter-chip" data-filter="post">פוסטים (24)</button>
+    <button class="filter-chip" data-filter="flagged">SEO load-bearing (12)</button>
+    <button class="filter-chip" data-filter="undecided">לא הוחלט (<span class="f-undecided">31</span>)</button>
+    <button class="filter-chip" data-filter="decided">הוחלט (<span class="f-decided">0</span>)</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>סוג</th>
+        <th>כותרת ישנה</th>
+        <th class="col-url">URL ישן</th>
+        <th class="col-decision">החלטה</th>
+        <th class="col-newurl">URL חדש (אם redirect)</th>
+        <th class="col-notes">הערה</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+
+  <details style="margin-top:24px">
+    <summary>Preview JSON output</summary>
+    <pre id="json-preview"></pre>
+  </details>
+</main>
+
+<div id="toast" class="toast"></div>
+
+<script>
+const DATA = [{"id": "1144", "type": "page", "date": "2017-08-22", "slug": "טבלת-מינים", "title": "טבלת מינים", "url": "https://nimrod.bio/טבלת-מינים/", "flagged": false}, {"id": "1154", "type": "page", "date": "2017-09-07", "slug": "עדכון-מינים-וזנים", "title": "עדכון מינים וזנים", "url": "https://nimrod.bio/עדכון-מינים-וזנים/", "flagged": false}, {"id": "1571", "type": "page", "date": "2017-12-27", "slug": "grow", "title": "נתוני גידול", "url": "https://nimrod.bio/grow/", "flagged": false}, {"id": "2516", "type": "page", "date": "2019-08-07", "slug": "הזמנת-סל-ירקות-אורגאני-פרדס-חנה-2-2-2-2-2", "title": "מהגינה של נימרוד", "url": "https://nimrod.bio/הזמנת-סל-ירקות-אורגאני-פרדס-חנה-2-2-2-2-2/", "flagged": false}, {"id": "90533", "type": "page", "date": "2021-01-24", "slug": "shook", "title": "שוק הירוקה", "url": "https://nimrod.bio/shook/", "flagged": true}, {"id": "90896", "type": "page", "date": "2023-02-23", "slug": "blog", "title": "בלוג מהגינה", "url": "https://nimrod.bio/blog/", "flagged": true}, {"id": "91325", "type": "page", "date": "2026-04-02", "slug": "smallfarmsagent", "title": "MyFarmAgents — Market Report", "url": "https://nimrod.bio/smallfarmsagent/", "flagged": true}, {"id": "91178", "type": "post", "date": "2023-03-06", "slug": "פטריות-יער-בגינה", "title": "פטריות יער בגינה", "url": "https://nimrod.bio/פטריות-יער-בגינה/", "flagged": false}, {"id": "91019", "type": "post", "date": "2023-03-01", "slug": "מבוא-לגידול-הידרופוני", "title": "מבוא לגידול הידרופוני", "url": "https://nimrod.bio/מבוא-לגידול-הידרופוני/", "flagged": false}, {"id": "90935", "type": "post", "date": "2023-02-24", "slug": "מדריך-שתילה-נכונה", "title": "מדריך שתילה נכונה", "url": "https://nimrod.bio/מדריך-שתילה-נכונה/", "flagged": false}, {"id": "90917", "type": "post", "date": "2023-02-24", "slug": "מדריך-שליפת-שתילים", "title": "מדריך ״שליפת״ שתילים", "url": "https://nimrod.bio/מדריך-שליפת-שתילים/", "flagged": false}, {"id": "90592", "type": "post", "date": "2023-02-21", "slug": "קהילה_חקלאית", "title": "הקהילה החקלאית - החברים של הגינה", "url": "https://nimrod.bio/קהילה_חקלאית/", "flagged": false}, {"id": "90724", "type": "post", "date": "2023-02-12", "slug": "מדריך-המקיף-לגידול-דלועים-אורגניים-בב-2", "title": "מדריך המקיף לגידול דלועים אורגניים בבית ובשדה", "url": "https://nimrod.bio/מדריך-המקיף-לגידול-דלועים-אורגניים-בב-2/", "flagged": false}, {"id": "90677", "type": "post", "date": "2023-01-29", "slug": "video1", "title": "למה אנחנו קמים בבוקר?  יום בגינה", "url": "https://nimrod.bio/video1/", "flagged": true}, {"id": "90635", "type": "post", "date": "2021-10-07", "slug": "harish2021", "title": "חריש למאכל", "url": "https://nimrod.bio/harish2021/", "flagged": true}, {"id": "90589", "type": "post", "date": "2021-03-21", "slug": "common", "title": "ידידי מהגינה - קומון המהפכה החקלאית השלישית", "url": "https://nimrod.bio/common/", "flagged": true}, {"id": "90510", "type": "post", "date": "2021-01-20", "slug": "אוכמניות", "title": "שתילי אוכמניות וגידול אוכמניות בבית", "url": "https://nimrod.bio/אוכמניות/", "flagged": false}, {"id": "90444", "type": "post", "date": "2020-11-08", "slug": "spaces_dtm-winter", "title": "גידולי ירקות חורף - מרווחים וזמנים", "url": "https://nimrod.bio/spaces_dtm-winter/", "flagged": false}, {"id": "90361", "type": "post", "date": "2020-11-04", "slug": "שתילות-חורף-הדרכה-לגני-ילדים", "title": "שתילות חורף - הדרכה לגני ילדים", "url": "https://nimrod.bio/שתילות-חורף-הדרכה-לגני-ילדים/", "flagged": false}, {"id": "90248", "type": "post", "date": "2020-10-08", "slug": "transplant-spread", "title": "שתילי חורף לכווולם!", "url": "https://nimrod.bio/transplant-spread/", "flagged": true}, {"id": "90156", "type": "post", "date": "2020-10-05", "slug": "direct-seeding", "title": "גידולי חורף בזריעה ישירה", "url": "https://nimrod.bio/direct-seeding/", "flagged": true}, {"id": "90109", "type": "post", "date": "2020-09-30", "slug": "transpantphotoindex", "title": "איזה שתילים קניתי? - מדריך מצולם", "url": "https://nimrod.bio/transpantphotoindex/", "flagged": true}, {"id": "90085", "type": "post", "date": "2020-09-24", "slug": "transplantinfo2020", "title": "שתילי חורף - מידע לשותלים", "url": "https://nimrod.bio/transplantinfo2020/", "flagged": true}, {"id": "90026", "type": "post", "date": "2020-09-21", "slug": "transplants2020", "title": "מהגינה לגנן - שתילי חורף 2020", "url": "https://nimrod.bio/transplants2020/", "flagged": true}, {"id": "6516", "type": "post", "date": "2019-11-18", "slug": "חדש-הזמנות-מהגינה-באפליקציית-farmer", "title": "חדש - הזמנות מהגינה באפליקציית Farmer", "url": "https://nimrod.bio/חדש-הזמנות-מהגינה-באפליקציית-farmer/", "flagged": false}, {"id": "2760", "type": "post", "date": "2019-08-12", "slug": "זיו-רייף-כאן-11-מבקר-בגינה", "title": "זיו רייף (כאן 11) מבקר בגינה", "url": "https://nimrod.bio/זיו-רייף-כאן-11-מבקר-בגינה/", "flagged": false}, {"id": "2236", "type": "post", "date": "2019-07-10", "slug": "שיתוף-פעולה-חדש-בין-הגינה-ומחסני-הטבעו", "title": "שיתוף פעולה חדש בין הגינה ומחסני הטבעונות", "url": "https://nimrod.bio/שיתוף-פעולה-חדש-בין-הגינה-ומחסני-הטבעו/", "flagged": false}, {"id": "2233", "type": "post", "date": "2019-07-10", "slug": "עדכון-שבועי-מהגינה", "title": "עדכון שבועי מהגינה", "url": "https://nimrod.bio/עדכון-שבועי-מהגינה/", "flagged": false}, {"id": "2187", "type": "post", "date": "2019-07-07", "slug": "סדנת-ליקוט-עם-אביבית-ברקוביץ", "title": "סדנת ליקוט  עם אביבית ברקוביץ", "url": "https://nimrod.bio/סדנת-ליקוט-עם-אביבית-ברקוביץ/", "flagged": false}, {"id": "1233", "type": "post", "date": "2017-09-24", "slug": "מועדי-זריעה-ושתילה", "title": "מועדי זריעה ושתילה", "url": "https://nimrod.bio/מועדי-זריעה-ושתילה/", "flagged": false}, {"id": "1218", "type": "post", "date": "2017-09-24", "slug": "צמחים-חברים", "title": "צמחים חברים", "url": "https://nimrod.bio/צמחים-חברים/", "flagged": false}];
+const STORAGE_KEY = 'nb_301_triage_v1';
+
+function loadState() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) return JSON.parse(saved);
+  } catch(e) {}
+  return {};
+}
+function saveState(state) {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) {}
+}
+
+const STATE = loadState();
+let CURRENT_FILTER = 'all';
+
+function render() {
+  const tb = document.getElementById('tbody');
+  tb.innerHTML = '';
+  const visible = DATA.filter(r => {
+    if (CURRENT_FILTER === 'all') return true;
+    if (CURRENT_FILTER === 'page') return r.type === 'page';
+    if (CURRENT_FILTER === 'post') return r.type === 'post';
+    if (CURRENT_FILTER === 'flagged') return r.flagged;
+    if (CURRENT_FILTER === 'undecided') return !(STATE[r.id]?.decision);
+    if (CURRENT_FILTER === 'decided') return !!(STATE[r.id]?.decision);
+    return true;
+  });
+  visible.forEach((r, idx) => {
+    const s = STATE[r.id] || {};
+    const decClass = s.decision ? `dec-${s.decision}` : '';
+    const trClass = (r.flagged ? 'flagged ' : '') + (s.decision ? `decided-${s.decision}` : '');
+    const tr = document.createElement('tr');
+    tr.className = trClass;
+    tr.innerHTML = `
+      <td>${idx+1}</td>
+      <td><span class="badge badge-${r.type}">${r.type}</span>${r.flagged ? '<span class="badge badge-flag">SEO</span>' : ''}</td>
+      <td class="title">${escapeHtml(r.title)}<br><small style="color:#888">${r.date}</small></td>
+      <td><a href="${r.url}" target="_blank" rel="noopener"><span class="slug">${escapeHtml(decodeURIComponent(r.slug))}</span></a></td>
+      <td>
+        <select class="${decClass}" data-id="${r.id}" data-field="decision">
+          <option value="">— בחר —</option>
+          <option value="keep" ${s.decision==='keep'?'selected':''}>keep (זהה)</option>
+          <option value="redirect" ${s.decision==='redirect'?'selected':''}>redirect 301</option>
+          <option value="drop" ${s.decision==='drop'?'selected':''}>drop (410)</option>
+        </select>
+      </td>
+      <td>
+        <input type="text" placeholder="/blog/new-slug/" value="${escapeHtml(s.new_url || '')}"
+               data-id="${r.id}" data-field="new_url"
+               ${s.decision !== 'redirect' ? 'disabled style="opacity:.4"' : ''}>
+      </td>
+      <td>
+        <input type="text" placeholder="הערה…" value="${escapeHtml(s.notes || '')}"
+               data-id="${r.id}" data-field="notes">
+      </td>
+    `;
+    tb.appendChild(tr);
+  });
+
+  tb.querySelectorAll('select, input').forEach(el => {
+    el.addEventListener('change', onFieldChange);
+    if (el.tagName === 'INPUT') el.addEventListener('input', onFieldChange);
+  });
+
+  updateCounts();
+  updatePreview();
+}
+
+function onFieldChange(e) {
+  const id = e.target.dataset.id;
+  const field = e.target.dataset.field;
+  const value = e.target.value;
+  if (!STATE[id]) STATE[id] = {};
+  STATE[id][field] = value;
+  if (field === 'decision' && value !== 'redirect') {
+    STATE[id].new_url = '';
+  }
+  saveState(STATE);
+  if (field === 'decision') render();
+  else updatePreview();
+}
+
+function updateCounts() {
+  let done=0, keep=0, redirect=0, drop=0;
+  DATA.forEach(r => {
+    const d = STATE[r.id]?.decision;
+    if (d) { done++; if (d==='keep') keep++; else if (d==='redirect') redirect++; else if (d==='drop') drop++; }
+  });
+  document.getElementById('cnt-done').textContent = done;
+  document.getElementById('cnt-keep').textContent = `keep:${keep}`;
+  document.getElementById('cnt-redirect').textContent = `redirect:${redirect}`;
+  document.getElementById('cnt-drop').textContent = `drop:${drop}`;
+  document.getElementById('progress-bar').style.width = `${(done/DATA.length)*100}%`;
+  document.querySelector('.f-undecided').textContent = DATA.length - done;
+  document.querySelector('.f-decided').textContent = done;
+}
+
+function buildOutput() {
+  return {
+    project: 'nimrod-bio',
+    milestone: 'V200',
+    matrix_version: 'v1',
+    generated_at: new Date().toISOString(),
+    decisions: DATA.map(r => ({
+      id: r.id,
+      type: r.type,
+      slug: r.slug,
+      slug_decoded: decodeURIComponent(r.slug),
+      title: r.title,
+      old_url: r.url,
+      flagged_seo: r.flagged,
+      decision: STATE[r.id]?.decision || null,
+      new_url: STATE[r.id]?.new_url || null,
+      notes: STATE[r.id]?.notes || null,
+    })),
+  };
+}
+
+function updatePreview() {
+  document.getElementById('json-preview').textContent = JSON.stringify(buildOutput(), null, 2);
+}
+
+function escapeHtml(s) {
+  if (s === null || s === undefined) return '';
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+async function copyJSON() {
+  const txt = JSON.stringify(buildOutput(), null, 2);
+  try {
+    await navigator.clipboard.writeText(txt);
+    const done = DATA.filter(r => STATE[r.id]?.decision).length;
+    toast(`✓ הועתק (${done}/${DATA.length} החלטות)`);
+  } catch(e) {
+    alert('לא הצליח להעתיק. השתמש בכפתור "הורד" במקום.');
+  }
+}
+
+function downloadJSON() {
+  const blob = new Blob([JSON.stringify(buildOutput(), null, 2)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `nb_301_triage_${new Date().toISOString().slice(0,10)}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+  toast('✓ הורד');
+}
+
+async function loadFromClipboard() {
+  try {
+    const txt = await navigator.clipboard.readText();
+    const obj = JSON.parse(txt);
+    if (!obj.decisions) throw new Error('not a valid triage JSON');
+    obj.decisions.forEach(d => {
+      if (d.decision || d.new_url || d.notes) {
+        STATE[d.id] = { decision: d.decision || '', new_url: d.new_url || '', notes: d.notes || '' };
+      }
+    });
+    saveState(STATE);
+    render();
+    toast('✓ נטען');
+  } catch(e) {
+    alert('JSON לא תקין: ' + e.message);
+  }
+}
+
+document.querySelectorAll('.filter-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    CURRENT_FILTER = chip.dataset.filter;
+    render();
+  });
+});
+
+render();
+</script>
+</body>
+</html>

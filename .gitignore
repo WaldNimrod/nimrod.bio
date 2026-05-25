@@ -58,3 +58,8 @@ sources/team_35_design_package/
 .DS_Store
 Thumbs.db
 *.swp
+
+# === Claude Code session state (worktrees, agent sandboxes) — never project content ===
+.claude/worktrees/
+.claude/sessions/
+.claude/cache/
