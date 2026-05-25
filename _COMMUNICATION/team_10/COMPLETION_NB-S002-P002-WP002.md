@@ -105,3 +105,18 @@ Implemented scope:
 ## Ready for next gate
 
 Artifact is ready for team_100 review and team_190 `L-GATE_VALIDATE` replay on C1-C16.
+
+## Fix cycle 1 (2026-05-25)
+
+| Blocker | Status | Evidence |
+|---|---|---|
+| B1 world archive routing | FIXED | `curl -I "$UPRESS_DEV_URL_HTTP/?world=soil"` → `HTTP/1.1 404 Not Found`; body class is `error404 ...` with no `archive` / `tax-world` |
+| B2 leftover service id=12 | FIXED | `curl -I -u "$WP_REST_USER:$WP_REST_APP_PASSWORD" "$WP_REST_BASE_URL/wp/v2/services/12"` → `HTTP/1.1 404 Not Found` |
+
+- [x] B1 world taxonomy not publicly queryable (verified via curl)
+- [x] B2 test service id=12 deleted (verified via REST)
+- [x] re-deployed `taxonomies.php` + `functions.php` to dev (FTPS)
+- [x] `NB_THEME_VERSION` bumped `0.2.0` → `0.2.1`
+- [x] git commit + push
+- [x] `validate_aos.sh` clean (`32 PASS / 16 SKIP / 0 FAIL`)
+- [x] regression: C1-C16 (C5/C6 use WP page route and remain PASS; world REST count remains 3; `/world/soil/` remains 200)
