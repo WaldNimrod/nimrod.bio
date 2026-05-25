@@ -1,0 +1,362 @@
+{
+  "base_url": "http://nimrod-bio-2026.s887.upress.link",
+  "generated_at": "2026-05-25T19:11:24Z",
+  "summary": {
+    "redirect": {
+      "pass": 0,
+      "total": 23
+    },
+    "drop": {
+      "pass": 0,
+      "total": 6
+    },
+    "keep": {
+      "pass": 2,
+      "total": 2
+    }
+  },
+  "all_pass": false,
+  "results": [
+    {
+      "id": "1144",
+      "type": "page",
+      "slug": "טבלת-מינים",
+      "decision": "drop",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%98%D7%91%D7%9C%D7%AA-%D7%9E%D7%99%D7%A0%D7%99%D7%9D/",
+      "expected": "410",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "1154",
+      "type": "page",
+      "slug": "עדכון-מינים-וזנים",
+      "decision": "drop",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%A2%D7%93%D7%9B%D7%95%D7%9F-%D7%9E%D7%99%D7%A0%D7%99%D7%9D-%D7%95%D7%96%D7%A0%D7%99%D7%9D/",
+      "expected": "410",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "1571",
+      "type": "page",
+      "slug": "grow",
+      "decision": "drop",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/grow/",
+      "expected": "410",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "2516",
+      "type": "page",
+      "slug": "הזמנת-סל-ירקות-אורגאני-פרדס-חנה-2-2-2-2-2",
+      "decision": "redirect",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%94%D7%96%D7%9E%D7%A0%D7%AA-%D7%A1%D7%9C-%D7%99%D7%A8%D7%A7%D7%95%D7%AA-%D7%90%D7%95%D7%A8%D7%92%D7%90%D7%A0%D7%99-%D7%A4%D7%A8%D7%93%D7%A1-%D7%97%D7%A0%D7%94-2-2-2-2-2/",
+      "expected": "/about/heritage/",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "90533",
+      "type": "page",
+      "slug": "shook",
+      "decision": "keep",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/shook/",
+      "expected": "200",
+      "actual_status": 200,
+      "actual_location": "",
+      "pass": true
+    },
+    {
+      "id": "90896",
+      "type": "page",
+      "slug": "blog",
+      "decision": "keep",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/blog/",
+      "expected": "200",
+      "actual_status": 200,
+      "actual_location": "",
+      "pass": true
+    },
+    {
+      "id": "91325",
+      "type": "page",
+      "slug": "smallfarmsagent",
+      "decision": "drop",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/smallfarmsagent/",
+      "expected": "410",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "91178",
+      "type": "post",
+      "slug": "פטריות-יער-בגינה",
+      "decision": "redirect",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%A4%D7%98%D7%A8%D7%99%D7%95%D7%AA-%D7%99%D7%A2%D7%A8-%D7%91%D7%92%D7%99%D7%A0%D7%94/",
+      "expected": "/blog/פטריות-יער-בגינה/",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "91019",
+      "type": "post",
+      "slug": "מבוא-לגידול-הידרופוני",
+      "decision": "redirect",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%9E%D7%91%D7%95%D7%90-%D7%9C%D7%92%D7%99%D7%93%D7%95%D7%9C-%D7%94%D7%99%D7%93%D7%A8%D7%95%D7%A4%D7%95%D7%A0%D7%99/",
+      "expected": "/blog/מבוא-לגידול-הידרופוני/",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "90935",
+      "type": "post",
+      "slug": "מדריך-שתילה-נכונה",
+      "decision": "redirect",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%A9%D7%AA%D7%99%D7%9C%D7%94-%D7%A0%D7%9B%D7%95%D7%A0%D7%94/",
+      "expected": "/blog/מדריך-שתילה-נכונה/",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "90917",
+      "type": "post",
+      "slug": "מדריך-שליפת-שתילים",
+      "decision": "redirect",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%A9%D7%9C%D7%99%D7%A4%D7%AA-%D7%A9%D7%AA%D7%99%D7%9C%D7%99%D7%9D/",
+      "expected": "/blog/מדריך-שליפת-שתילים/",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "90592",
+      "type": "post",
+      "slug": "קהילה_חקלאית",
+      "decision": "redirect",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%A7%D7%94%D7%99%D7%9C%D7%94_%D7%97%D7%A7%D7%9C%D7%90%D7%99%D7%AA/",
+      "expected": "/blog/קהילה-חקלאית/",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "90724",
+      "type": "post",
+      "slug": "מדריך-המקיף-לגידול-דלועים-אורגניים-בב-2",
+      "decision": "redirect",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%94%D7%9E%D7%A7%D7%99%D7%A3-%D7%9C%D7%92%D7%99%D7%93%D7%95%D7%9C-%D7%93%D7%9C%D7%95%D7%A2%D7%99%D7%9D-%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99%D7%99%D7%9D-%D7%91%D7%91-2/",
+      "expected": "/blog/מדריך-המקיף-לגידול-דלועים-אורגניים-בב-2/",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "90677",
+      "type": "post",
+      "slug": "video1",
+      "decision": "redirect",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/video1/",
+      "expected": "/blog/יום-בגינה/",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "90635",
+      "type": "post",
+      "slug": "harish2021",
+      "decision": "redirect",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/harish2021/",
+      "expected": "/blog/harish2021/",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "90589",
+      "type": "post",
+      "slug": "common",
+      "decision": "redirect",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/common/",
+      "expected": "/blog/common/",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "90510",
+      "type": "post",
+      "slug": "אוכמניות",
+      "decision": "redirect",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%90%D7%95%D7%9B%D7%9E%D7%A0%D7%99%D7%95%D7%AA/",
+      "expected": "/blog/אוכמניות/",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "90444",
+      "type": "post",
+      "slug": "spaces_dtm-winter",
+      "decision": "redirect",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/spaces_dtm-winter/",
+      "expected": "/blog/spaces_dtm-winter/",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "90361",
+      "type": "post",
+      "slug": "שתילות-חורף-הדרכה-לגני-ילדים",
+      "decision": "redirect",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%A9%D7%AA%D7%99%D7%9C%D7%95%D7%AA-%D7%97%D7%95%D7%A8%D7%A3-%D7%94%D7%93%D7%A8%D7%9B%D7%94-%D7%9C%D7%92%D7%A0%D7%99-%D7%99%D7%9C%D7%93%D7%99%D7%9D/",
+      "expected": "/blog/שתילות-חורף-הדרכה-לגני-ילדים/",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "90248",
+      "type": "post",
+      "slug": "transplant-spread",
+      "decision": "redirect",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/transplant-spread/",
+      "expected": "/blog/transplant-spread/",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "90156",
+      "type": "post",
+      "slug": "direct-seeding",
+      "decision": "redirect",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/direct-seeding/",
+      "expected": "/blog/direct-seeding/",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "90109",
+      "type": "post",
+      "slug": "transpantphotoindex",
+      "decision": "redirect",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/transpantphotoindex/",
+      "expected": "/blog/transpantphotoindex/",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "90085",
+      "type": "post",
+      "slug": "transplantinfo2020",
+      "decision": "redirect",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/transplantinfo2020/",
+      "expected": "/blog/transplantinfo2020/",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "90026",
+      "type": "post",
+      "slug": "transplants2020",
+      "decision": "redirect",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/transplants2020/",
+      "expected": "/blog/transplants2020/",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "6516",
+      "type": "post",
+      "slug": "חדש-הזמנות-מהגינה-באפליקציית-farmer",
+      "decision": "drop",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%97%D7%93%D7%A9-%D7%94%D7%96%D7%9E%D7%A0%D7%95%D7%AA-%D7%9E%D7%94%D7%92%D7%99%D7%A0%D7%94-%D7%91%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%99%D7%AA-farmer/",
+      "expected": "410",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "2760",
+      "type": "post",
+      "slug": "זיו-רייף-כאן-11-מבקר-בגינה",
+      "decision": "redirect",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%96%D7%99%D7%95-%D7%A8%D7%99%D7%99%D7%A3-%D7%9B%D7%90%D7%9F-11-%D7%9E%D7%91%D7%A7%D7%A8-%D7%91%D7%92%D7%99%D7%A0%D7%94/",
+      "expected": "/blog/זיו-רייף-כאן-11-מבקר-בגינה/",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "2236",
+      "type": "post",
+      "slug": "שיתוף-פעולה-חדש-בין-הגינה-ומחסני-הטבעו",
+      "decision": "drop",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%A9%D7%99%D7%AA%D7%95%D7%A3-%D7%A4%D7%A2%D7%95%D7%9C%D7%94-%D7%97%D7%93%D7%A9-%D7%91%D7%99%D7%9F-%D7%94%D7%92%D7%99%D7%A0%D7%94-%D7%95%D7%9E%D7%97%D7%A1%D7%A0%D7%99-%D7%94%D7%98%D7%91%D7%A2%D7%95/",
+      "expected": "410",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "2233",
+      "type": "post",
+      "slug": "עדכון-שבועי-מהגינה",
+      "decision": "redirect",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%A2%D7%93%D7%9B%D7%95%D7%9F-%D7%A9%D7%91%D7%95%D7%A2%D7%99-%D7%9E%D7%94%D7%92%D7%99%D7%A0%D7%94/",
+      "expected": "/blog/עדכון-שבועי-מהגינה/",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "2187",
+      "type": "post",
+      "slug": "סדנת-ליקוט-עם-אביבית-ברקוביץ",
+      "decision": "redirect",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%A1%D7%93%D7%A0%D7%AA-%D7%9C%D7%99%D7%A7%D7%95%D7%98-%D7%A2%D7%9D-%D7%90%D7%91%D7%99%D7%91%D7%99%D7%AA-%D7%91%D7%A8%D7%A7%D7%95%D7%91%D7%99%D7%A5/",
+      "expected": "/blog/סדנת-ליקוט-עם-אביבית-ברקוביץ/",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "1233",
+      "type": "post",
+      "slug": "מועדי-זריעה-ושתילה",
+      "decision": "redirect",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%9E%D7%95%D7%A2%D7%93%D7%99-%D7%96%D7%A8%D7%99%D7%A2%D7%94-%D7%95%D7%A9%D7%AA%D7%99%D7%9C%D7%94/",
+      "expected": "/blog/מועדי-זריעה-ושתילה/",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    },
+    {
+      "id": "1218",
+      "type": "post",
+      "slug": "צמחים-חברים",
+      "decision": "redirect",
+      "url_tested": "http://nimrod-bio-2026.s887.upress.link/%D7%A6%D7%9E%D7%97%D7%99%D7%9D-%D7%97%D7%91%D7%A8%D7%99%D7%9D/",
+      "expected": "/blog/צמחים-חברים/",
+      "actual_status": 404,
+      "actual_location": "",
+      "pass": false
+    }
+  ]
+}
