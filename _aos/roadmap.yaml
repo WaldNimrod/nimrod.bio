@@ -386,10 +386,10 @@ work_packages:
 
 - id: NB-S002-P004-WP002
   label: "nimrod-bio — 301 redirect enforcement + Yoast sitemap"
-  status: IN_PROGRESS
+  status: COMPLETE
   track: A
-  current_lean_gate: L-GATE_BUILD
-  lod_status: LOD400
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
   assigned_builder: nimrodbio_build
   assigned_validator: nimrodbio_val
   created_at: "2026-05-25"
@@ -404,5 +404,13 @@ work_packages:
     result: PASS
     date: "2026-05-25"
     notes: "LOD400 by team_100. 4 scripts (generate/deploy/verify htaccess + _lib) + 2 docs (htaccess block + search console runbook). 17 acceptance tests R1-R17. Hebrew slug URL encoding via Python urllib. uPress .htaccess preservation via START/END markers. Search Console execution deferred to P005-WP002 (cutover scope)."
-  notes: "IN_PROGRESS. MANDATE: _COMMUNICATION/team_10/MANDATE_NB-S002-P004-WP002_v1.0.0.md. Target: 1.5-2 working days. Final P004 WP — closes content/SEO chapter. Unblocks P005 (QA + cutover)."
+  - gate: L-GATE_BUILD
+    result: PASS
+    date: "2026-05-25"
+    notes: "Team 10 deliverables in 4 commits (ceda4535 → 9cbc73ce). Scripts: scripts/redirects/ (generate/deploy/verify htaccess + _lib). Artifacts: docs/htaccess_v200_redirects.txt (audit/portable), mu-plugins/nb-v200-runtime-redirects.php (runtime enforcement). Yoast installed + active. sitemap_index.xml 200. Architecture deviation from LOD400 §3: uPress is nginx (not Apache), so .htaccess does not enforce at edge. team_10 cycle 1 remediation added MU plugin for runtime — functionally equivalent. Both artifacts retained: .htaccess for portability/audit, MU plugin for execution."
+  - gate: L-GATE_VALIDATE
+    result: PASS
+    date: "2026-05-25"
+    notes: "team_190 (Codex) VERDICT v1.0.0 cycle 1 PASS. team_100 independent re-verify: 5/5 sampled redirects return 301 with correct Location (incl. video1 → /blog/יום-בגינה/), 2/2 drops return 410, Yoast wordpress-seo/wp-seo active, sitemap_index.xml 200, MU plugin deployed (5.2KB). validate_aos.sh 32/16/0. Canonical completion artifact: _COMMUNICATION/team_100/COMPLETION_CANONICAL_NB-S002-P004-WP002_v1.0.0.md (ratifies MU plugin as canonical runtime mechanism for this WP, with .htaccess retained as portable audit artifact). Architecture lesson saved: feedback_lod400_infra_assumptions."
+  notes: "COMPLETE. STANDARD track A. L-GATE_VALIDATE PASS cycle 1. P004 program fully closed (content migration + redirect enforcement). Unblocks P005-WP001 (QA) and P005-WP002 (cutover). Carry-forward to cutover: MU plugin + .htaccess block must both deploy to prod per COMPLETION_CANONICAL §6."
 
