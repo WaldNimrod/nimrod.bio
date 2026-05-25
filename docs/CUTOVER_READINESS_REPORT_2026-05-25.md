@@ -84,7 +84,7 @@ None.
 
 - **Launch-blocking functional risk:** low (core rendering, redirects, form submit path, and baseline perf are stable).
 - **Quality/compliance risk:** medium (Lighthouse A11y/BP misses, one broken internal link, moderate semantic a11y debt).
-- **Operational risk:** medium-low (SMTP inbox evidence not finalized in this QA sweep; allowed defer to V300).
+- **Operational risk:** low (SMTP inbox arrival confirmed in cycle 1.1; no remaining V300 mail-operational dependencies).
 
 ## Recommendation
 

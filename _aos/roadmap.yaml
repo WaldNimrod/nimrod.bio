@@ -416,10 +416,10 @@ work_packages:
 
 - id: NB-S002-P005-WP001
   label: "nimrod-bio — QA pass + cutover readiness gate"
-  status: IN_PROGRESS
+  status: COMPLETE
   track: A
-  current_lean_gate: L-GATE_BUILD
-  lod_status: LOD400
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
   assigned_builder: nimrodbio_build
   assigned_validator: nimrodbio_val
   created_at: "2026-05-25"
@@ -442,5 +442,9 @@ work_packages:
     result: PASS_WITH_CONDITIONS
     date: "2026-05-26"
     notes: "Cycle 1.1 (SMTP scope expansion): team_00 directive 2026-05-25 retracted V300 deferral on SMTP. team_100 + team_00 + team_10 closed: wp-mail-smtp plugin installed + active (REST POST), team_00 configured plugin UI with agent@nimrod.bio auth + n@nimrod.bio From (rotated password post-SECURITY_INCIDENT 2026-05-25), WP admin_email REST-updated admin@meoo.co → nimrod@mezoo.co, A12 form-submit replay returned 302 ?status=ok with team_00 confirming inbox arrival ('הגיע פיקס'). qa_form_smtp_test PARTIAL → PASS. CUTOVER_READINESS_REPORT cycle 1.1 addendum + SMTP waiver retraction filed. Signature remains CONDITIONAL GO (broken link /blog/back-to-mud/ + Lighthouse A11y/BP misses still routed to V300). VALIDATE_REQUEST v1.0.1 (supersedes v1.0.0 + PING_HOLD) reissued to team_190."
-  notes: "L-GATE_BUILD PASS_WITH_CONDITIONS through cycle 1.1. SMTP scope expansion closed. VALIDATE_REQUEST v1.0.1 with team_190. CONDITIONAL GO carry-forwards to V300 = broken link + Lighthouse uplift only (down from broken link + Lighthouse + SMTP)."
+  - gate: L-GATE_VALIDATE
+    result: PASS_CONFIRM_CONDITIONAL_GO
+    date: "2026-05-26"
+    notes: "team_190 (Codex) VERDICT v1.0.1 cycle 1.1 PASS. Independent live re-verification: wp-mail-smtp active via REST; admin_email=nimrod@mezoo.co via REST; A12 replay 302 → /contact/?status=ok with fresh nonce; validate_aos.sh 32/16/0; verdict artifact passed linter. Non-blocking note from validator: one stale 'operational risk' sentence in REPORT §Risk assessment still referenced SMTP defer — cosmetic only, signature/waiver/addendum all correct (team_100 cleaned the line post-verdict). CONDITIONAL GO ratified. P005-WP002 (cutover) unblocked."
+  notes: "COMPLETE. STANDARD track A. L-GATE_VALIDATE PASS_CONFIRM_CONDITIONAL_GO. CUTOVER_READINESS_REPORT signed CONDITIONAL GO. V200 carry-forwards to V300: (1) broken link /blog/back-to-mud/, (2) Lighthouse A11y uplift on multiple URLs (88-94 → ≥95), (3) Lighthouse BP uplift on 2 post URLs (73 → ≥90). SMTP deferral retired in cycle 1.1. All 28 responsive probes + 23/6/2 redirects + axe-core + RTL + perf baseline PASS."
 
