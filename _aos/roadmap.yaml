@@ -163,3 +163,26 @@ work_packages:
     notes: "team_190 (Codex) VERDICT v1.1.1 — cycle 2 PASS after governance commit eb3a3fde cleared Check 32 drift. 4/4 blockers FIXED + sanity + cache-bust verified in cycle 2 (v1.1.0). validate_aos.sh: 32 PASS / 16 SKIP / 0 FAIL independently confirmed. Single deferral: T10 SEO=63 due to uPress edge X-Robots-Tag noindex on *.upress.link — carry-over to P005-WP001 QA on production URL. Cross-engine Iron Rule #1 maintained (Builder=Cursor, Validator=Codex). Verdict artifact preflight: PASS."
   notes: "COMPLETE. STANDARD track A. L-GATE_VALIDATE PASS_WITH_DEFERRALS. Theme nimrod-bio-2026 active on dev (http://nimrod-bio-2026.s887.upress.link). T10 SEO deferred to P005-WP001 (production URL). Unblocks WP002-WP002 (CPTs native) and full P003 templates cascade."
 
+- id: NB-S002-P002-WP002
+  label: "nimrod-bio — CPTs + taxonomies + meta boxes (native)"
+  status: IN_PROGRESS
+  track: A
+  current_lean_gate: L-GATE_BUILD
+  lod_status: LOD400
+  assigned_builder: nimrodbio_build
+  assigned_validator: nimrodbio_val
+  created_at: "2026-05-25"
+  milestone_ref: V200
+  stage_mapping: ""
+  spec_ref: "_aos/work_packages/NB-S002-P002-WP002/LOD400_NB-S002-P002-WP002.md"
+  gate_history:
+  - gate: L-GATE_ELIGIBILITY
+    result: PASS
+    date: "2026-05-25"
+    notes: "Predecessor WP002 COMPLETE (VERDICT v1.1.1 PASS_WITH_DEFERRALS). Theme active. Design CPT spec on disk (handoff §3). Q5=D decision (native, no plugin) locked by team_00."
+  - gate: L-GATE_SPEC
+    result: PASS
+    date: "2026-05-25"
+    notes: "LOD400 authored by team_100. 9 inc/ files speced (helpers-cpt, taxonomies, cpt-service, cpt-project, meta-registration, meta-box-service, meta-box-project, world-pages-bootstrap, rewrites). 11 LOD400 decisions locked (post_meta storage, JSON repeater pattern, world parent page status=private, conditional fields always-render, NB_THEME_VERSION bump strategy). 16 acceptance tests C1-C16 defined. team_00 approved 2026-05-25."
+  notes: "IN_PROGRESS. MANDATE issued: _COMMUNICATION/team_10/MANDATE_NB-S002-P002-WP002_v1.0.0.md. Target: 2.5 working days. Requires L-GATE_VALIDATE by team_190 before P003 templates cascade can begin. Unblocks 5 parallel template WPs upon PASS."
+
