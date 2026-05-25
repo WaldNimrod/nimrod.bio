@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "settings": {
+    "appearanceTools": false,
+    "color": {
+      "palette": [
+        { "slug": "paper", "name": "Paper", "color": "#f5f3ec" },
+        { "slug": "paper-2", "name": "Paper 2", "color": "#e8e7df" },
+        { "slug": "paper-3", "name": "Paper 3", "color": "#dedccf" },
+        { "slug": "ink", "name": "Ink", "color": "#1f1e1c" },
+        { "slug": "ink-soft", "name": "Ink soft", "color": "#4a4844" },
+        { "slug": "w-soil-deep", "name": "אדמה · עמוק", "color": "#3a5220" },
+        { "slug": "w-soil", "name": "אדמה · בהיר", "color": "#6a8a3a" },
+        { "slug": "w-know-deep", "name": "ייעוץ · עמוק", "color": "#9a4f2b" },
+        { "slug": "w-know", "name": "ייעוץ · בהיר", "color": "#c46a3e" },
+        { "slug": "w-code-deep", "name": "דיגיטל · עמוק", "color": "#1f5e60" },
+        { "slug": "w-code", "name": "דיגיטל · בהיר", "color": "#2d8a8c" },
+        { "slug": "spark", "name": "Spark", "color": "#d23a2e" }
+      ],
+      "custom": false,
+      "customDuotone": false,
+      "defaultPalette": false
+    },
+    "typography": {
+      "fontFamilies": [
+        { "slug": "serif", "name": "Frank Ruhl Libre", "fontFamily": "'Frank Ruhl Libre', 'David Libre', Georgia, serif" },
+        { "slug": "sans", "name": "Assistant", "fontFamily": "'Assistant', 'Heebo', system-ui, -apple-system, sans-serif" },
+        { "slug": "mono", "name": "JetBrains Mono", "fontFamily": "'JetBrains Mono', monospace" }
+      ],
+      "customFontSize": false,
+      "defaultFontSizes": false
+    },
+    "spacing": { "padding": true, "margin": true }
+  },
+  "styles": {
+    "color": { "background": "var(--wp--preset--color--paper)", "text": "var(--wp--preset--color--ink)" },
+    "typography": { "fontFamily": "var(--wp--preset--font-family--sans)" }
+  }
+}

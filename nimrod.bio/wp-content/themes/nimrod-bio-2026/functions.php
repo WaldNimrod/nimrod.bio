@@ -1,0 +1,47 @@
+<?php
+/**
+ * nimrod.bio 2026 - theme bootstrap
+ */
+defined( 'ABSPATH' ) || exit;
+
+// Constants
+define( 'NB_THEME_VERSION', '0.1.1' );
+define( 'NB_THEME_DIR', get_template_directory() );
+define( 'NB_THEME_URI', get_template_directory_uri() );
+
+// Theme support
+add_action(
+	'after_setup_theme',
+	function () {
+		add_theme_support( 'title-tag' );
+		add_theme_support( 'post-thumbnails' );
+		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'gallery', 'caption', 'style', 'script' ) );
+		add_theme_support( 'automatic-feed-links' );
+		add_theme_support( 'responsive-embeds' );
+		add_theme_support( 'editor-styles' );
+
+		// Register two nav locations even though WP002 only renders one (Shell uses hard-coded markup).
+		register_nav_menus(
+			array(
+				'primary'   => __( 'Shell - Primary nav', 'nimrod-bio-2026' ),
+				'secondary' => __( 'Shell - Secondary nav', 'nimrod-bio-2026' ),
+			)
+		);
+
+		// Hebrew RTL.
+		load_theme_textdomain( 'nimrod-bio-2026', NB_THEME_DIR . '/languages' );
+	}
+);
+
+// Includes
+require_once NB_THEME_DIR . '/inc/enqueue.php';
+require_once NB_THEME_DIR . '/inc/template-helpers.php';
+require_once NB_THEME_DIR . '/inc/nav-walker.php';
+
+// Disable comments globally for V200 (design has no comment UI).
+add_filter( 'comments_open', '__return_false', 20, 2 );
+add_filter( 'pings_open', '__return_false', 20, 2 );
+
+// Strip emoji scripts (we use no emoji).
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );

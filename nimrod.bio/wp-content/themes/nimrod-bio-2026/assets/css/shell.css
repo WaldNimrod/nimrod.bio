@@ -1,0 +1,171 @@
+/* Shell nav extracted from T1-styles.css (locked source selectors). */
+:root {
+  --t1-gutter: clamp(20px, 4vw, 56px);
+  --t1-max: 1240px;
+}
+
+.shell-nav {
+  position: sticky; top: 0; z-index: 60;
+  background: rgba(245,243,236,.92); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.shell-nav-inner {
+  max-width: var(--t1-max); margin: 0 auto;
+  padding: 14px var(--t1-gutter);
+  display: flex; align-items: center; gap: 28px;
+}
+.shell-mark {
+  font-family: "Frank Ruhl Libre", serif;
+  font-weight: 900; font-size: 20px; letter-spacing: -.01em;
+  color: var(--ink); text-decoration: none;
+}
+.shell-mark small {
+  display: inline-block; margin-inline-start: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 10px; font-weight: 400;
+  color: var(--ink-soft); letter-spacing: .08em; text-transform: uppercase;
+}
+.shell-links {
+  display: flex; gap: 14px; align-items: center; margin-inline-start: auto;
+  font-family: "Assistant", sans-serif; font-size: 14.5px; font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Home icon — borderless */
+.shell-links .nav-home {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; padding: 0;
+  color: var(--ink-soft);
+  border: none; background: transparent;
+  transition: color .15s;
+}
+.shell-links .nav-home:hover { color: var(--ink); }
+.shell-links .nav-home svg { display: block; }
+
+/* World links — primary nav, borderless group */
+.shell-links .nav-worlds {
+  display: flex; gap: 16px; align-items: center;
+}
+.shell-links .nav-world {
+  position: relative;
+  padding: 6px 2px;
+  color: var(--ink); font-weight: 700; font-size: 14.5px;
+  text-decoration: none;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1.5px solid transparent;
+  transition: border-color .15s;
+}
+.shell-links .nav-world:hover { border-bottom-color: var(--ink-soft); }
+.shell-links .nav-world.is-active.soil { border-bottom-color: var(--w-soil-deep); }
+.shell-links .nav-world.is-active.know { border-bottom-color: var(--w-know-deep); }
+.shell-links .nav-world.is-active.code { border-bottom-color: var(--w-code-deep); }
+
+/* World dot — always shown, slightly larger */
+.shell-links .nav-world::before {
+  content: ""; display: inline-block; vertical-align: 1px;
+  width: 7px; height: 7px; border-radius: 50%;
+  margin-inline-end: 8px;
+}
+.shell-links .nav-world.soil::before { background: var(--w-soil); }
+.shell-links .nav-world.know::before { background: var(--w-know); }
+.shell-links .nav-world.code::before { background: var(--w-code); }
+
+/* Thin vertical separator between worlds and secondary */
+.shell-links .nav-sep {
+  width: 1px; height: 22px; background: var(--line); margin: 0 4px;
+}
+
+/* Secondary nav — blog + about, muted */
+.shell-links .nav-secondary { display: flex; gap: 18px; align-items: center; }
+.shell-links .nav-secondary a {
+  color: var(--ink-soft); text-decoration: none;
+  font-size: 13.5px; font-weight: 500;
+  padding: 6px 0;
+  border-bottom: 1.5px solid transparent;
+  transition: color .15s, border-color .15s;
+}
+.shell-links .nav-secondary a:hover { color: var(--ink); border-bottom-color: var(--ink-soft); }
+
+/* Legacy bare link styles — keep for compat */
+.shell-links > a:not(.nav-home):not(.contact) {
+  color: var(--ink-soft); text-decoration: none;
+  padding: 6px 0; border-bottom: 1.5px solid transparent;
+  transition: color .15s, border-color .15s;
+}
+.shell-links > a:not(.nav-home):not(.contact):hover { color: var(--ink); }
+.shell-links > a.is-active { color: var(--w-soil-deep); border-bottom-color: var(--w-soil-deep); }
+.shell-links a {
+  color: var(--ink-soft); text-decoration: none;
+  padding: 6px 0; border-bottom: 1.5px solid transparent;
+  transition: color .15s, border-color .15s;
+}
+.shell-links a:hover { color: var(--ink); }
+.shell-links a.is-active { color: var(--w-soil-deep); border-bottom-color: var(--w-soil-deep); }
+.shell-links a.contact {
+  color: var(--ink-soft); background: transparent;
+  padding: 6px 0; border-radius: 0;
+  border: none; border-bottom: 1.5px solid transparent;
+  font-weight: 500; font-size: 13.5px;
+  white-space: nowrap;
+  transition: color .15s, border-color .15s;
+}
+.shell-links a.contact:hover { color: var(--ink); border-bottom-color: var(--ink-soft); }
+
+/* Footer extracted from T1-styles.css (locked source selectors). */
+.shell-foot {
+  background: var(--ink); color: rgba(245,243,236,.8);
+  padding: 64px var(--t1-gutter) 28px; margin-top: 0;
+}
+.shell-foot-inner { max-width: var(--t1-max); margin: 0 auto; }
+.shell-foot .cols {
+  display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 36px;
+  padding-bottom: 36px; border-bottom: 1px solid rgba(245,243,236,.15);
+}
+.shell-foot .cols h6 {
+  font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: .12em;
+  text-transform: uppercase; color: rgba(245,243,236,.5);
+  margin: 0 0 16px; font-weight: 500;
+}
+.shell-foot .cols a { display: block; color: rgba(245,243,236,.85); text-decoration: none; padding: 5px 0; font-size: 14.5px; }
+.shell-foot .cols a:hover { color: #fff; }
+.shell-foot .brand-block .name {
+  font-family: "Frank Ruhl Libre", serif; font-size: 26px; font-weight: 900; color: var(--paper);
+  margin-bottom: 8px;
+}
+.shell-foot .brand-block .tag {
+  font-family: "Frank Ruhl Libre", serif; font-style: italic; font-size: 16px;
+  color: rgba(245,243,236,.6); max-width: 36ch; line-height: 1.55;
+}
+.shell-foot .bottom {
+  display: flex; justify-content: space-between; gap: 18px; padding-top: 22px;
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  color: rgba(245,243,236,.45); letter-spacing: .04em;
+}
+.shell-foot .bottom .unless {
+  font-family: "Frank Ruhl Libre", serif; font-style: italic; font-size: 14px;
+  color: rgba(245,243,236,.55); letter-spacing: 0;
+}
+.shell-foot .bottom .unless em { color: var(--spark); font-style: normal; font-weight: 700; }
+
+/* === skip-link + main spacing (theme-local addition, not in design package) === */
+.skip-link.screen-reader-text {
+  position: absolute; inset-inline-start: -10000px; top: auto;
+}
+.skip-link.screen-reader-text:focus {
+  position: fixed; inset-inline-start: 16px; top: 16px;
+  z-index: 9999; background: var(--ink); color: var(--paper);
+  padding: 10px 16px; border-radius: var(--radius-m);
+}
+.nb-main { min-height: 60vh; }
+.nb-container { max-width: 1200px; margin: 0 auto; padding-inline: clamp(20px, 4vw, 56px); }
+.unless-inline { color: var(--spark); font-style: normal; font-weight: 700; }
+
+/* === Default heading serif inheritance (theme-local — h1/h2/h3 inherit Frank Ruhl Libre by default) === */
+h1, h2, h3 {
+    font-family: "Frank Ruhl Libre", "David Libre", Georgia, serif;
+    font-weight: 700;
+    line-height: 1.15;
+}
+h1 { font-size: clamp(36px, 5vw, 56px); }
+h2 { font-size: 28px; line-height: 1.25; font-weight: 600; }
+h3 { font-size: 20px; line-height: 1.30; font-weight: 600; }
