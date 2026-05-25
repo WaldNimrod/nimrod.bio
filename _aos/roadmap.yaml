@@ -448,3 +448,25 @@ work_packages:
     notes: "team_190 (Codex) VERDICT v1.0.1 cycle 1.1 PASS. Independent live re-verification: wp-mail-smtp active via REST; admin_email=nimrod@mezoo.co via REST; A12 replay 302 → /contact/?status=ok with fresh nonce; validate_aos.sh 32/16/0; verdict artifact passed linter. Non-blocking note from validator: one stale 'operational risk' sentence in REPORT §Risk assessment still referenced SMTP defer — cosmetic only, signature/waiver/addendum all correct (team_100 cleaned the line post-verdict). CONDITIONAL GO ratified. P005-WP002 (cutover) unblocked."
   notes: "COMPLETE. STANDARD track A. L-GATE_VALIDATE PASS_CONFIRM_CONDITIONAL_GO. CUTOVER_READINESS_REPORT signed CONDITIONAL GO. V200 carry-forwards to V300: (1) broken link /blog/back-to-mud/, (2) Lighthouse A11y uplift on multiple URLs (88-94 → ≥95), (3) Lighthouse BP uplift on 2 post URLs (73 → ≥90). SMTP deferral retired in cycle 1.1. All 28 responsive probes + 23/6/2 redirects + axe-core + RTL + perf baseline PASS."
 
+- id: NB-S002-P005-WP002
+  label: "nimrod-bio — Production cutover (V200 final WP)"
+  status: PLANNED
+  track: A
+  current_lean_gate: L-GATE_SPEC
+  lod_status: LOD400
+  assigned_builder: nimrodbio_build
+  assigned_validator: nimrodbio_val
+  created_at: "2026-05-26"
+  milestone_ref: V200
+  spec_ref: "_aos/work_packages/NB-S002-P005-WP002/LOD400_NB-S002-P005-WP002.md"
+  gate_history:
+  - gate: L-GATE_ELIGIBILITY
+    result: PASS
+    date: "2026-05-26"
+    notes: "P005-WP001 COMPLETE with CONDITIONAL GO ratified by team_190. CUTOVER_READINESS_REPORT signed. All 12 prior V200 WPs COMPLETE. Carry-forwards to V300 documented (broken link + Lighthouse uplift)."
+  - gate: L-GATE_SPEC
+    result: PASS
+    date: "2026-05-26"
+    notes: "LOD400 by team_100. Cutover strategy: in-place swap on same uPress account (dev was provisioned within prod uPress for this purpose). 5 phases (D-1 prep, D-0 cutover, smoke, Search Console, 48h monitor, closure). 19 acceptance tests K1-K19. 6 cutover scripts in scripts/cutover/. Effort: ~6 active hours over 3-4 calendar days. Awaiting team_00 confirmation of D-day window before opening to team_10."
+  notes: "PLANNED — pending team_00 D-day confirmation. After team_00 picks D-day window, team_100 issues MANDATE to team_10 for D-1 prep. This is V200's final WP — upon PASS, V200 milestone closes."
+
