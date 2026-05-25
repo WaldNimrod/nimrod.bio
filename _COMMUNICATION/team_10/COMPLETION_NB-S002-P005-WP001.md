@@ -75,3 +75,38 @@ Decision artifact for validation: `docs/CUTOVER_READINESS_REPORT_2026-05-25.md`.
 ---
 
 *team_10 — NB-S002-P005-WP001 — 2026-05-25*
+
+---
+
+## SMTP fix cycle 1.1 — 2026-05-25 — CLOSED
+
+Per `SPEC_AMENDMENT_NB-S002-P005-WP001_SMTP_v1.1.0.md` (team_00 directive 2026-05-25 retracted V300 deferral).
+
+### Actions executed
+
+| Phase | Action | Status |
+|---|---|---|
+| 1 | Locate existing uPress `agent@nimrod.bio` mailbox + rotated password (post-SECURITY_INCIDENT) | DONE (team_00) |
+| 2 | Install `wp-mail-smtp` plugin via REST `POST /wp/v2/plugins` | DONE (team_100) — response: status=active, plugin=wp-mail-smtp/wp_mail_smtp |
+| 3 | Configure SMTP creds via plugin admin UI (host=smtp.inbox.co.il:587 TLS · auth=agent@nimrod.bio · from=n@nimrod.bio · from_name=nimrod.bio · Force From=ON) | DONE (team_00 — "הגדרתי") |
+| 4 | Update WP `admin_email` `admin@meoo.co` → `nimrod@mezoo.co` via REST `/wp/v2/settings` | DONE (team_100) |
+| 5 | A12 form-submit live test | DONE — 302 `?status=ok` with 10-char nonce |
+| 6 | Inbox-arrival verify | DONE (team_00 — "הגיע פיקס") |
+| 7 | Update qa_form_smtp_test_2026-05-25.md (PARTIAL → PASS) | DONE (team_100) |
+| 8 | Update CUTOVER_READINESS_REPORT (retract SMTP deferral; add cycle 1.1 addendum) | DONE (team_100) |
+| 9 | Update .env.upress.dev `WP_ADMIN_EMAIL=` reflect DB | DONE (team_100) |
+
+### Net effect
+
+- A12 status: **PARTIAL → PASS**
+- CUTOVER_READINESS_REPORT signature: **CONDITIONAL GO** unchanged (broken link + Lighthouse misses remain — both V300)
+- One V200 deferral retracted; net deferrals on cutover = 0 (carry-overs all routed to V300 with explicit acceptance)
+
+### Carry-forwards to V300 (unchanged)
+
+- `/blog/back-to-mud/` 404 (template hardcode)
+- Lighthouse A11y uplift on multiple URLs (88-94 → ≥95)
+- Lighthouse BP uplift on 2 post URLs (73 → ≥90)
+- SPF/DKIM polish if needed post-cutover
+
+Re-issued `VALIDATE_REQUEST_NB-S002-P005-WP001_v1.0.1.md` to team_190 (Codex).

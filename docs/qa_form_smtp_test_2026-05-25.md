@@ -32,5 +32,36 @@
 
 ## Verdict
 
-**PARTIAL PASS**  
-Submit path and validation path pass; SMTP mailbox confirmation is deferred.
+**PARTIAL PASS** (initial cycle 1)
+Submit path and validation path pass; SMTP mailbox confirmation was deferred.
+
+---
+
+## Cycle 1.1 update — 2026-05-25 — SMTP scope expansion CLOSED
+
+Per team_00 directive 2026-05-25 + DECISION_V200_SMTP + SPEC_AMENDMENT_v1.1.0:
+SMTP was reinstated into V200 scope (off V300 deferral).
+
+### Configuration applied (live on dev)
+
+| Layer | State |
+|---|---|
+| Plugin | `wp-mail-smtp/wp_mail_smtp` installed + active via REST |
+| Mailer | Other SMTP |
+| Host : Port | `smtp.inbox.co.il` : `587` (TLS) |
+| Auth username | `agent@nimrod.bio` (existing uPress mailbox) |
+| Auth password | rotated 2026-05-25 (post SECURITY_INCIDENT_SMTP_PASSWORD_LEAK); stored in WP DB via plugin only |
+| From email | `n@nimrod.bio` (existing uPress mailbox with forwarding) |
+| From name | `nimrod.bio` |
+| Force From | ON (override third-party plugin senders) |
+| WP `admin_email` | updated `admin@meoo.co` → `nimrod@mezoo.co` via REST `/wp/v2/settings` |
+
+### A12 mailbox-arrival evidence
+
+- POST `/wp-admin/admin-post.php` with valid form payload (nonce live-extracted, 10-char) → `302 Location: /contact/?status=ok`
+- team_00 confirmed receipt in `nimrod@mezoo.co` inbox 2026-05-25 ("הגיע פיקס")
+- Therefore the prior PARTIAL PASS upgrades to **PASS** for A12 inbox-arrival
+
+## Updated verdict
+
+**PASS** — all three test paths (valid, invalid, honeypot redirect) confirmed AND inbox-arrival verified via real contact-form submission. SMTP deferral to V300 is now retracted.

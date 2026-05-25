@@ -17,7 +17,7 @@ Golden-rules mapping:
 - `.btn-primary` contrast waiver: carried as explicit waiver.
 - TBC markers: left intact (no edits).
 - Expired HTTPS cert: all relevant checks used ignore-cert strategy.
-- SMTP delivery failure policy: treated as defer candidate to V300 (non-blocking per mandate).
+- SMTP delivery: ⟳ **RETRACTED V300 deferral 2026-05-25** — SMTP scope-expanded via DECISION_V200_SMTP and resolved in fix cycle 1.1 (see addendum at bottom of this report).
 
 ## Executed checks and evidence
 
@@ -27,7 +27,7 @@ Golden-rules mapping:
 | Lighthouse (8 URLs) | **PARTIAL** | `docs/qa_lighthouse_results_2026-05-25.json` |
 | RTL bidi audit (Chrome/Firefox/WebKit, 5 URLs) | **PASS** for RTL directionality | `docs/qa_rtl_bidi_audit_2026-05-25.json`, `docs/qa_rtl_bidi_audit_2026-05-25.md` |
 | axe-core scan (7 template reps) | **PASS (blocking threshold)** | `docs/qa_a11y_axe_results_2026-05-25.json` |
-| Form submit path / validation / honeypot route | **PARTIAL** | `docs/qa_form_smtp_test_2026-05-25.md` |
+| Form submit path / validation / honeypot route + SMTP inbox arrival | **PASS** (cycle 1.1) | `docs/qa_form_smtp_test_2026-05-25.md` |
 | Redirect verification (23x301 + 6x410 + 2x200) | **PASS** | `docs/qa_redirect_verification_2026-05-25.json` |
 | Broken-link crawl | **FAIL (1 item)** | `docs/qa_broken_links_2026-05-25.json` |
 | Visual snapshot pack | **CAPTURED** | `docs/qa_visual_screenshots_2026-05-25/` |
@@ -76,7 +76,7 @@ None.
 ## Waivers and deferred items (explicit)
 
 1. **Waiver (default, approved in mandate):** `.btn-primary` contrast ~3.83:1 (locked design token).  
-2. **Deferred (allowed by mandate):** SMTP deliverability verification to mailbox/inbox operations if not fully provable in this pass.  
+2. ~~**Deferred (allowed by mandate):** SMTP deliverability verification to mailbox/inbox operations if not fully provable in this pass.~~ **RETRACTED 2026-05-25** — SMTP closed in fix cycle 1.1; PASS evidence in `qa_form_smtp_test_2026-05-25.md` cycle 1.1 section.  
 3. **Deferred (directive):** TBC markers remain visible on about/heritage; no content updates in V200.  
 4. **Deferred (environmental):** Lighthouse SEO on dev remains capped by dev `noindex` behavior; re-verify on cutover/prod URL.
 
@@ -88,9 +88,36 @@ None.
 
 ## Recommendation
 
-**Final signature: CONDITIONAL GO**
+**Final signature: CONDITIONAL GO** (unchanged after cycle 1.1)
 
 Rationale:
 - Mandatory cutover-critical mechanics passed (routing matrix, representative responsive behavior, page availability, perf baseline capture).
+- SMTP inbox arrival now PASS (cycle 1.1) — one deferral retracted.
 - Remaining issues are non-critical quality/content debt and approved defer/waiver items, with no hard blocker requiring V200 content/code mutation.
-- Cutover may proceed if V300 backlog explicitly tracks: broken link remediation, Lighthouse uplift (A11y/BP), and SMTP mailbox confirmation.
+- Cutover may proceed if V300 backlog explicitly tracks: broken link remediation, Lighthouse uplift (A11y/BP).
+
+---
+
+## Cycle 1.1 addendum — SMTP scope expansion CLOSED (2026-05-25)
+
+team_00 directive 2026-05-25 retracted SMTP V300-deferral. team_10 + team_100 resolved in fix cycle 1.1 with these changes:
+
+1. `wp-mail-smtp/wp_mail_smtp` plugin installed + active on dev (`POST /wp/v2/plugins`).
+2. SMTP configured via plugin UI by team_00:
+   - Host `smtp.inbox.co.il` : 587 TLS
+   - Auth `agent@nimrod.bio` with rotated password (post-SECURITY_INCIDENT_2026-05-25)
+   - From `n@nimrod.bio` (uPress mailbox forwarding to `nimrod@mezoo.co`)
+3. WP `admin_email` updated `admin@meoo.co` → `nimrod@mezoo.co` via REST `/wp/v2/settings`.
+4. A12 inbox-arrival evidence: real contact-form POST (10-char nonce, valid payload) → 302 `?status=ok` → team_00 confirmed receipt in `nimrod@mezoo.co` ("הגיע פיקס").
+
+Cycle 1.1 surface:
+- No theme code edits (no MU plugin written; setting + plugin install only)
+- `.env.upress.dev` block 10 reflects routing identities (no secrets)
+- `WP_ADMIN_EMAIL=` synced to current DB value
+- Plugin DB option holds the rotated password; gitignored
+
+Outstanding items still routed to V300 (unchanged by cycle 1.1):
+- Broken link `/blog/back-to-mud/`
+- Lighthouse A11y uplift (88-94 → ≥95)
+- Lighthouse BP uplift on 2 post URLs (73 → ≥90)
+- SPF/DKIM polish if production spam-folder issues observed post-cutover

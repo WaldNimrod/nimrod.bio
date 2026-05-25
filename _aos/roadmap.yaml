@@ -438,5 +438,9 @@ work_packages:
     result: PASS_WITH_CONDITIONS
     date: "2026-05-25"
     notes: "Team 10 QA sweep completed. 5 scripts in scripts/qa/ + 9 evidence docs + visual screenshots + CUTOVER_READINESS_REPORT_2026-05-25.md. Results — Responsive: 28/28 PASS; RTL bidi: 5/5 PASS (Chrome+Firefox+WebKit); axe-core: PASS (blocking threshold); Redirects: 23/6/2 PASS; Lighthouse averages Perf 87.6, A11y 92.4, BP 93.3, SEO 67.5 (SEO capped by dev noindex). Findings: 1 medium broken link /blog/back-to-mud/ (template hardcode, routed to V300), Lighthouse A11y target 95 missed (range 88-94), BP target 90 missed on 2 posts (73). SMTP deliverability deferred to V300. Final signature: CONDITIONAL GO. validate_aos.sh 32/16/0. team_100 self-reviewed evidence."
-  notes: "L-GATE_BUILD PASS_WITH_CONDITIONS (CONDITIONAL GO from CUTOVER_READINESS_REPORT). VALIDATE_REQUEST issued to team_190 to confirm or contest the CONDITIONAL GO decision. Awaiting cross-engine sign-off before P005-WP002 (cutover) opens."
+  - gate: L-GATE_BUILD
+    result: PASS_WITH_CONDITIONS
+    date: "2026-05-26"
+    notes: "Cycle 1.1 (SMTP scope expansion): team_00 directive 2026-05-25 retracted V300 deferral on SMTP. team_100 + team_00 + team_10 closed: wp-mail-smtp plugin installed + active (REST POST), team_00 configured plugin UI with agent@nimrod.bio auth + n@nimrod.bio From (rotated password post-SECURITY_INCIDENT 2026-05-25), WP admin_email REST-updated admin@meoo.co → nimrod@mezoo.co, A12 form-submit replay returned 302 ?status=ok with team_00 confirming inbox arrival ('הגיע פיקס'). qa_form_smtp_test PARTIAL → PASS. CUTOVER_READINESS_REPORT cycle 1.1 addendum + SMTP waiver retraction filed. Signature remains CONDITIONAL GO (broken link /blog/back-to-mud/ + Lighthouse A11y/BP misses still routed to V300). VALIDATE_REQUEST v1.0.1 (supersedes v1.0.0 + PING_HOLD) reissued to team_190."
+  notes: "L-GATE_BUILD PASS_WITH_CONDITIONS through cycle 1.1. SMTP scope expansion closed. VALIDATE_REQUEST v1.0.1 with team_190. CONDITIONAL GO carry-forwards to V300 = broken link + Lighthouse uplift only (down from broken link + Lighthouse + SMTP)."
 
