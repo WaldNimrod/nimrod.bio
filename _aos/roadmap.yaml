@@ -220,7 +220,11 @@ work_packages:
     result: PASS
     date: "2026-05-25"
     notes: "LOD400 by team_100. front-page.php + t7.css + template-styles-t7.php. Hero=statement, Unless=ribbon (locked from team_35). 10 acceptance tests H1-H10. Effort 3d."
-  notes: "IN_PROGRESS. MANDATE: _COMMUNICATION/team_10/MANDATE_NB-S002-P003-WP001_v1.0.0.md. Parallel session #1 of 5. Version bump 0.3.0."
+  - gate: L-GATE_BUILD
+    result: PASS
+    date: "2026-05-25"
+    notes: "Team 10 deliverables: front-page.php + t7.css + template-styles-t7.php + glob() loader in functions.php. H1-H10 PASS. Hero=statement + Unless=ribbon (locked). Version 0.3.0 set. Bundled into commit 4423d3eb (with WP005). VALIDATE_REQUEST issued."
+  notes: "L-GATE_BUILD PASS. VALIDATE_REQUEST in batch _COMMUNICATION/team_190/VALIDATE_REQUEST_P003_BATCH_v1.0.0.md."
 
 - id: NB-S002-P003-WP002
   label: "nimrod-bio — T1 World pages (×3, Variant C)"
@@ -242,7 +246,11 @@ work_packages:
     result: PASS
     date: "2026-05-25"
     notes: "LOD400 by team_100. page-{soil,know,code}.php + t1-body + 4 partials + t1.css. Variant C + seam bridges locked. 14 acceptance tests W1-W14. Effort 4d."
-  notes: "IN_PROGRESS. MANDATE: _COMMUNICATION/team_10/MANDATE_NB-S002-P003-WP002_v1.0.0.md. Parallel session #2 of 5. Version bump 0.3.1."
+  - gate: L-GATE_BUILD
+    result: PASS
+    date: "2026-05-25"
+    notes: "Team 10 deliverables: page-{soil,know,code}.php + t1-body + 4 partials + t1.css. Variant C + seam locked. Helper nb_get_bridges_for_world() added to template-helpers.php (documented in COMPLETION). W1-W14 PASS. Version 0.4.1 (parallel bump drift documented). Commit 17103af6. VALIDATE_REQUEST issued."
+  notes: "L-GATE_BUILD PASS. VALIDATE_REQUEST in batch _COMMUNICATION/team_190/VALIDATE_REQUEST_P003_BATCH_v1.0.0.md."
 
 - id: NB-S002-P003-WP003
   label: "nimrod-bio — T2 Services + T3 Projects templates"
@@ -264,7 +272,11 @@ work_packages:
     result: PASS
     date: "2026-05-25"
     notes: "LOD400 by team_100. single-service.php + single-project.php + 10 partials + t2.css/t3.css. 6 seed instances (3 services + 3 projects) via REST. Heritage strip on produce only, SFA origin on sfa only. 15 acceptance tests S1-S15. Effort 6d (largest in P003)."
-  notes: "IN_PROGRESS. MANDATE: _COMMUNICATION/team_10/MANDATE_NB-S002-P003-WP003_v1.0.0.md. Parallel session #3 of 5. Version bump 0.3.2."
+  - gate: L-GATE_BUILD
+    result: PASS
+    date: "2026-05-25"
+    notes: "Team 10 deliverables: single-service.php + single-project.php + 10 partials + t2/t3.css + 6 REST-seeded instances (3 services produce/consulting-hydro/sfa + 3 projects). Heritage strip on produce only, SFA origin on sfa only, seeking/legacy ribbons. Extended template-helpers.php + meta-registration.php (REST meta for T2/T3 documented in COMPLETION). S1-S15 PASS. Commit a32a4934. VALIDATE_REQUEST issued."
+  notes: "L-GATE_BUILD PASS. VALIDATE_REQUEST in batch _COMMUNICATION/team_190/VALIDATE_REQUEST_P003_BATCH_v1.0.0.md."
 
 - id: NB-S002-P003-WP004
   label: "nimrod-bio — T4 Post + T5 Blog index templates"
@@ -286,7 +298,11 @@ work_packages:
     result: PASS
     date: "2026-05-25"
     notes: "LOD400 by team_100. single.php (3-col T4) + home.php (flow/grid T5) + filter chips (vanilla JS) + 4 seed posts with flow_style variants (lead/wide/tall/brief). 14 acceptance tests B1-B14. Effort 5d."
-  notes: "IN_PROGRESS. MANDATE: _COMMUNICATION/team_10/MANDATE_NB-S002-P003-WP004_v1.0.0.md. Parallel session #4 of 5. Version bump 0.3.3."
+  - gate: L-GATE_BUILD
+    result: PASS_WITH_SPEC_AMENDMENT
+    date: "2026-05-25"
+    notes: "Team 10 deliverables: single.php + home.php + 5 partials + t4/t5.css + t5-filter.js + 4 seeded posts (flow_styles lead/wide/tall/brief) + nb_extract_toc() helper + /blog/?world= exception in taxonomies.php (documented). B1-B6, B8-B14 PASS. B7 ⚠ — flagged as LOD400 spec defect by team_100 (§6 lead seed has world=know, contradicts §7 B7 empty-state premise). SPEC_AMENDMENT_NB-S002-P003-WP004_B7_v1.0.0.md issued: B7 retracted, replaced with code-inspection test of empty-state markup. team_100 saved feedback memory feedback_lod400_self_consistency. Commits 58af7f61 + 7e7515a5 (pushed by team_100 in 9b1076a4). VALIDATE_REQUEST issued with B7 amendment ref."
+  notes: "L-GATE_BUILD PASS_WITH_SPEC_AMENDMENT. VALIDATE_REQUEST in batch _COMMUNICATION/team_190/VALIDATE_REQUEST_P003_BATCH_v1.0.0.md. B7 amendment to be honored by team_190 per SPEC_AMENDMENT artifact."
 
 - id: NB-S002-P003-WP005
   label: "nimrod-bio — T8 Static (about + heritage + contact)"
@@ -308,5 +324,9 @@ work_packages:
     result: PASS
     date: "2026-05-25"
     notes: "LOD400 by team_100. page-{about,heritage,contact}.php + 8 partials + form handler with honeypot + bootstrap 3 static pages. 18 acceptance tests A1-A18. Effort 4d. Last P003 WP — closes program, version bump to 0.4.0."
-  notes: "IN_PROGRESS. MANDATE: _COMMUNICATION/team_10/MANDATE_NB-S002-P003-WP005_v1.0.0.md. Parallel session #5 of 5. Version bump 0.4.0 (closes P003)."
+  - gate: L-GATE_BUILD
+    result: PASS
+    date: "2026-05-25"
+    notes: "Team 10 deliverables: page-{about,heritage,contact}.php + 8 partials + t8.css + t8-contact.js + contact-form-handler.php (authorized last functions.php edit) + nb_bootstrap_static_pages() + nb_img_ph() helper. A1-A18 PASS including A12 form submit, A14 honeypot, A15 nonce. NB_THEME_VERSION=0.4.0 (later bumped to 0.4.1 by parallel WP002). Commit 4423d3eb. VALIDATE_REQUEST issued."
+  notes: "L-GATE_BUILD PASS. VALIDATE_REQUEST in batch _COMMUNICATION/team_190/VALIDATE_REQUEST_P003_BATCH_v1.0.0.md."
 
