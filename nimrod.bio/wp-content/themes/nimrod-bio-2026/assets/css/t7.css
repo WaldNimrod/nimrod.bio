@@ -1,0 +1,599 @@
+/* t7.css — locked from team_35 T7-styles.css. DO NOT EDIT body. */
+/* ============================================================
+   T7 · Home page · Stage 3 prototype
+   One focused layout. Hero + Unless variants via Tweaks.
+   ============================================================ */
+
+:root {
+  --t7-max: 1240px;
+  --t7-gutter: clamp(20px, 4vw, 56px);
+}
+
+.t7-wrap { max-width: var(--t7-max); margin: 0 auto; padding-inline: var(--t7-gutter); }
+.t7-section { padding-block: clamp(56px, 7vw, 112px); border-top: 1px solid var(--line); }
+.t7-section:first-of-type { border-top: none; }
+
+/* ============================================================
+   HERO VARIANTS — switch via [data-hero]
+   ============================================================ */
+.hero-variant { display: none; }
+body[data-hero="typo"]   .hero-variant.typo,
+body[data-hero="triptych"] .hero-variant.triptych,
+body[data-hero="statement"] .hero-variant.statement,
+body[data-hero="poster"] .hero-variant.poster { display: block; }
+
+/* ───── shared hero wrap ───── */
+.t7-hero { padding-block: clamp(48px, 6vw, 96px); }
+
+/* ────────────────────────────────────────────────────────────
+   HERO · TYPO — typographic recursion (default)
+   ──────────────────────────────────────────────────────────── */
+.hero-typo .stack {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 900;
+  font-size: clamp(64px, 11vw, 180px); line-height: .88;
+  letter-spacing: -.04em;
+  display: flex; flex-direction: column; gap: 0;
+}
+.hero-typo .stack .row {
+  display: flex; align-items: baseline; gap: clamp(16px, 2vw, 32px);
+}
+.hero-typo .stack .word { display: inline-block; transition: color .2s; }
+.hero-typo .stack .word.soil { color: var(--w-soil-deep); }
+.hero-typo .stack .word.know { color: var(--w-know-deep); }
+.hero-typo .stack .word.code { color: var(--w-code-deep); }
+.hero-typo .stack .word.muted { color: var(--ink); }
+.hero-typo .stack .word .dot {
+  display: inline-block; vertical-align: middle;
+  width: .15em; height: .15em; border-radius: 50%;
+  background: currentColor; margin-inline: .15em;
+}
+.hero-typo .lead {
+  margin-top: clamp(28px, 4vw, 56px);
+  display: grid; grid-template-columns: 1fr 1.4fr; gap: clamp(28px, 4vw, 64px); align-items: end;
+}
+.hero-typo .lead p {
+  font-family: "Frank Ruhl Libre", serif; font-style: italic;
+  font-size: clamp(18px, 2vw, 24px); line-height: 1.55;
+  color: var(--ink-soft); margin: 0; max-width: 50ch;
+}
+.hero-typo .lead p em { color: var(--ink); font-style: italic; }
+.hero-typo .lead .marker {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft);
+  border-block: 1px solid var(--ink-soft); padding: 10px 0;
+  align-self: end;
+}
+
+/* ────────────────────────────────────────────────────────────
+   HERO · TRIPTYCH — 3 worlds side-by-side
+   ──────────────────────────────────────────────────────────── */
+.hero-triptych {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px; padding: 0;
+  margin-inline: calc(-1 * var(--t7-gutter));
+}
+.hero-triptych .panel {
+  padding: clamp(40px, 5vw, 80px) clamp(28px, 4vw, 48px);
+  min-height: clamp(420px, 60vh, 600px);
+  display: flex; flex-direction: column; justify-content: space-between;
+  text-decoration: none; color: inherit;
+  transition: padding .2s;
+  position: relative; overflow: hidden;
+}
+.hero-triptych .panel:hover { padding-bottom: clamp(48px, 5.5vw, 88px); }
+.hero-triptych .panel .num {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  letter-spacing: .14em; opacity: .55;
+}
+.hero-triptych .panel h2 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 900;
+  font-size: clamp(48px, 6vw, 84px); line-height: .95;
+  margin: 24px 0 18px; letter-spacing: -.025em;
+}
+.hero-triptych .panel .tagline {
+  font-family: "Frank Ruhl Libre", serif; font-style: italic;
+  font-size: clamp(17px, 1.8vw, 21px); line-height: 1.45;
+  margin: 0 0 28px; max-width: 26ch; opacity: .9;
+}
+.hero-triptych .panel .meta-list {
+  display: flex; flex-direction: column; gap: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  opacity: .75; letter-spacing: .03em;
+}
+.hero-triptych .panel .more {
+  margin-top: 24px;
+  font-family: "Assistant", sans-serif; font-size: 14.5px; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.hero-triptych .panel .more::after { content: "←"; }
+.hero-triptych .panel.soil { background: var(--w-soil-deep); color: var(--paper); }
+.hero-triptych .panel.know { background: var(--w-know-deep); color: var(--paper); }
+.hero-triptych .panel.code { background: var(--w-code-deep); color: var(--paper); }
+.hero-triptych .header-strip {
+  grid-column: 1 / -1; padding: clamp(48px, 6vw, 88px) var(--t7-gutter) clamp(28px, 3vw, 40px);
+  background: var(--paper);
+  text-align: center;
+}
+.hero-triptych .header-strip h1 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 900;
+  font-size: clamp(48px, 7vw, 96px); line-height: .98;
+  margin: 0 0 18px; letter-spacing: -.025em;
+}
+.hero-triptych .header-strip p {
+  font-family: "Frank Ruhl Libre", serif; font-style: italic;
+  font-size: clamp(18px, 2vw, 22px); line-height: 1.5;
+  color: var(--ink-soft); margin: 0; max-width: 56ch; margin-inline: auto;
+}
+
+/* ────────────────────────────────────────────────────────────
+   HERO · STATEMENT — single big sentence + ER diagram
+   ──────────────────────────────────────────────────────────── */
+.hero-statement {
+  padding-block: clamp(64px, 9vw, 140px);
+}
+.hero-statement .grid {
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(48px, 6vw, 96px); align-items: center;
+}
+.hero-statement h1 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 900;
+  font-size: clamp(40px, 5.5vw, 84px); line-height: 1.04;
+  margin: 0 0 28px; letter-spacing: -.022em;
+  color: var(--ink);
+}
+.hero-statement h1 em { font-style: italic; color: var(--w-soil-deep); }
+.hero-statement h1 .spark { color: var(--spark); font-style: normal; }
+.hero-statement .lede {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: clamp(17px, 1.8vw, 21px); line-height: 1.65;
+  color: var(--ink-soft); margin: 0 0 32px; max-width: 56ch;
+}
+.hero-statement .meta-row {
+  display: flex; gap: 24px; flex-wrap: wrap;
+  padding-top: 22px; border-top: 1px dashed var(--line);
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  color: var(--ink-soft); letter-spacing: .03em;
+}
+.hero-statement .meta-row b { color: var(--ink); font-weight: 600; }
+.hero-statement .diagram-wrap {
+  display: flex; align-items: center; justify-content: center;
+}
+.hero-statement svg { max-width: 100%; height: auto; }
+
+/* ────────────────────────────────────────────────────────────
+   HERO · POSTER — vertical typography poster
+   ──────────────────────────────────────────────────────────── */
+.hero-poster {
+  padding-block: clamp(40px, 5vw, 80px);
+}
+.hero-poster .frame {
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  padding: clamp(40px, 5vw, 80px) clamp(28px, 4vw, 64px);
+  border-radius: var(--radius-l);
+  position: relative; overflow: hidden;
+}
+.hero-poster .grid {
+  display: grid; grid-template-columns: 1fr 1px 1fr; gap: clamp(28px, 4vw, 56px);
+}
+.hero-poster .col {
+  display: flex; flex-direction: column; gap: 18px;
+}
+.hero-poster .col .num {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  letter-spacing: .14em; color: var(--ink-soft);
+}
+.hero-poster .col h2 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 900;
+  font-size: clamp(36px, 5vw, 64px); line-height: .98;
+  margin: 0; letter-spacing: -.022em; color: var(--ink);
+}
+.hero-poster .col p {
+  font-family: "Frank Ruhl Libre", serif; font-size: 16px; line-height: 1.6;
+  color: var(--ink-soft); margin: 0; max-width: 40ch;
+}
+.hero-poster .divider { background: var(--line); }
+.hero-poster .footer {
+  margin-top: clamp(28px, 4vw, 56px);
+  padding-top: 22px; border-top: 1px dashed var(--line);
+  display: flex; justify-content: space-between; align-items: end; gap: 18px; flex-wrap: wrap;
+}
+.hero-poster .footer .br {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 800;
+  font-size: clamp(32px, 4vw, 48px); line-height: 1;
+  color: var(--ink); letter-spacing: -.02em;
+}
+
+/* ============================================================
+   UNLESS — three placement variants via [data-unless]
+   ============================================================ */
+.unless-block { display: none; }
+body[data-unless="hero-line"]  .unless-block.hero-line,
+body[data-unless="ribbon"]     .unless-block.ribbon,
+body[data-unless="scattered"]  .unless-block.scattered { display: block; }
+
+/* hero-line — quiet line below hero */
+.unless-block.hero-line {
+  margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-family: "Frank Ruhl Libre", serif; font-style: italic;
+  font-size: clamp(20px, 2.2vw, 26px); line-height: 1.4;
+  color: var(--ink-soft); text-align: start;
+}
+.unless-block.hero-line em { color: var(--spark); font-style: normal; font-weight: 700; }
+
+/* ribbon — full-width ribbon between sections */
+.unless-block.ribbon {
+  background: var(--ink); color: var(--paper);
+  padding: clamp(40px, 5vw, 80px) var(--t7-gutter);
+  position: relative; overflow: hidden;
+}
+.unless-block.ribbon .ribbon-inner {
+  max-width: var(--t7-max); margin: 0 auto;
+  display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center;
+}
+.unless-block.ribbon .quote {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 700;
+  font-size: clamp(36px, 4.5vw, 64px); line-height: 1.05;
+  margin: 0; letter-spacing: -.022em; color: var(--paper);
+}
+.unless-block.ribbon .quote em { color: var(--spark); font-style: normal; }
+.unless-block.ribbon .anno {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  color: rgba(245,243,236,.5); letter-spacing: .12em; text-transform: uppercase;
+}
+
+/* scattered — small subtle markers in 3 places (rendered inline by App) */
+.unless-marker {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: "Frank Ruhl Libre", serif; font-style: italic;
+  font-size: 14px; color: var(--spark);
+  border-block: 1px solid var(--spark);
+  padding: 4px 14px;
+}
+.unless-marker em { font-style: normal; font-weight: 700; }
+
+/* ============================================================
+   WORLDS SECTION — 3 cards linking to T1
+   ============================================================ */
+.worlds-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 2vw, 24px);
+}
+.world-card {
+  padding: clamp(28px, 3vw, 36px);
+  border-radius: var(--radius-l);
+  display: flex; flex-direction: column; gap: 18px;
+  text-decoration: none; color: inherit;
+  position: relative; overflow: hidden;
+  transition: transform .18s;
+  min-height: 280px;
+}
+.world-card:hover { transform: translateY(-2px); }
+.world-card .num {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  letter-spacing: .14em; opacity: .55;
+}
+.world-card h3 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 800;
+  font-size: clamp(32px, 3.5vw, 48px); line-height: .98;
+  margin: 0; letter-spacing: -.02em;
+}
+.world-card .tagline {
+  font-family: "Frank Ruhl Libre", serif; font-style: italic;
+  font-size: 17px; line-height: 1.4;
+  margin: 0; opacity: .85; max-width: 26ch;
+}
+.world-card ul {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 6px;
+  margin-top: auto;
+  font-family: "Assistant", sans-serif; font-size: 14.5px;
+}
+.world-card li { opacity: .85; }
+.world-card li::before { content: "—"; margin-inline-end: 8px; opacity: .65; }
+.world-card .more {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  letter-spacing: .1em; text-transform: uppercase;
+  margin-top: 14px;
+}
+.world-card .more::after { content: " ←"; }
+
+.world-card.soil { background: var(--w-soil-deep); color: var(--paper); }
+.world-card.know { background: var(--w-know-deep); color: var(--paper); }
+.world-card.code { background: var(--w-code-deep); color: var(--paper); }
+
+/* ============================================================
+   FEATURED PROJECTS — mix of client-cases + own-ventures
+   ============================================================ */
+.featured-projects {
+  display: grid; grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: clamp(20px, 2.5vw, 28px);
+}
+.fp-card {
+  background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--radius-m); overflow: hidden;
+  display: flex; flex-direction: column;
+  text-decoration: none; color: inherit;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.fp-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-l); }
+.fp-card .img-ph { aspect-ratio: 16/10; }
+.fp-card .body { padding: 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.fp-card .scope-row {
+  display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  font-family: "JetBrains Mono", monospace; font-size: 10px;
+  letter-spacing: .1em; text-transform: uppercase;
+}
+.fp-card .scope-row .scope {
+  padding: 3px 9px; border-radius: 100px; font-weight: 600;
+}
+.fp-card .scope.client { background: var(--paper-3); color: var(--ink); }
+.fp-card .scope.venture { background: var(--w-soil); color: #fff; }
+.fp-card h3 {
+  font-family: "Frank Ruhl Libre", serif; font-size: 22px;
+  font-weight: 700; margin: 0; line-height: 1.2;
+}
+.fp-card p { font-size: 14.5px; line-height: 1.55; color: var(--ink-soft); margin: 0; }
+.fp-card .meta {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  color: var(--ink-soft); letter-spacing: .03em;
+  display: flex; gap: 8px; align-items: center; margin-top: auto;
+}
+.fp-card.fp-large { grid-column: 1 / 2; grid-row: 1 / 3; }
+.fp-card.fp-large .img-ph { aspect-ratio: 4/3; }
+.fp-card.fp-large h3 { font-size: 28px; }
+
+/* seeking-partners stamp */
+.fp-card .seeking-stamp {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 10px;
+  color: var(--spark); letter-spacing: .12em; text-transform: uppercase;
+  font-weight: 700;
+}
+.fp-card .seeking-stamp::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--spark);
+  animation: pulse-spark 2.4s ease-in-out infinite;
+}
+@keyframes pulse-spark { 0%,100%{opacity:1} 50%{opacity:.35} }
+
+/* ============================================================
+   RECENT POSTS — 4 from blog
+   ============================================================ */
+.recent-posts {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(20px, 2.5vw, 28px);
+}
+.rp-card {
+  display: flex; flex-direction: column; gap: 12px;
+  text-decoration: none; color: inherit;
+}
+.rp-card .img-ph { aspect-ratio: 1; border-radius: var(--radius-m); }
+.rp-card .meta {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  color: var(--ink-soft); letter-spacing: .03em;
+  display: flex; gap: 8px;
+}
+.rp-card h4 {
+  font-family: "Frank Ruhl Libre", serif; font-size: 19px;
+  font-weight: 700; margin: 0; line-height: 1.25;
+  transition: color .15s;
+}
+.rp-card:hover h4 { color: var(--w-soil-deep); }
+.rp-card .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.posts-footer {
+  margin-top: 32px;
+  display: flex; justify-content: center;
+}
+.posts-footer a {
+  font-family: "Assistant", sans-serif; font-size: 14.5px; font-weight: 600;
+  color: var(--ink); text-decoration: none;
+  border-bottom: 1.5px solid var(--ink); padding-bottom: 2px;
+}
+
+/* ============================================================
+   FINAL CTA — two paths
+   ============================================================ */
+.final-cta-home {
+  background: var(--ink); color: var(--paper);
+  padding: clamp(56px, 7vw, 112px) var(--t7-gutter);
+}
+.final-cta-home-inner {
+  max-width: var(--t7-max); margin: 0 auto;
+}
+.final-cta-home h2 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 900;
+  font-size: clamp(40px, 5vw, 80px); line-height: 1.02;
+  margin: 0 0 18px; color: var(--paper); letter-spacing: -.022em;
+}
+.final-cta-home h2 em { color: var(--spark); font-style: normal; }
+.final-cta-home .intro {
+  font-family: "Frank Ruhl Libre", serif; font-style: italic;
+  font-size: clamp(18px, 2vw, 24px); line-height: 1.5;
+  color: rgba(245,243,236,.78); margin: 0 0 48px; max-width: 56ch;
+}
+
+.cta-paths {
+  display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 2.5vw, 36px);
+}
+.cta-path {
+  background: rgba(245,243,236,.04);
+  border: 1px solid rgba(245,243,236,.12);
+  border-radius: var(--radius-l);
+  padding: clamp(28px, 3.5vw, 44px);
+  display: flex; flex-direction: column; gap: 14px;
+  text-decoration: none; color: inherit;
+  transition: background .18s, border-color .18s, transform .18s;
+}
+.cta-path:hover { background: rgba(245,243,236,.08); border-color: rgba(245,243,236,.25); transform: translateY(-2px); }
+.cta-path .label {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: rgba(245,243,236,.55);
+}
+.cta-path h3 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 700;
+  font-size: clamp(24px, 2.8vw, 34px); line-height: 1.15;
+  margin: 0; color: var(--paper); letter-spacing: -.012em;
+}
+.cta-path p {
+  font-family: "Frank Ruhl Libre", serif; font-size: 15.5px; line-height: 1.6;
+  color: rgba(245,243,236,.7); margin: 0; max-width: 40ch;
+}
+.cta-path .action {
+  margin-top: auto; padding-top: 18px;
+  font-family: "Assistant", sans-serif; font-weight: 600; font-size: 16px;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.cta-path.contact .action { color: var(--b-teach); }
+.cta-path.sfa .action { color: #6fcdcf; }
+.cta-path .action::after { content: " ←"; }
+.cta-path .micro {
+  font-family: "JetBrains Mono", monospace; font-size: 10px;
+  color: rgba(245,243,236,.45); letter-spacing: .06em;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1000px) {
+  .hero-typo .stack .row { flex-wrap: wrap; }
+  .hero-typo .lead { grid-template-columns: 1fr; gap: 18px; }
+  .hero-triptych { grid-template-columns: 1fr; }
+  .hero-statement .grid { grid-template-columns: 1fr; }
+  .hero-poster .grid { grid-template-columns: 1fr; }
+  .hero-poster .divider { display: none; }
+  .worlds-grid, .recent-posts { grid-template-columns: 1fr 1fr; }
+  .featured-projects { grid-template-columns: 1fr 1fr; }
+  .fp-card.fp-large { grid-column: 1 / -1; grid-row: 1 / 2; }
+  .cta-paths { grid-template-columns: 1fr; }
+  .unless-block.ribbon .ribbon-inner { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .worlds-grid, .recent-posts, .featured-projects { grid-template-columns: 1fr; }
+  .fp-card.fp-large { grid-column: 1; }
+}
+
+/* ============================================================
+   WP T7 front-page — LOD400 class mapping (statement + ribbon only)
+   ============================================================ */
+.t7-hero.hero-statement,
+.t7-hero.hero-statement .hero-statement { display: block; }
+
+.unless-ribbon {
+  background: var(--ink);
+  color: var(--paper);
+  padding: clamp(40px, 5vw, 80px) var(--t7-gutter);
+}
+.unless-ribbon .t7-wrap p {
+  font-family: "Frank Ruhl Libre", serif;
+  font-weight: 700;
+  font-size: clamp(36px, 4.5vw, 64px);
+  line-height: 1.05;
+  margin: 0;
+  letter-spacing: -.022em;
+  color: var(--paper);
+}
+.unless-ribbon em { color: var(--spark); font-style: normal; }
+
+.world-card.world-soil { background: var(--w-soil-deep); color: var(--paper); }
+.world-card.world-know { background: var(--w-know-deep); color: var(--paper); }
+.world-card.world-code { background: var(--w-code-deep); color: var(--paper); }
+.world-card .world-name {
+  font-family: "Frank Ruhl Libre", serif;
+  font-weight: 800;
+  font-size: clamp(32px, 3.5vw, 48px);
+  line-height: .98;
+}
+.world-card .world-count {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  opacity: .75;
+  margin-top: auto;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: clamp(20px, 2.5vw, 28px);
+}
+.projects-grid .proj-card:first-child { grid-column: 1 / 2; grid-row: 1 / 3; }
+.proj-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.proj-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-l); }
+.proj-card img { width: 100%; height: auto; display: block; aspect-ratio: 16/10; object-fit: cover; }
+.projects-grid .proj-card:first-child img { aspect-ratio: 4/3; }
+.proj-card h3 {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  padding: 22px 22px 0;
+}
+.proj-card p {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0;
+  padding: 10px 22px 22px;
+}
+.proj-card .stage-stamp { margin: 22px 22px 0; }
+
+.posts-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(20px, 2.5vw, 28px);
+}
+.post-card.post-square {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+.post-card.post-square img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-m);
+}
+.post-card.post-square h4 {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 19px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.25;
+}
+.post-card.post-square:hover h4 { color: var(--w-soil-deep); }
+
+.final-cta { text-align: center; }
+.final-cta h2 {
+  font-family: "Frank Ruhl Libre", serif;
+  font-weight: 900;
+  font-size: clamp(32px, 4vw, 56px);
+  margin: 0 0 32px;
+}
+.final-cta .cta-paths {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1000px) {
+  .projects-grid { grid-template-columns: 1fr 1fr; }
+  .projects-grid .proj-card:first-child { grid-column: 1 / -1; grid-row: 1 / 2; }
+  .posts-grid-4 { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .projects-grid, .posts-grid-4 { grid-template-columns: 1fr; }
+  .projects-grid .proj-card:first-child { grid-column: 1; }
+}
