@@ -356,10 +356,10 @@ work_packages:
 
 - id: NB-S002-P004-WP001
   label: "nimrod-bio — Content migration from prod"
-  status: IN_PROGRESS
+  status: COMPLETE
   track: A
-  current_lean_gate: L-GATE_BUILD
-  lod_status: LOD400
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
   assigned_builder: nimrodbio_build
   assigned_validator: nimrodbio_val
   created_at: "2026-05-25"
@@ -374,5 +374,13 @@ work_packages:
     result: PASS
     date: "2026-05-25"
     notes: "LOD400 by team_100. 7 deliverables: 6 scripts in scripts/migration/ + tagging triage HTML. 6 phases (Phase 1 creds DONE by team_00). 19 acceptance tests M1-M19. Risks: CF rate-limit (mitigated by --wait), Hebrew slug encoding (test M6), www redirect (memory feedback_prod_www_redirect)."
-  notes: "IN_PROGRESS. MANDATE: _COMMUNICATION/team_10/MANDATE_NB-S002-P004-WP001_v1.0.0.md. Target: 3 working days. Phase 1 (.env.upress provision) DONE. Team_00 will need to fill content_tagging_triage.html when Phase 3 produces it (~10 min interactive work). Blocks P004-WP002 and P005."
+  - gate: L-GATE_BUILD
+    result: PASS
+    date: "2026-05-25"
+    notes: "Team 10 deliverables in 7 commits (1edda7d0 → eb432f63). 6 migration scripts in scripts/migration/ + _lib.py. Phase 2 cached 25 entities from prod (www.nimrod.bio REST READ ONLY). Phase 3 generated tagging triage HTML; team_00 filled docs/content_tagging_decisions_2026-05-25.json (22 posts tagged world+flow_style). Phase 4 imported 22 posts (Hebrew slugs preserved, post_date original, _nb_seed=v200-migrated) + 1 page /shook/. Phase 5 uploaded 491 media files (91/91 referenced image URLs resolve). Phase 6 deleted 7 legacy _nb_seed=v200 blog seeds. validate_aos.sh: 32/16/0."
+  - gate: L-GATE_VALIDATE
+    result: PASS
+    date: "2026-05-25"
+    notes: "team_190 cycle 1 VERDICT v1.0.0 — initial run found M11 (media 46/91 resolved), M17 (T7 home not showing migrated posts due to hello-world fallback), M12 (URL leakage). team_10 cycle 1 remediation: a6efc102 (rerun uploads_transfer + hello-world delete + front-page meta_query restriction). team_190 v1.0.1 PASS — M11/M17/M12 independently re-verified. Final: 22 migrated posts + /shook/ + /blog/יום-בגינה/ all 200. team_100 independent re-verify same day: 22/22 posts _nb_seed=v200-migrated, 4 .post-card on /, /shook/ 200."
+  notes: "COMPLETE. STANDARD track A. L-GATE_VALIDATE PASS cycle 2. Content layer LIVE: 22 real posts + restored /shook/ page. Heritage URL (2516) deferred to P004-WP002 via 301 only (heritage content hardcoded in T8). Carry-overs to P005: .btn-primary contrast 3.83:1 (a11y waiver decision), 360px anonymous probe, .tbc markers about/heritage (team_00 content), wp_mail SMTP deliverability."
 
