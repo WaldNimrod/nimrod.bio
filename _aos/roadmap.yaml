@@ -198,3 +198,115 @@ work_packages:
     notes: "team_190 (Codex) VERDICT v1.1.0 cycle 2 PASS after fix commit ebc2b481. B1 fixed via taxonomies.php publicly_queryable=false + query_var=false (LOD400 defect originally by team_100, acknowledged in feedback_lod400_taxonomy_query_var memory). B2 fixed via REST DELETE services/12. Independent verification: /?world=soil → 404 body class 'error404' (no archive/tax-world); services/12 → 404; world REST 200 with 3 terms; /world/soil/ → 200; validate_aos.sh 32 PASS / 16 SKIP / 0 FAIL. Cross-engine Iron Rule #1 maintained. Verdict preflight: PASS."
   notes: "COMPLETE. STANDARD track A. L-GATE_VALIDATE PASS cycle 2 (after fix-cycle-1 closed B1 spec defect + B2 hygiene). CPTs services+projects active with REST exposure; world + flow_style taxonomies seeded; native meta boxes operational; /world/ page hierarchy bootstrapped. Unblocks ALL 5 P003 template WPs (T7/T1/T2-T3/T4-T5/T8) for parallel execution per team_00 strategy B decision."
 
+# ─── P003 — 5 parallel template WPs (LOD300 program: _aos/work_packages/S002/P003/LOD300_P003_program.md) ───
+
+- id: NB-S002-P003-WP001
+  label: "nimrod-bio — T7 Home template"
+  status: IN_PROGRESS
+  track: A
+  current_lean_gate: L-GATE_BUILD
+  lod_status: LOD400
+  assigned_builder: nimrodbio_build
+  assigned_validator: nimrodbio_val
+  created_at: "2026-05-25"
+  milestone_ref: V200
+  spec_ref: "_aos/work_packages/NB-S002-P003-WP001/LOD400_NB-S002-P003-WP001.md"
+  gate_history:
+  - gate: L-GATE_ELIGIBILITY
+    result: PASS
+    date: "2026-05-25"
+    notes: "WP002-2 COMPLETE. CPTs/tax/meta boxes operational. P003 program LOD300 published."
+  - gate: L-GATE_SPEC
+    result: PASS
+    date: "2026-05-25"
+    notes: "LOD400 by team_100. front-page.php + t7.css + template-styles-t7.php. Hero=statement, Unless=ribbon (locked from team_35). 10 acceptance tests H1-H10. Effort 3d."
+  notes: "IN_PROGRESS. MANDATE: _COMMUNICATION/team_10/MANDATE_NB-S002-P003-WP001_v1.0.0.md. Parallel session #1 of 5. Version bump 0.3.0."
+
+- id: NB-S002-P003-WP002
+  label: "nimrod-bio — T1 World pages (×3, Variant C)"
+  status: IN_PROGRESS
+  track: A
+  current_lean_gate: L-GATE_BUILD
+  lod_status: LOD400
+  assigned_builder: nimrodbio_build
+  assigned_validator: nimrodbio_val
+  created_at: "2026-05-25"
+  milestone_ref: V200
+  spec_ref: "_aos/work_packages/NB-S002-P003-WP002/LOD400_NB-S002-P003-WP002.md"
+  gate_history:
+  - gate: L-GATE_ELIGIBILITY
+    result: PASS
+    date: "2026-05-25"
+    notes: "Same as P003-WP001."
+  - gate: L-GATE_SPEC
+    result: PASS
+    date: "2026-05-25"
+    notes: "LOD400 by team_100. page-{soil,know,code}.php + t1-body + 4 partials + t1.css. Variant C + seam bridges locked. 14 acceptance tests W1-W14. Effort 4d."
+  notes: "IN_PROGRESS. MANDATE: _COMMUNICATION/team_10/MANDATE_NB-S002-P003-WP002_v1.0.0.md. Parallel session #2 of 5. Version bump 0.3.1."
+
+- id: NB-S002-P003-WP003
+  label: "nimrod-bio — T2 Services + T3 Projects templates"
+  status: IN_PROGRESS
+  track: A
+  current_lean_gate: L-GATE_BUILD
+  lod_status: LOD400
+  assigned_builder: nimrodbio_build
+  assigned_validator: nimrodbio_val
+  created_at: "2026-05-25"
+  milestone_ref: V200
+  spec_ref: "_aos/work_packages/NB-S002-P003-WP003/LOD400_NB-S002-P003-WP003.md"
+  gate_history:
+  - gate: L-GATE_ELIGIBILITY
+    result: PASS
+    date: "2026-05-25"
+    notes: "Same as P003-WP001."
+  - gate: L-GATE_SPEC
+    result: PASS
+    date: "2026-05-25"
+    notes: "LOD400 by team_100. single-service.php + single-project.php + 10 partials + t2.css/t3.css. 6 seed instances (3 services + 3 projects) via REST. Heritage strip on produce only, SFA origin on sfa only. 15 acceptance tests S1-S15. Effort 6d (largest in P003)."
+  notes: "IN_PROGRESS. MANDATE: _COMMUNICATION/team_10/MANDATE_NB-S002-P003-WP003_v1.0.0.md. Parallel session #3 of 5. Version bump 0.3.2."
+
+- id: NB-S002-P003-WP004
+  label: "nimrod-bio — T4 Post + T5 Blog index templates"
+  status: IN_PROGRESS
+  track: A
+  current_lean_gate: L-GATE_BUILD
+  lod_status: LOD400
+  assigned_builder: nimrodbio_build
+  assigned_validator: nimrodbio_val
+  created_at: "2026-05-25"
+  milestone_ref: V200
+  spec_ref: "_aos/work_packages/NB-S002-P003-WP004/LOD400_NB-S002-P003-WP004.md"
+  gate_history:
+  - gate: L-GATE_ELIGIBILITY
+    result: PASS
+    date: "2026-05-25"
+    notes: "Same as P003-WP001."
+  - gate: L-GATE_SPEC
+    result: PASS
+    date: "2026-05-25"
+    notes: "LOD400 by team_100. single.php (3-col T4) + home.php (flow/grid T5) + filter chips (vanilla JS) + 4 seed posts with flow_style variants (lead/wide/tall/brief). 14 acceptance tests B1-B14. Effort 5d."
+  notes: "IN_PROGRESS. MANDATE: _COMMUNICATION/team_10/MANDATE_NB-S002-P003-WP004_v1.0.0.md. Parallel session #4 of 5. Version bump 0.3.3."
+
+- id: NB-S002-P003-WP005
+  label: "nimrod-bio — T8 Static (about + heritage + contact)"
+  status: IN_PROGRESS
+  track: A
+  current_lean_gate: L-GATE_BUILD
+  lod_status: LOD400
+  assigned_builder: nimrodbio_build
+  assigned_validator: nimrodbio_val
+  created_at: "2026-05-25"
+  milestone_ref: V200
+  spec_ref: "_aos/work_packages/NB-S002-P003-WP005/LOD400_NB-S002-P003-WP005.md"
+  gate_history:
+  - gate: L-GATE_ELIGIBILITY
+    result: PASS
+    date: "2026-05-25"
+    notes: "Same as P003-WP001."
+  - gate: L-GATE_SPEC
+    result: PASS
+    date: "2026-05-25"
+    notes: "LOD400 by team_100. page-{about,heritage,contact}.php + 8 partials + form handler with honeypot + bootstrap 3 static pages. 18 acceptance tests A1-A18. Effort 4d. Last P003 WP — closes program, version bump to 0.4.0."
+  notes: "IN_PROGRESS. MANDATE: _COMMUNICATION/team_10/MANDATE_NB-S002-P003-WP005_v1.0.0.md. Parallel session #5 of 5. Version bump 0.4.0 (closes P003)."
+
