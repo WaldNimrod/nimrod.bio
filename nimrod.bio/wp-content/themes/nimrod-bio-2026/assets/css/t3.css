@@ -1,0 +1,459 @@
+/* T3 Project — extracted from team_35 T3-styles.css */
+/* ============================================================
+   T3 · Project page · Stage 3 prototype
+   2 instances:
+     rest-x-greenhouse   — linked-to-services · stage=live · אדמה × ידע
+     hagina-shel-nimrod  — portfolio-only · stage=archived · אדמה (heritage anchor)
+   ============================================================ */
+
+:root {
+  --t3-max: 1240px;
+  --t3-gutter: clamp(20px, 4vw, 56px);
+}
+
+/* show only active project */
+.t3-wrap { max-width: var(--t3-max); margin: 0 auto; padding-inline: var(--t3-gutter); }
+.t3-section { padding-block: clamp(48px, 6vw, 80px); border-top: 1px solid var(--line); }
+.t3-section:first-of-type { border-top: none; }
+
+/* ============================================================
+   PROJECT TAB BAR (mirrors instance-bar)
+   ============================================================ */
+/* ============================================================
+   HERO — split layout (image right, story left)
+   Stage stamp top-left of image
+   ============================================================ */
+.t3-hero {
+  padding-block: clamp(40px, 5vw, 72px) clamp(48px, 6vw, 80px);
+  position: relative;
+  border-bottom: 1px solid var(--line);
+}
+.t3-hero.bridge::before {
+  content: ""; position: absolute; top: 0; inset-inline: 0; height: 6px;
+  background: linear-gradient(to left, var(--bridge-a) 0 50%, var(--bridge-b) 50% 100%);
+}
+.t3-hero.legacy { background: linear-gradient(180deg, var(--paper-2) 0%, var(--paper) 60%); }
+.t3-hero.seeking-partners {
+  background:
+    radial-gradient(circle at 88% 18%, rgba(210,58,46,.06) 0%, transparent 55%),
+    var(--paper);
+  border-top: 1.5px solid var(--spark);
+}
+
+.t3-hero-grid {
+  display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(28px, 4vw, 56px); align-items: center;
+}
+
+.t3-hero-tags {
+  display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 18px;
+}
+.t3-hero-tags .conn { font-family: "JetBrains Mono", monospace; font-size: 14px; color: var(--ink); font-weight: 600; }
+
+.t3-hero-title {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 900;
+  font-size: clamp(40px, 6vw, 80px); line-height: .98;
+  margin: 0 0 18px; letter-spacing: -.02em; color: var(--ink);
+}
+.t3-hero-summary {
+  font-family: "Frank Ruhl Libre", serif; font-style: italic;
+  font-size: clamp(18px, 2vw, 22px); line-height: 1.55;
+  color: var(--ink); margin: 0 0 28px; max-width: 52ch; font-weight: 500;
+}
+
+.t3-hero-meta {
+  display: flex; gap: 24px; flex-wrap: wrap;
+  padding-top: 18px; border-top: 1px dashed var(--line);
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  color: var(--ink-soft); letter-spacing: .03em;
+}
+.t3-hero-meta .row b { color: var(--ink); font-weight: 600; }
+
+.t3-hero-image {
+  aspect-ratio: 4/5; border-radius: var(--radius-l);
+  position: relative;
+}
+.t3-hero-image-wide { aspect-ratio: 5/4; }
+
+/* Stage stamp overlay on image */
+.stage-stamp {
+  position: absolute; top: 16px; inset-inline-start: 16px;
+  z-index: 2;
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  padding: 6px 12px; border-radius: 100px;
+  letter-spacing: .14em; text-transform: uppercase;
+  font-weight: 600;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.stage-stamp::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.stage-stamp.live     { background: var(--paper); color: var(--w-soil-deep); border: 1px solid var(--w-soil-deep); }
+.stage-stamp.pilot    { background: var(--b-teach); color: var(--ink); }
+.stage-stamp.concept  { background: var(--paper); color: var(--ink); border: 1px dashed var(--ink-soft); }
+.stage-stamp.seeking-partners {
+  background: var(--paper); color: var(--spark);
+  border: 1.5px solid var(--spark);
+}
+.stage-stamp.seeking-partners::before { background: var(--spark); animation: pulse-seek 2.4s ease-in-out infinite; }
+@keyframes pulse-seek {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .35; }
+}
+.stage-stamp.legacy {
+  background: var(--paper-2); color: var(--ink);
+  border: 1px solid var(--ink-soft);
+}
+.stage-stamp.legacy::before { background: var(--w-soil-deep); }
+
+/* ============================================================
+   STORY — 3-6 paragraphs · readable column
+   ============================================================ */
+.story {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 62ch) 1fr;
+  gap: 0;
+}
+.story-inner { grid-column: 2; }
+.story h2 { /* uses .s-title */ }
+.story p {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 19px; line-height: 1.75;
+  color: var(--ink); margin: 0 0 24px;
+}
+.story p:first-of-type::first-letter {
+  font-family: "Frank Ruhl Libre", serif;
+  font-weight: 900; font-size: 4.4em;
+  line-height: .85;
+  float: inline-start; margin-inline-end: 12px; margin-block-start: 4px;
+  color: var(--w-soil-deep);
+}
+.story blockquote {
+  font-style: italic;
+  border-inline-start: 3px solid var(--w-soil-deep);
+  padding: 6px 20px;
+  margin: 32px 0;
+  color: var(--ink);
+  font-size: 21px; line-height: 1.55;
+}
+.story em { color: var(--ink); font-style: italic; }
+
+/* ============================================================
+   LINKED SERVICES — 2-3 cards (only for linked-to-services)
+   ============================================================ */
+.linked-services {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+}
+.ls-card {
+  background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--radius-m); padding: 22px;
+  display: flex; flex-direction: column; gap: 10px;
+  text-decoration: none; color: inherit;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.ls-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-l); }
+.ls-card .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.ls-card h4 { font-family: "Frank Ruhl Libre", serif; font-size: 21px; margin: 0; font-weight: 700; line-height: 1.25; }
+.ls-card p { font-size: 14.5px; color: var(--ink-soft); margin: 0; line-height: 1.55; }
+.ls-card .more {
+  margin-top: auto; padding-top: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--ink);
+}
+.ls-card .more::after { content: " ←"; }
+
+/* ============================================================
+   OUTCOMES — numbered metric tiles
+   ============================================================ */
+.outcomes {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+}
+.oc-tile {
+  background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--radius-m); padding: 28px 24px;
+  display: flex; flex-direction: column; gap: 6px;
+  position: relative;
+}
+.oc-tile.spark { border-color: var(--w-soil-deep); }
+.oc-tile .v {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 900;
+  font-size: clamp(36px, 4vw, 52px); line-height: 1;
+  color: var(--w-soil-deep); letter-spacing: -.02em;
+}
+.oc-tile .v.know { color: var(--w-know-deep); }
+.oc-tile .v.code { color: var(--w-code-deep); }
+.oc-tile .v.archived { color: var(--ink); }
+.oc-tile .v.legacy   { color: var(--ink); }
+.oc-tile .l {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft);
+  margin-top: 8px;
+}
+.oc-tile .n {
+  font-family: "JetBrains Mono", monospace; font-size: 10px;
+  color: var(--ink-soft); letter-spacing: .1em;
+  position: absolute; top: 14px; inset-inline-end: 14px;
+}
+.oc-tile .desc {
+  font-size: 13.5px; line-height: 1.55; color: var(--ink); margin: 6px 0 0;
+}
+
+/* archived note */
+.outcomes-note {
+  margin-top: 22px; padding: 16px 20px;
+  background: var(--paper-2); border: 1px dashed var(--ink-soft);
+  border-radius: var(--radius-s);
+  font-family: "Frank Ruhl Libre", serif; font-style: italic;
+  font-size: 15.5px; color: var(--ink-soft);
+}
+
+/* ============================================================
+   GALLERY — masonry-ish grid with mixed sizes
+   ============================================================ */
+.gallery {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.gallery .img-ph { border-radius: var(--radius-m); }
+.gallery .g-tall  { grid-row: span 2; aspect-ratio: 3/4; }
+.gallery .g-wide  { grid-column: span 2; aspect-ratio: 16/9; }
+.gallery .g-square { aspect-ratio: 1; }
+
+@media (max-width: 760px) {
+  .gallery { grid-template-columns: 1fr 1fr; }
+  .gallery .g-tall { grid-row: auto; aspect-ratio: 4/5; }
+  .gallery .g-wide { grid-column: span 2; }
+}
+
+/* ============================================================
+   MORE PROJECTS — filter by shared world
+   ============================================================ */
+.more-projects {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+}
+/* uses .proj-card from T1 */
+
+/* ============================================================
+   LEGACY ribbon — warm framing (not "ended", not "archived")
+   ============================================================ */
+.legacy-ribbon {
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  padding: 16px 22px;
+  background: var(--paper-2);
+  border: 1px solid var(--w-soil);
+  border-inline-start: 4px solid var(--w-soil-deep);
+  border-radius: var(--radius-m);
+  font-family: "Frank Ruhl Libre", serif; font-style: italic;
+  font-size: 16px; line-height: 1.5;
+  color: var(--ink);
+}
+.legacy-ribbon .badge {
+  font-family: "JetBrains Mono", monospace; font-style: normal;
+  font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  background: var(--w-soil-deep); color: #fff;
+  padding: 5px 11px; border-radius: 100px; font-weight: 700;
+}
+.legacy-ribbon .span {
+  font-family: "JetBrains Mono", monospace; font-style: normal;
+  font-size: 12px; color: var(--ink-soft); margin-inline-start: auto;
+  letter-spacing: .04em;
+}
+
+/* ============================================================
+   SEEKING-PARTNERS ribbon — invitation, not desperation
+   ============================================================ */
+.seeking-ribbon {
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  padding: 16px 22px;
+  background: var(--paper);
+  border: 1.5px solid var(--spark);
+  border-radius: var(--radius-m);
+  font-family: "Frank Ruhl Libre", serif; font-style: italic;
+  font-size: 16px; line-height: 1.5;
+  color: var(--ink);
+}
+.seeking-ribbon .badge {
+  font-family: "JetBrains Mono", monospace; font-style: normal;
+  font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  background: var(--spark); color: #fff;
+  padding: 5px 11px; border-radius: 100px; font-weight: 700;
+}
+.seeking-ribbon .span {
+  font-family: "JetBrains Mono", monospace; font-style: normal;
+  font-size: 12px; color: var(--ink-soft); margin-inline-start: auto;
+  letter-spacing: .04em;
+}
+
+/* ============================================================
+   SEEKING CTA block — conversation invite, not "buy now"
+   ============================================================ */
+.seeking-cta {
+  background: var(--ink); color: var(--paper);
+  padding: clamp(32px, 4vw, 56px);
+  border-radius: var(--radius-l);
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: 36px; align-items: center;
+}
+.seeking-cta h3 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 800;
+  font-size: clamp(26px, 3vw, 36px); line-height: 1.15;
+  margin: 0 0 12px; color: var(--paper); letter-spacing: -.01em;
+}
+.seeking-cta p { font-size: 16px; line-height: 1.65; color: rgba(245,243,236,.78); margin: 0; max-width: 50ch; }
+.seeking-cta .cta-side { display: flex; flex-direction: column; gap: 10px; }
+.seeking-cta .cta-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 14px 26px; border-radius: var(--radius-pill);
+  background: var(--spark); color: #fff;
+  font-family: "Assistant", sans-serif; font-weight: 600; font-size: 16px;
+  text-decoration: none; border: none;
+  transition: background .15s, transform .15s;
+}
+.seeking-cta .cta-btn:hover { background: var(--spark-ink); transform: translateY(-1px); }
+.seeking-cta .meta { font-family: "JetBrains Mono", monospace; font-size: 11px; color: rgba(245,243,236,.55); letter-spacing: .04em; }
+
+@media (max-width: 760px) {
+  .seeking-cta { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .t3-hero-grid { grid-template-columns: 1fr; }
+  .t3-hero-image { aspect-ratio: 5/4; max-width: 600px; }
+  .story { grid-template-columns: 1fr; }
+  .story p:first-of-type::first-letter { font-size: 3.4em; }
+  .linked-services, .more-projects { grid-template-columns: 1fr; }
+  .outcomes { grid-template-columns: 1fr 1fr; }
+}
+.s-eyebrow {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--w-soil-deep); margin-bottom: 14px;
+}
+.s-eyebrow .num { color: var(--ink-soft); margin-inline-end: 8px; }
+
+.s-title {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.15; margin: 0 0 12px; font-weight: 700;
+  letter-spacing: -.012em;
+}
+.s-lede {
+  font-family: "Frank Ruhl Libre", serif;
+  font-style: italic; font-weight: 500;
+  font-size: clamp(18px, 1.8vw, 22px);
+  line-height: 1.5; color: var(--ink-soft);
+  max-width: 62ch; margin: 0 0 32px;
+}
+
+/* "COPY · TBC" inline marker */
+.tbc {
+  display: inline-block;
+  font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: .08em;
+  background: var(--b-teach); color: var(--ink);
+  padding: 2px 7px; border-radius: 100px;
+  vertical-align: 1px; margin-inline-start: 6px;
+  text-transform: uppercase; font-weight: 500;
+}
+.tbc::before { content: "COPY · TBC · "; opacity: .55; }
+.tbc.note::before { content: "NOTE · "; opacity: .55; }
+
+/* ───── world chip ───── */
+.wc {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: "Assistant"; font-size: 12px; font-weight: 600;
+  padding: 4px 10px 4px 8px; border-radius: 100px;
+  background: var(--w-soil); color: #fff;
+}
+.wc::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,.75); }
+.wc.know { background: var(--w-know); }
+.wc.code { background: var(--w-code); }
+.wc.ghost {
+  background: transparent; color: var(--ink); border: 1px solid currentColor;
+}
+.wc.ghost.soil { color: var(--w-soil-deep); }
+.wc.ghost.know { color: var(--w-know-deep); }
+.wc.ghost.code { color: var(--w-code-deep); }
+
+/* ============================================================
+   IMAGES — intentional design-system placeholders
+   ============================================================ */
+.img-ph {
+  position: relative; overflow: hidden;
+  background: var(--paper-2);
+  background-image:
+    repeating-linear-gradient(135deg,
+      var(--paper-2) 0 18px,
+      var(--paper-3) 18px 36px);
+  display: grid; place-items: center;
+  border: 1px dashed rgba(91,72,58,.35);
+  border-radius: inherit;
+}
+.img-ph > img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.img-ph::after {
+  content: attr(data-cap);
+  position: absolute; left: 10px; bottom: 10px;
+  font-family: "JetBrains Mono", monospace; font-size: 10px;
+  background: rgba(31,30,28,.82); color: var(--paper);
+  padding: 4px 9px; border-radius: 3px;
+  letter-spacing: .04em; max-width: calc(100% - 20px);
+  pointer-events: none;
+}
+.img-ph[data-cap=""]::after, .img-ph.clean::after { display: none; }
+.img-ph .img-subj {
+  font-family: "Frank Ruhl Libre", serif;
+  font-style: italic; font-weight: 500;
+  font-size: clamp(15px, 1.5vw, 19px);
+  color: var(--soil); opacity: .75;
+  padding: 8px 20px; text-align: center;
+  background: rgba(245,243,236,.55);
+  border-radius: 6px;
+  max-width: 80%;
+}
+.img-ph.fail { } /* alias kept for back-compat */
+
+
+.proj-card {
+  background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--radius-m); overflow: hidden;
+  display: flex; flex-direction: column;
+  text-decoration: none; color: inherit;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.proj-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-l); }
+.proj-card .img-ph { aspect-ratio: 16/10; }
+.proj-card .body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 10px; }
+.proj-card h4 { font-family: "Frank Ruhl Libre", serif; font-size: 20px; margin: 0; font-weight: 700; }
+.proj-card .meta {
+  font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--ink-soft);
+  letter-spacing: .04em; display: flex; gap: 10px; flex-wrap: wrap;
+}
+.proj-card .stage {
+  font-family: "JetBrains Mono", monospace; font-size: 9px;
+  padding: 2px 7px; border-radius: 3px; letter-spacing: .1em; text-transform: uppercase;
+}
+.stage-live  { background: var(--w-soil); color: #fff; }
+.stage-pilot { background: var(--b-teach); color: var(--ink); }
+.stage-seeking-partners { background: var(--paper); color: var(--spark); border: 1px solid var(--spark); }
+.stage-legacy { background: var(--paper-2); color: var(--ink); border: 1px solid var(--ink-soft); }
+.stage-archived { background: var(--paper-3); color: var(--ink-soft); }
+.stage-concept { background: var(--paper-2); color: var(--ink); border: 1px dashed var(--ink-soft); }
+.post-card {
+  display: grid; grid-template-columns: 80px 1fr;
+  gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--line);
+  text-decoration: none; color: inherit;
+}
+.post-card:hover h5 { color: var(--w-know-deep); }
+.post-card .date {
+  font-family: "Frank Ruhl Libre", serif; font-size: 14px; line-height: 1.2;
+  color: var(--w-soil-deep); font-weight: 700;
+}
+.post-card .date b { display: block; font-size: 28px; font-weight: 900; line-height: 1; }
+.post-card h5 {
+  font-family: "Frank Ruhl Libre", serif; font-size: 19px; font-weight: 700;
+  margin: 0 0 6px; line-height: 1.3; transition: color .15s;
+}
+.post-card .meta {
+  font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--ink-soft);
+  letter-spacing: .04em; display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+}
