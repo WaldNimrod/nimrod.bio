@@ -126,10 +126,10 @@ work_packages:
 
 - id: NB-S002-P002-WP001
   label: "nimrod-bio — Custom theme skeleton (nimrod-bio-2026)"
-  status: IN_PROGRESS
+  status: COMPLETE
   track: A
-  current_lean_gate: L-GATE_BUILD
-  lod_status: LOD400
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
   assigned_builder: nimrodbio_build
   assigned_validator: nimrodbio_val
   created_at: "2026-05-25"
@@ -157,5 +157,9 @@ work_packages:
     result: PASS_FIX_CYCLE_1
     date: "2026-05-25"
     notes: "Fix cycle 1 closed by team_10 in commit 14e9f932. All 4 blockers fixed: B1 h1/h2/h3 serif rule added to shell.css addendum (system.css untouched); B2 system.css TikTrack case restored verbatim; B3 shell.css footer values match T1-styles.css 468-501 (diff silent); B4 17 theme files now in git. NB_THEME_VERSION bumped 0.1.0→0.1.1 for cache-bust. validate_aos.sh: 32 PASS / 16 SKIP / 0 FAIL (first clean run this session). team_100 self-reviewed via diff + git ls-files + live HTML inspection 2026-05-25. VALIDATE_REQUEST v1.1.0 issued for cycle 2."
-  notes: "L-GATE_VALIDATE FAIL cycle 1 → fix cycle closed → VALIDATE_REQUEST cycle 2 issued to team_190 with focused 4-blocker re-check scope. WP002-2 and WP003+ remain blocked until cycle 2 PASS."
+  - gate: L-GATE_VALIDATE
+    result: PASS_WITH_DEFERRALS
+    date: "2026-05-25"
+    notes: "team_190 (Codex) VERDICT v1.1.1 — cycle 2 PASS after governance commit eb3a3fde cleared Check 32 drift. 4/4 blockers FIXED + sanity + cache-bust verified in cycle 2 (v1.1.0). validate_aos.sh: 32 PASS / 16 SKIP / 0 FAIL independently confirmed. Single deferral: T10 SEO=63 due to uPress edge X-Robots-Tag noindex on *.upress.link — carry-over to P005-WP001 QA on production URL. Cross-engine Iron Rule #1 maintained (Builder=Cursor, Validator=Codex). Verdict artifact preflight: PASS."
+  notes: "COMPLETE. STANDARD track A. L-GATE_VALIDATE PASS_WITH_DEFERRALS. Theme nimrod-bio-2026 active on dev (http://nimrod-bio-2026.s887.upress.link). T10 SEO deferred to P005-WP001 (production URL). Unblocks WP002-WP002 (CPTs native) and full P003 templates cascade."
 
