@@ -19,7 +19,9 @@ import base64
 import json
 import os
 import sys
+import ssl
 import urllib.error
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
@@ -150,6 +152,18 @@ def load_env(path: Path) -> None:
         os.environ[key.strip()] = value.strip().strip("'\"")
 
 
+def _ssl_ctx() -> ssl.SSLContext | None:
+    """Return an unverified SSL context when WP_REST_INSECURE=1 is set.
+
+    Used by team_99 from waldhomeserver to route via PLAT-synth IPv6 (broken
+    CLAT on host) where the cert chain on the synthesized address path is
+    not the canonical upress cert. Mac-side execution does not need this.
+    """
+    if os.environ.get("WP_REST_INSECURE") == "1":
+        return ssl._create_unverified_context()
+    return None
+
+
 def req(method: str, url: str, user: str, password: str, payload: dict | None = None) -> dict:
     token = base64.b64encode(f"{user}:{password}".encode()).decode()
     headers = {
@@ -161,8 +175,9 @@ def req(method: str, url: str, user: str, password: str, payload: dict | None = 
         data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
         headers["Content-Type"] = "application/json"
     request = urllib.request.Request(url, data=data, headers=headers, method=method)
+    ctx = _ssl_ctx()
     try:
-        with urllib.request.urlopen(request, timeout=60) as resp:
+        with urllib.request.urlopen(request, timeout=60, context=ctx) as resp:
             body = resp.read().decode("utf-8")
             return json.loads(body) if body else {}
     except urllib.error.HTTPError as exc:
@@ -176,7 +191,12 @@ def term_ids(base: str, user: str, password: str, taxonomy: str) -> dict[str, in
 
 
 def find_post(base: str, user: str, password: str, slug: str) -> dict | None:
-    items = req("GET", f"{base}/wp/v2/posts?slug={slug}&status=any", user, password)
+    items = req(
+        "GET",
+        f"{base}/wp/v2/posts?slug={urllib.parse.quote(slug, safe='')}&status=any",
+        user,
+        password,
+    )
     return items[0] if items else None
 
 
