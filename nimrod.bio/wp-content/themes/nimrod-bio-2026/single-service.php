@@ -39,35 +39,16 @@ while ( have_posts() ) :
 
 		<?php get_template_part( 'template-parts/t2-meta-strip', null, array( 'post_id' => $post_id ) ); ?>
 
-		<?php if ( 'sfa' === $slug ) : ?>
-			<section class="t2-wrap t2-section sfa-origin-flow" aria-label="Origin · 3 שלבים">
-				<?php
-				echo nb_sec_head( 1, 'מקור · CDIP בפעולה', 'החממה מזינה את הידע, הידע מקודד את הסוכן.', 'המקרה שבסיס ה-SFA. ידע מהשטח, לא מהנייר.' );
-				?>
-				<div class="sfa-origin">
-					<div>
-						<div class="label">מהיכן SFA מגיע</div>
-						<p>ה-SFA הוא הקצה של שורה — שמתחילה בחממה ההידרופונית שלי, עוברת דרך הייעוץ של חממות אחרות, ומקודדת לבסוף לבסיס ידע. זה לא מוצר טכנולוגי שמנסה למצוא שוק; זה מוצר שטח שהשתמש בטכנולוגיה.</p>
-					</div>
-					<div class="flow">
-						<div class="step"><span class="n">1</span><span class="t">החממה ההידרופונית · 240 מ״ר · עונה 5</span></div>
-						<div class="step"><span class="n">2</span><span class="t">ייעוץ ל-4 חממות נוספות · תיעוד מקרים</span></div>
-						<div class="step"><span class="n">3</span><span class="t">SFA · קידוד הידע לסוכן AI · v0.1</span></div>
-					</div>
-				</div>
-			</section>
-		<?php endif; ?>
-
 		<?php get_template_part( 'template-parts/t2-three-col', null, array( 'post_id' => $post_id ) ); ?>
 
 		<section class="t2-wrap t2-section">
 			<?php
-			$sec_num = 'sfa' === $slug ? 5 : 4;
+			$sec_num = 4;
 			echo nb_sec_head(
 				$sec_num,
-				'sfa' === $slug ? 'פרויקטים · שתורמים מקרים ל-SFA' : ( 'consulting-hydro' === $slug ? 'פרויקטים · השתמשו בייעוץ הזה' : 'פרויקטים · השתמשו ב-service הזה' ),
-				'sfa' === $slug ? 'מי שכבר תורם ידע.' : ( 'consulting-hydro' === $slug ? 'חממות שעבדנו עליהן.' : 'מי שכבר עובד איתי.' ),
-				'sfa' === $slug ? 'חוות שכבר תורמות מקרים לבסיס הידע.' : ( 'consulting-hydro' === $slug ? 'פרויקטים שעברו דרך אבחון, תכנון, או ליווי שנתי.' : 'לא רשימה — דוגמאות פעילות.' )
+				'consulting-hydro' === $slug ? 'פרויקטים · השתמשו בייעוץ הזה' : 'פרויקטים · השתמשו ב-service הזה',
+				'consulting-hydro' === $slug ? 'חממות שעבדנו עליהן.' : 'מי שכבר עובד איתי.',
+				'consulting-hydro' === $slug ? 'פרויקטים שעברו דרך אבחון, תכנון, או ליווי שנתי.' : 'לא רשימה — דוגמאות פעילות.'
 			);
 			$linked = nb_meta_array( $post_id, 'linked_projects' );
 			?>
@@ -109,12 +90,12 @@ while ( have_posts() ) :
 
 		<section class="t2-wrap t2-section">
 			<?php
-			$post_sec = 'sfa' === $slug ? 6 : 5;
+			$post_sec = 5;
 			echo nb_sec_head(
 				$post_sec,
 				'פוסטים קשורים',
 				'ביומן.',
-				'sfa' === $slug ? 'פוסטים על המעבר מהאדמה לדיגיטל, ומה שמחבר ביניהם.' : ( 'consulting-hydro' === $slug ? 'פוסטים על תכנון חממה, מערכות, ומה שהשטח לימד.' : 'פוסטים שעוסקים בנושאי תוצרת / חממה / שדה.' )
+				'consulting-hydro' === $slug ? 'פוסטים על תכנון חממה, מערכות, ומה שהשטח לימד.' : 'פוסטים שעוסקים בנושאי תוצרת / חממה / שדה.'
 			);
 			?>
 			<div class="related-posts">
