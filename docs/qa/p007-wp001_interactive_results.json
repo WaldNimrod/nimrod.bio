@@ -1,0 +1,205 @@
+{
+  "base_url": "http://nimrod-bio-2026.s887.upress.link",
+  "interactive_trace": [
+    {
+      "from": "/",
+      "action": "click world soil tile",
+      "expected_path": "/world/soil/",
+      "actual_url": "http://nimrod-bio-2026.s887.upress.link/world/soil/",
+      "pass": true
+    },
+    {
+      "from": "/",
+      "action": "click project tile",
+      "expected_path": "/project/coop-sharon/",
+      "actual_url": "http://nimrod-bio-2026.s887.upress.link/project/coop-sharon/",
+      "pass": true
+    },
+    {
+      "from": "/",
+      "action": "click blog card/link",
+      "expected_path": "/blog/",
+      "actual_url": "http://nimrod-bio-2026.s887.upress.link/blog/",
+      "pass": true
+    }
+  ],
+  "contact_form": {
+    "invalid": {
+      "final_url": "http://nimrod-bio-2026.s887.upress.link/contact/",
+      "pass": false
+    },
+    "happy": {
+      "final_url": "http://nimrod-bio-2026.s887.upress.link/contact/?status=ok",
+      "pass": true
+    }
+  },
+  "console": {
+    "t7-home": [],
+    "t4-post-harish2021": [
+      "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  "network_t7": {
+    "request_count": 20,
+    "transfer_kb": 0.0,
+    "top_5_assets": [
+      {
+        "name": "https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&family=Frank+Ruhl+Libre:wght@500;700;900&family=JetBrains+Mono:wght@400;500&display=swap",
+        "transferSize": 0,
+        "initiatorType": "link"
+      },
+      {
+        "name": "http://nimrod-bio-2026.s887.upress.link/wp-content/themes/nimrod-bio-2026/assets/css/system.css?ver=0.4.1",
+        "transferSize": 0,
+        "initiatorType": "link"
+      },
+      {
+        "name": "http://nimrod-bio-2026.s887.upress.link/wp-content/themes/nimrod-bio-2026/assets/css/shell.css?ver=0.4.1",
+        "transferSize": 0,
+        "initiatorType": "link"
+      },
+      {
+        "name": "http://nimrod-bio-2026.s887.upress.link/wp-content/themes/nimrod-bio-2026/assets/css/t7.css?ver=0.4.1",
+        "transferSize": 0,
+        "initiatorType": "link"
+      },
+      {
+        "name": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2026/05/WhatsApp-Image-2023-03-05-at-07.57.23-3-300x138.jpeg",
+        "transferSize": 0,
+        "initiatorType": "img"
+      }
+    ],
+    "errors_4xx_5xx": []
+  },
+  "a11y": {
+    "t7-home": {
+      "missingAlt": 0,
+      "headings": [
+        "H1",
+        "H2",
+        "H2",
+        "H3",
+        "H3",
+        "H3",
+        "H2",
+        "H4",
+        "H4",
+        "H4",
+        "H4",
+        "H2",
+        "H6",
+        "H6",
+        "H6"
+      ],
+      "heading_skip": true,
+      "dir": "rtl"
+    },
+    "t1-world-soil": {
+      "missingAlt": 0,
+      "headings": [
+        "H1",
+        "H2",
+        "H4",
+        "H3",
+        "H4",
+        "H4",
+        "H4",
+        "H2",
+        "H3",
+        "H2",
+        "H4",
+        "H4",
+        "H4",
+        "H2",
+        "H5",
+        "H5",
+        "H5",
+        "H5",
+        "H6",
+        "H6",
+        "H6"
+      ],
+      "heading_skip": true,
+      "dir": "rtl"
+    },
+    "t4-post-harish2021": {
+      "missingAlt": 0,
+      "headings": [
+        "H1",
+        "H3",
+        "H3",
+        "H3",
+        "H3",
+        "H2",
+        "H2",
+        "H3",
+        "H3",
+        "H3",
+        "H4",
+        "H4",
+        "H4",
+        "H2",
+        "H3",
+        "H3",
+        "H3",
+        "H6",
+        "H6",
+        "H6"
+      ],
+      "heading_skip": true,
+      "dir": "rtl"
+    },
+    "t8-contact": {
+      "missingAlt": 0,
+      "headings": [
+        "H1",
+        "H3",
+        "H4",
+        "H4",
+        "H6",
+        "H6",
+        "H6"
+      ],
+      "heading_skip": true,
+      "dir": "rtl"
+    }
+  },
+  "responsive_375": [
+    {
+      "label": "t7-home",
+      "path": "/",
+      "no_horizontal_scroll": true,
+      "overflow_px": 204
+    },
+    {
+      "label": "t1-world-soil",
+      "path": "/world/soil/",
+      "no_horizontal_scroll": true,
+      "overflow_px": 232
+    },
+    {
+      "label": "t2-services-produce",
+      "path": "/services/produce/",
+      "no_horizontal_scroll": true,
+      "overflow_px": 204
+    },
+    {
+      "label": "t4-post-harish2021",
+      "path": "/blog/harish2021/",
+      "no_horizontal_scroll": true,
+      "overflow_px": 665
+    }
+  ],
+  "error_404": {
+    "http_status": "http://nimrod-bio-2026.s887.upress.link/blog/non-existent-slug/",
+    "has_wp_default_phrase": false,
+    "body_snippet": "דלג לתוכן\nנימרוד ולדNIMROD.BIO\nאדמה\nייעוץ והוראה\nדיגיטל\nבלוג\nעל נמרוד\nצור קשר\n404 - לא נמצא\n\nהדף שחיפשת לא קיים. אולי לחזור לדף הבית?\n\nנימרוד ולד\nשורש אחד, שלושה עולמות. Unless.\nעולמות\nאדמה\nייעוץ והוראה · ידע\nדיגיטל / מיזו\nתוכן\nבלוג\nעל נמרוד\nקשר\nnimrod@nimrod.bio\nצור קשר\n© נימרוד ולד · 2026 · נבנה ב",
+    "pass": true
+  },
+  "critical_console_errors": [
+    {
+      "template": "t4-post-harish2021",
+      "message": "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+    }
+  ]
+}

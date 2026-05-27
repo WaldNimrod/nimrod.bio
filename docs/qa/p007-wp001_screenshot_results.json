@@ -1,0 +1,302 @@
+[
+  {
+    "name": "t7-home",
+    "path": "/",
+    "viewport": 375,
+    "url": "http://nimrod-bio-2026.s887.upress.link/",
+    "file": "docs/qa/screenshots/p007-wp001/t7-home_375.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "t7-home",
+    "path": "/",
+    "viewport": 768,
+    "url": "http://nimrod-bio-2026.s887.upress.link/",
+    "file": "docs/qa/screenshots/p007-wp001/t7-home_768.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "t7-home",
+    "path": "/",
+    "viewport": 1440,
+    "url": "http://nimrod-bio-2026.s887.upress.link/",
+    "file": "docs/qa/screenshots/p007-wp001/t7-home_1440.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "t1-world-soil",
+    "path": "/world/soil/",
+    "viewport": 1440,
+    "url": "http://nimrod-bio-2026.s887.upress.link/world/soil/",
+    "file": "docs/qa/screenshots/p007-wp001/t1-world-soil_1440.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "t1-world-know",
+    "path": "/world/know/",
+    "viewport": 1440,
+    "url": "http://nimrod-bio-2026.s887.upress.link/world/know/",
+    "file": "docs/qa/screenshots/p007-wp001/t1-world-know_1440.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "t1-world-code",
+    "path": "/world/code/",
+    "viewport": 1440,
+    "url": "http://nimrod-bio-2026.s887.upress.link/world/code/",
+    "file": "docs/qa/screenshots/p007-wp001/t1-world-code_1440.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "t2-services-produce",
+    "path": "/services/produce/",
+    "viewport": 1440,
+    "url": "http://nimrod-bio-2026.s887.upress.link/services/produce/",
+    "file": "docs/qa/screenshots/p007-wp001/t2-services-produce_1440.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "t2-services-consulting-hydro",
+    "path": "/services/consulting-hydro/",
+    "viewport": 1440,
+    "url": "http://nimrod-bio-2026.s887.upress.link/services/consulting-hydro/",
+    "file": "docs/qa/screenshots/p007-wp001/t2-services-consulting-hydro_1440.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "t2-services-teaching",
+    "path": "/services/teaching/",
+    "viewport": 1440,
+    "url": "http://nimrod-bio-2026.s887.upress.link/services/teaching/",
+    "file": "docs/qa/screenshots/p007-wp001/t2-services-teaching_1440.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "t3-project-coop-sharon",
+    "path": "/project/coop-sharon/",
+    "viewport": 1440,
+    "url": "http://nimrod-bio-2026.s887.upress.link/project/coop-sharon/",
+    "file": "docs/qa/screenshots/p007-wp001/t3-project-coop-sharon_1440.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "t3-project-hagina-shel-nimrod",
+    "path": "/project/hagina-shel-nimrod/",
+    "viewport": 1440,
+    "url": "http://nimrod-bio-2026.s887.upress.link/project/hagina-shel-nimrod/",
+    "file": "docs/qa/screenshots/p007-wp001/t3-project-hagina-shel-nimrod_1440.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "t3-project-restaurant-supply",
+    "path": "/project/restaurant-supply/",
+    "viewport": 1440,
+    "url": "http://nimrod-bio-2026.s887.upress.link/project/restaurant-supply/",
+    "file": "docs/qa/screenshots/p007-wp001/t3-project-restaurant-supply_1440.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "t3-project-farm-y-bcs",
+    "path": "/project/farm-y-bcs/",
+    "viewport": 1440,
+    "url": "http://nimrod-bio-2026.s887.upress.link/project/farm-y-bcs/",
+    "file": "docs/qa/screenshots/p007-wp001/t3-project-farm-y-bcs_1440.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "t3-project-rest-x-greenhouse",
+    "path": "/project/rest-x-greenhouse/",
+    "viewport": 1440,
+    "url": "http://nimrod-bio-2026.s887.upress.link/project/rest-x-greenhouse/",
+    "file": "docs/qa/screenshots/p007-wp001/t3-project-rest-x-greenhouse_1440.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "t4-post-harish2021",
+    "path": "/blog/harish2021/",
+    "viewport": 1440,
+    "url": "http://nimrod-bio-2026.s887.upress.link/blog/harish2021/",
+    "file": "docs/qa/screenshots/p007-wp001/t4-post-harish2021_1440.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "t4-post-hebrew",
+    "path": "/blog/%D7%99%D7%95%D7%9D-%D7%91%D7%92%D7%99%D7%A0%D7%94/",
+    "viewport": 1440,
+    "url": "http://nimrod-bio-2026.s887.upress.link/blog/%D7%99%D7%95%D7%9D-%D7%91%D7%92%D7%99%D7%A0%D7%94/",
+    "file": "docs/qa/screenshots/p007-wp001/t4-post-hebrew_1440.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "t4-post-agents-os",
+    "path": "/blog/agents-os/",
+    "viewport": 1440,
+    "url": "http://nimrod-bio-2026.s887.upress.link/blog/agents-os/",
+    "file": "docs/qa/screenshots/p007-wp001/t4-post-agents-os_1440.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "t4-post-israel-microgreens",
+    "path": "/blog/israel-microgreens/",
+    "viewport": 1440,
+    "url": "http://nimrod-bio-2026.s887.upress.link/blog/israel-microgreens/",
+    "file": "docs/qa/screenshots/p007-wp001/t4-post-israel-microgreens_1440.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "t4-post-back-to-mud",
+    "path": "/blog/back-to-mud/",
+    "viewport": 1440,
+    "url": "http://nimrod-bio-2026.s887.upress.link/blog/back-to-mud/",
+    "file": "docs/qa/screenshots/p007-wp001/t4-post-back-to-mud_1440.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "t5-blog-index",
+    "path": "/blog/",
+    "viewport": 1440,
+    "url": "http://nimrod-bio-2026.s887.upress.link/blog/",
+    "file": "docs/qa/screenshots/p007-wp001/t5-blog-index_1440.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "t5-blog-page2",
+    "path": "/blog/page/2/",
+    "viewport": 1440,
+    "url": "http://nimrod-bio-2026.s887.upress.link/blog/page/2/",
+    "file": "docs/qa/screenshots/p007-wp001/t5-blog-page2_1440.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "t8-about",
+    "path": "/about/",
+    "viewport": 1440,
+    "url": "http://nimrod-bio-2026.s887.upress.link/about/",
+    "file": "docs/qa/screenshots/p007-wp001/t8-about_1440.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "t8-heritage",
+    "path": "/about/heritage/",
+    "viewport": 1440,
+    "url": "http://nimrod-bio-2026.s887.upress.link/about/heritage/",
+    "file": "docs/qa/screenshots/p007-wp001/t8-heritage_1440.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "t8-contact",
+    "path": "/contact/",
+    "viewport": 1440,
+    "url": "http://nimrod-bio-2026.s887.upress.link/contact/",
+    "file": "docs/qa/screenshots/p007-wp001/t8-contact_1440.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "error-404",
+    "path": "/blog/non-existent-slug/",
+    "viewport": 1440,
+    "url": "http://nimrod-bio-2026.s887.upress.link/blog/non-existent-slug/",
+    "file": "docs/qa/screenshots/p007-wp001/error-404_1440.png",
+    "http_status": 404,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "error-contact-status-ok",
+    "path": "/contact/?status=ok",
+    "viewport": 1440,
+    "url": "http://nimrod-bio-2026.s887.upress.link/contact/?status=ok",
+    "file": "docs/qa/screenshots/p007-wp001/error-contact-status-ok_1440.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "contact-form-invalid",
+    "path": "/contact/?status=invalid",
+    "viewport": 1440,
+    "url": "http://nimrod-bio-2026.s887.upress.link/contact/?status=invalid",
+    "file": "docs/qa/screenshots/p007-wp001/contact-form-invalid_1440.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "t1-world-soil",
+    "path": "/world/soil/",
+    "viewport": 375,
+    "url": "http://nimrod-bio-2026.s887.upress.link/world/soil/",
+    "file": "docs/qa/screenshots/p007-wp001/t1-world-soil_375.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "t2-services-produce",
+    "path": "/services/produce/",
+    "viewport": 375,
+    "url": "http://nimrod-bio-2026.s887.upress.link/services/produce/",
+    "file": "docs/qa/screenshots/p007-wp001/t2-services-produce_375.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  },
+  {
+    "name": "t4-post-harish2021",
+    "path": "/blog/harish2021/",
+    "viewport": 375,
+    "url": "http://nimrod-bio-2026.s887.upress.link/blog/harish2021/",
+    "file": "docs/qa/screenshots/p007-wp001/t4-post-harish2021_375.png",
+    "http_status": 200,
+    "pass": true,
+    "error": null
+  }
+]
