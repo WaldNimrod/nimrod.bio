@@ -1,0 +1,36 @@
+[2026-05-27 03:15:19] [INFO] old_media_count=694 old_total_header=694
+[2026-05-27 03:15:21] [INFO] dev_media_count_pre=307
+[2026-05-27 03:15:21] [INFO] env_loaded=.env.upress.dev has_wp_rest_user=True has_app_password=True
+[2026-05-27 03:20:52] [INFO] progress uploaded=7 failed=0 processed=80/694
+[2026-05-27 03:22:43] [INFO] progress uploaded=13 failed=0 processed=100/694
+[2026-05-27 03:26:23] [INFO] progress uploaded=26 failed=0 processed=160/694
+[2026-05-27 03:28:10] [INFO] progress uploaded=30 failed=0 processed=180/694
+[2026-05-27 03:30:48] [INFO] progress uploaded=35 failed=0 processed=200/694
+[2026-05-27 03:31:06] [INFO] progress uploaded=36 failed=0 processed=220/694
+[2026-05-27 03:34:20] [INFO] progress uploaded=53 failed=0 processed=260/694
+[2026-05-27 03:36:43] [INFO] progress uploaded=73 failed=0 processed=280/694
+[2026-05-27 03:39:12] [INFO] progress uploaded=93 failed=0 processed=300/694
+[2026-05-27 03:40:50] [INFO] progress uploaded=113 failed=0 processed=320/694
+[2026-05-27 03:44:22] [INFO] progress uploaded=133 failed=0 processed=340/694
+[2026-05-27 03:46:33] [INFO] progress uploaded=153 failed=0 processed=360/694
+[2026-05-27 03:48:49] [INFO] progress uploaded=173 failed=0 processed=380/694
+[2026-05-27 03:51:43] [INFO] progress uploaded=193 failed=0 processed=400/694
+[2026-05-27 03:54:04] [INFO] progress uploaded=213 failed=0 processed=420/694
+[2026-05-27 03:58:15] [INFO] progress uploaded=233 failed=0 processed=440/694
+[2026-05-27 04:00:56] [INFO] progress uploaded=253 failed=0 processed=460/694
+[2026-05-27 04:07:24] [INFO] progress uploaded=273 failed=0 processed=480/694
+[2026-05-27 04:09:07] [INFO] progress uploaded=293 failed=0 processed=500/694
+[2026-05-27 04:12:18] [WARN] upload failed old_id=2311 error=<urlopen error [Errno 32] Broken pipe>
+[2026-05-27 04:12:31] [INFO] progress uploaded=312 failed=1 processed=520/694
+[2026-05-27 04:14:58] [INFO] progress uploaded=332 failed=1 processed=540/694
+[2026-05-27 04:17:58] [INFO] progress uploaded=352 failed=1 processed=560/694
+[2026-05-27 04:19:59] [WARN] download failed old_id=2039 code=n/a url=https://www.nimrod.bio/wp-content/uploads/woocommerce-placeholder.png
+[2026-05-27 04:20:40] [INFO] progress uploaded=371 failed=2 processed=580/694
+[2026-05-27 04:23:08] [INFO] progress uploaded=391 failed=2 processed=600/694
+[2026-05-27 04:26:13] [INFO] progress uploaded=411 failed=2 processed=620/694
+[2026-05-27 04:27:59] [WARN] upload failed old_id=1554 error=<urlopen error [Errno 60] Operation timed out>
+[2026-05-27 04:28:33] [INFO] progress uploaded=430 failed=3 processed=640/694
+[2026-05-27 04:30:26] [INFO] progress uploaded=450 failed=3 processed=660/694
+[2026-05-27 04:35:30] [INFO] progress uploaded=470 failed=3 processed=680/694
+[2026-05-27 04:38:23] [INFO] wrote_url_map path=/Users/nimrod/Documents/nimrod-bio/scripts/migration/state/url_map.json replacements=4774
+[2026-05-27 04:38:23] [INFO] migrated_posts_found=22

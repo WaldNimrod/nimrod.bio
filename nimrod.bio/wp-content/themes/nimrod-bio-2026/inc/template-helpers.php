@@ -132,12 +132,6 @@ function nb_get_bridges_for_world( string $world ): array {
 			'title' => 'ייעוץ · תכנון חממה',
 		),
 		array(
-			'a'     => 'soil',
-			'b'     => 'code',
-			'slug'  => 'sfa',
-			'title' => 'SFA · Small Farms Agents',
-		),
-		array(
 			'a'     => 'know',
 			'b'     => 'code',
 			'slug'  => 'tiktrack',

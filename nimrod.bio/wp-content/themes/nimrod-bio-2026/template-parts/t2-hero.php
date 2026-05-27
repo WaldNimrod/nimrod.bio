@@ -65,7 +65,7 @@ $cta_primary_cls = 'hero-cta primary' . ( $is_free ? ' free' : '' );
 				</div>
 			</div>
 			<?php
-			$img_cap = 'produce' === $slug ? 'TBD · ירקות בחממה' : ( 'sfa' === $slug ? 'TBD · אילוסטרציה · SFA' : 'TBD · החממה בעבודה' );
+			$img_cap = 'produce' === $slug ? 'TBD · ירקות בחממה' : 'TBD · החממה בעבודה';
 			echo nb_img_placeholder( $img_cap, get_the_title( $post_id ), '4/5', 'hero-image' );
 			?>
 		</div>
