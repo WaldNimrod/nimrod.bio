@@ -9,7 +9,7 @@ milestone: V200
 wp: NB-S002-P005-WP002 (PRODUCTION CUTOVER)
 date: 2026-05-27
 priority: P0 (final V200 step)
-status: PLANNED — awaiting team_00 explicit go-signal on D-day
+status: SUPERSEDED by v1.1.0
 predecessor: NB-S002-P006-WP002 (PR #1 merged c150b9cb) + COMPLETION_CONTENT_PHASE signature
 authorization_chain:
   - team_00 directive 2026-05-26 (content phase + cutover sequencing)
