@@ -152,7 +152,8 @@ get_header();
 		<h2>איך אפשר להתחיל?</h2>
 		<div class="cta-paths">
 			<a class="btn btn-primary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">צור קשר</a>
-			<a class="btn btn-spark" href="<?php echo esc_url( home_url( '/services/sfa/' ) ); ?>">הצטרף ל-SFA</a>
+			<a class="btn btn-secondary" href="<?php echo esc_url( home_url( '/project/sfa/' ) ); ?>">ראה פרויקט SFA</a>
+				<a class="btn btn-spark" href="https://sfa.nimrod.bio/" target="_blank" rel="noopener">כנס למערכת →</a>
 		</div>
 	</div>
 </section>
