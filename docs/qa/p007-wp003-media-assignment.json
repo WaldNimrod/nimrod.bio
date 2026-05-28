@@ -1,0 +1,158 @@
+{
+  "post:138": {
+    "slug": "back-to-mud",
+    "searched": [
+      "גינה"
+    ],
+    "found": true,
+    "media_id": 864,
+    "media_url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2026/05/IMG_20171023_102651-scaled.jpg",
+    "assigned": true
+  },
+  "post:136": {
+    "slug": "אנטרופיה",
+    "searched": [
+      "ירוק"
+    ],
+    "found": true,
+    "media_id": 665,
+    "media_url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2026/05/image10-1.jpg",
+    "assigned": true
+  },
+  "post:124": {
+    "slug": "smallfarmsagents",
+    "searched": [
+      "חווה"
+    ],
+    "found": true,
+    "media_id": 859,
+    "media_url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2026/05/unnamed-file-16.jpg",
+    "assigned": true
+  },
+  "post:122": {
+    "slug": "israel-microgreens",
+    "searched": [
+      "מיקרו",
+      "ירוקים"
+    ],
+    "found": false,
+    "media_id": null,
+    "assigned": false
+  },
+  "post:126": {
+    "slug": "agros-insite",
+    "searched": [
+      "שדה"
+    ],
+    "found": true,
+    "media_id": 875,
+    "media_url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2026/05/WhatsApp-Image-2017-12-18-at-20.04.32.jpeg",
+    "assigned": true
+  },
+  "post:120": {
+    "slug": "agents-os",
+    "searched": [
+      "קוד"
+    ],
+    "found": false,
+    "media_id": null,
+    "assigned": false
+  },
+  "post:121": {
+    "slug": "eyal-amit-2026",
+    "searched": [
+      "אתר"
+    ],
+    "found": false,
+    "media_id": null,
+    "assigned": false
+  },
+  "post:123": {
+    "slug": "shaked-wg-agent",
+    "searched": [
+      "שעון"
+    ],
+    "found": false,
+    "media_id": null,
+    "assigned": false
+  },
+  "post:125": {
+    "slug": "tiktrack-phoenix",
+    "searched": [
+      "קוד"
+    ],
+    "found": false,
+    "media_id": null,
+    "assigned": false
+  },
+  "post:127": {
+    "slug": "capra-mio",
+    "searched": [
+      "שיט",
+      "ים"
+    ],
+    "found": true,
+    "media_id": 935,
+    "media_url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2026/05/unnamed-file-17.pdf",
+    "assigned": true
+  },
+  "post:137": {
+    "slug": "אלה-אם-unless",
+    "searched": [
+      "ספר",
+      "unless"
+    ],
+    "found": false,
+    "media_id": null,
+    "assigned": false
+  },
+  "post:1019": {
+    "slug": "nimrod-context-book",
+    "searched": [
+      "ספר"
+    ],
+    "found": false,
+    "media_id": null,
+    "assigned": false
+  },
+  "project:1006": {
+    "slug": "sfa-project",
+    "searched": [
+      "חווה"
+    ],
+    "found": true,
+    "media_id": 859,
+    "media_url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2026/05/unnamed-file-16.jpg",
+    "assigned": true
+  },
+  "service:42": {
+    "slug": "seed-t7-produce",
+    "searched": [
+      "ירוקים",
+      "תוצרת"
+    ],
+    "found": false,
+    "media_id": null,
+    "assigned": false
+  },
+  "service:43": {
+    "slug": "seed-t7-consulting-hydro",
+    "searched": [
+      "חממה",
+      "ייעוץ"
+    ],
+    "found": false,
+    "media_id": null,
+    "assigned": false
+  },
+  "service:29": {
+    "slug": "tiktrack",
+    "searched": [
+      "מסך"
+    ],
+    "found": true,
+    "media_id": 856,
+    "media_url": "http://nimrod-bio-2026.s887.upress.link/wp-content/uploads/2026/05/unnamed-file-10.png",
+    "assigned": true
+  }
+}
