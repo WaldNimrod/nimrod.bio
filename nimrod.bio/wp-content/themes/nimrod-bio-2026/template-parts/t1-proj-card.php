@@ -10,7 +10,13 @@ $summary = nb_meta( $post->ID, 'summary' );
 $worlds  = wp_get_post_terms( $post->ID, 'world', array( 'fields' => 'slugs' ) );
 ?>
 <a href="<?php echo esc_url( get_permalink( $post ) ); ?>" class="proj-card">
-	<?php echo nb_img_placeholder( 'TBD · ' . get_the_title( $post ), get_the_title( $post ), '16/10' ); ?>
+	<?php if ( has_post_thumbnail( $post->ID ) ) : ?>
+		<div class="img-ph clean" style="aspect-ratio:16/10;">
+			<?php echo get_the_post_thumbnail( $post->ID, 'medium_large', array( 'loading' => 'lazy', 'alt' => esc_attr( get_the_title( $post ) ) ) ); ?>
+		</div>
+	<?php else : ?>
+		<?php echo nb_img_placeholder( 'TBD · ' . get_the_title( $post ), get_the_title( $post ), '16/10' ); ?>
+	<?php endif; ?>
 	<div class="body">
 		<div class="meta">
 			<?php echo nb_stage_stamp( $stage ); ?>

@@ -64,10 +64,16 @@ $cta_primary_cls = 'hero-cta primary' . ( $is_free ? ' free' : '' );
 					<?php endif; ?>
 				</div>
 			</div>
-			<?php
-			$img_cap = 'produce' === $slug ? 'TBD · ירקות בחממה' : 'TBD · החממה בעבודה';
-			echo nb_img_placeholder( $img_cap, get_the_title( $post_id ), '4/5', 'hero-image' );
-			?>
+			<?php if ( has_post_thumbnail( $post_id ) ) : ?>
+				<div class="img-ph clean hero-image">
+					<?php echo get_the_post_thumbnail( $post_id, 'large', array( 'loading' => 'eager', 'alt' => esc_attr( get_the_title( $post_id ) ) ) ); ?>
+				</div>
+			<?php else : ?>
+				<?php
+				$img_cap = 'produce' === $slug ? 'TBD · ירקות בחממה' : 'TBD · החממה בעבודה';
+				echo nb_img_placeholder( $img_cap, get_the_title( $post_id ), '4/5', 'hero-image' );
+				?>
+			<?php endif; ?>
 		</div>
 
 		<?php if ( $facts ) : ?>

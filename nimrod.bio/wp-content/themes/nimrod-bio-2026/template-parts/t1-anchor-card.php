@@ -18,7 +18,13 @@ $facts  = is_array( $strip ) ? array_slice( $strip, 0, 3 ) : array();
 $tagline = nb_meta( $post->ID, 'tagline' );
 ?>
 <div class="lat-anchor anchor-card">
-	<?php echo nb_img_placeholder( 'TBD · ' . get_the_title( $post ), get_the_title( $post ), 'auto', 'anchor-img clean' ); ?>
+	<?php if ( has_post_thumbnail( $post->ID ) ) : ?>
+		<div class="img-ph clean anchor-img">
+			<?php echo get_the_post_thumbnail( $post->ID, 'medium_large', array( 'loading' => 'lazy', 'alt' => esc_attr( get_the_title( $post ) ) ) ); ?>
+		</div>
+	<?php else : ?>
+		<?php echo nb_img_placeholder( 'TBD · ' . get_the_title( $post ), get_the_title( $post ), 'auto', 'anchor-img clean' ); ?>
+	<?php endif; ?>
 	<span class="anchor-eye">▣ תשתית · עוגן · <?php echo esc_html( nb_world_label( $args['world'] ?? 'soil' ) ); ?></span>
 	<h3><?php echo esc_html( get_the_title( $post ) ); ?></h3>
 	<?php if ( $lede ) : ?>

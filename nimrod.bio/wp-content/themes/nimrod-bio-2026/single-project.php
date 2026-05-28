@@ -72,7 +72,13 @@ while ( have_posts() ) :
 					</div>
 					<div style="position:relative">
 						<?php echo nb_stage_stamp( $stage ); ?>
-						<?php echo nb_img_ph( get_the_title(), 'TBD · ' . get_the_title(), 't3-hero-image', '4/5' ); ?>
+						<?php if ( has_post_thumbnail( $post_id ) ) : ?>
+							<div class="img-ph clean t3-hero-image" style="aspect-ratio:4/5;">
+								<?php echo get_the_post_thumbnail( $post_id, 'large', array( 'loading' => 'eager', 'alt' => esc_attr( get_the_title() ) ) ); ?>
+							</div>
+						<?php else : ?>
+							<?php echo nb_img_ph( get_the_title(), 'TBD · ' . get_the_title(), 't3-hero-image', '4/5' ); ?>
+						<?php endif; ?>
 					</div>
 				</div>
 			</div>
