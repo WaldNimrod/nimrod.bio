@@ -56,5 +56,12 @@ add_action(
 		foreach ( array( 'service', 'project', 'post' ) as $post_type ) {
 			register_post_meta( $post_type, '_nb_seed', $string_meta );
 		}
+
+		// Yoast SEO — register title + metadesc for REST so agents can PATCH them
+		// Yoast v27+ does not auto-register these for custom CPTs.
+		foreach ( array( 'post', 'service', 'project' ) as $pt ) {
+			register_post_meta( $pt, '_yoast_wpseo_title', $string_meta );
+			register_post_meta( $pt, '_yoast_wpseo_metadesc', $string_meta );
+		}
 	}
 );
