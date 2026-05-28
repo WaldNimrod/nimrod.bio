@@ -34,7 +34,7 @@ add_action(
 			'type'          => 'array',
 		);
 
-		foreach ( array( 'tagline', 'lede', 'service_type', 'stage', 'cta_label', 'cta_whatsapp_href', 'is_anchor_for_world', 'cta_hint', 'cta_final_h', 'cta_final_p', 'hero_facts' ) as $key ) {
+		foreach ( array( 'tagline', 'lede', 'service_type', 'stage', 'cta_label', 'cta_whatsapp_href', 'is_anchor_for_world', 'cta_hint', 'cta_final_h', 'cta_final_p', 'hero_facts', 'external_url', 'external_label' ) as $key ) {
 			register_post_meta( 'service', '_nb_' . $key, $string_meta );
 		}
 		register_post_meta( 'service', '_nb_is_free', $bool_meta );
