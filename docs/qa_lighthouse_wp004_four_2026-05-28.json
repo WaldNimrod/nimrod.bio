@@ -1,0 +1,126 @@
+{
+  "generated_at": "2026-05-28T12:24:33.029884+00:00",
+  "base_url": "http://nimrod-bio-2026.s887.upress.link",
+  "results": [
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/",
+      "status": "ok",
+      "scores": {
+        "performance": 67,
+        "accessibility": 94,
+        "best_practices": 81,
+        "seo": 69
+      }
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/services/produce/",
+      "status": "ok",
+      "scores": {
+        "performance": 85,
+        "accessibility": 93,
+        "best_practices": 81,
+        "seo": 66
+      }
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/project/sfa/",
+      "status": "ok",
+      "scores": {
+        "performance": 74,
+        "accessibility": 93,
+        "best_practices": 81,
+        "seo": 69
+      }
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/blog/nimrod-context-book/",
+      "status": "ok",
+      "scores": {
+        "performance": 84,
+        "accessibility": 93,
+        "best_practices": 81,
+        "seo": 69
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/",
+      "scores": {
+        "performance": 67,
+        "accessibility": 94,
+        "best_practices": 81,
+        "seo": 69
+      },
+      "baseline_scores": {
+        "performance": 89,
+        "accessibility": 93,
+        "best_practices": 100,
+        "seo": 66
+      },
+      "delta": {
+        "performance": -22,
+        "accessibility": 1,
+        "best_practices": -19,
+        "seo": 3
+      },
+      "regression_gt_5": [
+        "performance",
+        "best_practices"
+      ],
+      "pass_non_regression": false
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/services/produce/",
+      "scores": {
+        "performance": 85,
+        "accessibility": 93,
+        "best_practices": 81,
+        "seo": 66
+      },
+      "baseline_scores": {
+        "performance": 88,
+        "accessibility": 93,
+        "best_practices": 100,
+        "seo": 66
+      },
+      "delta": {
+        "performance": -3,
+        "accessibility": 0,
+        "best_practices": -19,
+        "seo": 0
+      },
+      "regression_gt_5": [
+        "best_practices"
+      ],
+      "pass_non_regression": false
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/project/sfa/",
+      "scores": {
+        "performance": 74,
+        "accessibility": 93,
+        "best_practices": 81,
+        "seo": 69
+      },
+      "baseline_scores": null,
+      "delta": {},
+      "regression_gt_5": [],
+      "pass_non_regression": true
+    },
+    {
+      "url": "http://nimrod-bio-2026.s887.upress.link/blog/nimrod-context-book/",
+      "scores": {
+        "performance": 84,
+        "accessibility": 93,
+        "best_practices": 81,
+        "seo": 69
+      },
+      "baseline_scores": null,
+      "delta": {},
+      "regression_gt_5": [],
+      "pass_non_regression": true
+    }
+  ],
+  "aggregate_pass": false
+}

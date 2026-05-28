@@ -1,0 +1,16 @@
+{
+  "base": "http://nimrod-bio-2026.s887.upress.link",
+  "pages": [
+    ["t7-home", "/", [375, 768, 1440]],
+    ["t1-world-soil", "/world/soil/", [1440]],
+    ["t2-services-produce", "/services/produce/", [1440]],
+    ["t2-services-tiktrack", "/services/tiktrack/", [1440]],
+    ["t3-project-sfa", "/project/sfa/", [1440]],
+    ["t3-project-coop-sharon", "/project/coop-sharon/", [1440]],
+    ["t4-post-nimrod-context-book", "/blog/nimrod-context-book/", [1440]],
+    ["t4-post-agents-os", "/blog/agents-os/", [1440]],
+    ["t5-blog-index", "/blog/", [1440]],
+    ["t8-contact", "/contact/", [1440]],
+    ["error-harish2021-404", "/blog/harish2021/", [1440]]
+  ]
+}

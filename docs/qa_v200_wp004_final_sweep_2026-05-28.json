@@ -1,0 +1,347 @@
+{
+  "generated_at": "2026-05-28T12:26:24.841468+00:00",
+  "team": "team_50",
+  "wp_id": "NB-S002-P007-WP004",
+  "base": "http://nimrod-bio-2026.s887.upress.link",
+  "checks": {
+    "QA-1": {
+      "status": 200,
+      "has_unless": true,
+      "world_links": true,
+      "has_project_sfa_link": false,
+      "has_sfa_external_link": false,
+      "has_legacy_services_sfa_link": true,
+      "pass": false
+    },
+    "QA-2": {
+      "worlds": [
+        {
+          "world": "soil",
+          "status": 200,
+          "pass": true
+        },
+        {
+          "world": "know",
+          "status": 200,
+          "pass": true
+        },
+        {
+          "world": "code",
+          "status": 200,
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    "QA-3": {
+      "services": [
+        {
+          "slug": "seed-t7-consulting-hydro",
+          "status": 200
+        },
+        {
+          "slug": "seed-t7-produce",
+          "status": 200
+        },
+        {
+          "slug": "teaching",
+          "status": 200
+        },
+        {
+          "slug": "tiktrack",
+          "status": 200
+        },
+        {
+          "slug": "consulting-agro",
+          "status": 200
+        },
+        {
+          "slug": "consulting-hydro",
+          "status": 200
+        },
+        {
+          "slug": "nursery",
+          "status": 200
+        },
+        {
+          "slug": "bcs",
+          "status": 200
+        },
+        {
+          "slug": "hydro-greenhouse",
+          "status": 200
+        },
+        {
+          "slug": "produce",
+          "status": 200
+        }
+      ],
+      "legacy_sfa_service_urls": [
+        {
+          "path": "/services/sfa/",
+          "status": 404
+        },
+        {
+          "path": "/services/seed-t7-sfa/",
+          "status": 404
+        }
+      ],
+      "count": 10,
+      "pass": true
+    },
+    "QA-4": {
+      "projects": [
+        {
+          "slug": "sfa",
+          "status": 200
+        },
+        {
+          "slug": "coop-sharon",
+          "status": 200
+        },
+        {
+          "slug": "hagina-shel-nimrod",
+          "status": 200
+        },
+        {
+          "slug": "restaurant-supply",
+          "status": 200
+        },
+        {
+          "slug": "farm-y-bcs",
+          "status": 200
+        },
+        {
+          "slug": "rest-x-greenhouse",
+          "status": 200
+        }
+      ],
+      "count": 6,
+      "sfa_project_live": true,
+      "pass": true
+    },
+    "QA-5": {
+      "migrated_count": 21,
+      "tested": [
+        {
+          "slug": "%d7%a4%d7%98%d7%a8%d7%99%d7%95%d7%aa-%d7%99%d7%a2%d7%a8-%d7%91%d7%92%d7%99%d7%a0%d7%94",
+          "link": "http://nimrod-bio-2026.s887.upress.link/blog/%d7%a4%d7%98%d7%a8%d7%99%d7%95%d7%aa-%d7%99%d7%a2%d7%a8-%d7%91%d7%92%d7%99%d7%a0%d7%94/",
+          "status": 200,
+          "pass": true
+        },
+        {
+          "slug": "%d7%9e%d7%91%d7%95%d7%90-%d7%9c%d7%92%d7%99%d7%93%d7%95%d7%9c-%d7%94%d7%99%d7%93%d7%a8%d7%95%d7%a4%d7%95%d7%a0%d7%99",
+          "link": "http://nimrod-bio-2026.s887.upress.link/blog/%d7%9e%d7%91%d7%95%d7%90-%d7%9c%d7%92%d7%99%d7%93%d7%95%d7%9c-%d7%94%d7%99%d7%93%d7%a8%d7%95%d7%a4%d7%95%d7%a0%d7%99/",
+          "status": 200,
+          "pass": true
+        },
+        {
+          "slug": "%d7%9e%d7%93%d7%a8%d7%99%d7%9a-%d7%a9%d7%aa%d7%99%d7%9c%d7%94-%d7%a0%d7%9b%d7%95%d7%a0%d7%94",
+          "link": "http://nimrod-bio-2026.s887.upress.link/blog/%d7%9e%d7%93%d7%a8%d7%99%d7%9a-%d7%a9%d7%aa%d7%99%d7%9c%d7%94-%d7%a0%d7%9b%d7%95%d7%a0%d7%94/",
+          "status": 200,
+          "pass": true
+        },
+        {
+          "slug": "%d7%9e%d7%93%d7%a8%d7%99%d7%9a-%d7%a9%d7%9c%d7%99%d7%a4%d7%aa-%d7%a9%d7%aa%d7%99%d7%9c%d7%99%d7%9d",
+          "link": "http://nimrod-bio-2026.s887.upress.link/blog/%d7%9e%d7%93%d7%a8%d7%99%d7%9a-%d7%a9%d7%9c%d7%99%d7%a4%d7%aa-%d7%a9%d7%aa%d7%99%d7%9c%d7%99%d7%9d/",
+          "status": 200,
+          "pass": true
+        },
+        {
+          "slug": "%d7%a7%d7%94%d7%99%d7%9c%d7%94-%d7%97%d7%a7%d7%9c%d7%90%d7%99%d7%aa",
+          "link": "http://nimrod-bio-2026.s887.upress.link/blog/%d7%a7%d7%94%d7%99%d7%9c%d7%94-%d7%97%d7%a7%d7%9c%d7%90%d7%99%d7%aa/",
+          "status": 200,
+          "pass": true
+        },
+        {
+          "slug": "%d7%9e%d7%93%d7%a8%d7%99%d7%9a-%d7%94%d7%9e%d7%a7%d7%99%d7%a3-%d7%9c%d7%92%d7%99%d7%93%d7%95%d7%9c-%d7%93%d7%9c%d7%95%d7%a2%d7%99%d7%9d-%d7%90%d7%95%d7%a8%d7%92%d7%a0%d7%99%d7%99%d7%9d-%d7%91%d7%91-2",
+          "link": "http://nimrod-bio-2026.s887.upress.link/blog/%d7%9e%d7%93%d7%a8%d7%99%d7%9a-%d7%94%d7%9e%d7%a7%d7%99%d7%a3-%d7%9c%d7%92%d7%99%d7%93%d7%95%d7%9c-%d7%93%d7%9c%d7%95%d7%a2%d7%99%d7%9d-%d7%90%d7%95%d7%a8%d7%92%d7%a0%d7%99%d7%99%d7%9d-%d7%91%d7%91-2/",
+          "status": 200,
+          "pass": true
+        },
+        {
+          "slug": "%d7%99%d7%95%d7%9d-%d7%91%d7%92%d7%99%d7%a0%d7%94",
+          "link": "http://nimrod-bio-2026.s887.upress.link/blog/%d7%99%d7%95%d7%9d-%d7%91%d7%92%d7%99%d7%a0%d7%94/",
+          "status": 200,
+          "pass": true
+        },
+        {
+          "slug": "common",
+          "link": "http://nimrod-bio-2026.s887.upress.link/blog/common/",
+          "status": 200,
+          "pass": true
+        },
+        {
+          "slug": "%d7%90%d7%95%d7%9b%d7%9e%d7%a0%d7%99%d7%95%d7%aa",
+          "link": "http://nimrod-bio-2026.s887.upress.link/blog/%d7%90%d7%95%d7%9b%d7%9e%d7%a0%d7%99%d7%95%d7%aa/",
+          "status": 200,
+          "pass": true
+        },
+        {
+          "slug": "spaces_dtm-winter",
+          "link": "http://nimrod-bio-2026.s887.upress.link/blog/spaces_dtm-winter/",
+          "status": 200,
+          "pass": true
+        },
+        {
+          "slug": "nimrod-context-book",
+          "link": "http://nimrod-bio-2026.s887.upress.link/blog/nimrod-context-book/",
+          "status": 200,
+          "pass": true
+        },
+        {
+          "slug": "agents-os",
+          "link": "http://nimrod-bio-2026.s887.upress.link/blog/agents-os/",
+          "status": 200,
+          "pass": true
+        }
+      ],
+      "deleted_posts": [
+        {
+          "slug": "harish2021",
+          "status": 404
+        }
+      ],
+      "pass": true
+    },
+    "QA-6": {
+      "status": 200,
+      "flow_items": 10,
+      "rest_post_count": 33,
+      "pass": true
+    },
+    "QA-7": {
+      "pages": [
+        {
+          "path": "/about/",
+          "status": 200
+        },
+        {
+          "path": "/about/heritage/",
+          "status": 0
+        },
+        {
+          "path": "/contact/",
+          "status": 200
+        }
+      ],
+      "pass": false
+    },
+    "QA-8": {
+      "placeholder_marker_count": 0,
+      "posts_with_marker": [],
+      "pass": true
+    },
+    "QA-9": {
+      "sample": 30,
+      "http_200": 29,
+      "pass": false
+    },
+    "QA-10": {
+      "surfaces": [
+        {
+          "path": "/",
+          "title": "בית - נמרוד ולד · Unless",
+          "has_unless": true,
+          "pass": true
+        },
+        {
+          "path": "/blog/",
+          "title": "בלוג - נמרוד ולד · Unless",
+          "has_unless": true,
+          "pass": true
+        },
+        {
+          "path": "/contact/",
+          "title": "צור קשר - נמרוד ולד · Unless",
+          "has_unless": true,
+          "pass": true
+        },
+        {
+          "path": "/about/",
+          "title": "על נמרוד - נמרוד ולד · Unless",
+          "has_unless": true,
+          "pass": true
+        },
+        {
+          "path": "/world/soil/",
+          "title": "אדמה - נמרוד ולד · Unless",
+          "has_unless": true,
+          "pass": true
+        },
+        {
+          "path": "/services/produce/",
+          "title": "תוצרת מקצועית - נמרוד ולד · Unless",
+          "has_unless": true,
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    "QA-11": {
+      "prior_all_pass": true,
+      "spot_check": [
+        {
+          "url": "http://nimrod-bio-2026.s887.upress.link/%D7%98%D7%91%D7%9C%D7%AA-%D7%9E%D7%99%D7%A0%D7%99%D7%9D/",
+          "expected": "410",
+          "actual": 410,
+          "pass": true
+        },
+        {
+          "url": "http://nimrod-bio-2026.s887.upress.link/%D7%A2%D7%93%D7%9B%D7%95%D7%9F-%D7%9E%D7%99%D7%A0%D7%99%D7%9D-%D7%95%D7%96%D7%A0%D7%99%D7%9D/",
+          "expected": "410",
+          "actual": 410,
+          "pass": true
+        },
+        {
+          "url": "http://nimrod-bio-2026.s887.upress.link/grow/",
+          "expected": "410",
+          "actual": 410,
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    "QA-13": {
+      "service_count": 10,
+      "sfa_rest": [
+        {
+          "id": 28,
+          "pass": true
+        },
+        {
+          "id": 44,
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    "QA-14": {
+      "status": 200,
+      "has_post_sitemap": true,
+      "has_media_sitemap": false,
+      "pass": true
+    },
+    "AT-F4": {
+      "slug": "tiktrack",
+      "status": 0,
+      "has_tt_cta": true,
+      "body_chars": 623,
+      "pass": true
+    },
+    "AT-F5": {
+      "status": 200,
+      "has_unless": true,
+      "world_links": true,
+      "has_project_sfa_link": false,
+      "has_sfa_external_link": false,
+      "has_legacy_services_sfa_link": true,
+      "pass": false
+    }
+  },
+  "entity_counts": {
+    "services": 10,
+    "projects": 6,
+    "posts": 33
+  }
+}
