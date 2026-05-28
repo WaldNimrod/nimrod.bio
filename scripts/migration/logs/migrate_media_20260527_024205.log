@@ -1,0 +1,29 @@
+[2026-05-27 02:42:13] [INFO] old_media_count=694 old_total_header=694
+[2026-05-27 02:42:14] [INFO] dev_media_count_pre=249
+[2026-05-27 02:42:14] [INFO] env_loaded=.env.upress.dev has_wp_rest_user=True has_app_password=True
+[2026-05-27 02:51:17] [INFO] progress uploaded=22 failed=0 processed=140/694
+[2026-05-27 02:58:46] [INFO] progress uploaded=50 failed=0 processed=240/694
+[2026-05-27 03:00:09] [WARN] upload failed old_id=90827 error=HTTP Error 500: Internal Server Error
+[2026-05-27 03:00:37] [WARN] upload failed old_id=90826 error=HTTP Error 500: Internal Server Error
+[2026-05-27 03:01:32] [WARN] upload failed old_id=90825 error=[Errno 60] Operation timed out
+[2026-05-27 03:02:00] [WARN] upload failed old_id=90824 error=HTTP Error 500: Internal Server Error
+[2026-05-27 03:02:11] [WARN] upload failed old_id=90823 error=HTTP Error 500: Internal Server Error
+[2026-05-27 03:02:22] [WARN] upload failed old_id=90822 error=HTTP Error 500: Internal Server Error
+[2026-05-27 03:02:33] [WARN] upload failed old_id=90821 error=HTTP Error 500: Internal Server Error
+[2026-05-27 03:02:58] [WARN] upload failed old_id=90820 error=HTTP Error 500: Internal Server Error
+[2026-05-27 03:03:24] [WARN] upload failed old_id=90819 error=<urlopen error [Errno 60] Operation timed out>
+[2026-05-27 03:03:36] [WARN] upload failed old_id=90818 error=HTTP Error 500: Internal Server Error
+[2026-05-27 03:03:49] [WARN] upload failed old_id=90817 error=HTTP Error 500: Internal Server Error
+[2026-05-27 03:04:14] [WARN] upload failed old_id=90816 error=<urlopen error [Errno 60] Operation timed out>
+[2026-05-27 03:04:32] [WARN] upload failed old_id=90815 error=HTTP Error 500: Internal Server Error
+[2026-05-27 03:04:43] [WARN] upload failed old_id=90814 error=HTTP Error 500: Internal Server Error
+[2026-05-27 03:04:54] [WARN] upload failed old_id=90813 error=HTTP Error 500: Internal Server Error
+[2026-05-27 03:05:05] [WARN] upload failed old_id=90812 error=HTTP Error 500: Internal Server Error
+[2026-05-27 03:05:15] [WARN] upload failed old_id=90811 error=HTTP Error 500: Internal Server Error
+[2026-05-27 03:05:26] [WARN] upload failed old_id=90810 error=HTTP Error 500: Internal Server Error
+[2026-05-27 03:05:37] [WARN] upload failed old_id=90809 error=HTTP Error 500: Internal Server Error
+[2026-05-27 03:05:49] [WARN] upload failed old_id=90808 error=HTTP Error 500: Internal Server Error
+[2026-05-27 03:06:14] [WARN] upload failed old_id=90807 error=<urlopen error [Errno 60] Operation timed out>
+[2026-05-27 03:06:33] [WARN] upload failed old_id=90806 error=HTTP Error 500: Internal Server Error
+[2026-05-27 03:06:51] [WARN] upload failed old_id=90805 error=<urlopen error [Errno 60] Operation timed out>
+[2026-05-27 03:07:01] [WARN] upload failed old_id=90804 error=HTTP Error 500: Internal Server Error

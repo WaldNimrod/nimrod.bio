@@ -1,0 +1,38 @@
+[2026-05-27 01:24:38] [INFO] old_media_count=97 old_total_header=694
+[2026-05-27 01:24:38] [INFO] dev_media_count_pre=0
+[2026-05-27 01:24:38] [INFO] env_loaded=.env.upress.dev has_wp_rest_user=True has_app_password=True
+[2026-05-27 01:24:56] [WARN] upload failed old_id=91399 error=<urlopen error [Errno 60] Operation timed out>
+[2026-05-27 01:25:01] [WARN] download failed old_id=91310 error='ascii' codec can't encode characters in position 32-36: ordinal not in range(128)
+[2026-05-27 01:25:01] [WARN] download failed old_id=91309 error='ascii' codec can't encode characters in position 32-36: ordinal not in range(128)
+[2026-05-27 01:25:13] [WARN] upload failed old_id=91306 error=<urlopen error [Errno 60] Operation timed out>
+[2026-05-27 01:25:16] [WARN] download failed old_id=91303 error='ascii' codec can't encode characters in position 32-36: ordinal not in range(128)
+[2026-05-27 01:25:18] [WARN] download failed old_id=91301 error='ascii' codec can't encode characters in position 32-36: ordinal not in range(128)
+[2026-05-27 01:26:02] [WARN] upload failed old_id=91279 error=<urlopen error [Errno 60] Operation timed out>
+[2026-05-27 01:26:46] [WARN] upload failed old_id=91263 error=<urlopen error [Errno 60] Operation timed out>
+[2026-05-27 01:26:54] [WARN] upload failed old_id=91262 error=<urlopen error [Errno 60] Operation timed out>
+[2026-05-27 01:27:29] [WARN] upload failed old_id=91258 error=<urlopen error [Errno 32] Broken pipe>
+[2026-05-27 01:27:38] [WARN] upload failed old_id=91255 error=<urlopen error [Errno 60] Operation timed out>
+[2026-05-27 01:28:03] [WARN] upload failed old_id=91243 error=<urlopen error [Errno 60] Operation timed out>
+[2026-05-27 01:28:11] [WARN] upload failed old_id=91242 error=<urlopen error [Errno 60] Operation timed out>
+[2026-05-27 01:28:30] [WARN] upload failed old_id=91241 error=[Errno 60] Operation timed out
+[2026-05-27 01:28:50] [WARN] upload failed old_id=91237 error=<urlopen error [Errno 32] Broken pipe>
+[2026-05-27 01:29:13] [INFO] progress uploaded=45 failed=15 processed=60/97
+[2026-05-27 01:29:21] [WARN] upload failed old_id=91231 error=<urlopen error [Errno 60] Operation timed out>
+[2026-05-27 01:30:01] [WARN] upload failed old_id=91209 error=<urlopen error [Errno 60] Operation timed out>
+[2026-05-27 01:30:09] [WARN] upload failed old_id=91208 error=<urlopen error [Errno 60] Operation timed out>
+[2026-05-27 01:30:37] [WARN] upload failed old_id=91203 error=<urlopen error [Errno 60] Operation timed out>
+[2026-05-27 01:30:41] [INFO] progress uploaded=61 failed=19 processed=80/97
+[2026-05-27 01:30:49] [WARN] upload failed old_id=91199 error=<urlopen error [Errno 60] Operation timed out>
+[2026-05-27 01:31:30] [WARN] upload failed old_id=91183 error=[Errno 60] Operation timed out
+[2026-05-27 01:32:01] [WARN] upload failed old_id=91173 error=<urlopen error [Errno 60] Operation timed out>
+[2026-05-27 01:32:09] [WARN] upload failed old_id=91168 error=<urlopen error [Errno 60] Operation timed out>
+[2026-05-27 01:32:17] [WARN] upload failed old_id=91129 error=<urlopen error [Errno 60] Operation timed out>
+[2026-05-27 01:32:26] [WARN] upload failed old_id=91128 error=<urlopen error [Errno 60] Operation timed out>
+[2026-05-27 01:32:34] [INFO] wrote_url_map path=/Users/nimrod/Documents/nimrod-bio/scripts/migration/state/url_map.json replacements=504
+[2026-05-27 01:32:34] [INFO] migrated_posts_found=22
+[2026-05-27 01:33:07] [INFO] wrote_backup path=/Users/nimrod/Documents/nimrod-bio/scripts/migration/state/pre_rewrite_posts_backup.json posts=22
+[2026-05-27 01:34:53] [INFO] wrote_report path=/Users/nimrod/Documents/nimrod-bio/scripts/migration/state/migrate_media_report.json
+[2026-05-27 01:34:53] [INFO] AT-M2 sample_size=30 http_200=15 http_404=0
+[2026-05-27 01:34:53] [INFO] AT-M3 coverage=5.88% (1/17)
+[2026-05-27 01:34:53] [INFO] AT-M4 media_sitemap_present=False
+[2026-05-27 01:34:53] [INFO] AT-M6 sfa_skipped_count=0

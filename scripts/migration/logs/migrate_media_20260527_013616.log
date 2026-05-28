@@ -1,0 +1,18 @@
+[2026-05-27 01:36:22] [INFO] old_media_count=694 old_total_header=694
+[2026-05-27 01:36:26] [INFO] sfa_purged_from_previous_runs=8
+[2026-05-27 01:36:27] [INFO] dev_media_count_pre=64
+[2026-05-27 01:36:27] [INFO] env_loaded=.env.upress.dev has_wp_rest_user=True has_app_password=True
+[2026-05-27 01:36:37] [WARN] upload failed old_id=91310 error='latin-1' codec can't encode characters in position 22-26: ordinal not in range(256)
+[2026-05-27 01:36:46] [WARN] upload failed old_id=91309 error='latin-1' codec can't encode characters in position 22-26: ordinal not in range(256)
+[2026-05-27 01:36:58] [WARN] upload failed old_id=91303 error='latin-1' codec can't encode characters in position 22-26: ordinal not in range(256)
+[2026-05-27 01:37:08] [WARN] upload failed old_id=91301 error='latin-1' codec can't encode characters in position 22-26: ordinal not in range(256)
+[2026-05-27 01:38:05] [INFO] progress uploaded=6 failed=4 processed=40/694
+[2026-05-27 01:39:53] [INFO] progress uploaded=16 failed=4 processed=60/694
+[2026-05-27 02:11:13] [INFO] progress uploaded=53 failed=4 processed=120/694
+[2026-05-27 02:13:56] [INFO] progress uploaded=73 failed=4 processed=140/694
+[2026-05-27 02:15:10] [WARN] upload failed old_id=91078 error=<urlopen error [Errno 60] Operation timed out>
+[2026-05-27 02:15:50] [INFO] progress uploaded=92 failed=5 processed=160/694
+[2026-05-27 02:19:59] [INFO] progress uploaded=112 failed=5 processed=180/694
+[2026-05-27 02:20:38] [WARN] upload failed old_id=91036 error='latin-1' codec can't encode characters in position 22-32: ordinal not in range(256)
+[2026-05-27 02:22:51] [INFO] progress uploaded=131 failed=6 processed=200/694
+[2026-05-27 02:24:56] [INFO] progress uploaded=151 failed=6 processed=220/694

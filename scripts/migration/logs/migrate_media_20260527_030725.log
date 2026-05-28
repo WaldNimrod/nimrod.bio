@@ -1,0 +1,3 @@
+[2026-05-27 03:07:33] [INFO] old_media_count=694 old_total_header=694
+[2026-05-27 03:07:54] [INFO] dev_media_count_pre=307
+[2026-05-27 03:07:54] [INFO] env_loaded=.env.upress.dev has_wp_rest_user=True has_app_password=True

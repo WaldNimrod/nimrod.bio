@@ -1,0 +1,5 @@
+[2026-05-27 15:00:25] [INFO] old_media_count=694 old_total_header=694
+[2026-05-27 15:00:48] [INFO] dev_media_count_pre=791
+[2026-05-27 15:00:48] [INFO] env_loaded=.env.upress.dev has_wp_rest_user=True has_app_password=True
+[2026-05-27 15:06:54] [INFO] progress uploaded=12 failed=0 processed=60/694
+[2026-05-27 15:15:50] [INFO] progress uploaded=37 failed=0 processed=180/694
