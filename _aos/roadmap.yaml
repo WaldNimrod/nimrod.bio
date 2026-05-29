@@ -522,10 +522,10 @@ work_packages:
 
 - id: NB-S002-P009-WP002
   label: "nimrod-bio — Mobile Responsiveness (T-02 implementation)"
-  status: IN_PROGRESS
+  status: COMPLETE
   track: A
-  current_lean_gate: L-GATE_BUILD
-  lod_status: LOD400
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
   assigned_builder: nimrodbio_build
   assigned_validator: nimrodbio_val
   created_at: "2026-05-29"
@@ -548,5 +548,13 @@ work_packages:
     result: BUILD_COMPLETE_ORCHESTRATED
     date: "2026-05-29"
     notes: "team_00 expanded directive 2026-05-29: complete WP002 via canonical sub-agent orchestration up to external validation. team_100 (Claude Code) orchestrated 9 parallel build sub-agents over disjoint files; phasing collapsed via APPEND-ONLY @media rule (mobile layer isolated, no WP001 collision). Built: shell.css drawer/FAB/footer/base + nav-drawer.js (NEW, full a11y) + shell-nav/footer.php + header.php data-page + enqueue (JS+font subset) + functions.php (v0.5.0 + image sizes) + t1-t8.css mobile @media + responsive hero images. system.css LOCK honored (reverted + relocated to shell.css). QC: CSS balanced, php -l clean, node --check clean. !important=5 (spec-mandated, commented; D1 reinterprets M20). COMPLETION: _COMMUNICATION/team_100/COMPLETION_NB-S002-P009-WP002_BUILD_2026-05-29_v1.0.0.md. Iron Rule #1: build=Claude -> VALIDATE must be cross-engine (team_190 Codex + team_50)."
-  notes: "IN_PROGRESS — build complete (team_100-orchestrated, full scope). Awaiting deploy to uPress dev + L-GATE_VALIDATE (team_190 Codex + team_50 MCP device). Deferrals: D2 share-FAB markup (V300), D3 wp media regenerate (deploy step), D4 @media redundancy (V300). Pre-cutover mandatory before P005-WP002."
+  - gate: L-GATE_VALIDATE
+    result: PASS_WITH_FINDINGS
+    date: "2026-05-29"
+    notes: "team_190 (Codex) VERDICT v1.1.0 — HOLD (v1.0.0) lifted. Cross-engine preserved (build=Claude/team_100, validate=Codex/team_190). Pre-condition met: dev serves 0.5.1 (drawer/FAB/nav-drawer.js live + fix-pass block). Runtime M1-M16 PASS on 0.5.1. team_50 device-check defects dispositioned: D1 (post h-scroll)=harness viewport mis-size, not code; D2 (contact ~10k h-scroll)=FIXED (honeypot .hp-field scroll-safe override); D3 (topic-chip)=FIXED (min-height 44px); D4 (drawer-close 36x36)=accepted spec §2.1 exception; D5 (desktop nav @768)=out of scope. M20 PASS (D1 !important interpretation). Advisory/V300 carry-forward: M17-M19 Lighthouse (post-WP001 assets), A2 drawer-close, A3 tablet nav targets, A4 spec §9-vs-§1.3 inconsistency (flag team_35). Verdict: _COMMUNICATION/team_190/VERDICT_NB-S002-P009-WP002_VALIDATE_v1.1.0.md."
+  - gate: COMPLETE
+    result: LOD500_LOCKED
+    date: "2026-05-29"
+    notes: "ADR042 closure by team_100 (no active team_110 execution mandate). Gate-sign PASS_WITH_FINDINGS. ARCHIVE_MANIFEST: _archive/NB-S002-P009-WP002/ARCHIVE_MANIFEST.md. Step 3 (multi-engine propagation) SKIPPED — core/governance/ not modified during WP (verified). COMPLETION_CANONICAL: _COMMUNICATION/team_100/COMPLETION_CANONICAL_NB-S002-P009-WP002_v1.0.0.md."
+  notes: "COMPLETE. STANDARD track A. L-GATE_VALIDATE PASS_WITH_FINDINGS (team_190 Codex v1.1.0). Mobile responsiveness LIVE on dev 0.5.1 (drawer + WhatsApp FAB + 7-template @media + responsive heroes). Built via team_100 sub-agent orchestration under team_00 directive 2026-05-29. V300 carry-forward: M17-M19 Lighthouse (needs WP001 final assets), drawer-close 44px GCR, tablet desktop-nav touch targets, spec §9/§1.3 harmonization, T4 share-FAB markup, @media de-dupe, wp media regenerate. Pre-cutover mobile phase DONE — unblocks P005-WP002 cutover (still deferred per team_00 until full content/design completion)."
 
