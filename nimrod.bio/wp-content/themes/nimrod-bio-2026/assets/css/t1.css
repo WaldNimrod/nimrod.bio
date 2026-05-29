@@ -11,6 +11,13 @@
    Bridge signal switched via [data-bridge="diag"|"stripe"|"seam"]
    ============================================================ */
 
+/* G-01 fix (P009-WP003): restore truncated :root wash tokens. These were orphaned
+   (no :root opener + missing --soil-wash) so all four world washes were undefined,
+   collapsing every strata gradient to flat paper ("sketch" look). team_35 §2. */
+:root {
+  --t1-max: 1240px;
+  --t1-gutter: clamp(20px, 4vw, 56px);
+  --soil-wash:  #eef0e0;
   --soil-wash-2:#e3e6cf;
   --know-wash:  #f4e5d6;
   --code-wash:  #d8e6e6;
