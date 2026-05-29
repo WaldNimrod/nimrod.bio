@@ -24,11 +24,13 @@
  *           </div>
  *         </section>
  *
- *       Here `data-dir` is the PHYSICAL scroll sign passed straight to scrollBy:
- *         data-dir="1"  -> scrollBy(+320)  (RTL: toward start / "previous")
- *         data-dir="-1" -> scrollBy(-320)  (RTL: toward content / "next")
- *       These values are already RTL-correct for the Hebrew layout, so they are
- *       used verbatim — no extra flipping is applied to numeric data-dir.
+ *       Here `data-dir` is a LOGICAL direction (mockup contract):
+ *         data-dir="1"  (→) -> "previous" / toward start
+ *         data-dir="-1" (←) -> "next"     / toward content (later items)
+ *       The PHYSICAL scrollLeft sign is DERIVED from the track's actual scroll
+ *       scheme (RTL containers use a negative/inverted scrollLeft range in
+ *       Chromium), so clicking ← reveals later items in RTL. It is NOT passed to
+ *       scrollBy verbatim — that was a no-op in the RTL negative scheme.
  *
  *   (B) Explicit wrapper convention (cleaner, recommended for new markup):
  *       Wrap the track + arrows in an element carrying [data-carousel]; give
@@ -75,45 +77,87 @@
 		return scope.querySelector(TRACK_SELECTOR);
 	}
 
-	// Resolve the physical scroll delta (px) for a click.
-	// Numeric data-dir ("1"/"-1") -> physical sign, used verbatim.
-	// Logical data-dir ("next"/"prev") -> derived from track direction (RTL-aware).
-	function physicalDelta(btn, track) {
-		var raw = (btn.getAttribute('data-dir') || '').trim().toLowerCase();
-
-		var numeric = parseInt(raw, 10);
-		if (!isNaN(numeric) && /^-?\d+$/.test(raw)) {
-			return numeric * STEP;
-		}
-
-		// Logical direction. Determine track's resolved writing direction.
+	// Resolve the track's resolved inline (writing) direction.
+	function trackIsRtl(track) {
 		var dir = 'ltr';
 		if (window.getComputedStyle) {
 			dir = window.getComputedStyle(track).direction || 'ltr';
 		} else if (document.dir) {
 			dir = document.dir;
 		}
-		var isRtl = dir === 'rtl';
+		return dir === 'rtl';
+	}
 
-		// Logical "next" = forward into content.
-		// LTR: forward = +scrollLeft. RTL: forward = -scrollLeft (toward start).
-		var forward = raw === 'prev' ? -1 : 1; // default/unknown -> next
-		var sign = isRtl ? -forward : forward;
-		return sign * STEP;
+	// Physical sign (+1/-1) that, when applied to scrollLeft via scrollBy,
+	// moves the track FORWARD into content (toward later items / "next").
+	//
+	// Browsers implement three scrollLeft schemes for RTL containers:
+	//   - "negative"  : start=0, forward = scrollLeft goes negative  (Chrome/Edge/FF today)
+	//   - "reverse"   : start=max, forward = scrollLeft goes toward 0 (legacy WebKit)
+	//   - "default"   : same as LTR, forward = scrollLeft grows       (very old)
+	// LTR is always "forward = scrollLeft grows".
+	//
+	// We feature-detect by probing scrollLeft instead of assuming a sign — the
+	// previous code passed mockup data-dir verbatim (+320 for "1"), which is a
+	// no-op in the negative scheme (start scrollLeft is already 0). Detection is
+	// non-destructive: we restore scrollLeft after probing.
+	function forwardPhysicalSign(track) {
+		if (!trackIsRtl(track)) { return 1; } // LTR: forward grows scrollLeft
+
+		var probe = track.scrollLeft;
+		// If already negative, we're in the negative scheme -> forward is -1.
+		if (probe < 0) { return -1; }
+
+		// scrollLeft is 0 (typical at start). Try to move it positive by 1px.
+		track.scrollLeft = 1;
+		var moved = track.scrollLeft;
+		track.scrollLeft = probe; // restore
+
+		if (moved > 0) {
+			// "default" scheme: positive scrollLeft is reachable -> forward = +1.
+			return 1;
+		}
+		// Could not go positive from 0 -> negative scheme -> forward = -1.
+		// (reverse scheme starts at max, so probe would have been > 0 already.)
+		return -1;
+	}
+
+	// Resolve the physical scroll delta (px) for a click.
+	// Numeric data-dir ("1"/"-1") = mockup contract: 1 = "previous/start" (→),
+	//   -1 = "next/content" (←). Logical data-dir ("next"/"prev") = same intent.
+	// Both are mapped to a LOGICAL forward/back, then to a physical sign derived
+	// from the track's actual scrollLeft scheme — so arrows move the track
+	// correctly in RTL (and LTR) regardless of the browser's scrollLeft sign.
+	function physicalDelta(btn, track) {
+		var raw = (btn.getAttribute('data-dir') || '').trim().toLowerCase();
+
+		// logicalForward: +1 = advance into content ("next"), -1 = back ("previous").
+		var logicalForward;
+		var numeric = parseInt(raw, 10);
+		if (!isNaN(numeric) && /^-?\d+$/.test(raw)) {
+			// Mockup: data-dir="-1" is "next" (←), data-dir="1" is "previous" (→).
+			logicalForward = numeric < 0 ? 1 : -1;
+		} else {
+			logicalForward = raw === 'prev' ? -1 : 1; // default/unknown -> next
+		}
+
+		return logicalForward * forwardPhysicalSign(track) * STEP;
 	}
 
 	// Whether the track can still scroll in the PHYSICAL direction of `delta`.
 	// Works across LTR and RTL by treating the reachable scrollLeft range as a
-	// continuous interval [min .. max]:
-	//   - LTR / modern RTL:  scrollLeft in [0 .. (scrollWidth-clientWidth)]
-	//   - legacy negative RTL: scrollLeft in [-(scrollWidth-clientWidth) .. 0]
+	// continuous interval [min .. max]. The interval bounds depend on the RTL
+	// scrollLeft scheme, which we derive from the forward physical sign rather
+	// than the current scrollLeft value (which is 0 at the start position and so
+	// cannot, on its own, distinguish the negative scheme).
+	//   - forward sign +1 (LTR / "default"): scrollLeft in [0 .. span]
+	//   - forward sign -1 (negative RTL):     scrollLeft in [-span .. 0]
 	// `delta > 0` means scroll toward larger scrollLeft; `delta < 0` toward smaller.
 	function canScroll(track, delta) {
 		var span = track.scrollWidth - track.clientWidth;
 		if (span <= 1) { return false; } // not scrollable at all
 
-		// Detect which RTL scheme is in use from the current sign.
-		var negativeScheme = track.scrollLeft < 0;
+		var negativeScheme = forwardPhysicalSign(track) < 0;
 		var min = negativeScheme ? -span : 0;
 		var max = negativeScheme ? 0 : span;
 

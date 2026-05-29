@@ -623,13 +623,19 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
   min-height: clamp(540px, 74vh, 780px);
   display: flex;
   align-items: flex-end;
+  /* D2 (AT-D13/G-11): hero is the only full-bleed band; its absolute bg layer
+     was adding ~13–14px to documentElement.scrollWidth at 360/375. overflow-x:clip
+     contains any descendant horizontally without enabling a scroll container,
+     so document scrollWidth === clientWidth on phone widths. */
   overflow: hidden;
+  overflow-x: clip;
+  max-width: 100%;
   background: var(--ink);
 }
-.hero-poster .hp-bg { position: absolute; inset: 0; }
+.hero-poster .hp-bg { position: absolute; inset: 0; overflow: hidden; }
 .hero-poster .hp-bg img {
   position: absolute; inset: 0;
-  width: 100%; height: 100%;
+  width: 100%; max-width: 100%; height: 100%;
   object-fit: cover; display: block;
 }
 .hero-poster .hp-scrim {
@@ -646,7 +652,7 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
 }
 .hero-poster .hp-content {
   position: relative; z-index: 2;
-  width: 100%;
+  width: 100%; max-width: 100%; min-width: 0;
   padding-block: clamp(40px, 6vw, 84px);
 }
 .hero-poster .hp-inner { max-width: min(620px, 100%); }
@@ -878,6 +884,14 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
 /* ---- B1 reflow (≥901px desktop already handled; tighten mid widths) ---- */
 @media (max-width: 1000px) {
   .t7-worlds .worlds-grid { grid-template-columns: 1fr 1fr; }
+}
+/* D3 (AT-D7): at phone widths the worlds grid must be ONE column. The generic
+   `.worlds-grid` 1-col rule in the WP002 block (≤640) has lower specificity than
+   the 2-col `.t7-worlds .worlds-grid` rule above, so it was being out-specified
+   and the grid stayed 2-col @375. Match specificity here AND place after the
+   1000px rule so both specificity and source order favor 1-col at ≤640. */
+@media (max-width: 640px) {
+  .t7-worlds .worlds-grid { grid-template-columns: 1fr; }
 }
 /* ============================================================
    P009-WP003 · B2 — Systems / Services / Bridges / Unless
