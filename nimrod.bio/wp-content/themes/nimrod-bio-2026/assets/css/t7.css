@@ -597,3 +597,105 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
   .projects-grid, .posts-grid-4 { grid-template-columns: 1fr; }
   .projects-grid .proj-card:first-child { grid-column: 1; }
 }
+
+/* ===== MOBILE — P009-WP002 (team_35 spec §8) ===== */
+/*
+ * Append-only. Literal breakpoints from spec (900px / 640px).
+ * Selectors reconciled against front-page.php (WP LOD400 markup),
+ * which renders the spec's prototype classes under different names:
+ *   spec .featured-projects   -> markup .projects-grid
+ *   spec .fp-card.fp-large     -> markup .projects-grid .proj-card:first-child
+ *   spec .recent-posts         -> markup .posts-grid-4
+ *   spec .rp-card .img-ph       -> markup .post-card.post-square img
+ *   spec .unless-block.ribbon  -> markup .unless-ribbon (.ribbon-inner -> .t7-wrap p)
+ *   spec .cta-paths/.cta-path  -> markup .final-cta .cta-paths (button row, not cards)
+ *   spec .final-cta-home       -> markup .final-cta
+ * Spec-literal selectors are also included so the file stays correct
+ * if the prototype markup is ever used. RTL: logical props only.
+ */
+
+/* ---- Hero (Statement variant) — spec §8 ---- */
+@media (max-width: 900px) {
+  .hero-statement { padding-block: 56px 40px; }
+  .hero-statement .grid { grid-template-columns: 1fr; gap: 32px; }
+  .hero-statement h1 { font-size: clamp(34px, 7vw, 48px); }
+  .hero-statement .lede { font-size: 16px; }
+  .hero-statement svg { max-width: 240px; }
+  .hero-statement .meta-row { gap: 16px; flex-direction: column; }
+  .hero-statement .meta-row span { font-size: 13px; }
+}
+
+/* ---- Worlds section (3 cards) — spec §8 ---- */
+@media (max-width: 900px) {
+  .worlds-grid { grid-template-columns: 1fr 1fr; }
+  .world-card { min-height: 240px; padding: 24px; }
+  .world-card h3,
+  .world-card .world-name { font-size: clamp(28px, 6vw, 36px); } /* adapted: markup uses .world-name */
+}
+@media (max-width: 640px) {
+  .worlds-grid { grid-template-columns: 1fr; }
+}
+
+/* ---- Featured projects — spec §8 (adapted to .projects-grid / .proj-card) ---- */
+@media (max-width: 900px) {
+  .featured-projects,
+  .projects-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .fp-card.fp-large,
+  .projects-grid .proj-card:first-child { grid-column: 1 / -1; grid-row: auto; }
+  .fp-card.fp-large h3,
+  .projects-grid .proj-card:first-child h3 { font-size: 24px; }
+}
+@media (max-width: 640px) {
+  .featured-projects,
+  .projects-grid { grid-template-columns: 1fr; }
+  .fp-card.fp-large,
+  .projects-grid .proj-card:first-child { grid-column: 1; }
+}
+
+/* ---- Recent posts — spec §8 (adapted to .posts-grid-4 / .post-card.post-square) ---- */
+@media (max-width: 900px) {
+  .recent-posts,
+  .posts-grid-4 { grid-template-columns: 1fr 1fr; }
+  .rp-card .img-ph,
+  .post-card.post-square img { aspect-ratio: 16/10; }
+}
+@media (max-width: 640px) {
+  .recent-posts,
+  .posts-grid-4 { grid-template-columns: 1fr; }
+  .rp-card .img-ph,
+  .post-card.post-square img { aspect-ratio: 1; max-height: 280px; }
+}
+
+/* ---- Unless ribbon — spec §8 (adapted to .unless-ribbon / .t7-wrap p) ---- */
+@media (max-width: 900px) {
+  .unless-block.ribbon,
+  .unless-ribbon { padding: 36px var(--gutter-mobile, 20px); }
+  .unless-block.ribbon .ribbon-inner { grid-template-columns: 1fr; gap: 16px; }
+  .unless-block.ribbon .quote,
+  .unless-ribbon .t7-wrap p { font-size: clamp(28px, 7vw, 40px); }
+  .unless-block.ribbon .anno { font-size: 10px; }
+}
+
+/* ---- Final CTA paths — spec §8 (markup .cta-paths is a button row) ---- */
+@media (max-width: 900px) {
+  .cta-paths { grid-template-columns: 1fr; gap: 16px; }
+  .cta-path { padding: 28px; }
+  .cta-path h3 { font-size: clamp(22px, 5vw, 28px); }
+  .final-cta-home h2,
+  .final-cta h2 { font-size: clamp(34px, 8vw, 48px); } /* adapted: markup uses .final-cta */
+}
+/* markup CTA is a flex button row; stack full-width on mobile */
+@media (max-width: 640px) {
+  .final-cta .cta-paths { flex-direction: column; align-items: stretch; }
+  .final-cta .cta-paths .btn { text-align: center; }
+}
+
+/* ---- §13 touch guards: home cards have desktop hover transforms ----
+ * .world-card, .proj-card/.fp-card, .cta-path, .rp-card h4 all use :hover.
+ * Suppress hover transform on touch; provide active scale-down feedback. */
+@media (hover: none) {
+  .world-card:active,
+  .fp-card:active,
+  .proj-card:active,
+  .cta-path:active { transform: scale(0.98); }
+}

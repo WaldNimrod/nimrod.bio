@@ -617,3 +617,46 @@ body[data-bridge="seam"] .bridge-card::before {
   .vc-lattice { grid-template-columns: 1fr !important; }
   .vc-bridges { grid-template-columns: 1fr !important; }
 }
+
+/* ===== MOBILE — P009-WP002 (team_35 spec §3) ===== */
+/* T1 World page (Variant C). Append-only; logical properties; RTL/LTR safe. */
+
+@media (max-width: 900px) {
+  /* Hero: drop the recursion echoes, scale the title down */
+  .vc-hero-stack .echo { display: none !important; } /* mobile override — intentional (clutter) */
+  .vc-hero-stack { font-size: clamp(56px, 14vw, 80px); }
+
+  /* Gloss row collapses to a single column; decorative rules drop out */
+  .vc-hero .gloss { grid-template-columns: 1fr; gap: 14px; }
+  .vc-hero .gloss .rule { display: none; }
+
+  /* Lattice: anchor on top (full width), sides as 2-col grid */
+  .vc-lattice {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  .vc-lattice .lat-anchor {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+  }
+
+  /* Projects: remove desktop rotations (clutter) */
+  .vc-projects .proj-card { transform: none !important; } /* mobile override — intentional (grid de-clutter) */
+}
+
+@media (max-width: 640px) {
+  .vc-lattice { grid-template-columns: 1fr; }
+  .vc-bridges, .vc-projects, .vc-posts { grid-template-columns: 1fr; }
+}
+
+/* Hover/touch guards (spec §13) — desktop hover only; tap = scale-down */
+@media (hover: hover) {
+  .svc-card:hover    { transform: translateY(-2px); box-shadow: var(--shadow-l); }
+  .bridge-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-l); }
+  .proj-card:hover   { transform: translateY(-2px); box-shadow: var(--shadow-l); }
+}
+@media (hover: none) {
+  .svc-card:active    { transform: scale(0.98); }
+  .bridge-card:active { transform: scale(0.98); }
+  .proj-card:active   { transform: scale(0.98); }
+}

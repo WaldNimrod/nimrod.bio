@@ -26,5 +26,41 @@ $active = nb_active_world();
 			</div>
 			<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="contact">צור קשר</a>
 		</div>
+		<button class="nav-toggle" type="button"
+			aria-label="פתח תפריט" aria-expanded="false" aria-controls="nav-drawer">
+			<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+				stroke-width="2" stroke-linecap="round" aria-hidden="true">
+				<line x1="3" y1="6" x2="21" y2="6"></line>
+				<line x1="3" y1="12" x2="21" y2="12"></line>
+				<line x1="3" y1="18" x2="21" y2="18"></line>
+			</svg>
+		</button>
 	</div>
 </nav>
+
+<aside class="nav-drawer" id="nav-drawer" aria-hidden="true">
+	<div class="drawer-head">
+		<span class="title">תפריט</span>
+		<button class="drawer-close" type="button" aria-label="סגור">&times;</button>
+	</div>
+	<nav class="drawer-nav" aria-label="ראשי - מובייל">
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="drawer-link home">בית</a>
+		<hr>
+		<div class="drawer-section-label">עולמות</div>
+		<a href="<?php echo esc_url( home_url( '/world/soil/' ) ); ?>" class="drawer-link world soil">
+			<span class="dot"></span><?php echo esc_html( nb_world_label( 'soil' ) ); ?>
+		</a>
+		<a href="<?php echo esc_url( home_url( '/world/know/' ) ); ?>" class="drawer-link world know">
+			<span class="dot"></span><?php echo esc_html( nb_world_label( 'know' ) ); ?>
+		</a>
+		<a href="<?php echo esc_url( home_url( '/world/code/' ) ); ?>" class="drawer-link world code">
+			<span class="dot"></span><?php echo esc_html( nb_world_label( 'code' ) ); ?>
+		</a>
+		<hr>
+		<a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" class="drawer-link">בלוג</a>
+		<a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="drawer-link">על נמרוד</a>
+		<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="drawer-link cta">צור קשר ←</a>
+	</nav>
+</aside>
+
+<div class="nav-backdrop" aria-hidden="true"></div>

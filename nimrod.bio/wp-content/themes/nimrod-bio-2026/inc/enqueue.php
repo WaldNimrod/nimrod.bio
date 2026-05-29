@@ -7,7 +7,7 @@ add_action(
 		// Google Fonts - preconnect + family link.
 		wp_enqueue_style(
 			'nb-fonts',
-			'https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&family=Frank+Ruhl+Libre:wght@500;700;900&family=JetBrains+Mono:wght@400;500&display=swap',
+			'https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&family=Frank+Ruhl+Libre:wght@500;700;900&family=JetBrains+Mono:wght@400;500&display=swap&subset=hebrew,latin',
 			array(),
 			null
 		);
@@ -35,6 +35,18 @@ add_action(
 			array(),
 			NB_THEME_VERSION,
 			true
+		);
+
+		// nav-drawer.js - accessible mobile nav drawer (P009-WP002).
+		wp_enqueue_script(
+			'nb-nav-drawer',
+			NB_THEME_URI . '/assets/js/nav-drawer.js',
+			array(),
+			NB_THEME_VERSION,
+			array(
+				'strategy'  => 'defer',
+				'in_footer' => true,
+			)
 		);
 
 		// Hook for template-specific styles (WP003+ adds via this action).

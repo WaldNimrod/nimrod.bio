@@ -5,7 +5,7 @@
 defined( 'ABSPATH' ) || exit;
 
 // Constants
-define( 'NB_THEME_VERSION', '0.4.1' );
+define( 'NB_THEME_VERSION', '0.5.0' );
 define( 'NB_THEME_DIR', get_template_directory() );
 define( 'NB_THEME_URI', get_template_directory_uri() );
 
@@ -19,6 +19,10 @@ add_action(
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'responsive-embeds' );
 		add_theme_support( 'editor-styles' );
+
+			// Responsive hero image sizes (P009-WP002 — mobile/tablet srcset).
+			add_image_size( 'nb-hero-mobile', 800, 9999, false );
+			add_image_size( 'nb-hero-tablet', 1280, 9999, false );
 
 		// Register two nav locations even though WP002 only renders one (Shell uses hard-coded markup).
 		register_nav_menus(

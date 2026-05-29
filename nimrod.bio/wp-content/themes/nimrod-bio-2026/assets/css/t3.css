@@ -457,3 +457,36 @@
   font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--ink-soft);
   letter-spacing: .04em; display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
 }
+
+/* ===== MOBILE — P009-WP002 (team_35 spec §5) ===== */
+/* Append-only. Literal breakpoints 900px / 640px per locked spec.
+   Selectors confirmed against single-project.php + t3-* template parts.
+   RTL-safe: logical properties only (margin-inline-*, padding-inline). */
+@media (max-width: 900px) {
+  .t3-hero-grid { grid-template-columns: 1fr; gap: 24px; }
+  /* !important required: .t3-hero-image carries an inline style="aspect-ratio:4/5"
+     from single-project.php (lines 76/80) which inline rule would otherwise win. */
+  .t3-hero-image { aspect-ratio: 16/10 !important; max-width: 100%; }
+  .story { grid-template-columns: 1fr; padding-inline: 0; }
+  .story p:first-of-type::first-letter { font-size: 3.4em; }
+  .linked-services, .more-projects { grid-template-columns: 1fr; }
+  .outcomes { grid-template-columns: 1fr 1fr; }
+  .seeking-cta { grid-template-columns: 1fr; gap: 20px; }
+  .seeking-cta .cta-btn { width: 100%; justify-content: center; }
+  .legacy-ribbon, .seeking-ribbon { flex-wrap: wrap; gap: 10px; }
+  .legacy-ribbon .span, .seeking-ribbon .span { margin-inline-start: 0; width: 100%; }
+}
+@media (max-width: 640px) {
+  .gallery { grid-template-columns: 1fr 1fr; }
+  .gallery .g-tall, .gallery .g-wide { grid-row: auto; grid-column: span 2; aspect-ratio: 4/5; }
+  .outcomes { grid-template-columns: 1fr; }
+}
+
+/* §13 touch/hover guards — add active feedback on touch devices.
+   Append-only; does not modify the existing unguarded :hover rules above. */
+@media (hover: none) {
+  .ls-card:active,
+  .proj-card:active { transform: scale(0.98); }
+  .seeking-cta .cta-btn:active { transform: scale(0.98); }
+}
+/* ===== END MOBILE — P009-WP002 ===== */

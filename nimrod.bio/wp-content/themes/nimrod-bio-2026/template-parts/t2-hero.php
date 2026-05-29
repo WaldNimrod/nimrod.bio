@@ -66,7 +66,7 @@ $cta_primary_cls = 'hero-cta primary' . ( $is_free ? ' free' : '' );
 			</div>
 			<?php if ( has_post_thumbnail( $post_id ) ) : ?>
 				<div class="img-ph clean hero-image">
-					<?php echo get_the_post_thumbnail( $post_id, 'large', array( 'loading' => 'eager', 'alt' => esc_attr( get_the_title( $post_id ) ) ) ); ?>
+					<?php echo get_the_post_thumbnail( $post_id, 'large', array( 'loading' => 'eager', 'fetchpriority' => 'high', 'sizes' => '(max-width: 640px) 800px, (max-width: 900px) 1280px, 1920px', 'alt' => esc_attr( get_the_title( $post_id ) ) ) ); ?>
 				</div>
 			<?php else : ?>
 				<?php

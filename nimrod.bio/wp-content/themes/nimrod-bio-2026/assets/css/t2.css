@@ -516,3 +516,50 @@
   font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--ink-soft);
   letter-spacing: .04em; display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
 }
+
+/* ===== MOBILE — P009-WP002 (team_35 spec §4) ===== */
+/* Append-only. Breakpoint value 760px is literal from spec §4.
+   Logical properties only (§15 RTL). Selectors reconciled against
+   single-service.php + t2-*.php partials. NOTE: live bridge hero class
+   is `.t2-hero.bridge-hero` (not `.bridge`); spec selector adapted. */
+@media (max-width: 760px) {
+  /* Heritage strip — stack label / text / link (spec adds padding;
+     the legacy 760px block above only set columns+gap) */
+  .heritage-strip { grid-template-columns: 1fr; gap: 10px; padding: 16px 18px; }
+
+  /* Meta strip — 4-col → 2-col */
+  .svc-meta-strip { grid-template-columns: 1fr 1fr; gap: 16px; padding: 18px; }
+
+  /* Three-col (who/how/what) — stack, 1 card per row */
+  .three-col { grid-template-columns: 1fr; gap: 18px; }
+  .three-col .col { padding: 22px; }
+
+  /* Linked projects — 1-col */
+  .linked-projects { grid-template-columns: 1fr; }
+
+  /* Related posts — 1-col */
+  .related-posts { grid-template-columns: 1fr; }
+
+  /* Final CTA — stack, buttons full-width */
+  .final-cta-inner { grid-template-columns: 1fr; gap: 24px; }
+  .final-cta .cta-side { width: 100%; }
+  .final-cta .cta-side .hero-cta { width: 100%; justify-content: center; }
+
+  /* Bridge seam corner — shrink to 36px.
+     Adapted: live markup uses .bridge-hero; .bridge kept for legacy. */
+  .t2-hero.bridge::after,
+  .t2-hero.bridge-hero::after { border-width: 36px 36px 0 0; }
+
+  /* Hero CTA row — stack, full-width buttons */
+  .hero-cta-row { flex-direction: column; align-items: stretch; gap: 10px; }
+  .hero-cta { width: 100%; justify-content: center; padding: 14px; }
+  .hero-cta-hint { text-align: center; }
+}
+
+/* §13 touch/hover guards — T2 cards have unguarded desktop :hover
+   (.lp-card, .proj-card lift on hover). Add active-state feedback on
+   touch devices without altering the existing desktop hover rules. */
+@media (hover: none) {
+  .lp-card:active,
+  .proj-card:active { transform: scale(0.98); }
+}

@@ -169,3 +169,152 @@ h1, h2, h3 {
 h1 { font-size: clamp(36px, 5vw, 56px); }
 h2 { font-size: 28px; line-height: 1.25; font-weight: 600; }
 h3 { font-size: 20px; line-height: 1.30; font-weight: 600; }
+
+/* ===== MOBILE SHELL — P009-WP002 ===== */
+
+/* --- Nav toggle (hamburger) — hidden on desktop, shown ≤640px (spec §2.1) --- */
+.nav-toggle {
+  display: none;            /* desktop: hidden; shown in @media ≤640px */
+  width: 44px; height: 44px;
+  border: none; background: transparent;
+  color: var(--ink-soft);
+  place-items: center;
+  cursor: pointer;
+  padding: 0;
+}
+.nav-toggle svg { display: block; }
+
+/* --- Drawer (slides from inline-end; RTL = from right) (spec §2.1) --- */
+.nav-drawer {
+  display: none;            /* desktop: hidden; shown in @media ≤640px */
+  position: fixed; top: 0; bottom: 0;
+  inset-inline-end: 0;          /* RTL: from right */
+  width: min(85vw, 360px);
+  background: var(--paper);
+  border-inline-start: 1px solid var(--line);
+  transform: translateX(100%);
+  transition: transform .25s ease;
+  z-index: 1000;
+  padding: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+[dir="rtl"] .nav-drawer { transform: translateX(-100%); }
+.nav-drawer.is-open { transform: translateX(0); }
+
+.nav-backdrop {
+  display: none;            /* desktop: hidden; shown in @media ≤640px */
+  position: fixed; inset: 0;
+  background: rgba(31,30,28,.4);
+  opacity: 0; pointer-events: none;
+  transition: opacity .25s ease;
+  z-index: 999;
+}
+.nav-backdrop.is-open { opacity: 1; pointer-events: auto; }
+
+.drawer-head {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 20px; border-bottom: 1px solid var(--line);
+}
+.drawer-head .title {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft);
+}
+.drawer-close {
+  width: 36px; height: 36px;
+  border: none; background: transparent;
+  font-size: 28px; line-height: 1;
+  color: var(--ink-soft); cursor: pointer;
+}
+
+.drawer-nav { padding: 12px 0; }
+.drawer-nav hr {
+  border: none; height: 1px; background: var(--line);
+  margin: 12px 0;
+}
+.drawer-section-label {
+  padding: 8px 20px;
+  font-family: "JetBrains Mono", monospace; font-size: 10px;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft);
+}
+.drawer-link {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 20px;
+  font-family: "Assistant", sans-serif; font-weight: 600; font-size: 16px;
+  color: var(--ink); text-decoration: none;
+  min-height: 44px;
+}
+.drawer-link:active { background: var(--paper-2); }
+.drawer-link .dot {
+  width: 9px; height: 9px; border-radius: 50%;
+}
+.drawer-link.world.soil .dot { background: var(--w-soil); }
+.drawer-link.world.know .dot { background: var(--w-know); }
+.drawer-link.world.code .dot { background: var(--w-code); }
+.drawer-link.cta {
+  color: var(--w-know-deep); font-weight: 700;
+}
+
+/* --- Mobile activation: toggle visible, desktop horizontal nav hidden (≤640px) --- */
+@media (max-width: 640px) {
+  .nav-toggle { display: grid; }
+  .shell-links { display: none; }
+  .nav-drawer { display: block; }
+  .nav-backdrop { display: block; }
+}
+
+/* --- Footer reflow (spec §2.2) --- */
+@media (max-width: 900px) {
+  .shell-foot .cols { grid-template-columns: 1fr 1fr; }
+  .shell-foot .bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+@media (max-width: 640px) {
+  .shell-foot .cols { grid-template-columns: 1fr; gap: 28px; }
+  .shell-foot .brand-block { padding-bottom: 24px; border-bottom: 1px solid rgba(245,243,236,.15); }
+  .shell-foot { padding: 48px var(--gutter-mobile, 20px) 32px; }
+}
+
+/* --- WhatsApp FAB (spec §10) — mobile only, suppressed on contact page --- */
+.wa-fab {
+  display: none;  /* mobile only */
+  position: fixed;
+  bottom: max(16px, env(safe-area-inset-bottom));
+  inset-inline-end: 16px;
+  width: 56px; height: 56px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 50%;
+  place-items: center;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(31,30,28,.25);
+  z-index: 700;
+  transition: transform .15s, background .15s;
+}
+.wa-fab:active { transform: scale(0.95); background: var(--w-soil-deep); }
+
+@media (max-width: 900px) {
+  body:not([data-page="contact"]) .wa-fab { display: grid; }
+}
+
+/* FAB hides while drawer is open (spec §10 behavior) */
+body.nav-open .wa-fab { display: none; }
+
+/* ===== MOBILE BASE — P009-WP002 =====
+   Relocated here (theme-local) instead of system.css, which is team_35-LOCKED
+   (DO NOT EDIT / GCR-only). Breakpoint vars are a documentation contract — CSS
+   @media uses literal px; --gutter-mobile is consumed with a fallback. */
+:root {
+  /* Breakpoints — global contract (spec §1.2) */
+  --bp-mobile:  640px;   /* up to this = mobile */
+  --bp-tablet:  900px;   /* up to this = tablet */
+  --bp-desktop: 1100px;  /* above = desktop */
+  /* Mobile gutter (spec §1.5 / §2.2) */
+  --gutter-mobile: 20px;
+}
+
+/* Safe-area-inset bottom for footer + sticky CTAs (spec §1.5) */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .shell-foot, .final-cta, .seeking-cta {
+    padding-bottom: max(28px, env(safe-area-inset-bottom));
+  }
+}

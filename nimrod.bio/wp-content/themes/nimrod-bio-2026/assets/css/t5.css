@@ -471,3 +471,61 @@
 .filter-chip { font: inherit; }
 .view-toggle-btn { display: inline-flex; align-items: center; gap: 7px; padding: 5px 12px; border: none; background: transparent; color: var(--ink-soft); font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: .06em; cursor: pointer; border-radius: 100px; }
 .view-toggle-btn.is-on { background: var(--ink); color: var(--paper); }
+
+/* ===== MOBILE — P009-WP002 (team_35 spec §7) ===== */
+/* Append-only. Literal breakpoints per spec (760 / 640 / 900). Logical props only (§15).
+   Appended AFTER pre-existing media blocks so equal-specificity ties resolve to spec. */
+
+/* §7 — Flow items: collapse bold editorial grid to single column on mobile */
+@media (max-width: 760px) {
+  .post-flow { grid-template-columns: 1fr; gap: 28px; }
+  /* Intentional grid override (spec §7): force every flow variant to one column,
+     auto row — wins over the span/row rules defined per-variant above. */
+  .flow-item { grid-column: 1 !important; grid-row: auto !important; }
+  .flow-item.flow-lead, .flow-item.flow-wide {
+    flex-direction: column;
+    padding: 24px;
+  }
+  .flow-item.flow-lead .flow-img,
+  .flow-item.flow-wide .flow-img { flex: 0 0 auto; }
+  .flow-item.flow-lead .flow-img .img-ph,
+  .flow-item.flow-wide .flow-img .img-ph { aspect-ratio: 16/10; min-height: auto; }
+  .flow-item.flow-tall .img-ph { aspect-ratio: 4/5; min-height: auto; }
+  .flow-item.flow-typo { min-height: auto; padding: 28px; }
+  .flow-item.flow-quote { min-height: auto; padding: 28px; }
+  .flow-quote-mark { font-size: 72px; top: 8px; }
+  .flow-item.flow-brief { padding-block: 20px; }
+}
+
+/* §7 — Filter bar: horizontal scroll, sticky, sectioned on small mobile */
+@media (max-width: 640px) {
+  .filter-bar { padding: 10px var(--gutter-mobile, 16px); }
+  .filter-bar-inner {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+  .filter-bar-inner::-webkit-scrollbar { display: none; }
+  .filter-bar-inner > * { flex-shrink: 0; }
+  .filter-count { margin-inline-start: 12px; }
+  .view-toggle { order: -1; }   /* view toggle first on mobile */
+}
+
+/* §7 — Blog header: single column, larger fluid h1 */
+@media (max-width: 900px) {
+  .blog-header h1 { font-size: clamp(48px, 13vw, 72px); }
+  .blog-header-grid { grid-template-columns: 1fr; gap: 24px; }
+  .blog-header .stats { text-align: start; }
+}
+
+/* §13 — Hover/active touch guards: flow items lift on hover (desktop) only,
+   subtle scale-down on tap (mobile). Reconciles the unguarded .flow-item:hover
+   transform defined above so it does not fire on touch devices. */
+@media (hover: hover) {
+  .flow-item:hover { transform: translateY(-2px); }
+}
+@media (hover: none) {
+  .flow-item:active { transform: scale(0.98); }
+}

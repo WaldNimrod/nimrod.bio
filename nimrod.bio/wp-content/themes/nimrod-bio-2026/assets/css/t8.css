@@ -671,3 +671,63 @@ fieldset.topic-chips legend {
   display: block; font-family: "Assistant", sans-serif; font-size: 13px;
   font-weight: 600; color: var(--ink); margin-bottom: 8px; padding: 0;
 }
+
+/* ===== MOBILE — P009-WP002 (team_35 spec §9 + §12) ===== */
+/* Append-only. Breakpoint literal 760px per spec §9. Markup uses .t8-about-hero
+   / .t8-heritage-hero wrappers; spec's bare .about-hero / .heritage-hero forms
+   are kept alongside the .t8- forms so both match. Spec's .j-event adapted to
+   the markup's .journey-event. .heritage-image has no element in current markup
+   (no-op, kept per spec). RTL-safe: logical props only. */
+@media (max-width: 760px) {
+  /* ---- About ---- */
+  .t8-about-hero h1, .about-hero h1 { font-size: clamp(36px, 9vw, 56px); max-width: 100%; }
+  .t8-about-hero .lede, .about-hero .lede { font-size: 17px; }
+  .about-gallery { grid-template-columns: repeat(3, 1fr); }
+  .about-gallery .img-ph:nth-child(n+4) { display: none; } /* spec §9: hide 4th+ thumb on mobile (no !important needed) */
+  .t8-about-hero .factrow, .about-hero .factrow { gap: 18px; }
+  .t8-about-hero .factrow .row, .about-hero .factrow .row { flex: 1 1 calc(50% - 9px); }
+
+  .story-block { grid-template-columns: 1fr; }
+  .story-block .story-inner { grid-column: 1; }
+  .story-block p { font-size: 17px; line-height: 1.72; }
+  .story-block p:first-of-type::first-letter { font-size: 3.4em; }
+
+  .journey { grid-template-columns: 1fr; }
+  .journey-track { display: none; }
+  .journey-event::before { display: none; } /* spec §9 ".j-event" -> markup ".journey-event" */
+
+  .thesis { grid-template-columns: 1fr; }
+  .values { grid-template-columns: 1fr; }
+
+  .media-grid { grid-template-columns: 1fr; }
+  .media-item { grid-template-columns: auto 1fr; }
+  .media-arrow { display: none; }
+  .media-title { white-space: normal; }
+
+  /* ---- Heritage ---- */
+  .t8-heritage-hero h1, .heritage-hero h1 { font-size: clamp(36px, 10vw, 64px); }
+  .heritage-image { aspect-ratio: 16/9; } /* no matching element in current markup; kept per spec */
+  .heritage-body { font-size: 17px; line-height: 1.72; }
+  .heritage-body p:first-of-type::first-letter { font-size: 3.4em; }
+  .heritage-body h2 { margin-top: 40px; }
+  .heritage-end { grid-template-columns: 1fr; gap: 16px; }
+  .heritage-end a.btn { width: 100%; justify-content: center; }
+
+  /* ---- Contact (§9 + §12 form UX) ---- */
+  .contact-hero h1 { font-size: clamp(36px, 9vw, 56px); }
+  .contact-body { grid-template-columns: 1fr; gap: 32px; }
+  .contact-form { padding: 24px; }
+  /* iOS auto-zoom prevention: input/textarea/select font-size MUST be >= 16px (spec §12) */
+  .field input, .field textarea, .field select { font-size: 16px; padding: 12px 16px; }
+  .topic-chips { gap: 6px; }
+  .topic-chip { padding: 8px 14px; font-size: 13px; min-height: 36px; }
+  .form-submit { width: 100%; padding: 14px; justify-content: center; }
+  .contact-card { padding: 20px; }
+  .contact-card .wa-btn { width: 100%; justify-content: center; padding: 14px; }
+}
+
+/* §13 touch/hover guards — suppress desktop hover lift on touch, add active state */
+@media (hover: none) {
+  .media-item:active { transform: scale(0.98); }
+  .media-item:hover { transform: none; } /* neutralize desktop translateY on touch */
+}

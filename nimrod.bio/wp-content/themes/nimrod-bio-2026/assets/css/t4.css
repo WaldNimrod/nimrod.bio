@@ -281,3 +281,66 @@ body[data-post="post-tomato-strain"] .t4-post.post-tomato-strain { display: bloc
 .img-ph { position: relative; overflow: hidden; border-radius: var(--radius-m); background: linear-gradient(135deg, var(--paper-2), var(--line)); display: grid; place-items: center; }
 .img-ph .img-subj { position: absolute; inset-inline-start: 12px; bottom: 10px; font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--ink-soft); }
 .related-entities { display: flex; flex-direction: column; gap: 8px; }
+
+/* ===== MOBILE — P009-WP002 (team_35 spec §6) ===== */
+/* APPEND-ONLY. Literal breakpoints per spec §6: 1100px, 760px, 640px.
+   Logical properties only (spec §15). Hover/active guards per spec §13.
+   NOTE: existing rules above (lines ~112-121, 268-271) already define
+   1100px/760px behavior. These spec blocks layer AFTER and intentionally
+   override to deliver the team_35 mobile design (aside surfaced at bottom
+   of post on tablet/mobile rather than hidden). */
+
+@media (max-width: 1100px) {
+  .post-layout {
+    grid-template-columns: 1fr;
+    padding-inline: var(--gutter-mobile, 20px);
+  }
+  /* Surface aside at bottom of post (ToC + Share + Related), not hidden */
+  .post-layout .post-aside {
+    display: block;
+    grid-column: 1;
+    position: static;
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+  }
+  .post-hero-image { aspect-ratio: 16/9; }
+  /* keep featured <img> ratio in sync with reduced hero letterbox */
+  .post-hero-image .post-thumb { aspect-ratio: 16/9; }
+}
+
+@media (max-width: 640px) {
+  .post-title { font-size: clamp(34px, 9vw, 56px); }
+  .post-body { font-size: 17px; line-height: 1.72; }
+  .post-body p:first-of-type::first-letter { font-size: 3.6em; }
+  .post-body .pullquote { font-size: clamp(22px, 6vw, 32px); }
+  .post-body blockquote { padding: 6px 16px; font-size: 18px; }
+  .post-meta-row { gap: 14px; }
+}
+
+/* Floating share buttons (optional UX upgrade, spec §6).
+   Requires a .post-share-fab element in markup — NOT present in current
+   t4-share.php. CSS shipped per spec; markup must be added separately. */
+@media (max-width: 760px) {
+  .post-share-fab {
+    position: fixed;
+    bottom: 16px;
+    inset-inline-start: 16px;
+    z-index: 800;
+    display: flex; gap: 8px;
+    background: rgba(31, 30, 28, .88); backdrop-filter: blur(8px);
+    border-radius: 100px; padding: 6px;
+    box-shadow: 0 6px 20px rgba(31, 30, 28, .25);
+  }
+  .post-share-fab .share-btn {
+    width: 40px; height: 40px;
+    background: transparent; color: var(--paper);
+    border: none;
+  }
+}
+
+/* Touch/gesture guards (spec §13): suppress desktop hover on touch,
+   add tap-active feedback for share buttons. */
+@media (hover: none) {
+  .share-btn:active { transform: scale(0.96); }
+}

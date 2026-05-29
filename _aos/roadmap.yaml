@@ -543,6 +543,10 @@ work_packages:
   - gate: L-GATE_BUILD
     result: PHASED_AUTHORIZATION
     date: "2026-05-29"
-    notes: "team_00 directive 2026-05-29: no cutover window until full completion; proceed as far as possible with info in hand until team_35 delivers. team_100 issued MANDATE_NB-S002-P009-WP002_MOBILE_2026-05-29_v1.0.0 — Phase A (shell/drawer/WA-FAB/JS/base infra + responsive-image PHP — net-new, WP001-independent) AUTHORIZED NOW; Phase B (per-template @media t1-t8 + perf/a11y audit) HELD until P009-WP001 L-GATE_BUILD PASS + team_100 v1.1.0 Phase B release. Locked: M18 A11y>=95 = PASS_WITH_FINDINGS (team_00 accepted)."
-  notes: "IN_PROGRESS — phased. Phase A open to team_10. Phase B gated on P009-WP001 BUILD PASS. Validator team_190 (Codex) + team_50 (MCP real-device). Pre-cutover mandatory before P005-WP002."
+    notes: "team_00 directive 2026-05-29 (initial): proceed as far as possible. team_100 issued MANDATE v1.0.0 — Phase A authorized, Phase B held. SUPERSEDED same day by expanded directive (next entry)."
+  - gate: L-GATE_BUILD
+    result: BUILD_COMPLETE_ORCHESTRATED
+    date: "2026-05-29"
+    notes: "team_00 expanded directive 2026-05-29: complete WP002 via canonical sub-agent orchestration up to external validation. team_100 (Claude Code) orchestrated 9 parallel build sub-agents over disjoint files; phasing collapsed via APPEND-ONLY @media rule (mobile layer isolated, no WP001 collision). Built: shell.css drawer/FAB/footer/base + nav-drawer.js (NEW, full a11y) + shell-nav/footer.php + header.php data-page + enqueue (JS+font subset) + functions.php (v0.5.0 + image sizes) + t1-t8.css mobile @media + responsive hero images. system.css LOCK honored (reverted + relocated to shell.css). QC: CSS balanced, php -l clean, node --check clean. !important=5 (spec-mandated, commented; D1 reinterprets M20). COMPLETION: _COMMUNICATION/team_100/COMPLETION_NB-S002-P009-WP002_BUILD_2026-05-29_v1.0.0.md. Iron Rule #1: build=Claude -> VALIDATE must be cross-engine (team_190 Codex + team_50)."
+  notes: "IN_PROGRESS — build complete (team_100-orchestrated, full scope). Awaiting deploy to uPress dev + L-GATE_VALIDATE (team_190 Codex + team_50 MCP device). Deferrals: D2 share-FAB markup (V300), D3 wp media regenerate (deploy step), D4 @media redundancy (V300). Pre-cutover mandatory before P005-WP002."
 
