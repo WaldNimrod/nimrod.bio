@@ -1,0 +1,262 @@
+/* ============================================================
+   components.css — SHARED COMPONENT LAYER (P009-WP003, G-09)
+   Single source of truth for cross-template shared components:
+   type tokens, world chip, stage-stamp, card base, .img-ph
+   fallback, basket emblem.
+
+   Builds ON the LOCKED tokens in system.css (--paper, --line,
+   --ink, world deep/light, --s-*, radius/shadow). It does NOT
+   redefine the palette or scale. Enqueue AFTER nb-system / nb-shell
+   so these precision layers win the cascade by source order.
+
+   Rules honored:
+   - Token hygiene (G-10): backgrounds use var(--paper), never #fff.
+   - RTL: logical properties only (inset-inline-*, margin-inline-*,
+     padding-inline-*, border-inline-*).
+   - No !important.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   Hero-light tints — approved extension (README §"Design tokens").
+   Colored type on dark surfaces. Scoped here so components that
+   need them (chips on dark, hero stats) resolve even though these
+   are not in the LOCKED system.css palette.
+   ------------------------------------------------------------ */
+:root {
+  --w-soil-light: #9cc063;
+  --w-know-light: #e08a5b;
+  --w-code-light: #5cb8ba;
+
+  /* Wash fallbacks (locked values, README §Washes). t1.css defines
+     these in its :root for world pages; mirror the literals here so
+     shared components (e.g. .img-ph.clean per-world wash) work on
+     T7/home and anywhere t1.css is not enqueued. */
+  --soil-wash:   #eef0e0;
+  --soil-wash-2: #e3e6cf;
+  --know-wash:   #f4e5d6;
+  --code-wash:   #d8e6e6;
+}
+
+/* ============================================================
+   1. TYPE TOKENS (G-08)
+   system.css already DEFINES .t-display/.t-h1/.t-h2/.t-h3/.t-quote/
+   .t-body/.t-body-sm/.t-ui (family + size + line-height + weight).
+   That file is LOCKED, so this layer ADDS the precision that was
+   missing: tuned letter-spacing per display step + text-wrap.
+   Headings stay serif (Frank Ruhl Libre); body/ledes stay Assistant;
+   meta/ui stays JetBrains Mono — matching the already-locked tokens.
+   These rules are additive (no family/size override).
+   ============================================================ */
+.t-display { letter-spacing: -.035em; text-wrap: balance; }
+.t-h1      { letter-spacing: -.025em; text-wrap: balance; }
+.t-h2      { letter-spacing: -.018em; text-wrap: balance; }
+.t-h3      { letter-spacing: -.012em; }
+.t-quote   { letter-spacing: -.005em; text-wrap: pretty; }
+.t-body    { text-wrap: pretty; }
+.t-body-sm { text-wrap: pretty; }
+.t-ui      { font-family: "JetBrains Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
+
+/* ============================================================
+   2. WORLD CHIP — .wc  (G-09: one definition, world-color aware)
+   Mono pill with a colored dot. Matches prototype .wc.
+   nb_world_chip() renders: <span class="wc soil|know|code">…</span>
+   (+ optional .wc-ghost for a hollow variant).
+   ============================================================ */
+.wc {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10.5px; letter-spacing: .05em;
+  padding-block: 3px; padding-inline: 9px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  background: var(--paper);
+  white-space: nowrap;
+  text-decoration: none;
+}
+.wc::before {
+  content: ""; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--ink-soft);
+}
+.wc.soil::before { background: var(--w-soil); }
+.wc.know::before { background: var(--w-know); }
+.wc.code::before { background: var(--w-code); }
+/* ghost: transparent fill, world-tinted border + text */
+.wc.wc-ghost { background: transparent; }
+.wc.wc-ghost.soil { color: var(--w-soil-deep); border-color: var(--w-soil); }
+.wc.wc-ghost.know { color: var(--w-know-deep); border-color: var(--w-know); }
+.wc.wc-ghost.code { color: var(--w-code-deep); border-color: var(--w-code); }
+
+/* ============================================================
+   3. STAGE-STAMP — .stage-stamp  (G-09)
+   Mono pill with leading dot. States: live / seeking / legacy
+   (+ seed/pilot map onto seeking visual via helper labels).
+   nb_stage_stamp() renders <span class="stage-stamp stage-{slug}">.
+   We style BOTH the prototype class (.live/.seeking/.legacy) and the
+   helper's emitted class (.stage-live/.stage-seeking-partners/…) so
+   one definition covers both naming schemes.
+   ============================================================ */
+.stage-stamp {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10.5px; letter-spacing: .07em; text-transform: uppercase;
+  padding-block: 4px; padding-inline: 10px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.stage-stamp::before {
+  content: ""; width: 7px; height: 7px; border-radius: 50%;
+  background: currentColor;
+}
+
+/* live — soil-deep on paper */
+.stage-stamp.live,
+.stage-stamp.stage-live {
+  background: var(--paper); color: var(--w-soil-deep);
+  border: 1px solid var(--w-soil-deep);
+}
+/* seeking-partners (+ seed/pilot in-progress) — spark on paper, pulsing dot */
+.stage-stamp.seeking,
+.stage-stamp.stage-seeking-partners,
+.stage-stamp.stage-seed,
+.stage-stamp.stage-pilot {
+  background: var(--paper); color: var(--spark);
+  border: 1px solid var(--spark);
+}
+.stage-stamp.seeking::before,
+.stage-stamp.stage-seeking-partners::before,
+.stage-stamp.stage-seed::before,
+.stage-stamp.stage-pilot::before {
+  animation: nb-pulse 2.4s ease-in-out infinite;
+}
+/* legacy — muted on paper-2 */
+.stage-stamp.legacy,
+.stage-stamp.stage-legacy {
+  background: var(--paper-2); color: var(--ink);
+  border: 1px solid var(--ink-soft);
+}
+
+@keyframes nb-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+@media (prefers-reduced-motion: reduce) {
+  .stage-stamp::before { animation: none; }
+}
+
+/* ============================================================
+   4. CARD BASE — .nb-card  (shared surface; G-09)
+   A neutral card primitive other templates compose on. Token-clean:
+   paper background, line border, system radius + shadow.
+   ============================================================ */
+.nb-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  box-shadow: var(--shadow-s);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  text-decoration: none; color: inherit;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.nb-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-m); }
+@media (hover: none) {
+  .nb-card:active { transform: scale(0.98); }
+}
+
+/* ============================================================
+   5. IMAGE PLACEHOLDER / MEDIA CONTAINER — .img-ph  (G-05)
+   The CONTAINER carries aspect-ratio + overflow:hidden, NEVER the img.
+   - With an image: <div class="img-ph"><img …></div> → img covers.
+   - Without an image: <div class="img-ph clean">…</div> → a clean
+     tinted placeholder (per-world wash or paper-2), NOT a collapsed
+     empty box.
+   Default aspect ratio 4/5; override per call via inline
+   style="aspect-ratio:16/10" (front-page author sets the ratio).
+   ============================================================ */
+.img-ph {
+  position: relative;
+  aspect-ratio: 4 / 5;            /* default; container-level, override inline */
+  overflow: hidden;
+  background: var(--paper-2);
+  border-radius: inherit;         /* respect the parent card's radius */
+  display: grid; place-items: center;
+}
+.img-ph > img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+
+/* clean fallback: tinted wash, subtle diagonal texture, optional caption.
+   Default tint = paper texture; world modifiers swap to that world's wash. */
+.img-ph.clean {
+  background-color: var(--paper-2);
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--paper-2) 0 16px,
+    var(--paper-3) 16px 32px
+  );
+}
+.img-ph.clean.soil { background-color: var(--soil-wash);
+  background-image: repeating-linear-gradient(135deg, var(--soil-wash) 0 16px, var(--soil-wash-2) 16px 32px); }
+.img-ph.clean.know { background-color: var(--know-wash);
+  background-image: repeating-linear-gradient(135deg, var(--know-wash) 0 16px, var(--paper-3) 16px 32px); }
+.img-ph.clean.code { background-color: var(--code-wash);
+  background-image: repeating-linear-gradient(135deg, var(--code-wash) 0 16px, var(--paper-3) 16px 32px); }
+
+/* subject label inside a clean placeholder (what the image WOULD show) */
+.img-ph .img-subj,
+.img-ph .subj {
+  position: relative; z-index: 1;
+  font-family: "Assistant", sans-serif; font-weight: 500; font-size: 14px;
+  color: var(--soil); opacity: .8;
+  padding-block: 7px; padding-inline: 16px;
+  text-align: center; max-width: 84%;
+  background: rgba(245, 243, 236, .55);   /* tinted paper veil, not #fff */
+  border-radius: var(--radius-s);
+}
+/* corner caption (mono) for review/credit */
+.img-ph .cap {
+  position: absolute; inset-inline-start: 10px; inset-block-end: 10px;
+  z-index: 1;
+  font-family: "JetBrains Mono", monospace; font-size: 10px;
+  background: rgba(31, 30, 28, .8); color: var(--paper);
+  padding-block: 4px; padding-inline: 9px;
+  border-radius: var(--radius-s); letter-spacing: .03em;
+}
+
+/* ============================================================
+   6. BASKET EMBLEM — .nb-emblem  (README §3)
+   Round world-color badge that straddles the photo/body seam of a
+   media card. Pair with a media container (.img-ph / .wcard-media)
+   that is position:relative. The emblem overhangs the seam via a
+   negative block-end offset.
+   ============================================================ */
+.nb-emblem {
+  position: absolute;
+  inset-block-end: -25px;
+  inset-inline-start: 22px;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--paper);
+  display: grid; place-items: center;
+  box-shadow: var(--shadow-s);
+  z-index: 3;
+}
+.nb-emblem > img,
+.nb-emblem > svg { width: 36px; height: 36px; }
+
+/* small content badge (carrot / chef-hat / circuit-node) in the
+   world's deep color, top-end corner of the emblem */
+.nb-emblem .em-ic {
+  position: absolute;
+  inset-block-start: -7px; inset-inline-end: -7px;
+  width: 25px; height: 25px;
+  color: var(--paper);                 /* glyph on a deep disc (G-10: not #fff) */
+  background: var(--w-soil-deep);
+  border-radius: 50%;
+  padding: 4.5px;
+  box-shadow: var(--shadow-s);
+}
+.nb-emblem.soil .em-ic { background: var(--w-soil-deep); }
+.nb-emblem.know .em-ic { background: var(--w-know-deep); }
+.nb-emblem.code .em-ic { background: var(--w-code-deep); }

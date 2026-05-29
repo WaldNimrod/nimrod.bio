@@ -598,6 +598,297 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
   .projects-grid .proj-card:first-child { grid-column: 1; }
 }
 
+/* ════════════════════════════════════════════════════════════
+   P009-WP003 · B1 — HERO POSTER + WORLDS (negentropy)
+   README §2–§3. system.css tokens only; no #fff bg (use --paper);
+   RTL logical properties; reduced-motion-safe (no required motion).
+   Desktop rules — the WP002 MOBILE @media block follows BELOW and
+   is preserved verbatim; do not move it.
+   ════════════════════════════════════════════════════════════ */
+
+/* ---- Hero-aware nav state (style only; nb-nav-atop.js toggles .atop) ---- */
+/* Over the hero poster the nav goes transparent-dark with light links; the
+   solid (default, in shell.css) state returns once the hero scrolls away. */
+.shell-nav.atop {
+  background: rgba(18, 17, 15, .5);
+  backdrop-filter: blur(6px);
+  border-block-end-color: transparent;
+}
+.shell-nav.atop .shell-mark,
+.shell-nav.atop a { color: var(--paper); }
+
+/* ---- Hero poster ---- */
+.hero-poster {
+  position: relative;
+  min-height: clamp(540px, 74vh, 780px);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: var(--ink);
+}
+.hero-poster .hp-bg { position: absolute; inset: 0; }
+.hero-poster .hp-bg img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+.hero-poster .hp-scrim {
+  position: absolute; inset: 0; z-index: 1;
+  /* side scrim: dark on the start (right, RTL) → transparent toward the end */
+  background: linear-gradient(to left,
+    rgba(18, 17, 15, .9) 0%,
+    rgba(18, 17, 15, .62) 40%,
+    rgba(18, 17, 15, .18) 78%,
+    transparent 100%);
+}
+.hero-poster .hp-scrim-bottom {
+  background: linear-gradient(to top, rgba(18, 17, 15, .55) 0%, transparent 36%);
+}
+.hero-poster .hp-content {
+  position: relative; z-index: 2;
+  width: 100%;
+  padding-block: clamp(40px, 6vw, 84px);
+}
+.hero-poster .hp-inner { max-width: 620px; }
+
+.hero-poster .hp-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  margin: 0 0 18px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 14px; font-weight: 500; letter-spacing: .04em;
+  color: rgba(245, 243, 236, .9);
+}
+.hero-poster .hp-eyebrow .hp-spark {
+  display: inline-flex; width: 16px; height: 16px;
+  color: var(--spark);
+}
+.hero-poster .hp-eyebrow .hp-spark svg { width: 100%; height: 100%; }
+
+.poster-h1 {
+  font-family: "Frank Ruhl Libre", serif;
+  font-weight: 900; line-height: .92; letter-spacing: -.035em;
+  margin: 0 0 20px;
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  gap: 0 clamp(10px, 1.6vw, 22px);
+  font-size: clamp(48px, 8.5vw, 128px);
+}
+.poster-h1 .pw { display: inline-flex; align-items: baseline; }
+.poster-h1 .pw .pw-dot {
+  width: .26em; height: .26em; border-radius: 50%;
+  margin-inline-end: .18em;
+  align-self: center;
+}
+.poster-h1 .pw-soil { color: var(--w-soil-light, #9cc063); }
+.poster-h1 .pw-know { color: var(--w-know-light, #e08a5b); }
+.poster-h1 .pw-code { color: var(--w-code-light, #5cb8ba); }
+.poster-h1 .pw-soil .pw-dot { background: var(--w-soil-light, #9cc063); }
+.poster-h1 .pw-know .pw-dot { background: var(--w-know-light, #e08a5b); }
+.poster-h1 .pw-code .pw-dot { background: var(--w-code-light, #5cb8ba); }
+
+.hero-poster .hp-tagline {
+  font-family: "Assistant", sans-serif;
+  font-size: clamp(17px, 1.8vw, 22px); line-height: 1.5;
+  color: rgba(245, 243, 236, .9);
+  margin: 0 0 28px; max-width: 38ch;
+  text-wrap: pretty;
+}
+
+/* hero-foot: kicker stats at start (right), buttons at end (left) */
+.hero-foot {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 18px 28px; flex-wrap: wrap;
+  margin-block-start: clamp(26px, 3.4vw, 42px);
+  padding-block-start: 18px;
+  border-block-start: 1px solid rgba(245, 243, 236, .2);
+}
+.hero-poster .hp-kicker {
+  display: flex; align-items: baseline; flex-wrap: wrap;
+  gap: clamp(12px, 2vw, 24px);
+}
+.hero-poster .hp-kicker .kc {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 700;
+  font-size: clamp(13.5px, 1.35vw, 18px);
+  color: var(--paper); white-space: nowrap;
+}
+.hero-poster .hp-kicker .kc b { color: var(--w-soil-light, #9cc063); font-size: 1.12em; }
+.hero-poster .hp-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+/* primary = know fill; ghost = light outline on dark */
+.hero-poster .hp-btn-primary { background: var(--w-know); color: var(--paper); }
+.hero-poster .hp-btn-primary:hover { background: var(--w-know-deep); }
+.hero-poster .hp-btn-ghost {
+  background: transparent; color: var(--paper);
+  border-color: rgba(245, 243, 236, .5);
+}
+.hero-poster .hp-btn-ghost:hover { background: var(--paper); color: var(--ink); }
+
+/* ---- Worlds intro: negentropy backdrop + centered heading/lede over it ---- */
+.t7-worlds .worlds-intro {
+  position: relative;
+  display: grid; place-items: center;
+  margin-block-end: var(--s-5, 64px);
+  min-height: clamp(220px, 26vw, 300px);
+}
+.t7-worlds .wi-graphic {
+  position: absolute; inset: 0; z-index: 0;
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none;
+}
+.t7-worlds .wi-graphic .negentropy {
+  width: 100%; max-width: 1080px; height: 100%;
+  opacity: .5;
+}
+.t7-worlds .wi-col {
+  position: relative; z-index: 1;
+  text-align: center; max-width: 54ch;
+  padding: clamp(16px, 3vw, 30px) clamp(20px, 5vw, 56px);
+}
+/* radial paper glow behind the text for legibility over the backdrop */
+.t7-worlds .wi-col::before {
+  content: ""; position: absolute; inset: -8% -10%; z-index: -1;
+  background: radial-gradient(ellipse at center,
+    var(--paper) 36%, rgba(245, 243, 236, .7) 58%, transparent 82%);
+}
+.t7-worlds .wi-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin: 0 0 10px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 14px; font-weight: 500; letter-spacing: .04em;
+  color: var(--ink-soft);
+}
+.t7-worlds .wi-eyebrow .num { color: var(--w-soil-deep); }
+.t7-worlds .wi-title {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 700;
+  font-size: clamp(28px, 3.4vw, 44px); line-height: 1.05;
+  letter-spacing: -.02em; margin: 0 0 10px; color: var(--ink);
+}
+.t7-worlds .wi-lede {
+  font-family: "Assistant", sans-serif;
+  font-size: clamp(15px, 1.5vw, 18px); line-height: 1.5;
+  color: var(--ink-soft); margin: 0 auto; max-width: 44ch;
+  text-wrap: balance;
+}
+.t7-worlds .neg-cap {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px; letter-spacing: .03em;
+  color: var(--ink-soft); margin: 14px 0 0;
+}
+.t7-worlds .neg-cap b { color: var(--ink); }
+
+/* ---- World cards (media header + emblem + body) ---- */
+.t7-worlds .worlds-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: clamp(18px, 2vw, 22px);
+  align-items: stretch;
+}
+.t7-worlds .world-card {
+  position: relative;
+  display: flex; flex-direction: column;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l, 20px);
+  box-shadow: var(--shadow-s);
+  overflow: hidden;
+  text-decoration: none; color: inherit;
+  transition: transform .22s cubic-bezier(.34, 1.56, .64, 1), box-shadow .2s;
+}
+/* 4px top accent bar in the world's light color */
+.t7-worlds .world-card::before {
+  content: ""; position: absolute;
+  inset-block-start: 0; inset-inline: 0;
+  height: 4px; z-index: 4;
+  background: var(--wc);
+  transition: height .2s ease;
+}
+.t7-worlds .world-card.soil { --wc: var(--w-soil); --wcd: var(--w-soil-deep); }
+.t7-worlds .world-card.know { --wc: var(--w-know); --wcd: var(--w-know-deep); }
+.t7-worlds .world-card.code { --wc: var(--w-code); --wcd: var(--w-code-deep); }
+.t7-worlds .world-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-m); }
+.t7-worlds .world-card:hover::before { height: 7px; }
+
+.t7-worlds .world-card .wcard-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: visible;
+  background: var(--paper-2);
+}
+.t7-worlds .world-card .wcard-media > img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+/* the emblem (.nb-emblem from components.css) straddles the photo/body seam */
+.t7-worlds .world-card .wcard-body {
+  padding: 36px clamp(22px, 2.4vw, 28px) clamp(24px, 2.6vw, 30px);
+  display: flex; flex-direction: column; gap: 10px; flex: 1;
+}
+.t7-worlds .world-card .num {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11.5px; letter-spacing: .12em; color: var(--ink-soft);
+  text-transform: uppercase;
+}
+.t7-worlds .world-card .wcard-title {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 800;
+  font-size: clamp(26px, 2.8vw, 36px); line-height: 1;
+  letter-spacing: -.02em; margin: 2px 0 0; color: var(--wcd);
+}
+.t7-worlds .world-card .wcard-tagline {
+  font-family: "Assistant", sans-serif;
+  font-size: 15.5px; line-height: 1.4;
+  color: var(--ink-soft); margin: 0; max-width: 26ch;
+  text-wrap: pretty;
+}
+.t7-worlds .world-card .wcard-list {
+  list-style: none; padding: 0; margin: auto 0 0;
+  display: flex; flex-direction: column; gap: 6px;
+  font-family: "Assistant", sans-serif; font-size: 14.5px; color: var(--ink);
+}
+.t7-worlds .world-card .wcard-list li {
+  display: flex; align-items: center; gap: 9px;
+}
+.t7-worlds .world-card .wcard-list .li-ic {
+  width: 18px; height: 18px; flex: none; color: var(--wcd);
+}
+.t7-worlds .world-card .wcard-more {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase;
+  margin-block-start: 10px; color: var(--wcd); font-weight: 500;
+}
+.t7-worlds .world-card .wcard-more::after { content: " ←"; }
+
+/* shared inline-icon sizing for sprite glyphs in this region */
+.hero-poster .ip, .t7-worlds .ip { display: inline-block; width: 1em; height: 1em; }
+.t7-worlds .world-card .nb-emblem .ip { width: 36px; height: 36px; }
+.t7-worlds .world-card .nb-emblem .em-ic .ip { width: 100%; height: 100%; }
+
+/* Reduced-motion: no transform-based motion required (cards still readable). */
+@media (prefers-reduced-motion: reduce) {
+  .t7-worlds .world-card { transition: none; }
+  .t7-worlds .world-card:hover { transform: none; }
+  .t7-worlds .world-card:hover::before { height: 4px; }
+}
+
+/* ---- B1 reflow (≥901px desktop already handled; tighten mid widths) ---- */
+@media (max-width: 1000px) {
+  .t7-worlds .worlds-grid { grid-template-columns: 1fr 1fr; }
+}
+/* Guard: the WP002 mobile block below targets the OLD .world-card (text-only
+   card with its own padding/min-height). My B1 card is a media+body card with
+   zero container padding. These higher-specificity rules (.t7-worlds .world-card)
+   keep the new card intact across the WP002 breakpoints without editing that
+   protected block. */
+@media (max-width: 900px) {
+  .t7-worlds .world-card { min-height: 0; padding: 0; }
+}
+@media (max-width: 560px) {
+  .hero-foot { gap: 14px; }
+  .hero-poster .hp-kicker { gap: 6px 14px; }
+  /* strengthen scrim when content stacks tight over a short hero */
+  .hero-poster .hp-scrim {
+    background: linear-gradient(to top,
+      rgba(18, 17, 15, .92) 8%, rgba(18, 17, 15, .66) 48%, rgba(18, 17, 15, .3) 100%);
+  }
+}
+
 /* ===== MOBILE — P009-WP002 (team_35 spec §8) ===== */
 /*
  * Append-only. Literal breakpoints from spec (900px / 640px).

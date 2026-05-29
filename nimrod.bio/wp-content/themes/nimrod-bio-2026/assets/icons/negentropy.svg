@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" fill="none" role="img" aria-hidden="true" class="negentropy">
+  <!--
+    Negentropy backdrop: entropy -> connection.
+    Left = scattered loose dots (high entropy) flowing right into an ordered
+    TRIAD of three world baskets (soil/know/code) joined by connector lines,
+    with a spark dot at the convergence. Faint backdrop; uses currentColor +
+    world hex values. World colors: soil #6a8a3a, know #c46a3e, code #2d8a8c, spark #d23a2e.
+  -->
+
+  <!-- faint lattice (left field, the disordered region) -->
+  <g stroke="currentColor" stroke-width="1" opacity="0.10">
+    <path d="M760 80 L880 130 L800 200"/>
+    <path d="M980 70 L1040 140 L960 190"/>
+    <path d="M1080 240 L1140 110 L1040 60"/>
+    <path d="M880 130 L980 70"/>
+    <path d="M800 200 L900 280 L1010 250"/>
+  </g>
+
+  <!-- flow lines pulling the scattered dots toward the triad convergence (~x=520) -->
+  <g class="flows" stroke="currentColor" stroke-width="1.6" stroke-dasharray="5 8" opacity="0.30">
+    <path class="flow" d="M760 90 Q620 150 540 178"/>
+    <path class="flow" d="M820 250 Q640 220 540 192"/>
+    <path class="flow" d="M980 80 Q700 140 548 182"/>
+    <path class="flow" d="M1040 200 Q760 200 552 186"/>
+    <path class="flow" d="M1120 130 Q820 170 556 184"/>
+  </g>
+
+  <!-- scattered loose dots (entropy) — currentColor, varied size & opacity -->
+  <g class="ent" fill="currentColor">
+    <circle cx="760" cy="88"  r="6" opacity="0.40"/>
+    <circle cx="838" cy="150" r="4" opacity="0.30"/>
+    <circle cx="792" cy="232" r="7" opacity="0.42"/>
+    <circle cx="900" cy="60"  r="3" opacity="0.26"/>
+    <circle cx="932" cy="196" r="5" opacity="0.34"/>
+    <circle cx="876" cy="288" r="4" opacity="0.28"/>
+    <circle cx="996" cy="110" r="6" opacity="0.38"/>
+    <circle cx="1022" cy="244" r="4" opacity="0.28"/>
+    <circle cx="1080" cy="72"  r="5" opacity="0.34"/>
+    <circle cx="1108" cy="182" r="3" opacity="0.24"/>
+    <circle cx="1140" cy="276" r="5" opacity="0.32"/>
+    <circle cx="1168" cy="128" r="4" opacity="0.26"/>
+    <circle cx="700" cy="180" r="3" opacity="0.24"/>
+    <circle cx="660" cy="120" r="4" opacity="0.28"/>
+    <circle cx="640" cy="248" r="3" opacity="0.22"/>
+    <circle cx="1056" cy="316" r="4" opacity="0.26"/>
+    <circle cx="952" cy="320" r="3" opacity="0.22"/>
+    <circle cx="1132" cy="40"  r="3" opacity="0.22"/>
+  </g>
+
+  <!-- ordered TRIAD — three world circles joined by connectors -->
+  <g class="triad">
+    <!-- connector triangle (the joined seam) -->
+    <path d="M520 70 L610 290 L430 290 Z" stroke="currentColor" stroke-width="2" opacity="0.22"/>
+    <!-- spoke lines from convergence to each world, color-coded -->
+    <line x1="520" y1="182" x2="520" y2="70"  stroke="#6a8a3a" stroke-width="1.5" opacity="0.45"/>
+    <line x1="520" y1="182" x2="430" y2="290" stroke="#2d8a8c" stroke-width="1.5" opacity="0.45"/>
+    <line x1="520" y1="182" x2="610" y2="290" stroke="#c46a3e" stroke-width="1.5" opacity="0.45"/>
+
+    <!-- spark at convergence -->
+    <circle cx="520" cy="182" r="8" fill="#d23a2e" opacity="0.85"/>
+    <path d="M520 168 C520 176 522 180 528 182 C522 184 520 188 520 196 C520 188 518 184 512 182 C518 180 520 176 520 168 Z" fill="#d23a2e" opacity="0.5"/>
+
+    <!-- soil basket (top) -->
+    <circle cx="520" cy="70" r="30" fill="#6a8a3a" opacity="0.12"/>
+    <circle cx="520" cy="70" r="30" stroke="#6a8a3a" stroke-width="2" opacity="0.6"/>
+    <path d="M508 64 H532 L529 82 A2 2 0 0 1 527 84 H513 A2 2 0 0 1 511 82 Z" stroke="#6a8a3a" stroke-width="1.6" fill="none" opacity="0.7"/>
+    <path d="M506 64 H534" stroke="#6a8a3a" stroke-width="1.6" opacity="0.7"/>
+    <path d="M520 64 V58" stroke="#6a8a3a" stroke-width="1.6" opacity="0.7"/>
+
+    <!-- code basket (bottom-left) -->
+    <circle cx="430" cy="290" r="30" fill="#2d8a8c" opacity="0.12"/>
+    <circle cx="430" cy="290" r="30" stroke="#2d8a8c" stroke-width="2" opacity="0.6"/>
+    <path d="M418 284 H442 L439 302 A2 2 0 0 1 437 304 H423 A2 2 0 0 1 421 302 Z" stroke="#2d8a8c" stroke-width="1.6" fill="none" opacity="0.7"/>
+    <path d="M416 284 H444" stroke="#2d8a8c" stroke-width="1.6" opacity="0.7"/>
+    <circle cx="430" cy="278" r="2.5" stroke="#2d8a8c" stroke-width="1.6" fill="none" opacity="0.7"/>
+
+    <!-- know basket (bottom-right) -->
+    <circle cx="610" cy="290" r="30" fill="#c46a3e" opacity="0.12"/>
+    <circle cx="610" cy="290" r="30" stroke="#c46a3e" stroke-width="2" opacity="0.6"/>
+    <path d="M598 284 H622 L619 302 A2 2 0 0 1 617 304 H603 A2 2 0 0 1 601 302 Z" stroke="#c46a3e" stroke-width="1.6" fill="none" opacity="0.7"/>
+    <path d="M596 284 H624" stroke="#c46a3e" stroke-width="1.6" opacity="0.7"/>
+    <path d="M604 284 Q610 276 616 284" stroke="#c46a3e" stroke-width="1.6" fill="none" opacity="0.7"/>
+  </g>
+</svg>

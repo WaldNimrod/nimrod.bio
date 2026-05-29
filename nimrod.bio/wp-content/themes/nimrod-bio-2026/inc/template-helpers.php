@@ -320,3 +320,81 @@ function nb_img_ph( string $subject, string $cap = '', string $class = '', strin
 	$html .= '</div>';
 	return $html;
 }
+
+/**
+ * P009-WP003 (G-05) — Featured-image media block with the container-aspect
+ * pattern, styled by the shared components.css `.img-ph` rules.
+ *
+ * Renders ONE `.img-ph` container that carries `aspect-ratio` + `overflow:hidden`
+ * (never the <img>). When the post has a thumbnail it is emitted as a covering
+ * <img>; when it does NOT, a clean tinted `.img-ph.clean` placeholder is rendered
+ * (world-tinted if a world slug is passed) — never a collapsed/empty box.
+ *
+ * Distinct from the legacy `nb_img_ph()` placeholder above (which always renders
+ * the fail box). Use THIS for real content cards (world cards, project cards,
+ * blog feature/grid) where a featured image may or may not exist.
+ *
+ * @param int   $post_id  Post whose featured image to use.
+ * @param array $args {
+ *     @type string $ratio    CSS aspect-ratio for the container. Default '4/5'.
+ *     @type string $world    World slug ('soil'|'know'|'code') for the clean
+ *                            fallback tint + a tint class on the container. Default ''.
+ *     @type string $size     WP image size for the thumbnail. Default 'large'.
+ *     @type string $class    Extra classes appended to the container. Default ''.
+ *     @type string $subject  Label shown inside the clean fallback (what the image
+ *                            would show). Default '' (uses the post title).
+ *     @type string $cap      Optional mono corner caption. Default ''.
+ * }
+ * @return string Container markup.
+ */
+function nb_featured_media( int $post_id, array $args = array() ): string {
+	$defaults = array(
+		'ratio'   => '4/5',
+		'world'   => '',
+		'size'    => 'large',
+		'class'   => '',
+		'subject' => '',
+		'cap'     => '',
+	);
+	$args  = array_merge( $defaults, $args );
+	$world = in_array( $args['world'], array( 'soil', 'know', 'code' ), true ) ? $args['world'] : '';
+
+	$has_thumb = has_post_thumbnail( $post_id );
+
+	$classes = array( 'img-ph' );
+	if ( ! $has_thumb ) {
+		$classes[] = 'clean';
+		if ( $world ) {
+			$classes[] = $world;
+		}
+	}
+	if ( '' !== $args['class'] ) {
+		$classes[] = $args['class'];
+	}
+
+	$style = 'aspect-ratio:' . esc_attr( str_replace( '/', ' / ', $args['ratio'] ) ) . ';';
+	$html  = '<div class="' . esc_attr( implode( ' ', $classes ) ) . '" style="' . $style . '">';
+
+	if ( $has_thumb ) {
+		$html .= get_the_post_thumbnail(
+			$post_id,
+			$args['size'],
+			array(
+				'loading' => 'lazy',
+				'alt'     => esc_attr( get_the_title( $post_id ) ),
+			)
+		);
+	} else {
+		$subject = '' !== $args['subject'] ? $args['subject'] : get_the_title( $post_id );
+		if ( '' !== $subject ) {
+			$html .= '<span class="img-subj">' . esc_html( $subject ) . '</span>';
+		}
+	}
+
+	if ( '' !== $args['cap'] ) {
+		$html .= '<span class="cap">' . esc_html( $args['cap'] ) . '</span>';
+	}
+
+	$html .= '</div>';
+	return $html;
+}

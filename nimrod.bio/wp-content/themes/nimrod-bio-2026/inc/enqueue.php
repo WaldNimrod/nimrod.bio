@@ -20,11 +20,22 @@ add_action(
 			NB_THEME_VERSION
 		);
 
+		// components.css - shared design-language components (type tokens, .wc,
+		// .stage-stamp, .nb-card, .img-ph, .nb-emblem). Depends on tokens; loads
+		// BEFORE template styles (nb-t7 etc.) so templates can override. Shared,
+		// so enqueue globally. (P009-WP003 B1.)
+		wp_enqueue_style(
+			'nb-components',
+			NB_THEME_URI . '/assets/css/components.css',
+			array( 'nb-system' ),
+			NB_THEME_VERSION
+		);
+
 		// shell.css - global nav + footer (always).
 		wp_enqueue_style(
 			'nb-shell',
 			NB_THEME_URI . '/assets/css/shell.css',
-			array( 'nb-system' ),
+			array( 'nb-system', 'nb-components' ),
 			NB_THEME_VERSION
 		);
 
@@ -41,6 +52,34 @@ add_action(
 		wp_enqueue_script(
 			'nb-nav-drawer',
 			NB_THEME_URI . '/assets/js/nav-drawer.js',
+			array(),
+			NB_THEME_VERSION,
+			array(
+				'strategy'  => 'defer',
+				'in_footer' => true,
+			)
+		);
+
+		// nb-nav-atop.js - hero-aware nav transparency (toggles .atop on
+		// .shell-nav while the .hero-poster is in view). Global: no-ops on
+		// pages without a hero poster. (P009-WP003 B1.)
+		wp_enqueue_script(
+			'nb-nav-atop',
+			NB_THEME_URI . '/assets/js/nb-nav-atop.js',
+			array(),
+			NB_THEME_VERSION,
+			array(
+				'strategy'  => 'defer',
+				'in_footer' => true,
+			)
+		);
+
+		// nb-carousel.js - horizontal scroll-snap carousels (Services/Projects;
+		// consumed by a later increment). Defer/footer; harmless when no
+		// carousel is present. (P009-WP003 B1.)
+		wp_enqueue_script(
+			'nb-carousel',
+			NB_THEME_URI . '/assets/js/nb-carousel.js',
 			array(),
 			NB_THEME_VERSION,
 			array(

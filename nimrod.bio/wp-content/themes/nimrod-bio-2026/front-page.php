@@ -4,58 +4,129 @@
  */
 defined( 'ABSPATH' ) || exit;
 get_header();
+
+// Inline the IconPark <symbol> sprite once so <use href="#ip-*"> resolves
+// across the page (hero + world cards). (P009-WP003 B1.)
+require NB_THEME_DIR . '/assets/icons/icon-sprite.php';
 ?>
 
-<section class="t7 t7-hero hero-statement">
-	<div class="t7-wrap">
-		<div class="hero-statement">
-			<div class="grid">
-				<div>
-					<h1>
-						פיזיקה, אקולוגיה, קוד וחקלאות —
-						<em>אותה מערכת.</em>
-						שלוש זרועות, <span class="spark">3×</span> חיבורים.
-					</h1>
-					<p class="lede">
-						החממה ההידרופונית מזינה את הייעוץ. הייעוץ מקודד ל-SFA. SFA חוזרת לשטח של חוות אחרות. CDIP — Cross-Domain Isomorphism Perception — לא מטאפורה, עיקרון עבודה.
-					</p>
-					<div class="meta-row">
-						<span><b>4</b> חממות · ייעוץ</span>
-						<span><b>1</b> חקלאות · קומון</span>
-						<span><b>1</b> SFA · קוד</span>
+<?php
+/* ── HERO POSTER (README §2) — full-bleed photo + dual scrim, content at start. ── */
+?>
+<section class="hero-poster">
+	<div class="hp-bg">
+		<img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/hero-poster.jpeg' ); ?>" alt="" fetchpriority="high" decoding="async">
+	</div>
+	<div class="hp-scrim" aria-hidden="true"></div>
+	<div class="hp-scrim hp-scrim-bottom" aria-hidden="true"></div>
+	<div class="hp-content">
+		<div class="t7-wrap">
+			<div class="hp-inner">
+				<p class="hp-eyebrow">
+					<span class="hp-eyebrow-name">נמרוד ולד</span>
+					<span>· אותה מערכת</span>
+					<span class="hp-spark" aria-hidden="true">
+						<?php require NB_THEME_DIR . '/assets/icons/spark.svg'; ?>
+					</span>
+				</p>
+				<h1 class="poster-h1">
+					<span class="pw pw-soil"><i class="pw-dot" aria-hidden="true"></i>אדמה</span>
+					<span class="pw pw-know"><i class="pw-dot" aria-hidden="true"></i>ידע</span>
+					<span class="pw pw-code"><i class="pw-dot" aria-hidden="true"></i>דיגיטל</span>
+				</h1>
+				<p class="hp-tagline">שלוש זרועות, שורש אחד. הייחוד הוא בחיבורים — שלושה גשרים שמנצחים את האנטרופיה.</p>
+				<div class="hero-foot">
+					<div class="hp-kicker">
+						<span class="kc"><b>4</b> חממות · ייעוץ</span>
+						<span class="kc"><b>1</b> חקלאות · קומון</span>
+						<span class="kc"><b>3×</b> גשרים</span>
 					</div>
-				</div>
-				<div class="diagram-wrap">
-					<svg viewBox="0 0 320 280" aria-hidden="true">
-						<circle cx="100" cy="100" r="60" fill="none" stroke="var(--w-soil-deep)" stroke-width="2"/>
-						<circle cx="220" cy="100" r="60" fill="none" stroke="var(--w-know-deep)" stroke-width="2"/>
-						<circle cx="160" cy="190" r="60" fill="none" stroke="var(--w-code-deep)" stroke-width="2"/>
-						<text x="64" y="60" font-family="Frank Ruhl Libre" font-size="16" font-weight="700" fill="var(--w-soil-deep)">אדמה</text>
-						<text x="216" y="60" font-family="Frank Ruhl Libre" font-size="16" font-weight="700" fill="var(--w-know-deep)">ייעוץ</text>
-						<text x="138" y="250" font-family="Frank Ruhl Libre" font-size="16" font-weight="700" fill="var(--w-code-deep)">דיגיטל</text>
-						<circle cx="160" cy="100" r="5" fill="var(--ink)"/>
-						<circle cx="130" cy="150" r="5" fill="var(--ink)"/>
-						<circle cx="190" cy="150" r="5" fill="var(--ink)"/>
-						<circle cx="160" cy="135" r="8" fill="var(--spark)"/>
-						<text x="155" y="139" font-family="JetBrains Mono" font-size="9" font-weight="700" fill="#fff">3×</text>
-					</svg>
+					<div class="hp-cta">
+						<a class="btn btn-primary hp-btn-primary" href="#worlds">העולמות</a>
+						<a class="btn btn-ghost hp-btn-ghost" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">צור קשר</a>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
-<section class="t7-section t7-worlds" aria-labelledby="t7-worlds-title">
+<?php
+/* ── WORLDS (README §3) — negentropy backdrop + intro, then 3 world cards. ── */
+$nb_worlds = array(
+	'soil' => array(
+		'idx'     => '01',
+		'img'     => 'world-soil.jpg',
+		'glyph'   => 'ip-carrot',
+		'title'   => 'אדמה',
+		'tagline' => 'איפה שהאדמה פוגשת ידיים.',
+		'items'   => array(
+			array( 'ip-carrot', 'תוצרת מקצועית · מסעדות' ),
+			array( 'ip-tree', 'BCS · שירותי שטח' ),
+			array( 'ip-greenhouse', 'חממה הידרופונית' ),
+		),
+	),
+	'know' => array(
+		'idx'     => '02',
+		'img'     => 'world-know.jpg',
+		'glyph'   => 'ip-chef',
+		'title'   => 'ייעוץ והוראה',
+		'tagline' => 'איפה שהניסיון הופך לכלי.',
+		'items'   => array(
+			array( 'ip-seedling', 'ייעוץ · הידרופוניקה' ),
+			array( 'ip-leaf', 'ייעוץ · אגרו ו-market garden' ),
+			array( 'ip-chef', 'הוראה מקצועית' ),
+		),
+	),
+	'code' => array(
+		'idx'     => '03',
+		'img'     => 'world-code.jpg',
+		'glyph'   => 'ip-leaf',
+		'title'   => 'דיגיטל',
+		'tagline' => 'איפה שהידע הופך למערכת חיה.',
+		'items'   => array(
+			array( 'ip-shop', 'AOS · SFA · קהילתי' ),
+			array( 'ip-measure', 'tiktrack' ),
+			array( 'ip-greenhouse', 'קואופרטיב חממות' ),
+		),
+	),
+);
+?>
+<section id="worlds" class="t7-section t7-worlds" aria-labelledby="t7-worlds-title">
 	<div class="t7-wrap">
-		<?php echo nb_sec_head( 1, 'העולמות', 'שלוש זרועות · שורש אחד', 'כל זרוע פעילה בפועל. הקישוריות ביניהן היא הייחוד.' ); ?>
+		<div class="worlds-intro">
+			<div class="wi-graphic" aria-hidden="true">
+				<?php require NB_THEME_DIR . '/assets/icons/negentropy.svg'; ?>
+			</div>
+			<div class="wi-col">
+				<p class="wi-eyebrow"><span class="num">01</span><span>העולמות</span></p>
+				<h2 id="t7-worlds-title" class="wi-title">שלוש זרועות · <span class="under">שורש אחד</span></h2>
+				<p class="wi-lede">כל זרוע פעילה בפועל. הקישוריות ביניהן היא הייחוד.</p>
+				<p class="neg-cap"><b>נֶגֶנְטְרוֹפְּיָה</b> · פיזור שהופך לקישוריות — שלושה עולמות, סל אחד</p>
+			</div>
+		</div>
 		<div class="worlds-grid">
-			<?php foreach ( array( 'soil', 'know', 'code' ) as $w ) : ?>
-				<a href="<?php echo esc_url( home_url( "/world/$w/" ) ); ?>" class="world-card world-<?php echo esc_attr( $w ); ?>">
-					<span class="world-name"><?php echo esc_html( nb_world_label( $w ) ); ?></span>
-					<?php
-					$count = nb_query_by_world( 'service', $w, -1 )->found_posts;
-					?>
-					<span class="world-count"><?php echo (int) $count; ?> פעילויות</span>
+			<?php foreach ( $nb_worlds as $w => $wd ) : ?>
+				<a href="<?php echo esc_url( home_url( "/world/$w/" ) ); ?>" class="world-card <?php echo esc_attr( $w ); ?>">
+					<div class="wcard-media">
+						<img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/' . $wd['img'] ); ?>" alt="" loading="lazy" decoding="async">
+						<span class="nb-emblem <?php echo esc_attr( $w ); ?>">
+							<svg class="ip" aria-hidden="true"><use href="#<?php echo esc_attr( $wd['glyph'] ); ?>"/></svg>
+							<span class="em-ic"><svg class="ip" aria-hidden="true"><use href="#<?php echo esc_attr( $wd['glyph'] ); ?>"/></svg></span>
+						</span>
+					</div>
+					<div class="wcard-body">
+						<span class="num"><?php echo esc_html( $wd['idx'] . ' · ' . $w ); ?></span>
+						<h3 class="wcard-title"><?php echo esc_html( $wd['title'] ); ?></h3>
+						<p class="wcard-tagline"><?php echo esc_html( $wd['tagline'] ); ?></p>
+						<ul class="wcard-list">
+							<?php foreach ( $wd['items'] as $it ) : ?>
+								<li><svg class="ip li-ic" aria-hidden="true"><use href="#<?php echo esc_attr( $it[0] ); ?>"/></svg><?php echo esc_html( $it[1] ); ?></li>
+							<?php endforeach; ?>
+						</ul>
+						<?php $count = nb_query_by_world( 'service', $w, -1 )->found_posts; ?>
+						<span class="wcard-more"><?php echo (int) $count; ?> פעילויות</span>
+					</div>
 				</a>
 			<?php endforeach; ?>
 		</div>
