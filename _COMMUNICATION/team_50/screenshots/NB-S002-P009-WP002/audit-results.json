@@ -1,0 +1,995 @@
+{
+  "360": {
+    "home": {
+      "path": "/",
+      "innerWidth": 360,
+      "hScroll": false,
+      "scrollW": 360,
+      "clientW": 360,
+      "dir": "rtl",
+      "adminBar": false,
+      "match640": true,
+      "toggle": "grid",
+      "shell": "none",
+      "fab": "grid",
+      "footerCols": "320px",
+      "smallTargets": [],
+      "overflowEls": [],
+      "inputs": []
+    },
+    "world-soil": {
+      "path": "/world/soil/",
+      "innerWidth": 360,
+      "hScroll": false,
+      "scrollW": 360,
+      "clientW": 360,
+      "dir": "rtl",
+      "adminBar": false,
+      "match640": true,
+      "toggle": "grid",
+      "shell": "none",
+      "fab": "grid",
+      "footerCols": "146px 146px",
+      "smallTargets": [],
+      "overflowEls": [],
+      "inputs": []
+    },
+    "service": {
+      "path": "/services/consulting-hydro/",
+      "innerWidth": 360,
+      "hScroll": false,
+      "scrollW": 360,
+      "clientW": 360,
+      "dir": "rtl",
+      "adminBar": false,
+      "match640": true,
+      "toggle": "grid",
+      "shell": "none",
+      "fab": "grid",
+      "footerCols": "320px",
+      "smallTargets": [],
+      "overflowEls": [],
+      "inputs": []
+    },
+    "project": {
+      "path": "/project/restaurant-supply/",
+      "innerWidth": 360,
+      "hScroll": false,
+      "scrollW": 360,
+      "clientW": 360,
+      "dir": "rtl",
+      "adminBar": false,
+      "match640": true,
+      "toggle": "grid",
+      "shell": "none",
+      "fab": "grid",
+      "footerCols": "320px",
+      "smallTargets": [],
+      "overflowEls": [],
+      "inputs": []
+    },
+    "post": {
+      "path": "/blog/%d7%a4%d7%98%d7%a8%d7%99%d7%95%d7%aa-%d7%99%d7%a2%d7%a8-%d7%91%d7%92%d7%99%d7%a0%d7%94/",
+      "innerWidth": 1044,
+      "hScroll": true,
+      "scrollW": 1044,
+      "clientW": 360,
+      "dir": "rtl",
+      "adminBar": false,
+      "match640": true,
+      "toggle": "grid",
+      "shell": "none",
+      "fab": "grid",
+      "footerCols": "320px",
+      "smallTargets": [],
+      "overflowEls": [
+        {
+          "id": "NAV.shell-nav",
+          "right": 1044,
+          "vw": 360
+        },
+        {
+          "id": "DIV.shell-nav-inner",
+          "right": 1044,
+          "vw": 360
+        },
+        {
+          "id": "A.shell-mark",
+          "right": 1024,
+          "vw": 360
+        },
+        {
+          "id": "SMALL",
+          "right": 939,
+          "vw": 360
+        },
+        {
+          "id": "BUTTON.nav-toggle",
+          "right": 843,
+          "vw": 360
+        }
+      ],
+      "inputs": []
+    },
+    "blog": {
+      "path": "/blog/",
+      "innerWidth": 360,
+      "hScroll": false,
+      "scrollW": 360,
+      "clientW": 360,
+      "dir": "rtl",
+      "adminBar": false,
+      "match640": true,
+      "toggle": "grid",
+      "shell": "none",
+      "fab": "grid",
+      "footerCols": "320px",
+      "smallTargets": [],
+      "overflowEls": [],
+      "inputs": []
+    },
+    "about": {
+      "path": "/about/",
+      "innerWidth": 360,
+      "hScroll": false,
+      "scrollW": 360,
+      "clientW": 360,
+      "dir": "rtl",
+      "adminBar": false,
+      "match640": true,
+      "toggle": "grid",
+      "shell": "none",
+      "fab": "grid",
+      "footerCols": "320px",
+      "smallTargets": [],
+      "overflowEls": [],
+      "inputs": []
+    },
+    "contact": {
+      "path": "/contact/",
+      "innerWidth": 1440,
+      "hScroll": true,
+      "scrollW": 10359,
+      "clientW": 360,
+      "dir": "rtl",
+      "adminBar": false,
+      "match640": true,
+      "toggle": "grid",
+      "shell": "none",
+      "fab": "none",
+      "footerCols": "320px",
+      "smallTargets": [
+        {
+          "cls": "topic-chip soil",
+          "w": 74,
+          "h": 39,
+          "t": "אדמה"
+        },
+        {
+          "cls": "topic-chip know",
+          "w": 103,
+          "h": 39,
+          "t": "ייעוץ והוראה"
+        },
+        {
+          "cls": "topic-chip code",
+          "w": 76,
+          "h": 39,
+          "t": "דיגיטל"
+        }
+      ],
+      "overflowEls": [
+        {
+          "id": "NAV.shell-nav",
+          "right": 1440,
+          "vw": 360
+        },
+        {
+          "id": "DIV.shell-nav-inner",
+          "right": 1440,
+          "vw": 360
+        },
+        {
+          "id": "A.shell-mark",
+          "right": 1420,
+          "vw": 360
+        },
+        {
+          "id": "SMALL",
+          "right": 1335,
+          "vw": 360
+        },
+        {
+          "id": "BUTTON.nav-toggle",
+          "right": 1239,
+          "vw": 360
+        }
+      ],
+      "inputs": [
+        {
+          "id": "nb-contact-name",
+          "fs": 16
+        },
+        {
+          "id": "nb-contact-email",
+          "fs": 16
+        },
+        {
+          "id": "nb-contact-phone",
+          "fs": 16
+        },
+        {
+          "id": "",
+          "fs": 13.3333
+        },
+        {
+          "id": "",
+          "fs": 13.3333
+        },
+        {
+          "id": "",
+          "fs": 13.3333
+        },
+        {
+          "id": "nb-contact-message",
+          "fs": 16
+        }
+      ]
+    }
+  },
+  "414": {
+    "home": {
+      "path": "/",
+      "innerWidth": 414,
+      "hScroll": false,
+      "scrollW": 414,
+      "clientW": 414,
+      "dir": "rtl",
+      "adminBar": false,
+      "match640": true,
+      "toggle": "grid",
+      "shell": "none",
+      "fab": "grid",
+      "footerCols": "374px",
+      "smallTargets": [],
+      "overflowEls": [],
+      "inputs": []
+    },
+    "world-soil": {
+      "path": "/world/soil/",
+      "innerWidth": 414,
+      "hScroll": false,
+      "scrollW": 414,
+      "clientW": 414,
+      "dir": "rtl",
+      "adminBar": false,
+      "match640": true,
+      "toggle": "grid",
+      "shell": "none",
+      "fab": "grid",
+      "footerCols": "173px 173px",
+      "smallTargets": [],
+      "overflowEls": [],
+      "inputs": []
+    },
+    "service": {
+      "path": "/services/consulting-hydro/",
+      "innerWidth": 414,
+      "hScroll": false,
+      "scrollW": 414,
+      "clientW": 414,
+      "dir": "rtl",
+      "adminBar": false,
+      "match640": true,
+      "toggle": "grid",
+      "shell": "none",
+      "fab": "grid",
+      "footerCols": "374px",
+      "smallTargets": [],
+      "overflowEls": [],
+      "inputs": []
+    },
+    "project": {
+      "path": "/project/restaurant-supply/",
+      "innerWidth": 414,
+      "hScroll": false,
+      "scrollW": 414,
+      "clientW": 414,
+      "dir": "rtl",
+      "adminBar": false,
+      "match640": true,
+      "toggle": "grid",
+      "shell": "none",
+      "fab": "grid",
+      "footerCols": "374px",
+      "smallTargets": [],
+      "overflowEls": [],
+      "inputs": []
+    },
+    "post": {
+      "path": "/blog/%d7%a4%d7%98%d7%a8%d7%99%d7%95%d7%aa-%d7%99%d7%a2%d7%a8-%d7%91%d7%92%d7%99%d7%a0%d7%94/",
+      "innerWidth": 1044,
+      "hScroll": true,
+      "scrollW": 1044,
+      "clientW": 414,
+      "dir": "rtl",
+      "adminBar": false,
+      "match640": true,
+      "toggle": "grid",
+      "shell": "none",
+      "fab": "grid",
+      "footerCols": "374px",
+      "smallTargets": [],
+      "overflowEls": [
+        {
+          "id": "NAV.shell-nav",
+          "right": 1044,
+          "vw": 414
+        },
+        {
+          "id": "DIV.shell-nav-inner",
+          "right": 1044,
+          "vw": 414
+        },
+        {
+          "id": "A.shell-mark",
+          "right": 1024,
+          "vw": 414
+        },
+        {
+          "id": "SMALL",
+          "right": 939,
+          "vw": 414
+        },
+        {
+          "id": "BUTTON.nav-toggle",
+          "right": 843,
+          "vw": 414
+        }
+      ],
+      "inputs": []
+    },
+    "blog": {
+      "path": "/blog/",
+      "innerWidth": 414,
+      "hScroll": false,
+      "scrollW": 414,
+      "clientW": 414,
+      "dir": "rtl",
+      "adminBar": false,
+      "match640": true,
+      "toggle": "grid",
+      "shell": "none",
+      "fab": "grid",
+      "footerCols": "374px",
+      "smallTargets": [],
+      "overflowEls": [],
+      "inputs": []
+    },
+    "about": {
+      "path": "/about/",
+      "innerWidth": 414,
+      "hScroll": false,
+      "scrollW": 414,
+      "clientW": 414,
+      "dir": "rtl",
+      "adminBar": false,
+      "match640": true,
+      "toggle": "grid",
+      "shell": "none",
+      "fab": "grid",
+      "footerCols": "374px",
+      "smallTargets": [],
+      "overflowEls": [],
+      "inputs": []
+    },
+    "contact": {
+      "path": "/contact/",
+      "innerWidth": 1656,
+      "hScroll": true,
+      "scrollW": 10413,
+      "clientW": 414,
+      "dir": "rtl",
+      "adminBar": false,
+      "match640": true,
+      "toggle": "grid",
+      "shell": "none",
+      "fab": "none",
+      "footerCols": "374px",
+      "smallTargets": [
+        {
+          "cls": "topic-chip soil",
+          "w": 74,
+          "h": 39,
+          "t": "אדמה"
+        },
+        {
+          "cls": "topic-chip know",
+          "w": 103,
+          "h": 39,
+          "t": "ייעוץ והוראה"
+        },
+        {
+          "cls": "topic-chip code",
+          "w": 76,
+          "h": 39,
+          "t": "דיגיטל"
+        }
+      ],
+      "overflowEls": [
+        {
+          "id": "NAV.shell-nav",
+          "right": 1656,
+          "vw": 414
+        },
+        {
+          "id": "DIV.shell-nav-inner",
+          "right": 1656,
+          "vw": 414
+        },
+        {
+          "id": "A.shell-mark",
+          "right": 1636,
+          "vw": 414
+        },
+        {
+          "id": "SMALL",
+          "right": 1551,
+          "vw": 414
+        },
+        {
+          "id": "BUTTON.nav-toggle",
+          "right": 1455,
+          "vw": 414
+        }
+      ],
+      "inputs": [
+        {
+          "id": "nb-contact-name",
+          "fs": 16
+        },
+        {
+          "id": "nb-contact-email",
+          "fs": 16
+        },
+        {
+          "id": "nb-contact-phone",
+          "fs": 16
+        },
+        {
+          "id": "",
+          "fs": 13.3333
+        },
+        {
+          "id": "",
+          "fs": 13.3333
+        },
+        {
+          "id": "",
+          "fs": 13.3333
+        },
+        {
+          "id": "nb-contact-message",
+          "fs": 16
+        }
+      ]
+    }
+  },
+  "768": {
+    "home": {
+      "path": "/",
+      "innerWidth": 768,
+      "hScroll": false,
+      "scrollW": 768,
+      "clientW": 768,
+      "dir": "rtl",
+      "adminBar": false,
+      "match640": false,
+      "toggle": "none",
+      "shell": "flex",
+      "fab": "grid",
+      "footerCols": "335.281px 335.281px",
+      "smallTargets": [
+        {
+          "cls": "nav-home",
+          "w": 32,
+          "h": 32,
+          "t": ""
+        },
+        {
+          "cls": "nav-world soil",
+          "w": 53,
+          "h": 37,
+          "t": "אדמה"
+        },
+        {
+          "cls": "nav-world know",
+          "w": 89,
+          "h": 37,
+          "t": "ייעוץ והוראה"
+        },
+        {
+          "cls": "nav-world code",
+          "w": 56,
+          "h": 37,
+          "t": "דיגיטל"
+        },
+        {
+          "cls": "A",
+          "w": 22,
+          "h": 35,
+          "t": "בלוג"
+        },
+        {
+          "cls": "A",
+          "w": 47,
+          "h": 35,
+          "t": "על נמרוד"
+        },
+        {
+          "cls": "contact",
+          "w": 42,
+          "h": 35,
+          "t": "צור קשר"
+        }
+      ],
+      "overflowEls": [],
+      "inputs": []
+    },
+    "world-soil": {
+      "path": "/world/soil/",
+      "innerWidth": 768,
+      "hScroll": false,
+      "scrollW": 768,
+      "clientW": 768,
+      "dir": "rtl",
+      "adminBar": false,
+      "match640": false,
+      "toggle": "none",
+      "shell": "flex",
+      "fab": "grid",
+      "footerCols": "335.281px 335.281px",
+      "smallTargets": [
+        {
+          "cls": "nav-home",
+          "w": 32,
+          "h": 32,
+          "t": ""
+        },
+        {
+          "cls": "nav-world soil is-active",
+          "w": 53,
+          "h": 37,
+          "t": "אדמה"
+        },
+        {
+          "cls": "nav-world know",
+          "w": 89,
+          "h": 37,
+          "t": "ייעוץ והוראה"
+        },
+        {
+          "cls": "nav-world code",
+          "w": 56,
+          "h": 37,
+          "t": "דיגיטל"
+        },
+        {
+          "cls": "A",
+          "w": 22,
+          "h": 35,
+          "t": "בלוג"
+        },
+        {
+          "cls": "A",
+          "w": 47,
+          "h": 35,
+          "t": "על נמרוד"
+        },
+        {
+          "cls": "contact",
+          "w": 70,
+          "h": 37,
+          "t": "צור קשר"
+        }
+      ],
+      "overflowEls": [],
+      "inputs": []
+    },
+    "service": {
+      "path": "/services/consulting-hydro/",
+      "innerWidth": 768,
+      "hScroll": false,
+      "scrollW": 768,
+      "clientW": 768,
+      "dir": "rtl",
+      "adminBar": false,
+      "match640": false,
+      "toggle": "none",
+      "shell": "flex",
+      "fab": "grid",
+      "footerCols": "335.281px 335.281px",
+      "smallTargets": [
+        {
+          "cls": "nav-home",
+          "w": 32,
+          "h": 32,
+          "t": ""
+        },
+        {
+          "cls": "nav-world soil",
+          "w": 53,
+          "h": 37,
+          "t": "אדמה"
+        },
+        {
+          "cls": "nav-world know",
+          "w": 89,
+          "h": 37,
+          "t": "ייעוץ והוראה"
+        },
+        {
+          "cls": "nav-world code",
+          "w": 56,
+          "h": 37,
+          "t": "דיגיטל"
+        },
+        {
+          "cls": "A",
+          "w": 22,
+          "h": 35,
+          "t": "בלוג"
+        },
+        {
+          "cls": "A",
+          "w": 47,
+          "h": 35,
+          "t": "על נמרוד"
+        },
+        {
+          "cls": "contact",
+          "w": 42,
+          "h": 35,
+          "t": "צור קשר"
+        }
+      ],
+      "overflowEls": [],
+      "inputs": []
+    },
+    "project": {
+      "path": "/project/restaurant-supply/",
+      "innerWidth": 768,
+      "hScroll": false,
+      "scrollW": 768,
+      "clientW": 768,
+      "dir": "rtl",
+      "adminBar": false,
+      "match640": false,
+      "toggle": "none",
+      "shell": "flex",
+      "fab": "grid",
+      "footerCols": "335.281px 335.281px",
+      "smallTargets": [
+        {
+          "cls": "nav-home",
+          "w": 32,
+          "h": 32,
+          "t": ""
+        },
+        {
+          "cls": "nav-world soil",
+          "w": 53,
+          "h": 37,
+          "t": "אדמה"
+        },
+        {
+          "cls": "nav-world know",
+          "w": 89,
+          "h": 37,
+          "t": "ייעוץ והוראה"
+        },
+        {
+          "cls": "nav-world code",
+          "w": 56,
+          "h": 37,
+          "t": "דיגיטל"
+        },
+        {
+          "cls": "A",
+          "w": 22,
+          "h": 35,
+          "t": "בלוג"
+        },
+        {
+          "cls": "A",
+          "w": 47,
+          "h": 35,
+          "t": "על נמרוד"
+        },
+        {
+          "cls": "contact",
+          "w": 42,
+          "h": 35,
+          "t": "צור קשר"
+        }
+      ],
+      "overflowEls": [],
+      "inputs": []
+    },
+    "post": {
+      "path": "/blog/%d7%a4%d7%98%d7%a8%d7%99%d7%95%d7%aa-%d7%99%d7%a2%d7%a8-%d7%91%d7%92%d7%99%d7%a0%d7%94/",
+      "innerWidth": 768,
+      "hScroll": true,
+      "scrollW": 1055,
+      "clientW": 768,
+      "dir": "rtl",
+      "adminBar": false,
+      "match640": false,
+      "toggle": "none",
+      "shell": "flex",
+      "fab": "grid",
+      "footerCols": "335.281px 335.281px",
+      "smallTargets": [
+        {
+          "cls": "nav-home",
+          "w": 32,
+          "h": 32,
+          "t": ""
+        },
+        {
+          "cls": "nav-world soil",
+          "w": 53,
+          "h": 37,
+          "t": "אדמה"
+        },
+        {
+          "cls": "nav-world know",
+          "w": 89,
+          "h": 37,
+          "t": "ייעוץ והוראה"
+        },
+        {
+          "cls": "nav-world code",
+          "w": 56,
+          "h": 37,
+          "t": "דיגיטל"
+        },
+        {
+          "cls": "A",
+          "w": 22,
+          "h": 35,
+          "t": "בלוג"
+        },
+        {
+          "cls": "A",
+          "w": 47,
+          "h": 35,
+          "t": "על נמרוד"
+        },
+        {
+          "cls": "contact",
+          "w": 42,
+          "h": 35,
+          "t": "צור קשר"
+        }
+      ],
+      "overflowEls": [],
+      "inputs": []
+    },
+    "blog": {
+      "path": "/blog/",
+      "innerWidth": 768,
+      "hScroll": false,
+      "scrollW": 768,
+      "clientW": 768,
+      "dir": "rtl",
+      "adminBar": false,
+      "match640": false,
+      "toggle": "none",
+      "shell": "flex",
+      "fab": "grid",
+      "footerCols": "335.281px 335.281px",
+      "smallTargets": [
+        {
+          "cls": "nav-home",
+          "w": 32,
+          "h": 32,
+          "t": ""
+        },
+        {
+          "cls": "nav-world soil",
+          "w": 53,
+          "h": 37,
+          "t": "אדמה"
+        },
+        {
+          "cls": "nav-world know",
+          "w": 89,
+          "h": 37,
+          "t": "ייעוץ והוראה"
+        },
+        {
+          "cls": "nav-world code",
+          "w": 56,
+          "h": 37,
+          "t": "דיגיטל"
+        },
+        {
+          "cls": "A",
+          "w": 22,
+          "h": 35,
+          "t": "בלוג"
+        },
+        {
+          "cls": "A",
+          "w": 47,
+          "h": 35,
+          "t": "על נמרוד"
+        },
+        {
+          "cls": "contact",
+          "w": 42,
+          "h": 35,
+          "t": "צור קשר"
+        }
+      ],
+      "overflowEls": [],
+      "inputs": []
+    },
+    "about": {
+      "path": "/about/",
+      "innerWidth": 768,
+      "hScroll": false,
+      "scrollW": 768,
+      "clientW": 768,
+      "dir": "rtl",
+      "adminBar": false,
+      "match640": false,
+      "toggle": "none",
+      "shell": "flex",
+      "fab": "grid",
+      "footerCols": "335.281px 335.281px",
+      "smallTargets": [
+        {
+          "cls": "nav-home",
+          "w": 32,
+          "h": 32,
+          "t": ""
+        },
+        {
+          "cls": "nav-world soil",
+          "w": 53,
+          "h": 37,
+          "t": "אדמה"
+        },
+        {
+          "cls": "nav-world know",
+          "w": 89,
+          "h": 37,
+          "t": "ייעוץ והוראה"
+        },
+        {
+          "cls": "nav-world code",
+          "w": 56,
+          "h": 37,
+          "t": "דיגיטל"
+        },
+        {
+          "cls": "A",
+          "w": 22,
+          "h": 35,
+          "t": "בלוג"
+        },
+        {
+          "cls": "A",
+          "w": 47,
+          "h": 35,
+          "t": "על נמרוד"
+        },
+        {
+          "cls": "contact",
+          "w": 42,
+          "h": 35,
+          "t": "צור קשר"
+        }
+      ],
+      "overflowEls": [],
+      "inputs": []
+    },
+    "contact": {
+      "path": "/contact/",
+      "innerWidth": 768,
+      "hScroll": true,
+      "scrollW": 10767,
+      "clientW": 768,
+      "dir": "rtl",
+      "adminBar": false,
+      "match640": false,
+      "toggle": "none",
+      "shell": "flex",
+      "fab": "none",
+      "footerCols": "335.281px 335.281px",
+      "smallTargets": [
+        {
+          "cls": "nav-home",
+          "w": 32,
+          "h": 32,
+          "t": ""
+        },
+        {
+          "cls": "nav-world soil",
+          "w": 53,
+          "h": 37,
+          "t": "אדמה"
+        },
+        {
+          "cls": "nav-world know",
+          "w": 89,
+          "h": 37,
+          "t": "ייעוץ והוראה"
+        },
+        {
+          "cls": "nav-world code",
+          "w": 56,
+          "h": 37,
+          "t": "דיגיטל"
+        },
+        {
+          "cls": "A",
+          "w": 22,
+          "h": 35,
+          "t": "בלוג"
+        },
+        {
+          "cls": "A",
+          "w": 47,
+          "h": 35,
+          "t": "על נמרוד"
+        },
+        {
+          "cls": "contact",
+          "w": 42,
+          "h": 35,
+          "t": "צור קשר"
+        },
+        {
+          "cls": "topic-chip soil",
+          "w": 74,
+          "h": 35,
+          "t": "אדמה"
+        }
+      ],
+      "overflowEls": [],
+      "inputs": [
+        {
+          "id": "nb-contact-name",
+          "fs": 15
+        },
+        {
+          "id": "nb-contact-email",
+          "fs": 15
+        },
+        {
+          "id": "nb-contact-phone",
+          "fs": 15
+        },
+        {
+          "id": "",
+          "fs": 13.3333
+        },
+        {
+          "id": "",
+          "fs": 13.3333
+        },
+        {
+          "id": "",
+          "fs": 13.3333
+        },
+        {
+          "id": "nb-contact-message",
+          "fs": 15
+        }
+      ]
+    }
+  }
+}

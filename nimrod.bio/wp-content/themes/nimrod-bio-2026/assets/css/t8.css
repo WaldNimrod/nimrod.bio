@@ -731,3 +731,21 @@ fieldset.topic-chips legend {
   .media-item:active { transform: scale(0.98); }
   .media-item:hover { transform: none; } /* neutralize desktop translateY on touch */
 }
+
+/* ===== MOBILE FIX PASS — P009-WP002 (team_50 device-check D2/D3) ===== */
+/* D2: honeypot used left:-9999px → inflated document scrollWidth (~10k) on contact,
+   tripping M15. Append-only override to a scroll-safe visually-hidden pattern
+   (field stays in DOM + hidden from humans → honeypot still works for bots). */
+.hp-field {
+  left: auto;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+  white-space: nowrap;
+}
+
+/* D3: topic chips were min-height:36px (spec §9) but §1.3 + M16 require 44×44 touch.
+   Accessibility (M16/§1.3) wins over §9's 36px. */
+@media (max-width: 760px) {
+  .topic-chip { min-height: 44px; }
+}

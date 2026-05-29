@@ -5,7 +5,7 @@
 defined( 'ABSPATH' ) || exit;
 
 // Constants
-define( 'NB_THEME_VERSION', '0.5.0' );
+define( 'NB_THEME_VERSION', '0.5.1' );
 define( 'NB_THEME_DIR', get_template_directory() );
 define( 'NB_THEME_URI', get_template_directory_uri() );
 
