@@ -6,8 +6,12 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 
 // Inline the IconPark <symbol> sprite once so <use href="#ip-*"> resolves
-// across the page (hero + world cards). (P009-WP003 B1.)
-require NB_THEME_DIR . '/assets/icons/icon-sprite.php';
+// across the page (hero + world cards). (P009-WP003 B1.) Guard so the
+// site-wide footer strip (shell-footer.php) does not double-include it.
+if ( ! defined( 'NB_ICON_SPRITE_DONE' ) ) {
+	define( 'NB_ICON_SPRITE_DONE', true );
+	require NB_THEME_DIR . '/assets/icons/icon-sprite.php';
+}
 ?>
 
 <?php
@@ -299,98 +303,137 @@ $nb_bridges = array(
 	</div>
 </aside>
 
+<?php
+/* ── PROJECTS (README §8) — horizontal scroll-snap carousel of case studies. ──
+ * Pull live `project` CPT entries; if fewer than the carousel needs, fall back
+ * to the team_35 mockup roster so the section is never thin. (P009-WP003 B3.)
+ */
+$nb_proj_fallback = array(
+	array( 'wide-field-2.jpeg', 'venture', 'seeking-partners', 'קואופרטיב חממות · השרון', 'מודל שיתופי לחממות קטנות באזור השרון.', 'אדמה × דיגיטל' ),
+	array( 'farm-a.jpg', 'client', 'live', 'חממת מסעדת X', 'תכנון והקמת חממה הידרופונית במטבח מסעדה.', 'אדמה' ),
+	array( 'products.jpeg', 'venture', 'legacy', 'סלי משפחה', '2019–23 · הבסיס למה שיש היום.', 'אדמה' ),
+	array( 'farm-a.jpg', 'venture', 'seeking-partners', 'ישראל מיקרו־גרין', 'מיקרו־גרין מסחרי · פיילוט גדל.', 'אדמה × דיגיטל' ),
+	array( 'wide-field-2.jpeg', 'client', 'live', 'שדה השרון · market garden', 'תכנון וליווי גידול לאורך עונה.', 'אדמה × ידע' ),
+	array( 'greenhouse-1.jpg', 'venture', 'legacy', 'הגינה הראשונה', 'איפה שהכול התחיל · מורשת.', 'אדמה' ),
+);
+$nb_projects = new WP_Query(
+	array(
+		'post_type'      => 'project',
+		'posts_per_page' => 6,
+		'post_status'    => 'publish',
+		'orderby'        => 'date',
+		'order'          => 'DESC',
+	)
+);
+$nb_use_cpt = $nb_projects->found_posts >= 3;
+?>
 <section class="t7-section t7-projects">
 	<div class="t7-wrap">
-		<?php echo nb_sec_head( 2, 'פרויקטים', 'בנו · מבנים · מחפשים', 'פרויקטים שמראים את הקישוריות בפעולה.' ); ?>
-		<div class="projects-grid">
-			<?php
-			$featured = new WP_Query(
-				array(
-					'post_type'      => 'project',
-					'posts_per_page' => 3,
-					'post_status'    => 'publish',
-					'meta_query'     => array(
-						'relation' => 'AND',
-						array(
-							'key'     => '_nb_stage',
-							'value'   => array( 'live', 'seeking-partners' ),
-							'compare' => 'IN',
-						),
-						array(
-							'key'   => '_nb_scope',
-							'value' => 'own-venture',
-						),
-					),
-					'orderby'        => 'date',
-					'order'          => 'DESC',
-				)
-			);
-			while ( $featured->have_posts() ) :
-				$featured->the_post();
-				$stage = nb_meta( get_the_ID(), 'stage' );
-				?>
-				<a class="proj-card" href="<?php the_permalink(); ?>">
-					<?php if ( has_post_thumbnail() ) : ?>
-						<?php the_post_thumbnail( 'large' ); ?>
-					<?php endif; ?>
-					<?php echo nb_stage_stamp( $stage ); ?>
-					<h3><?php the_title(); ?></h3>
-					<p><?php echo esc_html( nb_meta( get_the_ID(), 'summary' ) ); ?></p>
-				</a>
-			<?php endwhile; ?>
-			<?php wp_reset_postdata(); ?>
+		<header class="t7-sec-head">
+			<p class="t7-eyebrow"><span class="num">05</span><span>פרויקטים</span></p>
+			<h2 class="t7-sec-title">פרויקטים · <span class="under">מהשטח</span></h2>
+			<p class="t7-sec-lede">מקרים שמספרים את התזה — לקוחות ומיזמים שהקישוריות הפעילה אותם.</p>
+		</header>
+		<div class="projects-row">
+			<?php if ( $nb_use_cpt ) : ?>
+				<?php
+				while ( $nb_projects->have_posts() ) :
+					$nb_projects->the_post();
+					$nb_pid   = get_the_ID();
+					$nb_scope = nb_meta( $nb_pid, 'scope' ) === 'client-case' ? 'client' : 'venture';
+					$nb_stage = nb_meta( $nb_pid, 'stage' );
+					$nb_world = nb_meta( $nb_pid, 'world_label' );
+					?>
+					<a class="proj-card" href="<?php the_permalink(); ?>">
+						<?php echo nb_featured_media( $nb_pid, array( 'ratio' => '16/10', 'class' => 'ph', 'world' => 'soil' ) ); ?>
+						<div class="body">
+							<div class="scope-row">
+								<span class="scope <?php echo esc_attr( $nb_scope ); ?>"><?php echo 'client' === $nb_scope ? 'client-case' : 'own-venture'; ?></span>
+								<?php echo nb_stage_stamp( $nb_stage ); ?>
+							</div>
+							<h3><?php the_title(); ?></h3>
+							<p><?php echo esc_html( nb_meta( $nb_pid, 'summary' ) ); ?></p>
+							<?php if ( $nb_world ) : ?><div class="meta"><span><?php echo esc_html( $nb_world ); ?></span></div><?php endif; ?>
+						</div>
+					</a>
+				<?php endwhile; ?>
+				<?php wp_reset_postdata(); ?>
+			<?php else : ?>
+				<?php
+				wp_reset_postdata();
+				foreach ( $nb_proj_fallback as $p ) :
+					$nb_scope_label = 'client' === $p[1] ? 'client-case' : 'own-venture';
+					?>
+					<a class="proj-card" href="<?php echo esc_url( home_url( '/projects/' ) ); ?>">
+						<div class="img-ph clean ph" style="aspect-ratio:16 / 10;">
+							<img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/' . $p[0] ); ?>" alt="" loading="lazy" decoding="async">
+						</div>
+						<div class="body">
+							<div class="scope-row">
+								<span class="scope <?php echo esc_attr( $p[1] ); ?>"><?php echo esc_html( $nb_scope_label ); ?></span>
+								<?php echo nb_stage_stamp( $p[2] ); ?>
+							</div>
+							<h3><?php echo esc_html( $p[3] ); ?></h3>
+							<p><?php echo esc_html( $p[4] ); ?></p>
+							<div class="meta"><span><?php echo esc_html( $p[5] ); ?></span></div>
+						</div>
+					</a>
+				<?php endforeach; ?>
+			<?php endif; ?>
+		</div>
+		<div class="proj-browse">
+			<button class="pb-arrow" data-dir="1" aria-label="הקודם" type="button">→</button>
+			<button class="pb-arrow" data-dir="-1" aria-label="הבא" type="button">←</button>
+			<a class="proj-more" href="<?php echo esc_url( home_url( '/projects/' ) ); ?>">לכל הפרויקטים ←</a>
 		</div>
 	</div>
 </section>
 
-<aside class="unless-ribbon" role="complementary">
-	<div class="t7-wrap">
-		<p>העולם הוא כזה — <em>אלא אם כן</em>.</p>
-	</div>
-</aside>
-
-<section class="t7-section t7-posts">
-	<div class="t7-wrap">
-		<?php echo nb_sec_head( 3, 'מהבלוג', 'מחשבות שיורדות לאדמה', '' ); ?>
-		<div class="posts-grid posts-grid-4">
-			<?php
-			$recent = new WP_Query(
-				array(
-					'post_type'      => 'post',
-					'posts_per_page' => 4,
-					'post_status'    => 'publish',
-					'meta_query'     => array(
-						array(
-							'key'   => '_nb_seed',
-							'value' => 'v200-migrated',
-						),
-					),
-					'orderby'        => 'date',
-					'order'          => 'DESC',
-				)
-			);
-			while ( $recent->have_posts() ) :
-				$recent->the_post();
-				?>
-				<a class="post-card post-square" href="<?php the_permalink(); ?>">
-					<?php if ( has_post_thumbnail() ) : ?>
-						<?php the_post_thumbnail( 'medium' ); ?>
-					<?php endif; ?>
-					<h4><?php the_title(); ?></h4>
-				</a>
-			<?php endwhile; ?>
-			<?php wp_reset_postdata(); ?>
+<?php
+/* ── MANIFESTO (README §9) — dark band; portrait + basket emblem + watermark. ── */
+?>
+<section class="manifesto">
+	<div class="mf-bg" aria-hidden="true"><img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/basket-paper.png' ); ?>" alt="" loading="lazy" decoding="async"></div>
+	<div class="t7-wrap mf-grid">
+		<div class="mf-media">
+			<img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/why-morning.jpg' ); ?>" alt="נימרוד בחממה" loading="lazy" decoding="async">
+			<span class="mf-emblem"><img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/basket-paper.png' ); ?>" alt="" loading="lazy" decoding="async"></span>
+		</div>
+		<div class="mf-text">
+			<p class="t7-eyebrow light"><span class="num">המניפסט</span><span>· נימרוד</span></p>
+			<h2>למה אנחנו קמים <em>בבוקר?</em></h2>
+			<p>כי <b>קטן זה יפה</b> — וזה שפוי. חווה, ייעוץ ומערכת תוכנה הם אותו דבר שלובש צורות שונות: ניתוח של מערכת מורכבת, וניהול שלה לאורך זמן.</p>
+			<p>הגלגולים התעסוקתיים שלי הם גלגולים בתוך חיים אחד — שדה שהפך לידע, שהפך לקוד, וחוזר לשדה. <em>אלא אם כן</em> מחברים — פיזור נשאר פיזור. הגשרים הם הדרך שבה אנטרופיה הופכת לסדר, לידע, ולמשהו שאפשר להחזיק ביד.</p>
 		</div>
 	</div>
 </section>
 
+<?php
+/* ── FINAL CTA (README §10) — light band, 4 small per-world path cards. ── */
+$nb_paths = array(
+	array( 'know', 'ip-chef', 'פנייה ראשונה', 'בואו נדבר', 'שיחת היכרות בלי התחייבות.', 'צור קשר · WhatsApp', home_url( '/contact/' ), false ),
+	array( 'code', 'ip-shop', 'המערכת', 'כנסו ל־SFA', 'קהילתית, פתוחה, מהשטח.', 'כנס למערכת', 'https://sfa.nimrod.bio/', true ),
+	array( 'code', 'ip-measure', 'כלי', 'tiktrack', 'יומן מסחר → כלי חינוכי.', 'לפרויקט', home_url( '/project/tiktrack/' ), false ),
+	array( 'soil', 'ip-seedling', 'ליווי', 'ייעוץ לחוות קטנות', 'תכנון, הקמה וליווי בשטח.', 'לשירותי הייעוץ', home_url( '/world/soil/' ), false ),
+);
+?>
 <section class="t7-section final-cta">
 	<div class="t7-wrap">
-		<h2>איך אפשר להתחיל?</h2>
+		<header class="head">
+			<p class="t7-eyebrow"><span class="num">07</span><span>צעד ראשון</span></p>
+			<h2>איך אפשר <em>להתחיל</em>?</h2>
+			<p class="intro">בחרו את הקצב — שיחה, מערכת, או ליווי בשטח.</p>
+		</header>
 		<div class="cta-paths">
-			<a class="btn btn-primary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">צור קשר</a>
-			<a class="btn btn-secondary" href="<?php echo esc_url( home_url( '/project/sfa/' ) ); ?>">ראה פרויקט SFA</a>
-				<a class="btn btn-spark" href="https://sfa.nimrod.bio/" target="_blank" rel="noopener">כנס למערכת →</a>
+			<?php foreach ( $nb_paths as $pa ) : ?>
+				<a class="cta-path <?php echo esc_attr( $pa[0] ); ?>" href="<?php echo esc_url( $pa[6] ); ?>"<?php echo $pa[7] ? ' target="_blank" rel="noopener"' : ''; ?>>
+					<svg class="ci ip" aria-hidden="true"><use href="#<?php echo esc_attr( $pa[1] ); ?>"/></svg>
+					<span class="label"><?php echo esc_html( $pa[2] ); ?></span>
+					<h3><?php echo esc_html( $pa[3] ); ?></h3>
+					<p><?php echo esc_html( $pa[4] ); ?></p>
+					<span class="action"><?php echo esc_html( $pa[5] ); ?></span>
+				</a>
+			<?php endforeach; ?>
 		</div>
 	</div>
 </section>

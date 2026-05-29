@@ -150,6 +150,22 @@
 }
 .shell-foot .bottom .unless em { color: var(--spark); font-style: normal; font-weight: 700; }
 
+/* === footer garden-series glyph strip (P009-WP003 B3, team_35 §11) === */
+.shell-foot .series-strip {
+  display: flex; justify-content: center; align-items: center;
+  gap: clamp(18px, 4vw, 44px);
+  padding-bottom: 30px; margin-bottom: 32px;
+  border-bottom: 1px solid rgba(245, 243, 236, .15);
+}
+.shell-foot .series-strip .ip {
+  width: 26px; height: 26px; color: rgba(245, 243, 236, .5);
+  transition: color .15s, transform .3s cubic-bezier(.34, 1.56, .64, 1);
+}
+.shell-foot .series-strip .ip:hover { color: rgba(245, 243, 236, .85); transform: translateY(-3px); }
+@media (max-width: 640px) {
+  .shell-foot .series-strip { gap: 14px; flex-wrap: wrap; }
+}
+
 /* === skip-link + main spacing (theme-local addition, not in design package) === */
 .skip-link.screen-reader-text {
   position: absolute; inset-inline-start: -10000px; top: auto;

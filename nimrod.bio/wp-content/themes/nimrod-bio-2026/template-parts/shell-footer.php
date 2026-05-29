@@ -1,6 +1,25 @@
-<?php defined( 'ABSPATH' ) || exit; ?>
+<?php
+defined( 'ABSPATH' ) || exit;
+
+/* Ensure the IconPark sprite is present for the footer garden-series strip
+ * on every page (front-page.php already inlines it; guard prevents a
+ * double-include there). (P009-WP003 B3.) */
+if ( ! defined( 'NB_ICON_SPRITE_DONE' ) ) {
+	define( 'NB_ICON_SPRITE_DONE', true );
+	require NB_THEME_DIR . '/assets/icons/icon-sprite.php';
+}
+?>
 <footer class="shell-foot">
 	<div class="shell-foot-inner">
+		<div class="series-strip" aria-hidden="true">
+			<svg class="ip"><use href="#ip-seedling"/></svg>
+			<svg class="ip"><use href="#ip-leaf"/></svg>
+			<svg class="ip"><use href="#ip-greenhouse"/></svg>
+			<svg class="ip"><use href="#ip-carrot"/></svg>
+			<svg class="ip"><use href="#ip-scallion"/></svg>
+			<svg class="ip"><use href="#ip-peas"/></svg>
+			<svg class="ip"><use href="#ip-tree"/></svg>
+		</div>
 		<div class="cols">
 			<div class="brand-block">
 				<div class="name">נימרוד ולד</div>
