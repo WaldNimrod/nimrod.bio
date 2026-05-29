@@ -857,8 +857,9 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
 
 /* shared inline-icon sizing for sprite glyphs in this region */
 .hero-poster .ip, .t7-worlds .ip { display: inline-block; width: 1em; height: 1em; }
-.t7-worlds .world-card .nb-emblem .ip { width: 36px; height: 36px; }
-.t7-worlds .world-card .nb-emblem .em-ic .ip { width: 100%; height: 100%; }
+/* emblem = recolored basket PNG (36px) + small content glyph badge (.em-ic) */
+.t7-worlds .world-card .nb-emblem > img { width: 36px; height: 36px; }
+.t7-worlds .world-card .nb-emblem .em-ic { width: 25px; height: 25px; }
 
 /* Reduced-motion: no transform-based motion required (cards still readable). */
 @media (prefers-reduced-motion: reduce) {

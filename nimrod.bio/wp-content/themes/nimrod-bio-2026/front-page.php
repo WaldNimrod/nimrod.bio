@@ -57,6 +57,7 @@ $nb_worlds = array(
 	'soil' => array(
 		'idx'     => '01',
 		'img'     => 'world-soil.jpg',
+		'basket'  => 'basket-soil.png',
 		'glyph'   => 'ip-carrot',
 		'title'   => 'אדמה',
 		'tagline' => 'איפה שהאדמה פוגשת ידיים.',
@@ -69,6 +70,7 @@ $nb_worlds = array(
 	'know' => array(
 		'idx'     => '02',
 		'img'     => 'world-know.jpg',
+		'basket'  => 'basket-know.png',
 		'glyph'   => 'ip-chef',
 		'title'   => 'ייעוץ והוראה',
 		'tagline' => 'איפה שהניסיון הופך לכלי.',
@@ -81,6 +83,7 @@ $nb_worlds = array(
 	'code' => array(
 		'idx'     => '03',
 		'img'     => 'world-code.jpg',
+		'basket'  => 'basket-code.png',
 		'glyph'   => 'ip-leaf',
 		'title'   => 'דיגיטל',
 		'tagline' => 'איפה שהידע הופך למערכת חיה.',
@@ -111,8 +114,8 @@ $nb_worlds = array(
 					<div class="wcard-media">
 						<img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/' . $wd['img'] ); ?>" alt="" loading="lazy" decoding="async">
 						<span class="nb-emblem <?php echo esc_attr( $w ); ?>">
-							<svg class="ip" aria-hidden="true"><use href="#<?php echo esc_attr( $wd['glyph'] ); ?>"/></svg>
-							<span class="em-ic"><svg class="ip" aria-hidden="true"><use href="#<?php echo esc_attr( $wd['glyph'] ); ?>"/></svg></span>
+							<img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/' . $wd['basket'] ); ?>" alt="" loading="lazy" decoding="async">
+							<svg class="em-ic ip" aria-hidden="true"><use href="#<?php echo esc_attr( $wd['glyph'] ); ?>"/></svg>
 						</span>
 					</div>
 					<div class="wcard-body">
