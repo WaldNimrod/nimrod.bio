@@ -38,6 +38,25 @@ function nb_home_icon(): string {
 }
 
 /**
+ * Render a per-world line icon inline (per Precision Mockup §1 — sits next to
+ * each .nav-world label). Inherits color via currentColor so it flips with the
+ * .shell-nav / .shell-nav.atop state. Mirrors assets/icons/world-{slug}.svg.
+ */
+function nb_world_icon( string $slug ): string {
+	$paths = array(
+		'soil' => '<path d="M12 21V11"/><path d="M12 11C12 8 9.5 6 6.5 6C6 9 8.5 11 12 11Z"/><path d="M12 13C12 10.5 14.5 9 17.5 9C18 11.5 15.5 13 12 13Z"/>',
+		'know' => '<path d="M12 8.5C12 7 10.5 6 8 6C6 6 4.5 6.5 4 7V17C4.5 16.5 6 16 8 16C10.5 16 12 17 12 18.5"/><path d="M12 8.5C12 7 13.5 6 16 6C18 6 19.5 6.5 20 7V17C19.5 16.5 18 16 16 16C13.5 16 12 17 12 18.5"/><path d="M12 8.5V18.5"/>',
+		'code' => '<circle cx="6" cy="6" r="2.2"/><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="12" r="2.2"/><path d="M8 7L16 11"/><path d="M8 17L16 13"/>',
+	);
+	if ( ! isset( $paths[ $slug ] ) ) {
+		return '';
+	}
+	return '<svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+		. $paths[ $slug ]
+		. '</svg>';
+}
+
+/**
  * P003 shared helpers (LOD300 §3). WP002 adds nb_get_bridges_for_world.
  */
 

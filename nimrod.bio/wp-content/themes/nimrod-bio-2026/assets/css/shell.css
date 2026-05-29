@@ -6,8 +6,9 @@
 
 .shell-nav {
   position: sticky; top: 0; z-index: 60;
-  background: rgba(245,243,236,.92); backdrop-filter: blur(10px);
+  background: rgba(245,243,236,.94); backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
+  transition: background .25s, border-color .25s;
 }
 .shell-nav-inner {
   max-width: var(--t1-max); margin: 0 auto;
@@ -15,10 +16,12 @@
   display: flex; align-items: center; gap: 28px;
 }
 .shell-mark {
+  display: inline-flex; align-items: center; gap: 9px;
   font-family: "Frank Ruhl Libre", serif;
   font-weight: 900; font-size: 20px; letter-spacing: -.01em;
   color: var(--ink); text-decoration: none;
 }
+.shell-mark .wm { display: inline-flex; align-items: center; color: var(--ink); }
 .shell-mark small {
   display: inline-block; margin-inline-start: 6px;
   font-family: "JetBrains Mono", monospace; font-size: 10px; font-weight: 400;
@@ -169,6 +172,63 @@ h1, h2, h3 {
 h1 { font-size: clamp(36px, 5vw, 56px); }
 h2 { font-size: 28px; line-height: 1.25; font-weight: 600; }
 h3 { font-size: 20px; line-height: 1.30; font-weight: 600; }
+
+/* ===== NAV PRECISION — P009-WP003 =====
+   Heritage basket logo, per-world icons, hero-transparent (.atop) state.
+   Per Precision Mockup README §1. Sits above the WP002 mobile blocks; does
+   NOT touch the drawer / FAB / footer rules below. Icons live inside
+   .shell-links .nav-world, which is display:none ≤640px (WP002), so they
+   never leak into the mobile drawer. */
+
+/* --- Heritage basket logo: two PNGs, one shown per nav state --- */
+.shell-mark .basket {
+  width: 36px; height: 36px; display: block; flex: 0 0 auto;
+}
+.shell-mark .basket-paper { display: none; }   /* solid state: ink basket */
+.shell-nav.atop .shell-mark .basket-ink { display: none; }
+.shell-nav.atop .shell-mark .basket-paper { display: block; }
+
+/* --- Per-world line icon next to each world label --- */
+.shell-links .nav-world {
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.shell-links .nav-world .ico {
+  width: 18px; height: 18px; flex: 0 0 auto; display: block;
+}
+.shell-links .nav-world.soil .ico { color: var(--w-soil-deep); }
+.shell-links .nav-world.know .ico { color: var(--w-know-deep); }
+.shell-links .nav-world.code .ico { color: var(--w-code-deep); }
+/* The icon replaces the legacy dot; suppress the ::before pellet. */
+.shell-links .nav-world::before { display: none; }
+
+/* --- Tablet (≤900px): collapse labels to icons only, keep worlds visible --- */
+@media (max-width: 900px) {
+  .shell-links { gap: 14px; }
+  .shell-links .nav-secondary { display: none; }
+  .shell-links .nav-world span { display: none; }
+  .shell-links .nav-world .ico { width: 22px; height: 22px; }
+}
+
+/* --- .atop : transparent over hero (README §1). JS (nb-nav-atop.js) adds
+       .atop while a .hero-poster is in view; default state is the solid bar. --- */
+.shell-nav.atop {
+  background: rgba(18,17,15,.5);
+  backdrop-filter: blur(6px);
+  border-bottom-color: rgba(245,243,236,.12);
+}
+.shell-nav.atop .shell-mark,
+.shell-nav.atop .shell-mark .wm,
+.shell-nav.atop .nav-world,
+.shell-nav.atop .nav-home,
+.shell-nav.atop .nav-secondary a,
+.shell-nav.atop .shell-links a.contact { color: var(--paper); }
+.shell-nav.atop .nav-world .ico { color: var(--paper); }
+.shell-nav.atop .nav-sep { background: rgba(245,243,236,.45); }
+.shell-nav.atop .nav-world:hover { border-bottom-color: rgba(245,243,236,.6); }
+
+@media (prefers-reduced-motion: reduce) {
+  .shell-nav { transition: none; }
+}
 
 /* ===== MOBILE SHELL — P009-WP002 ===== */
 
