@@ -738,6 +738,8 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
   display: grid; place-items: center;
   margin-block-end: var(--s-5, 64px);
   min-height: clamp(220px, 26vw, 300px);
+  overflow-x: clip; /* D2 fix: contain .wi-col::before radial glow (-10% inset) so it
+                       doesn't inflate document scrollWidth at 360/375 (AT-D13/G-11). */
 }
 .t7-worlds .wi-graphic {
   position: absolute; inset: 0; z-index: 0;
