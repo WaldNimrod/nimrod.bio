@@ -117,30 +117,30 @@
 /* Footer extracted from T1-styles.css (locked source selectors). */
 .shell-foot {
   background: var(--ink); color: rgba(245,243,236,.8);
-  padding: 64px var(--t1-gutter) 28px; margin-top: 0;
+  padding: 60px var(--t1-gutter) 28px; margin-top: 0;
 }
 .shell-foot-inner { max-width: var(--t1-max); margin: 0 auto; }
 .shell-foot .cols {
   display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 36px;
-  padding-bottom: 36px; border-bottom: 1px solid rgba(245,243,236,.15);
+  padding-bottom: 34px; border-bottom: 1px solid rgba(245,243,236,.15);
 }
 .shell-foot .cols h6 {
   font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: .12em;
   text-transform: uppercase; color: rgba(245,243,236,.5);
-  margin: 0 0 16px; font-weight: 500;
+  margin: 0 0 14px; font-weight: 500;
 }
 .shell-foot .cols a { display: block; color: rgba(245,243,236,.85); text-decoration: none; padding: 5px 0; font-size: 14.5px; }
-.shell-foot .cols a:hover { color: #fff; }
+.shell-foot .cols a:hover { color: var(--paper); }
 .shell-foot .brand-block .name {
-  font-family: "Frank Ruhl Libre", serif; font-size: 26px; font-weight: 900; color: var(--paper);
+  font-family: "Frank Ruhl Libre", serif; font-size: 25px; font-weight: 900; color: var(--paper);
   margin-bottom: 8px;
 }
 .shell-foot .brand-block .tag {
-  font-family: "Frank Ruhl Libre", serif; font-style: italic; font-size: 16px;
-  color: rgba(245,243,236,.6); max-width: 36ch; line-height: 1.55;
+  font-family: "Assistant", sans-serif; font-size: 15px;
+  color: rgba(245,243,236,.6); max-width: 34ch; line-height: 1.5;
 }
 .shell-foot .bottom {
-  display: flex; justify-content: space-between; gap: 18px; padding-top: 22px;
+  display: flex; justify-content: space-between; gap: 18px; padding-top: 20px;
   font-family: "JetBrains Mono", monospace; font-size: 11px;
   color: rgba(245,243,236,.45); letter-spacing: .04em;
 }

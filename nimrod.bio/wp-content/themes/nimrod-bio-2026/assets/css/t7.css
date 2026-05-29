@@ -649,18 +649,20 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
   width: 100%;
   padding-block: clamp(40px, 6vw, 84px);
 }
-.hero-poster .hp-inner { max-width: 620px; }
+.hero-poster .hp-inner { max-width: min(620px, 100%); }
 
 .hero-poster .hp-eyebrow {
-  display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  display: inline-flex; align-items: baseline; gap: 8px; flex-wrap: wrap;
   margin: 0 0 18px;
   font-family: "JetBrains Mono", monospace;
   font-size: 14px; font-weight: 500; letter-spacing: .04em;
-  color: rgba(245, 243, 236, .9);
+  color: rgba(245, 243, 236, .7);
 }
+/* mockup: eyebrow name carries the brand at .7; spark sits inline-center */
+.hero-poster .hp-eyebrow .hp-eyebrow-name { color: rgba(245, 243, 236, .7); }
 .hero-poster .hp-eyebrow .hp-spark {
   display: inline-flex; width: 16px; height: 16px;
-  color: var(--spark);
+  color: var(--spark); align-self: center;
 }
 .hero-poster .hp-eyebrow .hp-spark svg { width: 100%; height: 100%; }
 
@@ -673,10 +675,11 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
   font-size: clamp(48px, 8.5vw, 128px);
 }
 .poster-h1 .pw { display: inline-flex; align-items: baseline; }
+/* per-world colored dot on the RTL-start side of each word (mockup .w-*::before) */
 .poster-h1 .pw .pw-dot {
-  width: .26em; height: .26em; border-radius: 50%;
-  margin-inline-end: .18em;
-  align-self: center;
+  width: .17em; height: .17em; border-radius: 50%;
+  margin-inline-end: .22em;
+  align-self: baseline; transform: translateY(-.32em);
 }
 .poster-h1 .pw-soil { color: var(--w-soil-light, #9cc063); }
 .poster-h1 .pw-know { color: var(--w-know-light, #e08a5b); }
@@ -696,11 +699,13 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
 /* hero-foot: kicker stats at start (right), buttons at end (left) */
 .hero-foot {
   display: flex; justify-content: space-between; align-items: center;
-  gap: 18px 28px; flex-wrap: wrap;
+  gap: 18px 28px; flex-wrap: nowrap;
   margin-block-start: clamp(26px, 3.4vw, 42px);
   padding-block-start: 18px;
   border-block-start: 1px solid rgba(245, 243, 236, .2);
 }
+/* mockup: numbers at start, buttons pushed to the end of the line */
+.hero-foot .hp-cta { margin-inline-start: auto; flex: none; }
 .hero-poster .hp-kicker {
   display: flex; align-items: baseline; flex-wrap: wrap;
   gap: clamp(12px, 2vw, 24px);
@@ -749,30 +754,32 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
     var(--paper) 36%, rgba(245, 243, 236, .7) 58%, transparent 82%);
 }
 .t7-worlds .wi-eyebrow {
-  display: inline-flex; align-items: center; gap: 8px;
-  margin: 0 0 10px;
+  display: inline-flex; align-items: baseline; gap: 10px;
+  margin: 0 0 14px;
   font-family: "JetBrains Mono", monospace;
-  font-size: 14px; font-weight: 500; letter-spacing: .04em;
-  color: var(--ink-soft);
+  font-size: 12px; font-weight: 500; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--w-soil-deep);
 }
-.t7-worlds .wi-eyebrow .num { color: var(--w-soil-deep); }
+.t7-worlds .wi-eyebrow .num { color: var(--ink-soft); }
 .t7-worlds .wi-title {
   font-family: "Frank Ruhl Libre", serif; font-weight: 700;
-  font-size: clamp(28px, 3.4vw, 44px); line-height: 1.05;
-  letter-spacing: -.02em; margin: 0 0 10px; color: var(--ink);
+  font-size: clamp(28px, 3.4vw, 44px); line-height: 1.1;
+  letter-spacing: -.015em; margin: 0 0 12px; color: var(--ink);
 }
 .t7-worlds .wi-lede {
   font-family: "Assistant", sans-serif;
-  font-size: clamp(15px, 1.5vw, 18px); line-height: 1.5;
-  color: var(--ink-soft); margin: 0 auto; max-width: 44ch;
+  font-size: clamp(16px, 1.5vw, 19px); line-height: 1.55;
+  color: var(--ink-soft); margin: 0 auto; max-width: 48ch;
   text-wrap: balance;
 }
 .t7-worlds .neg-cap {
+  display: flex; justify-content: center; align-items: center;
+  gap: 6px; flex-wrap: wrap;
   font-family: "JetBrains Mono", monospace;
-  font-size: 12px; letter-spacing: .03em;
+  font-size: 11px; letter-spacing: .04em; text-transform: uppercase;
   color: var(--ink-soft); margin: 14px 0 0;
 }
-.t7-worlds .neg-cap b { color: var(--ink); }
+.t7-worlds .neg-cap b { color: var(--ink); font-weight: 600; }
 
 /* ---- World cards (media header + emblem + body) ---- */
 .t7-worlds .worlds-grid {
@@ -828,7 +835,7 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
 }
 .t7-worlds .world-card .wcard-title {
   font-family: "Frank Ruhl Libre", serif; font-weight: 800;
-  font-size: clamp(26px, 2.8vw, 36px); line-height: 1;
+  font-size: clamp(28px, 3vw, 38px); line-height: 1;
   letter-spacing: -.02em; margin: 2px 0 0; color: var(--wcd);
 }
 .t7-worlds .world-card .wcard-tagline {
@@ -839,7 +846,7 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
 }
 .t7-worlds .world-card .wcard-list {
   list-style: none; padding: 0; margin: auto 0 0;
-  display: flex; flex-direction: column; gap: 6px;
+  display: flex; flex-direction: column; gap: 5px;
   font-family: "Assistant", sans-serif; font-size: 14.5px; color: var(--ink);
 }
 .t7-worlds .world-card .wcard-list li {
@@ -880,31 +887,32 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
    ============================================================ */
 
 /* ---- Shared section head (mirrors B1 .wi-eyebrow/.wi-title/.wi-lede) ---- */
-.t7-sec-head { margin: 0 0 clamp(28px, 3.4vw, 48px); }
+.t7-sec-head { margin: 0 0 var(--s-4, 48px); max-width: 66ch; }
 .t7-sec-head .t7-eyebrow {
-  display: inline-flex; align-items: center; gap: 8px; margin: 0 0 10px;
+  display: inline-flex; align-items: baseline; gap: 10px; margin: 0 0 14px;
   font-family: "JetBrains Mono", monospace;
-  font-size: 13px; font-weight: 500; letter-spacing: .04em;
-  color: var(--ink-soft);
+  font-size: 12px; font-weight: 500; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--w-soil-deep);
 }
-.t7-sec-head .t7-eyebrow .num {
-  font-weight: 600; color: var(--ink);
-  padding: 2px 8px; border: 1px solid var(--line); border-radius: 100px;
-}
+.t7-sec-head .t7-eyebrow .num { color: var(--ink-soft); }
 .t7-sec-head .t7-sec-title {
   font-family: "Frank Ruhl Libre", serif; font-weight: 700;
-  font-size: clamp(28px, 3.4vw, 44px); line-height: 1.05;
-  letter-spacing: -.02em; margin: 0 0 10px; color: var(--ink);
+  font-size: clamp(28px, 3.4vw, 44px); line-height: 1.1;
+  letter-spacing: -.015em; margin: 0 0 12px; color: var(--ink);
   text-wrap: balance;
 }
+/* canonical hand-drawn wavy underline (mockup .under, #c46a3e) */
+.t7-worlds .wi-title .under,
 .t7-sec-head .t7-sec-title .under {
-  box-shadow: inset 0 -.28em 0 var(--soil-wash-2, #e3e6cf);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 8'><path d='M2 5 Q 50 1 100 4 T 198 5' stroke='%23c46a3e' stroke-width='2.6' fill='none' stroke-linecap='round'/></svg>");
+  background-repeat: no-repeat; background-position: bottom right;
+  background-size: 100% .32em; padding-bottom: .14em;
 }
 .t7-sec-head .t7-sec-title em { color: var(--spark); font-style: normal; }
 .t7-sec-head .t7-sec-lede {
   font-family: "Assistant", sans-serif;
-  font-size: clamp(15px, 1.5vw, 18px); line-height: 1.5;
-  color: var(--ink-soft); margin: 0; max-width: 56ch; text-wrap: balance;
+  font-size: clamp(16px, 1.5vw, 19px); line-height: 1.55;
+  color: var(--ink-soft); margin: 0; max-width: 60ch; text-wrap: balance;
 }
 
 /* ════ SYSTEMS — SFA + tiktrack as full-width product rows ════ */
@@ -937,28 +945,30 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
   position: absolute; inset: 0; width: 100%; height: 100%;
   object-fit: cover; display: block;
 }
-/* SFA: teal/code duotone over the screenshot placeholder */
+/* SFA: teal/code duotone over the screenshot — base deep-teal + luminosity img + multiply wash */
+.t7-systems .sys-card.code .sys-shot { background: var(--w-code-deep); }
+.t7-systems .sys-card.code .sys-shot > img {
+  mix-blend-mode: luminosity; opacity: .55;
+}
 .t7-systems .sys-card.code .sys-shot::after {
   content: ""; position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(140deg, rgba(31,94,96,.78), rgba(45,138,140,.42));
+  background: linear-gradient(135deg, rgba(31,94,96,.72), rgba(45,138,140,.42));
   mix-blend-mode: multiply;
 }
-/* tiktrack: dark panel with sparkline */
+/* tiktrack: dark panel with centered sparkline (mockup .sys-shot.tik → #3a2417) */
 .t7-systems .sys-card.know .sys-shot.tik {
-  background: #3a2417; display: grid; place-items: stretch;
+  background: #3a2417; display: grid; place-items: center;
 }
 .t7-systems .sys-card .spark-chart {
-  position: absolute; inset: auto 0 14% 0; width: 100%; height: 56%;
-  padding-inline: 18px;
+  position: relative; z-index: 1; width: 80%; height: 56%;
 }
 .t7-systems .sys-card .shot-tag {
   position: absolute; z-index: 2;
-  inset-block-end: 12px; inset-inline-start: 14px;
-  font-family: "JetBrains Mono", monospace; font-size: 10.5px;
-  letter-spacing: .06em; text-transform: uppercase;
-  color: rgba(245,243,236,.92);
-  background: rgba(18,17,15,.42); padding: 4px 9px; border-radius: 100px;
-  backdrop-filter: blur(2px);
+  inset-block-end: 11px; inset-inline-start: 13px;
+  font-family: "JetBrains Mono", monospace; font-size: 10px;
+  letter-spacing: .05em;
+  color: rgba(245,243,236,.9);
+  background: rgba(18,17,15,.42); padding: 4px 9px; border-radius: 5px;
 }
 .t7-systems .sys-card .body {
   grid-area: body; padding: clamp(26px, 3vw, 42px);
@@ -1147,13 +1157,13 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
 .unless-lockup .he {
   font-family: "Frank Ruhl Libre", serif; font-style: italic; font-weight: 500;
   font-size: clamp(19px, 2.2vw, 28px); line-height: 1.45;
-  color: rgba(245, 243, 236, .92); margin: 0 0 14px; max-width: 30ch;
+  color: rgba(245, 243, 236, .92); margin: 0 0 14px; max-width: 26ch;
   text-wrap: balance;
 }
 .unless-lockup .he em { color: var(--spark); font-style: normal; font-weight: 700; }
 .unless-lockup .he .ul-spark {
-  display: inline-block; width: .9em; height: .9em;
-  color: var(--spark); vertical-align: -.06em; margin-inline-end: .25em;
+  display: inline-block; width: .82em; height: .82em;
+  color: var(--spark); vertical-align: -.04em; margin-inline: .18em;
 }
 .unless-lockup .he .ul-spark svg { width: 100%; height: 100%; }
 .unless-lockup .src {
@@ -1166,7 +1176,7 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
 @media (prefers-reduced-motion: no-preference) {
   .unless-lockup .word .pd { animation: nb-bob 3.2s ease-in-out infinite; }
 }
-@keyframes nb-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes nb-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-.07em); } }
 
 /* ---- B2 responsive reflow ---- */
 @media (max-width: 980px) {
@@ -1317,11 +1327,11 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
 }
 .manifesto .mf-emblem img { width: 38px; height: 38px; }
 .manifesto .t7-eyebrow.light {
-  display: inline-flex; align-items: center; gap: 8px; margin: 0 0 10px;
-  font-family: "JetBrains Mono", monospace; font-size: 13px; font-weight: 500;
-  letter-spacing: .04em; color: rgba(245, 243, 236, .7);
+  display: inline-flex; align-items: baseline; gap: 10px; margin: 0 0 14px;
+  font-family: "JetBrains Mono", monospace; font-size: 12px; font-weight: 500;
+  letter-spacing: .14em; text-transform: uppercase; color: rgba(245, 243, 236, .7);
 }
-.manifesto .t7-eyebrow.light .num { font-weight: 600; color: var(--paper); }
+.manifesto .t7-eyebrow.light .num { color: rgba(245, 243, 236, .45); }
 .manifesto h2 {
   font-family: "Frank Ruhl Libre", serif; font-weight: 900;
   font-size: clamp(32px, 4.4vw, 60px); line-height: 1.04;
@@ -1344,16 +1354,13 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
   border-top: 1px solid var(--line); border-bottom: 6px solid var(--ink);
   text-align: start;
 }
-.final-cta .head { max-width: 60ch; margin: 0 0 clamp(28px, 3.4vw, 44px); }
+.final-cta .head { max-width: 60ch; margin: 0 0 var(--s-4, 48px); }
 .final-cta .head .t7-eyebrow {
-  display: inline-flex; align-items: center; gap: 8px; margin: 0 0 10px;
-  font-family: "JetBrains Mono", monospace; font-size: 13px; font-weight: 500;
-  letter-spacing: .04em; color: var(--w-know-deep);
+  display: inline-flex; align-items: baseline; gap: 10px; margin: 0 0 14px;
+  font-family: "JetBrains Mono", monospace; font-size: 12px; font-weight: 500;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--w-know-deep);
 }
-.final-cta .head .t7-eyebrow .num {
-  font-weight: 600; color: var(--ink);
-  padding: 2px 8px; border: 1px solid var(--line); border-radius: 100px;
-}
+.final-cta .head .t7-eyebrow .num { color: var(--ink-soft); }
 .final-cta .head h2 {
   font-family: "Frank Ruhl Libre", serif; font-weight: 900;
   font-size: clamp(34px, 4.4vw, 60px); line-height: 1.02;
@@ -1436,6 +1443,20 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
       rgba(18, 17, 15, .92) 8%, rgba(18, 17, 15, .66) 48%, rgba(18, 17, 15, .3) 100%);
   }
 }
+
+/* ---- B-bottom section rhythm: match mockup `.section` clamp exactly ----
+ * Mockup bottom-half sections use padding-block:clamp(52px,6.5vw,92px) — the
+ * theme's shared .t7-section is clamp(56px,7vw,112px) (top-half locked). Scope
+ * the mockup rhythm to the bottom-half wrappers only. Bridges band drops the
+ * top rule (mockup .section.band{border-top:none}); the wash supplies the seam.
+ */
+.t7-section.t7-systems,
+.t7-section.t7-services,
+.t7-section.t7-bridges,
+.t7-section.t7-projects {
+  padding-block: clamp(52px, 6.5vw, 92px);
+}
+.t7-section.t7-bridges.bridges-band { border-top: none; }
 
 /* ===== MOBILE — P009-WP002 (team_35 spec §8) ===== */
 /*
