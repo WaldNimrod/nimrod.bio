@@ -1,0 +1,127 @@
+{
+  "deviceCheckVersion": "v1.2.0",
+  "themeVersion": "0.6.3",
+  "home": {
+    "360": {
+      "scrollW": 360,
+      "clientW": 360,
+      "hScroll": false,
+      "maxRight": 385,
+      "culprit": "IMG",
+      "worldsCols": "320px",
+      "worldsIntroOverflowX": "clip",
+      "heroOverflowX": "hidden",
+      "hpBgOverflowX": "hidden",
+      "dir": "rtl"
+    },
+    "375": {
+      "scrollW": 375,
+      "clientW": 375,
+      "hScroll": false,
+      "maxRight": 401,
+      "culprit": "IMG",
+      "worldsCols": "335px",
+      "worldsIntroOverflowX": "clip",
+      "heroOverflowX": "hidden",
+      "hpBgOverflowX": "hidden",
+      "dir": "rtl"
+    },
+    "768": {
+      "scrollW": 768,
+      "clientW": 768,
+      "hScroll": false,
+      "maxRight": 822,
+      "culprit": "IMG",
+      "worldsCols": "344.281px 344.281px",
+      "worldsIntroOverflowX": "clip",
+      "heroOverflowX": "hidden",
+      "hpBgOverflowX": "hidden",
+      "dir": "rtl"
+    },
+    "1440": {
+      "scrollW": 1440,
+      "clientW": 1440,
+      "hScroll": false,
+      "maxRight": 1541,
+      "culprit": "IMG",
+      "worldsCols": "361.328px 361.328px 361.344px",
+      "worldsIntroOverflowX": "clip",
+      "heroOverflowX": "hidden",
+      "hpBgOverflowX": "hidden",
+      "dir": "rtl"
+    }
+  },
+  "carousels": {
+    "services": {
+      "snap": "x mandatory",
+      "nextMoved": true,
+      "prevMoved": true,
+      "nextClick": {
+        "label": "הבא",
+        "before": 0,
+        "after": -146,
+        "moved": true,
+        "disabled": true
+      },
+      "prevClick": {
+        "label": "הקודם",
+        "before": -146,
+        "after": 0,
+        "moved": true,
+        "disabled": true
+      }
+    },
+    "projects": {
+      "snap": "x mandatory",
+      "nextMoved": true,
+      "prevMoved": true,
+      "nextClick": {
+        "label": "הבא",
+        "before": 0,
+        "after": -354,
+        "moved": true,
+        "disabled": false
+      },
+      "prevClick": {
+        "label": "הקודם",
+        "before": -354,
+        "after": 0,
+        "moved": true,
+        "disabled": true
+      }
+    }
+  },
+  "worlds": {
+    "375": "335px"
+  },
+  "regression": {
+    "world-soil": {
+      "path": "/world/soil/",
+      "hScroll": false,
+      "scrollW": 375,
+      "clientW": 375,
+      "dir": "rtl",
+      "fab": "grid",
+      "toggle": "grid"
+    },
+    "contact": {
+      "path": "/contact/",
+      "hScroll": false,
+      "scrollW": 375,
+      "clientW": 375,
+      "dir": "rtl",
+      "fab": "none",
+      "toggle": "grid"
+    }
+  },
+  "drawer": {
+    "bodyLock": true,
+    "fab": "none",
+    "drawerOpen": true
+  },
+  "drawerAfterEsc": {
+    "bodyLock": false,
+    "drawerOpen": false
+  },
+  "transferMB": 2.07
+}
