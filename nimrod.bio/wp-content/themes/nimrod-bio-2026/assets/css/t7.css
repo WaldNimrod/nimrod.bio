@@ -872,6 +872,331 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
 @media (max-width: 1000px) {
   .t7-worlds .worlds-grid { grid-template-columns: 1fr 1fr; }
 }
+/* ============================================================
+   P009-WP003 · B2 — Systems / Services / Bridges / Unless
+   Matches team_35 Precision Mockup (README §4–§7). Scoped under
+   the B1 section wrappers (.t7-systems / .t7-services / .t7-bridges
+   / .unless-lockup). Inserted ABOVE the protected WP002 block.
+   ============================================================ */
+
+/* ---- Shared section head (mirrors B1 .wi-eyebrow/.wi-title/.wi-lede) ---- */
+.t7-sec-head { margin: 0 0 clamp(28px, 3.4vw, 48px); }
+.t7-sec-head .t7-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px; margin: 0 0 10px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px; font-weight: 500; letter-spacing: .04em;
+  color: var(--ink-soft);
+}
+.t7-sec-head .t7-eyebrow .num {
+  font-weight: 600; color: var(--ink);
+  padding: 2px 8px; border: 1px solid var(--line); border-radius: 100px;
+}
+.t7-sec-head .t7-sec-title {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 700;
+  font-size: clamp(28px, 3.4vw, 44px); line-height: 1.05;
+  letter-spacing: -.02em; margin: 0 0 10px; color: var(--ink);
+  text-wrap: balance;
+}
+.t7-sec-head .t7-sec-title .under {
+  box-shadow: inset 0 -.28em 0 var(--soil-wash-2, #e3e6cf);
+}
+.t7-sec-head .t7-sec-title em { color: var(--spark); font-style: normal; }
+.t7-sec-head .t7-sec-lede {
+  font-family: "Assistant", sans-serif;
+  font-size: clamp(15px, 1.5vw, 18px); line-height: 1.5;
+  color: var(--ink-soft); margin: 0; max-width: 56ch; text-wrap: balance;
+}
+
+/* ════ SYSTEMS — SFA + tiktrack as full-width product rows ════ */
+.t7-systems .systems-row {
+  display: grid; grid-template-columns: 1fr;
+  gap: clamp(20px, 3vw, 30px); align-items: stretch;
+}
+.t7-systems .sys-card {
+  position: relative; display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  grid-template-areas: "spine spine" "body media";
+  align-items: stretch;
+  background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--radius-l, 20px); overflow: hidden;
+  box-shadow: var(--shadow-s); text-decoration: none; color: inherit;
+  transition: transform .18s, box-shadow .18s;
+}
+.t7-systems .sys-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-l); }
+.t7-systems .sys-card .spine {
+  grid-area: spine; height: 6px;
+  background: linear-gradient(to left, var(--w-code), var(--w-code-deep));
+}
+.t7-systems .sys-card.code .spine { background: linear-gradient(to left, var(--w-code), var(--w-code-deep)); }
+.t7-systems .sys-card.know .spine { background: linear-gradient(to left, var(--w-know), var(--w-know-deep)); }
+.t7-systems .sys-card .media {
+  grid-area: media; min-height: 248px; height: 100%; position: relative;
+  aspect-ratio: auto;
+}
+.t7-systems .sys-card .media > img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+/* SFA: teal/code duotone over the screenshot placeholder */
+.t7-systems .sys-card.code .sys-shot::after {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(140deg, rgba(31,94,96,.78), rgba(45,138,140,.42));
+  mix-blend-mode: multiply;
+}
+/* tiktrack: dark panel with sparkline */
+.t7-systems .sys-card.know .sys-shot.tik {
+  background: #3a2417; display: grid; place-items: stretch;
+}
+.t7-systems .sys-card .spark-chart {
+  position: absolute; inset: auto 0 14% 0; width: 100%; height: 56%;
+  padding-inline: 18px;
+}
+.t7-systems .sys-card .shot-tag {
+  position: absolute; z-index: 2;
+  inset-block-end: 12px; inset-inline-start: 14px;
+  font-family: "JetBrains Mono", monospace; font-size: 10.5px;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: rgba(245,243,236,.92);
+  background: rgba(18,17,15,.42); padding: 4px 9px; border-radius: 100px;
+  backdrop-filter: blur(2px);
+}
+.t7-systems .sys-card .body {
+  grid-area: body; padding: clamp(26px, 3vw, 42px);
+  display: flex; flex-direction: column; gap: 12px; flex: 1;
+}
+.t7-systems .sys-card .syslabel {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  letter-spacing: .1em; text-transform: uppercase; font-weight: 500;
+  color: var(--w-code-deep);
+}
+.t7-systems .sys-card.code .syslabel { color: var(--w-code-deep); }
+.t7-systems .sys-card.know .syslabel { color: var(--w-know-deep); }
+.t7-systems .sys-card .syslabel svg { width: 18px; height: 18px; }
+.t7-systems .sys-card h3 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 700;
+  font-size: clamp(24px, 2.6vw, 30px); line-height: 1.1; margin: 0;
+}
+.t7-systems .sys-card p {
+  font-family: "Assistant", sans-serif; font-size: 15.5px;
+  line-height: 1.5; color: var(--ink-soft); margin: 0; max-width: 46ch;
+  text-wrap: pretty;
+}
+.t7-systems .sys-card .row {
+  display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
+  margin-top: auto; padding-top: 6px;
+}
+.t7-systems .sys-card .action {
+  font-family: "Assistant", sans-serif; font-weight: 600; font-size: 15.5px;
+  display: inline-flex; gap: 7px; align-items: center; color: var(--w-code-deep);
+}
+.t7-systems .sys-card.code .action { color: var(--w-code-deep); }
+.t7-systems .sys-card.know .action { color: var(--w-know-deep); }
+.t7-systems .sys-card .action::after { content: "←"; }
+
+/* ════ SERVICES — horizontal scroll-snap carousel ════ */
+.t7-services.services-end { background: var(--paper-2); }
+.t7-services .t7-sec-head .t7-sec-title { white-space: nowrap; }
+.t7-services .products-grid.carousel {
+  display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
+  gap: clamp(16px, 2vw, 22px); padding-bottom: 6px;
+}
+.t7-services .products-grid.carousel > .product-card {
+  flex: 0 0 clamp(240px, 28%, 302px); scroll-snap-align: start;
+}
+.t7-services .product-card {
+  display: flex; flex-direction: column; height: 100%;
+  background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--radius-m, 14px); overflow: hidden;
+  box-shadow: var(--shadow-s); text-decoration: none; color: inherit;
+  transition: transform .18s, box-shadow .18s;
+}
+.t7-services .product-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-l); }
+.t7-services .product-card .pimg { aspect-ratio: 1; position: relative; }
+.t7-services .product-card .pimg > img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+.t7-services .product-card .pbody {
+  padding: 16px 18px 18px; display: flex; flex-direction: column;
+  gap: 7px; flex: 1;
+}
+.t7-services .product-card .svc-ic {
+  width: 30px; height: 30px; color: var(--w-soil-deep);
+}
+.t7-services .product-card .svc-ic svg { width: 100%; height: 100%; }
+.t7-services .product-card h3 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 700;
+  font-size: 19px; line-height: 1.2; margin: 0;
+}
+.t7-services .product-card .pmeta {
+  font-family: "Assistant", sans-serif; font-size: 13.5px;
+  line-height: 1.45; color: var(--ink-soft); margin: 0;
+}
+.t7-services .product-card .add {
+  margin-top: auto; padding-top: 10px;
+  font-family: "JetBrains Mono", monospace; font-size: 11.5px;
+  letter-spacing: .04em; text-transform: uppercase;
+  color: var(--w-know-deep);
+}
+
+/* ---- carousel browse row (shared with Projects; matches nb-carousel.js) ---- */
+.t7-services .proj-browse { display: flex; align-items: center; gap: 12px; margin-top: 18px; }
+.t7-services .proj-browse .pb-arrow {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid var(--line); background: var(--paper);
+  cursor: pointer; font-size: 16px; color: var(--ink);
+  display: grid; place-items: center;
+  transition: background .15s, color .15s;
+}
+.t7-services .proj-browse .pb-arrow:hover { background: var(--ink); color: var(--paper); }
+.t7-services .proj-browse .proj-more {
+  margin-inline-start: auto;
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none;
+  border-bottom: 1.5px solid var(--ink); padding-bottom: 2px;
+}
+
+/* ════ BRIDGES — dual-world cards on a wash band ════ */
+.t7-bridges.bridges-band {
+  background:
+    radial-gradient(130% 90% at 12% 0%, var(--soil-wash, #eef0e0), transparent 46%),
+    radial-gradient(130% 90% at 88% 100%, var(--code-wash, #d8e6e6), transparent 46%),
+    var(--paper-2);
+}
+.t7-bridges .bridges-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: clamp(18px, 2vw, 24px); align-items: stretch;
+}
+.t7-bridges .bridge-card {
+  position: relative; display: flex; flex-direction: column;
+  background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--radius-l, 20px); overflow: hidden;
+  text-decoration: none; color: inherit;
+  transition: transform .18s, box-shadow .18s;
+}
+.t7-bridges .bridge-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-l); }
+.t7-bridges .bridge-card .spine {
+  height: 6px;
+  background: linear-gradient(to left, var(--bridge-a) 0 50%, var(--bridge-b) 50% 100%);
+}
+.t7-bridges .bridge-card .media { aspect-ratio: 16/9; position: relative; }
+.t7-bridges .bridge-card .media > img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+.t7-bridges .bridge-card .media .seal {
+  position: absolute; inset-block-end: -15px; inset-inline-start: 24px;
+  width: 46px; height: 46px; border-radius: 50%;
+  background: var(--paper); display: grid; place-items: center;
+  box-shadow: var(--shadow-s); z-index: 2;
+  transition: transform .3s cubic-bezier(.34, 1.56, .64, 1);
+}
+.t7-bridges .bridge-card:hover .media .seal { transform: translateY(-4px) rotate(-9deg); }
+.t7-bridges .bridge-card .media .seal svg { width: 24px; height: 24px; }
+.t7-bridges .bridge-card .body {
+  padding: 26px 24px 24px; display: flex; flex-direction: column;
+  gap: 11px; flex: 1;
+}
+.t7-bridges .bridge-card .conn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: "JetBrains Mono", monospace; font-size: 11.5px;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft);
+}
+.t7-bridges .bridge-card .conn b { font-weight: 600; color: var(--ink); }
+.t7-bridges .bridge-card .conn .d { display: inline-flex; gap: 4px; }
+.t7-bridges .bridge-card .conn .d i { width: 8px; height: 8px; border-radius: 50%; }
+.t7-bridges .bridge-card h3 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 700;
+  font-size: 22px; line-height: 1.2; margin: 0;
+}
+.t7-bridges .bridge-card .lede {
+  font-family: "Assistant", sans-serif; font-size: 15px;
+  line-height: 1.5; color: var(--ink-soft); margin: 0; text-wrap: pretty;
+}
+.t7-bridges .bridge-card .more {
+  margin-top: auto; padding-top: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 11.5px;
+  letter-spacing: .05em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none;
+  display: inline-flex; gap: 6px;
+}
+.t7-bridges .bridge-card .more::after { content: "←"; }
+
+/* ════ UNLESS LOCKUP — dark band ════ */
+.unless-lockup {
+  background: var(--ink); color: var(--paper);
+  padding-block: clamp(52px, 6.5vw, 100px);
+  position: relative; overflow: hidden;
+}
+.unless-lockup .inner {
+  display: grid; grid-template-columns: auto 1fr;
+  gap: clamp(28px, 4vw, 64px); align-items: center;
+}
+.unless-lockup .word {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 900;
+  font-size: clamp(64px, 11vw, 168px); line-height: .9;
+  letter-spacing: -.045em; color: var(--paper); margin: 0; white-space: nowrap;
+}
+.unless-lockup .word .pd { color: var(--spark); display: inline-block; }
+.unless-lockup .gloss {
+  border-inline-start: 2px solid rgba(245, 243, 236, .2);
+  padding-inline-start: clamp(20px, 3vw, 40px);
+}
+.unless-lockup .he {
+  font-family: "Frank Ruhl Libre", serif; font-style: italic; font-weight: 500;
+  font-size: clamp(19px, 2.2vw, 28px); line-height: 1.45;
+  color: rgba(245, 243, 236, .92); margin: 0 0 14px; max-width: 30ch;
+  text-wrap: balance;
+}
+.unless-lockup .he em { color: var(--spark); font-style: normal; font-weight: 700; }
+.unless-lockup .he .ul-spark {
+  display: inline-block; width: .9em; height: .9em;
+  color: var(--spark); vertical-align: -.06em; margin-inline-end: .25em;
+}
+.unless-lockup .he .ul-spark svg { width: 100%; height: 100%; }
+.unless-lockup .src {
+  font-family: "JetBrains Mono", monospace; font-size: 11.5px;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(245, 243, 236, .42);
+}
+
+/* ---- B2 motion (gated to restrained baseline + reduced-motion-safe) ---- */
+@media (prefers-reduced-motion: no-preference) {
+  .unless-lockup .word .pd { animation: nb-bob 3.2s ease-in-out infinite; }
+}
+@keyframes nb-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+
+/* ---- B2 responsive reflow ---- */
+@media (max-width: 980px) {
+  .t7-bridges .bridges-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 760px) {
+  .t7-bridges .bridges-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) {
+  .t7-systems .sys-card {
+    grid-template-columns: 1fr;
+    grid-template-areas: "spine" "media" "body";
+  }
+  .t7-systems .sys-card .media { min-height: 180px; }
+  .unless-lockup .inner { grid-template-columns: 1fr; }
+  .unless-lockup .gloss {
+    border-inline-start: none; border-top: 2px solid rgba(245, 243, 236, .2);
+    padding: 20px 0 0;
+  }
+}
+@media (max-width: 600px) {
+  .t7-services .t7-sec-head .t7-sec-title { white-space: normal; }
+}
+/* touch: suppress hover lift, give active feedback */
+@media (hover: none) {
+  .t7-systems .sys-card:active,
+  .t7-services .product-card:active,
+  .t7-bridges .bridge-card:active { transform: scale(0.98); }
+}
+
 /* Guard: the WP002 mobile block below targets the OLD .world-card (text-only
    card with its own padding/min-height). My B1 card is a media+body card with
    zero container padding. These higher-specificity rules (.t7-worlds .world-card)
