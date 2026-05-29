@@ -560,9 +560,9 @@ work_packages:
 
 - id: NB-S002-P009-WP003
   label: "nimrod-bio — T7 Home Precision Rebuild + Design-Language Uplift (impl of team_35 v5)"
-  status: PLANNED
+  status: IN_PROGRESS
   track: A
-  current_lean_gate: L-GATE_SPEC
+  current_lean_gate: L-GATE_BUILD
   lod_status: LOD400
   assigned_builder: nimrodbio_build
   assigned_validator: nimrodbio_val
@@ -575,8 +575,12 @@ work_packages:
     date: "2026-05-29"
     notes: "team_35 design package v5 received + extracted (ditto) to sources/team_35_design_package/design_handoff_home/ (gitignored). Contents: DESIGN_GAP_ANALYSIS.md (11 gaps, 3 critical) + README.md (T7 section spec) + Precision Mockup.html + assets (basket-*.png, IconPark svgs, raw photos). system.css unchanged (no token fork). Headline bug G-01 (t1.css :root truncation → undefined washes) independently CONFIRMED by team_100."
   - gate: L-GATE_SPEC
-    result: PASS_AWAITING_SCOPE_CONFIRM
+    result: PASS
     date: "2026-05-29"
-    notes: "LOD400 authored by team_100. Scope: G-01 t1.css :root fix + T7 home precision rebuild (front-page.php + t7.css + NEW components.css) + design-language assets (baskets/IconPark/icons/negentropy) + nav-atop & carousel JS + token/RTL/375 hygiene. 19 ATs (AT-D1..D19) incl. AT-D17 WP002 mobile regression guard + AT-D18 system.css LOCK. Visual SSoT = team_35 v5 docs. BLOCKED on team_00 §11 decisions: D-1 scope breadth, D-2 open-assets approach, D-3 builder/engine, D-4 team_35 WP001 §6 sequence confirmation."
-  notes: "PLANNED — implementation of team_35 v5 home-precision package. Awaiting team_00 §11 scope confirmation before L-GATE_BUILD opens. Sibling WP002 (mobile) COMPLETE — must not regress (AT-D17). Predecessor WP001 (team_35 design) gap-analysis delivered, awaiting team_00 §6 confirmation to close. Open assets (T-03 watercolors, T-04 logo SVG, screenshots) still undelivered → build with placeholders, swap on delivery."
+    notes: "LOD400 by team_100. team_00 §11 decisions CONFIRMED: D-1 focused scope (T7 + t1 fix + components; broader propagation deferred); D-2 build now + placeholders (open-asset list sent to team_35: logo SVG/favicon/OG/watercolors/screenshots); D-3 team_100-orchestrated (Claude); D-4 team_35 §6 sequence confirmed → WP001 design accepted. 19 ATs (AT-D1..D19)."
+  - gate: L-GATE_BUILD
+    result: BUILD_COMPLETE_ORCHESTRATED
+    date: "2026-05-29"
+    notes: "team_100 orchestrated build (Claude sub-agents). Commit 1 G-01 (t1.css :root restore — washes back on all world pages). Phase A: assets/icons (world/bridge/spark/negentropy SVG + IconPark sprite), nb-nav-atop.js + nb-carousel.js, components.css + nb_featured_media(). B1 hero+worlds; fidelity pass (hero photo cand-i + basket emblems); nav (basket logo + world icons + .atop). B2 systems/services/bridges/Unless. B3 projects/manifesto/final-CTA/footer strip (old T7 removed). 2 final precision passes (spacing/lines/colors/illustrations/media reconciled to mockup). Hygiene PASS: t7/shell !important=0, no #fff bg, RTL logical, WP002 blocks preserved. Theme 0.6.1 live on dev. Iron Rule #1: build=Claude -> VALIDATE cross-engine (team_190 Codex + team_50 MCP). Commits c0f1486a..cb9f528d range."
+  notes: "IN_PROGRESS — build complete (team_100-orchestrated, full T7 11-section precision rebuild + design language). Theme 0.6.1 live. Awaiting L-GATE_VALIDATE (team_190 Codex + team_50 MCP visual/device — fidelity vs mockup). Hero/nav/worlds visually confirmed by team_00; lower sections built verbatim + pending visual check. Sibling WP002 mobile preserved (AT-D17). Open assets (logo SVG/favicon/OG/watercolors/screenshots) pending team_35 → placeholders in place. Carry-forward: image-weight optimization (responsive sizes + wp media regenerate), negentropy/watercolor final art."
 
