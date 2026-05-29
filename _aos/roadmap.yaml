@@ -490,3 +490,59 @@ work_packages:
     notes: "AOS_handoff to team_110 executed 2026-05-26. Mission Brief + canonical handoff artifact written to _COMMUNICATION/team_110/. team_110 to run Discovery (interview team_00 on Q1-Q11) → Architecture pass per content item → batch MANDATEs to team_10 → final COMPLETION_CONTENT_PHASE signals cutover unblock."
   notes: "IN_PROGRESS as program-level placeholder. WPs to be opened as content batches mature (NB-S002-P006-WP001 first batch, NB-S002-P006-WP002 second batch, etc). Backlog seed: 5 TBC content blocks (Q-05/Q-NEW-03/Q-11/Q-02/Q-03), broken link /blog/back-to-mud/, new posts, content updates to 22 migrated posts, possible new services/projects. team_110 handoff: HANDOFF_SELF_110_GENERAL_2026-05-25_v1.md + MISSION_BRIEF_CONTENT_PHASE_2026-05-26_v1.0.0.md."
 
+# ─── REGISTRATION GAP NOTE (team_100 2026-05-29) ───
+# P007 (content phase, 4 waves — COMPLETION_CONTENT_PHASE v2.0.0) and P008 (SEO+about+media)
+# were executed + completed by team_110 but NOT registered as WP entries in this roadmap.
+# Backfill pending team_00 decision (requires their COMPLETION artifacts for accurate gate_history).
+# P009 is registered below as the active program.
+
+# ─── P009 — UI precision + mobile responsiveness (pre-cutover) — opened 2026-05-29 ───
+
+- id: NB-S002-P009-WP001
+  label: "nimrod-bio — UI Precision Pass + Final Visual Assets"
+  status: IN_PROGRESS
+  track: A
+  current_lean_gate: L-GATE_BUILD
+  lod_status: LOD400
+  assigned_builder: team_35
+  assigned_validator: nimrodbio_val
+  created_at: "2026-05-29"
+  milestone_ref: V200
+  spec_ref: "_COMMUNICATION/team_35/MANDATE_NB-S002-P009-WP001_UI_PRECISION_2026-05-29_v1.0.0.md"
+  gate_history:
+  - gate: L-GATE_ELIGIBILITY
+    result: PASS
+    date: "2026-05-29"
+    notes: "team_00 feedback: site looks like a sketch / too coarse. Brand canon LOCKED from Stage 3. UI precision + final visual assets (logo T-04, watercolors T-03) scoped."
+  - gate: L-GATE_SPEC
+    result: PASS
+    date: "2026-05-29"
+    notes: "MANDATE issued to team_35 by team_110 on behalf of team_00 (MANDATE_NB-S002-P009-WP001_UI_PRECISION_2026-05-29_v1.0.0). Design package canon is SSoT."
+  notes: "IN_PROGRESS — team_35 working (team_00 confirmed 2026-05-29: 'will take time'). Awaiting COMPLETION → L-GATE_BUILD sign by team_100. T-04 logo still blocked on T-07 (basket file, team_00). This WP gates Phase B of P009-WP002."
+
+- id: NB-S002-P009-WP002
+  label: "nimrod-bio — Mobile Responsiveness (T-02 implementation)"
+  status: IN_PROGRESS
+  track: A
+  current_lean_gate: L-GATE_BUILD
+  lod_status: LOD400
+  assigned_builder: nimrodbio_build
+  assigned_validator: nimrodbio_val
+  created_at: "2026-05-29"
+  milestone_ref: V200
+  spec_ref: "_aos/work_packages/NB-S002-P009-WP002/LOD400_NB-S002-P009-WP002.md"
+  gate_history:
+  - gate: L-GATE_ELIGIBILITY
+    result: PASS
+    date: "2026-05-29"
+    notes: "team_35 mobile spec 04-MOBILE-spec.md delivered + on disk (T-02 closed 2026-05-25). LOD400 authored by team_110. STANDARD track A."
+  - gate: L-GATE_SPEC
+    result: PASS
+    date: "2026-05-29"
+    notes: "LOD400 reviewed + approved by team_100 (precision gate PASS). 20 ATs M1-M20, locked breakpoints (640/900/1100), RTL logical properties, 9 CSS files + nav-drawer.js + header/footer/functions.php. STATUS_NB-S002-P009_2026-05-29_v1.0.0 filed to team_00."
+  - gate: L-GATE_BUILD
+    result: PHASED_AUTHORIZATION
+    date: "2026-05-29"
+    notes: "team_00 directive 2026-05-29: no cutover window until full completion; proceed as far as possible with info in hand until team_35 delivers. team_100 issued MANDATE_NB-S002-P009-WP002_MOBILE_2026-05-29_v1.0.0 — Phase A (shell/drawer/WA-FAB/JS/base infra + responsive-image PHP — net-new, WP001-independent) AUTHORIZED NOW; Phase B (per-template @media t1-t8 + perf/a11y audit) HELD until P009-WP001 L-GATE_BUILD PASS + team_100 v1.1.0 Phase B release. Locked: M18 A11y>=95 = PASS_WITH_FINDINGS (team_00 accepted)."
+  notes: "IN_PROGRESS — phased. Phase A open to team_10. Phase B gated on P009-WP001 BUILD PASS. Validator team_190 (Codex) + team_50 (MCP real-device). Pre-cutover mandatory before P005-WP002."
+
