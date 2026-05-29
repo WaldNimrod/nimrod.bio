@@ -558,3 +558,25 @@ work_packages:
     notes: "ADR042 closure by team_100 (no active team_110 execution mandate). Gate-sign PASS_WITH_FINDINGS. ARCHIVE_MANIFEST: _archive/NB-S002-P009-WP002/ARCHIVE_MANIFEST.md. Step 3 (multi-engine propagation) SKIPPED — core/governance/ not modified during WP (verified). COMPLETION_CANONICAL: _COMMUNICATION/team_100/COMPLETION_CANONICAL_NB-S002-P009-WP002_v1.0.0.md."
   notes: "COMPLETE. STANDARD track A. L-GATE_VALIDATE PASS_WITH_FINDINGS (team_190 Codex v1.1.0). Mobile responsiveness LIVE on dev 0.5.1 (drawer + WhatsApp FAB + 7-template @media + responsive heroes). Built via team_100 sub-agent orchestration under team_00 directive 2026-05-29. V300 carry-forward: M17-M19 Lighthouse (needs WP001 final assets), drawer-close 44px GCR, tablet desktop-nav touch targets, spec §9/§1.3 harmonization, T4 share-FAB markup, @media de-dupe, wp media regenerate. Pre-cutover mobile phase DONE — unblocks P005-WP002 cutover (still deferred per team_00 until full content/design completion)."
 
+- id: NB-S002-P009-WP003
+  label: "nimrod-bio — T7 Home Precision Rebuild + Design-Language Uplift (impl of team_35 v5)"
+  status: PLANNED
+  track: A
+  current_lean_gate: L-GATE_SPEC
+  lod_status: LOD400
+  assigned_builder: nimrodbio_build
+  assigned_validator: nimrodbio_val
+  created_at: "2026-05-29"
+  milestone_ref: V200
+  spec_ref: "_aos/work_packages/NB-S002-P009-WP003/LOD400_NB-S002-P009-WP003.md"
+  gate_history:
+  - gate: L-GATE_ELIGIBILITY
+    result: PASS
+    date: "2026-05-29"
+    notes: "team_35 design package v5 received + extracted (ditto) to sources/team_35_design_package/design_handoff_home/ (gitignored). Contents: DESIGN_GAP_ANALYSIS.md (11 gaps, 3 critical) + README.md (T7 section spec) + Precision Mockup.html + assets (basket-*.png, IconPark svgs, raw photos). system.css unchanged (no token fork). Headline bug G-01 (t1.css :root truncation → undefined washes) independently CONFIRMED by team_100."
+  - gate: L-GATE_SPEC
+    result: PASS_AWAITING_SCOPE_CONFIRM
+    date: "2026-05-29"
+    notes: "LOD400 authored by team_100. Scope: G-01 t1.css :root fix + T7 home precision rebuild (front-page.php + t7.css + NEW components.css) + design-language assets (baskets/IconPark/icons/negentropy) + nav-atop & carousel JS + token/RTL/375 hygiene. 19 ATs (AT-D1..D19) incl. AT-D17 WP002 mobile regression guard + AT-D18 system.css LOCK. Visual SSoT = team_35 v5 docs. BLOCKED on team_00 §11 decisions: D-1 scope breadth, D-2 open-assets approach, D-3 builder/engine, D-4 team_35 WP001 §6 sequence confirmation."
+  notes: "PLANNED — implementation of team_35 v5 home-precision package. Awaiting team_00 §11 scope confirmation before L-GATE_BUILD opens. Sibling WP002 (mobile) COMPLETE — must not regress (AT-D17). Predecessor WP001 (team_35 design) gap-analysis delivered, awaiting team_00 §6 confirmation to close. Open assets (T-03 watercolors, T-04 logo SVG, screenshots) still undelivered → build with placeholders, swap on delivery."
+
