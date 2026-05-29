@@ -560,10 +560,10 @@ work_packages:
 
 - id: NB-S002-P009-WP003
   label: "nimrod-bio — T7 Home Precision Rebuild + Design-Language Uplift (impl of team_35 v5)"
-  status: IN_PROGRESS
+  status: COMPLETE
   track: A
-  current_lean_gate: L-GATE_BUILD
-  lod_status: LOD400
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
   assigned_builder: nimrodbio_build
   assigned_validator: nimrodbio_val
   created_at: "2026-05-29"
@@ -582,5 +582,13 @@ work_packages:
     result: BUILD_COMPLETE_ORCHESTRATED
     date: "2026-05-29"
     notes: "team_100 orchestrated build (Claude sub-agents). Commit 1 G-01 (t1.css :root restore — washes back on all world pages). Phase A: assets/icons (world/bridge/spark/negentropy SVG + IconPark sprite), nb-nav-atop.js + nb-carousel.js, components.css + nb_featured_media(). B1 hero+worlds; fidelity pass (hero photo cand-i + basket emblems); nav (basket logo + world icons + .atop). B2 systems/services/bridges/Unless. B3 projects/manifesto/final-CTA/footer strip (old T7 removed). 2 final precision passes (spacing/lines/colors/illustrations/media reconciled to mockup). Hygiene PASS: t7/shell !important=0, no #fff bg, RTL logical, WP002 blocks preserved. Theme 0.6.1 live on dev. Iron Rule #1: build=Claude -> VALIDATE cross-engine (team_190 Codex + team_50 MCP). Commits c0f1486a..cb9f528d range."
-  notes: "IN_PROGRESS — build complete (team_100-orchestrated, full T7 11-section precision rebuild + design language). Theme 0.6.1 live. Awaiting L-GATE_VALIDATE (team_190 Codex + team_50 MCP visual/device — fidelity vs mockup). Hero/nav/worlds visually confirmed by team_00; lower sections built verbatim + pending visual check. Sibling WP002 mobile preserved (AT-D17). Open assets (logo SVG/favicon/OG/watercolors/screenshots) pending team_35 → placeholders in place. Carry-forward: image-weight optimization (responsive sizes + wp media regenerate), negentropy/watercolor final art."
+  - gate: L-GATE_VALIDATE
+    result: PASS_WITH_FINDINGS
+    date: "2026-05-30"
+    notes: "Cross-engine (build=Claude/team_100, validate=Codex/team_190 + MCP/team_50). team_190 VERDICT v1.0.0 PASS_WITH_FINDINGS (constitutional + AT-D1..D19; sole F1=home h-scroll). team_50 DEVICE_CHECK v1.0.0 FAIL → v1.1.0 FAIL (D2 residual) → v1.2.0 PASS on 0.6.3: D1 carousel RTL scroll FIXED, D2 home h-scroll @360/375 FIXED (hero .hp-bg + worlds-intro glow clip), D3 worlds 1-col @640 FIXED; WP002 mobile non-regression (AT-D17) re-confirmed. Advisory/carry-forward: image-weight ~2MB (responsive sizes + wp media regenerate), open assets (logo SVG/favicon/OG/watercolors/screenshots pending team_35), T2-T8 propagation deferred, F2 .poster-h1. Verdict: _COMMUNICATION/team_190/VERDICT_NB-S002-P009-WP003_VALIDATE_v1.0.0.md; device: _COMMUNICATION/team_50/DEVICE_CHECK_NB-S002-P009-WP003_2026-05-30_v1.2.0.md."
+  - gate: COMPLETE
+    result: LOD500_LOCKED
+    date: "2026-05-30"
+    notes: "ADR042 closure by team_100. Gate-sign PASS_WITH_FINDINGS. ARCHIVE_MANIFEST: _archive/NB-S002-P009-WP003/ARCHIVE_MANIFEST.md. Step 3 (multi-engine propagation) SKIPPED — core/governance/ not modified. COMPLETION_CANONICAL: _COMMUNICATION/team_100/COMPLETION_CANONICAL_NB-S002-P009-WP003_v1.0.0.md. Theme 0.6.3 live on dev."
+  notes: "COMPLETE. STANDARD track A. L-GATE_VALIDATE PASS_WITH_FINDINGS (team_190 Codex v1.0.0 + team_50 MCP v1.2.0). T7 home precision rebuild + design-language uplift LIVE on dev 0.6.3 (G-01 washes fixed; hero/worlds/systems/services/bridges/Unless/projects/manifesto/CTA/footer; basket logo + world icons + nav transparency; carousels; components). Built via team_100 sub-agent orchestration implementing team_35 package v5. WP002 mobile preserved. P009 program: WP001 design accepted, WP002 + WP003 COMPLETE. Pre-cutover follow-ons (V300/before cutover): image-weight optimization, open-asset swap (team_35), T2-T8 propagation. P005-WP002 cutover still deferred per team_00."
 

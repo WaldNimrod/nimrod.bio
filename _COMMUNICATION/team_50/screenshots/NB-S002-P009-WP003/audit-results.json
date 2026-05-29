@@ -1,0 +1,439 @@
+{
+  "home": {
+    "360": {
+      "path": "/",
+      "innerWidth": 373,
+      "dir": "rtl",
+      "lang": "he-IL",
+      "themeVersion": null,
+      "hScroll": true,
+      "scrollW": 373,
+      "clientW": 360,
+      "navAtop": true,
+      "navBg": "rgba(18, 17, 15, 0.5)",
+      "heroH": 548,
+      "sections": [
+        {
+          "sel": ".shell-nav",
+          "found": true
+        },
+        {
+          "sel": ".hero-poster",
+          "found": true
+        },
+        {
+          "sel": ".worlds-section",
+          "found": false
+        },
+        {
+          "sel": ".systems-section",
+          "found": false
+        },
+        {
+          "sel": ".services-section",
+          "found": false
+        },
+        {
+          "sel": ".bridges-section",
+          "found": false
+        },
+        {
+          "sel": ".unless-ribbon",
+          "found": false
+        },
+        {
+          "sel": ".projects-section",
+          "found": false
+        },
+        {
+          "sel": ".manifesto-section",
+          "found": false
+        },
+        {
+          "sel": ".final-cta-section",
+          "found": false
+        },
+        {
+          "sel": ".shell-foot",
+          "found": true
+        }
+      ],
+      "carousel": {
+        "services": {
+          "track": false,
+          "snap": null
+        },
+        "projects": {
+          "track": false,
+          "snap": null
+        }
+      },
+      "toggle": "grid",
+      "shell": "none",
+      "fab": "grid",
+      "footerCols": "320px",
+      "overflowEls": [
+        {
+          "id": "NAV.shell-nav",
+          "right": 372,
+          "vw": 360
+        },
+        {
+          "id": "DIV.shell-nav-inner",
+          "right": 372,
+          "vw": 360
+        },
+        {
+          "id": "MAIN.nb-main",
+          "right": 372,
+          "vw": 360
+        },
+        {
+          "id": "SECTION.hero-poster",
+          "right": 372,
+          "vw": 360
+        },
+        {
+          "id": "DIV.hp-bg",
+          "right": 372,
+          "vw": 360
+        },
+        {
+          "id": "IMG",
+          "right": 372,
+          "vw": 360
+        },
+        {
+          "id": "DIV.hp-scrim",
+          "right": 372,
+          "vw": 360
+        },
+        {
+          "id": "DIV.hp-content",
+          "right": 372,
+          "vw": 360
+        }
+      ],
+      "resources": 14,
+      "transferMB": 2.62
+    },
+    "375": {
+      "path": "/",
+      "innerWidth": 388,
+      "dir": "rtl",
+      "lang": "he-IL",
+      "themeVersion": null,
+      "hScroll": true,
+      "scrollW": 389,
+      "clientW": 375,
+      "navAtop": true,
+      "navBg": "rgba(18, 17, 15, 0.5)",
+      "heroH": 601,
+      "sections": [
+        {
+          "sel": ".shell-nav",
+          "found": true
+        },
+        {
+          "sel": ".hero-poster",
+          "found": true
+        },
+        {
+          "sel": ".worlds-section",
+          "found": false
+        },
+        {
+          "sel": ".systems-section",
+          "found": false
+        },
+        {
+          "sel": ".services-section",
+          "found": false
+        },
+        {
+          "sel": ".bridges-section",
+          "found": false
+        },
+        {
+          "sel": ".unless-ribbon",
+          "found": false
+        },
+        {
+          "sel": ".projects-section",
+          "found": false
+        },
+        {
+          "sel": ".manifesto-section",
+          "found": false
+        },
+        {
+          "sel": ".final-cta-section",
+          "found": false
+        },
+        {
+          "sel": ".shell-foot",
+          "found": true
+        }
+      ],
+      "carousel": {
+        "services": {
+          "track": false,
+          "snap": null
+        },
+        "projects": {
+          "track": false,
+          "snap": null
+        }
+      },
+      "toggle": "grid",
+      "shell": "none",
+      "fab": "grid",
+      "footerCols": "335px",
+      "overflowEls": [
+        {
+          "id": "NAV.shell-nav",
+          "right": 387,
+          "vw": 375
+        },
+        {
+          "id": "DIV.shell-nav-inner",
+          "right": 387,
+          "vw": 375
+        },
+        {
+          "id": "MAIN.nb-main",
+          "right": 387,
+          "vw": 375
+        },
+        {
+          "id": "SECTION.hero-poster",
+          "right": 387,
+          "vw": 375
+        },
+        {
+          "id": "DIV.hp-bg",
+          "right": 387,
+          "vw": 375
+        },
+        {
+          "id": "IMG",
+          "right": 387,
+          "vw": 375
+        },
+        {
+          "id": "DIV.hp-scrim",
+          "right": 387,
+          "vw": 375
+        },
+        {
+          "id": "DIV.hp-content",
+          "right": 387,
+          "vw": 375
+        }
+      ],
+      "resources": 14,
+      "transferMB": 2.62,
+      "navScrollTest": {
+        "beforeAtop": true,
+        "afterScrollAtop": false,
+        "bgAfterScroll": "rgba(38, 37, 35, 0.525)"
+      },
+      "drawerOpen": {
+        "bodyLock": true,
+        "fab": "none"
+      }
+    },
+    "768": {
+      "path": "/",
+      "innerWidth": 768,
+      "dir": "rtl",
+      "lang": "he-IL",
+      "themeVersion": null,
+      "hScroll": false,
+      "scrollW": 768,
+      "clientW": 768,
+      "navAtop": true,
+      "navBg": "rgba(18, 17, 15, 0.5)",
+      "heroH": 758,
+      "sections": [
+        {
+          "sel": ".shell-nav",
+          "found": true
+        },
+        {
+          "sel": ".hero-poster",
+          "found": true
+        },
+        {
+          "sel": ".worlds-section",
+          "found": false
+        },
+        {
+          "sel": ".systems-section",
+          "found": false
+        },
+        {
+          "sel": ".services-section",
+          "found": false
+        },
+        {
+          "sel": ".bridges-section",
+          "found": false
+        },
+        {
+          "sel": ".unless-ribbon",
+          "found": false
+        },
+        {
+          "sel": ".projects-section",
+          "found": false
+        },
+        {
+          "sel": ".manifesto-section",
+          "found": false
+        },
+        {
+          "sel": ".final-cta-section",
+          "found": false
+        },
+        {
+          "sel": ".shell-foot",
+          "found": true
+        }
+      ],
+      "carousel": {
+        "services": {
+          "track": false,
+          "snap": null
+        },
+        "projects": {
+          "track": false,
+          "snap": null
+        }
+      },
+      "toggle": "none",
+      "shell": "flex",
+      "fab": "grid",
+      "footerCols": "335.281px 335.281px",
+      "overflowEls": [
+        {
+          "id": "IMG",
+          "right": 822,
+          "vw": 768
+        }
+      ],
+      "resources": 14,
+      "transferMB": 2.62
+    },
+    "1440": {
+      "path": "/",
+      "innerWidth": 1440,
+      "dir": "rtl",
+      "lang": "he-IL",
+      "themeVersion": null,
+      "hScroll": false,
+      "scrollW": 1440,
+      "clientW": 1440,
+      "navAtop": true,
+      "navBg": "rgba(18, 17, 15, 0.5)",
+      "heroH": 780,
+      "sections": [
+        {
+          "sel": ".shell-nav",
+          "found": true
+        },
+        {
+          "sel": ".hero-poster",
+          "found": true
+        },
+        {
+          "sel": ".worlds-section",
+          "found": false
+        },
+        {
+          "sel": ".systems-section",
+          "found": false
+        },
+        {
+          "sel": ".services-section",
+          "found": false
+        },
+        {
+          "sel": ".bridges-section",
+          "found": false
+        },
+        {
+          "sel": ".unless-ribbon",
+          "found": false
+        },
+        {
+          "sel": ".projects-section",
+          "found": false
+        },
+        {
+          "sel": ".manifesto-section",
+          "found": false
+        },
+        {
+          "sel": ".final-cta-section",
+          "found": false
+        },
+        {
+          "sel": ".shell-foot",
+          "found": true
+        }
+      ],
+      "carousel": {
+        "services": {
+          "track": false,
+          "snap": null
+        },
+        "projects": {
+          "track": false,
+          "snap": null
+        }
+      },
+      "toggle": "none",
+      "shell": "flex",
+      "fab": "none",
+      "footerCols": "393.734px 246.078px 246.094px 246.094px",
+      "overflowEls": [
+        {
+          "id": "IMG",
+          "right": 1541,
+          "vw": 1440
+        }
+      ],
+      "resources": 14,
+      "transferMB": 2.62
+    }
+  },
+  "inner": {
+    "world-soil": {
+      "path": "/world/soil/",
+      "dir": "rtl",
+      "hScroll": false,
+      "scrollW": 375,
+      "clientW": 375,
+      "fab": "grid",
+      "toggle": "grid"
+    },
+    "contact": {
+      "path": "/contact/",
+      "dir": "rtl",
+      "hScroll": false,
+      "scrollW": 375,
+      "clientW": 375,
+      "fab": "none",
+      "toggle": "grid"
+    }
+  },
+  "carouselTest": {
+    "services": {
+      "error": "no root"
+    },
+    "projects": {
+      "error": "no root"
+    }
+  }
+}
