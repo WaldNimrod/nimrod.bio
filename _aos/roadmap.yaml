@@ -592,3 +592,25 @@ work_packages:
     notes: "ADR042 closure by team_100. Gate-sign PASS_WITH_FINDINGS. ARCHIVE_MANIFEST: _archive/NB-S002-P009-WP003/ARCHIVE_MANIFEST.md. Step 3 (multi-engine propagation) SKIPPED — core/governance/ not modified. COMPLETION_CANONICAL: _COMMUNICATION/team_100/COMPLETION_CANONICAL_NB-S002-P009-WP003_v1.0.0.md. Theme 0.6.3 live on dev."
   notes: "COMPLETE. STANDARD track A. L-GATE_VALIDATE PASS_WITH_FINDINGS (team_190 Codex v1.0.0 + team_50 MCP v1.2.0). T7 home precision rebuild + design-language uplift LIVE on dev 0.6.3 (G-01 washes fixed; hero/worlds/systems/services/bridges/Unless/projects/manifesto/CTA/footer; basket logo + world icons + nav transparency; carousels; components). Built via team_100 sub-agent orchestration implementing team_35 package v5. WP002 mobile preserved. P009 program: WP001 design accepted, WP002 + WP003 COMPLETE. Pre-cutover follow-ons (V300/before cutover): image-weight optimization, open-asset swap (team_35), T2-T8 propagation. P005-WP002 cutover still deferred per team_00."
 
+- id: NB-S002-P009-WP004
+  label: "nimrod-bio — Home asset finalization (team_35 v6) + precision round 2"
+  status: IN_PROGRESS
+  track: A
+  current_lean_gate: L-GATE_BUILD
+  lod_status: LOD400
+  assigned_builder: nimrodbio_build
+  assigned_validator: nimrodbio_val
+  created_at: "2026-05-30"
+  milestone_ref: V200
+  spec_ref: "sources/team_35_design_package/design_handoff_home/assets/ASSETS_README.md"
+  gate_history:
+  - gate: L-GATE_ELIGIBILITY
+    result: PASS
+    date: "2026-05-30"
+    notes: "team_35 package v6 received + extracted (ditto). Delivers the P009-WP003 open assets: logo-master/mark.svg, favicon (svg/32/48/180), og-image.png + template, watercolor washes (5 x 3 res = 15 jpg). Only SFA/tiktrack screenshots still open (real-app captures — team_35 won't fabricate). team_00 directive 2026-05-30: integrate + refine remaining home-page precision."
+  - gate: L-GATE_BUILD
+    result: IN_PROGRESS
+    date: "2026-05-30"
+    notes: "Asset integration DONE (team_100 orchestrated, v0.7.0 live): watercolor washes wired as section backgrounds (bridges 0.11, worlds/systems 0.08, responsive sm/lg/xl); favicon (svg/32/180) in head; OG via Yoast filter + guarded fallback; logo SVG basket DEFECT fixed (v6 SVGs had empty <image>; embedded basket-ink.png as base64 data-URI); footer brand -> logo-master.svg. WP002 + WP003 preserved. PENDING: precision round 2 (team_00 'still imprecise in many points' — awaiting specific points or value-diff pass) + image-weight optimization. Browser visual verification blocked by page load weight."
+  notes: "IN_PROGRESS — v6 asset integration complete + live (0.7.0). Precision round 2 + image optimization pending. SFA/tiktrack screenshots still open (team_35). Builds on closed WP003."
+
