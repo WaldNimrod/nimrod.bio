@@ -594,10 +594,10 @@ work_packages:
 
 - id: NB-S002-P009-WP004
   label: "nimrod-bio — Home asset finalization (team_35 v6) + precision round 2"
-  status: IN_PROGRESS
+  status: COMPLETE
   track: A
-  current_lean_gate: L-GATE_BUILD
-  lod_status: LOD400
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
   assigned_builder: nimrodbio_build
   assigned_validator: nimrodbio_val
   created_at: "2026-05-30"
@@ -609,8 +609,12 @@ work_packages:
     date: "2026-05-30"
     notes: "team_35 package v6 received + extracted (ditto). Delivers the P009-WP003 open assets: logo-master/mark.svg, favicon (svg/32/48/180), og-image.png + template, watercolor washes (5 x 3 res = 15 jpg). Only SFA/tiktrack screenshots still open (real-app captures — team_35 won't fabricate). team_00 directive 2026-05-30: integrate + refine remaining home-page precision."
   - gate: L-GATE_BUILD
-    result: IN_PROGRESS
+    result: PASS
     date: "2026-05-30"
-    notes: "Asset integration DONE (team_100 orchestrated, v0.7.0 live): watercolor washes wired as section backgrounds (bridges 0.11, worlds/systems 0.08, responsive sm/lg/xl); favicon (svg/32/180) in head; OG via Yoast filter + guarded fallback; logo SVG basket DEFECT fixed (v6 SVGs had empty <image>; embedded basket-ink.png as base64 data-URI); footer brand -> logo-master.svg. WP002 + WP003 preserved. PENDING: precision round 2 (team_00 'still imprecise in many points' — awaiting specific points or value-diff pass) + image-weight optimization. Browser visual verification blocked by page load weight."
-  notes: "IN_PROGRESS — v6 asset integration complete + live (0.7.0). Precision round 2 + image optimization pending. SFA/tiktrack screenshots still open (team_35). Builds on closed WP003."
+    notes: "team_100 orchestrated, iterative deploy. (1) v6 asset integration (0.7.0): washes as section backgrounds (responsive sm/lg/xl), favicon (svg/32/180), OG (Yoast filter + guarded fallback), logo SVG basket defect fixed (data-URI embed), footer logo. (2) Image optimization (0.7.1): WebP + downscale — WebP browsers load ~1.0MB vs ~7.7MB (~87% lighter); 7 <img> -> <picture> WebP+JPEG fallback; washes image-set WebP-first. (3) Dummy SFA/tiktrack demo app-screens (0.7.2, SVG, marked DEMO). (4) v7 precision: client-tightened section rhythm applied (--sec-y clamp(38,4.6vw,52) ~50px vs old ~112px) per HOME_DELTA + SPACING_CHANGELOG, uniform site-wide; fonts verified loading (G1 ok). Theme 0.7.3 live. WP002 + WP003 preserved."
+  - gate: COMPLETE
+    result: ACCEPTED_BY_TEAM_00
+    date: "2026-05-30"
+    notes: "Closed on team_00 (Principal) acceptance 2026-05-30 ('can close this round'). Formal cross-engine L-GATE_VALIDATE (team_190/team_50) NOT run for this round — changes are CSS/asset polish on the already-VALIDATED WP003 base (PASS_WITH_FINDINGS); recommend folding a visual + Lighthouse QA into the pre-cutover pass. ARCHIVE_MANIFEST: _archive/NB-S002-P009-WP004/ARCHIVE_MANIFEST.md. COMPLETION_CANONICAL: _COMMUNICATION/team_100/COMPLETION_CANONICAL_NB-S002-P009-WP004_v1.0.0.md. core/governance not modified (Step 3 skipped)."
+  notes: "COMPLETE. Closed by team_00 acceptance. v6/v7 asset integration + image optimization (WebP, ~87% lighter) + dummy SFA/tiktrack screens + v7 client-tightened spacing — LIVE on dev 0.7.3. Still open (carry-forward): real SFA/tiktrack screenshots (team_35), Lighthouse/visual QA pre-cutover, system.css body line-height 1.65 vs spec 1.55 (LOCKED — GCR if needed). NEXT PHASE per team_00: content precision. P005-WP002 cutover still deferred."
 
