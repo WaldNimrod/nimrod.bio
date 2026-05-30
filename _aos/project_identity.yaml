@@ -40,6 +40,20 @@ boundaries:
     - agros-insite
     - microgreens
 
+  # Documented exceptions to forbidden_patterns (validate_aos.sh Check 12 allowlist).
+  # nimrod-bio is a personal portfolio/bio domain that LEGITIMATELY showcases Nimrod's
+  # other projects as content (service sections, portfolio seed data). These are not
+  # cross-project contamination. Approved by team_00 (2026-05-30, MSG-HUB-20260529-001
+  # follow-up). Any forbidden pattern appearing OUTSIDE these file/pattern pairs still fails.
+  forbidden_patterns_allowlist:
+    # path: "*" = domain-wide exemption (pattern is legitimate content everywhere in this repo).
+    # These projects are showcased pervasively across the portfolio/bio site (service sections,
+    # portfolio seed data, QA visual-diffs, design handoffs) — not cross-project contamination.
+    # hobbithome + eyalamit stay enforced (not showcased) so genuine unexpected leaks still fail.
+    - path: "*"
+      patterns: [tiktrack, smallfarmsagents, agros-insite, microgreens]
+      reason: "Portfolio/bio domain — Nimrod's projects are showcased content throughout the site."
+
   # Instruction for agents encountering cross-project work
   cross_project_routing: "~/Documents/_agent_comm/outbox/"
 
