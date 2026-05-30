@@ -22,7 +22,7 @@ if ( ! defined( 'NB_ICON_SPRITE_DONE' ) ) {
 		</div>
 		<div class="cols">
 			<div class="brand-block">
-				<div class="name">נימרוד ולד</div>
+				<img class="logo" src="<?php echo esc_url( NB_THEME_URI . '/assets/img/logo-master.svg' ); ?>" alt="נמרוד ולד — nimrod.bio" width="200" height="64">
 				<div class="tag">שורש אחד, שלושה עולמות. <em class="unless-inline">Unless</em>.</div>
 			</div>
 			<div>

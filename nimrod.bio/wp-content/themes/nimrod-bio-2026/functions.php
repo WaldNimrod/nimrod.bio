@@ -5,7 +5,7 @@
 defined( 'ABSPATH' ) || exit;
 
 // Constants
-define( 'NB_THEME_VERSION', '0.6.3' );
+define( 'NB_THEME_VERSION', '0.7.0' );
 define( 'NB_THEME_DIR', get_template_directory() );
 define( 'NB_THEME_URI', get_template_directory_uri() );
 
@@ -63,3 +63,14 @@ add_filter( 'pings_open', '__return_false', 20, 2 );
 // Strip emoji scripts (we use no emoji).
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
+// Default Open Graph image for Yoast SEO (P009-WP004 brand asset wiring).
+// When Yoast is active it owns OG output; this filter supplies the brand
+// og-image.png as the default whenever a post/page has no explicit OG image.
+// (header.php emits a non-Yoast fallback only when WPSEO_VERSION is undefined.)
+add_filter(
+	'wpseo_opengraph_image',
+	function ( $image ) {
+		return $image ? $image : NB_THEME_URI . '/assets/img/og-image.png';
+	}
+);

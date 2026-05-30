@@ -1474,6 +1474,94 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
 }
 .t7-section.t7-bridges.bridges-band { border-top: none; }
 
+/* ============================================================
+   WATERCOLOR WASHES — P009-WP004 (team_35 package v6)
+   Enhancement layer over the existing CSS gradient/paper baseline.
+   Decorative ::before, opacity .08–.11, behind all content.
+   Section wrappers get position:relative + overflow:hidden to
+   contain the wash; .t7-wrap is raised to z-index:1 so the
+   gradient baseline (set on the wrapper background) shows through
+   the wash and all text/media sits above. RTL-neutral (symmetric).
+   Responsive: -sm ≤640w · -lg default/1x · -xl 2x/retina.
+   Inserted ABOVE the protected WP002 mobile block.
+   ============================================================ */
+
+/* Raise section content above the decorative wash layer */
+.t7-worlds  > .t7-wrap,
+.t7-systems > .t7-wrap,
+.t7-bridges > .t7-wrap { position: relative; z-index: 1; }
+
+.t7-worlds,
+.t7-systems,
+.t7-bridges.bridges-band { position: relative; overflow: hidden; }
+
+/* Shared wash defaults for the decorative ::before layers */
+.t7-worlds::before,
+.t7-systems::before,
+.t7-bridges.bridges-band::before {
+  content: ""; position: absolute; inset: 0; z-index: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* ── BRIDGES — bridge washes over the existing radial paper-2 band ──
+   Compose both bridge washes (soil-know on the leading edge, know-code
+   on the trailing edge) to echo the band's two-corner gradient. ~0.11. */
+.t7-bridges.bridges-band::before {
+  opacity: .11;
+  background-image:
+    image-set(
+      url(../img/washes/wash-bridge-soil-know-lg.jpg) 1x,
+      url(../img/washes/wash-bridge-soil-know-xl.jpg) 2x),
+    image-set(
+      url(../img/washes/wash-bridge-know-code-lg.jpg) 1x,
+      url(../img/washes/wash-bridge-know-code-xl.jpg) 2x);
+  background-image: /* fallback for browsers without image-set() */
+    url(../img/washes/wash-bridge-soil-know-lg.jpg),
+    url(../img/washes/wash-bridge-know-code-lg.jpg);
+  background-position: left top, right bottom;
+  background-size: 62% auto, 62% auto;
+}
+@media (max-width: 640px) {
+  .t7-bridges.bridges-band::before {
+    background-image:
+      url(../img/washes/wash-bridge-soil-know-sm.jpg),
+      url(../img/washes/wash-bridge-know-code-sm.jpg);
+  }
+}
+
+/* ── WORLDS — faint neutral tri-world blend behind the cards region ──
+   ~0.08 so it never competes with the negentropy backdrop / paper glow
+   in .worlds-intro (which paint above this layer at z-index 0/-1 within
+   their own positioned context). Soil wash chosen as the neutral base. */
+.t7-worlds::before {
+  opacity: .08;
+  background-image:
+    image-set(
+      url(../img/washes/wash-soil-lg.jpg) 1x,
+      url(../img/washes/wash-soil-xl.jpg) 2x);
+  background-image: url(../img/washes/wash-soil-lg.jpg); /* fallback */
+}
+@media (max-width: 640px) {
+  .t7-worlds::before { background-image: url(../img/washes/wash-soil-sm.jpg); }
+}
+
+/* ── SYSTEMS — subtle know wash; kept low (~0.08) so it never muddies
+   the duotone product media in the sys-cards. ── */
+.t7-systems::before {
+  opacity: .08;
+  background-image:
+    image-set(
+      url(../img/washes/wash-know-lg.jpg) 1x,
+      url(../img/washes/wash-know-xl.jpg) 2x);
+  background-image: url(../img/washes/wash-know-lg.jpg); /* fallback */
+}
+@media (max-width: 640px) {
+  .t7-systems::before { background-image: url(../img/washes/wash-know-sm.jpg); }
+}
+
 /* ===== MOBILE — P009-WP002 (team_35 spec §8) ===== */
 /*
  * Append-only. Literal breakpoints from spec (900px / 640px).
