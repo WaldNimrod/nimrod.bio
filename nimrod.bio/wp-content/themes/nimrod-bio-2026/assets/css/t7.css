@@ -1513,11 +1513,11 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
   opacity: .11;
   background-image:
     image-set(
-      url(../img/washes/wash-bridge-soil-know-lg.jpg) 1x,
-      url(../img/washes/wash-bridge-soil-know-xl.jpg) 2x),
+      url(../img/washes/wash-bridge-soil-know-lg.webp) type("image/webp"),
+      url(../img/washes/wash-bridge-soil-know-lg.jpg)  type("image/jpeg")),
     image-set(
-      url(../img/washes/wash-bridge-know-code-lg.jpg) 1x,
-      url(../img/washes/wash-bridge-know-code-xl.jpg) 2x);
+      url(../img/washes/wash-bridge-know-code-lg.webp) type("image/webp"),
+      url(../img/washes/wash-bridge-know-code-lg.jpg)  type("image/jpeg"));
   background-image: /* fallback for browsers without image-set() */
     url(../img/washes/wash-bridge-soil-know-lg.jpg),
     url(../img/washes/wash-bridge-know-code-lg.jpg);
@@ -1527,6 +1527,13 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
 @media (max-width: 640px) {
   .t7-bridges.bridges-band::before {
     background-image:
+      image-set(
+        url(../img/washes/wash-bridge-soil-know-sm.webp) type("image/webp"),
+        url(../img/washes/wash-bridge-soil-know-sm.jpg)  type("image/jpeg")),
+      image-set(
+        url(../img/washes/wash-bridge-know-code-sm.webp) type("image/webp"),
+        url(../img/washes/wash-bridge-know-code-sm.jpg)  type("image/jpeg"));
+    background-image: /* fallback for browsers without image-set() */
       url(../img/washes/wash-bridge-soil-know-sm.jpg),
       url(../img/washes/wash-bridge-know-code-sm.jpg);
   }
@@ -1540,12 +1547,18 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
   opacity: .08;
   background-image:
     image-set(
-      url(../img/washes/wash-soil-lg.jpg) 1x,
-      url(../img/washes/wash-soil-xl.jpg) 2x);
+      url(../img/washes/wash-soil-lg.webp) type("image/webp"),
+      url(../img/washes/wash-soil-lg.jpg)  type("image/jpeg"));
   background-image: url(../img/washes/wash-soil-lg.jpg); /* fallback */
 }
 @media (max-width: 640px) {
-  .t7-worlds::before { background-image: url(../img/washes/wash-soil-sm.jpg); }
+  .t7-worlds::before {
+    background-image:
+      image-set(
+        url(../img/washes/wash-soil-sm.webp) type("image/webp"),
+        url(../img/washes/wash-soil-sm.jpg)  type("image/jpeg"));
+    background-image: url(../img/washes/wash-soil-sm.jpg); /* fallback */
+  }
 }
 
 /* ── SYSTEMS — subtle know wash; kept low (~0.08) so it never muddies
@@ -1554,12 +1567,18 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
   opacity: .08;
   background-image:
     image-set(
-      url(../img/washes/wash-know-lg.jpg) 1x,
-      url(../img/washes/wash-know-xl.jpg) 2x);
+      url(../img/washes/wash-know-lg.webp) type("image/webp"),
+      url(../img/washes/wash-know-lg.jpg)  type("image/jpeg"));
   background-image: url(../img/washes/wash-know-lg.jpg); /* fallback */
 }
 @media (max-width: 640px) {
-  .t7-systems::before { background-image: url(../img/washes/wash-know-sm.jpg); }
+  .t7-systems::before {
+    background-image:
+      image-set(
+        url(../img/washes/wash-know-sm.webp) type("image/webp"),
+        url(../img/washes/wash-know-sm.jpg)  type("image/jpeg"));
+    background-image: url(../img/washes/wash-know-sm.jpg); /* fallback */
+  }
 }
 
 /* ===== MOBILE — P009-WP002 (team_35 spec §8) ===== */

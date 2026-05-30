@@ -19,7 +19,10 @@ if ( ! defined( 'NB_ICON_SPRITE_DONE' ) ) {
 ?>
 <section class="hero-poster">
 	<div class="hp-bg">
-		<img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/hero-poster.jpeg' ); ?>" alt="" fetchpriority="high" decoding="async">
+		<picture>
+			<source type="image/webp" srcset="<?php echo esc_url( NB_THEME_URI . '/assets/img/hero-poster.webp' ); ?>">
+			<img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/hero-poster.jpeg' ); ?>" alt="" fetchpriority="high" decoding="async">
+		</picture>
 	</div>
 	<div class="hp-scrim" aria-hidden="true"></div>
 	<div class="hp-scrim hp-scrim-bottom" aria-hidden="true"></div>
@@ -116,7 +119,10 @@ $nb_worlds = array(
 			<?php foreach ( $nb_worlds as $w => $wd ) : ?>
 				<a href="<?php echo esc_url( home_url( "/world/$w/" ) ); ?>" class="world-card <?php echo esc_attr( $w ); ?>">
 					<div class="wcard-media">
-						<img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/' . $wd['img'] ); ?>" alt="" loading="lazy" decoding="async">
+						<picture>
+							<source type="image/webp" srcset="<?php echo esc_url( NB_THEME_URI . '/assets/img/' . preg_replace( '/\.(jpe?g)$/i', '.webp', $wd['img'] ) ); ?>">
+							<img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/' . $wd['img'] ); ?>" alt="" loading="lazy" decoding="async">
+						</picture>
 						<span class="nb-emblem <?php echo esc_attr( $w ); ?>">
 							<img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/' . $wd['basket'] ); ?>" alt="" loading="lazy" decoding="async">
 							<svg class="em-ic ip" aria-hidden="true"><use href="#<?php echo esc_attr( $wd['glyph'] ); ?>"/></svg>
@@ -154,7 +160,10 @@ $nb_worlds = array(
 			<a class="sys-card code" href="<?php echo esc_url( 'https://sfa.nimrod.bio/' ); ?>" target="_blank" rel="noopener">
 				<span class="spine" aria-hidden="true"></span>
 				<div class="media img-ph clean sys-shot">
-					<img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/cand-e.jpeg' ); ?>" alt="" loading="lazy" decoding="async">
+					<picture>
+						<source type="image/webp" srcset="<?php echo esc_url( NB_THEME_URI . '/assets/img/cand-e.webp' ); ?>">
+						<img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/cand-e.jpeg' ); ?>" alt="" loading="lazy" decoding="async">
+					</picture>
 					<span class="shot-tag">SFA · ממשק · screenshot pending</span>
 				</div>
 				<div class="body">
@@ -202,7 +211,10 @@ $nb_service_imgs = array( 'greenhouse-1.jpg', 'farm-b.jpg', 'greenhouse-2.jpg', 
 			<?php foreach ( $nb_services as $i => $svc ) : ?>
 				<a class="product-card" href="<?php echo esc_url( home_url( '/world/' . $svc[4] . '/' ) ); ?>">
 					<div class="pimg img-ph clean">
-						<img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/' . $nb_service_imgs[ $i ] ); ?>" alt="" loading="lazy" decoding="async">
+						<picture>
+							<source type="image/webp" srcset="<?php echo esc_url( NB_THEME_URI . '/assets/img/' . preg_replace( '/\.(jpe?g)$/i', '.webp', $nb_service_imgs[ $i ] ) ); ?>">
+							<img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/' . $nb_service_imgs[ $i ] ); ?>" alt="" loading="lazy" decoding="async">
+						</picture>
 					</div>
 					<div class="pbody">
 						<span class="svc-ic"><svg class="ip" aria-hidden="true"><use href="#<?php echo esc_attr( $svc[0] ); ?>"/></svg></span>
@@ -271,7 +283,10 @@ $nb_bridges = array(
 				<a class="bridge-card" href="#" style="--bridge-a:var(--w-<?php echo esc_attr( $br['a'] ); ?>);--bridge-b:var(--w-<?php echo esc_attr( $br['b'] ); ?>)">
 					<span class="spine" aria-hidden="true"></span>
 					<div class="media img-ph clean">
-						<img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/' . $br['img'] ); ?>" alt="" loading="lazy" decoding="async">
+						<picture>
+							<source type="image/webp" srcset="<?php echo esc_url( NB_THEME_URI . '/assets/img/' . preg_replace( '/\.(jpe?g)$/i', '.webp', $br['img'] ) ); ?>">
+							<img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/' . $br['img'] ); ?>" alt="" loading="lazy" decoding="async">
+						</picture>
 						<span class="seal" style="color:var(--<?php echo esc_attr( $br['seal'] ); ?>)" aria-hidden="true">
 							<?php require NB_THEME_DIR . '/assets/icons/' . $br['svg']; ?>
 						</span>
@@ -366,7 +381,10 @@ $nb_use_cpt = $nb_projects->found_posts >= 3;
 					?>
 					<a class="proj-card" href="<?php echo esc_url( home_url( '/projects/' ) ); ?>">
 						<div class="img-ph clean ph" style="aspect-ratio:16 / 10;">
-							<img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/' . $p[0] ); ?>" alt="" loading="lazy" decoding="async">
+							<picture>
+								<source type="image/webp" srcset="<?php echo esc_url( NB_THEME_URI . '/assets/img/' . preg_replace( '/\.(jpe?g)$/i', '.webp', $p[0] ) ); ?>">
+								<img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/' . $p[0] ); ?>" alt="" loading="lazy" decoding="async">
+							</picture>
 						</div>
 						<div class="body">
 							<div class="scope-row">
@@ -396,7 +414,10 @@ $nb_use_cpt = $nb_projects->found_posts >= 3;
 	<div class="mf-bg" aria-hidden="true"><img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/basket-paper.png' ); ?>" alt="" loading="lazy" decoding="async"></div>
 	<div class="t7-wrap mf-grid">
 		<div class="mf-media">
-			<img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/why-morning.jpg' ); ?>" alt="נימרוד בחממה" loading="lazy" decoding="async">
+			<picture>
+				<source type="image/webp" srcset="<?php echo esc_url( NB_THEME_URI . '/assets/img/why-morning.webp' ); ?>">
+				<img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/why-morning.jpg' ); ?>" alt="נימרוד בחממה" loading="lazy" decoding="async">
+			</picture>
 			<span class="mf-emblem"><img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/basket-paper.png' ); ?>" alt="" loading="lazy" decoding="async"></span>
 		</div>
 		<div class="mf-text">
