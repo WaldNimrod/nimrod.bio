@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="SFA — תצוגה מקדימה של ממשק סוכן שטח">
+  <title>SFA — סוכן שטח · דמו</title>
+  <defs>
+    <style>
+      .mono { font-family: "JetBrains Mono", ui-monospace, monospace; }
+      .sans { font-family: "Assistant", system-ui, sans-serif; }
+    </style>
+  </defs>
+
+  <!-- canvas / paper -->
+  <rect width="800" height="500" fill="#f5f3ec"/>
+  <rect x="0.5" y="0.5" width="799" height="499" fill="none" stroke="#d6d2c2"/>
+
+  <!-- top app bar -->
+  <rect x="0" y="0" width="800" height="56" fill="#1f5e60"/>
+  <circle cx="40" cy="28" r="13" fill="#2d8a8c"/>
+  <rect x="33" y="27" width="14" height="2.4" rx="1.2" fill="#f5f3ec"/>
+  <rect x="33" y="22" width="14" height="2.4" rx="1.2" fill="#f5f3ec"/>
+  <rect x="33" y="32" width="14" height="2.4" rx="1.2" fill="#f5f3ec"/>
+  <text x="760" y="33" text-anchor="end" class="mono" font-size="15" font-weight="600" fill="#f5f3ec">SFA · סוכן שטח</text>
+  <circle cx="700" cy="28" r="13" fill="#2d8a8c" stroke="#f5f3ec" stroke-width="1.5"/>
+  <text x="700" y="33" text-anchor="middle" class="sans" font-size="13" font-weight="700" fill="#f5f3ec">נ</text>
+
+  <!-- right sidebar hint (RTL → nav on the right) -->
+  <rect x="724" y="56" width="76" height="444" fill="#e9e6da"/>
+  <line x1="724" y1="56" x2="724" y2="500" stroke="#d6d2c2"/>
+  <rect x="745" y="92" width="34" height="34" rx="8" fill="#1f5e60"/>
+  <rect x="747" y="148" width="30" height="6" rx="3" fill="#c4bfae"/>
+  <rect x="747" y="170" width="30" height="6" rx="3" fill="#c4bfae"/>
+  <rect x="747" y="204" width="30" height="6" rx="3" fill="#c4bfae"/>
+  <rect x="747" y="226" width="30" height="6" rx="3" fill="#c4bfae"/>
+
+  <!-- section label -->
+  <text x="704" y="92" text-anchor="end" class="mono" font-size="12" letter-spacing="1" fill="#1f5e60">משימות שטח · TODAY</text>
+
+  <!-- task rows -->
+  <!-- row 1 -->
+  <rect x="40" y="108" width="664" height="58" rx="10" fill="#ffffff00"/>
+  <rect x="40" y="108" width="664" height="58" rx="10" fill="#fbfaf5" stroke="#d6d2c2"/>
+  <circle cx="676" cy="137" r="6" fill="#2d8a8c"/>
+  <text x="654" y="132" text-anchor="end" class="sans" font-size="15" font-weight="600" fill="#1f1e1c">ביקורת חממה · אדמה</text>
+  <text x="654" y="152" text-anchor="end" class="sans" font-size="12" fill="#6b6a64">בלוק B · שורות 4–7</text>
+  <rect x="56" y="124" width="58" height="26" rx="13" fill="#1f5e60"/>
+  <text x="85" y="141" text-anchor="middle" class="mono" font-size="11" fill="#f5f3ec">08:30</text>
+
+  <!-- row 2 -->
+  <rect x="40" y="176" width="664" height="58" rx="10" fill="#fbfaf5" stroke="#d6d2c2"/>
+  <circle cx="676" cy="205" r="6" fill="#c46a3e"/>
+  <text x="654" y="200" text-anchor="end" class="sans" font-size="15" font-weight="600" fill="#1f1e1c">דיגום השקיה · הידרו</text>
+  <text x="654" y="220" text-anchor="end" class="sans" font-size="12" fill="#6b6a64">מערכת טפטוף · EC/pH</text>
+  <rect x="56" y="192" width="58" height="26" rx="13" fill="#2d8a8c"/>
+  <text x="85" y="209" text-anchor="middle" class="mono" font-size="11" fill="#f5f3ec">10:15</text>
+
+  <!-- row 3 -->
+  <rect x="40" y="244" width="664" height="58" rx="10" fill="#fbfaf5" stroke="#d6d2c2"/>
+  <circle cx="676" cy="273" r="6" fill="#2d8a8c"/>
+  <text x="654" y="268" text-anchor="end" class="sans" font-size="15" font-weight="600" fill="#1f1e1c">ספירת מזיקים · מלכודות</text>
+  <text x="654" y="288" text-anchor="end" class="sans" font-size="12" fill="#6b6a64">מנהרה 3 · דוח BCS</text>
+  <rect x="56" y="260" width="58" height="26" rx="13" fill="#1f5e60"/>
+  <text x="85" y="277" text-anchor="middle" class="mono" font-size="11" fill="#f5f3ec">13:00</text>
+
+  <!-- row 4 -->
+  <rect x="40" y="312" width="664" height="58" rx="10" fill="#fbfaf5" stroke="#d6d2c2"/>
+  <circle cx="676" cy="341" r="6" fill="#c4bfae"/>
+  <text x="654" y="336" text-anchor="end" class="sans" font-size="15" font-weight="600" fill="#1f1e1c">מסירת תוצרת · מסעדה</text>
+  <text x="654" y="356" text-anchor="end" class="sans" font-size="12" fill="#6b6a64">8 ארגזים · חתימה</text>
+  <rect x="56" y="328" width="58" height="26" rx="13" fill="#e9e6da" stroke="#c4bfae"/>
+  <text x="85" y="345" text-anchor="middle" class="mono" font-size="11" fill="#1f5e60">16:40</text>
+
+  <!-- map / field grid block -->
+  <rect x="40" y="386" width="664" height="90" rx="10" fill="#eef3ec" stroke="#d6d2c2"/>
+  <g stroke="#cfd8c8" stroke-width="1">
+    <line x1="40" y1="416" x2="704" y2="416"/>
+    <line x1="40" y1="446" x2="704" y2="446"/>
+    <line x1="206" y1="386" x2="206" y2="476"/>
+    <line x1="372" y1="386" x2="372" y2="476"/>
+    <line x1="538" y1="386" x2="538" y2="476"/>
+  </g>
+  <rect x="216" y="396" width="60" height="34" rx="4" fill="#2d8a8c" opacity="0.55"/>
+  <rect x="392" y="426" width="60" height="34" rx="4" fill="#1f5e60" opacity="0.55"/>
+  <circle cx="120" cy="431" r="9" fill="#c46a3e"/>
+  <circle cx="120" cy="431" r="9" fill="none" stroke="#f5f3ec" stroke-width="2"/>
+  <text x="688" y="406" text-anchor="end" class="mono" font-size="11" fill="#1f5e60">מפת חלקות · GIS</text>
+
+  <!-- honest DEMO tag -->
+  <rect x="40" y="69" width="118" height="22" rx="11" fill="#1f5e60"/>
+  <text x="99" y="84" text-anchor="middle" class="mono" font-size="11" letter-spacing="1" fill="#f5f3ec">דמו · DEMO</text>
+</svg>

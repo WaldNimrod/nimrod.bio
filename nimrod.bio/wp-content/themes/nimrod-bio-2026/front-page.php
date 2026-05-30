@@ -159,13 +159,10 @@ $nb_worlds = array(
 		<div class="systems-row">
 			<a class="sys-card code" href="<?php echo esc_url( 'https://sfa.nimrod.bio/' ); ?>" target="_blank" rel="noopener">
 				<span class="spine" aria-hidden="true"></span>
-				<div class="media img-ph clean sys-shot">
-					<picture>
-						<source type="image/webp" srcset="<?php echo esc_url( NB_THEME_URI . '/assets/img/cand-e.webp' ); ?>">
-						<img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/cand-e.jpeg' ); ?>" alt="" loading="lazy" decoding="async">
-					</picture>
-					<span class="shot-tag">SFA · ממשק · screenshot pending</span>
-				</div>
+				<div class="media sys-shot demo">
+						<img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/sfa-demo.svg' ); ?>" alt="SFA — תצוגה מקדימה של ממשק סוכן שטח" loading="lazy" decoding="async">
+					<span class="shot-tag">SFA · ממשק · דמו</span>
+					</div>
 				<div class="body">
 					<span class="syslabel"><svg class="ip" aria-hidden="true"><use href="#ip-shop"/></svg>מערכת · SFA · AOS</span>
 					<h3>SFA — סוכן שטח חקלאי</h3>
@@ -176,8 +173,8 @@ $nb_worlds = array(
 			<a class="sys-card know" href="<?php echo esc_url( home_url( '/project/tiktrack/' ) ); ?>">
 				<span class="spine" aria-hidden="true"></span>
 				<div class="media sys-shot tik">
-					<svg class="spark-chart" viewBox="0 0 300 120" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,92 30,70 60,82 90,52 120,64 150,38 180,48 210,26 240,44 270,16 300,30" fill="none" stroke="rgba(245,243,236,.9)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg>
-					<span class="shot-tag">tiktrack · יומן מסחר · screenshot pending</span>
+					<img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/tiktrack-demo.svg' ); ?>" alt="tiktrack — תצוגה מקדימה של יומן מסחר" loading="lazy" decoding="async">
+						<span class="shot-tag">tiktrack · יומן מסחר · דמו</span>
 				</div>
 				<div class="body">
 					<span class="syslabel"><svg class="ip" aria-hidden="true"><use href="#ip-measure"/></svg>מערכת · tiktrack</span>

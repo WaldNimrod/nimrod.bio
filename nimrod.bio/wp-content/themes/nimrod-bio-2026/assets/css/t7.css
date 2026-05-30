@@ -961,22 +961,20 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
   position: absolute; inset: 0; width: 100%; height: 100%;
   object-fit: cover; display: block;
 }
-/* SFA: teal/code duotone over the screenshot — base deep-teal + luminosity img + multiply wash */
+/* SFA: teal/code panel — temporary branded demo SVG on paper, framed (P009-WP004) */
 .t7-systems .sys-card.code .sys-shot { background: var(--w-code-deep); }
-.t7-systems .sys-card.code .sys-shot > img {
-  mix-blend-mode: luminosity; opacity: .55;
+.t7-systems .sys-card.code .sys-shot.demo { background: var(--paper); }
+.t7-systems .sys-card .sys-shot.demo > img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: top center; display: block;
 }
-.t7-systems .sys-card.code .sys-shot::after {
-  content: ""; position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(135deg, rgba(31,94,96,.72), rgba(45,138,140,.42));
-  mix-blend-mode: multiply;
-}
-/* tiktrack: dark panel with centered sparkline (mockup .sys-shot.tik → #3a2417) */
+/* tiktrack: dark know panel — branded demo SVG fills the media area */
 .t7-systems .sys-card.know .sys-shot.tik {
-  background: #3a2417; display: grid; place-items: center;
+  background: #3a2417; display: block;
 }
-.t7-systems .sys-card .spark-chart {
-  position: relative; z-index: 1; width: 80%; height: 56%;
+.t7-systems .sys-card.know .sys-shot.tik > img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center; display: block;
 }
 .t7-systems .sys-card .shot-tag {
   position: absolute; z-index: 2;
