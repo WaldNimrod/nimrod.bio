@@ -41,7 +41,7 @@ if ( ! defined( 'NB_ICON_SPRITE_DONE' ) ) {
 					<span class="pw pw-know"><i class="pw-dot" aria-hidden="true"></i>ידע</span>
 					<span class="pw pw-code"><i class="pw-dot" aria-hidden="true"></i>דיגיטל</span>
 				</h1>
-				<p class="hp-tagline">שלוש זרועות, שורש אחד. הייחוד הוא בחיבורים — שלושה גשרים שמנצחים את האנטרופיה.</p>
+				<p class="hp-tagline">שלוש זרועות, שורש אחד. הייחוד הוא בחיבורים ביניהן.</p>
 				<div class="hero-foot">
 					<div class="hp-kicker">
 						<span class="kc"><b>4</b> חממות · ייעוץ</span>
@@ -96,8 +96,8 @@ $nb_worlds = array(
 		'tagline' => 'איפה שהידע הופך למערכת חיה.',
 		'items'   => array(
 			array( 'ip-shop', 'AOS · SFA · קהילתי' ),
-			array( 'ip-measure', 'tiktrack' ),
-			array( 'ip-greenhouse', 'קואופרטיב חממות' ),
+			array( 'ip-measure', 'tiktrack (פיילוט)' ),
+			array( 'ip-shop', 'פיתוח ממשקים · ייעוץ דיגיטלי' ),
 		),
 	),
 );
@@ -112,7 +112,7 @@ $nb_worlds = array(
 				<p class="wi-eyebrow"><span class="num">01</span><span>העולמות</span></p>
 				<h2 id="t7-worlds-title" class="wi-title">שלוש זרועות · <span class="under">שורש אחד</span></h2>
 				<p class="wi-lede">כל זרוע פעילה בפועל. הקישוריות ביניהן היא הייחוד.</p>
-				<p class="neg-cap"><b>נֶגֶנְטְרוֹפְּיָה</b> · פיזור שהופך לקישוריות — שלושה עולמות, סל אחד</p>
+				<p class="neg-cap">פיזור שהופך לקישוריות — שלושה עולמות, סל אחד</p>
 			</div>
 		</div>
 		<div class="worlds-grid">
@@ -263,7 +263,7 @@ $nb_bridges = array(
 		'img'   => 'landscape.jpg',
 		'label' => 'אדמה × דיגיטל',
 		'title' => 'החווה היא מקור־דאטה',
-		'lede'  => 'החווה מזינה את tiktrack ואת SFA בנתונים אמיתיים — לא הנחת־יסוד מופשטת. השטח מאמת את הקוד.',
+		'lede'  => 'החווה מזינה את SFA בנתונים אמיתיים — לא הנחת־יסוד מופשטת. השטח מאמת את הקוד.',
 		'more'  => 'SFA · קואופרטיב',
 	),
 );
@@ -321,8 +321,7 @@ $nb_bridges = array(
  * to the team_35 mockup roster so the section is never thin. (P009-WP003 B3.)
  */
 $nb_proj_fallback = array(
-	array( 'wide-field-2.jpeg', 'venture', 'seeking-partners', 'קואופרטיב חממות · השרון', 'מודל שיתופי לחממות קטנות באזור השרון.', 'אדמה × דיגיטל' ),
-	array( 'farm-a.jpg', 'client', 'live', 'חממת מסעדת X', 'תכנון והקמת חממה הידרופונית במטבח מסעדה.', 'אדמה' ),
+	array( 'farm-a.jpg', 'client', 'live', 'חממת המחתרת התאילנדית', 'גידול ייחודי, הזמנה מראש, עונה שלמה.', 'אדמה' ),
 	array( 'products.jpeg', 'venture', 'legacy', 'סלי משפחה', '2019–23 · הבסיס למה שיש היום.', 'אדמה' ),
 	array( 'farm-a.jpg', 'venture', 'seeking-partners', 'ישראל מיקרו־גרין', 'מיקרו־גרין מסחרי · פיילוט גדל.', 'אדמה × דיגיטל' ),
 	array( 'wide-field-2.jpeg', 'client', 'live', 'שדה השרון · market garden', 'תכנון וליווי גידול לאורך עונה.', 'אדמה × ידע' ),
@@ -420,8 +419,9 @@ $nb_use_cpt = $nb_projects->found_posts >= 3;
 		<div class="mf-text">
 			<p class="t7-eyebrow light"><span class="num">המניפסט</span><span>· נימרוד</span></p>
 			<h2>למה אנחנו קמים <em>בבוקר?</em></h2>
-			<p>כי <b>קטן זה יפה</b> — וזה שפוי. חווה, ייעוץ ומערכת תוכנה הם אותו דבר שלובש צורות שונות: ניתוח של מערכת מורכבת, וניהול שלה לאורך זמן.</p>
-			<p>הגלגולים התעסוקתיים שלי הם גלגולים בתוך חיים אחד — שדה שהפך לידע, שהפך לקוד, וחוזר לשדה. <em>אלא אם כן</em> מחברים — פיזור נשאר פיזור. הגשרים הם הדרך שבה אנטרופיה הופכת לסדר, לידע, ולמשהו שאפשר להחזיק ביד.</p>
+			<p>הגינה פעלה תשע עונות — מ-2014 עד 2023.<br>ממנה למדנו לגדל, ללמד, ולבנות מערכות שעובדות.<br>כשנסגרה — מתוך בחירה, לא כשלון — הידע נשאר.</p>
+			<p>הידע הפך לייעוץ.<br>הייעוץ הפך לכלי.<br>הכלי חוזר לשדה.</p>
+				<p><em>קטן זה יפה. לאט זה שפוי.</em></p>
 		</div>
 	</div>
 </section>
