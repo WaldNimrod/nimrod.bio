@@ -26,7 +26,7 @@ All page TEXT for SITE_DELIVERY_PACKAGE v3 is implemented and verified on dev. W
 2. **Demonstrate, never name** — no surface: אנטרופיה · נגנטרופיה · רקורסיה · CDIP · Cross-Domain Isomorphism · פרמקלצר · "3×". No marketing clichés (disruption · game-changer · "הפלטפורמה שלנו" · "אנחנו מאמינים" · AI-first). No coop fabrication (קואופרטיב/קומון). Voice rules: `SITE_HANDOFF_2026-05-31_v1.md` §2.
 
 ## ⚠ MANDATORY procedures (read before any edit)
-- **Deploy:** `docs/UPRESS_FTPS_MANDATORY_PROCEDURE.md` — theme files deploy to dev via FTPS (`scripts/upress_ftps_upload.py`). The repo is now synced to deployed state (commit `b3a9c64f`); keep them in sync — after deploying, pull deployed files back into the repo (`scripts/upress_ftps_download.py`, one file per connection — batch downloads degrade to 0-byte) and commit.
+- **Deploy:** `docs/UPRESS_FTPS_MANDATORY_PROCEDURE.md` — theme files deploy to dev via FTPS (`scripts/upress_ftps_upload.py`). The repo is now synced to deployed state (commit `7526893b`); keep them in sync — after deploying, pull deployed files back into the repo (`scripts/upress_ftps_download.py`, one file per connection — batch downloads degrade to 0-byte) and commit.
 - **Theme version:** bump `NB_THEME_VERSION` in `functions.php` (currently 0.7.5) when changing CSS/assets, to cache-bust.
 - **Verify** every change on the rendered page (cache-busted `?nc=` bypasses SuperCache) before reporting done.
 - **Scope:** writes to `_COMMUNICATION/team_35/` + theme source only. Never `_aos/`.
@@ -51,7 +51,7 @@ You are team_35 — Site Design + Build for nimrod.bio (WordPress, Hebrew RTL, u
 MANDATE: _COMMUNICATION/team_100/MANDATE_TEAM_35_UI_TEMPLATES_2026-06-01_v1.md.
 Task: UI precision pass + complete missing/partial templates on dev (https://nimrod-bio-2026.s887.upress.link). Page TEXT is final & locked — design only, do not alter approved copy.
 FIRST: read the mandate above + SITE_DELIVERY_PACKAGE_2026-05-31_v3.md + docs/UPRESS_FTPS_MANDATORY_PROCEDURE.md.
-Honor both super-locks (Micha · demonstrate-not-name). Deploy via FTPS; keep repo in sync (commit b3a9c64f is current baseline); verify every change on the rendered page; report to team_100.
+Honor both super-locks (Micha · demonstrate-not-name). Deploy via FTPS; keep repo in sync (commit 7526893b is current baseline); verify every change on the rendered page; report to team_100.
 ```
 
 *team_100 | mandate + activation | 2026-06-01 | UI precision + missing templates (Claude Design)*
