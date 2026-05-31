@@ -85,9 +85,9 @@ Light touch — already authentic voice. Per post: normalize world tag → add H
 
 ---
 
-## Status / optional enrichment
-- **All 10 posts: ✅ complete & publishable** as video-companion posts.
-- **Optional later:** transcribe A2–A9 into written step-lists (richer SEO/accessibility). Not a blocker.
+## Status / decision
+- **All 10 posts: ✅ complete & publishable** as video-companion posts — **FINAL form (owner-decided 2026-05-31).**
+- **Transcription NOT pursued:** the videos have **no captions** (verified) → no auto-transcript; owner chose the video-companion format. Do not re-open. (Audio-ASR was available but declined.)
 - **Media:** Drive photos → biochar body + hero images (owner/Drive).
 - **Owner:** confirm/trim the A-set if desired.
 
