@@ -35,7 +35,7 @@ if ( 'lattice' === $layout ) {
 			<?php echo get_the_post_thumbnail( $post->ID, 'medium_large', array( 'loading' => 'lazy', 'alt' => esc_attr( get_the_title( $post ) ) ) ); ?>
 		</div>
 	<?php else : ?>
-		<?php echo nb_img_placeholder( 'TBD · ' . get_the_title( $post ), get_the_title( $post ), '16/10' ); ?>
+		<?php echo nb_img_placeholder( get_the_title( $post ), get_the_title( $post ), '16/10' ); ?>
 	<?php endif; ?>
 	<div class="body">
 		<h3><?php echo esc_html( get_the_title( $post ) ); ?></h3>

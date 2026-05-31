@@ -27,7 +27,17 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 
 	<div class="contact-card">
-		<div class="label">בסיס · אזור פעילות</div>
-		<p>פרדס חנה — שרון, חוף הכרמל, ועמק חפר. <em>מחוץ לאזור: רק אם זה ספציפי וכדאי, או בזום.</em></p>
+		<div class="label">מיקום</div>
+		<p>מגד 5, פרדס חנה. <em>אזור פעילות: שרון, חוף הכרמל ועמק חפר. מחוץ לאזור — רק אם זה ספציפי וכדאי, או בזום.</em></p>
+		<a href="https://maps.app.goo.gl/8ySCEcFw3B8hXtnP6" class="direct" target="_blank" rel="noopener noreferrer">פתח ב-Google Maps</a>
+	</div>
+
+	<div class="contact-card">
+		<div class="label">רשתות</div>
+		<ul class="contact-social">
+			<li><a href="https://www.facebook.com/NimrodGarden" target="_blank" rel="noopener noreferrer">Facebook · הגינה</a></li>
+			<li><a href="https://www.facebook.com/Wald.Nimrod" target="_blank" rel="noopener noreferrer">Facebook · אישי</a></li>
+			<li><a href="https://www.youtube.com/@waldnimrod" target="_blank" rel="noopener noreferrer">YouTube · ‎@waldnimrod</a></li>
+		</ul>
 	</div>
 </aside>

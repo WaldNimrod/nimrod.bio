@@ -18,8 +18,15 @@ function nb_handle_contact_submit() {
 	$name    = sanitize_text_field( wp_unslash( $_POST['name'] ?? '' ) );
 	$email   = sanitize_email( wp_unslash( $_POST['email'] ?? '' ) );
 	$phone   = sanitize_text_field( wp_unslash( $_POST['phone'] ?? '' ) );
-	$topics  = array_intersect( array_keys( nb_get_worlds() ), array_map( 'sanitize_key', (array) ( $_POST['topics'] ?? array() ) ) );
-	$message = sanitize_textarea_field( wp_unslash( $_POST['message'] ?? '' ) );
+	$topic_map = array(
+		'soil'  => 'אדמה',
+		'know'  => 'ייעוץ והוראה',
+		'code'  => 'דיגיטל',
+		'other' => 'אחר',
+	);
+	$topic_key = sanitize_key( wp_unslash( $_POST['topic'] ?? '' ) );
+	$topic     = $topic_map[ $topic_key ] ?? '';
+	$message   = sanitize_textarea_field( wp_unslash( $_POST['message'] ?? '' ) );
 
 	if ( ! $name || ! $email || strlen( $message ) < 20 ) {
 		wp_safe_redirect( home_url( '/contact/?status=invalid' ) );
@@ -30,7 +37,7 @@ function nb_handle_contact_submit() {
 	$subject = sprintf( '[nimrod.bio · contact] %s', $name );
 	$body    = "From:    $name <$email>\n";
 	$body   .= "Phone:   $phone\n";
-	$body   .= 'Topics:  ' . implode( ', ', $topics ) . "\n";
+	$body   .= "Topic:   $topic\n";
 	$body   .= "\n" . $message . "\n";
 
 	$sent = wp_mail( $to, $subject, $body, array( 'Reply-To: ' . $email ) );

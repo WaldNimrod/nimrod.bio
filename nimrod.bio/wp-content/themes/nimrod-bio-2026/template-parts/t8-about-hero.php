@@ -21,9 +21,9 @@ $gallery = array(
 			</div>
 		</div>
 
-		<h1>חקלאי, יועץ, מקודד.</h1>
+		<h1>נימרוד ולד — חקלאי, יועץ, מקודד.</h1>
 		<p class="lede">
-			<em>שורש אחד, שלוש זרועות.</em> חממה הידרופונית פעילה, ייעוץ ותכנון חממות, וכלי קהילתי לחקלאות הקטנה שאני בונה.
+			<em>שורש אחד, שלוש זרועות.</em> חממה הידרופונית פעילה, ייעוץ לחממות, וסוכן AI לחקלאות קטנה שאני בונה.
 		</p>
 
 		<div class="about-gallery">
@@ -35,8 +35,8 @@ $gallery = array(
 		<div class="factrow">
 			<div class="row"><span>בסיס</span><b>פרדס חנה</b></div>
 			<div class="row"><span>פעיל מ</span><b>2014</b></div>
-			<div class="row"><span>חממה פעילה</span><b>240 מ״ר · NFT</b></div>
-			<div class="row"><span>SFA</span><b>בבנייה · v0.1</b></div>
+			<div class="row"><span>חממה פעילה</span><b>הידרופונית</b></div>
+			<div class="row"><span>SFA</span><b>חי · sfa.nimrod.bio</b></div>
 		</div>
 	</div>
 </section>

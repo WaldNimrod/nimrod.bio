@@ -9,9 +9,13 @@ $lede   = $bridge['lede'] ?? '';
 
 $service = $slug ? nb_get_service_by_slug( $slug ) : null;
 if ( $service ) {
-	$title = get_the_title( $service );
-	$lede  = nb_meta( $service->ID, 'lede' ) ?: $lede;
+	// Bridge-supplied title/lede (SITE_COPY_WORLDS_v1) win over service meta;
+	// fall back to service values only when the bridge omitted them.
+	$title = $title ?: get_the_title( $service );
+	$lede  = $lede ?: nb_meta( $service->ID, 'lede' );
 	$href  = get_permalink( $service );
+} elseif ( ! empty( $bridge['href'] ) ) {
+	$href = $bridge['href'];
 } else {
 	$href = home_url( '/services/' . $slug . '/' );
 }

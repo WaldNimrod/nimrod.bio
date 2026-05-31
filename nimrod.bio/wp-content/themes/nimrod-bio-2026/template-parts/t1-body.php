@@ -2,6 +2,13 @@
 defined( 'ABSPATH' ) || exit;
 $world  = $args['world'] ?? 'soil';
 $anchor = nb_get_anchor_service_for_world( $world );
+
+// SITE_COPY_WORLDS_v1: the דיגיטל (code) anchor is SFA — the live community
+// core. SFA is a project (not a service CPT), so resolve it directly when no
+// service anchor is flagged for this world. This resolves the prior unset anchor.
+if ( ! $anchor && 'code' === $world ) {
+	$anchor = nb_get_project_by_slug( 'sfa' );
+}
 $anchor_id = $anchor ? (int) $anchor->ID : 0;
 
 $lat_services = array();
@@ -22,9 +29,13 @@ if ( $svcs_q->have_posts() ) {
 
 $bridges = nb_get_bridges_for_world( $world );
 foreach ( $bridges as $i => $bridge ) {
-	$svc = ! empty( $bridge['slug'] ) ? nb_get_service_by_slug( $bridge['slug'] ) : null;
-	if ( $svc ) {
-		$bridges[ $i ]['lede'] = nb_meta( $svc->ID, 'lede' );
+	// Only backfill lede from the linked service when the bridge did not ship
+	// its own copy (SITE_COPY_WORLDS_v1 bridge ledes are authoritative).
+	if ( empty( $bridge['lede'] ) ) {
+		$svc = ! empty( $bridge['slug'] ) ? nb_get_service_by_slug( $bridge['slug'] ) : null;
+		if ( $svc ) {
+			$bridges[ $i ]['lede'] = nb_meta( $svc->ID, 'lede' );
+		}
 	}
 }
 
@@ -63,12 +74,24 @@ $posts_q = nb_query_by_world( 'post', $world, 4 );
 							'layout' => 'lattice',
 						)
 					);
+				} elseif ( 3 === $idx && 'code' === $world ) {
+					// דיגיטל activities = the two live community tools, each linking
+					// to its live home (SITE_COPY_WORLDS_v1). SFA is the anchor;
+					// TikTrack is a separately-marketed pilot.
+					?>
+					<div class="lat-side" style="grid-column:3/4;background:var(--paper-2);border-color:var(--line)">
+						<h4 style="font-style:italic;color:var(--ink-soft)">כלים חיים</h4>
+						<p><strong>SFA</strong> — מדד מחירים שקוף וספר גידולים. חי ב־<a href="https://sfa.nimrod.bio" rel="noopener">sfa.nimrod.bio</a>.</p>
+						<p><strong>TikTrack</strong> — מערכת QA למסחר, בפיילוט סגור, משווק בנפרד. חי ב־<a href="https://tt.nimrod.bio" rel="noopener">tt.nimrod.bio</a>.</p>
+						<div class="tag-row" style="font-family:JetBrains Mono;font-size:10px;color:var(--ink-soft)">מהשטח · חוזר לשטח</div>
+					</div>
+					<?php
 				} elseif ( 3 === $idx ) {
 					?>
 					<div class="lat-side" style="grid-column:3/4;background:var(--paper-2);border-color:var(--line)">
 						<h4 style="font-style:italic;color:var(--ink-soft)">קריאה מבפנים</h4>
 						<p>החממה מזינה את התוצרת. התוצרת מאמתת את הייעוץ. הייעוץ מקודד ל־SFA. SFA חוזרת לקהילה — לחממה הבאה.</p>
-						<div class="tag-row" style="font-family:JetBrains Mono;font-size:10px;color:var(--ink-soft)">recursion · evidence-based</div>
+						<div class="tag-row" style="font-family:JetBrains Mono;font-size:10px;color:var(--ink-soft)">מהשטח · חוזר לשטח</div>
 					</div>
 					<?php
 				}
@@ -76,12 +99,11 @@ $posts_q = nb_query_by_world( 'post', $world, 4 );
 			?>
 		</div>
 
-		<div class="vc-cdip">
-			<?php echo nb_render_cdip_diagram(); ?>
+		<div class="vc-cdip" style="grid-template-columns:1fr">
 			<div>
 				<div class="label">הקו המחבר</div>
-				<h4>אותם עקרונות יסוד — לפיזיקה, לחממה, לקוד, ליחסי־אנוש.</h4>
-				<p>שלושת העולמות הם אינסטנסים של אותה מערכת. הנקודה האדומה במרכז — שם הם נפגשים. <em style="color:var(--spark);font-style:normal">זה ה־3×.</em></p>
+				<h4>החממה מזינה את התוצרת. התוצרת מאמתת את הייעוץ.</h4>
+				<p>הייעוץ מקודד ל־SFA. ו־SFA חוזרת לקהילה — לחממה הבאה. <em style="color:var(--spark);font-style:normal">הקו לא נגמר; הוא מתחיל מחדש.</em></p>
 			</div>
 		</div>
 	</section>

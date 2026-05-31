@@ -2,9 +2,10 @@
 defined( 'ABSPATH' ) || exit;
 
 $topics = array(
-	'soil' => 'אדמה',
-	'know' => 'ייעוץ והוראה',
-	'code' => 'דיגיטל',
+	'soil'  => 'אדמה',
+	'know'  => 'ייעוץ והוראה',
+	'code'  => 'דיגיטל',
+	'other' => 'אחר',
 );
 ?>
 <form id="nb-contact" class="contact-form" method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
@@ -32,15 +33,14 @@ $topics = array(
 		<input id="nb-contact-phone" type="tel" name="phone">
 	</div>
 
-	<fieldset class="topic-chips">
-		<legend>נושא (אפשר לבחור כמה)</legend>
-		<?php foreach ( $topics as $slug => $label ) : ?>
-			<label class="topic-chip <?php echo esc_attr( $slug ); ?>">
-				<input type="checkbox" name="topics[]" value="<?php echo esc_attr( $slug ); ?>">
-				<?php echo esc_html( $label ); ?>
-			</label>
-		<?php endforeach; ?>
-	</fieldset>
+	<div class="field">
+		<label for="nb-contact-topic">נושא</label>
+		<select id="nb-contact-topic" name="topic">
+			<?php foreach ( $topics as $slug => $label ) : ?>
+				<option value="<?php echo esc_attr( $slug ); ?>"><?php echo esc_html( $label ); ?></option>
+			<?php endforeach; ?>
+		</select>
+	</div>
 
 	<div class="field">
 		<label for="nb-contact-message">הודעה</label>

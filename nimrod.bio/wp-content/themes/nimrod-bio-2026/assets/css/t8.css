@@ -471,6 +471,18 @@
   color: var(--ink-soft); margin: 0; max-width: 50ch;
 }
 .contact-hero .lede em { color: var(--ink); font-style: italic; }
+.contact-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.hero-act {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 24px; border-radius: var(--radius-pill);
+  font-family: "Assistant", sans-serif; font-weight: 600; font-size: 15.5px;
+  text-decoration: none; transition: background .15s, transform .15s, border-color .15s;
+}
+.hero-act svg { flex-shrink: 0; }
+.hero-act--primary { background: var(--w-soil-deep); color: #fff; border: 1px solid var(--w-soil-deep); }
+.hero-act--primary:hover { background: var(--ink); border-color: var(--ink); transform: translateY(-1px); }
+.hero-act--ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+.hero-act--ghost:hover { background: var(--paper-2); border-color: var(--ink); }
 
 .contact-body {
   display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(32px, 4vw, 64px);
@@ -589,6 +601,14 @@
   background: transparent; border-color: transparent; padding: 0;
 }
 .contact-card.response .label { color: var(--w-soil-deep); }
+.contact-social { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.contact-social a {
+  font-family: "Assistant", sans-serif; font-weight: 600; font-size: 14.5px;
+  color: var(--ink); text-decoration: none;
+  border-bottom: 1.5px solid var(--line); padding-bottom: 2px;
+  align-self: start; transition: border-color .15s;
+}
+.contact-social a:hover { border-color: var(--ink); }
 
 /* ============================================================
    RESPONSIVE

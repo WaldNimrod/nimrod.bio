@@ -143,18 +143,33 @@ function nb_breadcrumb( array $crumbs ): string {
  * WP002: added for T1 world pages.
  */
 function nb_get_bridges_for_world( string $world ): array {
+	// Bridges per SITE_COPY_WORLDS_v1: soil×know (mud-tested advice),
+	// soil/know × code = SFA only (the single real farm→digital link;
+	// NO TikTrack data bridge). Each bridge carries explicit title+lede so the
+	// connection is demonstrated, not named.
 	$all = array(
 		array(
 			'a'     => 'soil',
 			'b'     => 'know',
 			'slug'  => 'consulting-hydro',
-			'title' => 'ייעוץ · תכנון חממה',
+			'title' => 'אין ייעוץ שלא נוסה בבוץ',
+			'lede'  => 'מה שאני מגדל הוא הבסיס לכל מה שאני מלמד.',
+		),
+		array(
+			'a'     => 'soil',
+			'b'     => 'code',
+			'slug'  => '',
+			'href'  => home_url( '/project/sfa/' ),
+			'title' => 'החווה מזינה את SFA',
+			'lede'  => 'נתונים אמיתיים מהשטח מאמתים את הקוד — SFA בלבד.',
 		),
 		array(
 			'a'     => 'know',
 			'b'     => 'code',
-			'slug'  => 'tiktrack',
-			'title' => 'tiktrack',
+			'slug'  => '',
+			'href'  => home_url( '/project/sfa/' ),
+			'title' => 'הידע מקודד ל־SFA',
+			'lede'  => 'הידע לא נשאר אצלי — הוא מקודד ל־SFA וחוזר לקהילה.',
 		),
 	);
 	return array_values(
@@ -184,18 +199,18 @@ function nb_get_t1_hero_copy( string $world ): array {
 	$copies = array(
 		'soil' => array(
 			'tagline'     => 'איפה שהאדמה פוגשת ידיים.',
-			'intro_short' => 'החממה ההידרופונית פעילה. ה־BCS יוצא לעונה. ירקות נוסעים למסעדות בכל בוקר שני וחמישי.',
-			'intro_long'  => 'זה הענף שמרוויח קודם — והענף שמודד את הזמן בעונות, לא ברבעונים. כל מה שאני יודע ללמד ולקוֹדֵד התחיל פה, באדמה.',
+			'intro_short' => 'כאן אני מגדל בפועל. לא תיאוריה — ידיים, חומר, עונה.',
+			'intro_long'  => 'החממה ההידרופונית היא התשתית שעליה יושב כל השאר.',
 		),
 		'know' => array(
-			'tagline'     => 'איפה שהידע פוגש שטח וקוד.',
+			'tagline'     => 'איפה שהניסיון הופך לכלי.',
 			'intro_short' => 'ייעוץ חממה, אגרו ו־market garden — מה שעבר בוץ, לא רק מצגות.',
-			'intro_long'  => 'הענף שממיר ניסוי בשטח להחלטות. מה שנלמד באדמה ונבנה בדיגיטל עובר דרך כאן.',
+			'intro_long'  => 'הניסיון בשטח — תשע עונות גינה והחממה הפעילה — הוא המקור לכל ייעוץ.',
 		),
 		'code' => array(
-			'tagline'     => 'איפה שהקוד פוגש חווה קטנה.',
+			'tagline'     => 'איפה שהידע הופך למערכת חיה.',
 			'intro_short' => 'SFA, TikTrack, כלים קהילתיים — נבנה מהשטח, חוזר לשטח.',
-			'intro_long'  => 'הענף שמקודד ידע לסוכנים, מערכות וממשקים. לא מיזם לשם מיזם — כלי שעובד.',
+			'intro_long'  => 'לא מיזם לשם מיזם — כלי שעובד.',
 		),
 	);
 	$base = $copies[ $world ] ?? $copies['soil'];
