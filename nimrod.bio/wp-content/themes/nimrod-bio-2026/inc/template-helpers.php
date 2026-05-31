@@ -218,25 +218,6 @@ function nb_get_t1_hero_copy( string $world ): array {
 	return $base;
 }
 
-function nb_render_cdip_diagram(): string {
-	return '<svg viewBox="0 0 320 220" aria-hidden="true">'
-		. '<circle cx="100" cy="80" r="58" fill="none" stroke="var(--w-soil)" stroke-width="1.5" opacity=".8"/>'
-		. '<circle cx="220" cy="80" r="58" fill="none" stroke="var(--w-know)" stroke-width="1.5" opacity=".8"/>'
-		. '<circle cx="160" cy="160" r="58" fill="none" stroke="var(--w-code)" stroke-width="1.5" opacity=".8"/>'
-		. '<text x="62" y="44" font-family="Frank Ruhl Libre" font-size="14" font-weight="700" fill="var(--w-soil-deep)">אדמה</text>'
-		. '<text x="246" y="44" font-family="Frank Ruhl Libre" font-size="14" font-weight="700" fill="var(--w-know-deep)">ידע</text>'
-		. '<text x="138" y="208" font-family="Frank Ruhl Libre" font-size="14" font-weight="700" fill="var(--w-code-deep)">דיגיטל</text>'
-		. '<circle cx="160" cy="80" r="4" fill="var(--ink)"/>'
-		. '<circle cx="130" cy="130" r="4" fill="var(--ink)"/>'
-		. '<circle cx="190" cy="130" r="4" fill="var(--ink)"/>'
-		. '<circle cx="160" cy="110" r="6" fill="var(--spark)"/>'
-		. '<text x="148" y="76" font-family="JetBrains Mono" font-size="9" fill="var(--ink-soft)">×</text>'
-		. '<text x="118" y="125" font-family="JetBrains Mono" font-size="9" fill="var(--ink-soft)">×</text>'
-		. '<text x="180" y="125" font-family="JetBrains Mono" font-size="9" fill="var(--ink-soft)">×</text>'
-		. '<text x="156" y="108" font-family="JetBrains Mono" font-size="9" fill="var(--spark)" font-weight="700">3×</text>'
-		. '</svg>';
-}
-
 function nb_img_placeholder( string $cap, string $subject = '', string $ratio = '16/10', string $class = '' ): string {
 	$cap_attr = esc_attr( $cap );
 	$cls      = trim( 'img-ph fail ' . $class );

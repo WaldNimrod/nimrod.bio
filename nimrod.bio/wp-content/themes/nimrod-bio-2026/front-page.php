@@ -43,6 +43,11 @@ if ( ! defined( 'NB_ICON_SPRITE_DONE' ) ) {
 				</h1>
 				<p class="hp-tagline">שלוש זרועות, שורש אחד. הייחוד הוא בחיבורים ביניהן.</p>
 				<div class="hero-foot">
+					<div class="hp-kicker">
+						<span class="kc">חממה הידרופונית <b>420</b> מ״ר</span>
+						<span class="kc"><b>9</b> עונות בשטח</span>
+						<span class="kc">SFA <b>חי</b> · sfa.nimrod.bio</span>
+					</div>
 					<div class="hp-cta">
 						<a class="btn btn-primary hp-btn-primary" href="#worlds">העולמות</a>
 						<a class="btn btn-ghost hp-btn-ghost" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">צור קשר</a>

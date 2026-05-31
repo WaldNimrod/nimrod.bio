@@ -560,15 +560,16 @@ body[data-bridge="seam"] .bridge-card::before {
 .vc-lattice .lat-side p { font-size: 13.5px; color: var(--ink-soft); margin: 0; line-height: 1.55; }
 .vc-lattice .lat-side .tag-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: auto; padding-top: 8px; }
 
-.vc-cdip {
-  margin-top: 56px; padding: 32px;
+.vc-principle {
+  margin-top: 44px; padding: 34px;
   background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-l);
-  display: grid; grid-template-columns: 1fr 1.4fr; gap: 36px; align-items: center;
+  display: grid; grid-template-columns: .9fr 1.4fr; gap: 40px; align-items: center;
 }
-.vc-cdip .label { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: .14em; color: var(--ink-soft); text-transform: uppercase; margin-bottom: 8px; }
-.vc-cdip h4 { font-family: "Frank Ruhl Libre", serif; font-size: 26px; font-weight: 700; margin: 0 0 12px; line-height: 1.2; }
-.vc-cdip p { font-size: 15px; color: var(--ink-soft); margin: 0; line-height: 1.6; }
-.vc-cdip svg { width: 100%; height: auto; }
+.vc-principle .label { font-family: "JetBrains Mono", monospace; font-size: 10.5px; letter-spacing: .12em; color: var(--ink-soft); text-transform: uppercase; margin-bottom: 8px; }
+.vc-principle h4 { font-family: "Frank Ruhl Libre", serif; font-size: 25px; font-weight: 700; margin: 0 0 12px; line-height: 1.2; }
+.vc-principle p { font-family: "Assistant", sans-serif; font-size: 15.5px; color: var(--ink-soft); margin: 0; line-height: 1.55; }
+.vc-principle p em { color: var(--spark); font-style: normal; font-weight: 600; }
+.vc-principle .ph { border-radius: var(--radius-m); aspect-ratio: 4/3; }
 
 .vc-bridges { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 
@@ -589,7 +590,7 @@ body[data-bridge="seam"] .bridge-card::before {
   .anchor-card { grid-template-columns: 1fr; }
   .anchor-card .img-ph { aspect-ratio: 16/9; min-height: 220px; }
   .va-grid-3, .vb-bridges, .vb-posts, .vc-bridges, .vc-projects, .vc-posts { grid-template-columns: 1fr 1fr; }
-  .vb-core, .vb-projects, .vb-hero-grid, .va-hero-grid, .vc-cdip, .vc-lattice { grid-template-columns: 1fr; }
+  .vb-core, .vb-projects, .vb-hero-grid, .va-hero-grid, .vc-principle, .vc-lattice { grid-template-columns: 1fr; }
   .vc-lattice .lat-anchor { grid-column: 1; grid-row: auto; }
   .vc-hero .intro { grid-template-columns: 1fr; gap: 18px; }
   .va-hero h1 { font-size: clamp(56px, 14vw, 96px); }

@@ -91,7 +91,7 @@ $posts_q = nb_query_by_world( 'post', $world, 4 );
 					<div class="lat-side" style="grid-column:3/4;background:var(--paper-2);border-color:var(--line)">
 						<h4 style="font-style:italic;color:var(--ink-soft)">קריאה מבפנים</h4>
 						<p>החממה מזינה את התוצרת. התוצרת מאמתת את הייעוץ. הייעוץ מקודד ל־SFA. SFA חוזרת לקהילה — לחממה הבאה.</p>
-						<div class="tag-row" style="font-family:JetBrains Mono;font-size:10px;color:var(--ink-soft)">מהשטח · חוזר לשטח</div>
+						<div class="tag-row" style="font-family:JetBrains Mono;font-size:10px;color:var(--ink-soft)">evidence-based · מבוסס־שדה</div>
 					</div>
 					<?php
 				}
@@ -99,11 +99,12 @@ $posts_q = nb_query_by_world( 'post', $world, 4 );
 			?>
 		</div>
 
-		<div class="vc-cdip" style="grid-template-columns:1fr">
+		<div class="vc-principle">
+			<div class="ph img-ph clean" style="aspect-ratio:4/3"></div>
 			<div>
-				<div class="label">הקו המחבר</div>
-				<h4>החממה מזינה את התוצרת. התוצרת מאמתת את הייעוץ.</h4>
-				<p>הייעוץ מקודד ל־SFA. ו־SFA חוזרת לקהילה — לחממה הבאה. <em style="color:var(--spark);font-style:normal">הקו לא נגמר; הוא מתחיל מחדש.</em></p>
+				<div class="label">אותו עיקרון · חומר אחר</div>
+				<h4>כשאני מתכנן חממה, אני חושב בדיוק כמו כשאני מתכנן מערכת תוכנה.</h4>
+				<p>זו לא מטאפורה. <em>זו אותה מערכת, בחומר אחר</em> — לחממה, לקוד, ולתכנון. החיבור ביניהן הוא הסיפור.</p>
 			</div>
 		</div>
 	</section>
