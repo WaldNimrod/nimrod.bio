@@ -101,10 +101,19 @@ get_template_part(
 					?>
 				</div>
 			<?php else : ?>
-				<div class="blog-empty">
-					אין פוסטים תחת הסינון הנוכחי.
-					<a class="filter-reset" href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">נקה סינון</a>
-				</div>
+				<?php
+				get_template_part(
+					'template-parts/empty-state',
+					null,
+					array(
+						'title' => 'אין פוסטים תחת הסינון הנוכחי.',
+						'body'  => 'אפשר לנקות את הסינון ולראות את כל היומן, או לחזור מאוחר יותר.',
+						'links' => array(
+							array( home_url( '/blog/' ), 'נקה סינון' ),
+						),
+					)
+				);
+				?>
 			<?php endif; ?>
 		</div>
 	</section>
@@ -121,10 +130,19 @@ get_template_part(
 					?>
 				</div>
 			<?php else : ?>
-				<div class="blog-empty">
-					אין פוסטים תחת הסינון הנוכחי.
-					<a class="filter-reset" href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">נקה סינון</a>
-				</div>
+				<?php
+				get_template_part(
+					'template-parts/empty-state',
+					null,
+					array(
+						'title' => 'אין פוסטים תחת הסינון הנוכחי.',
+						'body'  => 'אפשר לנקות את הסינון ולראות את כל היומן, או לחזור מאוחר יותר.',
+						'links' => array(
+							array( home_url( '/blog/' ), 'נקה סינון' ),
+						),
+					)
+				);
+				?>
 			<?php endif; ?>
 		</div>
 	</section>

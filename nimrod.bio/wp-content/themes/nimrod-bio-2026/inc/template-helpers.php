@@ -219,10 +219,13 @@ function nb_get_t1_hero_copy( string $world ): array {
 }
 
 function nb_img_placeholder( string $cap, string $subject = '', string $ratio = '16/10', string $class = '' ): string {
-	$cap_attr = esc_attr( $cap );
-	$cls      = trim( 'img-ph fail ' . $class );
+	// Empty slot → clean world-tinted degraded placeholder (no visitor caption).
+	// The "TBD · …" caption is dev-only: emitted only for editors (Stage B / G-05).
+	$dev      = function_exists( 'nb_dev_captions_visible' ) && nb_dev_captions_visible();
+	$cls      = trim( 'img-ph clean ' . $class );
+	$cap_attr = ( $dev && '' !== $cap ) ? ' data-cap="' . esc_attr( $cap ) . '"' : '';
 	$subj     = $subject ? '<span class="img-subj">' . esc_html( $subject ) . '</span>' : '';
-	return '<div class="' . esc_attr( $cls ) . '" data-cap="' . $cap_attr . '" style="aspect-ratio:' . esc_attr( $ratio ) . '">' . $subj . '</div>';
+	return '<div class="' . esc_attr( $cls ) . '"' . $cap_attr . ' style="aspect-ratio:' . esc_attr( $ratio ) . '">' . $subj . '</div>';
 }
 
 /**
@@ -316,11 +319,17 @@ function nb_whatsapp_icon_svg(): string {
 }
 
 function nb_img_ph( string $subject, string $cap = '', string $class = '', string $ratio = '4/5' ): string {
+	// Stage B / G-05: empty media slot renders a CLEAN world-tinted placeholder
+	// with a quiet basket emblem and NO visitor-facing caption. The "TBD · …"
+	// caption is dev-only (editors). Container carries aspect-ratio + overflow.
+	$dev   = function_exists( 'nb_dev_captions_visible' ) && nb_dev_captions_visible();
 	$attrs = array(
-		'class'     => trim( 'img-ph fail ' . $class ),
-		'data-cap'  => esc_attr( $cap ),
-		'style'     => 'aspect-ratio:' . esc_attr( $ratio ) . ';',
+		'class' => trim( 'img-ph clean ' . $class ),
+		'style' => 'aspect-ratio:' . esc_attr( $ratio ) . ';',
 	);
+	if ( $dev && '' !== $cap ) {
+		$attrs['data-cap'] = esc_attr( $cap );
+	}
 	$html  = '<div';
 	foreach ( $attrs as $key => $value ) {
 		if ( '' !== $value ) {
@@ -328,7 +337,7 @@ function nb_img_ph( string $subject, string $cap = '', string $class = '', strin
 		}
 	}
 	$html .= '>';
-	$html .= '<img src="' . esc_url( NB_THEME_URI . '/assets/icons/home.svg' ) . '" alt="' . esc_attr( $subject ) . '" width="48" height="48" loading="lazy" />';
+	$html .= '<span class="emblem"><img src="' . esc_url( NB_THEME_URI . '/assets/img/basket-soil.png' ) . '" alt="" width="46" height="46" loading="lazy" decoding="async" /></span>';
 	if ( $subject ) {
 		$html .= '<span class="img-subj">' . esc_html( $subject ) . '</span>';
 	}
@@ -406,8 +415,10 @@ function nb_featured_media( int $post_id, array $args = array() ): string {
 		}
 	}
 
-	if ( '' !== $args['cap'] ) {
-		$html .= '<span class="cap">' . esc_html( $args['cap'] ) . '</span>';
+	// Mono corner caption is an authoring aid — dev-only (editors), never shipped.
+	$dev = function_exists( 'nb_dev_captions_visible' ) && nb_dev_captions_visible();
+	if ( $dev && '' !== $args['cap'] ) {
+		$html .= '<span class="cap nb-dev-cap">' . esc_html( $args['cap'] ) . '</span>';
 	}
 
 	$html .= '</div>';

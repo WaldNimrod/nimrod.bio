@@ -185,3 +185,149 @@ body {
         - spark renamed from seuss-* (no IP overlap)
    v2 · prior · warm-paper + Seuss-flavored accents
    ============================================================ */
+
+/* ============================================================
+   STAGE B — System templates + media degradation
+   (team_35 Precision Mockup v4: System + States screens)
+   Loaded site-wide via nb-system so 404 / search / empty-state
+   render even where page-type CSS is not enqueued.
+   ============================================================ */
+
+/* ---- 404 (System → "השביל הזה לא מוביל") ---- */
+.err-404 { text-align: center; max-width: 60ch; margin: 0 auto; }
+.err-404 .code {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 900;
+  font-size: clamp(96px, 18vw, 220px); line-height: .85;
+  letter-spacing: -.04em; color: var(--ink); margin: 0;
+  display: flex; justify-content: center; align-items: baseline; gap: .06em;
+}
+.err-404 .code i {
+  font-style: normal; width: .62em; height: .62em;
+  border-radius: 50%; align-self: center;
+}
+.err-404 .code .d1 { background: var(--w-soil); }
+.err-404 .code .d2 { background: var(--w-know); }
+.err-404 .code .d3 { background: var(--w-code); }
+.err-404 h1 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 700;
+  font-size: clamp(24px, 3vw, 34px); margin: 18px 0 10px;
+}
+.err-404 p {
+  font-family: "Assistant", sans-serif; font-size: 17px;
+  color: var(--ink-soft); line-height: 1.6;
+  margin: 0 auto 28px; max-width: 46ch;
+}
+.err-links { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.err-links a {
+  font-family: "Assistant", sans-serif; font-weight: 600; font-size: 15px;
+  color: var(--ink); text-decoration: none;
+  border: 1px solid var(--line); border-radius: var(--radius-pill);
+  padding: 10px 20px; background: var(--paper);
+  min-height: 44px; display: inline-flex; align-items: center;
+  transition: border-color .15s, transform .15s;
+}
+.err-links a:hover { border-color: var(--ink); transform: translateY(-2px); }
+
+/* ---- search.php (System → results) ---- */
+.search-field {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  padding: 6px 22px 6px 8px; max-width: 560px; box-shadow: var(--shadow-s);
+}
+.search-field svg { width: 20px; height: 20px; color: var(--ink-soft); flex: none; }
+.search-field input {
+  flex: 1; border: none; background: transparent;
+  font-family: "Assistant", sans-serif; font-size: 17px; color: var(--ink); padding: 10px 0;
+}
+.search-field input:focus { outline: none; }
+.search-field button {
+  font-family: "Assistant", sans-serif; font-weight: 600; font-size: 15px;
+  background: var(--ink); color: var(--paper); border: none;
+  border-radius: var(--radius-pill); padding: 11px 22px; cursor: pointer; min-height: 44px;
+}
+.search-meta {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  letter-spacing: .04em; color: var(--ink-soft);
+  margin: 22px 0 18px; text-transform: uppercase;
+}
+.results-list { display: flex; flex-direction: column; gap: 0; }
+.result-row {
+  display: grid; grid-template-columns: auto 1fr; gap: 18px;
+  padding: 20px 0; border-bottom: 1px solid var(--line);
+  text-decoration: none; color: inherit; align-items: start;
+}
+.result-row:hover h4 { color: var(--w-soil-deep); }
+.result-row .r-kind {
+  font-family: "JetBrains Mono", monospace; font-size: 10.5px;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft);
+  border: 1px solid var(--line); border-radius: 100px;
+  padding: 4px 10px; white-space: nowrap; margin-top: 3px;
+}
+.result-row h4 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 700;
+  font-size: 20px; line-height: 1.25; margin: 0 0 5px; transition: color .15s;
+}
+.result-row p {
+  font-family: "Assistant", sans-serif; font-size: 14.5px;
+  color: var(--ink-soft); line-height: 1.5; margin: 0;
+}
+
+/* ---- empty-state (archive / world / blog · on-voice, never "no results") ---- */
+.empty-state {
+  text-align: center; background: var(--paper-2);
+  border: 1px dashed var(--line); border-radius: var(--radius-l);
+  padding: clamp(40px, 5vw, 68px); max-width: 60ch; margin: 0 auto;
+}
+.empty-state .es-emblem { width: 60px; height: 60px; opacity: .45; margin: 0 auto 18px; }
+.empty-state .es-emblem img { width: 100%; height: 100%; object-fit: contain; }
+.empty-state h3 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 700;
+  font-size: 24px; margin: 0 0 10px;
+}
+.empty-state p {
+  font-family: "Assistant", sans-serif; font-size: 16px;
+  color: var(--ink-soft); line-height: 1.6; margin: 0 auto 22px; max-width: 42ch;
+}
+
+/* ============================================================
+   MEDIA DEGRADATION (States screen)
+   .ph / .img-ph container holds aspect-ratio + overflow (canon G-05).
+   .ph.clean / .img-ph.clean = world-tinted wash + quiet basket emblem,
+   NO visitor-facing caption. TBD caption is gated to admins in PHP
+   (data-cap attribute is only emitted for editors); .nb-dev-cap is the
+   belt-and-suspenders guard so any leaked caption stays admin-only.
+   .ph.collapse / .img-ph.collapse = disappear when empty.
+   ============================================================ */
+.ph, .img-ph { position: relative; overflow: hidden; }
+
+/* Clean degraded placeholder — world-tinted wash + quiet emblem, no caption. */
+.ph.clean, .img-ph.clean {
+  background: var(--soil-wash);
+  background-image: none;
+  display: grid; place-items: center;
+}
+.ph.clean.know, .ph.clean.know-wash,
+.img-ph.clean.know, .img-ph.clean.know-wash { background: var(--know-wash); }
+.ph.clean.code, .ph.clean.code-wash,
+.img-ph.clean.code, .img-ph.clean.code-wash { background: var(--code-wash); }
+.ph.clean .emblem, .img-ph.clean .emblem {
+  width: 46px; height: 46px; opacity: .5;
+}
+.ph.clean .emblem img, .img-ph.clean .emblem img { width: 100%; height: 100%; object-fit: contain; }
+
+/* When a real image is present inside a clean container it must cover. */
+.ph.clean > img, .ph.clean picture > img,
+.img-ph.clean > img, .img-ph.clean picture > img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;
+}
+
+/* Clean placeholders never show the TBD caption. */
+.ph.clean::after, .img-ph.clean::after { display: none; }
+
+/* Collapse variant — empty slot simply disappears. */
+.ph.collapse, .img-ph.collapse { display: none; }
+
+/* Dev-only TBD caption: only admins see it (body.nb-dev gate set in PHP). */
+.nb-dev-cap { display: none; }
+body.nb-dev .nb-dev-cap { display: block; }

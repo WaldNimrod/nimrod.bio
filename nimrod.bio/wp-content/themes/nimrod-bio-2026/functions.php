@@ -5,7 +5,7 @@
 defined( 'ABSPATH' ) || exit;
 
 // Constants
-define( 'NB_THEME_VERSION', '0.7.6' );
+define( 'NB_THEME_VERSION', '0.7.9' );
 define( 'NB_THEME_DIR', get_template_directory() );
 define( 'NB_THEME_URI', get_template_directory_uri() );
 
@@ -55,6 +55,26 @@ require_once NB_THEME_DIR . '/inc/contact-form-handler.php';
 foreach ( glob( NB_THEME_DIR . '/inc/template-styles-*.php' ) as $f ) {
 	require_once $f;
 }
+
+/**
+ * Stage B — dev-only media captions.
+ * The "TBD · …" placeholder captions are an authoring aid, never shipped to
+ * visitors. They render only for logged-in users who can edit posts. Templates
+ * + helpers gate on this; the body.nb-dev class is the CSS belt-and-suspenders.
+ */
+function nb_dev_captions_visible(): bool {
+	return is_user_logged_in() && current_user_can( 'edit_posts' );
+}
+
+add_filter(
+	'body_class',
+	function ( $classes ) {
+		if ( nb_dev_captions_visible() ) {
+			$classes[] = 'nb-dev';
+		}
+		return $classes;
+	}
+);
 
 // Disable comments globally for V200 (design has no comment UI).
 add_filter( 'comments_open', '__return_false', 20, 2 );
