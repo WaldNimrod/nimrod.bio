@@ -64,7 +64,7 @@ $nb_worlds = array(
 		'title'   => 'אדמה',
 		'tagline' => 'איפה שהאדמה פוגשת ידיים.',
 		'items'   => array(
-			array( 'ip-carrot', 'תוצרת מקצועית · מסעדות' ),
+			array( 'ip-carrot', 'תוצרת מקצועית · מסעדה' ),
 			array( 'ip-tree', 'BCS · שירותי שטח' ),
 			array( 'ip-greenhouse', 'חממה הידרופונית' ),
 		),
@@ -185,7 +185,7 @@ $nb_worlds = array(
 <?php
 /* ── SERVICES (README §5) — horizontal scroll-snap carousel of entry points. ── */
 $nb_services = array(
-	array( 'ip-carrot', 'תוצרת ושירותי שטח', 'תוצרת מקצועית למסעדות · BCS · משתלה', 'אדמה', 'soil' ),
+	array( 'ip-carrot', 'תוצרת ושירותי שטח', 'תוצרת מקצועית למסעדה · BCS · משתלה', 'אדמה', 'soil' ),
 	array( 'ip-seedling', 'ייעוץ הידרופוני ואגרו', 'תכנון, הקמה וליווי · market garden', 'ייעוץ', 'know' ),
 	array( 'ip-chef', 'הוראה וקורסים', 'מורה מקצועי · ליווי וסדנאות', 'הוראה', 'know' ),
 	array( 'ip-shop', 'דיגיטל · SFA ופיתוח', 'מערכות, ממשקים וייעוץ דיגיטלי', 'דיגיטל', 'code' ),
