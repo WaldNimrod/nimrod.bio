@@ -1,0 +1,162 @@
+{
+  "generated_at": "2026-05-31T21:55:40.834337+00:00",
+  "pages": [
+    {
+      "slug": "home",
+      "path": "/",
+      "anchors_expected": [
+        "Unless",
+        "אדמה",
+        "sfa.nimrod.bio",
+        "/project/rest-x-greenhouse/",
+        "/services/bcs/"
+      ],
+      "anchors_missing": [
+        "/services/bcs/"
+      ],
+      "negative_found": [],
+      "pass": false
+    },
+    {
+      "slug": "about",
+      "path": "/about/",
+      "anchors_expected": [
+        "על נמרוד",
+        "חממה"
+      ],
+      "anchors_missing": [],
+      "negative_found": [],
+      "pass": true
+    },
+    {
+      "slug": "about-heritage",
+      "path": "/about/heritage/",
+      "anchors_expected": [
+        "הגינה",
+        "נמרוד"
+      ],
+      "anchors_missing": [
+        "הגינה",
+        "נמרוד"
+      ],
+      "negative_found": [],
+      "pass": false
+    },
+    {
+      "slug": "contact",
+      "path": "/contact/",
+      "anchors_expected": [
+        "wa.me/972547776770",
+        "maps.app.goo.gl",
+        "nimrod@nimrod.bio"
+      ],
+      "anchors_missing": [],
+      "negative_found": [],
+      "pass": true
+    },
+    {
+      "slug": "world-soil",
+      "path": "/world/soil/",
+      "anchors_expected": [
+        "אדמה",
+        "פעילויות"
+      ],
+      "anchors_missing": [
+        "אדמה",
+        "פעילויות"
+      ],
+      "negative_found": [],
+      "pass": false
+    },
+    {
+      "slug": "world-know",
+      "path": "/world/know/",
+      "anchors_expected": [
+        "ייעוץ",
+        "הוראה"
+      ],
+      "anchors_missing": [
+        "ייעוץ",
+        "הוראה"
+      ],
+      "negative_found": [],
+      "pass": false
+    },
+    {
+      "slug": "world-code",
+      "path": "/world/code/",
+      "anchors_expected": [
+        "דיגיטל",
+        "sfa.nimrod.bio"
+      ],
+      "anchors_missing": [],
+      "negative_found": [
+        "tt.nimrod.bio"
+      ],
+      "pass": false
+    },
+    {
+      "slug": "project-sfa",
+      "path": "/project/sfa/",
+      "anchors_expected": [
+        "קהילה",
+        "SFA"
+      ],
+      "anchors_missing": [],
+      "negative_found": [],
+      "pass": true
+    },
+    {
+      "slug": "project-tiktrack",
+      "path": "/project/tiktrack/",
+      "anchors_expected": [
+        "TikTrack",
+        "פיילוט"
+      ],
+      "anchors_missing": [],
+      "negative_found": [],
+      "pass": true
+    },
+    {
+      "slug": "project-hagina",
+      "path": "/project/hagina-shel-nimrod/",
+      "anchors_expected": [
+        "הגינה"
+      ],
+      "anchors_missing": [
+        "הגינה"
+      ],
+      "negative_found": [],
+      "pass": false
+    },
+    {
+      "slug": "project-greenhouse",
+      "path": "/project/rest-x-greenhouse/",
+      "anchors_expected": [
+        "מסעדה",
+        "חממה"
+      ],
+      "anchors_missing": [
+        "מסעדה",
+        "חממה"
+      ],
+      "negative_found": [],
+      "pass": false
+    },
+    {
+      "slug": "service-bcs",
+      "path": "/services/bcs/",
+      "anchors_expected": [
+        "BCS",
+        "Farm-Y"
+      ],
+      "anchors_missing": [
+        "BCS",
+        "Farm-Y"
+      ],
+      "negative_found": [],
+      "pass": false
+    }
+  ],
+  "pass": false
+}

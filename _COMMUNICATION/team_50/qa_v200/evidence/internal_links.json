@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-05-31T21:55:40.808262+00:00",
+  "links_checked": 65,
+  "scope": "mandate_12_pages_extracted_links",
+  "broken_links": [
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/",
+      "status": 0
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/contact/",
+      "status": 0
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/projects/",
+      "status": 404
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/services/",
+      "status": 404
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/wp-content/themes/nimrod-bio-2026/assets/img/cand-d.jpeg",
+      "status": 0
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/wp-json/oembed/1.0/embed/",
+      "status": 0
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/wp-json/wp/v2/pages/11/",
+      "status": 0
+    },
+    {
+      "url": "https://nimrod-bio-2026.s887.upress.link/xmlrpc.php",
+      "status": 403
+    }
+  ],
+  "pass": false
+}

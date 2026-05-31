@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-05-31T21:53:55.339470+00:00",
+  "links": [
+    {
+      "name": "sfa",
+      "url": "https://sfa.nimrod.bio/",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "name": "tiktrack",
+      "url": "https://tt.nimrod.bio",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "name": "whatsapp",
+      "url": "https://wa.me/972547776770",
+      "status": 302,
+      "pass": true
+    },
+    {
+      "name": "maps",
+      "url": "https://maps.app.goo.gl/8ySCEcFw3B8hXtnP6",
+      "status": 302,
+      "pass": true
+    }
+  ],
+  "pass": true
+}

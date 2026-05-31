@@ -1,0 +1,94 @@
+{
+  "generated_at": "2026-05-31T21:53:54.008848+00:00",
+  "pages": [
+    {
+      "slug": "home",
+      "path": "/",
+      "hits": [],
+      "pass": true
+    },
+    {
+      "slug": "about",
+      "path": "/about/",
+      "hits": [],
+      "pass": true
+    },
+    {
+      "slug": "about-heritage",
+      "path": "/about/heritage/",
+      "hits": [],
+      "pass": true
+    },
+    {
+      "slug": "contact",
+      "path": "/contact/",
+      "hits": [],
+      "pass": true
+    },
+    {
+      "slug": "world-soil",
+      "path": "/world/soil/",
+      "hits": [],
+      "pass": true
+    },
+    {
+      "slug": "world-know",
+      "path": "/world/know/",
+      "hits": [],
+      "pass": true
+    },
+    {
+      "slug": "world-code",
+      "path": "/world/code/",
+      "hits": [],
+      "pass": true
+    },
+    {
+      "slug": "project-sfa",
+      "path": "/project/sfa/",
+      "hits": [],
+      "pass": true
+    },
+    {
+      "slug": "project-tiktrack",
+      "path": "/project/tiktrack/",
+      "hits": [],
+      "pass": true
+    },
+    {
+      "slug": "project-hagina",
+      "path": "/project/hagina-shel-nimrod/",
+      "hits": [],
+      "pass": true
+    },
+    {
+      "slug": "project-greenhouse",
+      "path": "/project/rest-x-greenhouse/",
+      "hits": [],
+      "pass": true
+    },
+    {
+      "slug": "service-bcs",
+      "path": "/services/bcs/",
+      "hits": [],
+      "pass": true
+    }
+  ],
+  "term_counts": {
+    "Micha": 0,
+    "Micha OS": 0,
+    "אנטרופיה": 0,
+    "נגנטרופיה": 0,
+    "רקורסיה": 0,
+    "CDIP": 0,
+    "Cross-Domain Isomorphism": 0,
+    "פרמקלצר": 0,
+    "3×": 0,
+    "קואופרטיב": 0,
+    "קומון": 0,
+    "TBC": 0
+  },
+  "total_hits": 0,
+  "hits": [],
+  "pass": true
+}

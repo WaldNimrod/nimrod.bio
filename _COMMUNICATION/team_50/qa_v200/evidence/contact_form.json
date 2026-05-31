@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-05-31T22:00:00+00:00",
+  "displayed_email": "nimrod@nimrod.bio",
+  "admin_email": "nimrod@mezoo.co",
+  "email_mismatch": true,
+  "nonce_found": true,
+  "submit_status": "ok",
+  "redirect_location": "https://nimrod-bio-2026.s887.upress.link/contact/?status=ok",
+  "invalid_redirect": "https://nimrod-bio-2026.s887.upress.link/contact/?status=invalid",
+  "invalid_pass": true,
+  "pass": true,
+  "note": "Functional path works; email_mismatch logged as finding Q50-V200-F-001"
+}

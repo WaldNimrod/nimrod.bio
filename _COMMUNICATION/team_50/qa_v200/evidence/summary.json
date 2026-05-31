@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-05-31T21:55:49.910642+00:00",
+  "mandate": "MANDATE_TEAM_50_QA_VISUAL_2026-06-01_v1",
+  "checks": {
+    "http_status": false,
+    "lock_scan": true,
+    "external_links": true,
+    "internal_links": false,
+    "copy_anchors": false,
+    "known_open_items": true,
+    "contact_form": false
+  }
+}
