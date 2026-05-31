@@ -3,8 +3,8 @@ defined( 'ABSPATH' ) || exit;
 ?>
 <div class="thesis">
 	<div>
-		<div class="label">03 · התיזה</div>
-		<h3>CDIP — Cross-Domain Isomorphism Perception. <em>3×.</em></h3>
+		<div class="label">03 · הקו המחבר</div>
+		<h3>אותם עקרונות, בשלושה שדות. <em>3×.</em></h3>
 	</div>
 	<div>
 		<p>פיזיקה, אקולוגיה, קוד ויחסי-אנוש — אותה מערכת. לא מטאפורה. עיקרון עבודה.</p>
@@ -14,8 +14,7 @@ defined( 'ABSPATH' ) || exit;
 			קריאה נוספת:
 			<a href="<?php echo esc_url( home_url( '/blog/back-to-mud/' ) ); ?>">חזרה לבוץ</a>
 			·
-			<a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">פוסט CDIP בעברית</a>
-			<span class="tbc">TBC · Q-05</span>
+			<a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">הקו המחבר</a>
 		</p>
 	</div>
 </div>

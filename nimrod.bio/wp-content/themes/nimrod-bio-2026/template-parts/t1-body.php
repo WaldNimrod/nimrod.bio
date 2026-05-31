@@ -79,7 +79,7 @@ $posts_q = nb_query_by_world( 'post', $world, 4 );
 		<div class="vc-cdip">
 			<?php echo nb_render_cdip_diagram(); ?>
 			<div>
-				<div class="label">CDIP · cross-domain isomorphism</div>
+				<div class="label">הקו המחבר</div>
 				<h4>אותם עקרונות יסוד — לפיזיקה, לחממה, לקוד, ליחסי־אנוש.</h4>
 				<p>שלושת העולמות הם אינסטנסים של אותה מערכת. הנקודה האדומה במרכז — שם הם נפגשים. <em style="color:var(--spark);font-style:normal">זה ה־3×.</em></p>
 			</div>

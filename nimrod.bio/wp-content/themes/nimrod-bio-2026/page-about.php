@@ -7,7 +7,7 @@ $media_items = array(
 	array(
 		'kind'       => 'press',
 		'kind_label' => 'כתבה',
-		'outlet'     => 'TBC · מגזין',
+		'outlet'     => 'מגזין',
 		'date'       => '2025',
 		'title'      => 'כתבה על המעבר מ-market garden לחממה הידרופונית',
 		'href'       => '#',
@@ -16,7 +16,7 @@ $media_items = array(
 	array(
 		'kind'       => 'podcast',
 		'kind_label' => 'פודקאסט',
-		'outlet'     => 'TBC · השם',
+		'outlet'     => 'פודקאסט',
 		'date'       => '2024',
 		'title'      => 'ראיון על תיעוד שטח ולמה זה חשוב',
 		'href'       => '#',
@@ -25,16 +25,16 @@ $media_items = array(
 	array(
 		'kind'       => 'talk',
 		'kind_label' => 'הרצאה',
-		'outlet'     => 'TBC · אירוע',
+		'outlet'     => 'אירוע',
 		'date'       => '2024',
-		'title'      => 'CDIP — איך אותה מערכת מופיעה ב-4 תחומים',
+		'title'      => 'הרצאה על אותם עקרונות יסוד בשלושה שדות שונים',
 		'href'       => '#',
 		'tbc'        => true,
 	),
 	array(
 		'kind'       => 'write',
 		'kind_label' => 'מאמר',
-		'outlet'     => 'TBC · פרסום',
+		'outlet'     => 'פרסום',
 		'date'       => '2023',
 		'title'      => 'טור על סגירת הגינה ולמה זה לא משבר',
 		'href'       => '#',
@@ -60,10 +60,10 @@ $media_items = array(
 					ב-2023 סגרתי את הגינה. לא משבר — החלפת קנה מידה. הבנתי שהידע ששווה לעולם יותר מהיבול שיוצא ממנו. <em>החממה ההידרופונית</em> שעלתה ב-2024 היא תשתית מקצועית במקום שדה — קטנה יותר, אבל מתועדת בכל דקה.
 				</p>
 				<p>
-					היום אני עובד בשלוש זרועות. <strong>אדמה</strong> — תוצרת ל-5 מסעדות, BCS שירותי שטח, החממה. <strong>ייעוץ והוראה</strong> — אבחון של 4 חממות נוספות, סדנאות, ליווי שנתי. <strong>דיגיטל</strong> — <a href="<?php echo esc_url( home_url( '/services/sfa/' ) ); ?>" class="entity-link entity-link--code">SFA</a>, סוכן AI שמבוסס על תיעוד 9 השנים הראשונות שלי, ועל מקרים שאני אוסף עכשיו מאחרים. <span class="tbc">TBC · Q-NEW-03</span>
+					היום אני עובד בשלוש זרועות. <strong>אדמה</strong> — חממה הידרופונית פעילה, תוצרת קבועה למסעדה שמוכנה לעבוד בתנאים שלנו, ושירות BCS בתשלום לחלקות קטנות. <strong>ייעוץ והוראה</strong> — תכנון חממות הידרופוניות, ייעוץ אגרו שטחי, והוראה מקצועית. <strong>דיגיטל</strong> — <a href="<?php echo esc_url( home_url( '/project/sfa/' ) ); ?>" class="entity-link entity-link--code">SFA</a>, כלי קהילתי וחינמי לחקלאות הקטנה, שניזון מתשע שנות תיעוד שטח אמיתי.
 				</p>
 				<p>
-					הקישוריות ביניהן היא הסיפור — לא הענפים בנפרד. <em>זה גם מה שאני מחפש בלקוחות, בשותפים, וב-CDIP.</em>
+					הקישוריות ביניהן היא הסיפור — לא הענפים בנפרד. <em>זה גם מה שאני מחפש בלקוחות ובשותפים.</em>
 				</p>
 			</div>
 		</div>
@@ -120,7 +120,7 @@ $media_items = array(
 				<?php get_template_part( 'template-parts/t8-media-item', null, $item ); ?>
 			<?php endforeach; ?>
 		</div>
-		<p class="media-note"><span class="tbc note">רשימה ראשונית — נמרוד יוסיף לינקים אמיתיים</span> <span class="tbc">TBC · Q-11</span></p>
+		<p class="media-note">רשימה ראשונית — תתעדכן בלינקים אמיתיים בהמשך.</p>
 	</section>
 
 	<section class="t8-wrap t8-section contact-teaser">
