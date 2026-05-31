@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Precision Mockup v3 — T7 Home · T1 World</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&family=Frank+Ruhl+Libre:wght@500;700;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root{
+  --paper:#f5f3ec; --paper-2:#e8e7df; --paper-3:#dedccf; --line:#d6d2c2;
+  --ink:#1f1e1c; --ink-soft:#4a4844; --soil:#5b483a;
+  --w-soil-deep:#3a5220; --w-soil:#6a8a3a;
+  --w-know-deep:#9a4f2b; --w-know:#c46a3e;
+  --w-code-deep:#1f5e60; --w-code:#2d8a8c;
+  --spark:#d23a2e; --spark-ink:#1c1a18;
+  --soil-wash:#eef0e0; --soil-wash-2:#e3e6cf; --know-wash:#f4e5d6; --code-wash:#d8e6e6;
+  --s-1:16px; --s-2:24px; --s-3:32px; --s-4:48px; --s-5:64px; --s-6:96px;
+  --radius-s:8px; --radius-m:14px; --radius-l:20px; --radius-pill:100px;
+  --shadow-s:0 1px 2px rgba(60,40,10,.05), 0 4px 12px -8px rgba(60,40,10,.12);
+  --shadow-m:0 10px 30px -16px rgba(60,40,10,.20);
+  --shadow-l:0 24px 50px -28px rgba(60,40,10,.28);
+  --max:1240px; --gutter:clamp(22px,4vw,56px);
+  --serif:"Frank Ruhl Libre",serif; --sans:"Assistant",sans-serif; --mono:"JetBrains Mono",monospace;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans);
+  font-size:17px; line-height:1.55; -webkit-font-smoothing:antialiased; direction:rtl; padding-top:46px;}
+p{text-wrap:pretty; margin:0;}
+a{color:inherit;}
+img{max-width:100%;}
+
+/* ════ APPROVAL BAR ════ */
+.approval{position:fixed; top:0; inset-inline:0; z-index:200; min-height:46px;
+  background:var(--ink); color:var(--paper); display:flex; align-items:center; gap:16px;
+  padding:6px clamp(14px,3vw,28px); font-family:var(--mono); font-size:11px; letter-spacing:.05em;
+  border-bottom:1px solid #34322e; flex-wrap:wrap;}
+.approval .tag{background:var(--spark); color:#fff; padding:3px 9px; border-radius:100px; white-space:nowrap;}
+.approval .lbl{color:rgba(245,243,236,.5); white-space:nowrap;}
+.approval .grp{display:flex; gap:6px; align-items:center;}
+.approval .grp.screens{margin-inline-start:auto;}
+.approval .glabel{color:rgba(245,243,236,.45); white-space:nowrap; margin-inline-end:2px;}
+.approval .sw{background:transparent; border:1px solid rgba(245,243,236,.28); color:rgba(245,243,236,.75);
+  font-family:inherit; font-size:11px; letter-spacing:.05em; padding:5px 11px; border-radius:100px; cursor:pointer; transition:all .15s; white-space:nowrap;}
+.approval .sw:hover{color:#fff; border-color:rgba(245,243,236,.5);}
+.approval .sw.on{background:var(--paper); color:var(--ink); border-color:var(--paper); font-weight:500;}
+@media(max-width:720px){ .approval .lbl{display:none;} }
+
+/* ════ SHELL NAV ════ */
+.shell-nav{position:fixed; top:46px; left:0; right:0; z-index:60; transition:background .25s,border-color .25s; background:rgba(245,243,236,.94); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
+.shell-nav-inner{max-width:var(--max); margin:0 auto; padding:14px var(--gutter); display:flex; align-items:center; gap:24px;}
+.shell-mark{display:inline-flex; align-items:center; gap:9px; text-decoration:none;}
+.shell-mark .wm{font-family:var(--serif); font-weight:700; font-size:22px; letter-spacing:-.01em; color:var(--ink);}
+.shell-mark .dots{display:inline-flex; gap:4px;}
+.shell-mark .dots i{width:7px; height:7px; border-radius:50%;}
+.shell-mark .dots .s{background:var(--w-soil);} .shell-mark .dots .k{background:var(--w-know);} .shell-mark .dots .c{background:var(--w-code);}
+.shell-links{display:flex; gap:18px; align-items:center; margin-inline-start:auto; font-family:var(--sans); font-size:15px; font-weight:600; white-space:nowrap;}
+.nav-world{display:inline-flex; align-items:center; gap:8px; color:var(--ink); font-weight:700; text-decoration:none; padding:8px 2px; border-bottom:2px solid transparent; transition:border-color .15s;}
+.nav-world:hover{border-bottom-color:var(--ink-soft);}
+.nav-world .ico{width:18px; height:18px;}
+.nav-world.soil .ico{color:var(--w-soil-deep);} .nav-world.know .ico{color:var(--w-know-deep);} .nav-world.code .ico{color:var(--w-code-deep);}
+.nav-sep{width:1px; height:22px; background:var(--line);}
+.nav-secondary{display:flex; gap:18px;}
+.nav-secondary a{color:var(--ink-soft); text-decoration:none; font-size:14px; font-weight:500; padding:8px 0; border-bottom:2px solid transparent; transition:.15s;}
+.nav-secondary a:hover{color:var(--ink); border-bottom-color:var(--ink-soft);}
+@media(max-width:900px){ .shell-links{gap:14px;} .nav-secondary{display:none;} .nav-world span{display:none;} .nav-world .ico{width:22px; height:22px;} }
+
+/* ════ layout primitives ════ */
+.screen{display:none;} .screen.on{display:block;}
+.wrap{max-width:var(--max); margin:0 auto; padding-inline:var(--gutter);}
+.section{padding-block:clamp(52px,6.5vw,92px); border-top:1px solid var(--line);}
+.section:first-of-type{border-top:none;}
+.sec-head{margin-bottom:var(--s-4); max-width:66ch;}
+.subhead{font-family:var(--mono); font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); margin:0 0 18px; display:flex; align-items:center; gap:12px;}
+.subhead::after{content:""; height:1px; flex:1; background:var(--line);}
+.eyebrow{font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--w-soil-deep); margin-bottom:14px; display:flex; gap:10px; align-items:baseline;}
+.eyebrow .num{color:var(--ink-soft);}
+.eyebrow.light{color:rgba(245,243,236,.7);} .eyebrow.light .num{color:rgba(245,243,236,.45);}
+.s-title{font-family:var(--serif); font-weight:700; font-size:clamp(28px,3.4vw,44px); line-height:1.1; letter-spacing:-.015em; margin:0 0 12px;}
+.s-title em{font-style:italic; color:var(--w-know-deep);}
+.s-lede{font-family:var(--sans); font-weight:400; font-size:clamp(16px,1.5vw,19px); line-height:1.55; color:var(--ink-soft); margin:0; max-width:60ch;}
+
+.ph{position:relative; overflow:hidden; background:var(--paper-2);
+  background-image:repeating-linear-gradient(135deg,var(--paper-2) 0 16px,var(--paper-3) 16px 32px);
+  display:grid; place-items:center; border-radius:inherit;}
+.ph .subj{font-family:var(--sans); font-weight:500; font-size:14px; color:var(--soil); opacity:.7; padding:7px 16px; text-align:center; background:rgba(245,243,236,.55); border-radius:7px; max-width:84%;}
+.ph .cap{position:absolute; inset-inline-start:10px; bottom:10px; font-family:var(--mono); font-size:10px; background:rgba(31,30,28,.8); color:var(--paper); padding:4px 9px; border-radius:4px; letter-spacing:.03em;}
+
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:9px; font-family:var(--sans); font-weight:600; font-size:15.5px; padding:13px 26px; border-radius:var(--radius-pill); border:1px solid transparent; text-decoration:none; transition:transform .15s, background .15s, color .15s; min-height:48px; white-space:nowrap;}
+.btn:hover{transform:translateY(-2px);}
+.btn-primary{background:var(--w-know); color:#fff;} .btn-primary:hover{background:var(--w-know-deep);}
+.btn-ghost{background:transparent; color:var(--ink); border-color:var(--ink);}
+.btn-ghost:hover{background:var(--ink); color:var(--paper);}
+.btn-ghost.on-dark{color:var(--paper); border-color:rgba(245,243,236,.5);}
+.btn-ghost.on-dark:hover{background:var(--paper); color:var(--ink);}
+.btn-spark{background:var(--spark); color:#fff; font-weight:700; box-shadow:3px 3px 0 var(--spark-ink);}
+
+/* ════════════════ HERO · POSTER (text+buttons over image) ════════════════ */
+.hero-poster{position:relative; min-height:clamp(540px,74vh,780px); display:flex; align-items:flex-end; overflow:hidden;}
+.hero-poster .bg{position:absolute; inset:0; background:#262a20; background-image:repeating-linear-gradient(135deg,#262a20 0 20px,#2f3327 20px 40px); display:grid; place-items:center;}
+.hero-poster .bg .subj{color:rgba(245,243,236,.45); background:rgba(20,19,17,.35);}
+.hero-poster .bg .cap{background:rgba(245,243,236,.16); color:rgba(245,243,236,.8);}
+.hero-poster .scrim{position:absolute; inset:0; background:linear-gradient(to left, rgba(18,17,15,.9) 0%, rgba(18,17,15,.62) 40%, rgba(18,17,15,.18) 78%, transparent 100%);}
+.hero-poster .scrim.bottom{background:linear-gradient(to top, rgba(18,17,15,.55) 0%, transparent 36%);}
+.hero-poster .content{position:relative; z-index:2; width:100%; padding-block:clamp(40px,6vw,84px);}
+.hero-poster .inner{max-width:44ch;}
+.poster-h1{font-family:var(--serif); font-weight:900; line-height:.92; letter-spacing:-.035em; margin:0 0 20px; display:flex; flex-wrap:wrap; align-items:baseline; gap:0 clamp(10px,1.6vw,22px); font-size:clamp(48px,8.5vw,128px);}
+.poster-h1 .w-soil{color:#9cc063;} .poster-h1 .w-know{color:#e08a5b;} .poster-h1 .w-code{color:#5cb8ba;}
+.poster-h1 .dot{color:rgba(245,243,236,.4); font-weight:400;}
+.hero-poster .ptag{font-family:var(--sans); font-size:clamp(17px,1.8vw,22px); line-height:1.5; color:rgba(245,243,236,.9); margin:0 0 28px; max-width:38ch;}
+.hero-poster .cta-row{display:flex; gap:14px; flex-wrap:wrap;}
+.hero-poster .kicker{margin-top:clamp(28px,3.5vw,44px); padding-top:20px; border-top:1px solid rgba(245,243,236,.18); display:flex; gap:clamp(18px,3vw,44px); flex-wrap:wrap;}
+.hero-poster .kicker .cell .v{font-family:var(--serif); font-weight:700; font-size:clamp(18px,1.8vw,24px); color:var(--paper);}
+.hero-poster .kicker .cell .v b{color:#9cc063;}
+.hero-poster .kicker .cell .k{font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:rgba(245,243,236,.55); margin-top:2px;}
+
+/* ════ WORLDS — delicate cards (accent, not full fill) ════ */
+.worlds-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(18px,2vw,22px);}
+.world-card{position:relative; background:var(--paper); border:1px solid var(--line); border-radius:var(--radius-l); box-shadow:var(--shadow-s); padding:clamp(26px,2.8vw,34px); display:flex; flex-direction:column; gap:12px; text-decoration:none; color:inherit; overflow:hidden; transition:transform .18s, box-shadow .18s; min-height:280px;}
+.world-card::before{content:""; position:absolute; top:0; inset-inline:0; height:4px; background:var(--wc);}
+.world-card:hover{transform:translateY(-3px); box-shadow:var(--shadow-m);}
+.world-card .wc-top{display:flex; justify-content:space-between; align-items:center;}
+.world-card .num{font-family:var(--mono); font-size:11.5px; letter-spacing:.12em; color:var(--ink-soft);}
+.world-card .wico{width:30px; height:30px; color:var(--wcd);}
+.world-card h3{font-family:var(--serif); font-weight:800; font-size:clamp(28px,3vw,38px); line-height:1; letter-spacing:-.02em; margin:2px 0 0; color:var(--wcd);}
+.world-card .tagline{font-family:var(--sans); font-size:15.5px; line-height:1.4; margin:0; color:var(--ink-soft); max-width:26ch;}
+.world-card ul{list-style:none; padding:0; margin:auto 0 0; display:flex; flex-direction:column; gap:5px; font-family:var(--sans); font-size:14.5px; color:var(--ink);}
+.world-card li::before{content:"—"; margin-inline-end:8px; color:var(--wc);}
+.world-card .more{font-family:var(--mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; margin-top:10px; color:var(--wcd); font-weight:500;}
+.world-card .more::after{content:" ←";}
+.world-card.soil{--wc:var(--w-soil); --wcd:var(--w-soil-deep);}
+.world-card.know{--wc:var(--w-know); --wcd:var(--w-know-deep);}
+.world-card.code{--wc:var(--w-code); --wcd:var(--w-code-deep);}
+
+/* ════ BRIDGES — dual-world, media, RTL-safe ════ */
+.bridges-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(18px,2vw,24px);}
+.bridge-card{position:relative; background:var(--paper); border:1px solid var(--line); border-radius:var(--radius-l); overflow:hidden; display:flex; flex-direction:column; transition:transform .18s, box-shadow .18s;}
+.bridge-card:hover{transform:translateY(-3px); box-shadow:var(--shadow-l);}
+.bridge-card .spine{height:6px; background:linear-gradient(to left, var(--bridge-a) 0 50%, var(--bridge-b) 50% 100%);}
+.bridge-card .media{aspect-ratio:16/9; position:relative;}
+.bridge-card .media .seal{position:absolute; bottom:-15px; inset-inline-start:24px; width:46px; height:46px; border-radius:50%; background:var(--paper); display:grid; place-items:center; box-shadow:var(--shadow-s); z-index:2;}
+.bridge-card .media .seal svg{width:24px; height:24px;}
+.bridge-card .body{padding:26px 24px 24px; display:flex; flex-direction:column; gap:11px; flex:1;}
+.bridge-card .conn{display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft);}
+.bridge-card .conn b{font-weight:600; color:var(--ink);}
+.bridge-card .conn .d{display:inline-flex; gap:4px;}
+.bridge-card .conn .d i{width:8px; height:8px; border-radius:50%;}
+.bridge-card h3{font-family:var(--serif); font-weight:700; font-size:22px; line-height:1.2; margin:0;}
+.bridge-card .lede{font-family:var(--sans); font-size:15px; color:var(--ink-soft); line-height:1.5; margin:0;}
+.bridge-card .more{font-family:var(--mono); font-size:11.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--ink); margin-top:auto; padding-top:6px; text-decoration:none; display:inline-flex; gap:6px;}
+.bridge-card .more::after{content:"←";}
+
+/* ════ UNLESS LOCKUP ════ */
+.unless-lockup{background:var(--ink); color:var(--paper); padding:clamp(52px,6.5vw,100px) var(--gutter); position:relative; overflow:hidden;}
+.unless-lockup .inner{max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:auto 1fr; gap:clamp(28px,4vw,64px); align-items:center;}
+.unless-lockup .word{font-family:var(--serif); font-weight:900; font-size:clamp(64px,11vw,168px); line-height:.9; letter-spacing:-.045em; color:var(--paper); margin:0; white-space:nowrap;}
+.unless-lockup .word .pd{color:var(--spark);}
+.unless-lockup .gloss{border-inline-start:2px solid rgba(245,243,236,.2); padding-inline-start:clamp(20px,3vw,40px);}
+.unless-lockup .he{font-family:var(--serif); font-style:italic; font-weight:500; font-size:clamp(19px,2.2vw,28px); line-height:1.45; color:rgba(245,243,236,.92); margin:0 0 14px; max-width:26ch;}
+.unless-lockup .he em{color:var(--spark); font-style:normal; font-weight:700;}
+.unless-lockup .src{font-family:var(--mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:rgba(245,243,236,.42);}
+
+/* ════ PROJECTS — emphasized systems row + even projects row ════ */
+.systems-row{display:grid; grid-template-columns:1fr 1fr; gap:clamp(18px,2.2vw,24px); margin-bottom:var(--s-5);}
+.sys-card{position:relative; background:var(--paper); border:1px solid var(--line); border-radius:var(--radius-l); overflow:hidden; display:flex; flex-direction:column; box-shadow:var(--shadow-s); text-decoration:none; color:inherit; transition:transform .18s, box-shadow .18s;}
+.sys-card:hover{transform:translateY(-3px); box-shadow:var(--shadow-l);}
+.sys-card .spine{height:6px; background:linear-gradient(to left, var(--w-code) 0%, var(--w-code-deep) 100%);}
+.sys-card .media{aspect-ratio:16/8; position:relative;}
+.sys-card .body{padding:clamp(24px,2.6vw,32px); display:flex; flex-direction:column; gap:12px; flex:1;}
+.sys-card .syslabel{display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--w-code-deep); font-weight:500;}
+.sys-card .syslabel svg{width:18px; height:18px;}
+.sys-card h3{font-family:var(--serif); font-weight:700; font-size:clamp(24px,2.6vw,30px); line-height:1.1; margin:0;}
+.sys-card p{font-family:var(--sans); font-size:15.5px; line-height:1.5; color:var(--ink-soft); margin:0; max-width:46ch;}
+.sys-card .row{display:flex; gap:14px; align-items:center; flex-wrap:wrap; margin-top:auto; padding-top:6px;}
+.sys-card .action{font-family:var(--sans); font-weight:600; font-size:15.5px; color:var(--w-code-deep); display:inline-flex; gap:7px; align-items:center;}
+.sys-card .action::after{content:"←";}
+
+.projects-row{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(18px,2.2vw,24px);}
+.proj-card{background:var(--paper); border:1px solid var(--line); border-radius:var(--radius-m); overflow:hidden; display:flex; flex-direction:column; text-decoration:none; color:inherit; transition:transform .18s, box-shadow .18s;}
+.proj-card:hover{transform:translateY(-2px); box-shadow:var(--shadow-m);}
+.proj-card .ph{aspect-ratio:16/10;}
+.proj-card .body{padding:20px; display:flex; flex-direction:column; gap:9px; flex:1;}
+.proj-card .scope-row{display:flex; gap:8px; align-items:center; flex-wrap:wrap; font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase;}
+.scope{padding:3px 9px; border-radius:100px; font-weight:600;}
+.scope.client{background:var(--paper-3); color:var(--ink);} .scope.venture{background:var(--w-soil); color:#fff;}
+.proj-card h3{font-family:var(--serif); font-size:21px; font-weight:700; margin:0; line-height:1.18;}
+.proj-card p{font-family:var(--sans); font-size:15px; line-height:1.5; color:var(--ink-soft); margin:0;}
+.proj-card .meta{font-family:var(--mono); font-size:11.5px; color:var(--ink-soft); letter-spacing:.03em; display:flex; gap:8px; align-items:center; margin-top:auto;}
+.stage-stamp{display:inline-flex; align-items:center; gap:7px; font-family:var(--mono); font-size:10.5px; letter-spacing:.07em; text-transform:uppercase; padding:4px 10px; border-radius:100px; font-weight:600;}
+.stage-stamp::before{content:""; width:7px; height:7px; border-radius:50%; background:currentColor;}
+.stage-stamp.live{background:var(--paper); color:var(--w-soil-deep); border:1px solid var(--w-soil-deep);}
+.stage-stamp.seeking{background:var(--paper); color:var(--spark); border:1px solid var(--spark);}
+.stage-stamp.seeking::before{animation:pulse 2.4s ease-in-out infinite;}
+.stage-stamp.legacy{background:var(--paper-2); color:var(--ink); border:1px solid var(--ink-soft);}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ════ BLOG — flush grid flow ════ */
+.posts-grid{display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:1fr; gap:clamp(18px,2.2vw,24px);}
+.rp-card{background:var(--paper); border:1px solid var(--line); border-radius:var(--radius-m); overflow:hidden; display:flex; flex-direction:column; text-decoration:none; color:inherit; transition:transform .18s, box-shadow .18s;}
+.rp-card:hover{transform:translateY(-2px); box-shadow:var(--shadow-m);}
+.rp-card:hover h4{color:var(--w-soil-deep);}
+.rp-card .ph{aspect-ratio:16/10;}
+.rp-card.feat{grid-column:1/3; grid-row:1/3;} .rp-card.feat .ph{aspect-ratio:auto; flex:1; min-height:200px;}
+.rp-card .body{padding:18px 20px 20px; display:flex; flex-direction:column; gap:8px; flex:1;}
+.rp-card .meta{font-family:var(--mono); font-size:11px; color:var(--ink-soft); letter-spacing:.03em; display:flex; gap:8px;}
+.rp-card h4{font-family:var(--serif); font-size:19px; font-weight:700; margin:0; line-height:1.22; transition:color .15s;}
+.rp-card.feat h4{font-size:26px;}
+.rp-card p{font-family:var(--sans); font-size:14.5px; color:var(--ink-soft); line-height:1.5; margin:0;}
+.rp-card .chips{display:flex; gap:6px; flex-wrap:wrap; margin-top:auto;}
+.wc{display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:10.5px; letter-spacing:.05em; padding:3px 9px; border-radius:100px; border:1px solid var(--line); color:var(--ink-soft);}
+.wc i{width:7px; height:7px; border-radius:50%;}
+.wc.soil i{background:var(--w-soil);} .wc.know i{background:var(--w-know);} .wc.code i{background:var(--w-code);}
+
+/* ════ FINAL CTA — 4 small cards, light, separated from footer ════ */
+.final-cta{background:var(--paper-2); padding-block:clamp(52px,6.5vw,92px); border-top:1px solid var(--line); border-bottom:6px solid var(--ink);}
+.final-cta .head{max-width:60ch; margin-bottom:var(--s-4);}
+.final-cta .eyebrow{color:var(--w-know-deep);}
+.final-cta h2{font-family:var(--serif); font-weight:900; font-size:clamp(34px,4.4vw,60px); line-height:1.02; letter-spacing:-.02em; margin:0 0 14px;}
+.final-cta h2 em{color:var(--spark); font-style:normal;}
+.final-cta .intro{font-family:var(--sans); font-size:clamp(16px,1.6vw,20px); line-height:1.55; color:var(--ink-soft); max-width:52ch;}
+.cta-paths{display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(14px,1.6vw,18px);}
+.cta-path{position:relative; background:var(--paper); border:1px solid var(--line); border-radius:var(--radius-m); padding:22px 20px; display:flex; flex-direction:column; gap:8px; text-decoration:none; color:inherit; overflow:hidden; transition:transform .18s, box-shadow .18s; min-height:184px;}
+.cta-path::before{content:""; position:absolute; top:0; inset-inline:0; height:4px; background:var(--ac);}
+.cta-path:hover{transform:translateY(-3px); box-shadow:var(--shadow-m);}
+.cta-path .ci{width:26px; height:26px; color:var(--acd);}
+.cta-path .label{font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft);}
+.cta-path h3{font-family:var(--serif); font-weight:700; font-size:clamp(20px,2vw,24px); line-height:1.1; margin:0;}
+.cta-path p{font-family:var(--sans); font-size:13.5px; line-height:1.45; color:var(--ink-soft); margin:0;}
+.cta-path .action{margin-top:auto; padding-top:8px; font-family:var(--sans); font-weight:600; font-size:14px; color:var(--acd); display:inline-flex; align-items:center; gap:7px;}
+.cta-path .action::after{content:"←";}
+.cta-path.know{--ac:var(--w-know); --acd:var(--w-know-deep);}
+.cta-path.code{--ac:var(--w-code); --acd:var(--w-code-deep);}
+.cta-path.soil{--ac:var(--w-soil); --acd:var(--w-soil-deep);}
+
+/* ════ T1 WORLD PAGE ════ */
+.vc-shell{position:relative; background:linear-gradient(to bottom,
+  var(--paper) 0 4%, var(--soil-wash) 4% 20%, var(--paper) 20% 36%,
+  var(--soil-wash-2) 36% 56%, var(--paper) 56% 76%, var(--soil-wash) 76% 100%);}
+.vc-hero{padding-block:clamp(44px,5.5vw,88px);}
+.vc-hero-stack{font-family:var(--serif); font-weight:900; font-size:clamp(72px,12vw,180px); line-height:.85; letter-spacing:-.04em; margin:0; position:relative; color:var(--w-soil-deep); text-align:center;}
+.vc-hero-stack .echo{position:absolute; inset-inline:0; text-align:center; opacity:.08; pointer-events:none; color:var(--w-soil-deep);}
+.vc-hero-stack .e1{top:-9%; font-size:78%; opacity:.12;} .vc-hero-stack .e2{top:-24%; font-size:60%; opacity:.06;}
+.vc-hero .gloss{margin-top:26px; display:grid; grid-template-columns:1fr auto 1fr; gap:28px; align-items:center;}
+.vc-hero .gloss .rule{height:1px; background:var(--w-soil-deep); opacity:.35;}
+.vc-hero .gloss .word{font-family:var(--serif); font-style:italic; font-size:clamp(20px,2.2vw,28px); color:var(--w-soil-deep); white-space:nowrap;}
+.vc-hero .intro{margin-top:38px; display:grid; grid-template-columns:1fr 1.5fr; gap:48px; align-items:end;}
+.vc-hero .intro p{font-family:var(--sans); font-size:clamp(16px,1.5vw,18px); line-height:1.6; color:var(--ink); max-width:56ch;}
+.vc-hero .intro .marker{font-family:var(--mono); font-size:11px; letter-spacing:.12em; color:var(--w-soil); text-transform:uppercase; border-block:1px solid var(--w-soil); padding:8px 0; max-width:280px;}
+.t1-section{padding-block:clamp(40px,5vw,76px);}
+.vc-lattice{display:grid; gap:18px; grid-template-columns:1fr 1.4fr 1fr; grid-template-rows:auto auto;}
+.lat-anchor{grid-column:2/3; grid-row:1/3; background:var(--w-soil-deep); color:var(--paper); border-radius:var(--radius-l); padding:32px; display:flex; flex-direction:column; gap:14px; position:relative; overflow:hidden;}
+.lat-anchor .anchor-eye{font-family:var(--mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.7);}
+.lat-anchor h3{font-family:var(--serif); font-size:clamp(26px,2.8vw,36px); margin:0; font-weight:700; line-height:1.12; color:var(--paper);}
+.lat-anchor p{font-family:var(--sans); color:rgba(245,243,236,.92); line-height:1.55; margin:0; max-width:44ch;}
+.lat-anchor .facts{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:auto; padding-top:18px; border-top:1px solid rgba(255,255,255,.2);}
+.lat-anchor .facts .k{font-family:var(--mono); font-size:10.5px; letter-spacing:.07em; color:rgba(255,255,255,.6); text-transform:uppercase;}
+.lat-anchor .facts .v{font-family:var(--serif); font-size:22px; font-weight:700; color:var(--paper); margin-top:3px;}
+.lat-side{background:var(--paper); border:1px solid var(--w-soil); border-radius:var(--radius-m); padding:22px; display:flex; flex-direction:column; gap:9px;}
+.lat-side h4{font-family:var(--serif); font-size:18px; margin:0; font-weight:700;}
+.lat-side p{font-family:var(--sans); font-size:14.5px; color:var(--ink-soft); margin:0; line-height:1.5;}
+.lat-side .tag-row{display:flex; gap:6px; flex-wrap:wrap; margin-top:auto; padding-top:8px; font-family:var(--mono); font-size:10.5px; color:var(--ink-soft);}
+.vc-principle{margin-top:44px; padding:34px; background:var(--paper); border:1px solid var(--line); border-radius:var(--radius-l); display:grid; grid-template-columns:.9fr 1.4fr; gap:40px; align-items:center;}
+.vc-principle .label{font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; color:var(--ink-soft); text-transform:uppercase; margin-bottom:8px;}
+.vc-principle h4{font-family:var(--serif); font-size:25px; font-weight:700; margin:0 0 12px; line-height:1.2;}
+.vc-principle p{font-family:var(--sans); font-size:15.5px; color:var(--ink-soft); margin:0; line-height:1.55;}
+.vc-principle p em{color:var(--spark); font-style:normal; font-weight:600;}
+.vc-principle .ph{border-radius:var(--radius-m); aspect-ratio:4/3;}
+.vc-bridges{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+.vc-projects{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+.vc-posts{display:grid; grid-template-columns:1fr 1fr; gap:4px 48px;}
+.post-row{display:grid; grid-template-columns:72px 1fr; gap:18px; padding:18px 0; border-bottom:1px dashed var(--ink-soft); text-decoration:none; color:inherit;}
+.post-row:hover h5{color:var(--w-soil-deep);}
+.post-row .date{font-family:var(--serif); font-size:14px; line-height:1.2; color:var(--w-soil-deep); font-weight:700;}
+.post-row .date b{display:block; font-size:26px; font-weight:900; line-height:1;}
+.post-row h5{font-family:var(--serif); font-size:18.5px; font-weight:700; margin:0 0 6px; line-height:1.28; transition:color .15s;}
+.post-row .chips{display:flex; gap:6px; flex-wrap:wrap;}
+
+/* ════ FOOTER ════ */
+.shell-foot{background:var(--ink); color:rgba(245,243,236,.8); padding:60px var(--gutter) 28px;}
+.shell-foot-inner{max-width:var(--max); margin:0 auto;}
+.shell-foot .cols{display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:36px; padding-bottom:34px; border-bottom:1px solid rgba(245,243,236,.15);}
+.shell-foot h6{font-family:var(--mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:rgba(245,243,236,.5); margin:0 0 14px; font-weight:500;}
+.shell-foot .cols a{display:block; color:rgba(245,243,236,.85); text-decoration:none; padding:5px 0; font-size:14.5px;}
+.shell-foot .cols a:hover{color:var(--paper);}
+.shell-foot .brand .name{font-family:var(--serif); font-size:25px; font-weight:900; color:var(--paper); margin-bottom:8px;}
+.shell-foot .brand .tag{font-family:var(--sans); font-size:15px; color:rgba(245,243,236,.6); max-width:34ch; line-height:1.5;}
+.shell-foot .bottom{display:flex; justify-content:space-between; gap:18px; padding-top:20px; font-family:var(--mono); font-size:11px; color:rgba(245,243,236,.45); letter-spacing:.04em; flex-wrap:wrap;}
+.shell-foot .bottom .unless{font-family:var(--serif); font-style:italic; font-size:14px; color:rgba(245,243,236,.55);}
+.shell-foot .bottom .unless em{color:var(--spark); font-style:normal; font-weight:700;}
+
+/* ════ RESPONSIVE ════ */
+@media(max-width:1000px){
+  .worlds-grid,.bridges-grid{grid-template-columns:1fr;}
+  .systems-row{grid-template-columns:1fr;}
+  .projects-row{grid-template-columns:repeat(2,1fr);}
+  .posts-grid{grid-template-columns:repeat(2,1fr);}
+  .rp-card.feat{grid-column:1/3; grid-row:auto;} .rp-card.feat .ph{aspect-ratio:16/9; min-height:0;}
+  .cta-paths{grid-template-columns:1fr 1fr;}
+  .vc-lattice,.vc-principle,.vc-hero .intro{grid-template-columns:1fr;} .lat-anchor{grid-column:1; grid-row:auto; order:-1;}
+  .vc-bridges,.vc-projects,.vc-posts{grid-template-columns:1fr;}
+  .shell-foot .cols{grid-template-columns:1fr 1fr;}
+  .unless-lockup .inner{grid-template-columns:1fr;} .unless-lockup .gloss{border-inline-start:none; border-top:2px solid rgba(245,243,236,.2); padding:20px 0 0;}
+}
+@media(max-width:680px){
+  body{font-size:16.5px;}
+  .projects-row,.posts-grid{grid-template-columns:1fr;}
+  .rp-card.feat{grid-column:1; grid-row:auto;}
+  .cta-paths{grid-template-columns:1fr;}
+  .shell-foot .cols{grid-template-columns:1fr;}
+  .s-title{font-size:clamp(26px,7vw,34px);}
+  .hero-poster .scrim{background:linear-gradient(to top, rgba(18,17,15,.92) 8%, rgba(18,17,15,.66) 48%, rgba(18,17,15,.3) 100%);}
+}
+
+/* ════════════ PLAYFUL LAYER · Seuss spark · עם רסן ════════════ */
+/* hand-drawn wavy underline (from brand canon) */
+.under{
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 8'><path d='M2 5 Q 50 1 100 4 T 198 5' stroke='%23c46a3e' stroke-width='2.6' fill='none' stroke-linecap='round'/></svg>");
+  background-repeat:no-repeat; background-position:bottom right; background-size:100% .32em;
+  padding-bottom:.14em;
+}
+/* sparkle accent — twinkles, used sparingly */
+.spark-star{display:inline-flex; align-items:center; justify-content:center; width:.82em; height:.82em; color:var(--spark); vertical-align:-.04em; margin-inline:.18em;}
+.spark-star svg{width:100%; height:100%; transform-origin:center; animation:twinkle 2.8s ease-in-out infinite;}
+@keyframes twinkle{0%,100%{transform:scale(1) rotate(0); opacity:1} 50%{transform:scale(.66) rotate(22deg); opacity:.55}}
+
+/* connection thread — the three worlds, joined (playful + on-concept) */
+.world-thread{display:block; margin:0 auto var(--s-3); width:300px; max-width:70%; height:auto; overflow:visible;}
+.world-thread path{fill:none; stroke:var(--ink-soft); stroke-width:2; stroke-linecap:round; opacity:.4;}
+.world-thread circle{transform-box:fill-box; transform-origin:center; animation:thump 3s ease-in-out infinite;}
+.world-thread circle:nth-of-type(2){animation-delay:.45s} .world-thread circle:nth-of-type(3){animation-delay:.9s}
+@keyframes thump{0%,100%{transform:scale(1)} 50%{transform:scale(1.22)}}
+
+/* section rhythm — bridges become a soft-wash band (the thesis gets a room of its own) */
+.section.band{border-top:none;}
+.bridges-band{background:
+  radial-gradient(130% 90% at 12% 0%, var(--soil-wash), transparent 46%),
+  radial-gradient(130% 90% at 88% 100%, var(--code-wash), transparent 46%),
+  var(--paper-2);}
+
+/* micro-motions — springy, a little smile on hover */
+.btn{transition:transform .22s cubic-bezier(.34,1.56,.64,1), background .15s, color .15s;}
+.btn:hover{transform:translateY(-2px) scale(1.02);}
+.world-card{transition:transform .22s cubic-bezier(.34,1.56,.64,1), box-shadow .2s;}
+.world-card::before{transition:height .2s ease;}
+.world-card:hover{transform:translateY(-4px);}
+.world-card:hover::before{height:7px;}
+.nav-world:hover .ico, .world-card:hover .wico, .sys-card:hover .syslabel svg{animation:wiggle .5s ease;}
+@keyframes wiggle{0%,100%{transform:rotate(0)} 28%{transform:rotate(-10deg)} 62%{transform:rotate(8deg)}}
+.bridge-card .media .seal{transition:transform .3s cubic-bezier(.34,1.56,.64,1);}
+.bridge-card:hover .media .seal{transform:translateY(-4px) rotate(-9deg);}
+.unless-lockup .word .pd{display:inline-block; animation:bob 3.2s ease-in-out infinite;}
+@keyframes bob{0%,100%{transform:translateY(0)} 50%{transform:translateY(-.07em)}}
+@media (prefers-reduced-motion:reduce){
+  .spark-star svg,.world-thread circle,.unless-lockup .word .pd{animation:none;}
+}
+
+/* ── spark toggle · restrained (מאופק) neutralizes the playful layer ── */
+body[data-spark="off"] .world-thread,
+body[data-spark="off"] .spark-star{display:none;}
+body[data-spark="off"] .under{background-image:none; padding-bottom:0;}
+body[data-spark="off"] .bridges-band{background:var(--paper-2);}
+body[data-spark="off"] .btn:hover{transform:translateY(-2px);}
+body[data-spark="off"] .world-card:hover{transform:translateY(-3px);}
+body[data-spark="off"] .world-card:hover::before{height:4px;}
+body[data-spark="off"] .nav-world:hover .ico,
+body[data-spark="off"] .world-card:hover .wico,
+body[data-spark="off"] .sys-card:hover .syslabel svg{animation:none;}
+body[data-spark="off"] .bridge-card:hover .media .seal{transform:none;}
+body[data-spark="off"] .unless-lockup .word .pd{animation:none;}
+
+/* ── real photos ── */
+.ph img,.hero-poster .bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+/* ── basket logo (heritage motif) ── */
+.shell-mark .basket{width:36px;height:36px;display:block;}
+.shell-foot .brand .fbrand{display:flex;align-items:center;gap:11px;margin-bottom:8px;}
+.shell-foot .brand .fbrand img{width:32px;height:32px;}
+.shell-foot .brand .name{margin:0;}
+/* ── world cards: photo header + world-tinted basket emblem ── */
+.world-card{padding:0;gap:0;min-height:0;}
+.world-card::before{z-index:4;}
+.world-card .wcard-media{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--paper-2);}
+.world-card .wcard-emblem{position:absolute;bottom:-25px;inset-inline-start:22px;width:56px;height:56px;border-radius:50%;background:var(--paper);display:grid;place-items:center;box-shadow:var(--shadow-s);z-index:3;}
+.world-card .wcard-emblem img{width:36px;height:36px;}
+.world-card .wcard-body{padding:36px clamp(22px,2.4vw,28px) clamp(24px,2.6vw,30px);display:flex;flex-direction:column;gap:10px;flex:1;}
+.world-card h3{margin:0;}
+/* ── system cards: teal duotone shot / sparkline panel ── */
+.sys-shot{position:relative;background:var(--w-code-deep);overflow:hidden;}
+.sys-shot img{mix-blend-mode:luminosity;opacity:.55;}
+.sys-shot::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(31,94,96,.72),rgba(45,138,140,.42));mix-blend-mode:multiply;}
+.sys-shot .shot-tag{position:absolute;bottom:11px;inset-inline-start:13px;z-index:2;font-family:var(--mono);font-size:10px;letter-spacing:.05em;color:rgba(245,243,236,.9);background:rgba(18,17,15,.42);padding:4px 9px;border-radius:5px;}
+.sys-shot.tik{display:grid;place-items:center;background:#15302f;}
+.sys-shot.tik::after{background:none;}
+.sys-shot .spark-chart{position:relative;z-index:1;width:80%;height:56%;}
+/* ── world page gentle basket illustration ── */
+.world-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;}
+.world-bg img{position:absolute;top:4%;inset-inline-start:-4%;width:min(540px,46vw);opacity:.06;}
+.world-bg img.b2{top:auto;bottom:6%;inset-inline-start:auto;inset-inline-end:-6%;width:min(420px,36vw);opacity:.05;}
+.vc-hero,.t1-section{position:relative;z-index:1;}
+
+/* icon family */
+.li-ic{width:18px;height:18px;flex:none;color:var(--wcd);}
+.world-card li{display:flex;align-items:center;gap:9px;}
+.world-card li::before{content:none;}
+/* negentropy concept graphic */
+.negentropy{display:block;width:100%;max-width:740px;height:auto;margin:8px auto 16px;}
+.negentropy .ent{fill:var(--ink-soft);transform-box:fill-box;transform-origin:center;}
+.neg-cap{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;letter-spacing:.07em;color:var(--ink-soft);text-transform:uppercase;margin:0 0 var(--s-4);text-align:center;}
+.neg-cap b{color:var(--ink);font-weight:600;}
+.neg-cap .ar{opacity:.4;letter-spacing:.1em;}
+/* footer garden series strip */
+.series-strip{display:flex;justify-content:center;gap:clamp(18px,4vw,44px);padding-bottom:30px;margin-bottom:32px;border-bottom:1px solid rgba(245,243,236,.15);}
+.series-strip svg{width:26px;height:26px;color:rgba(245,243,236,.5);transition:color .15s,transform .3s cubic-bezier(.34,1.56,.64,1);}
+.series-strip svg:hover{color:rgba(245,243,236,.85);transform:translateY(-3px);}
+/* emblem clip fix — let badge straddle media/body seam */
+.world-card .wcard-media{overflow:visible;}
+.world-card{overflow:hidden;}
+/* alignment + line-break polish */
+.worlds-grid,.bridges-grid,.projects-row,.posts-grid,.systems-row,.cta-paths{align-items:start;}
+.s-title,.final-cta h2,.hero-a h1,.hero-b .head h1,.unless-lockup .he{text-wrap:balance;}
+.s-lede,.world-card .tagline,.bridge-card .lede,.proj-card p,.sys-card p,.hero-poster .ptag{text-wrap:pretty;}
+/* motion (gated) */
+body[data-spark="on"] .negentropy .ent{animation:nfloat 7s ease-in-out infinite;}
+body[data-spark="on"] .negentropy .ent:nth-of-type(2n){animation-delay:-2.5s;}
+body[data-spark="on"] .negentropy .ent:nth-of-type(3n){animation-delay:-1.3s;}
+@keyframes nfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+body[data-spark="on"] .negentropy .flows{animation:ndash 3.4s linear infinite;}
+@keyframes ndash{to{stroke-dashoffset:-24;}}
+@media(max-width:680px){.series-strip{gap:14px;flex-wrap:wrap;}}
+
+/* worlds intro: concept graphic on the same row as heading */
+.worlds-intro{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(28px,4vw,56px);align-items:center;margin-bottom:var(--s-5);}
+.worlds-intro .sec-head{margin-bottom:0;}
+.worlds-intro .wi-graphic{position:relative;}
+.negentropy{margin:0 auto 8px;max-width:520px;}
+.neg-cap{font-size:11px;letter-spacing:.04em;gap:6px;margin:0;justify-content:center;}
+@media(max-width:860px){.worlds-intro{grid-template-columns:1fr;gap:16px;}.negentropy{max-width:440px;}}
+/* equal-height cards */
+.worlds-grid,.bridges-grid,.projects-row,.posts-grid,.systems-row,.cta-paths,.products-grid{align-items:stretch;}
+.world-card{height:100%;}
+/* subheads: single line, full width */
+.subhead{white-space:nowrap;}
+/* manifesto */
+.manifesto{position:relative;overflow:hidden;background:var(--ink);color:var(--paper);padding-block:clamp(52px,6.5vw,96px);}
+.manifesto .mf-bg{position:absolute;inset:0;pointer-events:none;}
+.manifesto .mf-bg img{position:absolute;top:50%;inset-inline-start:-7%;transform:translateY(-50%);width:min(560px,48vw);opacity:.055;}
+.mf-grid{position:relative;display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,4vw,64px);align-items:center;}
+.mf-media{position:relative;border-radius:var(--radius-l);overflow:visible;aspect-ratio:4/3;box-shadow:var(--shadow-l);}
+.mf-media img{width:100%;height:100%;object-fit:cover;display:block;border-radius:var(--radius-l);}
+.mf-emblem{position:absolute;bottom:-22px;inset-inline-end:24px;width:58px;height:58px;border-radius:50%;background:var(--ink);display:grid;place-items:center;box-shadow:0 6px 18px -8px rgba(0,0,0,.5);}
+.mf-emblem img{width:38px;height:38px;}
+.manifesto h2{font-family:var(--serif);font-weight:900;font-size:clamp(32px,4.4vw,60px);line-height:1.04;letter-spacing:-.02em;margin:6px 0 18px;color:var(--paper);text-wrap:balance;}
+.manifesto h2 em{color:var(--spark);font-style:normal;}
+.manifesto p{font-family:var(--sans);font-size:clamp(16px,1.5vw,18.5px);line-height:1.65;color:rgba(245,243,236,.82);margin:0 0 14px;max-width:54ch;text-wrap:pretty;}
+.manifesto p b{color:var(--paper);font-weight:700;}
+.manifesto p em{color:#e08a5b;font-style:normal;font-weight:600;}
+@media(max-width:860px){.mf-grid{grid-template-columns:1fr;}.mf-media{aspect-ratio:16/10;order:-1;}}
+/* products */
+.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2vw,22px);}
+.product-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-m);overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;box-shadow:var(--shadow-s);transition:transform .18s,box-shadow .18s;height:100%;}
+.product-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-l);}
+.product-card .pimg{aspect-ratio:1;overflow:hidden;}
+.product-card .pimg img{width:100%;height:100%;object-fit:cover;display:block;}
+.product-card .pbody{padding:16px 18px 18px;display:flex;flex-direction:column;gap:7px;flex:1;}
+.product-card h3{font-family:var(--serif);font-size:19px;font-weight:700;margin:0;line-height:1.2;}
+.product-card .pmeta{font-family:var(--sans);font-size:13.5px;color:var(--ink-soft);margin:0;line-height:1.45;}
+.product-card .prow{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:8px;}
+.product-card .price{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--w-soil-deep);}
+.product-card .add{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--w-know-deep);text-transform:uppercase;}
+.product-card .add svg{width:19px;height:19px;}
+@media(max-width:900px){.products-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:520px){.products-grid{grid-template-columns:1fr;}}
+/* restore + strengthen background basket */
+.world-bg img{opacity:.09;}
+.world-bg img.b2{opacity:.06;}
+/* hero foot: numbers (start) + buttons (end) on one line */
+.hero-foot{display:flex;justify-content:space-between;align-items:center;gap:18px 28px;flex-wrap:wrap;margin-top:clamp(26px,3.4vw,42px);padding-top:18px;border-top:1px solid rgba(245,243,236,.2);}
+.hero-poster .kicker{margin:0;padding:0;border:0;display:flex;flex-wrap:nowrap;align-items:baseline;gap:clamp(12px,2vw,24px);}
+.hero-poster .kicker .kc{font-family:var(--serif);font-weight:700;font-size:clamp(13.5px,1.35vw,18px);color:var(--paper);white-space:nowrap;}
+.hero-poster .kicker .kc b{color:#9cc063;font-size:1.12em;}
+.hero-foot .cta-row{margin:0;flex:none;}
+.wcard-emblem{position:relative;}
+.wcard-emblem .em-ic{position:absolute;top:-7px;inset-inline-end:-7px;width:25px;height:25px;color:#fff;background:var(--wcd);border-radius:50%;padding:4.5px;box-shadow:var(--shadow-s);}
+@media(max-width:560px){.hero-foot{gap:14px;}.hero-poster .kicker{flex-wrap:wrap;gap:6px 14px;}}
+
+/* worlds: concept graphic full-width BEHIND centered text + more detail */
+.worlds-intro{position:relative;display:grid;place-items:center;margin-bottom:var(--s-5);min-height:clamp(220px,26vw,300px);}
+.worlds-intro .wi-graphic{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:0;}
+.worlds-intro .negentropy{max-width:1080px;width:100%;height:100%;margin:0;}
+.worlds-intro .wi-col{position:relative;z-index:1;text-align:center;max-width:54ch;padding:clamp(16px,3vw,30px) clamp(20px,5vw,56px);}
+.worlds-intro .wi-col::before{content:"";position:absolute;inset:-8% -10%;background:radial-gradient(ellipse at center,var(--paper) 36%,rgba(245,243,236,.7) 58%,transparent 82%);z-index:-1;}
+.worlds-intro .sec-head{margin-bottom:0;}
+.worlds-intro .neg-cap{position:absolute;left:0;right:0;bottom:0;z-index:1;}
+@media(max-width:760px){.worlds-intro .negentropy{max-width:none;}.worlds-intro .wi-col{padding:12px;}}
+/* balanced section ledes */
+.s-lede{text-wrap:balance;}
+/* world card image: uniform forced crop (emblem still overflows via card radius clip) */
+.world-card .wcard-media{aspect-ratio:16/10;overflow:visible;}
+.world-card .wcard-media>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;border-radius:0;}
+/* systems standalone → full-width product rows */
+.systems-section .systems-row{grid-template-columns:1fr;gap:clamp(20px,3vw,30px);}
+.systems-section .sys-card{display:grid;grid-template-columns:1fr 1.05fr;grid-template-areas:"spine spine" "body media";align-items:stretch;}
+.systems-section .sys-card .spine{grid-area:spine;}
+.systems-section .sys-card .media{aspect-ratio:auto;min-height:248px;height:100%;grid-area:media;}
+.systems-section .sys-card .body{padding:clamp(26px,3vw,42px);grid-area:body;}
+@media(max-width:620px){.systems-section .sys-card{grid-template-columns:1fr;grid-template-areas:"spine" "media" "body";}.systems-section .sys-card .media{min-height:180px;}}
+/* services (repurposed element) separated from footer */
+.services-end{background:var(--paper-2);border-top:1px solid var(--line);}
+.product-card .svc-ic{width:30px;height:30px;color:var(--w-soil-deep);}
+.product-card .svc-ic svg{width:100%;height:100%;}
+.services-end .product-card .add{margin-top:auto;padding-top:10px;color:var(--w-know-deep);font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;}
+.final-cta{border-bottom:1px solid var(--line);}
+/* nav: transparent over hero → solid after */
+nav.shell-nav.atop{background:rgba(18,17,15,.5) !important;backdrop-filter:blur(6px);border-bottom-color:rgba(245,243,236,.12) !important;}
+.shell-nav.atop .wm,.shell-nav.atop .nav-world,.shell-nav.atop .nav-secondary a{color:var(--paper);}
+.shell-nav.atop .nav-world .ico{color:var(--paper);}
+.shell-nav.atop .basket{filter:brightness(0) invert(1);}
+.shell-nav.atop .nav-sep{background:rgba(245,243,236,.45);}
+
+/* systems per-world color */
+.sys-card.code .spine{background:linear-gradient(to left,var(--w-code),var(--w-code-deep));}
+.sys-card.code .syslabel,.sys-card.code .action{color:var(--w-code-deep);}
+.sys-card.know .spine{background:linear-gradient(to left,var(--w-know),var(--w-know-deep));}
+.sys-card.know .syslabel,.sys-card.know .action{color:var(--w-know-deep);}
+.sys-card.know .sys-shot.tik{background:#3a2417;}
+/* projects → browse carousel */
+.projects-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:clamp(16px,2vw,24px);padding-bottom:6px;}
+.projects-row>.proj-card{flex:0 0 clamp(258px,30%,330px);scroll-snap-align:start;}
+.proj-browse{display:flex;align-items:center;gap:12px;margin-top:18px;}
+.proj-browse .pb-arrow{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--paper);cursor:pointer;font-size:16px;color:var(--ink);display:grid;place-items:center;transition:background .15s,color .15s;}
+.proj-browse .pb-arrow:hover{background:var(--ink);color:var(--paper);}
+.proj-browse .proj-more{margin-inline-start:auto;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--ink);padding-bottom:2px;}
+
+/* hero buttons → end of line (RTL: left); wider inner so they fit */
+.hero-poster .inner{max-width:min(620px,100%);}
+.hero-foot{flex-wrap:nowrap;}
+.hero-foot .cta-row{margin-inline-start:auto;}
+/* systems columns handled via grid-template-areas above */
+/* services title one line */
+.services-end .s-title{white-space:nowrap;}
+@media(max-width:600px){.services-end .s-title{white-space:normal;}}
+/* services carousel (same as projects) */
+.products-grid.carousel{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:clamp(16px,2vw,22px);padding-bottom:6px;}
+.products-grid.carousel>.product-card{flex:0 0 clamp(240px,28%,302px);scroll-snap-align:start;}
+@media(max-width:560px){.hero-foot{flex-wrap:wrap;}.hero-foot .cta-row{margin-inline-start:0;}}
+/* poster-h1: a colored dot per world, on the RTL-start side of each word */
+.poster-h1 .w-soil::before,.poster-h1 .w-know::before,.poster-h1 .w-code::before{content:"";display:inline-block;width:.17em;height:.17em;border-radius:50%;background:currentColor;vertical-align:.32em;margin-inline-end:.22em;}
+
+/* ════════════ SPACING — normalized from client home edits · 2026-05-30 ════════════
+   Client tightened vertical rhythm to ~50px (desktop) and inset the systems block.
+   Encoded as tokens so every page/template inherits the same rhythm. */
+:root{ --sec-y:clamp(38px,4.6vw,52px); --sec-y-lg:clamp(46px,5.6vw,72px); --gutter-fixed:clamp(22px,4vw,52px); }
+.section{ padding-block:var(--sec-y); }
+.worlds-section{ padding-block:0 var(--s-2); }            /* sits tight under hero */
+.section.band{ padding-block:var(--sec-y); }
+.final-cta{ padding-block:var(--sec-y); }
+.services-end{ padding-block:var(--sec-y); }
+.manifesto{ padding-block:var(--sec-y-lg); }
+.unless-lockup{ padding-block:var(--sec-y-lg); }
+.systems-section.wrap{ max-width:1050px; }                 /* inset emphasis block */
+.shell-foot{ padding-block:0 28px; }                       /* series-strip owns top space */
+.series-strip{ gap:clamp(28px,5vw,60px); padding:20px 0; margin:0; }
+.shell-foot .cols{ padding:10px 0 34px; }
+/* eyebrow descriptor label — client refinement: a touch larger, medium weight */
+.eyebrow > span:not(.num):not(.spark-star){ font-size:13px; font-weight:500; }
+
+/* ════════════════════════════════════════════════════════════════════
+   v4 · UI PRECISION + TEMPLATE COMPLETION (team_35 · V200)
+   ════════════════════════════════════════════════════════════════════ */
+
+/* ── external-link affordance (code-world systems: SFA · tiktrack) ── */
+.ext-link{display:inline-flex;align-items:center;gap:6px;margin-inline-start:auto;font-family:var(--mono);font-size:12px;letter-spacing:.01em;color:var(--w-code-deep);direction:ltr;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s;}
+.ext-link .ext-ic{width:14px;height:14px;flex:none;}
+.sys-card:hover .ext-link{border-bottom-color:currentColor;}
+.sys-card.know .ext-link{color:var(--w-know-deep);}
+
+/* ── activity-count chip · graceful 0 / 1 / many ───────────────────
+   Wired to real CPT counts in the build. Until then the chip degrades:
+   0 → no count noise, a quiet "in motion" label; 1 → singular; n → plural. */
+.more.count-zero{color:var(--ink-soft);opacity:.8;}
+.more.count-zero::after{content:"";}
+.more.count-one::after,.more.count-many::after{content:" \2190";}
+
+/* ── media slots · graceful degradation until photos arrive ─────────
+   .ph.clean = world-tinted wash + quiet emblem, NO "TBD" caption.
+   The build renders .clean when a slot has no attachment, so empty
+   galleries read as intentional, not broken. */
+.ph.clean{background:var(--soil-wash);background-image:none;}
+.ph.clean.know-wash{background:var(--know-wash);} .ph.clean.code-wash{background:var(--code-wash);}
+.ph.clean .emblem{width:46px;height:46px;opacity:.5;}
+.ph.clean .emblem img{width:100%;height:100%;}
+.ph.collapse{display:none;}
+.cap.pending{background:rgba(31,30,28,.55);}
+
+/* ════ SHARED PAGE HERO (Contact · About · system) ════ */
+.page-hero{padding-block:clamp(48px,6vw,92px);border-bottom:1px solid var(--line);}
+.page-hero .eyebrow{color:var(--w-know-deep);}
+.page-hero h1{font-family:var(--serif);font-weight:900;font-size:clamp(40px,6.2vw,84px);line-height:.98;letter-spacing:-.03em;margin:0 0 18px;text-wrap:balance;}
+.page-hero .lede{font-family:var(--sans);font-size:clamp(17px,1.7vw,21px);line-height:1.6;color:var(--ink-soft);margin:0;max-width:54ch;text-wrap:pretty;}
+
+/* ════ CONTACT (T8) ════ */
+.hero-act{display:flex;gap:14px;flex-wrap:wrap;margin-top:clamp(26px,3vw,38px);}
+.hero-act .btn-wa{background:#1f8a4c;color:#fff;}
+.hero-act .btn-wa:hover{background:#187a42;}
+.hero-act .btn svg{width:19px;height:19px;}
+.contact-layout{display:grid;grid-template-columns:1.25fr .9fr;gap:clamp(28px,4vw,56px);align-items:start;}
+.contact-form{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-l);padding:clamp(26px,3vw,40px);box-shadow:var(--shadow-s);}
+.contact-form h3{font-family:var(--serif);font-weight:700;font-size:24px;margin:0 0 6px;}
+.contact-form .form-intro{font-family:var(--sans);font-size:15px;color:var(--ink-soft);margin:0 0 22px;line-height:1.5;}
+.contact-form .form-intro em{color:var(--w-know-deep);font-style:normal;font-weight:600;}
+.contact-form .field{display:flex;flex-direction:column;gap:7px;margin-bottom:18px;}
+.contact-form label{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);}
+.contact-form label .opt{text-transform:none;letter-spacing:0;color:var(--ink-soft);opacity:.7;font-size:11px;}
+.contact-form input,.contact-form select,.contact-form textarea{font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius-s);padding:13px 14px;width:100%;transition:border-color .15s,background .15s;}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{outline:none;border-color:var(--w-know);background:var(--paper);}
+.contact-form textarea{min-height:130px;resize:vertical;line-height:1.55;}
+.contact-form .hp-field{position:absolute;left:-9999px;}
+.contact-form .form-submit{width:100%;margin-top:6px;}
+.contact-form .form-foot{font-family:var(--mono);font-size:11px;letter-spacing:.02em;color:var(--ink-soft);text-align:center;margin-top:14px;}
+.contact-side{display:flex;flex-direction:column;gap:14px;}
+.contact-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-m);padding:20px 22px;}
+.contact-card.response{background:var(--soil-wash);border-color:var(--soil-wash-2);}
+.contact-card .label{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px;}
+.contact-card h4{font-family:var(--serif);font-weight:700;font-size:18.5px;line-height:1.25;margin:0 0 7px;}
+.contact-card p{font-family:var(--sans);font-size:14.5px;color:var(--ink-soft);line-height:1.5;margin:0 0 10px;}
+.contact-card p:last-child{margin-bottom:0;}
+.wa-btn{display:inline-flex;align-items:center;gap:9px;background:#1f8a4c;color:#fff;font-family:var(--sans);font-weight:600;font-size:15px;padding:11px 20px;border-radius:var(--radius-pill);text-decoration:none;transition:background .15s,transform .15s;}
+.wa-btn:hover{background:#187a42;transform:translateY(-2px);}
+.wa-number{display:block;font-family:var(--mono);font-size:13px;color:var(--ink-soft);margin-top:10px;letter-spacing:.04em;direction:ltr;text-align:start;}
+.contact-card .direct{font-family:var(--mono);font-size:14px;color:var(--w-code-deep);text-decoration:none;border-bottom:1px solid var(--line);direction:ltr;display:inline-block;}
+.contact-card .direct:hover{border-bottom-color:var(--w-code-deep);}
+.contact-social{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px;}
+.contact-social a{display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-size:14.5px;color:var(--ink);text-decoration:none;}
+.contact-social a::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--w-know);flex:none;}
+.contact-social a:hover{color:var(--w-know-deep);}
+
+/* ════ ABOUT (T8) — personal register ════ */
+.about-screen{--measure:64ch;}
+.about-sec{padding-block:clamp(40px,5vw,76px);border-top:1px solid var(--line);}
+.about-sec .sec-head{margin-bottom:var(--s-3);}
+.about-prose{font-family:var(--sans);font-size:clamp(17px,1.6vw,19.5px);line-height:1.75;color:var(--ink);max-width:60ch;}
+.about-prose p{margin:0 0 1.05em;text-wrap:pretty;}
+.about-prose p:last-child{margin-bottom:0;}
+.about-prose b{font-weight:700;}
+.about-prose em{font-style:normal;color:var(--w-know-deep);font-weight:600;}
+.about-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,4vw,60px);align-items:center;}
+.about-hero .ah-text h1{font-family:var(--serif);font-weight:900;font-size:clamp(34px,4.6vw,60px);line-height:1.02;letter-spacing:-.025em;margin:0 0 18px;text-wrap:balance;}
+.about-hero .ah-text h1 em{font-style:italic;color:var(--w-soil-deep);}
+.about-hero .ah-lede{font-family:var(--sans);font-size:clamp(17px,1.7vw,20px);line-height:1.6;color:var(--ink-soft);margin:0;max-width:42ch;}
+.about-hero .ah-portrait{position:relative;aspect-ratio:4/5;border-radius:var(--radius-l);overflow:hidden;box-shadow:var(--shadow-l);}
+.about-hero .ah-portrait img{width:100%;height:100%;object-fit:cover;display:block;}
+.about-hero .ah-emblem{position:absolute;bottom:-20px;inset-inline-end:22px;width:56px;height:56px;border-radius:50%;background:var(--paper);display:grid;place-items:center;box-shadow:var(--shadow-s);}
+.about-hero .ah-emblem img{width:36px;height:36px;}
+/* timeline · RTL vertical rail */
+.timeline{position:relative;margin:0;padding:0;list-style:none;}
+.timeline::before{content:"";position:absolute;inset-inline-start:7px;top:6px;bottom:6px;width:2px;background:var(--line);}
+.tl-row{position:relative;display:grid;grid-template-columns:auto 1fr;gap:20px;padding:0 0 26px;}
+.tl-row:last-child{padding-bottom:0;}
+.tl-row .tl-dot{position:relative;z-index:1;width:16px;height:16px;border-radius:50%;background:var(--paper);border:2px solid var(--w-soil);margin-top:4px;}
+.tl-row.key .tl-dot{background:var(--w-soil);box-shadow:0 0 0 4px var(--soil-wash);}
+.tl-row .tl-year{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.04em;color:var(--w-soil-deep);margin:0 0 4px;direction:ltr;text-align:start;}
+.tl-row .tl-body{font-family:var(--sans);font-size:16px;line-height:1.55;color:var(--ink-soft);margin:0;max-width:56ch;}
+.tl-row .tl-body b{color:var(--ink);font-weight:600;}
+.principle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,22px);}
+.principle-tile{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-m);padding:24px 22px;box-shadow:var(--shadow-s);}
+.principle-tile .pt-k{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--w-know-deep);margin-bottom:10px;}
+.principle-tile h4{font-family:var(--serif);font-weight:700;font-size:20px;line-height:1.2;margin:0 0 8px;}
+.principle-tile p{font-family:var(--sans);font-size:14.5px;line-height:1.55;color:var(--ink-soft);margin:0;}
+.sea{position:relative;overflow:hidden;background:linear-gradient(to bottom,var(--code-wash),var(--paper-2));border-top:1px solid var(--line);}
+.sea .sea-inner{position:relative;z-index:1;max-width:60ch;}
+.sea .eyebrow{color:var(--w-code-deep);}
+.sea .sea-quote{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(20px,2.4vw,30px);line-height:1.45;color:var(--ink);margin:0;text-wrap:pretty;}
+.sea .sea-quote b{font-style:normal;color:var(--w-code-deep);font-weight:700;}
+
+/* ════ SYSTEM TEMPLATES · 404 · SEARCH · EMPTY ARCHIVE ════ */
+.sys-block{padding-block:clamp(48px,6vw,96px);}
+.err-404{text-align:center;max-width:60ch;margin:0 auto;}
+.err-404 .code{font-family:var(--serif);font-weight:900;font-size:clamp(96px,18vw,220px);line-height:.85;letter-spacing:-.04em;color:var(--ink);margin:0;display:flex;justify-content:center;align-items:baseline;gap:.06em;}
+.err-404 .code i{font-style:normal;width:.62em;height:.62em;border-radius:50%;align-self:center;}
+.err-404 .code .d1{background:var(--w-soil);} .err-404 .code .d2{background:var(--w-know);} .err-404 .code .d3{background:var(--w-code);}
+.err-404 h1{font-family:var(--serif);font-weight:700;font-size:clamp(24px,3vw,34px);margin:18px 0 10px;}
+.err-404 p{font-family:var(--sans);font-size:17px;color:var(--ink-soft);line-height:1.6;margin:0 auto 28px;max-width:46ch;}
+.err-links{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
+.err-links a{font-family:var(--sans);font-weight:600;font-size:15px;color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:var(--radius-pill);padding:10px 20px;background:var(--paper);transition:border-color .15s,transform .15s;}
+.err-links a:hover{border-color:var(--ink);transform:translateY(-2px);}
+.search-field{display:flex;align-items:center;gap:12px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-pill);padding:6px 8px 6px 22px;max-width:560px;box-shadow:var(--shadow-s);}
+.search-field svg{width:20px;height:20px;color:var(--ink-soft);flex:none;}
+.search-field input{flex:1;border:none;background:transparent;font-family:var(--sans);font-size:17px;color:var(--ink);padding:10px 0;}
+.search-field input:focus{outline:none;}
+.search-field button{font-family:var(--sans);font-weight:600;font-size:15px;background:var(--ink);color:var(--paper);border:none;border-radius:var(--radius-pill);padding:11px 22px;cursor:pointer;}
+.search-meta{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--ink-soft);margin:22px 0 18px;text-transform:uppercase;}
+.results-list{display:flex;flex-direction:column;gap:0;}
+.result-row{display:grid;grid-template-columns:auto 1fr;gap:18px;padding:20px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;align-items:start;}
+.result-row:hover h4{color:var(--w-soil-deep);}
+.result-row .r-kind{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);border:1px solid var(--line);border-radius:100px;padding:4px 10px;white-space:nowrap;margin-top:3px;}
+.result-row h4{font-family:var(--serif);font-weight:700;font-size:20px;line-height:1.25;margin:0 0 5px;transition:color .15s;}
+.result-row p{font-family:var(--sans);font-size:14.5px;color:var(--ink-soft);line-height:1.5;margin:0;}
+.empty-state{text-align:center;background:var(--paper-2);border:1px dashed var(--line);border-radius:var(--radius-l);padding:clamp(40px,5vw,68px);max-width:60ch;margin:0 auto;}
+.empty-state .es-emblem{width:60px;height:60px;opacity:.45;margin:0 auto 18px;}
+.empty-state h3{font-family:var(--serif);font-weight:700;font-size:24px;margin:0 0 10px;}
+.empty-state p{font-family:var(--sans);font-size:16px;color:var(--ink-soft);line-height:1.6;margin:0 auto 22px;max-width:42ch;}
+
+/* ════ STATES REFERENCE SCREEN (design spec — not a live page) ════ */
+.states-wrap{padding-block:clamp(36px,4vw,60px);}
+.state-group{border-top:1px solid var(--line);padding-block:clamp(28px,3.4vw,46px);}
+.state-group:first-of-type{border-top:none;}
+.state-group > .sg-head{margin-bottom:var(--s-3);}
+.state-group .sg-head h3{font-family:var(--serif);font-weight:700;font-size:24px;margin:0 0 6px;}
+.state-group .sg-head p{font-family:var(--sans);font-size:15px;color:var(--ink-soft);margin:0;max-width:64ch;line-height:1.55;}
+.state-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;}
+.state-cell{display:flex;flex-direction:column;gap:10px;}
+.state-cell .sc-tag{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);display:flex;align-items:center;gap:8px;}
+.state-cell .sc-tag b{color:var(--ink);font-weight:600;}
+.state-cell .sc-tag .dot{width:8px;height:8px;border-radius:50%;}
+.dot.ok{background:var(--w-soil);} .dot.warn{background:var(--w-know);} .dot.off{background:var(--ink-soft);}
+.demo-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-m);overflow:hidden;}
+.demo-card .demo-media{aspect-ratio:16/10;position:relative;}
+.demo-card .demo-body{padding:16px 18px;display:flex;flex-direction:column;gap:8px;}
+.demo-card h5{font-family:var(--serif);font-weight:700;font-size:17px;margin:0;}
+
+@media(max-width:900px){
+  .contact-layout{grid-template-columns:1fr;}
+  .about-hero{grid-template-columns:1fr;} .about-hero .ah-portrait{order:-1;aspect-ratio:16/11;max-width:420px;}
+  .principle-grid{grid-template-columns:1fr;}
+}
+@media(max-width:680px){
+  .hero-act{flex-direction:column;align-items:stretch;} .hero-act .btn{width:100%;}
+}
+</style>
+</head>
+<body data-spark="on">
+
+<!-- ══ SVG SPRITE ══ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-soil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V11"/><path d="M12 11c0-3 2-5 5-5-.2 3-2 5-5 5Z"/><path d="M12 13c0-2.5-1.8-4.2-4.5-4.2.2 2.6 1.8 4.2 4.5 4.2Z"/></symbol>
+  <symbol id="i-know" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5C10 5 7 4.5 4 5v13c3-.5 6 0 8 1.5"/><path d="M12 6.5C14 5 17 4.5 20 5v13c-3-.5-6 0-8 1.5Z"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 9V4M12 20v-5M9 12H4M20 12h-5"/><circle cx="12" cy="4" r="1.4" fill="currentColor" stroke="none"/><circle cx="20" cy="12" r="1.4" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-bridge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="12" r="3"/><path d="M9 12h6"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 1.5c.7 5.4 3.1 7.8 8.5 8.5-5.4.7-7.8 3.1-8.5 8.5-.7-5.4-3.1-7.8-8.5-8.5C8.9 9.3 11.3 6.9 12 1.5Z" fill="currentColor"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4L4 21l1.1-4A8.4 8.4 0 1 1 21 11.5Z"/></symbol>
+  <symbol id="i-grow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-7"/><path d="M12 13c-.2-3-2.4-5-5.2-5 .2 3 2.4 5 5.2 5Z"/><path d="M12 11c.2-2.6 2-4.4 4.6-4.4-.2 2.6-2 4.4-4.6 4.4Z"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5"/><path d="M19 5l-8 8"/><path d="M18 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></symbol>
+  <symbol id="i-anchor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.4"/><path d="M12 7.4V21"/><path d="M5 12H19"/><path d="M5 12c0 4 3 7 7 7s7-3 7-7"/></symbol>
+<symbol id="ic-greenhouse" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4"><path d="M42 20v24H6V20L24 4z"></path><path stroke-linecap="round" d="M6 24h36M13 14v30m22-30v30M20 32h8v12h-8z"></path></g></symbol><symbol id="ic-seedling" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M24 42V26m17.942-15.993c-.776 13.024-9.13 17.236-15.946 17.896C24.896 28.009 24 27.104 24 26v-8.372c0-.233.04-.468.125-.684C27.117 9.199 34.283 8.155 40 8.02c1.105-.027 2.006.884 1.94 1.987M7.998 6.072c9.329.685 14.197 6.091 15.836 9.558c.115.242.166.508.166.776v7.504c0 1.14-.96 2.055-2.094 1.94C7.337 24.384 6.11 14.786 6.009 8C5.993 6.894 6.897 5.99 8 6.072"></path></symbol><symbol id="ic-leaf" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M37 24c0 14.094-13 20-13 20s-13-4.625-13-20S24 4 24 4s13 5.906 13 20M24 36l5-5m-5-2l-5-5m5-1l5-5m-5 26V14"></path></symbol><symbol id="ic-tree" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M13.045 14C13.55 8.393 18.262 4 24 4s10.45 4.393 10.955 10H35a9 9 0 1 1 0 18H13a9 9 0 1 1 0-18zM24 28l5-5m-5 2l-6-6m6 25V18"></path></symbol><symbol id="ic-carrot" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="4"><path d="M15.624 20.682C14.29 15.248 18.404 10 24 10s9.71 5.248 8.376 10.682L27.279 41.43a3.376 3.376 0 0 1-6.557 0z"></path><path stroke-linecap="round" d="M24 4v5.5m6.102-3.908l-2.728 3.25M18 5.592l2.727 3.25M16 19h6m3 7h6m-12 8h4"></path></g></symbol><symbol id="ic-chef" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M13 24.125a8.64 8.64 0 1 1 3.857-16.837A8.63 8.63 0 0 1 23.64 4a8.63 8.63 0 0 1 6.919 3.464A8.64 8.64 0 1 1 35 24.124V40a2 2 0 0 1-2 2H15a2 2 0 0 1-2-2zM13 31h22m-15-6v6m15-3v6m-22-6v6"></path></symbol><symbol id="ic-shop" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"><path d="M4 12h40v8l-1.398.84a7 7 0 0 1-7.203 0L34 20l-1.398.84a7 7 0 0 1-7.203 0L24 20l-1.398.84a7 7 0 0 1-7.203 0L14 20l-1.399.84a7 7 0 0 1-7.202 0L4 20z"></path><path d="M8 22.489V44h32V22M8 11.822V4h32v8"></path><path d="M19 32h10v12H19z"></path></g></symbol><symbol id="ic-scallion" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"><path d="M20 24s2.5-4.5 3-9s-1-8-1-8l5-3s1 6 1 9"></path><path d="M6 43c-2-1.5-2-6.91 2-10s4.186-2.283 9-6S34 4 34 4l4.5 3.5l-12.19 16.24c-2.984 3.977-3.758 9.313-6.26 13.61C18.102 40.7 16 42 14 43s-6 1.5-8 0"></path><path d="M23 30s3-2 7-4s13-2 13-2l-3-7s-8 0-11 3"></path></g></symbol><symbol id="ic-measure" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M36 6h8l-1.936 14H36M9 6h27v34a2 2 0 0 1-2 2H11a2 2 0 0 1-2-2l-.001-23.5c0-.944-.444-1.828-1.16-2.443C5.148 11.75-.591 6 8.999 6M26 15h4m-4 8h4m-4 8h4"></path></symbol><symbol id="ic-vbasket" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"><path d="M10 14H7.378a3 3 0 0 0-2.98 3.354L7.12 40.236A2 2 0 0 0 9.105 42h30.368a2 2 0 0 0 1.991-1.807l2.218-22.904A3 3 0 0 0 40.696 14H38M5 22h38m-28 7h18m-16 7h14"></path><path d="M24 6c-4.418 0-8 6.925-8 15.467q0 .267.005.533h15.99q.005-.266.005-.533C32 12.925 28.418 6 24 6"></path></g></symbol><symbol id="ic-peas" viewBox="0 0 48 48"><g fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M27 12s7 7 7 16s-4.445 16.223-8 16c-3.556-.223-7-7-6-16s7-16 7-16m0 0s1-4.124 4-6.062S39.89 9 39 12s-4 3-5 0s4-6.5 7-6.062S44.257 11.18 44 14c-.501 5.5-2 10-2 10"></path><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M27 12s0 8-7 16s-13.675 9.7-16 7s0-10 7-17s16-6 16-6"></path><circle cx="27.243" cy="27.408" r="2.5" fill="currentColor"></circle><circle cx="26.243" cy="34.408" r="2.5" fill="currentColor"></circle></g></symbol><symbol id="ic-fork" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M14 4v40M8 5v10c0 5 6 5 6 5s6 0 6-5V5m14 15v24m6-32c0 4.418-2.686 8-6 8s-6-3.582-6-8s2.686-8 6-8s6 3.582 6 8"></path></symbol></defs></svg>
+
+<!-- ══ APPROVAL BAR ══ -->
+<div class="approval">
+  <span class="tag">team_35 · v4</span>
+  <span class="lbl">UI precision + templates · V200 · lock-clean</span>
+  <div class="grp"><span class="glabel">ניצוץ</span>
+    <button class="sw spark-sw on" data-spark="on">שובב</button>
+    <button class="sw spark-sw" data-spark="off">מאופק</button>
+  </div>
+  <div class="grp screens">
+    <button class="sw scr-sw on" data-screen="t7">בית · T7</button>
+    <button class="sw scr-sw" data-screen="t1">עולם · T1</button>
+    <button class="sw scr-sw" data-screen="contact">צור קשר · T8</button>
+    <button class="sw scr-sw" data-screen="about">אודות · T8</button>
+    <button class="sw scr-sw" data-screen="sys">404 / חיפוש</button>
+    <button class="sw scr-sw" data-screen="states">מצבים · states</button>
+  </div>
+</div>
+
+<!-- ══ SHELL NAV ══ -->
+<nav class="shell-nav">
+  <div class="shell-nav-inner">
+    <a class="shell-mark" href="#"><img class="basket" src="images/basket-ink.png" alt=""><span class="wm">נמרוד ולד</span></a>
+    <div class="shell-links">
+      <a class="nav-world soil" href="#"><svg class="ico"><use href="#i-soil"/></svg><span>אדמה</span></a>
+      <a class="nav-world know" href="#"><svg class="ico"><use href="#i-know"/></svg><span>ייעוץ והוראה</span></a>
+      <a class="nav-world code" href="#"><svg class="ico"><use href="#i-code"/></svg><span>דיגיטל</span></a>
+      <span class="nav-sep"></span>
+      <div class="nav-secondary"><a href="#">בלוג</a><a href="#">אודות</a><a href="#">צור קשר</a></div>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════ SCREEN · T7 HOME ════════════════ -->
+<main class="screen on" data-screen="t7" data-screen-label="T7 Home · precision v3">
+
+  <!-- ── HERO · POSTER (text over image) ── -->
+  <section class="hero-poster">
+    <div class="bg ph"><img src="images/raw/cand-i.jpeg" alt="שוק האיכרים — מהגינה של נימרוד"></div>
+    <div class="scrim"></div>
+    <div class="scrim bottom"></div>
+    <div class="content"><div class="wrap"><div class="inner">
+      <div class="eyebrow light"><span class="num">נמרוד ולד</span><span>· אותה מערכת</span><span class="spark-star"><svg><use href="#i-spark"/></svg></span></div>
+      <h1 class="poster-h1"><span class="w-soil">אדמה</span><span class="w-know">ידע</span><span class="w-code">דיגיטל</span></h1>
+      <p class="ptag">שלוש זרועות, שורש אחד. הייחוד הוא בחיבורים ביניהן.</p>
+      <div class="hero-foot">
+        <div class="kicker">
+          <span class="kc">חממה הידרופונית <b>420</b> מֳר</span>
+          <span class="kc"><b>9</b> עונות בשטח</span>
+          <span class="kc">SFA <b>חי</b> · sfa.nimrod.bio</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#">העולמות</a>
+          <a class="btn btn-ghost on-dark" href="#">צור קשר</a>
+        </div>
+      </div>
+    </div></div></div>
+  </section>
+
+  <!-- ── WORLDS (delicate) ── -->
+  <section class="section wrap worlds-section">
+    <div class="worlds-intro"><div class="wi-col"><div class="sec-head">
+      <div class="eyebrow"><span class="num">01</span><span>העולמות</span></div>
+      <h2 class="s-title">שלוש זרועות · <span class="under">שורש אחד</span></h2>
+      <p class="s-lede">כל זרוע פעילה בפועל. הקישוריות ביניהן היא הייחוד.</p>
+    </div></div><div class="wi-graphic">
+    <svg class="negentropy" viewBox="0 0 1000 220" aria-hidden="true">
+<g class="flows" fill="none" stroke="var(--line)" stroke-width="1.6" stroke-dasharray="5 7" opacity=".7"><path class="flow" d="M604,46 Q500,72 432,104"/><path class="flow" d="M620,150 Q512,140 432,114"/><path class="flow" d="M700,182 Q540,172 442,120"/><path class="flow" d="M770,70 Q560,82 442,106"/><path class="flow" d="M840,112 Q600,112 444,110"/></g>
+<circle class="ent" cx="620" cy="40" r="5" opacity="0.5"/><circle class="ent" cx="686" cy="92" r="4" opacity="0.4"/><circle class="ent" cx="642" cy="150" r="6" opacity="0.55"/><circle class="ent" cx="722" cy="30" r="3" opacity="0.3"/><circle class="ent" cx="744" cy="120" r="5" opacity="0.45"/><circle class="ent" cx="702" cy="182" r="4" opacity="0.4"/><circle class="ent" cx="784" cy="68" r="6" opacity="0.5"/><circle class="ent" cx="806" cy="150" r="4" opacity="0.35"/><circle class="ent" cx="844" cy="40" r="5" opacity="0.45"/><circle class="ent" cx="864" cy="112" r="3" opacity="0.3"/><circle class="ent" cx="884" cy="172" r="5" opacity="0.42"/><circle class="ent" cx="906" cy="80" r="4" opacity="0.35"/><circle class="ent" cx="942" cy="132" r="5" opacity="0.45"/><circle class="ent" cx="626" cy="112" r="3" opacity="0.3"/>
+<g class="triad" fill="none">
+<path d="M300,44 L390,172 L210,172 Z" stroke="var(--ink-soft)" stroke-width="2" opacity=".4"/>
+<line x1="300" y1="110" x2="300" y2="44" stroke="var(--w-soil)" stroke-width="1.5" opacity=".4"/>
+<line x1="300" y1="110" x2="210" y2="172" stroke="var(--w-code)" stroke-width="1.5" opacity=".4"/>
+<line x1="300" y1="110" x2="390" y2="172" stroke="var(--w-know)" stroke-width="1.5" opacity=".4"/>
+</g>
+<circle cx="300" cy="129" r="7" fill="var(--spark)"/>
+<g>
+<circle cx="300" cy="44" r="30" fill="var(--paper)" stroke="var(--w-soil)" stroke-width="2"/><image href="images/basket-soil.png" x="277" y="21" width="46" height="46"/>
+<circle cx="210" cy="172" r="30" fill="var(--paper)" stroke="var(--w-code)" stroke-width="2"/><image href="images/basket-code.png" x="187" y="149" width="46" height="46"/>
+<circle cx="390" cy="172" r="30" fill="var(--paper)" stroke="var(--w-know)" stroke-width="2"/><image href="images/basket-know.png" x="367" y="149" width="46" height="46"/>
+</g>
+<g fill="var(--ink-soft)"><circle class="ent" cx="664" cy="60" r="3" opacity="0.32"/><circle class="ent" cx="728" cy="86" r="4" opacity="0.4"/><circle class="ent" cx="676" cy="128" r="2.5" opacity="0.28"/><circle class="ent" cx="812" cy="44" r="3.5" opacity="0.38"/><circle class="ent" cx="836" cy="92" r="2.5" opacity="0.3"/><circle class="ent" cx="800" cy="186" r="3" opacity="0.32"/><circle class="ent" cx="912" cy="150" r="3.5" opacity="0.36"/><circle class="ent" cx="948" cy="64" r="3" opacity="0.32"/><circle class="ent" cx="876" cy="36" r="2.5" opacity="0.28"/><circle class="ent" cx="960" cy="100" r="2.5" opacity="0.3"/></g><g stroke="var(--ink-soft)" stroke-width="1" fill="none" opacity="0.16"><path d="M664,60 L728,86 L676,128"/><path d="M812,44 L836,92 L800,186"/><path d="M912,150 L948,64 L876,36"/><path d="M728,86 L812,44"/></g></svg>
+<p class="neg-cap" style="font-size: 12px"><b>פיזור שהופך לקישוריות</b> · שלושה עולמות, סל אחד</p></div></div>
+    <div class="worlds-grid">
+      <a class="world-card soil" href="#"><div class="wcard-media"><img src="images/raw/greenhouse-1.jpg" alt=""><span class="wcard-emblem"><img src="images/basket-soil.png" alt=""><svg class="em-ic"><use href="#ic-carrot"/></svg></span></div><div class="wcard-body"><div class="wc-top"><span class="num">01 · soil</span></div><h3>אדמה</h3><p class="tagline">איפה שהאדמה פוגשת ידיים.</p><ul><li><svg class="li-ic"><use href="#ic-carrot"/></svg>תוצרת מקצועית · מסעדות</li><li><svg class="li-ic"><use href="#ic-tree"/></svg>BCS · שירותי שטח</li><li><svg class="li-ic"><use href="#ic-greenhouse"/></svg>חממה הידרופונית</li></ul><span class="more">3 פעילויות</span></div></a>
+      <a class="world-card know" href="#"><div class="wcard-media"><img src="images/raw/farm-b.jpg" alt=""><span class="wcard-emblem"><img src="images/basket-know.png" alt=""><svg class="em-ic"><use href="#ic-chef"/></svg></span></div><div class="wcard-body"><div class="wc-top"><span class="num">02 · know</span></div><h3>ייעוץ והוראה</h3><p class="tagline">איפה שהניסיון הופך לכלי.</p><ul><li><svg class="li-ic"><use href="#ic-seedling"/></svg>ייעוץ · הידרופוניקה</li><li><svg class="li-ic"><use href="#ic-leaf"/></svg>ייעוץ · אגרו + market garden</li><li><svg class="li-ic"><use href="#ic-chef"/></svg>הוראה מקצועית</li></ul><span class="more">4 פעילויות</span></div></a>
+      <a class="world-card code" href="#"><div class="wcard-media"><img src="images/raw/cand-d.jpeg" alt=""><span class="wcard-emblem"><img src="images/basket-code.png" alt=""><svg class="em-ic"><use href="#i-code"/></svg></span></div><div class="wcard-body"><div class="wc-top"><span class="num">03 · code</span></div><h3>דיגיטל</h3><p class="tagline">איפה שהידע הופך למערכת חיה.</p><ul><li><svg class="li-ic"><use href="#ic-shop"/></svg>AOS · SFA · קהילתי</li><li><svg class="li-ic"><use href="#ic-measure"/></svg>tiktrack (פילוט)</li><li><svg class="li-ic"><use href="#i-code"/></svg>פיתוח ממשקים · ייעוץ דיגיטלי</li></ul><span class="more">3 פעילויות</span></div></a>
+    </div>
+  </section>
+
+  <section class="section wrap systems-section">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="num">02</span><span>· מערכות · תוכנה</span></div>
+      <h2 class="s-title">שתי מערכות — <span class="under">כל אחת מוצר</span></h2>
+      <p class="s-lede">לא תחת ״פרויקטים״: כל מערכת עומדת בפני עצמה — נבנית מהשטח וחוזרת אליו.</p>
+    </div>
+    <div class="systems-row">
+      <a class="sys-card code" href="#">
+        <span class="spine"></span>
+        <div class="media ph sys-shot"><img src="images/raw/cand-e.jpeg" alt=""><span class="shot-tag">SFA · ממשק · screenshot pending</span></div>
+        <div class="body">
+          <span class="syslabel"><svg><use href="#i-code"/></svg>מערכת · SFA · AOS</span>
+          <h3>SFA — סוכן שטח חקלאי</h3>
+          <p>מערכת חינמית, קהילתית, לסוכני שטח. נבנתה מהשטח — חוזרת לשטח. ליבת עולם הדיגיטל.</p>
+          <div class="row"><span class="stage-stamp seeking">מחפש שותפים</span><span class="ext-link"><svg class="ext-ic"><use href="#i-ext"/></svg>sfa.nimrod.bio</span></div>
+        </div>
+      </a>
+      <a class="sys-card know" href="#">
+        <span class="spine"></span>
+        <div class="media ph sys-shot tik"><svg class="spark-chart" viewBox="0 0 300 120" preserveAspectRatio="none"><polyline points="0,92 30,70 60,82 90,52 120,64 150,38 180,48 210,26 240,44 270,16 300,30" fill="none" stroke="rgba(245,243,236,.9)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg><span class="shot-tag">tiktrack · יומן מסחר · screenshot pending</span></div>
+        <div class="body">
+          <span class="syslabel"><svg><use href="#i-code"/></svg>מערכת · tiktrack</span>
+          <h3>tiktrack — יומן מסחר חכם</h3>
+          <p>יומן מסחר שהופך לכלי חינוכי לסוחר הריטייל. אותם עקרונות־מערכת, תחום אחר.</p>
+          <div class="row"><span class="stage-stamp seeking">seed · בפיתוח</span><span class="ext-link"><svg class="ext-ic"><use href="#i-ext"/></svg>tt.nimrod.bio</span></div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section wrap services-end">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="num">03</span><span>· מה אני עושה</span></div>
+      <h2 class="s-title">כל מה שאני עושה — <span class="under">נקודת כניסה אחת</span></h2>
+      <p class="s-lede">ארבע זרועות פעילות. בחרו מאיפה להתחיל.</p>
+    </div>
+    <div class="products-grid carousel">
+      <a class="product-card" href="#"><div class="pimg"><img src="images/raw/greenhouse-1.jpg" alt=""></div><div class="pbody"><span class="svc-ic"><svg><use href="#ic-carrot"/></svg></span><h3>תוצרת ושירותי שטח</h3><p class="pmeta">תוצרת מקצועית למסעדות · BCS · משתלה</p><span class="add">אדמה ←</span></div></a>
+      <a class="product-card" href="#"><div class="pimg"><img src="images/raw/farm-b.jpg" alt=""></div><div class="pbody"><span class="svc-ic"><svg><use href="#ic-seedling"/></svg></span><h3>ייעוץ הידרופוני ואגרו</h3><p class="pmeta">תכנון, הקמה וליווי · market garden</p><span class="add">ייעוץ ←</span></div></a>
+      <a class="product-card" href="#"><div class="pimg"><img src="images/raw/greenhouse-2.jpg" alt=""></div><div class="pbody"><span class="svc-ic"><svg><use href="#ic-chef"/></svg></span><h3>הוראה וקורסים</h3><p class="pmeta">מורה מקצועי · ליווי וסדנאות</p><span class="add">הוראה ←</span></div></a>
+      <a class="product-card" href="#"><div class="pimg"><img src="images/raw/cand-d.jpeg" alt=""></div><div class="pbody"><span class="svc-ic"><svg><use href="#i-code"/></svg></span><h3>דיגיטל · SFA ופיתוח</h3><p class="pmeta">מערכות, ממשקים וייעוץ דיגיטלי</p><span class="add">דיגיטל ←</span></div></a>
+    </div>
+    <div class="proj-browse"><button class="pb-arrow" data-dir="1" aria-label="הקודם">→</button><button class="pb-arrow" data-dir="-1" aria-label="הבא">←</button><a class="proj-more" href="#">כל השירותים ←</a></div>
+  </section>
+  <!-- ── BRIDGES ── -->
+  <section class="section band bridges-band">
+    <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="num">04</span><span>גשרים · seams</span></div>
+      <h2 class="s-title">הייחוד הוא <em>בקישוריות</em>.</h2>
+      <p class="s-lede">לא ענף נוסף — תפר. שני צבעי־עולם פוגשים בכרטיס אחד. הגשרים הם התוכן המרכזי, לא תת־טקסט.</p>
+    </div>
+    <div class="bridges-grid">
+      <a class="bridge-card" href="#" style="--bridge-a:var(--w-soil);--bridge-b:var(--w-know)"><span class="spine"></span><div class="media ph"><img src="images/raw/greenhouse-2.jpg" alt=""><span class="seal"><svg style="color:var(--w-soil-deep)"><use href="#i-bridge"/></svg></span></div><div class="body"><span class="conn"><span class="d"><i style="background:var(--w-soil)"></i><i style="background:var(--w-know)"></i></span><b>אדמה × ידע</b></span><h3>אין ייעוץ שלא נוסה בבוץ</h3><p class="lede">מה שאני מגדל בפועל הוא הבסיס לייעוץ ולהוראה. הדוגמאות מקושרות ישירות לשירותי הייעוץ.</p><span class="more">מקור הידע</span></div></a>
+      <a class="bridge-card" href="#" style="--bridge-a:var(--w-know);--bridge-b:var(--w-code)"><span class="spine"></span><div class="media ph"><img src="images/raw/wide-field-1.jpeg" alt=""><span class="seal"><svg style="color:var(--w-know-deep)"><use href="#i-bridge"/></svg></span></div><div class="body"><span class="conn"><span class="d"><i style="background:var(--w-know)"></i><i style="background:var(--w-code)"></i></span><b>ידע × דיגיטל</b></span><h3>הידע הופך למערכת</h3><p class="lede">מה שצברתי הופך ל־SFA ולכלים דיגיטליים — ולא נשאר רק אצלי. הייעוץ מקודד לסוכן בשטח.</p><span class="more">SFA · ייעוץ דיגיטלי</span></div></a>
+      <a class="bridge-card" href="#" style="--bridge-a:var(--w-soil);--bridge-b:var(--w-code)"><span class="spine"></span><div class="media ph"><img src="images/raw/landscape.jpg" alt=""><span class="seal"><svg style="color:var(--w-code-deep)"><use href="#i-bridge"/></svg></span></div><div class="body"><span class="conn"><span class="d"><i style="background:var(--w-soil)"></i><i style="background:var(--w-code)"></i></span><b>אדמה × דיגיטל</b></span><h3>החווה היא מקור־דאטה</h3><p class="lede">החווה מזינה את SFA בנתונים אמיתיים — לא הנחת־יסוד מופשטת. השטח מאמת את הקוד.</p><span class="more">SFA · ייעוץ דיגיטלי</span></div></a>
+    </div>
+    </div>
+  </section>
+
+  <!-- ── UNLESS ── -->
+  <aside class="unless-lockup">
+    <div class="inner">
+      <p class="word">Unless<span class="pd">.</span></p>
+      <div class="gloss">
+        <p class="he"><span class="spark-star"><svg><use href="#i-spark"/></svg></span>העולם נוטה לאי־סדר — <em>אלא אם כן</em> מישהו אכפת לו ממש מאוד.</p>
+        <p class="src">Dr. Seuss · The Lorax · התזה של האתר</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ── PROJECTS: systems row (SFA + tiktrack) + projects row ── -->
+  <section class="section wrap">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="num">05</span><span>פרויקטים</span></div>
+      <h2 class="s-title">פרויקטים · מהשטח</h2>
+      <p class="s-lede">מקרים שמספרים את התזה — לקוחות ומיזמים שהקישוריות הפעילה אותם.</p>
+    </div>
+
+    
+    <div class="projects-row">
+      <a class="proj-card" href="#"><div class="ph"><img src="images/raw/wide-field-2.jpeg" alt=""></div><div class="body"><div class="scope-row"><span class="scope client">client-case</span><span class="stage-stamp live">live</span></div><h3>מסירה שבועית למסעדות</h3><p>גידול ייחודי, הזמנה מראש, עונה שלמה.</p><div class="meta"><span>אדמה</span></div></div></a>
+      <a class="proj-card" href="#"><div class="ph"><img src="images/raw/farm-a.jpg" alt=""></div><div class="body"><div class="scope-row"><span class="scope client">client-case</span><span class="stage-stamp live">live</span></div><h3>חממת מסעדת המחתרת התאילנדית</h3><p>גידול ייחודי, עונה שלמה, מחיר קבוע.</p><div class="meta"><span>אדמה</span></div></div></a>
+      <a class="proj-card" href="#"><div class="ph"><img src="images/raw/products.jpeg" alt=""></div><div class="body"><div class="scope-row"><span class="scope venture">own-venture</span><span class="stage-stamp legacy">legacy</span></div><h3>סלי משפחה</h3><p>2019–23 · הבסיס למה שיש היום.</p><div class="meta"><span>אדמה</span></div></div></a><a class="proj-card" href="#"><div class="ph"><img src="images/raw/farm-a.jpg" alt=""></div><div class="body"><div class="scope-row"><span class="scope venture">own-venture</span><span class="stage-stamp seeking">מחפש שותפים</span></div><h3>ישראל מיקרו־גרין</h3><p>מיקרו־גרין מסחרי · פיילוט גדל.</p><div class="meta"><span>אדמה × דיגיטל</span></div></div></a><a class="proj-card" href="#"><div class="ph"><img src="images/raw/wide-field-2.jpeg" alt=""></div><div class="body"><div class="scope-row"><span class="scope client">client-case</span><span class="stage-stamp live">live</span></div><h3>שדה השרון · market garden</h3><p>תכנון וליווי גידול לאורך עונה.</p><div class="meta"><span>אדמה × ידע</span></div></div></a><a class="proj-card" href="#"><div class="ph"><img src="images/raw/greenhouse-1.jpg" alt=""></div><div class="body"><div class="scope-row"><span class="scope venture">own-venture</span><span class="stage-stamp legacy">legacy</span></div><h3>הגינה הראשונה</h3><p>איפה שהכול התחיל · מורשת.</p><div class="meta"><span>אדמה</span></div></div></a>
+    </div>
+    <div class="proj-browse"><button class="pb-arrow" data-dir="1" aria-label="הקודם">→</button><button class="pb-arrow" data-dir="-1" aria-label="הבא">←</button><a class="proj-more" href="#">לכל הפרויקטים ←</a></div>
+  </section>
+
+  <section class="manifesto">
+    <div class="mf-bg" aria-hidden="true"><img src="images/basket-paper.png" alt=""></div>
+    <div class="wrap mf-grid">
+      <div class="mf-media"><img src="images/raw/why-morning.jpg" alt="נימרוד בחממה"><span class="mf-emblem"><img src="images/basket-paper.png" alt=""></span></div>
+      <div class="mf-text">
+        <div class="eyebrow light"><span class="num">המניפסט</span><span>· נימרוד</span></div>
+        <h2>למה אנחנו קמים <em>בבוקר?</em></h2>
+        <p>הגינה פעלה תשע עונות — מ־2014 עד 2023. ממנה למדנו לגדל, ללמד, ולבנות מערכות שעובדות. כשנסגרה — <b>מתוך בחירה, לא כשלון</b> — הידע נשאר.</p>
+        <p>הידע הפך לייעוץ. הייעוץ הפך לכלי. <em>הכלי חוזר לשדה.</em></p>
+        <p><b>קטן זה יפה. לאט זה שפוי.</b></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BLOG ── -->
+  <section class="section wrap">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="num">06</span><span>מהבלוג</span></div>
+      <h2 class="s-title">מחשבות שיורדות לאדמה</h2>
+    </div>
+    <div class="posts-grid">
+      <a class="rp-card feat" href="#"><div class="ph"><img src="images/raw/farm-b.jpg" alt=""></div><div class="body"><div class="meta"><span>03·05·26</span></div><h4>למה ״אין ייעוץ שלא נוסה בבוץ״</h4><p>על הפער בין מצגת לבין עונה שלמה באדמה — ולמה הניסיון בשטח הוא תנאי לכל ייעוץ.</p><div class="chips"><span class="wc soil"><i></i>אדמה</span><span class="wc know"><i></i>ידע</span></div></div></a>
+      <a class="rp-card" href="#"><div class="ph"><img src="images/raw/cand-f.jpeg" alt=""></div><div class="body"><div class="meta"><span>21·04·26</span></div><h4>כשעקרונות עוברים בין תחומים</h4><div class="chips"><span class="wc code"><i></i>דיגיטל</span></div></div></a>
+      <a class="rp-card" href="#"><div class="ph"><img src="images/raw/cand-h.jpg" alt=""></div><div class="body"><div class="meta"><span>09·04·26</span></div><h4>הידרופוניקה היא תרגיל בקשב</h4><div class="chips"><span class="wc soil"><i></i>אדמה</span></div></div></a>
+      <a class="rp-card" href="#"><div class="ph"><img src="images/raw/wide-field-1.jpeg" alt=""></div><div class="body"><div class="meta"><span>28·03·26</span></div><h4>SFA — קוד שנכתב מהשטח</h4><div class="chips"><span class="wc code"><i></i>דיגיטל</span></div></div></a>
+      <a class="rp-card" href="#"><div class="ph"><img src="images/raw/greenhouse-1.jpg" alt=""></div><div class="body"><div class="meta"><span>15·03·26</span></div><h4>עונה, לא רבעון</h4><div class="chips"><span class="wc soil"><i></i>אדמה</span></div></div></a>
+    </div>
+  </section>
+
+  <!-- ── FINAL CTA · 4 small cards ── -->
+  <section class="final-cta">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow"><span class="num">07</span><span>צעד ראשון</span></div>
+        <h2>איך אפשר <em>להתחיל</em>?</h2>
+        <p class="intro">בחרו את הקצב — שיחה, מערכת, או ליווי בשטח.</p>
+      </div>
+      <div class="cta-paths">
+        <a class="cta-path know" href="#"><svg class="ci"><use href="#i-chat"/></svg><span class="label">פנייה ראשונה</span><h3>בואו נדבר</h3><p>שיחת היכרות בלי התחייבות.</p><span class="action">צור קשר · WhatsApp</span></a>
+        <a class="cta-path code" href="#"><svg class="ci"><use href="#i-code"/></svg><span class="label">המערכת</span><h3>כנסו ל־SFA</h3><p>קהילתית, פתוחה, מהשטח.</p><span class="action">כנס למערכת</span></a>
+        <a class="cta-path code" href="#"><svg class="ci"><use href="#i-bridge"/></svg><span class="label">כלי</span><h3>tiktrack</h3><p>יומן מסחר → כלי חינוכי.</p><span class="action">לפרויקט</span></a>
+        <a class="cta-path soil" href="#"><svg class="ci"><use href="#i-grow"/></svg><span class="label">ליווי</span><h3>ייעוץ לחוות קטנות</h3><p>תכנון, הקמה וליווי בשטח.</p><span class="action">לשירותי הייעוץ</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ════════════════ SCREEN · T1 WORLD · אדמה ════════════════ -->
+<main class="screen" data-screen="t1" data-screen-label="T1 World · אדמה · precision v3">
+  <article class="vc-shell t1-world-soil"><div class="world-bg" aria-hidden="true"><img src="images/basket-soil.png" alt=""><img class="b2" src="images/basket-soil.png" alt=""></div>
+    <section class="vc-hero wrap">
+      <h1 class="vc-hero-stack">אדמה<span class="echo e1" aria-hidden="true">אדמה</span><span class="echo e2" aria-hidden="true">אדמה</span></h1>
+      <div class="gloss"><span class="rule"></span><span class="word">איפה שהאדמה פוגשת ידיים.</span><span class="rule"></span></div>
+      <div class="intro">
+        <div class="marker">עולם · אדמה · soil</div>
+        <p>החממה ההידרופונית פעילה. ה־BCS יוצא לעונה. ירקות נוסעים למסעדות בכל בוקר שני וחמישי. זה הענף שמרוויח קודם — ומודד את הזמן בעונות, לא ברבעונים.</p>
+      </div>
+    </section>
+
+    <section class="t1-section wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="num">01</span><span>ליבה · lattice</span></div>
+        <h2 class="s-title">עוגן במרכז. השאר במסלול סביבו.</h2>
+        <p class="s-lede">חממה במרכז. שאר הפעילויות תלויות בה ישירות. הקריאה מבפנים החוצה.</p>
+      </div>
+      <div class="vc-lattice">
+        <div class="lat-side"><h4>תוצרת מקצועית</h4><p>מסעדות, בשלנים ומקצוענים קבועים. מסירה בכל שני וחמישי.</p><div class="tag-row">live · evidence-based</div></div>
+        <div class="lat-anchor"><span class="anchor-eye">עוגן · חממה הידרופונית</span><h3>החממה ההידרופונית</h3><p>תשתית — לא שירות נפרד. היא מזינה את התוצרת, מאמתת את הייעוץ, ומספקת דאטה לקוד.</p><div class="facts"><div><div class="k">עונות</div><div class="v">9</div></div><div><div class="k">חממה</div><div class="v">420 מֳר</div></div><div><div class="k">מסירה</div><div class="v">שבועי</div></div></div></div>
+        <div class="lat-side"><h4>BCS · שירותי שטח</h4><p>הכנת קרקע, עיבוד וזריעה. יוצא לעונה.</p><div class="tag-row">live · seasonal</div></div>
+        <div class="lat-side" style="grid-column:3/4; background:var(--paper-2); border-color:var(--line);"><h4 style="color:var(--ink-soft)">קריאה מבפנים</h4><p>החממה מזינה את התוצרת. התוצרת מאמתת את הייעוץ. הייעוץ מקודד ל־SFA. SFA חוזרת לקהילה.</p><div class="tag-row">evidence-based · מבוסס־שדה</div></div>
+      </div>
+      <div class="vc-principle">
+        <div class="ph"><img src="images/raw/cand-h.jpg" alt=""></div>
+        <div><div class="label">אותו עיקרון · חומר אחר</div><h4>כשאני מתכנן חממה, אני חושב בדיוק כמו כשאני מתכנן מערכת תוכנה.</h4><p>זו לא מטאפורה. <em>זו אותה מערכת, בחומר אחר</em> — לחממה, לקוד, ולתכנון. החיבור ביניהן הוא הסיפור.</p></div>
+      </div>
+    </section>
+
+    <section class="t1-section wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="num">02</span><span>גשרים · seams</span></div>
+        <h2 class="s-title">הייחוד הוא בקישוריות.</h2>
+        <p class="s-lede">לא ענף נוסף — תפר. שני צבעי־עולם פוגשים בכרטיס אחד.</p>
+      </div>
+      <div class="vc-bridges">
+        <a class="bridge-card" href="#" style="--bridge-a:var(--w-soil);--bridge-b:var(--w-know)"><span class="spine"></span><div class="media ph"><img src="images/raw/greenhouse-2.jpg" alt=""><span class="seal"><svg style="color:var(--w-soil-deep)"><use href="#i-bridge"/></svg></span></div><div class="body"><span class="conn"><span class="d"><i style="background:var(--w-soil)"></i><i style="background:var(--w-know)"></i></span><b>אדמה × ידע</b></span><h3>ייעוץ · תכנון חממה</h3><p class="lede">מה שמגודל פה הופך לתוכנית עבודה אצל לקוח. אין ייעוץ שלא נוסה בבוץ.</p><span class="more">לעולם ייעוץ</span></div></a>
+        <a class="bridge-card" href="#" style="--bridge-a:var(--w-soil);--bridge-b:var(--w-code)"><span class="spine"></span><div class="media ph"><img src="images/raw/landscape.jpg" alt=""><span class="seal"><svg style="color:var(--w-soil-deep)"><use href="#i-bridge"/></svg></span></div><div class="body"><span class="conn"><span class="d"><i style="background:var(--w-soil)"></i><i style="background:var(--w-code)"></i></span><b>אדמה × דיגיטל</b></span><h3>החווה כמקור־דאטה</h3><p class="lede">נתוני החממה מזינים את SFA ואת tiktrack. השטח מאמת את הקוד, לא להפך.</p><span class="more">לעולם דיגיטל</span></div></a>
+      </div>
+    </section>
+
+    <section class="t1-section wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="num">03</span><span>פרויקטים · מהשטח</span></div>
+        <h2 class="s-title">המקרים מספרים את התזה — לא להפך.</h2>
+      </div>
+      <div class="vc-projects">
+        <a class="proj-card" href="#"><div class="ph"><img src="images/raw/farm-a.jpg" alt=""></div><div class="body"><div class="scope-row"><span class="scope client">client-case</span><span class="stage-stamp live">live</span></div><h3>חממת מסעדת X</h3><p>תכנון והקמה במטבח מסעדה.</p></div></a>
+        <a class="proj-card" href="#"><div class="ph"><img src="images/raw/landscape.jpg" alt=""></div><div class="body"><div class="scope-row"><span class="scope client">client-case</span><span class="stage-stamp live">live</span></div><h3>מסירה למסעדות 2025</h3><p>ירקות טריים, פעמיים בשבוע.</p></div></a>
+        <a class="proj-card" href="#"><div class="ph"><img src="images/raw/products.jpeg" alt=""></div><div class="body"><div class="scope-row"><span class="scope venture">own-venture</span><span class="stage-stamp legacy">legacy</span></div><h3>סלי משפחה</h3><p>2019–23 · הבסיס למה שיש היום.</p></div></a>
+      </div>
+    </section>
+
+    <section class="t1-section wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="num">04</span><span>יומן</span></div>
+        <h2 class="s-title">מה נכתב באדמה.</h2>
+        <p class="s-lede">לא חדשות. תצפיות, מקרים מהשטח, רעיונות שעוד לא הבשילו.</p>
+      </div>
+      <div class="vc-posts">
+        <a class="post-row" href="#"><div class="date">מאי<b>03</b>26</div><div><h5>למה ״אין ייעוץ שלא נוסה בבוץ״</h5><div class="chips"><span class="wc soil"><i></i>אדמה</span><span class="wc know"><i></i>ידע</span></div></div></a>
+        <a class="post-row" href="#"><div class="date">אפר<b>21</b>26</div><div><h5>הידרופוניקה היא תרגיל בקשב</h5><div class="chips"><span class="wc soil"><i></i>אדמה</span></div></div></a>
+        <a class="post-row" href="#"><div class="date">אפר<b>09</b>26</div><div><h5>עונה, לא רבעון</h5><div class="chips"><span class="wc soil"><i></i>אדמה</span></div></div></a>
+        <a class="post-row" href="#"><div class="date">מרץ<b>28</b>26</div><div><h5>מה החווה מלמדת את הקוד</h5><div class="chips"><span class="wc soil"><i></i>אדמה</span><span class="wc code"><i></i>דיגיטל</span></div></div></a>
+      </div>
+    </section>
+  </article>
+</main>
+
+<!-- ════════════════ SCREEN · T8 CONTACT · צור קשר ════════════════ -->
+<main class="screen" data-screen="contact" data-screen-label="T8 Contact · צור קשר">
+  <section class="page-hero wrap">
+    <div class="eyebrow"><span class="num">צור קשר</span><span>· מארח</span></div>
+    <h1>דבר איתי</h1>
+    <p class="lede">הדרך הכי טובה להתחיל היא פשוט לכתוב. שיחה ראשונה — ללא התחייבות. 30 דקות: אני מבין על מה אתה עובד, אתה רואה אם יש לי מה לתרום.</p>
+    <div class="hero-act">
+      <a class="btn btn-wa" href="https://wa.me/972547776770" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-1 1.1-.2.2-.4.2-.6.1-.3-.1-1.2-.5-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.4.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2.1C6.5 2.1 2.1 6.6 2.1 12c0 1.7.4 3.3 1.3 4.7L2.1 22l5.4-1.3c1.4.8 3 1.2 4.5 1.2 5.5 0 9.9-4.5 9.9-9.9S17.5 2.1 12 2.1z"/></svg>WhatsApp · 054-7776770</a>
+      <a class="btn btn-ghost" href="#nb-contact">לטופס למטה</a>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="contact-layout">
+      <form id="nb-contact" class="contact-form">
+        <h3>טופס פנייה</h3>
+        <p class="form-intro">אני קורא הכל. בדרך כלל חוזר תוך 48 שעות. <em>אם זה דחוף — WhatsApp בצד.</em></p>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" class="hp-field" aria-hidden="true">
+        <div class="field"><label for="c-name">שם <span class="opt">· איך לפנות אליך</span></label><input id="c-name" type="text" name="name" required></div>
+        <div class="field"><label for="c-email">אימייל</label><input id="c-email" type="email" name="email" required></div>
+        <div class="field"><label for="c-phone">טלפון <span class="opt">· אופציונלי</span></label><input id="c-phone" type="tel" name="phone"></div>
+        <div class="field"><label for="c-topic">נושא</label><select id="c-topic" name="topic"><option value="soil">אדמה</option><option value="know">ייעוץ והוראה</option><option value="code">דיגיטל</option><option value="other">אחר</option></select></div>
+        <div class="field"><label for="c-msg">הודעה</label><textarea id="c-msg" name="message" required minlength="20" placeholder="מה המצב, מה רצית להבין, מה אתה מנסה לעשות..."></textarea></div>
+        <button type="button" class="form-submit btn btn-spark">שלח</button>
+        <div class="form-foot">בלי ספאם · בלי רשימות תפוצה · רק תגובה לפנייה הספציפית</div>
+      </form>
+
+      <aside class="contact-side">
+        <div class="contact-card response">
+          <div class="label">תגובה</div>
+          <h4>תוך 48 שעות. עונות שטח — לפעמים יומיים נוספים.</h4>
+        </div>
+        <div class="contact-card">
+          <div class="label">WhatsApp · מענה מהיר</div>
+          <h4>אם זה דחוף — שלח WhatsApp.</h4>
+          <p>הודעה קצרה ועניינית, ואני חוזר במהלך היום. גם אם אני בשטח.</p>
+          <a href="https://wa.me/972547776770" class="wa-btn" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-1 1.1-.2.2-.4.2-.6.1-.3-.1-1.2-.5-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.4.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2.1C6.5 2.1 2.1 6.6 2.1 12c0 1.7.4 3.3 1.3 4.7L2.1 22l5.4-1.3c1.4.8 3 1.2 4.5 1.2 5.5 0 9.9-4.5 9.9-9.9S17.5 2.1 12 2.1z"/></svg>WhatsApp · הודעה</a>
+          <span class="wa-number">054-7776770</span>
+        </div>
+        <div class="contact-card">
+          <div class="label">אימייל ישיר</div>
+          <p>אם מעדיף אימייל פרטי, או יש לך קובץ לשלוח.</p>
+          <a href="mailto:nimrod@nimrod.bio" class="direct">nimrod@nimrod.bio</a>
+        </div>
+        <div class="contact-card">
+          <div class="label">מיקום</div>
+          <p>מגד 5, פרדס חנה. <em>אזור פעילות: שרון, חוף הכרמל ועמק חפר.</em></p>
+          <a href="https://maps.app.goo.gl/8ySCEcFw3B8hXtnP6" class="direct" target="_blank" rel="noopener noreferrer">פתח ב-Google Maps</a>
+        </div>
+        <div class="contact-card">
+          <div class="label">רשתות</div>
+          <ul class="contact-social">
+            <li><a href="https://www.facebook.com/NimrodGarden" target="_blank" rel="noopener noreferrer">Facebook · הגינה</a></li>
+            <li><a href="https://www.facebook.com/Wald.Nimrod" target="_blank" rel="noopener noreferrer">Facebook · אישי</a></li>
+            <li><a href="https://www.youtube.com/@waldnimrod" target="_blank" rel="noopener noreferrer">YouTube · @waldnimrod</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<!-- ════════════════ SCREEN · T8 ABOUT · אודות ════════════════ -->
+<main class="screen about-screen" data-screen="about" data-screen-label="T8 About · אודות">
+  <section class="page-hero wrap">
+    <div class="about-hero">
+      <div class="ah-text">
+        <div class="eyebrow"><span class="num">אודות</span><span>· אישי</span></div>
+        <h1>נימרוד ולד — חקלאי, <em>יועץ</em>, מקודד.</h1>
+        <p class="ah-lede">שורש אחד, שלוש זרועות. חממה הידרופונית פעילה, ייעוץ לחוות קטנות ולפרויקטים קהילתיים, וסוכן AI לחקלאות קטנה שאני בונה.</p>
+      </div>
+      <div class="ah-portrait"><img src="images/raw/greenhouse-2.jpg" alt="החממה ההידרופונית"><span class="ah-emblem"><img src="images/basket-soil.png" alt=""></span></div>
+    </div>
+  </section>
+
+  <section class="about-sec wrap">
+    <div class="sec-head"><div class="eyebrow"><span class="num">01</span><span>איך הגעתי לכאן</span></div></div>
+    <div class="about-prose">
+      <p>גדלתי בין שני עולמות שנראו מנוגדים. אבא שלי — הנדסת מערכות. אמא שלי — גידלה הכל. לי זה אף פעם לא נראה מנוגד. הוא תיכנן מכונות, היא תיכננה גינה. אותו דבר, חומר אחר.</p>
+      <p>למדתי הנדסה, כתבתי קוד שנים — ולא ויתרתי על הסקרנות לאדמה. ב-2014 התחלתי את <b>הגינה של נמרוד</b> בפרדס חנה. לא סטארטאפ, לא פרויקט-צד — בית. תשע עונות. בשיא כ־4 דונם. חנות בגינה, שווקים, סלים לקהילה.</p>
+      <p>ב-2023 סגרתי אותה. לא משבר — <em>גלגול</em>. הבנתי שהידע שווה יותר מהיבול. כל מה שיש היום צמח מהשורש הזה: חממה הידרופונית שמספקת אוכל לשולחן ולמסעדה, ייעוץ שמבוסס על מה שעבר דרך הידיים שלי, ומערכת שאני בונה כדי שהידע לא ייעלם.</p>
+      <p>אני נוטה להמציא את עצמי כל עשור או שניים. בכל פעם זה נראה כמו עזיבה — ובעצם זה אותו אדם, ממשיך לחבר את אותם דברים.</p>
+    </div>
+  </section>
+
+  <section class="about-sec wrap">
+    <div class="sec-head"><div class="eyebrow"><span class="num">02</span><span>אבני דרך</span></div><h2 class="s-title">הציר העובדתי.</h2></div>
+    <ol class="timeline">
+      <li class="tl-row"><span class="tl-dot"></span><div><p class="tl-year">1999 →</p><p class="tl-body">מיזו — מולטימדיה, סטודיו, עיצוב אקולוגי. עשרים-ומשהו שנות אפיון מערכות.</p></div></li>
+      <li class="tl-row key"><span class="tl-dot"></span><div><p class="tl-year">2014</p><p class="tl-body">תחילת <b>“הגינה של נמרוד”</b> — פרדס חנה, market garden אקולוגי.</p></div></li>
+      <li class="tl-row"><span class="tl-dot"></span><div><p class="tl-year">2014–2023</p><p class="tl-body">תשע עונות בשטח. בשיא ~4 דונם. החנות, השווקים, הקהילה. תיעוד שבועי שהפך לבסיס-ידע.</p></div></li>
+      <li class="tl-row"><span class="tl-dot"></span><div><p class="tl-year">2023</p><p class="tl-body">סגירה מתוכננת — לא משבר, החלפת קנה מידה.</p></div></li>
+      <li class="tl-row key"><span class="tl-dot"></span><div><p class="tl-year">2024</p><p class="tl-body">החממה ההידרופונית עלתה — <b>420 מֳר</b> — תשתית מקצועית במקום שדה.</p></div></li>
+      <li class="tl-row"><span class="tl-dot"></span><div><p class="tl-year">2025</p><p class="tl-body">תוצרת למסעדת המחתרת התאילנדית. ייעוץ לחוות קטנות ולפרויקטים קהילתיים. BCS שירותי שטח.</p></div></li>
+      <li class="tl-row key"><span class="tl-dot"></span><div><p class="tl-year">2026</p><p class="tl-body">SFA חי (sfa.nimrod.bio) — מדד מחירים + ספר גידולים, עולה במודולים. tiktrack בפילוט.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="about-sec wrap">
+    <div class="sec-head"><div class="eyebrow"><span class="num">03</span><span>העיקרון</span></div></div>
+    <div class="about-prose">
+      <p>כשאני מתכנן חממה, אני חושב בדיוק כמו שאני חושב כשאני מתכנן מערכת תוכנה. כשאני מסביר רוטציה בערוגה, אני מסביר את אותו דבר שאני מסביר על ניהול פרויקט. <em>זו לא מטאפורה — זו אותה מערכת, בחומר אחר.</em></p>
+      <p>הייתי תמיד גשר בין עולמות. זו, לדעתי, היכולת האמיתית שלי. הזרועות שלי הן שלוש דוגמאות לאותו דבר — והחיבור ביניהן הוא הסיפור, לא הענף הבודד.</p>
+    </div>
+  </section>
+
+  <section class="about-sec wrap">
+    <div class="sec-head"><div class="eyebrow"><span class="num">04</span><span>איך אני עובד</span></div><h2 class="s-title">שלושה דברים שאני לא מתפשר עליהם.</h2></div>
+    <div class="principle-grid">
+      <div class="principle-tile"><div class="pt-k">01</div><h4>Evidence-based, לא הבטחה</h4><p>מה שגדל, מה שנבנה, מה שעבד. מה שיש לי — לא מה שתדמיין.</p></div>
+      <div class="principle-tile"><div class="pt-k">02</div><h4>תיעוד, לא ראוותנות</h4><p>כל החלטה שמעניינת נכנסת לרישום. בלי תיעוד אין מסקנה.</p></div>
+      <div class="principle-tile"><div class="pt-k">03</div><h4>הקישוריות, לא הענפים</h4><p>הייחוד הוא בגשרים. זה גם מה שאני מחפש בלקוחות ובשותפים.</p></div>
+    </div>
+    <!-- §05 בתקשורת — HIDDEN until verified interview links exist (owner directive; no "TBC" placeholders) -->
+  </section>
+
+  <section class="about-sec sea">
+    <div class="wrap sea-inner">
+      <div class="eyebrow"><span class="num">קצת ים</span><span>· אישי</span></div>
+      <p class="sea-quote">לפני כמה חודשים הוצאתי רישיון סקיפר. בהפלגה הרצינית הראשונה התקלקל המנוע, התוכנית השתבשה, והים לימד אותי את השיעור שאני כל הזמן לומד מחדש: לא איך להפליג. <b>איך לשחרר.</b> אותו דבר בגינה, בקוד, ובחממה — מערכת לא חייבת לך את התוכנית שבנית. הדבר הכי חשוב הוא לדעת לזרום איתה.</p>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow"><span class="num">צעד ראשון</span></div>
+        <h2>דבר <em>איתי</em>.</h2>
+        <p class="intro">שיחה ראשונה, ללא התחייבות. 30 דקות: אני מבין על מה אתה עובד, אתה רואה אם יש לי מה לתרום.</p>
+        <div class="hero-act"><a class="btn btn-primary" href="#">בואו נדבר</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ════════════════ SCREEN · SYSTEM TEMPLATES · 404 / חיפוש / ארכיון ריק ════════════════ -->
+<main class="screen" data-screen="sys" data-screen-label="System templates · 404 / search / empty">
+
+  <section class="sys-block wrap">
+    <div class="subhead">404.php · דף לא נמצא</div>
+    <div class="err-404">
+      <p class="code"><span>4</span><i class="d1"></i><span>4</span></p>
+      <h1>השביל הזה לא מוביל לשום מקום.</h1>
+      <p>הדף שחיפשת לא קיים — אולי זז או שינה כתובת. אפשר לחזור להתחלה, או לבחור עולם.</p>
+      <div class="err-links">
+        <a href="#">לדף הבית</a>
+        <a href="#">אדמה</a>
+        <a href="#">ייעוץ והוראה</a>
+        <a href="#">דיגיטל</a>
+        <a href="#">צור קשר</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sys-block wrap" style="border-top:1px solid var(--line);">
+    <div class="subhead">search.php · תוצאות חיפוש</div>
+    <div class="search-field">
+      <svg aria-hidden="true"><use href="#i-search"/></svg>
+      <input type="search" value="חממה הידרופונית" aria-label="חיפוש">
+      <button type="button">חפש</button>
+    </div>
+    <p class="search-meta">4 תוצאות ל־“חממה הידרופונית”</p>
+    <div class="results-list">
+      <a class="result-row" href="#"><span class="r-kind">עולם</span><div><h4>אדמה</h4><p>החממה ההידרופונית הפעילה — תשתית שמזינה את התוצרת, הייעוץ והקוד.</p></div></a>
+      <a class="result-row" href="#"><span class="r-kind">פרויקט</span><div><h4>חממת מסעדת המחתרת התאילנדית</h4><p>גידול ייחודי, עונה שלמה, מחיר קבוע.</p></div></a>
+      <a class="result-row" href="#"><span class="r-kind">פוסט</span><div><h4>הידרופוניקה היא תרגיל בקשב</h4><p>מה שאפשר למדוד, ומה שצריך פשוט לשים לב.</p></div></a>
+      <a class="result-row" href="#"><span class="r-kind">שירות</span><div><h4>ייעוץ הידרופוני ואגרו</h4><p>תכנון, הקמה וליווי · market garden.</p></div></a>
+    </div>
+  </section>
+
+  <section class="sys-block wrap" style="border-top:1px solid var(--line);">
+    <div class="subhead">archive · מצב ריק (אין פוסטים עדיין)</div>
+    <div class="empty-state">
+      <div class="es-emblem"><img src="images/basket-paper.png" alt="" style="width:100%;height:100%;opacity:.5"></div>
+      <h3>עדיין אין כאן כלום — זה בסדר.</h3>
+      <p>היומן של העולם הזה עוד לא נכתב. כתיבה יורדת לאדמה כשיש מה לומר, לא לפי לוח.</p>
+      <div class="err-links"><a href="#">לכל היומן</a><a href="#">חזרה לעולם</a></div>
+    </div>
+  </section>
+</main>
+
+<!-- ════════════════ SCREEN · STATES (design spec) ════════════════ -->
+<main class="screen" data-screen="states" data-screen-label="States · design spec">
+  <section class="states-wrap wrap">
+    <div class="sec-head" style="margin-bottom:8px;">
+      <div class="eyebrow"><span class="num">spec</span><span>· מצבי קצה לבנייה</span></div>
+      <h2 class="s-title">מצבים — ככה התבניות מתנהגות כשהדאטה חסרה.</h2>
+      <p class="s-lede">לא עמוד חי — מפת המצבים שהבילד צריך לכסות: ספירת פעילויות, קישורים חיצוניים, וריפוד חוסר-מדיה.</p>
+    </div>
+
+    <div class="state-group">
+      <div class="sg-head"><h3>ספירת פעילויות · world-card count</h3><p>מחוברת לספירת ה־ CPT האמיתית. 0 לא מציג “0 פעילויות” — אלא תווית שקטה; יחיד ורבים מנוסחים נכון.</p></div>
+      <div class="state-row">
+        <div class="state-cell"><div class="sc-tag"><span class="dot ok"></span><b>רבים</b> · n&gt;1</div><span class="more count-many">4 פעילויות</span></div>
+        <div class="state-cell"><div class="sc-tag"><span class="dot warn"></span><b>יחיד</b> · n=1</div><span class="more count-one">פעילות אחת</span></div>
+        <div class="state-cell"><div class="sc-tag"><span class="dot off"></span><b>ריק</b> · n=0</div><span class="more count-zero">בקרוב</span></div>
+      </div>
+    </div>
+
+    <div class="state-group">
+      <div class="sg-head"><h3>קישור חיצוני · external link</h3><p>מוזן מ־<code>_nb_external_url</code> / <code>_nb_external_label</code> על ה־ project CPT — לא מקודד קשיח. כשאין כתובת חיצונית, התווית נעלמת.</p></div>
+      <div class="state-row">
+        <div class="state-cell"><div class="sc-tag"><span class="dot ok"></span><b>SFA</b></div><span class="ext-link"><svg class="ext-ic"><use href="#i-ext"/></svg>sfa.nimrod.bio</span></div>
+        <div class="state-cell"><div class="sc-tag"><span class="dot ok"></span><b>TikTrack</b></div><span class="ext-link"><svg class="ext-ic"><use href="#i-ext"/></svg>tt.nimrod.bio</span></div>
+        <div class="state-cell"><div class="sc-tag"><span class="dot off"></span><b>ללא קישור</b></div><span style="font-family:var(--mono);font-size:11.5px;color:var(--ink-soft);opacity:.7">— לא מוצג —</span></div>
+      </div>
+    </div>
+
+    <div class="state-group">
+      <div class="sg-head"><h3>ריפוד חוסר-מדיה · media slots</h3><p>עד שמגיעות תמונות אמיתיות, סלוט ריק מתנוון בחן: רחיצה רכה בצבע-העולם בלי תווית “TBD” — או מתכווץ לגמרי.</p></div>
+      <div class="state-row">
+        <div class="state-cell"><div class="sc-tag"><span class="dot ok"></span><b>תמונה קיימת</b></div><div class="demo-card"><div class="demo-media ph"><img src="images/raw/greenhouse-2.jpg" alt=""></div><div class="demo-body"><h5>עם מדיה</h5></div></div></div>
+        <div class="state-cell"><div class="sc-tag"><span class="dot warn"></span><b>ריק · מתנוון</b></div><div class="demo-card"><div class="demo-media ph clean"><span class="emblem" style="position:absolute;inset:0;margin:auto;display:grid;place-items:center"><img src="images/basket-soil.png" alt="" style="width:46px;height:46px;opacity:.5"></span></div><div class="demo-body"><h5>בלי תווית</h5></div></div></div>
+        <div class="state-cell"><div class="sc-tag"><span class="dot off"></span><b>ממתין · dev only</b></div><div class="demo-card"><div class="demo-media ph"><span class="cap pending">TBD · תמונת חממה</span></div><div class="demo-body"><h5>תווית פנימית</h5></div></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ══ FOOTER ══ -->
+<footer class="shell-foot">
+  <div class="shell-foot-inner"><div class="series-strip" aria-hidden="true"><svg><use href="#ic-seedling"/></svg><svg><use href="#ic-leaf"/></svg><svg><use href="#ic-greenhouse"/></svg><svg><use href="#ic-carrot"/></svg><svg><use href="#ic-chef"/></svg><svg><use href="#ic-shop"/></svg><svg><use href="#ic-vbasket"/></svg></div>
+    <div class="cols">
+      <div class="brand"><div class="fbrand"><img src="images/basket-paper.png" alt=""><span class="name">נמרוד ולד</span></div><div class="tag">שלוש זרועות, שורש אחד. הייחוד הוא בחיבורים.</div></div>
+      <div><h6>עולמות</h6><a href="#">אדמה</a><a href="#">ייעוץ והוראה · ידע</a><a href="#">דיגיטל</a></div>
+      <div><h6>פרויקטים</h6><a href="#">SFA</a><a href="#">חממת המחתרת</a><a href="#">tiktrack</a></div>
+      <div><h6>קשר</h6><a href="#">צור קשר</a><a href="#">בלוג</a><a href="#">אודות</a></div>
+    </div>
+    <div class="bottom">
+      <span class="unless">העולם הוא כזה — <em>אלא אם כן</em>.</span>
+      <span>© 2026 · nimrod.bio · v200</span>
+    </div>
+  </div>
+</footer>
+
+<template id="__bundler_thumbnail">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#f5f3ec"/><circle cx="38" cy="42" r="20" fill="none" stroke="#6a8a3a" stroke-width="2.5"/><circle cx="62" cy="42" r="20" fill="none" stroke="#c46a3e" stroke-width="2.5"/><circle cx="50" cy="62" r="20" fill="none" stroke="#2d8a8c" stroke-width="2.5"/><circle cx="50" cy="50" r="4" fill="#d23a2e"/></svg>
+</template>
+
+<script>
+(function(){
+  const bar = document.querySelector('.approval');
+  bar.addEventListener('click', e=>{
+    const sb = e.target.closest('.spark-sw');
+    if(sb){ document.body.dataset.spark = sb.dataset.spark; bar.querySelectorAll('.spark-sw').forEach(x=>x.classList.toggle('on', x===sb)); return; }
+    const b = e.target.closest('.scr-sw'); if(!b) return;
+    const id = b.dataset.screen;
+    bar.querySelectorAll('.scr-sw').forEach(x=>x.classList.toggle('on', x===b));
+    document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on', s.dataset.screen===id));
+    window.scrollTo({top:0});
+  });
+})();
+</script>
+
+<script>(function(){
+  var nav=document.querySelector('.shell-nav');
+  function upd(){
+    var t7=document.querySelector('main[data-screen="t7"]');
+    var on=t7&&t7.classList.contains('on');
+    var hero=document.querySelector('.hero-poster');
+    if(on&&hero){var b=hero.getBoundingClientRect().bottom;nav.classList.toggle('atop',b>120);}
+    else nav.classList.remove('atop');
+  }
+  window.addEventListener('scroll',upd,{passive:true});
+  window.addEventListener('resize',upd);
+  var bar=document.querySelector('.approval'); if(bar) bar.addEventListener('click',function(){setTimeout(upd,30);});
+  upd();
+  window.addEventListener('load',upd);
+  requestAnimationFrame(function(){upd();});
+  setTimeout(upd,120);
+})();</script>
+<script>document.querySelectorAll('.proj-browse .pb-arrow').forEach(function(b){b.addEventListener('click',function(){var r=b.closest('section').querySelector('.projects-row, .products-grid.carousel');if(r)r.scrollBy({left:(+b.dataset.dir)*320,behavior:'smooth'});});});</script>
+</body>
+</html>
