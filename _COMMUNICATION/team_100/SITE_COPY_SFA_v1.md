@@ -15,7 +15,7 @@ status: ✅ concept-complete (screenshots ⬜ next round)
 Found the SFA domain repo (`/Users/nimrod/Documents/SmallFarmsAgents`). Concept + vision extracted below. The two open questions are now ANSWERED from the docs.
 
 ## ✅ Open questions resolved (from concept docs)
-- **המחשבון:** part of **S004** (calculator + community features) — a **future module**, not yet live. Exact function not fully specced → keep as "planned." ⬜ owner: confirm what it calculates (pricing? profit? planning?).
+- **המחשבון (✅ owner-confirmed):** part of **S004**. שלב ראשון — **מחשבון מחזור גידול**: מזינים סוג גידול, עונה וכמות → מקבלים את השטח הנדרש, התשומות, התפוקות, **ורשימת משימות עם תאריכים**. תוכנית גידול קטנה למחזור אחד.
 - **"קוד פתוח / instance עצמאי":** NOT supported by the docs. SFA is a **central community hub that publishes** to sfa.nimrod.bio — not a per-farm self-hosted instance. **REMOVE that claim.**
 - **"קהילת חוות בשרון":** not in the docs → **REMOVE** (coop-residue).
 
@@ -51,7 +51,7 @@ Found the SFA domain repo (`/Users/nimrod/Documents/SmallFarmsAgents`). Concept 
 |------|-----|-------|
 | מדד מחירים | תצפיות מחיר מנורמלות, מדד שקוף | ✅ חי |
 | ספר הגידולים | בסיס ידע — זני גידול, מידע גידול | 🔜 השבוע |
-| מחשבון + כלים קהילתיים | ⬜ [S004 — לתיאור מדויק מנמרוד] | 🔜 בקרוב |
+| מחשבון מחזור גידול | סוג גידול + עונה + כמות → שטח, תשומות, תפוקות + רשימת משימות עם תאריכים (תוכנית למחזור אחד) | 🔜 בקרוב (S004) |
 
 ## Status / CTA
 > המערכת חיה: **[sfa.nimrod.bio](https://sfa.nimrod.bio)**

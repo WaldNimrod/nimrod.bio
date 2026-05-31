@@ -19,13 +19,13 @@ Keep the live structure (Hero · §01 origin · §02 timeline/CV · §03 princip
 - "קואופרטיב חממות בשרון" → **REMOVE** (fabrication).
 - "CDIP · 3×" as explicit lecture → **demonstrate, don't name** (the parents/worlds story carries it).
 - "SFA v0.1 לסוף 2026" → SFA is **live now** (sfa.nimrod.bio), modular rollout.
-- ⬜ verify before publishing: greenhouse "240 מ״ר · NFT"; "ייעוץ ל-4 חממות".
+- ✅ greenhouse = **420 מ״ר** (owner-confirmed). consulting = broad scope, **no number** (owner-confirmed).
 
 ---
 
 ## Hero
 > **נימרוד ולד — חקלאי, יועץ, מקודד.**
-> שורש אחד, שלוש זרועות. חממה הידרופונית פעילה, ייעוץ לחממות, וסוכן AI לחקלאות קטנה שאני בונה.
+> שורש אחד, שלוש זרועות. חממה הידרופונית פעילה, ייעוץ לחוות קטנות ולפרויקטים קהילתיים, וסוכן AI לחקלאות קטנה שאני בונה.
 
 ## §01 · איך הגעתי לכאן
 *(לא קורות חיים — מה שמסביר את שלוש הזרועות. קול אישי.)*
@@ -51,8 +51,8 @@ Keep the live structure (Hero · §01 origin · §02 timeline/CV · §03 princip
 | 2014 | תחילת "הגינה של נמרוד" — פרדס חנה, market garden אקולוגי. |
 | 2014–2023 | תשע עונות בשטח. בשיא ~4 דונם. החנות, השווקים, הקהילה. תיעוד שבועי שהפך לבסיס-ידע. |
 | 2023 | סגירה מתוכננת — לא משבר, החלפת קנה מידה. |
-| 2024 | החממה ההידרופונית עלתה ⬜[240 מ״ר · NFT — לאימות] — תשתית מקצועית במקום שדה. |
-| 2025 | תוצרת למסעדת המחתרת התאילנדית (עירית שומית, פאטבונג). ייעוץ לחממות. BCS שירותי שטח. |
+| 2024 | החממה ההידרופונית עלתה — **420 מ״ר** — תשתית מקצועית במקום שדה. |
+| 2025 | תוצרת למסעדת המחתרת התאילנדית (עירית שומית, פאטבונג). ייעוץ לחוות קטנות ולפרויקטים קהילתיים. BCS שירותי שטח. |
 | 2026 | SFA חי (sfa.nimrod.bio) — מדד מחירים + ספר גידולים, עולה במודולים. TikTrack בפיילוט. |
 
 ## §03 · העיקרון
@@ -89,7 +89,7 @@ Keep the live structure (Hero · §01 origin · §02 timeline/CV · §03 princip
 
 ---
 
-## Open ⬜ (owner)
-- Greenhouse spec: 240 m²? NFT system? (timeline 2024 row)
-- "ייעוץ ל-4 חממות" — confirm the number, or keep generic "ייעוץ לחממות".
-- Press §05 — real links or hide section.
+## Resolved (owner 2026-05-31)
+- Greenhouse = **420 מ״ר**. ✅
+- Consulting = **ייעוץ לחוות קטנות ופרויקטים קהילתיים · חממות הידרופוניות · חקלאות חכמה ועוד** — no number. ✅
+- Press §05 — **HIDE the section** until real interviews/links exist (no "TBC" placeholders).
