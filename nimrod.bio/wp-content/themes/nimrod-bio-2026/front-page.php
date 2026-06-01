@@ -137,8 +137,8 @@ $nb_worlds = array(
 								<li><svg class="ip li-ic" aria-hidden="true"><use href="#<?php echo esc_attr( $it[0] ); ?>"/></svg><?php echo esc_html( $it[1] ); ?></li>
 							<?php endforeach; ?>
 						</ul>
-						<?php $count = nb_query_by_world( 'service', $w, -1 )->found_posts; ?>
-						<span class="wcard-more"><?php echo (int) $count; ?> פעילויות</span>
+						<?php $count = nb_world_activity_count( $w ); ?>
+						<span class="wcard-more <?php echo esc_attr( nb_activity_count_class( $count ) ); ?>"><?php echo esc_html( nb_activity_label( $count ) ); ?></span>
 					</div>
 				</a>
 			<?php endforeach; ?>

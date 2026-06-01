@@ -260,3 +260,22 @@
 .nb-emblem.soil .em-ic { background: var(--w-soil-deep); }
 .nb-emblem.know .em-ic { background: var(--w-know-deep); }
 .nb-emblem.code .em-ic { background: var(--w-code-deep); }
+
+/* ------------------------------------------------------------
+   Stage D §6b — external-link affordance (Precision Mockup v4).
+   Out-arrow (ip-ext) + LTR domain label. Mono, code-world deep by
+   default; underlines on hover. Rendered only when a project carries
+   an _nb_external_url (omitted otherwise). RTL: logical props only.
+   ------------------------------------------------------------ */
+.ext-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px; letter-spacing: .01em;
+  color: var(--w-code-deep); direction: ltr;
+  text-decoration: none;
+  border-block-end: 1px solid transparent;
+  transition: border-color .15s;
+}
+.ext-link .ext-ic { width: 14px; height: 14px; flex: none; }
+.ext-link:hover { border-block-end-color: currentColor; }
+.know .ext-link { color: var(--w-know-deep); }

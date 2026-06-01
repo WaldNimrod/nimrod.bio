@@ -258,93 +258,6 @@
   .media-title { white-space: normal; }
 }
 
-/* journey timeline */
-.journey {
-  display: grid; grid-template-columns: 80px 1fr; gap: clamp(20px, 3vw, 40px);
-}
-.journey-track {
-  position: relative;
-  border-inline-end: 2px solid var(--line);
-  padding-block: 16px;
-}
-.journey-list {
-  display: flex; flex-direction: column; gap: 36px;
-}
-.journey-event {
-  position: relative;
-  padding-inline-start: 0;
-}
-.journey-event::before {
-  content: ""; position: absolute;
-  top: 12px; right: -47px;
-  width: 14px; height: 14px; border-radius: 50%;
-  background: var(--w-soil-deep);
-  border: 3px solid var(--paper);
-  box-shadow: 0 0 0 1px var(--w-soil-deep);
-}
-.journey-event.know::before { background: var(--w-know-deep); box-shadow: 0 0 0 1px var(--w-know-deep); }
-.journey-event.code::before { background: var(--w-code-deep); box-shadow: 0 0 0 1px var(--w-code-deep); }
-.journey-event.spark::before { background: var(--spark); box-shadow: 0 0 0 1px var(--spark); }
-.j-year {
-  font-family: "JetBrains Mono", monospace; font-size: 11px;
-  letter-spacing: .1em; color: var(--ink-soft);
-  text-transform: uppercase; margin-bottom: 6px;
-}
-.j-title {
-  font-family: "Frank Ruhl Libre", serif; font-weight: 700;
-  font-size: 22px; line-height: 1.25;
-  color: var(--ink); margin: 0 0 8px;
-}
-.j-body {
-  font-family: "Frank Ruhl Libre", serif; font-size: 16px; line-height: 1.65;
-  color: var(--ink); margin: 0; max-width: 56ch;
-}
-.j-body em { font-style: italic; color: var(--ink); }
-
-/* thesis (CDIP) */
-.thesis {
-  display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(28px, 4vw, 64px); align-items: start;
-}
-.thesis .label {
-  font-family: "JetBrains Mono", monospace; font-size: 11px;
-  letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft);
-  margin-bottom: 14px;
-}
-.thesis h3 {
-  font-family: "Frank Ruhl Libre", serif; font-weight: 800;
-  font-size: clamp(28px, 3.4vw, 40px); line-height: 1.1;
-  margin: 0 0 18px; letter-spacing: -.015em;
-}
-.thesis h3 em { color: var(--spark); font-style: normal; }
-.thesis p {
-  font-family: "Frank Ruhl Libre", serif; font-size: 17px; line-height: 1.7;
-  color: var(--ink); margin: 0 0 18px;
-}
-
-/* values list */
-.values {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 2.5vw, 32px);
-}
-.value-tile {
-  padding: clamp(24px, 3vw, 32px);
-  border: 1px solid var(--line); border-radius: var(--radius-m);
-  background: var(--paper);
-  display: flex; flex-direction: column; gap: 12px;
-}
-.value-tile .num {
-  font-family: "JetBrains Mono", monospace; font-size: 11px;
-  letter-spacing: .14em; color: var(--w-soil-deep); font-weight: 600;
-}
-.value-tile h4 {
-  font-family: "Frank Ruhl Libre", serif; font-size: 22px;
-  font-weight: 700; margin: 0; line-height: 1.2;
-}
-.value-tile p {
-  font-family: "Frank Ruhl Libre", serif; font-size: 15px; line-height: 1.6;
-  color: var(--ink); margin: 0;
-}
-.value-tile p em { font-style: italic; color: var(--ink-soft); }
-
 /* ============================================================
    HERITAGE — long-form essay with sections
    ============================================================ */
@@ -456,34 +369,6 @@
 /* ============================================================
    CONTACT — form + side info
    ============================================================ */
-.contact-hero {
-  padding-block: clamp(48px, 6vw, 88px);
-  border-bottom: 1px solid var(--line);
-}
-.contact-hero h1 {
-  font-family: "Frank Ruhl Libre", serif; font-weight: 900;
-  font-size: clamp(48px, 7vw, 96px); line-height: .98;
-  margin: 0 0 20px; letter-spacing: -.025em;
-}
-.contact-hero .lede {
-  font-family: "Frank Ruhl Libre", serif; font-style: italic;
-  font-size: clamp(20px, 2.2vw, 26px); line-height: 1.5;
-  color: var(--ink-soft); margin: 0; max-width: 50ch;
-}
-.contact-hero .lede em { color: var(--ink); font-style: italic; }
-.contact-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-.hero-act {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 13px 24px; border-radius: var(--radius-pill);
-  font-family: "Assistant", sans-serif; font-weight: 600; font-size: 15.5px;
-  text-decoration: none; transition: background .15s, transform .15s, border-color .15s;
-}
-.hero-act svg { flex-shrink: 0; }
-.hero-act--primary { background: var(--w-soil-deep); color: #fff; border: 1px solid var(--w-soil-deep); }
-.hero-act--primary:hover { background: var(--ink); border-color: var(--ink); transform: translateY(-1px); }
-.hero-act--ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
-.hero-act--ghost:hover { background: var(--paper-2); border-color: var(--ink); }
-
 .contact-body {
   display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(32px, 4vw, 64px);
   padding-block: clamp(48px, 6vw, 80px);
@@ -614,16 +499,9 @@
    RESPONSIVE
    ============================================================ */
 @media (max-width: 900px) {
-  .thesis, .contact-body { grid-template-columns: 1fr; }
-  .values { grid-template-columns: 1fr 1fr; }
-  .journey { grid-template-columns: 1fr; }
-  .journey-track { display: none; }
-  .journey-event::before { display: none; }
+  .contact-body { grid-template-columns: 1fr; }
   .heritage-end { grid-template-columns: 1fr; }
   .media-grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 640px) {
-  .values { grid-template-columns: 1fr; }
 }
 
 .entity-link {
@@ -636,12 +514,6 @@
 .entity-link:hover { color: var(--w-soil-deep); border-color: var(--w-soil-deep); }
 
 .t8-about-hero .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-
-.thesis-links {
-  font-family: "JetBrains Mono", monospace; font-size: 13px;
-  color: var(--ink-soft); margin-top: 28px;
-}
-.thesis-links a { color: var(--ink); border-bottom: 1.5px solid var(--w-soil); text-decoration: none; }
 
 .media-note {
   margin-top: 20px;
@@ -695,9 +567,11 @@ fieldset.topic-chips legend {
 /* ===== MOBILE — P009-WP002 (team_35 spec §9 + §12) ===== */
 /* Append-only. Breakpoint literal 760px per spec §9. Markup uses .t8-about-hero
    / .t8-heritage-hero wrappers; spec's bare .about-hero / .heritage-hero forms
-   are kept alongside the .t8- forms so both match. Spec's .j-event adapted to
-   the markup's .journey-event. .heritage-image has no element in current markup
-   (no-op, kept per spec). RTL-safe: logical props only. */
+   are kept alongside the .t8- forms so both match. .heritage-image has no
+   element in current markup (no-op, kept per spec). RTL-safe: logical props
+   only. (Journey/thesis/values mobile guards removed in Stage C dead-code
+   cleanup — those sections now render via .timeline/.tl-* / .about-prose /
+   .principle-tile.) */
 @media (max-width: 760px) {
   /* ---- About ---- */
   .t8-about-hero h1, .about-hero h1 { font-size: clamp(36px, 9vw, 56px); max-width: 100%; }
@@ -711,13 +585,6 @@ fieldset.topic-chips legend {
   .story-block .story-inner { grid-column: 1; }
   .story-block p { font-size: 17px; line-height: 1.72; }
   .story-block p:first-of-type::first-letter { font-size: 3.4em; }
-
-  .journey { grid-template-columns: 1fr; }
-  .journey-track { display: none; }
-  .journey-event::before { display: none; } /* spec §9 ".j-event" -> markup ".journey-event" */
-
-  .thesis { grid-template-columns: 1fr; }
-  .values { grid-template-columns: 1fr; }
 
   .media-grid { grid-template-columns: 1fr; }
   .media-item { grid-template-columns: auto 1fr; }
@@ -734,7 +601,6 @@ fieldset.topic-chips legend {
   .heritage-end a.btn { width: 100%; justify-content: center; }
 
   /* ---- Contact (§9 + §12 form UX) ---- */
-  .contact-hero h1 { font-size: clamp(36px, 9vw, 56px); }
   .contact-body { grid-template-columns: 1fr; gap: 32px; }
   .contact-form { padding: 24px; }
   /* iOS auto-zoom prevention: input/textarea/select font-size MUST be >= 16px (spec §12) */
@@ -766,8 +632,9 @@ fieldset.topic-chips legend {
 
 /* ============================================================
    STAGE C — Contact hero + About precision (team_35 mockup v4)
-   Append-only. Aligns markup to mockup class anchors; later rules
-   override the older .contact-hero / .hero-act--* block above.
+   Append-only. Aligns markup to mockup class anchors. (The older
+   .contact-hero / .hero-act--* rules these replaced were removed in the
+   Stage C dead-code cleanup.)
    RTL: logical properties only.
    ============================================================ */
 

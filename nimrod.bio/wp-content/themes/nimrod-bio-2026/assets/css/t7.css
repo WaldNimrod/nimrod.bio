@@ -869,6 +869,10 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
   margin-block-start: 10px; color: var(--wcd); font-weight: 500;
 }
 .t7-worlds .world-card .wcard-more::after { content: " ←"; }
+/* Stage D §6a — graceful 0/1/many activity count. n=0 is a quiet "בקרוב"
+   (no arrow, softened ink); 1 and many keep the affordance arrow. */
+.t7-worlds .world-card .wcard-more.count-zero { color: var(--ink-soft); opacity: .8; }
+.t7-worlds .world-card .wcard-more.count-zero::after { content: ""; }
 
 /* shared inline-icon sizing for sprite glyphs in this region */
 .hero-poster .ip, .t7-worlds .ip { display: inline-block; width: 1em; height: 1em; }

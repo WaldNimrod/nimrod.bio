@@ -58,6 +58,15 @@ while ( have_posts() ) :
 						<?php if ( $summary = nb_meta( $post_id, 'summary' ) ) : ?>
 							<p class="t3-hero-summary"><?php echo esc_html( $summary ); ?></p>
 						<?php endif; ?>
+						<?php
+						// Stage D §6b — external-link affordance (out-arrow + domain),
+						// rendered only when _nb_external_url is set (slug-keyed
+						// fallback for SFA/TikTrack); omitted otherwise.
+						$nb_ext = nb_external_link( $post_id );
+						if ( '' !== $nb_ext ) :
+							?>
+							<div class="t3-hero-ext"><?php echo $nb_ext; ?></div>
+						<?php endif; ?>
 						<div class="t3-hero-meta">
 							<?php if ( $year = nb_meta( $post_id, 'year' ) ) : ?>
 								<span class="row">שנה: <b><?php echo esc_html( $year ); ?></b></span>

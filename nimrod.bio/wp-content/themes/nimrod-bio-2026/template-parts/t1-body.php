@@ -45,7 +45,7 @@ $posts_q = nb_query_by_world( 'post', $world, 4 );
 <article class="variant c vc-shell t1-world t1-world-<?php echo esc_attr( $world ); ?>" data-bridge="seam">
 	<?php get_template_part( 'template-parts/t1-hero', null, array( 'world' => $world ) ); ?>
 
-	<section class="t1-wrap t1-section" style="border-top:none">
+	<section class="t1-wrap t1-section">
 		<?php echo nb_sec_head( 1, 'ליבה · lattice', 'עוגן במרכז. השאר במסלול סביבו.', 'חממה במרכז. שאר הפעילויות תלויות בה ישירות. הקריאה מבפנים החוצה.' ); ?>
 
 		<div class="vc-lattice">
@@ -79,10 +79,17 @@ $posts_q = nb_query_by_world( 'post', $world, 4 );
 					// to its live home (SITE_COPY_WORLDS_v1). SFA is the anchor;
 					// TikTrack is a separately-marketed pilot.
 					?>
+					<?php
+					// Stage D §6b — code-world live tools. External links are now
+					// data-driven from each project's _nb_external_url meta (slug-keyed
+					// fallback keeps SFA/TikTrack visible if the meta is empty).
+					$sfa_p = nb_get_project_by_slug( 'sfa' );
+					$tik_p = nb_get_project_by_slug( 'tiktrack' );
+					?>
 					<div class="lat-side" style="grid-column:3/4;background:var(--paper-2);border-color:var(--line)">
 						<h4 style="font-style:italic;color:var(--ink-soft)">כלים חיים</h4>
-						<p><strong>SFA</strong> — מדד מחירים שקוף וספר גידולים. חי ב־<a href="https://sfa.nimrod.bio" rel="noopener">sfa.nimrod.bio</a>.</p>
-						<p><strong>TikTrack</strong> — מערכת QA למסחר, בפיילוט סגור, משווק בנפרד. חי ב־<a href="https://tt.nimrod.bio" rel="noopener">tt.nimrod.bio</a>.</p>
+						<p><strong>SFA</strong> — מדד מחירים שקוף וספר גידולים. חי כאן. <?php echo $sfa_p ? nb_external_link( (int) $sfa_p->ID ) : ''; ?></p>
+						<p><strong>TikTrack</strong> — מערכת QA למסחר, בפיילוט סגור, משווק בנפרד. חי כאן. <?php echo $tik_p ? nb_external_link( (int) $tik_p->ID ) : ''; ?></p>
 						<div class="tag-row" style="font-family:JetBrains Mono;font-size:10px;color:var(--ink-soft)">מהשטח · חוזר לשטח</div>
 					</div>
 					<?php
@@ -109,7 +116,7 @@ $posts_q = nb_query_by_world( 'post', $world, 4 );
 		</div>
 	</section>
 
-	<section class="t1-wrap t1-section" style="border-top:none">
+	<section class="t1-wrap t1-section">
 		<?php echo nb_sec_head( 2, 'גשרים · seams', 'הייחוד הוא בקישוריות.', 'לא ענף נוסף — תפר. שני צבעי־עולם פוגשים בכרטיס אחד.' ); ?>
 		<div class="vc-bridges">
 			<?php foreach ( $bridges as $bridge ) : ?>
@@ -118,7 +125,7 @@ $posts_q = nb_query_by_world( 'post', $world, 4 );
 		</div>
 	</section>
 
-	<section class="t1-wrap t1-section" style="border-top:none">
+	<section class="t1-wrap t1-section">
 		<?php echo nb_sec_head( 3, 'פרויקטים · מהשטח', 'המקרים מספרים את התזה — לא להפך.', 'פרויקטים נבחרים. כל אחד מקושר לפעילויות שהפעילו אותו.' ); ?>
 		<div class="vc-projects">
 			<?php if ( $projs_q->have_posts() ) : ?>
@@ -131,7 +138,7 @@ $posts_q = nb_query_by_world( 'post', $world, 4 );
 		</div>
 	</section>
 
-	<section class="t1-wrap t1-section" style="border-top:none">
+	<section class="t1-wrap t1-section">
 		<?php echo nb_sec_head( 4, 'יומן', 'מה נכתב ב' . nb_world_label( $world ) . '.', 'לא חדשות. תצפיות, מקרים מהשטח, רעיונות שעוד לא הבשילו.' ); ?>
 		<div class="vc-posts">
 			<?php if ( $posts_q->have_posts() ) : ?>

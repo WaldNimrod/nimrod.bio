@@ -108,6 +108,91 @@ function nb_query_by_world( string $post_type, string $world_slug, int $limit = 
 	);
 }
 
+/**
+ * Stage D §6a — real activity count for a world.
+ *
+ * Counts published `service` + `project` posts assigned to the given world
+ * taxonomy term. Used to drive the world-card "more" affordance with graceful
+ * 0/1/many wording (never a literal "0 פעילויות").
+ */
+function nb_world_activity_count( string $world_slug ): int {
+	$total = 0;
+	foreach ( array( 'service', 'project' ) as $pt ) {
+		$q      = nb_query_by_world( $pt, $world_slug, -1 );
+		$total += (int) ( $q->found_posts ?: count( $q->posts ) );
+	}
+	return $total;
+}
+
+/**
+ * Stage D §6a — graceful 0/1/many activity-count label (Hebrew, RTL).
+ *
+ * 0 → "בקרוב" (count-zero) · 1 → "פעילות אחת" (count-one) · ≥2 → "N פעילויות".
+ * Mirrors the states screen in Precision Mockup v4. Returns inner text only;
+ * callers add the `.wcard-more`/`.more` element + the matching count-* class.
+ */
+function nb_activity_label( int $n ): string {
+	if ( $n <= 0 ) {
+		return 'בקרוב';
+	}
+	if ( 1 === $n ) {
+		return 'פעילות אחת';
+	}
+	return $n . ' פעילויות';
+}
+
+/** Stage D §6a — count-state class for the activity chip (degrades the arrow on 0). */
+function nb_activity_count_class( int $n ): string {
+	if ( $n <= 0 ) {
+		return 'count-zero';
+	}
+	return 1 === $n ? 'count-one' : 'count-many';
+}
+
+/**
+ * Stage D §6b — external-link affordance (out-arrow + domain label) for a
+ * project. Reads `_nb_external_url` / `_nb_external_label` meta and renders the
+ * `.ext-link` markup from the mockup; returns '' when no URL is set (the
+ * affordance is omitted, never an empty box). A slug-keyed fallback keeps the
+ * live SFA/TikTrack links visible if the meta is empty.
+ */
+function nb_external_link_data( int $post_id ): array {
+	$url   = nb_meta( $post_id, 'external_url' );
+	$label = nb_meta( $post_id, 'external_label' );
+	if ( '' === $url ) {
+		$fallback = array(
+			'sfa'      => array( 'https://sfa.nimrod.bio', 'sfa.nimrod.bio' ),
+			'tiktrack' => array( 'https://tt.nimrod.bio', 'tt.nimrod.bio' ),
+		);
+		$slug = get_post_field( 'post_name', $post_id );
+		if ( isset( $fallback[ $slug ] ) ) {
+			$url   = $fallback[ $slug ][0];
+			$label = $fallback[ $slug ][1];
+		}
+	}
+	if ( '' === $url ) {
+		return array();
+	}
+	if ( '' === $label ) {
+		$label = preg_replace( '#^https?://#', '', untrailingslashit( $url ) );
+	}
+	return array(
+		'url'   => $url,
+		'label' => $label,
+	);
+}
+
+function nb_external_link( int $post_id ): string {
+	$data = nb_external_link_data( $post_id );
+	if ( empty( $data ) ) {
+		return '';
+	}
+	return '<a class="ext-link" href="' . esc_url( $data['url'] ) . '" target="_blank" rel="noopener">'
+		. '<svg class="ext-ic ip" aria-hidden="true"><use href="#ip-ext"/></svg>'
+		. esc_html( $data['label'] )
+		. '</a>';
+}
+
 function nb_get_anchor_service_for_world( string $world_slug ): ?WP_Post {
 	$q = new WP_Query(
 		array(

@@ -44,7 +44,7 @@ add_action(
 		register_post_meta( 'service', '_nb_sections', $string_meta );
 		register_post_meta( 'service', '_nb_meta_strip', $string_meta );
 
-		foreach ( array( 'scope', 'stage', 'year', 'location', 'duration', 'summary', 'seeking_note', 'legacy_of', 'seeking_cta_h', 'seeking_cta_p', 'seeking_cta_label', 'seeking_cta_hint', 'outcomes_note' ) as $key ) {
+		foreach ( array( 'scope', 'stage', 'year', 'location', 'duration', 'summary', 'seeking_note', 'legacy_of', 'seeking_cta_h', 'seeking_cta_p', 'seeking_cta_label', 'seeking_cta_hint', 'outcomes_note', 'external_url', 'external_label' ) as $key ) {
 			register_post_meta( 'project', '_nb_' . $key, $string_meta );
 		}
 		register_post_meta( 'project', '_nb_name_tbc', $bool_meta );

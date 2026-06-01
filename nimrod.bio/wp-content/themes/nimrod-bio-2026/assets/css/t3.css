@@ -60,6 +60,9 @@
   color: var(--ink); margin: 0 0 28px; max-width: 52ch; font-weight: 500;
 }
 
+/* Stage D §6b — external-link affordance under the project hero summary. */
+.t3-hero-ext { margin-block: 0 24px; }
+
 .t3-hero-meta {
   display: flex; gap: 24px; flex-wrap: wrap;
   padding-top: 18px; border-top: 1px dashed var(--line);

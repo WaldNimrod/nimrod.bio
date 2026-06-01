@@ -14,7 +14,8 @@
  * Size/color via CSS, e.g. `.ip{width:1em;height:1em;color:var(--w-soil);}`.
  *
  * Available ids: ip-greenhouse, ip-seedling, ip-leaf, ip-tree, ip-carrot,
- * ip-chef, ip-shop, ip-scallion, ip-measure, ip-vbasket, ip-peas, ip-forkspoon.
+ * ip-chef, ip-shop, ip-scallion, ip-measure, ip-vbasket, ip-peas, ip-forkspoon,
+ * ip-ext (external-link out-arrow · 24×24).
  *
  * @package nimrod-bio-2026
  */
@@ -81,5 +82,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</symbol>
 	<symbol id="ip-forkspoon" viewBox="0 0 48 48">
 		<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M14 4v40M8 5v10c0 5 6 5 6 5s6 0 6-5V5m14 15v24m6-32c0 4.418-2.686 8-6 8s-6-3.582-6-8s2.686-8 6-8s6 3.582 6 8"></path>
+	</symbol>
+	<symbol id="ip-ext" viewBox="0 0 24 24">
+		<g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<path d="M14 5h5v5"></path>
+			<path d="M19 5l-8 8"></path>
+			<path d="M18 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4"></path>
+		</g>
 	</symbol>
 </svg>
