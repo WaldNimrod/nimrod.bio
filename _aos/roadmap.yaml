@@ -633,9 +633,9 @@ work_packages:
 
 - id: NB-S002-P005-WP001B
   label: "nimrod-bio — Pre-cutover full QA re-run (design A–D + media) + Lighthouse"
-  status: PLANNED
+  status: IN_PROGRESS
   track: A
-  current_lean_gate: L-GATE_SPEC
+  current_lean_gate: L-GATE_VALIDATE
   lod_status: LOD300
   assigned_builder: nimrodbio_build
   assigned_validator: nimrodbio_val
