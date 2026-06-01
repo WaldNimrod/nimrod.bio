@@ -38,7 +38,7 @@ get_header();
 
 	<section class="t8-wrap t8-section">
 		<?php echo nb_sec_head( 4, 'עקרונות', 'איך אני עובד.', 'לא מנפסט שיווקי — שלושה דברים שאני באמת לא מתפשר עליהם.' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-		<div class="values">
+		<div class="principle-grid">
 			<?php
 			get_template_part(
 				'template-parts/t8-value-tile',
@@ -73,17 +73,12 @@ get_header();
 
 	<?php /* §05 · בתקשורת — hidden: no verified press links yet (per SITE_COPY_ABOUT_v1). Section intentionally not rendered. */ ?>
 
-	<section class="t8-wrap t8-section">
-		<?php echo nb_sec_head( 5, 'אישי', 'קצת ים.', 'הנגיעה האישית — מחוץ לשלוש הזרועות.' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-		<div class="story-block">
-			<div class="story-inner">
-				<p>
-					לפני כמה חודשים הוצאתי רישיון סקיפר. בהפלגה הרצינית הראשונה התקלקל המנוע, התוכנית השתבשה, והים לימד אותי את השיעור שאני כל הזמן לומד מחדש: <em>לא איך להפליג. איך לשחרר.</em>
-				</p>
-				<p>
-					אותו דבר בגינה, בקוד, ובחממה — מערכת לא חייבת לך את התוכנית שבנית. הדבר הכי חשוב הוא לדעת לזרום איתה.
-				</p>
-			</div>
+	<section class="t8-section sea">
+		<div class="t8-wrap sea-inner">
+			<div class="eyebrow"><span class="num">קצת ים</span><span>· אישי</span></div>
+			<p class="sea-quote">
+				לפני כמה חודשים הוצאתי רישיון סקיפר. בהפלגה הרצינית הראשונה התקלקל המנוע, התוכנית השתבשה, והים לימד אותי את השיעור שאני כל הזמן לומד מחדש: לא איך להפליג. <b>איך לשחרר.</b> אותו דבר בגינה, בקוד, ובחממה — מערכת לא חייבת לך את התוכנית שבנית. הדבר הכי חשוב הוא לדעת לזרום איתה.
+			</p>
 		</div>
 	</section>
 

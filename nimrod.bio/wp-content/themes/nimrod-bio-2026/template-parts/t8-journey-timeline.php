@@ -1,60 +1,54 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
+// §02 journey rail — approved content from SITE_COPY_ABOUT_v1 §02.
+// 'key' marks milestone rows (filled dot). Body may contain a single <b> emphasis.
 $events = array(
 	array(
-		'year'  => '1999 →',
-		'title' => 'מיזו',
-		'body'  => 'מולטימדיה, סטודיו, עיצוב אקולוגי. עשרים-ומשהו שנות אפיון מערכות (היום: AOS).',
-		'cls'   => '',
+		'year' => '1999 →',
+		'body' => 'מיזו — מולטימדיה, סטודיו, עיצוב אקולוגי. עשרים-ומשהו שנות אפיון מערכות.',
+		'key'  => false,
 	),
 	array(
-		'year'  => '2014',
-		'title' => 'תחילת \'הגינה של נמרוד\'',
-		'body'  => 'פרדס חנה. market garden אקולוגי — לא סטארטאפ, לא פרויקט-צד. בית.',
-		'cls'   => '',
+		'year' => '2014',
+		'body' => 'תחילת <b>"הגינה של נמרוד"</b> — פרדס חנה, market garden אקולוגי.',
+		'key'  => true,
 	),
 	array(
-		'year'  => '2014–2023',
-		'title' => 'תשע עונות בשטח',
-		'body'  => 'בשיא כ-4 דונם. החנות בגינה, השווקים, הסלים לקהילה. תיעוד שבועי שהפך לבסיס-ידע.',
-		'cls'   => '',
+		'year' => '2014–2023',
+		'body' => 'תשע עונות בשטח. בשיא ~4 דונם. החנות, השווקים, הקהילה. תיעוד שבועי שהפך לבסיס-ידע.',
+		'key'  => false,
 	),
 	array(
-		'year'  => '2023',
-		'title' => 'סגירה מתוכננת',
-		'body'  => 'לא משבר — החלפת קנה מידה. הבנתי שהידע שווה יותר מהיבול.',
-		'cls'   => 'spark',
+		'year' => '2023',
+		'body' => 'סגירה מתוכננת — לא משבר, החלפת קנה מידה.',
+		'key'  => false,
 	),
 	array(
-		'year'  => '2024',
-		'title' => 'החממה ההידרופונית עלתה',
-		'body'  => 'תשתית מקצועית במקום שדה.',
-		'cls'   => '',
+		'year' => '2024',
+		'body' => 'החממה ההידרופונית עלתה — <b>420 מ״ר</b> — תשתית מקצועית במקום שדה.',
+		'key'  => true,
 	),
 	array(
-		'year'  => '2025',
-		'title' => 'תוצרת, ייעוץ, שטח',
-		'body'  => 'תוצרת למסעדת המחתרת התאילנדית (עירית שומית, פאטבונג). ייעוץ לחממות. BCS שירותי שטח.',
-		'cls'   => 'know',
+		'year' => '2025',
+		'body' => 'תוצרת למסעדת המחתרת התאילנדית. ייעוץ לחוות קטנות ולפרויקטים קהילתיים. BCS שירותי שטח.',
+		'key'  => false,
 	),
 	array(
-		'year'  => '2026',
-		'title' => 'SFA חי',
-		'body'  => 'sfa.nimrod.bio — מדד מחירים + ספר גידולים, עולה במודולים. TikTrack בפיילוט.',
-		'cls'   => 'code',
+		'year' => '2026',
+		'body' => 'SFA חי (sfa.nimrod.bio) — מדד מחירים + ספר גידולים, עולה במודולים. TikTrack בפיילוט.',
+		'key'  => true,
 	),
 );
 ?>
-<div class="journey">
-	<div class="journey-track" aria-hidden="true"></div>
-	<div class="journey-list">
-		<?php foreach ( $events as $event ) : ?>
-			<div class="journey-event <?php echo esc_attr( $event['cls'] ); ?>">
-				<div class="j-year"><?php echo esc_html( $event['year'] ); ?></div>
-				<h3 class="j-title"><?php echo esc_html( $event['title'] ); ?></h3>
-				<p class="j-body"><?php echo esc_html( $event['body'] ); ?></p>
+<ol class="timeline">
+	<?php foreach ( $events as $event ) : ?>
+		<li class="tl-row<?php echo $event['key'] ? ' key' : ''; ?>">
+			<span class="tl-dot"></span>
+			<div>
+				<p class="tl-year"><?php echo esc_html( $event['year'] ); ?></p>
+				<p class="tl-body"><?php echo wp_kses( $event['body'], array( 'b' => array() ) ); ?></p>
 			</div>
-		<?php endforeach; ?>
-	</div>
-</div>
+		</li>
+	<?php endforeach; ?>
+</ol>
