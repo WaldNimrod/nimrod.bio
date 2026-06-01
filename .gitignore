@@ -70,3 +70,4 @@ Thumbs.db
 # === Python bytecode (test/automation scripts) ===
 __pycache__/
 *.pyc
+sources/photos/_owner_dropbox_2026-06-01/
