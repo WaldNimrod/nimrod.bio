@@ -72,9 +72,11 @@ You are working inside an **AOS spoke** — repo `nimrod-bio`, profile `L0`.
 **Production:** `https://nimrod.bio` (valid SSL via uPress free cert, Cloudflare in front).
 
 **Dev environment (V200 rebuild):** `https://nimrod-bio-2026.s887.upress.link`
-- Reachable on both HTTP and HTTPS, but **HTTPS uses an expired/invalid certificate**. Browsers will show a security warning; `curl` requires `-k`. uPress' free SSL is only issued on the primary domain, not on `*.upress.link` dev URLs.
-- `X-Robots-Tag: noindex, nofollow` is set by uPress at the edge — search engines will not index the dev URL.
+- Reachable on both HTTP and HTTPS, but **HTTPS uses an expired/invalid certificate**. Browsers will show a security warning; `curl` requires `-k`. uPress' free SSL is only issued on the primary domain, not on `*.upress.link` dev URLs. **This is by design — the valid cert appears automatically on cutover to the primary domain; it is NOT a defect to fix on dev.**
+- **Dev cert-bypass flags are DEV-ONLY:** `curl -k` · chrome `--ignore-certificate-errors` · python-requests `verify=False`. Production QA (primary domain) MUST run WITHOUT these — a cert error on prod is a real defect. Implement and test all dev work accordingly.
+- `X-Robots-Tag: noindex, nofollow` is set by uPress at the edge — search engines will not index the dev URL. (Consequence: Lighthouse **SEO** + **Performance** read artificially low on dev — re-measure on the primary domain; don't treat dev scores as blockers.)
 - Plan for testing: use HTTP for routine work; for any cookie/SameSite/secure-context check, deploy to staging on the primary domain or run a localhost reverse-proxy with a self-signed cert.
+- **QA harness (browser + curl): `docs/QA_HARNESS.md`.** Browser QA runs dependency-free via `node scripts/qa/cdp/qa_probe.mjs` (CDP over cached chrome-headless-shell — no pip/npm). Lighthouse (v13, installed) needs full `Google Chrome.app` via `CHROME_PATH`, not headless-shell. Do NOT fall back to curl-only for layout/overflow checks — curl is blind to rendering.
 
 **Built-in uPress capabilities** (decision matrix in `docs/upress_capabilities_matrix.md`):
 - SuperCache (page + object cache) — replaces need for WP Super Cache / W3TC / EzCache
