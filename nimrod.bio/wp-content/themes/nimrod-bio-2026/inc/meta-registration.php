@@ -38,7 +38,7 @@ add_action(
 			register_post_meta( 'service', '_nb_' . $key, $string_meta );
 		}
 		register_post_meta( 'service', '_nb_is_free', $bool_meta );
-		foreach ( array( 'linked_projects', 'related_posts' ) as $key ) {
+		foreach ( array( 'linked_projects', 'related_posts', 'gallery' ) as $key ) {
 			register_post_meta( 'service', '_nb_' . $key, $array_meta );
 		}
 		register_post_meta( 'service', '_nb_sections', $string_meta );

@@ -41,6 +41,13 @@ while ( have_posts() ) :
 
 		<?php get_template_part( 'template-parts/t2-three-col', null, array( 'post_id' => $post_id ) ); ?>
 
+		<?php
+		$_nb_gallery_items = nb_meta_array( $post_id, 'gallery' );
+		if ( ! empty( $_nb_gallery_items ) ) :
+			get_template_part( 'template-parts/t3-gallery', null, array( 'post_id' => $post_id ) );
+		endif;
+		?>
+
 		<section class="t2-wrap t2-section">
 			<?php
 			$sec_num = 4;
