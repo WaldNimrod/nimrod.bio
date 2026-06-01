@@ -25,13 +25,13 @@ All other roadmap WPs COMPLETE.
 ## B · CONTENT — open
 
 ### B1 · Owner-supplied media — gaps (NO substitutes)
-1. ים / סירה (sailing) — About §06 "קצת ים" — ⬜ **STILL OPEN**
+1. ~~ים / סירה (sailing) — About §06 "קצת ים"~~ — ✅ **CLOSED (not a site asset)** — team_00 2026-06-01: sea/boat is unrelated to the site; will enter as a future POST. About §06 stays text-only (sea slot is NOT a gap).
 2. ~~פאטבונג close-up — greenhouse~~ — ✅ **CLOSED 2026-06-01** (owner dropbox; media 1100 → greenhouse gallery, project 31)
 3. ~~מתחחת + Power-Harrow — BCS tools~~ — ✅ **CLOSED 2026-06-01** (owner dropbox; 8 tiller shots, media 1101–1108 → BCS gallery, service 24)
-4. ביוצ'ר — process / workshop / field — ⬜ **STILL OPEN**
+4. ~~ביוצ'ר — process / workshop / field~~ — ✅ **DRAFTED 2026-06-01** (team_00: "just a post, set as draft for now") — post id **1109**, slug `biochar`, **status=draft** (NOT public — anon 404, absent from /blog/). Lock-clean Hebrew skeleton grounded in nimrod-book/chapters/11 §Biochar; `[תוכן זמני]` placeholders + photos pending. Publish when content + field photos ready.
 5. ~~HEIC originals — convert + inspect~~ — ✅ **RESOLVED 2026-06-01** (owner dropbox 8 HEIC converted; were the tiller + pak-bung shots above)
 
-**Remaining media gaps: #1 sea/boat + #4 biochar** (stay `.ph.clean` until owner supplies).
+**All 5 media gaps now dispositioned:** #2 pak-bung ✅ wired · #3 tiller ✅ wired · #5 HEIC ✅ resolved · #1 sea/boat ✅ closed (future post, not a site asset) · #4 biochar ✅ drafted (post 1109, draft). **No open `.ph.clean` media gaps blocking cutover.**
 
 ### B2 · Owner facts / decisions
 - SFA **calculator (S004)** — what it computes (page says "planned")
