@@ -38,7 +38,6 @@ if ( ! defined( 'NB_ICON_SPRITE_DONE' ) ) {
 			</div>
 			<div>
 				<h6>קשר</h6>
-				<a href="mailto:nimrod@nimrod.bio">nimrod@nimrod.bio</a>
 				<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">צור קשר</a>
 			</div>
 		</div>

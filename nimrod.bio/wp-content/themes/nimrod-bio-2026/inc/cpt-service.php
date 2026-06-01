@@ -25,7 +25,7 @@ add_action(
 				'menu_position' => 25,
 				'show_in_rest'  => true,
 				'rest_base'     => 'services',
-				'has_archive'   => false,
+				'has_archive'   => 'services',
 				'rewrite'       => array(
 					'slug'       => 'services',
 					'with_front' => false,

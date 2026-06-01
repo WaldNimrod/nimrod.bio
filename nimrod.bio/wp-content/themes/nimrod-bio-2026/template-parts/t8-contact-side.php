@@ -21,12 +21,6 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 
 	<div class="contact-card">
-		<div class="label">אימייל ישיר</div>
-		<p>אם מעדיף אימייל פרטי, או יש לך קובץ לשלוח.</p>
-		<a href="mailto:nimrod@nimrod.bio" class="direct">nimrod@nimrod.bio</a>
-	</div>
-
-	<div class="contact-card">
 		<div class="label">מיקום</div>
 		<p>מגד 5, פרדס חנה. <em>אזור פעילות: שרון, חוף הכרמל ועמק חפר. מחוץ לאזור — רק אם זה ספציפי וכדאי, או בזום.</em></p>
 		<a href="https://maps.app.goo.gl/8ySCEcFw3B8hXtnP6" class="direct" target="_blank" rel="noopener noreferrer">פתח ב-Google Maps</a>
