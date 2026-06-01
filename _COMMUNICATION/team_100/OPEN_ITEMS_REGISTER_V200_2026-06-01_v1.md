@@ -24,12 +24,14 @@ All other roadmap WPs COMPLETE.
 
 ## B · CONTENT — open
 
-### B1 · Owner-supplied media — 5 locked `.ph.clean` gaps (NO substitutes)
-1. ים / סירה (sailing) — About §06 "קצת ים"
-2. פאטבונג close-up — greenhouse / restaurant
-3. מתחחת + Power-Harrow — 2 of the 4 BCS tools
-4. ביוצ'ר — process / workshop / field
-5. HEIC originals `IMG_0943–0949` — convert + inspect (may hold pak-bung/crops)
+### B1 · Owner-supplied media — gaps (NO substitutes)
+1. ים / סירה (sailing) — About §06 "קצת ים" — ⬜ **STILL OPEN**
+2. ~~פאטבונג close-up — greenhouse~~ — ✅ **CLOSED 2026-06-01** (owner dropbox; media 1100 → greenhouse gallery, project 31)
+3. ~~מתחחת + Power-Harrow — BCS tools~~ — ✅ **CLOSED 2026-06-01** (owner dropbox; 8 tiller shots, media 1101–1108 → BCS gallery, service 24)
+4. ביוצ'ר — process / workshop / field — ⬜ **STILL OPEN**
+5. ~~HEIC originals — convert + inspect~~ — ✅ **RESOLVED 2026-06-01** (owner dropbox 8 HEIC converted; were the tiller + pak-bung shots above)
+
+**Remaining media gaps: #1 sea/boat + #4 biochar** (stay `.ph.clean` until owner supplies).
 
 ### B2 · Owner facts / decisions
 - SFA **calculator (S004)** — what it computes (page says "planned")
