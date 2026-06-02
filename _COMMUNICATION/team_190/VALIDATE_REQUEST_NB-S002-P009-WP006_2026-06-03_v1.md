@@ -4,7 +4,8 @@
 **From:** team_100 (build engine = Claude Code)
 **To:** team_190 (constitutional L-GATE_VALIDATE — cross-engine, immutable) + team_50 (dev QA / axe re-run)
 **Type:** L-GATE_VALIDATE — deployed result
-**WP:** NB-S002-P009-WP006 · **Env:** dev `https://nimrod-bio-2026.s887.upress.link` · theme **v0.7.18**
+**WP:** NB-S002-P009-WP006 · **Env:** dev `https://nimrod-bio-2026.s887.upress.link` · theme **v0.7.19**
+> **Version note:** the a11y remediation landed at **v0.7.18**. **v0.7.19** adds ONE a11y-neutral PHP routing change (301-redirect of the bare brand URLs `/soil/`·`/know/`·`/code/` → canonical `/world/<slug>/`; `inc/world-pages-bootstrap.php`) — no CSS/markup/aria touched, so all a11y measurements are identical. Validate on the live dev (currently v0.7.19).
 **Spec:** `_aos/work_packages/NB-S002-P009-WP006/LOD400_NB-S002-P009-WP006.md` (L-GATE_SPEC PASS, team_100)
 
 ## Iron Rule #1 (cross-engine) — MANDATORY here
