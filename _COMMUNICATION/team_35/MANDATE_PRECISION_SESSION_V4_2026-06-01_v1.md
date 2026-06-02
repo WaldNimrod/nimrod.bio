@@ -24,9 +24,8 @@ Team 00 reviews the live site in **Claude Design** and makes visual precision ed
 - deploys via `docs/UPRESS_FTPS_MANDATORY_PROCEDURE.md`, bumps `NB_THEME_VERSION`, keeps repo in sync (pull deployed files back, one per connection), verifies cache-busted, lock-scans;
 - preserves all content (mockup STYLE may be adopted, but live text/info is kept — team_00 ruling).
 
-## 🚩 OPEN DECISION for Team 00 (raise at session start — do NOT auto-build)
-The completeness scan found **one genuine missing interface element** vs the mockup:
-- **t7 home §06 — Recent-Posts / blog teaser** (`.posts-grid` + feature `.rp-card.feat` + 4 `.rp-card`), defined in the mockup (lines ~940-953) but absent from `front-page.php`. **Per the "interface in template but missing in live → ask Team 00" rule, team_35 must NOT build it unsolicited.** Ask Team 00: build it now (needs blog posts to feature), defer to post-cutover, or drop from home.
+## Missing-element decisions (Team 00, 2026-06-01)
+- **t7 home §06 — Recent-Posts / blog teaser** (`.posts-grid` + feature `.rp-card.feat` + 4 `.rp-card`; mockup ~lines 940-953; absent from `front-page.php`). **✅ team_00 DECISION: BUILD IT in this precision session.** Implement the §06 section in `front-page.php` to the mockup structure, pulling REAL recent posts (the `/blog/` index already has ~10; query latest published, feature the newest as `.rp-card.feat` + 4 more). Match the mockup's posts-grid styling; honor locks on any rendered title/excerpt. Place between §05 projects and the manifesto per the mockup order.
 - Minor/cosmetic (Team 00 optional): t1 `.world-bg` faint basket watermark (decorative) — add or skip.
 - Note (content, not build): t1 world journal (`vc-posts`) renders empty — no posts tagged to `world` taxonomy yet (content-seeding, separate).
 
@@ -47,7 +46,7 @@ You are team_35 — Site Design + Build for nimrod.bio (WordPress, Hebrew RTL, u
 MANDATE: _COMMUNICATION/team_100/../team_35/MANDATE_PRECISION_SESSION_V4_2026-06-01_v1.md.
 Task: (1) scan the live dev site (https://nimrod-bio-2026.s887.upress.link, theme v0.7.15) for fidelity vs Precision Mockup v4; (2) run an interactive precision session with Team 00 — Team 00 edits visually, you land each accepted tweak in the MODULE CSS / template-part itself (NO inline, NO overrides layer), deploy via FTPS, verify, keep repo synced on top of commit a35a67df.
 FIRST: read the mandate + DRIFT_REGISTER_MOCKUP_V4_2026-06-01_v1.md + the mockup + docs/UPRESS_FTPS_MANDATORY_PROCEDURE.md + docs/QA_HARNESS.md.
-RAISE at start: the §06 home Recent-Posts/blog-teaser is the one mockup element missing in live — ask Team 00 before building (do not auto-build).
+BUILD §06: team_00 approved building the home Recent-Posts/blog-teaser (the one missing mockup element) into front-page.php with real recent posts, to mockup structure.
 Honor both super-locks. Verify every change on the rendered page (qa_probe.mjs). Report to team_100.
 ```
 
