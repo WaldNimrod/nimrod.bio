@@ -56,4 +56,17 @@ The Stage A–D ports are largely faithful. Drift concentrates in **(a) the pre-
 
 ## Locks scan (all CSS): clean except comment-only `recursion` (t7.css:29) + `CDIP` in t8.css:81 comment — both non-rendered (cleanup, A13).
 
-*team_100 | drift register | 2026-06-01 | Bucket A = fix; Bucket B = locked-token decision; Bucket C = design-intent decision*
+---
+
+## UPDATE 2026-06-01 — Buckets A/B/C IMPLEMENTED + completeness scan
+- **A/B/C all landed** (theme v0.7.15, commit a35a67df): module-CSS + template edits only (no inline/no overrides). team_00 rulings applied — B = system-wide token uniformity to mockup; C = mockup style, content preserved. Verified: CDP 20/20 PASS, byte-parity, locks 0.
+- **STOP-and-ask completeness scan** (the crash gap, now done) — mockup interface elements missing in live:
+  | mockup screen | MISSING element | severity | decision |
+  |---|---|---|---|
+  | t7 home | **§06 Recent-Posts / blog teaser** (`.posts-grid` + feature `.rp-card.feat` + 4 `.rp-card`) — whole section absent from front-page.php | ●must-have | **team_00 decision (routed in team_35 mandate)** |
+  | t1 world | `.world-bg` faint basket watermark (decorative, opacity .05) | ○cosmetic | team_35 may add or skip |
+- **NOT a build gap (content/data):** t1 world journal (`vc-posts`) renders empty — no posts tagged to `world` taxonomy yet → content-seeding task, not missing structure.
+- **EXTRA live (kept):** /blog/ index template, services archive + BCS gallery, real count states — no mockup screen; sanctioned.
+- **Bottom line:** structurally complete vs mockup except the §06 home blog teaser.
+
+*team_100 | drift register | 2026-06-01 | A/B/C done + completeness scan; §06 home blog teaser = only real missing element → team_00 decision*
