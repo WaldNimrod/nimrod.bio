@@ -26,7 +26,7 @@ body[data-hero="poster"] .hero-variant.poster { display: block; }
 .t7-hero { padding-block: clamp(48px, 6vw, 96px); }
 
 /* ────────────────────────────────────────────────────────────
-   HERO · TYPO — typographic recursion (default)
+   HERO · TYPO — typographic stacking (default)
    ──────────────────────────────────────────────────────────── */
 .hero-typo .stack {
   font-family: "Frank Ruhl Libre", serif; font-weight: 900;
@@ -1542,38 +1542,9 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
   background-size: cover;
 }
 
-/* ── BRIDGES — bridge washes over the existing radial paper-2 band ──
-   Compose both bridge washes (soil-know on the leading edge, know-code
-   on the trailing edge) to echo the band's two-corner gradient. ~0.11. */
-.t7-bridges.bridges-band::before {
-  opacity: .11;
-  background-image:
-    image-set(
-      url(../img/washes/wash-bridge-soil-know-lg.webp) type("image/webp"),
-      url(../img/washes/wash-bridge-soil-know-lg.jpg)  type("image/jpeg")),
-    image-set(
-      url(../img/washes/wash-bridge-know-code-lg.webp) type("image/webp"),
-      url(../img/washes/wash-bridge-know-code-lg.jpg)  type("image/jpeg"));
-  background-image: /* fallback for browsers without image-set() */
-    url(../img/washes/wash-bridge-soil-know-lg.jpg),
-    url(../img/washes/wash-bridge-know-code-lg.jpg);
-  background-position: left top, right bottom;
-  background-size: 62% auto, 62% auto;
-}
-@media (max-width: 640px) {
-  .t7-bridges.bridges-band::before {
-    background-image:
-      image-set(
-        url(../img/washes/wash-bridge-soil-know-sm.webp) type("image/webp"),
-        url(../img/washes/wash-bridge-soil-know-sm.jpg)  type("image/jpeg")),
-      image-set(
-        url(../img/washes/wash-bridge-know-code-sm.webp) type("image/webp"),
-        url(../img/washes/wash-bridge-know-code-sm.jpg)  type("image/jpeg"));
-    background-image: /* fallback for browsers without image-set() */
-      url(../img/washes/wash-bridge-soil-know-sm.jpg),
-      url(../img/washes/wash-bridge-know-code-sm.jpg);
-  }
-}
+/* ── BRIDGES — C4: revert to mockup radial-gradient band (no watercolor wash).
+   Bridges-band background already set on the element; ::before suppressed. */
+.t7-bridges.bridges-band::before { content: none; }
 
 /* ── WORLDS — faint neutral tri-world blend behind the cards region ──
    ~0.08 so it never competes with the negentropy backdrop / paper glow

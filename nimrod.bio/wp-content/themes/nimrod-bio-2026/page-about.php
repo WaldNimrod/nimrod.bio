@@ -8,22 +8,20 @@ get_header();
 
 	<section class="t8-wrap t8-section">
 		<?php echo nb_sec_head( 1, 'הסיפור', 'איך הגעתי לכאן.', 'לא קורות חיים. מה שמסביר את שלוש הזרועות.' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-		<div class="story-block">
-			<div class="story-inner">
-				<p>
-					גדלתי בין שני עולמות שנראו מנוגדים. אבא שלי — הנדסת מערכות. אמא שלי — גידלה הכל. <em>לי זה אף פעם לא נראה מנוגד.</em> הוא תכנן מכונות, היא תכננה גינה. אותו דבר, חומר אחר.
-				</p>
-				<p>
-					למדתי הנדסה, כתבתי קוד שנים — ולא ויתרתי על הסקרנות לאדמה. ב-2014 התחלתי את <a href="<?php echo esc_url( home_url( '/about/heritage/' ) ); ?>" class="entity-link entity-link--soil">הגינה של נמרוד</a> בפרדס חנה. לא סטארטאפ, לא פרויקט-צד — בית. תשע עונות. בשיא כ-4 דונם. חנות בגינה, שווקים, סלים לקהילה.
-				</p>
-				<div class="pullquote">"שורש אחד" זה לא ססמה — זה זיהוי.</div>
-				<p>
-					ב-2023 סגרתי אותה. לא משבר — <em>גלגול</em>. הבנתי שהידע שווה יותר מהיבול. כל מה שיש היום צמח מהשורש הזה: חממה הידרופונית שמספקת אוכל לשולחן ולמסעדה, ייעוץ שמבוסס על מה שעבר דרך הידיים שלי, ומערכת שאני בונה כדי שהידע לא ייעלם.
-				</p>
-				<p>
-					אני נוטה להמציא את עצמי כל עשור או שניים. בכל פעם זה נראה כמו עזיבה — ובעצם זה אותו אדם, ממשיך לחבר את אותם דברים. <a href="<?php echo esc_url( home_url( '/project/sfa/' ) ); ?>" class="entity-link entity-link--code">SFA</a> — סוכן AI לחקלאות קטנה — הוא החוליה האחרונה לעת עתה.
-				</p>
-			</div>
+		<div class="about-prose">
+			<p>
+				גדלתי בין שני עולמות שנראו מנוגדים. אבא שלי — הנדסת מערכות. אמא שלי — גידלה הכל. <em>לי זה אף פעם לא נראה מנוגד.</em> הוא תכנן מכונות, היא תכננה גינה. אותו דבר, חומר אחר.
+			</p>
+			<p>
+				למדתי הנדסה, כתבתי קוד שנים — ולא ויתרתי על הסקרנות לאדמה. ב-2014 התחלתי את <a href="<?php echo esc_url( home_url( '/about/heritage/' ) ); ?>" class="entity-link entity-link--soil">הגינה של נמרוד</a> בפרדס חנה. לא סטארטאפ, לא פרויקט-צד — בית. תשע עונות. בשיא כ-4 דונם. חנות בגינה, שווקים, סלים לקהילה.
+			</p>
+			<blockquote>"שורש אחד" זה לא ססמה — זה זיהוי.</blockquote>
+			<p>
+				ב-2023 סגרתי אותה. לא משבר — <em>גלגול</em>. הבנתי שהידע שווה יותר מהיבול. כל מה שיש היום צמח מהשורש הזה: חממה הידרופונית שמספקת אוכל לשולחן ולמסעדה, ייעוץ שמבוסס על מה שעבר דרך הידיים שלי, ומערכת שאני בונה כדי שהידע לא ייעלם.
+			</p>
+			<p>
+				אני נוטה להמציא את עצמי כל עשור או שניים. בכל פעם זה נראה כמו עזיבה — ובעצם זה אותו אדם, ממשיך לחבר את אותם דברים. <a href="<?php echo esc_url( home_url( '/project/sfa/' ) ); ?>" class="entity-link entity-link--code">SFA</a> — סוכן AI לחקלאות קטנה — הוא החוליה האחרונה לעת עתה.
+			</p>
 		</div>
 	</section>
 
@@ -82,13 +80,14 @@ get_header();
 		</div>
 	</section>
 
-	<section class="t8-wrap t8-section contact-teaser">
-		<div class="contact-teaser-inner">
-			<div>
-				<h3>דבר איתי.</h3>
-				<p>שיחה ראשונה, ללא התחייבות. <em>30 דקות: אני מבין על מה אתה עובד, אתה רואה אם יש לי מה לתרום.</em></p>
+	<section class="t8-section t8-final-cta">
+		<div class="t8-wrap">
+			<div class="head">
+				<div class="eyebrow"><span class="num">צעד ראשון</span></div>
+				<h2>דבר <em>איתי</em>.</h2>
+				<p class="intro">שיחה ראשונה, ללא התחייבות. 30 דקות: אני מבין על מה אתה עובד, אתה רואה אם יש לי מה לתרום.</p>
+				<div class="hero-act"><a class="btn btn-primary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">לעמוד צור קשר</a></div>
 			</div>
-			<a class="contact-teaser-btn" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">לעמוד צור קשר ←</a>
 		</div>
 	</section>
 </article>

@@ -6,7 +6,7 @@
 /* ============================================================
    Nimrod.bio Design System v3 — LOCKED Stage 0 tokens
    Approved: 11.05.2026
-   Direction: B · עם רסן (structural recursion, rare spark)
+   Direction: B · עם רסן (structured, rare spark)
    Palette:   Cool Stone
    ============================================================ */
 
@@ -65,21 +65,21 @@
   --s-8: 160px;
 
   /* ─── Radii — default is radius-m ─── */
-  --radius-s:  6px;
+  --radius-s:  8px;
   --radius-m:  14px;     /* DEFAULT */
-  --radius-l:  22px;
+  --radius-l:  20px;
   --radius-xl: 36px;
   --radius-pill: 100px;
 
   /* ─── Shadows — default is shadow-m ─── */
-  --shadow-s: 0 1px 2px rgba(60,40,10,.06);
-  --shadow-m: 0 10px 30px -14px rgba(60,40,10,.22);   /* DEFAULT */
-  --shadow-l: 0 30px 60px -30px rgba(60,40,10,.30);
+  --shadow-s: 0 1px 2px rgba(60,40,10,.05), 0 4px 12px -8px rgba(60,40,10,.12);
+  --shadow-m: 0 10px 30px -16px rgba(60,40,10,.20);   /* DEFAULT */
+  --shadow-l: 0 24px 50px -28px rgba(60,40,10,.28);
 
   /* ─── Grid · 6-col max ─── */
   --grid-cols:   6;
   --grid-gutter: 24px;
-  --grid-max:    1200px;
+  --grid-max:    1240px;
   --grid-margin: clamp(20px, 4vw, 56px);
 }
 
@@ -91,7 +91,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-size: 17px;
-  line-height: 1.65;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   direction: rtl;
 }
@@ -105,7 +105,7 @@ body {
 .t-h2      { font-family: "Frank Ruhl Libre", serif; font-size: 28px; line-height: 1.25; font-weight: 600; }
 .t-h3      { font-family: "Frank Ruhl Libre", serif; font-size: 20px; line-height: 1.30; font-weight: 600; }
 .t-quote   { font-family: "Frank Ruhl Libre", serif; font-size: 24px; line-height: 1.5;  font-weight: 300; font-style: italic; }
-.t-body    { font-family: "Assistant", sans-serif; font-size: 17px; line-height: 1.65; font-weight: 400; }
+.t-body    { font-family: "Assistant", sans-serif; font-size: 17px; line-height: 1.55; font-weight: 400; }
 .t-body-sm { font-family: "Assistant", sans-serif; font-size: 14px; line-height: 1.55; font-weight: 400; color: var(--ink-soft); }
 .t-ui      { font-family: "Assistant", sans-serif; font-size: 15px; line-height: 1.0;  font-weight: 600; }
 

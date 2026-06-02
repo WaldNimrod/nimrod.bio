@@ -161,6 +161,10 @@
   letter-spacing: .06em; text-transform: uppercase; color: var(--ink);
 }
 .ls-card .more::after { content: " ←"; }
+/* A11: count 0/1/many degradation (PHP emits count-zero/one/many on .more) */
+.ls-card .more.count-zero { color: var(--ink-soft); opacity: .8; }
+.ls-card .more.count-zero::after { content: ""; }
+.ls-card .more.count-one::after, .ls-card .more.count-many::after { content: " ←"; }
 
 /* ============================================================
    OUTCOMES — numbered metric tiles
@@ -458,7 +462,7 @@
   gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--line);
   text-decoration: none; color: inherit;
 }
-.post-card:hover h5 { color: var(--w-know-deep); }
+.post-card:hover h5 { color: var(--w-soil-deep); }
 .post-card .date {
   font-family: "Frank Ruhl Libre", serif; font-size: 14px; line-height: 1.2;
   color: var(--w-soil-deep); font-weight: 700;
