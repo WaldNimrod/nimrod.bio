@@ -500,10 +500,10 @@ work_packages:
 
 - id: NB-S002-P009-WP001
   label: "nimrod-bio — UI Precision Pass + Final Visual Assets"
-  status: IN_PROGRESS
+  status: COMPLETE
   track: A
-  current_lean_gate: L-GATE_BUILD
-  lod_status: LOD400
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
   assigned_builder: team_35
   assigned_validator: nimrodbio_val
   created_at: "2026-05-29"
@@ -521,8 +521,20 @@ work_packages:
   - gate: L-GATE_SPEC
     result: PASS
     date: "2026-06-03"
-    notes: "LOD400 RE-AUTHORED by team_100 (ADR034 R9, L2 spoke) for the V200 precision package — team_35 HANDOFF_CLAUDE_CODE_V200_2026-06-03 (2 new templates: home §06 recent-posts + /projects/ archive; fixes from 3 sources: team_00/team_35/team_50). spec_ref re-pointed to _aos/work_packages/NB-S002-P009-WP001/LOD400_NB-S002-P009-WP001.md. Quantified change inventory + 11-point acceptance criteria + external-validation phase (team_50 + team_190). Per team_00 directive: characterize the move + LOD400 + external validation. NEXT: route LOD400 to external validation before Phase 2 land."
-  notes: "IN_PROGRESS — V200 precision package received from team_35 (2026-06-03, on baseline a35a67df). team_100 authored LOD400 (land-spec + acceptance + external validation). Awaiting external validation of the LOD400/package → then team_100-orchestrated atomic land+deploy (Iron Rule #4) → L-GATE_BUILD → L-GATE_VALIDATE (team_190). Open carry-forward gaps G2 (T2/T3/T4/T5 precision walk), G3 (know/code world variants + heritage), C2 (img-overflow localize). T-04 logo still blocked on T-07 basket (team_00). This WP gates Phase B of P009-WP002."
+    notes: "LOD400 RE-AUTHORED by team_100 (ADR034 R9, L2 spoke) for the V200 precision package — team_35 HANDOFF_CLAUDE_CODE_V200_2026-06-03 (2 new templates: home §06 recent-posts + /projects/ archive; fixes from 3 sources: team_00/team_35/team_50). spec_ref re-pointed to LOD400. team_190 L-GATE_SPEC PASS_WITH_FINDINGS (VERDICT_NB-S002-P009-WP001_LOD400_2026-06-03_v1, 7/7)."
+  - gate: L-GATE_BUILD
+    result: PASS
+    date: "2026-06-03"
+    notes: "team_100 atomic land+deploy (Iron Rule #4 single writer; ADR034 R9 L2 spoke, file-based SSoT, hub DB offline — no DB mutation). 6 handoff files landed on a35a67df + version 0.7.15→0.7.16; deployed via FTPS; permalinks auto-flushed (rewrites.php on version change) → /projects/ 200; byte-parity 5/5. §06 + /projects/ render real data; A1/A2/B1 fixes confirmed in served CSS; scaffolds retired. CDP 22/22 PASS. Commit ea9105cc → 2d9e0b96."
+  - gate: L-GATE_VALIDATE
+    result: PASS
+    date: "2026-06-03"
+    notes: "team_190 constitutional L-GATE_VALIDATE (cross-engine, immutable) — VERDICT_NB-S002-P009-WP001_DEPLOYED_2026-06-03_v1: ✅ PASS 11/11 acceptance criteria, 0 STOP triggers. Independent re-verify: CDP 22/22 (0 overflow @375/1440, 0 forbidden), byte-parity 6/6 SHA-256, 0 inline added / no overrides layer, Lighthouse BP 100 / A11y 88-90 (SEO/Perf dev artifacts). team_50 QA_REPORT_NB-S002-P009-WP001_DEPLOYED_2026-06-03_v1. Advisory (non-blocking, pre-existing): site-wide a11y contrast/heading-order — separate sweep."
+  - gate: COMPLETE
+    result: CLOSED_BY_TEAM_100
+    date: "2026-06-03"
+    notes: "ADR042 closure. L2 spoke (ADR034 R9): terminal state set in roadmap + git audit (no hub DB call — DB offline, no DB mutation required). Step 3 (multi-engine propagation) SKIPPED — core/governance NOT modified (theme CSS/PHP only). LOD500_LOCKED."
+  notes: "COMPLETE (LOD500). V200 precision package LIVE on dev v0.7.16 — 2 new templates (home §06 recent-posts + /projects/ archive) + 3-source precision fixes (Unless stacked, bridge-title underline, lattice-crush mobile fix). team_190 L-GATE_VALIDATE PASS 11/11. Closed by team_100 (ADR042). CARRY-FORWARD (team_00 backlog, NOT this WP): G2 (T2/T3/T4/T5 precision walk), G3 (know/code world variants + heritage parity), C2 (home img-overflow localize, non-blocking). T-04 logo still owner-blocked on T-07 basket. Production cutover = separate P005-WP002."
 
 - id: NB-S002-P009-WP002
   label: "nimrod-bio — Mobile Responsiveness (T-02 implementation)"
