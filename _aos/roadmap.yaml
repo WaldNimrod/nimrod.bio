@@ -660,3 +660,29 @@ work_packages:
   spec_ref: "_COMMUNICATION/team_100/OPEN_ITEMS_REGISTER_V200_2026-06-01_v1.md"
   notes: "OPENED 2026-06-01 by team_100 (ADR034 R9) on team_00 approval. Scope: full-system QA re-run after design build A–D + photo wiring — extends team_50's earlier QA_REPORT_V200 (text-site PASS_WITH_FINDINGS) to cover the new 404/search/empty-state templates, media degradation, counts, external links, Contact hero, About timeline/קצת ים, and wired galleries. Adds Lighthouse/performance pass + 375px independent visual sweep + contact-form live-delivery confirmation to nimrod@mezoo.co (F-001 close-out). Cross-engine: validator (team_50/team_190) != builders. Gates the team_190 constitutional L-GATE_VALIDATE that precedes P005-WP002 cutover."
 
+- id: NB-S002-P009-WP006
+  label: "nimrod-bio — Accessibility (a11y) sweep — site-wide"
+  status: PLANNED
+  track: A
+  current_lean_gate: L-GATE_SPEC
+  lod_status: LOD300
+  assigned_builder: team_35
+  assigned_validator: nimrodbio_val
+  created_at: "2026-06-03"
+  milestone_ref: V200
+  spec_ref: "_COMMUNICATION/team_100/OPEN_ITEMS_REGISTER_V200_2026-06-01_v1.md"
+  notes: "OPENED 2026-06-03 by team_100 (ADR034 R9, L2 spoke) on team_00 approval. Origin: team_190 L-GATE_VALIDATE advisory on P009-WP001 (VERDICT_NB-S002-P009-WP001_DEPLOYED_2026-06-03_v1) — Lighthouse flags color-contrast / heading-order / aria-hidden-focus on /, /projects/ AND untouched /about/ → PRE-EXISTING, site-wide, NOT introduced by any single WP. Scope: dedicated a11y remediation — run axe-core (scripts/qa/axe_runner.py if playwright available, else CDP/Lighthouse a11y category via docs/QA_HARNESS) across all 12+ pages; fix contrast ratios (worlds deep/light + spark on paper), heading-order (h1→h2→h3 sequence), aria-hidden focusable, alt/aria completeness. Edits in module CSS/templates only (no inline/no overrides). Honors super-locks. Cross-engine validation (team_50 axe re-run + team_190). Target: Lighthouse a11y ≥95 on key pages, 0 serious axe violations. team_35 build env."
+
+- id: NB-S002-P009-WP007
+  label: "nimrod-bio — Precision walk G2+G3 (T2/T3/T4/T5 templates + world variants + heritage)"
+  status: PLANNED
+  track: A
+  current_lean_gate: L-GATE_SPEC
+  lod_status: LOD300
+  assigned_builder: team_35
+  assigned_validator: nimrodbio_val
+  created_at: "2026-06-03"
+  milestone_ref: V200
+  spec_ref: "_COMMUNICATION/team_35/HANDOFF_CLAUDE_CODE_V200_2026-06-03/README.md"
+  notes: "OPENED 2026-06-03 by team_100 (ADR034 R9, L2 spoke) on team_00 approval. Origin: team_35 handoff §5 carry-forward G2+G3 (+ TEMPLATE_COVERAGE_AUDIT). G2 = precision walk vs Precision Mockup v4 for templates NOT in the v4 pass: T2 Services (index + single), T3 Project single, T4 Post single, T5 Blog index — exist as theme PHP + design files but never precision-aligned. G3 = know/code world-page variant parity + heritage page parity check. Method: same mockup-diff workflow as the home/world/about/contact pass (DRIFT_REGISTER_MOCKUP_V4) — per-template drift scan → fix in module CSS/templates (no inline/no overrides) → CDP+lock verify → external validation. team_35 may also fold C2 (home sub-document img-overflow localize, contained/non-blocking) here. NEEDS: TEMPLATE_COVERAGE_AUDIT_2026-06-02 from team_35 (referenced, not yet in repo) to scope precisely; team_35 to supply or team_100 to request. Larger effort — candidate to split G2/G3 into sub-WPs if scope warrants. team_35 build env. Production cutover (P005-WP002) does NOT block on this — these are polish/parity, schedulable pre- or post-cutover per team_00."
+
