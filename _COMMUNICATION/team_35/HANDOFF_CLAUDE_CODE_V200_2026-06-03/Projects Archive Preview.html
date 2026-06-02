@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects Archive — render-parity preview (archive-project.php + t1.css)</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&family=Frank+Ruhl+Libre:wght@500;700;900&family=JetBrains+Mono:wght@400;500&display=swap');
+:root{
+  --paper:#f5f3ec; --paper-2:#e8e7df; --paper-3:#dedccf; --line:#d6d2c2;
+  --ink:#1f1e1c; --ink-soft:#4a4844;
+  --w-soil-deep:#3a5220; --w-soil:#6a8a3a; --w-know:#c46a3e; --w-code:#2d8a8c;
+  --spark:#d23a2e; --spark-ink:#1c1a18;
+  --radius-m:14px; --shadow-l:0 24px 50px -28px rgba(60,40,10,.28);
+  --max:1240px; --gutter:clamp(22px,4vw,56px);
+}
+*{box-sizing:border-box;}
+body{margin:0; background:var(--paper); color:var(--ink); font-family:"Assistant",sans-serif; font-size:17px; line-height:1.55; direction:rtl;}
+.note{font-family:"JetBrains Mono",monospace; font-size:12px; color:var(--ink-soft); max-width:var(--max); margin:0 auto; padding:24px var(--gutter) 0; letter-spacing:.02em;}
+.note b{color:var(--ink);}
+.t1-wrap{max-width:var(--max); margin:0 auto; padding-inline:var(--gutter);}
+/* type tokens (t1 family) */
+.s-eyebrow{font-family:"JetBrains Mono",monospace; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--w-soil-deep); margin:0 0 14px;}
+.s-eyebrow .num{color:var(--ink-soft);}
+.s-title{font-family:"Frank Ruhl Libre",serif; font-weight:700; font-size:clamp(28px,3.4vw,44px); line-height:1.1; letter-spacing:-.015em; margin:0 0 12px;}
+.s-lede{font-size:clamp(16px,1.5vw,19px); color:var(--ink-soft); margin:0; max-width:60ch;}
+.under{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 8'><path d='M2 5 Q 50 1 100 4 T 198 5' stroke='%23c46a3e' stroke-width='2.6' fill='none' stroke-linecap='round'/></svg>"); background-repeat:no-repeat; background-position:bottom right; background-size:100% .32em; padding-bottom:.06em;}
+/* base proj-card chrome (from t1.css) */
+.proj-card{background:var(--paper); border:1px solid var(--line); border-radius:var(--radius-m); overflow:hidden; display:flex; flex-direction:column; text-decoration:none; color:inherit; transition:transform .18s ease, box-shadow .18s ease;}
+.proj-card:hover{transform:translateY(-2px); box-shadow:var(--shadow-l);}
+/* stage-stamp (from components.css — approximated for preview) */
+.stage-stamp{font-family:"JetBrains Mono",monospace; font-size:10px; letter-spacing:.06em; padding:3px 9px; border-radius:100px; border:1px solid var(--line); color:var(--ink-soft); white-space:nowrap;}
+.stage-stamp.live{background:var(--w-soil); color:#fff; border-color:transparent;}
+.stage-stamp.legacy{background:var(--paper-2); color:var(--ink-soft);}
+.stage-stamp.seeking{background:var(--spark); color:#fff; border-color:transparent;}
+
+/* ════════ CANONICAL PROJECTS-ARCHIVE CSS — copied verbatim from patched t1.css ════════ */
+.projects-archive { padding-block: clamp(48px, 6vw, 80px); }
+.projects-archive .archive-head { margin-bottom: clamp(32px, 4vw, 52px); max-width: 60ch; }
+.projects-archive .projects-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: clamp(18px, 2.2vw, 24px); align-items: stretch;
+}
+.projects-archive .proj-card .ph { aspect-ratio: 16/10; overflow: hidden; }
+.projects-archive .proj-card .ph > img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.projects-archive .proj-card .body {
+  padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1;
+}
+.projects-archive .proj-card .scope-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.projects-archive .proj-card .scope {
+  font-family: "JetBrains Mono", monospace; font-size: 10.5px; letter-spacing: .04em;
+  padding: 3px 9px; border-radius: 100px; font-weight: 600;
+}
+.projects-archive .proj-card .scope.client  { background: var(--paper-3); color: var(--ink); }
+.projects-archive .proj-card .scope.venture { background: var(--w-soil); color: var(--paper); }
+.projects-archive .proj-card h3 {
+  font-family: "Frank Ruhl Libre", serif; font-size: 20px; font-weight: 700;
+  line-height: 1.2; margin: 0;
+}
+.projects-archive .proj-card p {
+  font-family: "Assistant", sans-serif; font-size: 14.5px; color: var(--ink-soft);
+  line-height: 1.5; margin: 0;
+}
+.projects-archive .proj-card .meta {
+  font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--ink-soft);
+  letter-spacing: .04em; margin-top: auto; padding-top: 4px; display: flex; gap: 8px; flex-wrap: wrap;
+}
+@media (max-width: 1000px) { .projects-archive .projects-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px)  { .projects-archive .projects-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<p class="note">PARITY PREVIEW · <b>archive-project.php</b> markup + <b>t1.css</b> <b>.projects-archive</b> block, rendered standalone. Live WP output replaces these with the real <b>project</b> CPT query (all published, newest first).</p>
+
+<main class="t1-wrap projects-archive" aria-label="ארכיון פרויקטים">
+  <header class="archive-head">
+    <p class="s-eyebrow"><span class="num">פרויקטים ·</span> מהשטח</p>
+    <h1 class="s-title">פרויקטים · <span class="under">מהשטח</span></h1>
+    <p class="s-lede">מקרים שמספרים את התזה — לקוחות ומיזמים שהקישוריות הפעילה אותם.</p>
+  </header>
+  <div class="projects-grid">
+    <a class="proj-card" href="#"><div class="ph"><img src="../../../images/raw/wide-field-2.jpeg" alt=""></div><div class="body"><div class="scope-row"><span class="scope client">client-case</span><span class="stage-stamp live">live</span></div><h3>מסירה שבועית למסעדות</h3><p>גידול ייחודי, הזמנה מראש, עונה שלמה.</p><div class="meta"><span>אדמה</span></div></div></a>
+    <a class="proj-card" href="#"><div class="ph"><img src="../../../images/raw/farm-a.jpg" alt=""></div><div class="body"><div class="scope-row"><span class="scope client">client-case</span><span class="stage-stamp live">live</span></div><h3>חממת מסעדת המחתרת התאילנדית</h3><p>גידול ייחודי, עונה שלמה, מחיר קבוע.</p><div class="meta"><span>אדמה</span></div></div></a>
+    <a class="proj-card" href="#"><div class="ph"><img src="../../../images/raw/products.jpeg" alt=""></div><div class="body"><div class="scope-row"><span class="scope venture">own-venture</span><span class="stage-stamp legacy">legacy</span></div><h3>סלי משפחה</h3><p>2019–23 · הבסיס למה שיש היום.</p><div class="meta"><span>אדמה</span></div></div></a>
+    <a class="proj-card" href="#"><div class="ph"><img src="../../../images/raw/farm-a.jpg" alt=""></div><div class="body"><div class="scope-row"><span class="scope venture">own-venture</span><span class="stage-stamp seeking">מחפש שותפים</span></div><h3>ישראל מיקרו־גרין</h3><p>מיקרו־גרין מסחרי · פיילוט גדל.</p><div class="meta"><span>אדמה × דיגיטל</span></div></div></a>
+    <a class="proj-card" href="#"><div class="ph"><img src="../../../images/raw/wide-field-2.jpeg" alt=""></div><div class="body"><div class="scope-row"><span class="scope client">client-case</span><span class="stage-stamp live">live</span></div><h3>שדה השרון · market garden</h3><p>תכנון וליווי גידול לאורך עונה.</p><div class="meta"><span>אדמה × ידע</span></div></div></a>
+    <a class="proj-card" href="#"><div class="ph"><img src="../../../images/raw/greenhouse-1.jpg" alt=""></div><div class="body"><div class="scope-row"><span class="scope venture">own-venture</span><span class="stage-stamp legacy">legacy</span></div><h3>הגינה הראשונה</h3><p>איפה שהכול התחיל · מורשת.</p><div class="meta"><span>אדמה</span></div></div></a>
+  </div>
+</main>
+
+</body>
+</html>

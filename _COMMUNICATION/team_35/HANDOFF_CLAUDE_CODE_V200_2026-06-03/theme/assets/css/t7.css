@@ -1,0 +1,1696 @@
+/* t7.css — locked from team_35 T7-styles.css. DO NOT EDIT body. */
+/* ============================================================
+   T7 · Home page · Stage 3 prototype
+   One focused layout. Hero + Unless variants via Tweaks.
+   ============================================================ */
+
+:root {
+  --t7-max: 1240px;
+  --t7-gutter: clamp(22px, 4vw, 56px);
+}
+
+.t7-wrap { max-width: var(--t7-max); margin: 0 auto; padding-inline: var(--t7-gutter); }
+.t7-section { padding-block: clamp(56px, 7vw, 112px); border-top: 1px solid var(--line); }
+.t7-section:first-of-type { border-top: none; }
+
+/* ============================================================
+   HERO VARIANTS — switch via [data-hero]
+   ============================================================ */
+.hero-variant { display: none; }
+body[data-hero="typo"]   .hero-variant.typo,
+body[data-hero="triptych"] .hero-variant.triptych,
+body[data-hero="statement"] .hero-variant.statement,
+body[data-hero="poster"] .hero-variant.poster { display: block; }
+
+/* ───── shared hero wrap ───── */
+.t7-hero { padding-block: clamp(48px, 6vw, 96px); }
+
+/* ────────────────────────────────────────────────────────────
+   HERO · TYPO — typographic stacking (default)
+   ──────────────────────────────────────────────────────────── */
+.hero-typo .stack {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 900;
+  font-size: clamp(64px, 11vw, 180px); line-height: .88;
+  letter-spacing: -.04em;
+  display: flex; flex-direction: column; gap: 0;
+}
+.hero-typo .stack .row {
+  display: flex; align-items: baseline; gap: clamp(16px, 2vw, 32px);
+}
+.hero-typo .stack .word { display: inline-block; transition: color .2s; }
+.hero-typo .stack .word.soil { color: var(--w-soil-deep); }
+.hero-typo .stack .word.know { color: var(--w-know-deep); }
+.hero-typo .stack .word.code { color: var(--w-code-deep); }
+.hero-typo .stack .word.muted { color: var(--ink); }
+.hero-typo .stack .word .dot {
+  display: inline-block; vertical-align: middle;
+  width: .15em; height: .15em; border-radius: 50%;
+  background: currentColor; margin-inline: .15em;
+}
+.hero-typo .lead {
+  margin-top: clamp(28px, 4vw, 56px);
+  display: grid; grid-template-columns: 1fr 1.4fr; gap: clamp(28px, 4vw, 64px); align-items: end;
+}
+.hero-typo .lead p {
+  font-family: "Frank Ruhl Libre", serif; font-style: italic;
+  font-size: clamp(18px, 2vw, 24px); line-height: 1.55;
+  color: var(--ink-soft); margin: 0; max-width: 50ch;
+}
+.hero-typo .lead p em { color: var(--ink); font-style: italic; }
+.hero-typo .lead .marker {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft);
+  border-block: 1px solid var(--ink-soft); padding: 10px 0;
+  align-self: end;
+}
+
+/* ────────────────────────────────────────────────────────────
+   HERO · TRIPTYCH — 3 worlds side-by-side
+   ──────────────────────────────────────────────────────────── */
+.hero-triptych {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px; padding: 0;
+  margin-inline: calc(-1 * var(--t7-gutter));
+}
+.hero-triptych .panel {
+  padding: clamp(40px, 5vw, 80px) clamp(28px, 4vw, 48px);
+  min-height: clamp(420px, 60vh, 600px);
+  display: flex; flex-direction: column; justify-content: space-between;
+  text-decoration: none; color: inherit;
+  transition: padding .2s;
+  position: relative; overflow: hidden;
+}
+.hero-triptych .panel:hover { padding-bottom: clamp(48px, 5.5vw, 88px); }
+.hero-triptych .panel .num {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  letter-spacing: .14em; opacity: .55;
+}
+.hero-triptych .panel h2 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 900;
+  font-size: clamp(48px, 6vw, 84px); line-height: .95;
+  margin: 24px 0 18px; letter-spacing: -.025em;
+}
+.hero-triptych .panel .tagline {
+  font-family: "Frank Ruhl Libre", serif; font-style: italic;
+  font-size: clamp(17px, 1.8vw, 21px); line-height: 1.45;
+  margin: 0 0 28px; max-width: 26ch; opacity: .9;
+}
+.hero-triptych .panel .meta-list {
+  display: flex; flex-direction: column; gap: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  opacity: .75; letter-spacing: .03em;
+}
+.hero-triptych .panel .more {
+  margin-top: 24px;
+  font-family: "Assistant", sans-serif; font-size: 14.5px; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.hero-triptych .panel .more::after { content: "←"; }
+.hero-triptych .panel.soil { background: var(--w-soil-deep); color: var(--paper); }
+.hero-triptych .panel.know { background: var(--w-know-deep); color: var(--paper); }
+.hero-triptych .panel.code { background: var(--w-code-deep); color: var(--paper); }
+.hero-triptych .header-strip {
+  grid-column: 1 / -1; padding: clamp(48px, 6vw, 88px) var(--t7-gutter) clamp(28px, 3vw, 40px);
+  background: var(--paper);
+  text-align: center;
+}
+.hero-triptych .header-strip h1 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 900;
+  font-size: clamp(48px, 7vw, 96px); line-height: .98;
+  margin: 0 0 18px; letter-spacing: -.025em;
+}
+.hero-triptych .header-strip p {
+  font-family: "Frank Ruhl Libre", serif; font-style: italic;
+  font-size: clamp(18px, 2vw, 22px); line-height: 1.5;
+  color: var(--ink-soft); margin: 0; max-width: 56ch; margin-inline: auto;
+}
+
+/* ────────────────────────────────────────────────────────────
+   HERO · STATEMENT — single big sentence + ER diagram
+   ──────────────────────────────────────────────────────────── */
+.hero-statement {
+  padding-block: clamp(64px, 9vw, 140px);
+}
+.hero-statement .grid {
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(48px, 6vw, 96px); align-items: center;
+}
+.hero-statement h1 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 900;
+  font-size: clamp(40px, 5.5vw, 84px); line-height: 1.04;
+  margin: 0 0 28px; letter-spacing: -.022em;
+  color: var(--ink);
+}
+.hero-statement h1 em { font-style: italic; color: var(--w-soil-deep); }
+.hero-statement h1 .spark { color: var(--spark); font-style: normal; }
+.hero-statement .lede {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: clamp(17px, 1.8vw, 21px); line-height: 1.65;
+  color: var(--ink-soft); margin: 0 0 32px; max-width: 56ch;
+}
+.hero-statement .meta-row {
+  display: flex; gap: 24px; flex-wrap: wrap;
+  padding-top: 22px; border-top: 1px dashed var(--line);
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  color: var(--ink-soft); letter-spacing: .03em;
+}
+.hero-statement .meta-row b { color: var(--ink); font-weight: 600; }
+.hero-statement .diagram-wrap {
+  display: flex; align-items: center; justify-content: center;
+}
+.hero-statement svg { max-width: 100%; height: auto; }
+
+/* ────────────────────────────────────────────────────────────
+   HERO · POSTER — vertical typography poster
+   ──────────────────────────────────────────────────────────── */
+.hero-poster {
+  padding-block: clamp(40px, 5vw, 80px);
+}
+.hero-poster .frame {
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  padding: clamp(40px, 5vw, 80px) clamp(28px, 4vw, 64px);
+  border-radius: var(--radius-l);
+  position: relative; overflow: hidden;
+}
+.hero-poster .grid {
+  display: grid; grid-template-columns: 1fr 1px 1fr; gap: clamp(28px, 4vw, 56px);
+}
+.hero-poster .col {
+  display: flex; flex-direction: column; gap: 18px;
+}
+.hero-poster .col .num {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  letter-spacing: .14em; color: var(--ink-soft);
+}
+.hero-poster .col h2 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 900;
+  font-size: clamp(36px, 5vw, 64px); line-height: .98;
+  margin: 0; letter-spacing: -.022em; color: var(--ink);
+}
+.hero-poster .col p {
+  font-family: "Frank Ruhl Libre", serif; font-size: 16px; line-height: 1.6;
+  color: var(--ink-soft); margin: 0; max-width: 40ch;
+}
+.hero-poster .divider { background: var(--line); }
+.hero-poster .footer {
+  margin-top: clamp(28px, 4vw, 56px);
+  padding-top: 22px; border-top: 1px dashed var(--line);
+  display: flex; justify-content: space-between; align-items: end; gap: 18px; flex-wrap: wrap;
+}
+.hero-poster .footer .br {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 800;
+  font-size: clamp(32px, 4vw, 48px); line-height: 1;
+  color: var(--ink); letter-spacing: -.02em;
+}
+
+/* ============================================================
+   UNLESS — three placement variants via [data-unless]
+   ============================================================ */
+.unless-block { display: none; }
+body[data-unless="hero-line"]  .unless-block.hero-line,
+body[data-unless="ribbon"]     .unless-block.ribbon,
+body[data-unless="scattered"]  .unless-block.scattered { display: block; }
+
+/* hero-line — quiet line below hero */
+.unless-block.hero-line {
+  margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-family: "Frank Ruhl Libre", serif; font-style: italic;
+  font-size: clamp(20px, 2.2vw, 26px); line-height: 1.4;
+  color: var(--ink-soft); text-align: start;
+}
+.unless-block.hero-line em { color: var(--spark); font-style: normal; font-weight: 700; }
+
+/* ribbon — full-width ribbon between sections */
+.unless-block.ribbon {
+  background: var(--ink); color: var(--paper);
+  padding: clamp(40px, 5vw, 80px) var(--t7-gutter);
+  position: relative; overflow: hidden;
+}
+.unless-block.ribbon .ribbon-inner {
+  max-width: var(--t7-max); margin: 0 auto;
+  display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center;
+}
+.unless-block.ribbon .quote {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 700;
+  font-size: clamp(36px, 4.5vw, 64px); line-height: 1.05;
+  margin: 0; letter-spacing: -.022em; color: var(--paper);
+}
+.unless-block.ribbon .quote em { color: var(--spark); font-style: normal; }
+.unless-block.ribbon .anno {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  color: rgba(245,243,236,.5); letter-spacing: .12em; text-transform: uppercase;
+}
+
+/* scattered — small subtle markers in 3 places (rendered inline by App) */
+.unless-marker {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: "Frank Ruhl Libre", serif; font-style: italic;
+  font-size: 14px; color: var(--spark);
+  border-block: 1px solid var(--spark);
+  padding: 4px 14px;
+}
+.unless-marker em { font-style: normal; font-weight: 700; }
+
+/* ============================================================
+   WORLDS SECTION — 3 cards linking to T1
+   ============================================================ */
+.worlds-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 2vw, 24px);
+}
+.world-card {
+  padding: clamp(28px, 3vw, 36px);
+  border-radius: var(--radius-l);
+  display: flex; flex-direction: column; gap: 18px;
+  text-decoration: none; color: inherit;
+  position: relative; overflow: hidden;
+  transition: transform .18s;
+  min-height: 280px;
+}
+.world-card:hover { transform: translateY(-2px); }
+.world-card .num {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  letter-spacing: .14em; opacity: .55;
+}
+.world-card h3 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 800;
+  font-size: clamp(32px, 3.5vw, 48px); line-height: .98;
+  margin: 0; letter-spacing: -.02em;
+}
+.world-card .tagline {
+  font-family: "Frank Ruhl Libre", serif; font-style: italic;
+  font-size: 17px; line-height: 1.4;
+  margin: 0; opacity: .85; max-width: 26ch;
+}
+.world-card ul {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 6px;
+  margin-top: auto;
+  font-family: "Assistant", sans-serif; font-size: 14.5px;
+}
+.world-card li { opacity: .85; }
+.world-card li::before { content: "—"; margin-inline-end: 8px; opacity: .65; }
+.world-card .more {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  letter-spacing: .1em; text-transform: uppercase;
+  margin-top: 14px;
+}
+.world-card .more::after { content: " ←"; }
+
+.world-card.soil { background: var(--w-soil-deep); color: var(--paper); }
+.world-card.know { background: var(--w-know-deep); color: var(--paper); }
+.world-card.code { background: var(--w-code-deep); color: var(--paper); }
+
+/* ============================================================
+   FEATURED PROJECTS — mix of client-cases + own-ventures
+   ============================================================ */
+.featured-projects {
+  display: grid; grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: clamp(20px, 2.5vw, 28px);
+}
+.fp-card {
+  background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--radius-m); overflow: hidden;
+  display: flex; flex-direction: column;
+  text-decoration: none; color: inherit;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.fp-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-l); }
+.fp-card .img-ph { aspect-ratio: 16/10; }
+.fp-card .body { padding: 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.fp-card .scope-row {
+  display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  font-family: "JetBrains Mono", monospace; font-size: 10px;
+  letter-spacing: .1em; text-transform: uppercase;
+}
+.fp-card .scope-row .scope {
+  padding: 3px 9px; border-radius: 100px; font-weight: 600;
+}
+.fp-card .scope.client { background: var(--paper-3); color: var(--ink); }
+.fp-card .scope.venture { background: var(--w-soil); color: #fff; }
+.fp-card h3 {
+  font-family: "Frank Ruhl Libre", serif; font-size: 22px;
+  font-weight: 700; margin: 0; line-height: 1.2;
+}
+.fp-card p { font-size: 14.5px; line-height: 1.55; color: var(--ink-soft); margin: 0; }
+.fp-card .meta {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  color: var(--ink-soft); letter-spacing: .03em;
+  display: flex; gap: 8px; align-items: center; margin-top: auto;
+}
+.fp-card.fp-large { grid-column: 1 / 2; grid-row: 1 / 3; }
+.fp-card.fp-large .img-ph { aspect-ratio: 4/3; }
+.fp-card.fp-large h3 { font-size: 28px; }
+
+/* seeking-partners stamp */
+.fp-card .seeking-stamp {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 10px;
+  color: var(--spark); letter-spacing: .12em; text-transform: uppercase;
+  font-weight: 700;
+}
+.fp-card .seeking-stamp::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--spark);
+  animation: pulse-spark 2.4s ease-in-out infinite;
+}
+@keyframes pulse-spark { 0%,100%{opacity:1} 50%{opacity:.35} }
+
+/* ============================================================
+   RECENT POSTS — §06 blog teaser (Precision Mockup v4 parity)
+   featured 2×2 card + 4 cards, flush grid flow.
+   Markup: .posts-grid > a.rp-card[.feat] > .ph + .body
+   ============================================================ */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  gap: clamp(18px, 2.2vw, 24px);
+  align-items: stretch;
+}
+.rp-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .18s, box-shadow .18s;
+}
+.rp-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-m); }
+.rp-card:hover h4 { color: var(--w-soil-deep); }
+.rp-card .ph { aspect-ratio: 16 / 10; overflow: hidden; }
+.rp-card .ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.rp-card.feat { grid-column: 1 / 3; grid-row: 1 / 3; }
+.rp-card.feat .ph { aspect-ratio: auto; flex: 1; min-height: 200px; }
+.rp-card .body {
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+.rp-card .meta {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  color: var(--ink-soft); letter-spacing: .03em;
+  display: flex; gap: 8px;
+}
+.rp-card h4 {
+  font-family: "Frank Ruhl Libre", serif; font-size: 19px;
+  font-weight: 700; margin: 0; line-height: 1.22;
+  transition: color .15s;
+}
+.rp-card.feat h4 { font-size: 26px; }
+.rp-card p {
+  font-family: "Assistant", sans-serif; font-size: 14.5px;
+  color: var(--ink-soft); line-height: 1.5; margin: 0;
+}
+.rp-card .chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: auto; }
+.wc {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 10.5px; letter-spacing: .05em;
+  padding: 3px 9px; border-radius: 100px; border: 1px solid var(--line); color: var(--ink-soft);
+}
+.wc i { width: 7px; height: 7px; border-radius: 50%; }
+.wc.soil i { background: var(--w-soil); }
+.wc.know i { background: var(--w-know); }
+.wc.code i { background: var(--w-code); }
+
+@media (max-width: 1000px) {
+  .posts-grid { grid-template-columns: repeat(2, 1fr); }
+  .rp-card.feat { grid-column: 1 / 3; grid-row: auto; }
+  .rp-card.feat .ph { aspect-ratio: 16 / 9; min-height: 0; }
+}
+@media (max-width: 640px) {
+  .posts-grid { grid-template-columns: 1fr; }
+  .rp-card.feat { grid-column: 1; grid-row: auto; }
+}
+
+/* ============================================================
+   FINAL CTA — two paths
+   ============================================================ */
+.final-cta-home {
+  background: var(--ink); color: var(--paper);
+  padding: clamp(56px, 7vw, 112px) var(--t7-gutter);
+}
+.final-cta-home-inner {
+  max-width: var(--t7-max); margin: 0 auto;
+}
+.final-cta-home h2 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 900;
+  font-size: clamp(40px, 5vw, 80px); line-height: 1.02;
+  margin: 0 0 18px; color: var(--paper); letter-spacing: -.022em;
+}
+.final-cta-home h2 em { color: var(--spark); font-style: normal; }
+.final-cta-home .intro {
+  font-family: "Frank Ruhl Libre", serif; font-style: italic;
+  font-size: clamp(18px, 2vw, 24px); line-height: 1.5;
+  color: rgba(245,243,236,.78); margin: 0 0 48px; max-width: 56ch;
+}
+
+.cta-paths {
+  display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 2.5vw, 36px);
+}
+.cta-path {
+  background: rgba(245,243,236,.04);
+  border: 1px solid rgba(245,243,236,.12);
+  border-radius: var(--radius-l);
+  padding: clamp(28px, 3.5vw, 44px);
+  display: flex; flex-direction: column; gap: 14px;
+  text-decoration: none; color: inherit;
+  transition: background .18s, border-color .18s, transform .18s;
+}
+.cta-path:hover { background: rgba(245,243,236,.08); border-color: rgba(245,243,236,.25); transform: translateY(-2px); }
+.cta-path .label {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: rgba(245,243,236,.55);
+}
+.cta-path h3 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 700;
+  font-size: clamp(24px, 2.8vw, 34px); line-height: 1.15;
+  margin: 0; color: var(--paper); letter-spacing: -.012em;
+}
+.cta-path p {
+  font-family: "Frank Ruhl Libre", serif; font-size: 15.5px; line-height: 1.6;
+  color: rgba(245,243,236,.7); margin: 0; max-width: 40ch;
+}
+.cta-path .action {
+  margin-top: auto; padding-top: 18px;
+  font-family: "Assistant", sans-serif; font-weight: 600; font-size: 16px;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.cta-path.contact .action { color: var(--b-teach); }
+.cta-path.sfa .action { color: #6fcdcf; }
+.cta-path .action::after { content: " ←"; }
+.cta-path .micro {
+  font-family: "JetBrains Mono", monospace; font-size: 10px;
+  color: rgba(245,243,236,.45); letter-spacing: .06em;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1000px) {
+  .hero-typo .stack .row { flex-wrap: wrap; }
+  .hero-typo .lead { grid-template-columns: 1fr; gap: 18px; }
+  .hero-triptych { grid-template-columns: 1fr; }
+  .hero-statement .grid { grid-template-columns: 1fr; }
+  .hero-poster .grid { grid-template-columns: 1fr; }
+  .hero-poster .divider { display: none; }
+  .worlds-grid { grid-template-columns: 1fr 1fr; }
+  .featured-projects { grid-template-columns: 1fr 1fr; }
+  .fp-card.fp-large { grid-column: 1 / -1; grid-row: 1 / 2; }
+  .cta-paths { grid-template-columns: 1fr; }
+  .unless-block.ribbon .ribbon-inner { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .worlds-grid, .featured-projects { grid-template-columns: 1fr; }
+  .fp-card.fp-large { grid-column: 1; }
+}
+
+/* ============================================================
+   WP T7 front-page — LOD400 class mapping (statement + ribbon only)
+   ============================================================ */
+.t7-hero.hero-statement,
+.t7-hero.hero-statement .hero-statement { display: block; }
+
+.unless-ribbon {
+  background: var(--ink);
+  color: var(--paper);
+  padding: clamp(40px, 5vw, 80px) var(--t7-gutter);
+}
+.unless-ribbon .t7-wrap p {
+  font-family: "Frank Ruhl Libre", serif;
+  font-weight: 700;
+  font-size: clamp(36px, 4.5vw, 64px);
+  line-height: 1.05;
+  margin: 0;
+  letter-spacing: -.022em;
+  color: var(--paper);
+}
+.unless-ribbon em { color: var(--spark); font-style: normal; }
+
+.world-card.world-soil { background: var(--w-soil-deep); color: var(--paper); }
+.world-card.world-know { background: var(--w-know-deep); color: var(--paper); }
+.world-card.world-code { background: var(--w-code-deep); color: var(--paper); }
+.world-card .world-name {
+  font-family: "Frank Ruhl Libre", serif;
+  font-weight: 800;
+  font-size: clamp(32px, 3.5vw, 48px);
+  line-height: .98;
+}
+.world-card .world-count {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  opacity: .75;
+  margin-top: auto;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: clamp(20px, 2.5vw, 28px);
+}
+.projects-grid .proj-card:first-child { grid-column: 1 / 2; grid-row: 1 / 3; }
+.proj-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.proj-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-l); }
+.proj-card img { width: 100%; height: auto; display: block; aspect-ratio: 16/10; object-fit: cover; }
+.projects-grid .proj-card:first-child img { aspect-ratio: 4/3; }
+.proj-card h3 {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  padding: 22px 22px 0;
+}
+.proj-card p {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0;
+  padding: 10px 22px 22px;
+}
+.proj-card .stage-stamp { margin: 22px 22px 0; }
+
+/* §06 recent-posts now rendered via canonical .posts-grid / .rp-card.feat
+ * (see "RECENT POSTS — §06 blog teaser" block above). The legacy
+ * .posts-grid-4 / .post-card.post-square scaffold was retired 2026-06-02
+ * (never had matching markup; diverged from Precision Mockup v4). */
+
+.final-cta { text-align: center; }
+.final-cta h2 {
+  font-family: "Frank Ruhl Libre", serif;
+  font-weight: 900;
+  font-size: clamp(32px, 4vw, 56px);
+  margin: 0 0 32px;
+}
+.final-cta .cta-paths {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1000px) {
+  .projects-grid { grid-template-columns: 1fr 1fr; }
+  .projects-grid .proj-card:first-child { grid-column: 1 / -1; grid-row: 1 / 2; }
+}
+@media (max-width: 640px) {
+  .projects-grid { grid-template-columns: 1fr; }
+  .projects-grid .proj-card:first-child { grid-column: 1; }
+}
+
+/* ════════════════════════════════════════════════════════════
+   P009-WP003 · B1 — HERO POSTER + WORLDS (negentropy)
+   README §2–§3. system.css tokens only; no #fff bg (use --paper);
+   RTL logical properties; reduced-motion-safe (no required motion).
+   Desktop rules — the WP002 MOBILE @media block follows BELOW and
+   is preserved verbatim; do not move it.
+   ════════════════════════════════════════════════════════════ */
+
+/* ---- Hero-aware nav state (style only; nb-nav-atop.js toggles .atop) ---- */
+/* Over the hero poster the nav goes transparent-dark with light links; the
+   solid (default, in shell.css) state returns once the hero scrolls away. */
+.shell-nav.atop {
+  background: rgba(18, 17, 15, .5);
+  backdrop-filter: blur(6px);
+  border-block-end-color: transparent;
+}
+.shell-nav.atop .shell-mark,
+.shell-nav.atop a { color: var(--paper); }
+
+/* ---- Hero poster ---- */
+.hero-poster {
+  position: relative;
+  min-height: clamp(540px, 74vh, 780px);
+  display: flex;
+  align-items: flex-end;
+  /* D2 (AT-D13/G-11): hero is the only full-bleed band; its absolute bg layer
+     was adding ~13–14px to documentElement.scrollWidth at 360/375. overflow-x:clip
+     contains any descendant horizontally without enabling a scroll container,
+     so document scrollWidth === clientWidth on phone widths. */
+  overflow: hidden;
+  overflow-x: clip;
+  max-width: 100%;
+  background: var(--ink);
+}
+.hero-poster .hp-bg { position: absolute; inset: 0; overflow: hidden; }
+.hero-poster .hp-bg img {
+  position: absolute; inset: 0;
+  width: 100%; max-width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+.hero-poster .hp-scrim {
+  position: absolute; inset: 0; z-index: 1;
+  /* side scrim: dark on the start (right, RTL) → transparent toward the end */
+  background: linear-gradient(to left,
+    rgba(18, 17, 15, .9) 0%,
+    rgba(18, 17, 15, .62) 40%,
+    rgba(18, 17, 15, .18) 78%,
+    transparent 100%);
+}
+.hero-poster .hp-scrim-bottom {
+  background: linear-gradient(to top, rgba(18, 17, 15, .55) 0%, transparent 36%);
+}
+.hero-poster .hp-content {
+  position: relative; z-index: 2;
+  width: 100%; max-width: 100%; min-width: 0;
+  padding-block: clamp(40px, 6vw, 84px);
+}
+.hero-poster .hp-inner { max-width: min(620px, 100%); }
+
+.hero-poster .hp-eyebrow {
+  display: inline-flex; align-items: baseline; gap: 8px; flex-wrap: wrap;
+  margin: 0 0 18px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 14px; font-weight: 500; letter-spacing: .04em;
+  color: rgba(245, 243, 236, .7);
+}
+/* mockup: eyebrow name carries the brand at .7; spark sits inline-center */
+.hero-poster .hp-eyebrow .hp-eyebrow-name { color: rgba(245, 243, 236, .7); }
+.hero-poster .hp-eyebrow .hp-spark {
+  display: inline-flex; width: 16px; height: 16px;
+  color: var(--spark); align-self: center;
+}
+.hero-poster .hp-eyebrow .hp-spark svg { width: 100%; height: 100%; }
+
+.poster-h1 {
+  font-family: "Frank Ruhl Libre", serif;
+  font-weight: 900; line-height: .92; letter-spacing: -.035em;
+  margin: 0 0 20px;
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  gap: 0 clamp(10px, 1.6vw, 22px);
+  font-size: clamp(48px, 8.5vw, 128px);
+}
+.poster-h1 .pw { display: inline-flex; align-items: baseline; }
+/* per-world colored dot on the RTL-start side of each word (mockup .w-*::before) */
+.poster-h1 .pw .pw-dot {
+  width: .17em; height: .17em; border-radius: 50%;
+  margin-inline-end: .22em;
+  align-self: baseline; transform: translateY(-.32em);
+}
+.poster-h1 .pw-soil { color: var(--w-soil-light, #9cc063); }
+.poster-h1 .pw-know { color: var(--w-know-light, #e08a5b); }
+.poster-h1 .pw-code { color: var(--w-code-light, #5cb8ba); }
+.poster-h1 .pw-soil .pw-dot { background: var(--w-soil-light, #9cc063); }
+.poster-h1 .pw-know .pw-dot { background: var(--w-know-light, #e08a5b); }
+.poster-h1 .pw-code .pw-dot { background: var(--w-code-light, #5cb8ba); }
+
+.hero-poster .hp-tagline {
+  font-family: "Assistant", sans-serif;
+  font-size: clamp(17px, 1.8vw, 22px); line-height: 1.5;
+  color: rgba(245, 243, 236, .9);
+  margin: 0 0 28px; max-width: 38ch;
+  text-wrap: pretty;
+}
+
+/* hero-foot: kicker stats at start (right), buttons at end (left) */
+.hero-foot {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 18px 28px; flex-wrap: nowrap;
+  margin-block-start: clamp(26px, 3.4vw, 42px);
+  padding-block-start: 18px;
+  border-block-start: 1px solid rgba(245, 243, 236, .2);
+}
+/* mockup: numbers at start, buttons pushed to the end of the line */
+.hero-foot .hp-cta { margin-inline-start: auto; flex: none; }
+.hero-poster .hp-kicker {
+  display: flex; align-items: baseline; flex-wrap: wrap;
+  gap: clamp(12px, 2vw, 24px);
+}
+.hero-poster .hp-kicker .kc {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 700;
+  font-size: clamp(13.5px, 1.35vw, 18px);
+  color: var(--paper); white-space: nowrap;
+}
+.hero-poster .hp-kicker .kc b { color: var(--w-soil-light, #9cc063); font-size: 1.12em; }
+.hero-poster .hp-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+/* primary = know fill; ghost = light outline on dark */
+.hero-poster .hp-btn-primary { background: var(--w-know); color: var(--paper); }
+.hero-poster .hp-btn-primary:hover { background: var(--w-know-deep); }
+.hero-poster .hp-btn-ghost {
+  background: transparent; color: var(--paper);
+  border-color: rgba(245, 243, 236, .5);
+}
+.hero-poster .hp-btn-ghost:hover { background: var(--paper); color: var(--ink); }
+
+/* ---- Worlds intro: negentropy backdrop + centered heading/lede over it ---- */
+.t7-worlds .worlds-intro {
+  position: relative;
+  display: grid; place-items: center;
+  margin-block-end: var(--s-5, 64px);
+  min-height: clamp(220px, 26vw, 300px);
+  overflow-x: clip; /* D2 fix: contain .wi-col::before radial glow (-10% inset) so it
+                       doesn't inflate document scrollWidth at 360/375 (AT-D13/G-11). */
+}
+.t7-worlds .wi-graphic {
+  position: absolute; inset: 0; z-index: 0;
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none;
+}
+.t7-worlds .wi-graphic .negentropy {
+  width: 100%; max-width: 1080px; height: 100%;
+  opacity: .5;
+}
+.t7-worlds .wi-col {
+  position: relative; z-index: 1;
+  text-align: center; max-width: 54ch;
+  padding: clamp(16px, 3vw, 30px) clamp(20px, 5vw, 56px);
+}
+/* radial paper glow behind the text for legibility over the backdrop */
+.t7-worlds .wi-col::before {
+  content: ""; position: absolute; inset: -8% -10%; z-index: -1;
+  background: radial-gradient(ellipse at center,
+    var(--paper) 36%, rgba(245, 243, 236, .7) 58%, transparent 82%);
+}
+.t7-worlds .wi-eyebrow {
+  display: inline-flex; align-items: baseline; gap: 10px;
+  margin: 0 0 14px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px; font-weight: 500; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--w-soil-deep);
+}
+.t7-worlds .wi-eyebrow .num { color: var(--ink-soft); }
+.t7-worlds .wi-title {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 700;
+  font-size: clamp(28px, 3.4vw, 44px); line-height: 1.1;
+  letter-spacing: -.015em; margin: 0 0 12px; color: var(--ink);
+}
+.t7-worlds .wi-lede {
+  font-family: "Assistant", sans-serif;
+  font-size: clamp(16px, 1.5vw, 19px); line-height: 1.55;
+  color: var(--ink-soft); margin: 0 auto; max-width: 48ch;
+  text-wrap: balance;
+}
+.t7-worlds .neg-cap {
+  display: flex; justify-content: center; align-items: center;
+  gap: 6px; flex-wrap: wrap;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px; letter-spacing: .04em; text-transform: uppercase;
+  color: var(--ink-soft); margin: 14px 0 0;
+}
+.t7-worlds .neg-cap b { color: var(--ink); font-weight: 600; }
+
+/* ---- World cards (media header + emblem + body) ---- */
+.t7-worlds .worlds-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: clamp(18px, 2vw, 22px);
+  align-items: stretch;
+}
+.t7-worlds .world-card {
+  position: relative;
+  display: flex; flex-direction: column;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l, 20px);
+  box-shadow: var(--shadow-s);
+  overflow: hidden;
+  text-decoration: none; color: inherit;
+  transition: transform .22s cubic-bezier(.34, 1.56, .64, 1), box-shadow .2s;
+}
+/* 4px top accent bar in the world's light color */
+.t7-worlds .world-card::before {
+  content: ""; position: absolute;
+  inset-block-start: 0; inset-inline: 0;
+  height: 4px; z-index: 4;
+  background: var(--wc);
+  transition: height .2s ease;
+}
+.t7-worlds .world-card.soil { --wc: var(--w-soil); --wcd: var(--w-soil-deep); }
+.t7-worlds .world-card.know { --wc: var(--w-know); --wcd: var(--w-know-deep); }
+.t7-worlds .world-card.code { --wc: var(--w-code); --wcd: var(--w-code-deep); }
+.t7-worlds .world-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-m); }
+.t7-worlds .world-card:hover::before { height: 7px; }
+
+.t7-worlds .world-card .wcard-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: visible;
+  background: var(--paper-2);
+}
+.t7-worlds .world-card .wcard-media > img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+/* the emblem (.nb-emblem from components.css) straddles the photo/body seam */
+.t7-worlds .world-card .wcard-body {
+  padding: 36px clamp(22px, 2.4vw, 28px) clamp(24px, 2.6vw, 30px);
+  display: flex; flex-direction: column; gap: 10px; flex: 1;
+}
+.t7-worlds .world-card .num {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11.5px; letter-spacing: .12em; color: var(--ink-soft);
+  text-transform: uppercase;
+}
+.t7-worlds .world-card .wcard-title {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 800;
+  font-size: clamp(28px, 3vw, 38px); line-height: 1;
+  letter-spacing: -.02em; margin: 2px 0 0; color: var(--wcd);
+}
+.t7-worlds .world-card .wcard-tagline {
+  font-family: "Assistant", sans-serif;
+  font-size: 15.5px; line-height: 1.4;
+  color: var(--ink-soft); margin: 0; max-width: 26ch;
+  text-wrap: pretty;
+}
+.t7-worlds .world-card .wcard-list {
+  list-style: none; padding: 0; margin: auto 0 0;
+  display: flex; flex-direction: column; gap: 5px;
+  font-family: "Assistant", sans-serif; font-size: 14.5px; color: var(--ink);
+}
+.t7-worlds .world-card .wcard-list li {
+  display: flex; align-items: center; gap: 9px;
+}
+.t7-worlds .world-card .wcard-list .li-ic {
+  width: 18px; height: 18px; flex: none; color: var(--wcd);
+}
+.t7-worlds .world-card .wcard-more {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase;
+  margin-block-start: 10px; color: var(--wcd); font-weight: 500;
+}
+.t7-worlds .world-card .wcard-more::after { content: " ←"; }
+/* Stage D §6a — graceful 0/1/many activity count. n=0 is a quiet "בקרוב"
+   (no arrow, softened ink); 1 and many keep the affordance arrow. */
+.t7-worlds .world-card .wcard-more.count-zero { color: var(--ink-soft); opacity: .8; }
+.t7-worlds .world-card .wcard-more.count-zero::after { content: ""; }
+
+/* shared inline-icon sizing for sprite glyphs in this region */
+.hero-poster .ip, .t7-worlds .ip { display: inline-block; width: 1em; height: 1em; }
+/* emblem = recolored basket PNG (36px) + small content glyph badge (.em-ic) */
+.t7-worlds .world-card .nb-emblem > img { width: 36px; height: 36px; }
+.t7-worlds .world-card .nb-emblem .em-ic { width: 25px; height: 25px; }
+
+/* Reduced-motion: no transform-based motion required (cards still readable). */
+@media (prefers-reduced-motion: reduce) {
+  .t7-worlds .world-card { transition: none; }
+  .t7-worlds .world-card:hover { transform: none; }
+  .t7-worlds .world-card:hover::before { height: 4px; }
+}
+
+/* ---- B1 reflow (≥901px desktop already handled; tighten mid widths) ---- */
+@media (max-width: 1000px) {
+  .t7-worlds .worlds-grid { grid-template-columns: 1fr 1fr; }
+}
+/* D3 (AT-D7): at phone widths the worlds grid must be ONE column. The generic
+   `.worlds-grid` 1-col rule in the WP002 block (≤640) has lower specificity than
+   the 2-col `.t7-worlds .worlds-grid` rule above, so it was being out-specified
+   and the grid stayed 2-col @375. Match specificity here AND place after the
+   1000px rule so both specificity and source order favor 1-col at ≤640. */
+@media (max-width: 640px) {
+  .t7-worlds .worlds-grid { grid-template-columns: 1fr; }
+}
+/* ============================================================
+   P009-WP003 · B2 — Systems / Services / Bridges / Unless
+   Matches team_35 Precision Mockup (README §4–§7). Scoped under
+   the B1 section wrappers (.t7-systems / .t7-services / .t7-bridges
+   / .unless-lockup). Inserted ABOVE the protected WP002 block.
+   ============================================================ */
+
+/* ---- Shared section head (mirrors B1 .wi-eyebrow/.wi-title/.wi-lede) ---- */
+.t7-sec-head { margin: 0 0 var(--s-4, 48px); max-width: 66ch; }
+.t7-sec-head .t7-eyebrow {
+  display: inline-flex; align-items: baseline; gap: 10px; margin: 0 0 14px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px; font-weight: 500; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--w-soil-deep);
+}
+.t7-sec-head .t7-eyebrow .num { color: var(--ink-soft); }
+.t7-sec-head .t7-sec-title {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 700;
+  font-size: clamp(28px, 3.4vw, 44px); line-height: 1.1;
+  letter-spacing: -.015em; margin: 0 0 12px; color: var(--ink);
+  text-wrap: balance;
+}
+/* canonical hand-drawn wavy underline (mockup .under, #c46a3e) */
+.t7-worlds .wi-title .under,
+.t7-sec-head .t7-sec-title .under {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 8'><path d='M2 5 Q 50 1 100 4 T 198 5' stroke='%23c46a3e' stroke-width='2.6' fill='none' stroke-linecap='round'/></svg>");
+  background-repeat: no-repeat; background-position: bottom right;
+  background-size: 100% .32em; padding-bottom: .14em;
+}
+.t7-sec-head .t7-sec-title em { color: var(--spark); font-style: normal; }
+.t7-sec-head .t7-sec-lede {
+  font-family: "Assistant", sans-serif;
+  font-size: clamp(16px, 1.5vw, 19px); line-height: 1.55;
+  color: var(--ink-soft); margin: 0; max-width: 60ch; text-wrap: balance;
+}
+
+/* ════ SYSTEMS — SFA + tiktrack as full-width product rows ════ */
+.t7-systems .systems-row {
+  display: grid; grid-template-columns: 1fr;
+  gap: clamp(20px, 3vw, 30px); align-items: stretch;
+}
+.t7-systems .sys-card {
+  position: relative; display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  grid-template-areas: "spine spine" "body media";
+  align-items: stretch;
+  background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--radius-l, 20px); overflow: hidden;
+  box-shadow: var(--shadow-s); text-decoration: none; color: inherit;
+  transition: transform .18s, box-shadow .18s;
+}
+.t7-systems .sys-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-l); }
+.t7-systems .sys-card .spine {
+  grid-area: spine; height: 6px;
+  background: linear-gradient(to left, var(--w-code), var(--w-code-deep));
+}
+.t7-systems .sys-card.code .spine { background: linear-gradient(to left, var(--w-code), var(--w-code-deep)); }
+.t7-systems .sys-card.know .spine { background: linear-gradient(to left, var(--w-know), var(--w-know-deep)); }
+.t7-systems .sys-card .media {
+  grid-area: media; min-height: 248px; height: 100%; position: relative;
+  aspect-ratio: auto;
+}
+.t7-systems .sys-card .media > img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+/* SFA: teal/code panel — temporary branded demo SVG on paper, framed (P009-WP004) */
+.t7-systems .sys-card.code .sys-shot { background: var(--w-code-deep); }
+.t7-systems .sys-card.code .sys-shot.demo { background: var(--paper); }
+.t7-systems .sys-card .sys-shot.demo > img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: top center; display: block;
+}
+/* tiktrack: dark know panel — branded demo SVG fills the media area */
+.t7-systems .sys-card.know .sys-shot.tik {
+  background: #3a2417; display: block;
+}
+.t7-systems .sys-card.know .sys-shot.tik > img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center; display: block;
+}
+.t7-systems .sys-card .shot-tag {
+  position: absolute; z-index: 2;
+  inset-block-end: 11px; inset-inline-start: 13px;
+  font-family: "JetBrains Mono", monospace; font-size: 10px;
+  letter-spacing: .05em;
+  color: rgba(245,243,236,.9);
+  background: rgba(18,17,15,.42); padding: 4px 9px; border-radius: 5px;
+}
+.t7-systems .sys-card .body {
+  grid-area: body; padding: clamp(26px, 3vw, 42px);
+  display: flex; flex-direction: column; gap: 12px; flex: 1;
+}
+.t7-systems .sys-card .syslabel {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  letter-spacing: .1em; text-transform: uppercase; font-weight: 500;
+  color: var(--w-code-deep);
+}
+.t7-systems .sys-card.code .syslabel { color: var(--w-code-deep); }
+.t7-systems .sys-card.know .syslabel { color: var(--w-know-deep); }
+.t7-systems .sys-card .syslabel svg { width: 18px; height: 18px; }
+.t7-systems .sys-card h3 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 700;
+  font-size: clamp(24px, 2.6vw, 30px); line-height: 1.1; margin: 0;
+}
+.t7-systems .sys-card p {
+  font-family: "Assistant", sans-serif; font-size: 15.5px;
+  line-height: 1.5; color: var(--ink-soft); margin: 0; max-width: 46ch;
+  text-wrap: pretty;
+}
+.t7-systems .sys-card .row {
+  display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
+  margin-top: auto; padding-top: 6px;
+}
+.t7-systems .sys-card .action {
+  font-family: "Assistant", sans-serif; font-weight: 600; font-size: 15.5px;
+  display: inline-flex; gap: 7px; align-items: center; color: var(--w-code-deep);
+}
+.t7-systems .sys-card.code .action { color: var(--w-code-deep); }
+.t7-systems .sys-card.know .action { color: var(--w-know-deep); }
+.t7-systems .sys-card .action::after { content: "←"; }
+
+/* ════ SERVICES — horizontal scroll-snap carousel ════ */
+.t7-services.services-end { background: var(--paper-2); }
+.t7-services .t7-sec-head .t7-sec-title { white-space: nowrap; }
+.t7-services .products-grid.carousel {
+  display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
+  gap: clamp(16px, 2vw, 22px); padding-bottom: 6px;
+}
+.t7-services .products-grid.carousel > .product-card {
+  flex: 0 0 clamp(240px, 28%, 302px); scroll-snap-align: start;
+}
+.t7-services .product-card {
+  display: flex; flex-direction: column; height: 100%;
+  background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--radius-m, 14px); overflow: hidden;
+  box-shadow: var(--shadow-s); text-decoration: none; color: inherit;
+  transition: transform .18s, box-shadow .18s;
+}
+.t7-services .product-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-l); }
+.t7-services .product-card .pimg { aspect-ratio: 1; position: relative; }
+.t7-services .product-card .pimg > img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+.t7-services .product-card .pbody {
+  padding: 16px 18px 18px; display: flex; flex-direction: column;
+  gap: 7px; flex: 1;
+}
+.t7-services .product-card .svc-ic {
+  width: 30px; height: 30px; color: var(--w-soil-deep);
+}
+.t7-services .product-card .svc-ic svg { width: 100%; height: 100%; }
+.t7-services .product-card h3 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 700;
+  font-size: 19px; line-height: 1.2; margin: 0;
+}
+.t7-services .product-card .pmeta {
+  font-family: "Assistant", sans-serif; font-size: 13.5px;
+  line-height: 1.45; color: var(--ink-soft); margin: 0;
+}
+.t7-services .product-card .add {
+  margin-top: auto; padding-top: 10px;
+  font-family: "JetBrains Mono", monospace; font-size: 11.5px;
+  letter-spacing: .04em; text-transform: uppercase;
+  color: var(--w-know-deep);
+}
+
+/* ---- carousel browse row (shared with Projects; matches nb-carousel.js) ---- */
+.t7-services .proj-browse { display: flex; align-items: center; gap: 12px; margin-top: 18px; }
+.t7-services .proj-browse .pb-arrow {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid var(--line); background: var(--paper);
+  cursor: pointer; font-size: 16px; color: var(--ink);
+  display: grid; place-items: center;
+  transition: background .15s, color .15s;
+}
+.t7-services .proj-browse .pb-arrow:hover { background: var(--ink); color: var(--paper); }
+.t7-services .proj-browse .proj-more {
+  margin-inline-start: auto;
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none;
+  border-bottom: 1.5px solid var(--ink); padding-bottom: 2px;
+}
+
+/* ════ BRIDGES — dual-world cards on a wash band ════ */
+.t7-bridges.bridges-band {
+  background:
+    radial-gradient(130% 90% at 12% 0%, var(--soil-wash, #eef0e0), transparent 46%),
+    radial-gradient(130% 90% at 88% 100%, var(--code-wash, #d8e6e6), transparent 46%),
+    var(--paper-2);
+}
+.t7-bridges .bridges-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: clamp(18px, 2vw, 24px); align-items: stretch;
+}
+.t7-bridges .bridge-card {
+  position: relative; display: flex; flex-direction: column;
+  background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--radius-l, 20px); overflow: hidden;
+  text-decoration: none; color: inherit;
+  transition: transform .18s, box-shadow .18s;
+}
+.t7-bridges .bridge-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-l); }
+.t7-bridges .bridge-card .spine {
+  height: 6px;
+  background: linear-gradient(to left, var(--bridge-a) 0 50%, var(--bridge-b) 50% 100%);
+}
+.t7-bridges .bridge-card .media { aspect-ratio: 16/9; position: relative; }
+.t7-bridges .bridge-card .media > img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+.t7-bridges .bridge-card .media .seal {
+  position: absolute; inset-block-end: -15px; inset-inline-start: 24px;
+  width: 46px; height: 46px; border-radius: 50%;
+  background: var(--paper); display: grid; place-items: center;
+  box-shadow: var(--shadow-s); z-index: 2;
+  transition: transform .3s cubic-bezier(.34, 1.56, .64, 1);
+}
+.t7-bridges .bridge-card:hover .media .seal { transform: translateY(-4px) rotate(-9deg); }
+.t7-bridges .bridge-card .media .seal svg { width: 24px; height: 24px; }
+.t7-bridges .bridge-card .body {
+  padding: 26px 24px 24px; display: flex; flex-direction: column;
+  gap: 11px; flex: 1;
+}
+.t7-bridges .bridge-card .conn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: "JetBrains Mono", monospace; font-size: 11.5px;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft);
+}
+.t7-bridges .bridge-card .conn b { font-weight: 600; color: var(--ink); }
+.t7-bridges .bridge-card .conn .d { display: inline-flex; gap: 4px; }
+.t7-bridges .bridge-card .conn .d i { width: 8px; height: 8px; border-radius: 50%; }
+.t7-bridges .bridge-card h3 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 700;
+  font-size: 22px; line-height: 1.2; margin: 0;
+  text-decoration: underline; text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px; text-decoration-color: rgba(31,30,28,.32);
+}
+.t7-bridges .bridge-card .lede {
+  font-family: "Assistant", sans-serif; font-size: 15px;
+  line-height: 1.5; color: var(--ink-soft); margin: 0; text-wrap: pretty;
+}
+.t7-bridges .bridge-card .more {
+  margin-top: auto; padding-top: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 11.5px;
+  letter-spacing: .05em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none;
+  display: inline-flex; gap: 6px;
+}
+.t7-bridges .bridge-card .more::after { content: "←"; }
+
+/* ════ UNLESS LOCKUP — dark band ════ */
+.unless-lockup {
+  background: var(--ink); color: var(--paper);
+  padding-block: clamp(52px, 6.5vw, 100px);
+  position: relative; overflow: hidden;
+}
+.unless-lockup .inner {
+  display: block;
+}
+.unless-lockup .word {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 900;
+  font-size: clamp(64px, 11vw, 168px); line-height: .9;
+  letter-spacing: -.045em; color: var(--paper); margin: 0 0 18px; white-space: nowrap;
+}
+.unless-lockup .word .pd { color: var(--spark); display: inline-block; }
+.unless-lockup .gloss {
+  border-inline-start: none;
+  padding-inline-start: 0; max-width: 60ch;
+}
+.unless-lockup .he {
+  font-family: "Assistant", sans-serif; font-style: normal; font-weight: 500;
+  font-size: clamp(15px, 1.5vw, 18px); line-height: 1.5;
+  color: rgba(245, 243, 236, .62); margin: 0 0 8px; max-width: 48ch;
+  text-wrap: pretty;
+}
+.unless-lockup .he em { color: var(--spark); font-style: normal; font-weight: 700; }
+.unless-lockup .he .ul-spark {
+  display: inline-block; width: .82em; height: .82em;
+  color: var(--spark); vertical-align: -.04em; margin-inline: .18em;
+}
+.unless-lockup .he .ul-spark svg { width: 100%; height: 100%; }
+.unless-lockup .src {
+  font-family: "JetBrains Mono", monospace; font-size: 11.5px;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(245, 243, 236, .42);
+}
+
+/* ---- B2 motion (gated to restrained baseline + reduced-motion-safe) ---- */
+@media (prefers-reduced-motion: no-preference) {
+  .unless-lockup .word .pd { animation: nb-bob 3.2s ease-in-out infinite; }
+}
+@keyframes nb-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-.07em); } }
+
+/* ---- B2 responsive reflow ---- */
+@media (max-width: 980px) {
+  .t7-bridges .bridges-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 760px) {
+  .t7-bridges .bridges-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) {
+  .t7-systems .sys-card {
+    grid-template-columns: 1fr;
+    grid-template-areas: "spine" "media" "body";
+  }
+  .t7-systems .sys-card .media { min-height: 180px; }
+  .unless-lockup .inner { grid-template-columns: 1fr; }
+  .unless-lockup .gloss {
+    border-inline-start: none; padding: 0;
+  }
+}
+@media (max-width: 600px) {
+  .t7-services .t7-sec-head .t7-sec-title { white-space: normal; }
+}
+/* touch: suppress hover lift, give active feedback */
+@media (hover: none) {
+  .t7-systems .sys-card:active,
+  .t7-services .product-card:active,
+  .t7-bridges .bridge-card:active { transform: scale(0.98); }
+}
+
+/* ============================================================
+   P009-WP003 — B3: Projects carousel · Manifesto · Final-CTA
+   (team_35 Precision Mockup §8 / §9 / §10). RTL logical props.
+   Scoped under .t7-projects / .manifesto / .final-cta so these
+   override the OLD bare-class rules earlier in the file AND beat
+   the WP002 block below at shared breakpoints. Inserted ABOVE the
+   protected WP002 mobile block.
+   ============================================================ */
+
+/* ════ PROJECTS — horizontal scroll-snap browse carousel ════ */
+.t7-projects .projects-row {
+  display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
+  gap: clamp(16px, 2vw, 24px); padding-bottom: 6px; align-items: stretch;
+}
+.t7-projects .projects-row > .proj-card {
+  flex: 0 0 clamp(258px, 30%, 330px); scroll-snap-align: start;
+}
+.t7-projects .proj-card {
+  display: flex; flex-direction: column; height: 100%;
+  background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--radius-m, 14px); overflow: hidden;
+  text-decoration: none; color: inherit;
+  transition: transform .18s, box-shadow .18s;
+}
+.t7-projects .proj-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-m); }
+.t7-projects .proj-card .ph { aspect-ratio: 16/10; position: relative; }
+.t7-projects .proj-card .ph > img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+.t7-projects .proj-card .body {
+  padding: 20px; display: flex; flex-direction: column; gap: 9px; flex: 1;
+}
+.t7-projects .proj-card .scope-row {
+  display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  font-family: "JetBrains Mono", monospace; font-size: 10.5px;
+  letter-spacing: .08em; text-transform: uppercase;
+}
+.t7-projects .proj-card .scope { padding: 3px 9px; border-radius: 100px; font-weight: 600; }
+.t7-projects .proj-card .scope.client { background: var(--paper-3); color: var(--ink); }
+.t7-projects .proj-card .scope.venture { background: var(--w-soil); color: var(--paper); }
+.t7-projects .proj-card h3 {
+  font-family: "Frank Ruhl Libre", serif; font-size: 21px; font-weight: 700;
+  margin: 0; line-height: 1.18;
+}
+.t7-projects .proj-card p {
+  font-family: "Assistant", sans-serif; font-size: 15px; line-height: 1.5;
+  color: var(--ink-soft); margin: 0; text-wrap: pretty;
+}
+.t7-projects .proj-card .meta {
+  font-family: "JetBrains Mono", monospace; font-size: 11.5px;
+  color: var(--ink-soft); letter-spacing: .03em;
+  display: flex; gap: 8px; align-items: center; margin-top: auto;
+}
+/* stage-stamp pills — mapped to nb_stage_stamp() class names (.stage-<stage>) */
+.t7-projects .stage-stamp {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: "JetBrains Mono", monospace; font-size: 10.5px;
+  letter-spacing: .07em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 100px; font-weight: 600; margin: 0;
+}
+.t7-projects .stage-stamp::before {
+  content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor;
+}
+.t7-projects .stage-stamp.stage-live { background: var(--paper); color: var(--w-soil-deep); border: 1px solid var(--w-soil-deep); }
+.t7-projects .stage-stamp.stage-seeking-partners { background: var(--paper); color: var(--spark); border: 1px solid var(--spark); }
+.t7-projects .stage-stamp.stage-legacy { background: var(--paper-2); color: var(--ink); border: 1px solid var(--ink-soft); }
+@media (prefers-reduced-motion: no-preference) {
+  .t7-projects .stage-stamp.stage-seeking-partners::before { animation: nb-stamp-pulse 2.4s ease-in-out infinite; }
+}
+@keyframes nb-stamp-pulse { 0%,100% { opacity: 1; } 50% { opacity: .3; } }
+/* browse controls (JS: .proj-browse .pb-arrow scrolls .projects-row) */
+.t7-projects .proj-browse { display: flex; align-items: center; gap: 12px; margin-top: 18px; }
+.t7-projects .proj-browse .pb-arrow {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid var(--line); background: var(--paper); cursor: pointer;
+  font-size: 16px; color: var(--ink); display: grid; place-items: center;
+  transition: background .15s, color .15s;
+}
+.t7-projects .proj-browse .pb-arrow:hover { background: var(--ink); color: var(--paper); }
+.t7-projects .proj-browse .proj-more {
+  margin-inline-start: auto;
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none;
+  border-bottom: 1.5px solid var(--ink); padding-bottom: 2px;
+}
+
+/* ════ MANIFESTO — dark band, portrait + basket emblem + watermark ════ */
+.manifesto {
+  position: relative; overflow: hidden;
+  background: var(--ink); color: var(--paper);
+  padding-block: clamp(52px, 6.5vw, 96px);
+}
+.manifesto .mf-bg { position: absolute; inset: 0; pointer-events: none; }
+.manifesto .mf-bg img {
+  position: absolute; top: 50%; inset-inline-start: -7%;
+  transform: translateY(-50%); width: min(560px, 48vw); opacity: .055;
+}
+.manifesto .mf-grid {
+  position: relative; display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: clamp(28px, 4vw, 64px); align-items: center;
+}
+.manifesto .mf-media {
+  position: relative; border-radius: var(--radius-l, 20px);
+  aspect-ratio: 4/3; box-shadow: var(--shadow-l);
+}
+.manifesto .mf-media > img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  border-radius: var(--radius-l, 20px);
+}
+.manifesto .mf-emblem {
+  position: absolute; bottom: -22px; inset-inline-end: 24px;
+  width: 58px; height: 58px; border-radius: 50%; background: var(--ink);
+  display: grid; place-items: center;
+  box-shadow: 0 6px 18px -8px rgba(0, 0, 0, .5);
+}
+.manifesto .mf-emblem img { width: 38px; height: 38px; }
+.manifesto .t7-eyebrow.light {
+  display: inline-flex; align-items: baseline; gap: 10px; margin: 0 0 14px;
+  font-family: "JetBrains Mono", monospace; font-size: 12px; font-weight: 500;
+  letter-spacing: .14em; text-transform: uppercase; color: rgba(245, 243, 236, .7);
+}
+.manifesto .t7-eyebrow.light .num { color: rgba(245, 243, 236, .45); }
+.manifesto h2 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 900;
+  font-size: clamp(32px, 4.4vw, 60px); line-height: 1.04;
+  letter-spacing: -.02em; margin: 6px 0 18px; color: var(--paper);
+  text-wrap: balance;
+}
+.manifesto h2 em { color: var(--spark); font-style: normal; }
+.manifesto p {
+  font-family: "Assistant", sans-serif; font-size: clamp(16px, 1.5vw, 18.5px);
+  line-height: 1.65; color: rgba(245, 243, 236, .82);
+  margin: 0 0 14px; max-width: 54ch; text-wrap: pretty;
+}
+.manifesto p b { color: var(--paper); font-weight: 700; }
+.manifesto p em { color: #e08a5b; font-style: normal; font-weight: 600; }
+
+/* ════ FINAL CTA — light band, 4 small per-world path cards ════ */
+.t7-section.final-cta {
+  background: var(--paper-2);
+  padding-block: clamp(52px, 6.5vw, 92px);
+  border-top: 1px solid var(--line); border-bottom: 6px solid var(--ink);
+  text-align: start;
+}
+.final-cta .head { max-width: 60ch; margin: 0 0 var(--s-4, 48px); }
+.final-cta .head .t7-eyebrow {
+  display: inline-flex; align-items: baseline; gap: 10px; margin: 0 0 14px;
+  font-family: "JetBrains Mono", monospace; font-size: 12px; font-weight: 500;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--w-know-deep);
+}
+.final-cta .head .t7-eyebrow .num { color: var(--ink-soft); }
+.final-cta .head h2 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 900;
+  font-size: clamp(34px, 4.4vw, 60px); line-height: 1.02;
+  letter-spacing: -.02em; margin: 0 0 14px; color: var(--ink); text-wrap: balance;
+}
+.final-cta .head h2 em { color: var(--spark); font-style: normal; }
+.final-cta .head .intro {
+  font-family: "Assistant", sans-serif; font-size: clamp(16px, 1.6vw, 20px);
+  line-height: 1.55; color: var(--ink-soft); max-width: 52ch; margin: 0;
+}
+.final-cta .cta-paths {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: clamp(14px, 1.6vw, 18px); align-items: stretch;
+}
+.final-cta .cta-path {
+  position: relative; background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--radius-m, 14px); padding: 22px 20px;
+  display: flex; flex-direction: column; gap: 8px;
+  text-decoration: none; color: inherit; overflow: hidden;
+  transition: transform .18s, box-shadow .18s; min-height: 184px;
+}
+.final-cta .cta-path::before {
+  content: ""; position: absolute; top: 0; inset-inline: 0; height: 4px;
+  background: var(--ac);
+}
+.final-cta .cta-path:hover { transform: translateY(-3px); box-shadow: var(--shadow-m); }
+.final-cta .cta-path .ci { width: 26px; height: 26px; color: var(--acd); }
+.final-cta .cta-path .label {
+  font-family: "JetBrains Mono", monospace; font-size: 10px;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft);
+}
+.final-cta .cta-path h3 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 700;
+  font-size: clamp(20px, 2vw, 24px); line-height: 1.1; margin: 0;
+}
+.final-cta .cta-path p {
+  font-family: "Assistant", sans-serif; font-size: 13.5px;
+  line-height: 1.45; color: var(--ink-soft); margin: 0;
+}
+.final-cta .cta-path .action {
+  margin-top: auto; padding-top: 8px;
+  font-family: "Assistant", sans-serif; font-weight: 600; font-size: 14px;
+  color: var(--acd); display: inline-flex; align-items: center; gap: 7px;
+}
+.final-cta .cta-path .action::after { content: "←"; }
+.final-cta .cta-path.know { --ac: var(--w-know); --acd: var(--w-know-deep); }
+.final-cta .cta-path.code { --ac: var(--w-code); --acd: var(--w-code-deep); }
+.final-cta .cta-path.soil { --ac: var(--w-soil); --acd: var(--w-soil-deep); }
+
+/* ---- B3 responsive reflow (scoped → beats WP002 block below) ---- */
+@media (max-width: 1000px) {
+  .final-cta .cta-paths { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 860px) {
+  .manifesto .mf-grid { grid-template-columns: 1fr; }
+  .manifesto .mf-media { aspect-ratio: 16/10; order: -1; }
+}
+@media (max-width: 680px) {
+  .final-cta .cta-paths { grid-template-columns: 1fr; }
+}
+@media (hover: none) {
+  .t7-projects .proj-card:active,
+  .final-cta .cta-path:active { transform: scale(0.98); }
+}
+
+/* Guard: the WP002 mobile block below targets the OLD .world-card (text-only
+   card with its own padding/min-height). My B1 card is a media+body card with
+   zero container padding. These higher-specificity rules (.t7-worlds .world-card)
+   keep the new card intact across the WP002 breakpoints without editing that
+   protected block. */
+@media (max-width: 900px) {
+  .t7-worlds .world-card { min-height: 0; padding: 0; }
+}
+@media (max-width: 560px) {
+  .hero-foot { gap: 14px; }
+  .hero-poster .hp-kicker { gap: 6px 14px; }
+  /* strengthen scrim when content stacks tight over a short hero */
+  .hero-poster .hp-scrim {
+    background: linear-gradient(to top,
+      rgba(18, 17, 15, .92) 8%, rgba(18, 17, 15, .66) 48%, rgba(18, 17, 15, .3) 100%);
+  }
+}
+
+/* ============================================================
+   NORMALIZED SECTION RHYTHM — P009-WP004 v7 (SPACING_CHANGELOG)
+   The client tightened the vertical rhythm to ~50px desktop and the
+   live build was ~2x too loose (.t7-section was clamp(56px,7vw,112px),
+   per-section paddings ranged 48–140px). Replace the whole rhythm with
+   the token system so every section is uniform. Tokens (--sec-y /
+   --sec-y-lg) are defined site-wide in shell.css :root.
+   This block sits ABOVE the protected WP002 mobile block and after the
+   washes, so it wins the cascade over the earlier scattered paddings.
+   ============================================================ */
+
+/* normal sections → ~50px desktop, mobile-safe (min 38px) */
+.t7-section {
+  padding-block: var(--sec-y);
+}
+/* drop the looser per-section clamps so the rhythm is uniform */
+.t7-section.t7-systems,
+.t7-section.t7-services,
+.t7-section.t7-bridges,
+.t7-section.t7-projects,
+.t7-section.final-cta {
+  padding-block: var(--sec-y);
+}
+.t7-section.t7-bridges.bridges-band { border-top: none; }
+
+/* big dark bands get the larger rhythm token */
+.manifesto,
+.unless-lockup {
+  padding-block: var(--sec-y-lg);
+}
+
+/* worlds sits tight under the hero (mockup .worlds-section) */
+.t7-section.t7-worlds {
+  padding-block: 0 var(--s-2, 24px);
+}
+
+/* systems = inset emphasis block inside the 1240 wrap (mockup max-width:1050) */
+.t7-systems > .t7-wrap {
+  max-width: 1050px; margin-inline: auto;
+}
+
+/* eyebrow descriptor label — v7: a touch larger, medium weight
+   (live markup: .t7-eyebrow / .wi-eyebrow > non-.num span) */
+.t7-eyebrow > span:not(.num),
+.wi-eyebrow > span:not(.num) {
+  font-size: 13px; font-weight: 500;
+}
+
+/* ============================================================
+   WATERCOLOR WASHES — P009-WP004 (team_35 package v6)
+   Enhancement layer over the existing CSS gradient/paper baseline.
+   Decorative ::before, opacity .08–.11, behind all content.
+   Section wrappers get position:relative + overflow:hidden to
+   contain the wash; .t7-wrap is raised to z-index:1 so the
+   gradient baseline (set on the wrapper background) shows through
+   the wash and all text/media sits above. RTL-neutral (symmetric).
+   Responsive: -sm ≤640w · -lg default/1x · -xl 2x/retina.
+   Inserted ABOVE the protected WP002 mobile block.
+   ============================================================ */
+
+/* Raise section content above the decorative wash layer */
+.t7-worlds  > .t7-wrap,
+.t7-systems > .t7-wrap,
+.t7-bridges > .t7-wrap { position: relative; z-index: 1; }
+
+.t7-worlds,
+.t7-systems,
+.t7-bridges.bridges-band { position: relative; overflow: hidden; }
+
+/* Shared wash defaults for the decorative ::before layers */
+.t7-worlds::before,
+.t7-systems::before,
+.t7-bridges.bridges-band::before {
+  content: ""; position: absolute; inset: 0; z-index: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* ── BRIDGES — C4: revert to mockup radial-gradient band (no watercolor wash).
+   Bridges-band background already set on the element; ::before suppressed. */
+.t7-bridges.bridges-band::before { content: none; }
+
+/* ── WORLDS — faint neutral tri-world blend behind the cards region ──
+   ~0.08 so it never competes with the negentropy backdrop / paper glow
+   in .worlds-intro (which paint above this layer at z-index 0/-1 within
+   their own positioned context). Soil wash chosen as the neutral base. */
+.t7-worlds::before {
+  opacity: .08;
+  background-image:
+    image-set(
+      url(../img/washes/wash-soil-lg.webp) type("image/webp"),
+      url(../img/washes/wash-soil-lg.jpg)  type("image/jpeg"));
+  background-image: url(../img/washes/wash-soil-lg.jpg); /* fallback */
+}
+@media (max-width: 640px) {
+  .t7-worlds::before {
+    background-image:
+      image-set(
+        url(../img/washes/wash-soil-sm.webp) type("image/webp"),
+        url(../img/washes/wash-soil-sm.jpg)  type("image/jpeg"));
+    background-image: url(../img/washes/wash-soil-sm.jpg); /* fallback */
+  }
+}
+
+/* ── SYSTEMS — subtle know wash; kept low (~0.08) so it never muddies
+   the duotone product media in the sys-cards. ── */
+.t7-systems::before {
+  opacity: .08;
+  background-image:
+    image-set(
+      url(../img/washes/wash-know-lg.webp) type("image/webp"),
+      url(../img/washes/wash-know-lg.jpg)  type("image/jpeg"));
+  background-image: url(../img/washes/wash-know-lg.jpg); /* fallback */
+}
+@media (max-width: 640px) {
+  .t7-systems::before {
+    background-image:
+      image-set(
+        url(../img/washes/wash-know-sm.webp) type("image/webp"),
+        url(../img/washes/wash-know-sm.jpg)  type("image/jpeg"));
+    background-image: url(../img/washes/wash-know-sm.jpg); /* fallback */
+  }
+}
+
+/* ===== MOBILE — P009-WP002 (team_35 spec §8) ===== */
+/*
+ * Append-only. Literal breakpoints from spec (900px / 640px).
+ * Selectors reconciled against front-page.php (WP LOD400 markup),
+ * which renders the spec's prototype classes under different names:
+ *   spec .featured-projects   -> markup .projects-grid
+ *   spec .fp-card.fp-large     -> markup .projects-grid .proj-card:first-child
+ *   spec .recent-posts (§06)   -> markup .posts-grid (canonical, mockup parity)
+ *   spec .rp-card.feat          -> markup .rp-card.feat (featured 2×2 card)
+ *   spec .unless-block.ribbon  -> markup .unless-ribbon (.ribbon-inner -> .t7-wrap p)
+ *   spec .cta-paths/.cta-path  -> markup .final-cta .cta-paths (button row, not cards)
+ *   spec .final-cta-home       -> markup .final-cta
+ * Spec-literal selectors are also included so the file stays correct
+ * if the prototype markup is ever used. RTL: logical props only.
+ */
+
+/* ---- Hero (Statement variant) — spec §8 ---- */
+@media (max-width: 900px) {
+  .hero-statement { padding-block: 56px 40px; }
+  .hero-statement .grid { grid-template-columns: 1fr; gap: 32px; }
+  .hero-statement h1 { font-size: clamp(34px, 7vw, 48px); }
+  .hero-statement .lede { font-size: 16px; }
+  .hero-statement svg { max-width: 240px; }
+  .hero-statement .meta-row { gap: 16px; flex-direction: column; }
+  .hero-statement .meta-row span { font-size: 13px; }
+}
+
+/* ---- Worlds section (3 cards) — spec §8 ---- */
+@media (max-width: 900px) {
+  .worlds-grid { grid-template-columns: 1fr 1fr; }
+  .world-card { min-height: 240px; padding: 24px; }
+  .world-card h3,
+  .world-card .world-name { font-size: clamp(28px, 6vw, 36px); } /* adapted: markup uses .world-name */
+}
+@media (max-width: 640px) {
+  .worlds-grid { grid-template-columns: 1fr; }
+}
+
+/* ---- Featured projects — spec §8 (adapted to .projects-grid / .proj-card) ---- */
+@media (max-width: 900px) {
+  .featured-projects,
+  .projects-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .fp-card.fp-large,
+  .projects-grid .proj-card:first-child { grid-column: 1 / -1; grid-row: auto; }
+  .fp-card.fp-large h3,
+  .projects-grid .proj-card:first-child h3 { font-size: 24px; }
+}
+@media (max-width: 640px) {
+  .featured-projects,
+  .projects-grid { grid-template-columns: 1fr; }
+  .fp-card.fp-large,
+  .projects-grid .proj-card:first-child { grid-column: 1; }
+}
+
+/* ---- Recent posts §06 responsive lives in the canonical .posts-grid block
+ *      above; legacy .posts-grid-4 / .post-card.post-square breakpoints retired
+ *      2026-06-02. ---- */
+
+/* ---- Unless ribbon — spec §8 (adapted to .unless-ribbon / .t7-wrap p) ---- */
+@media (max-width: 900px) {
+  .unless-block.ribbon,
+  .unless-ribbon { padding: 36px var(--gutter-mobile, 20px); }
+  .unless-block.ribbon .ribbon-inner { grid-template-columns: 1fr; gap: 16px; }
+  .unless-block.ribbon .quote,
+  .unless-ribbon .t7-wrap p { font-size: clamp(28px, 7vw, 40px); }
+  .unless-block.ribbon .anno { font-size: 10px; }
+}
+
+/* ---- Final CTA paths — spec §8 (markup .cta-paths is a button row) ---- */
+@media (max-width: 900px) {
+  .cta-paths { grid-template-columns: 1fr; gap: 16px; }
+  .cta-path { padding: 28px; }
+  .cta-path h3 { font-size: clamp(22px, 5vw, 28px); }
+  .final-cta-home h2,
+  .final-cta h2 { font-size: clamp(34px, 8vw, 48px); } /* adapted: markup uses .final-cta */
+}
+/* markup CTA is a flex button row; stack full-width on mobile */
+@media (max-width: 640px) {
+  .final-cta .cta-paths { flex-direction: column; align-items: stretch; }
+  .final-cta .cta-paths .btn { text-align: center; }
+}
+
+/* ---- §13 touch guards: home cards have desktop hover transforms ----
+ * .world-card, .proj-card/.fp-card, .cta-path, .rp-card h4 all use :hover.
+ * Suppress hover transform on touch; provide active scale-down feedback. */
+@media (hover: none) {
+  .world-card:active,
+  .fp-card:active,
+  .proj-card:active,
+  .cta-path:active { transform: scale(0.98); }
+}

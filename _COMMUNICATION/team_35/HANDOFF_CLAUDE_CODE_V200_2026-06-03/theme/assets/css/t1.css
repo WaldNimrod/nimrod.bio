@@ -1,0 +1,717 @@
+/* t1.css — T1 World pages (Variant C). Extracted from T1-styles.css minus shell-nav/footer.
+   WP: NB-S002-P003-WP002 | nimrod-bio-2026 */
+
+/* ============================================================
+   T1 · World Page · אדמה — Stage 3 prototype
+   Builds on brand/system.css v3.3. World = SOIL family throughout.
+   3 variants live in one file:
+     [data-variant="a"] — Conservative (editorial)
+     [data-variant="b"] — Balanced (magazine)
+     [data-variant="c"] — Experimental (strata · recursion)
+   Bridge signal switched via [data-bridge="diag"|"stripe"|"seam"]
+   ============================================================ */
+
+/* G-01 fix (P009-WP003): restore truncated :root wash tokens. These were orphaned
+   (no :root opener + missing --soil-wash) so all four world washes were undefined,
+   collapsing every strata gradient to flat paper ("sketch" look). team_35 §2. */
+:root {
+  --t1-max: 1240px;
+  --t1-gutter: clamp(20px, 4vw, 56px);
+  --soil-wash:  #eef0e0;
+  --soil-wash-2:#e3e6cf;
+  --know-wash:  #f4e5d6;
+  --code-wash:  #d8e6e6;
+}
+
+
+/* ============================================================
+   SHELL — top nav, variant switcher, footer
+   ============================================================ */
+.shell-links > a.is-active { color: var(--w-soil-deep); border-bottom-color: var(--w-soil-deep); }
+.shell-links a {
+  color: var(--ink-soft); text-decoration: none;
+  padding: 6px 0; border-bottom: 1.5px solid transparent;
+  transition: color .15s, border-color .15s;
+}
+.shell-links a:hover { color: var(--ink); }
+.shell-links a.is-active { color: var(--w-soil-deep); border-bottom-color: var(--w-soil-deep); }
+.shell-links a.contact {
+  color: var(--ink-soft); background: transparent;
+  padding: 6px 0; border-radius: 0;
+  border: none; border-bottom: 1.5px solid transparent;
+  font-weight: 500; font-size: 13.5px;
+  white-space: nowrap;
+  transition: color .15s, border-color .15s;
+}
+.shell-links a.contact:hover { color: var(--ink); border-bottom-color: var(--ink-soft); }
+
+/* variant switcher (above-fold strip) */
+.variant-bar {
+  background: var(--paper-2); border-bottom: 1px solid var(--line);
+  font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--ink-soft);
+  letter-spacing: .04em;
+}
+.variant-bar-inner {
+  max-width: var(--t1-max); margin: 0 auto;
+  padding: 9px var(--t1-gutter);
+  display: flex; align-items: center; gap: 14px; flex-wrap: nowrap;
+  white-space: nowrap;
+}
+.variant-bar .stage-tag {
+  background: var(--ink); color: var(--paper); padding: 3px 9px; border-radius: 100px;
+  letter-spacing: .1em; font-weight: 500; flex-shrink: 0;
+}
+.variant-bar .hint { color: var(--ink-soft); overflow: hidden; text-overflow: ellipsis; min-width: 0; flex: 1; }
+.variant-bar .pills { display: flex; gap: 6px; margin-inline-start: auto; flex-shrink: 0; }
+.variant-bar .vp {
+  padding: 5px 10px; border-radius: 100px; border: 1px solid var(--line);
+  background: var(--paper); cursor: pointer; color: var(--ink-soft);
+  font-family: inherit; font-size: 11px; letter-spacing: .04em;
+  transition: background .12s, color .12s, border-color .12s;
+  white-space: nowrap;
+}
+.variant-bar .vp:hover { color: var(--ink); }
+.variant-bar .vp.is-on { background: var(--w-soil-deep); color: #fff; border-color: var(--w-soil-deep); }
+.variant-bar .vp small { opacity: .75; margin-inline-start: 6px; font-weight: 400; }
+@media (max-width: 760px) {
+  .variant-bar .hint { display: none; }
+}
+
+/* ───── shared section header ───── */
+.t1-wrap { max-width: var(--t1-max); margin: 0 auto; padding-inline: var(--t1-gutter); }
+.t1-section { padding-block: clamp(48px, 6vw, 88px); border-top: 1px solid var(--line); }
+.t1-section:first-of-type { border-top: none; }
+
+.s-eyebrow {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--w-soil-deep); margin-bottom: 14px;
+}
+.s-eyebrow .num { color: var(--ink-soft); margin-inline-end: 8px; }
+
+.s-title {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.15; margin: 0 0 12px; font-weight: 700;
+  letter-spacing: -.012em;
+}
+.s-lede {
+  font-family: "Frank Ruhl Libre", serif;
+  font-style: italic; font-weight: 500;
+  font-size: clamp(18px, 1.8vw, 22px);
+  line-height: 1.5; color: var(--ink-soft);
+  max-width: 62ch; margin: 0 0 32px;
+}
+
+/* "COPY · TBC" inline marker */
+.tbc {
+  display: inline-block;
+  font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: .08em;
+  background: var(--b-teach); color: var(--ink);
+  padding: 2px 7px; border-radius: 100px;
+  vertical-align: 1px; margin-inline-start: 6px;
+  text-transform: uppercase; font-weight: 500;
+}
+.tbc::before { content: "COPY · TBC · "; opacity: .55; }
+.tbc.note::before { content: "NOTE · "; opacity: .55; }
+
+
+/* ============================================================
+   IMAGES — intentional design-system placeholders
+   ============================================================ */
+.img-ph {
+  position: relative; overflow: hidden;
+  background: var(--paper-2);
+  background-image:
+    repeating-linear-gradient(135deg,
+      var(--paper-2) 0 18px,
+      var(--paper-3) 18px 36px);
+  display: grid; place-items: center;
+  border: 1px dashed rgba(91,72,58,.35);
+  border-radius: inherit;
+}
+.img-ph > img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.img-ph::after {
+  content: attr(data-cap);
+  position: absolute; left: 10px; bottom: 10px;
+  font-family: "JetBrains Mono", monospace; font-size: 10px;
+  background: rgba(31,30,28,.82); color: var(--paper);
+  padding: 4px 9px; border-radius: 3px;
+  letter-spacing: .04em; max-width: calc(100% - 20px);
+  pointer-events: none;
+}
+.img-ph[data-cap=""]::after, .img-ph.clean::after { display: none; }
+.img-ph .img-subj {
+  font-family: "Frank Ruhl Libre", serif;
+  font-style: italic; font-weight: 500;
+  font-size: clamp(15px, 1.5vw, 19px);
+  color: var(--soil); opacity: .75;
+  padding: 8px 20px; text-align: center;
+  background: rgba(245,243,236,.55);
+  border-radius: 6px;
+  max-width: 80%;
+}
+.img-ph.fail { } /* alias kept for back-compat */
+
+/* ============================================================
+   BRIDGE marker — controlled by [data-bridge]
+   ============================================================ */
+.bridge-card { position: relative; }
+
+/* default = "diag" (diagonal split) */
+.bridge-card[data-w="soil-know"] {
+  background-image: linear-gradient(135deg, var(--w-soil) 0 6px, transparent 6px);
+}
+/* DIAG — diagonal corner ribbon */
+body[data-bridge="diag"] .bridge-card::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(135deg,
+    var(--bridge-a, var(--w-soil)) 0 14px,
+    transparent 14px 100%);
+  pointer-events: none; border-radius: inherit;
+}
+body[data-bridge="diag"] .bridge-card::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(315deg,
+    var(--bridge-b, var(--w-know)) 0 14px,
+    transparent 14px 100%);
+  pointer-events: none; border-radius: inherit;
+}
+
+/* STRIPE — top dual stripe */
+body[data-bridge="stripe"] .bridge-card::before {
+  content: ""; position: absolute; top: 0; inset-inline: 0; height: 6px;
+  background: linear-gradient(to left,
+    var(--bridge-a, var(--w-soil)) 0 50%,
+    var(--bridge-b, var(--w-know)) 50% 100%);
+  border-radius: inherit; border-end-end-radius: 0; border-end-start-radius: 0;
+}
+body[data-bridge="stripe"] .bridge-card::after {
+  content: ""; position: absolute; bottom: 0; inset-inline: 0; height: 6px;
+  background: linear-gradient(to left,
+    var(--bridge-a, var(--w-soil)) 0 50%,
+    var(--bridge-b, var(--w-know)) 50% 100%);
+  border-radius: inherit; border-start-end-radius: 0; border-start-start-radius: 0;
+  opacity: .35;
+}
+
+/* SEAM — outlined edge with corner cut */
+body[data-bridge="seam"] .bridge-card {
+  border-color: var(--bridge-a, var(--w-soil));
+}
+body[data-bridge="seam"] .bridge-card::before {
+  content: ""; position: absolute; top: -1px; right: -1px;
+  width: 60px; height: 60px;
+  background: var(--bridge-b, var(--w-know));
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+/* ============================================================
+   CARDS — service / bridge / project / post
+   ============================================================ */
+.svc-card {
+  background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--radius-m); overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.svc-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-l); }
+.svc-card .strip {
+  height: 8px; background: var(--w-soil);
+}
+.svc-card .body { padding: 22px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+.svc-card h3 {
+  font-family: "Frank Ruhl Libre", serif; font-size: 22px; margin: 0;
+  font-weight: 700; line-height: 1.2;
+}
+.svc-card .lede { font-size: 14.5px; color: var(--ink-soft); line-height: 1.55; margin: 0; }
+.svc-card .meta {
+  display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: auto;
+  font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--ink-soft);
+  padding-top: 8px;
+}
+.svc-card.has-img .img-ph { aspect-ratio: 16/10; }
+
+/* anchor (hydro) card — double width, image left */
+.anchor-card {
+  grid-column: 1 / -1;
+  background: var(--paper); border: 1px solid var(--w-soil-deep);
+  border-radius: var(--radius-l); overflow: hidden;
+  display: grid; grid-template-columns: 1.05fr 1fr; min-height: 320px;
+  box-shadow: var(--shadow-m);
+}
+.anchor-card .img-ph { height: 100%; min-height: 320px; }
+.anchor-card .body { padding: clamp(28px, 4vw, 48px); display: flex; flex-direction: column; gap: 16px; align-self: center; }
+.anchor-card .tag-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.anchor-card .anchor-label {
+  font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--w-soil-deep);
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.anchor-card .anchor-label::before {
+  content: ""; width: 22px; height: 1.5px; background: var(--w-soil-deep);
+}
+.anchor-card h3 {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 700;
+  font-size: clamp(28px, 3vw, 38px); line-height: 1.15; margin: 0;
+}
+.anchor-card p { font-size: 16px; line-height: 1.6; color: var(--ink); margin: 0; max-width: 50ch; }
+.anchor-card .facts {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+  padding-top: 18px; border-top: 1px dashed var(--line);
+}
+.anchor-card .facts .k { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: .06em; color: var(--ink-soft); text-transform: uppercase; }
+.anchor-card .facts .v { font-family: "Frank Ruhl Libre", serif; font-size: 22px; font-weight: 700; color: var(--w-soil-deep); margin-top: 4px; }
+.anchor-card .links {
+  display: flex; gap: 16px; flex-wrap: wrap; padding-top: 6px;
+  font-family: "Assistant"; font-size: 14px;
+}
+.anchor-card .links a {
+  color: var(--w-soil-deep); text-decoration: none;
+  border-bottom: 1px solid var(--w-soil-deep);
+}
+
+/* bridge card */
+.bridge-card {
+  background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--radius-m); padding: 24px;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; gap: 12px;
+  text-decoration: none; color: inherit;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.bridge-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-l); }
+.bridge-card .tag-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.bridge-card .conn {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 10px;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft);
+}
+.bridge-card .conn .x { color: var(--ink); font-weight: 600; }
+.bridge-card h3 {
+  font-family: "Frank Ruhl Libre", serif; font-size: 22px;
+  margin: 0; font-weight: 700; line-height: 1.2;
+  text-decoration: underline; text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px; text-decoration-color: rgba(31,30,28,.32);
+}
+.bridge-card .lede { font-size: 15px; color: var(--ink-soft); line-height: 1.5; margin: 0; }
+.bridge-card .more {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  color: var(--ink); letter-spacing: .06em; text-transform: uppercase;
+  margin-top: auto; padding-top: 8px;
+  display: inline-flex; align-items: center; gap: 6px; text-decoration: none;
+}
+.bridge-card .more::after { content: "←"; }
+.bridge-card .stretch-stamp {
+  position: absolute; top: 14px; inset-inline-start: 14px;
+  font-family: "JetBrains Mono", monospace; font-size: 9px;
+  background: var(--spark); color: #fff; padding: 3px 7px;
+  border-radius: 3px; letter-spacing: .1em; text-transform: uppercase;
+  box-shadow: 2px 2px 0 var(--spark-ink);
+  z-index: 2;
+}
+
+/* project card */
+.proj-card {
+  background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--radius-m); overflow: hidden;
+  display: flex; flex-direction: column;
+  text-decoration: none; color: inherit;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.proj-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-l); }
+.proj-card .img-ph { aspect-ratio: 16/10; }
+.proj-card .body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 10px; }
+.proj-card h4 { font-family: "Frank Ruhl Libre", serif; font-size: 20px; margin: 0; font-weight: 700; }
+.proj-card .meta {
+  font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--ink-soft);
+  letter-spacing: .04em; display: flex; gap: 10px; flex-wrap: wrap;
+}
+.proj-card .stage {
+  font-family: "JetBrains Mono", monospace; font-size: 9px;
+  padding: 2px 7px; border-radius: 3px; letter-spacing: .1em; text-transform: uppercase;
+}
+.stage-live  { background: var(--w-soil); color: #fff; }
+.stage-pilot { background: var(--b-teach); color: var(--ink); }
+.stage-seeking-partners { background: var(--paper); color: var(--spark); border: 1px solid var(--spark); }
+.stage-legacy { background: var(--paper-2); color: var(--ink); border: 1px solid var(--ink-soft); }
+.stage-archived { background: var(--paper-3); color: var(--ink-soft); }
+.stage-concept { background: var(--paper-2); color: var(--ink); border: 1px dashed var(--ink-soft); }
+
+/* post card */
+.post-card {
+  display: grid; grid-template-columns: 80px 1fr;
+  gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--line);
+  text-decoration: none; color: inherit;
+}
+.post-card:hover h5 { color: var(--w-soil-deep); }
+.post-card .date {
+  font-family: "Frank Ruhl Libre", serif; font-size: 14px; line-height: 1.2;
+  color: var(--w-soil-deep); font-weight: 700;
+}
+.post-card .date b { display: block; font-size: 28px; font-weight: 900; line-height: 1; }
+.post-card h5 {
+  font-family: "Frank Ruhl Libre", serif; font-size: 19px; font-weight: 700;
+  margin: 0 0 6px; line-height: 1.3; transition: color .15s;
+}
+.post-card .meta {
+  font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--ink-soft);
+  letter-spacing: .04em; display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+/* ============================================================
+   VARIANT A — שמרני (editorial)
+   ============================================================ */
+.va-hero { padding-block: clamp(48px, 6vw, 96px); }
+.va-hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(28px, 4vw, 64px); align-items: center; }
+.va-hero h1 {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: clamp(60px, 9vw, 128px); line-height: .92;
+  margin: 0 0 22px; font-weight: 900; letter-spacing: -.025em;
+  color: var(--w-soil-deep);
+}
+.va-hero .tagline {
+  font-family: "Frank Ruhl Libre", serif; font-style: italic;
+  font-size: clamp(22px, 2.4vw, 30px); line-height: 1.4;
+  color: var(--ink); margin: 0 0 24px; max-width: 22ch; font-weight: 500;
+}
+.va-hero .intro {
+  font-size: 17px; line-height: 1.7; color: var(--ink-soft); max-width: 48ch; margin: 0;
+}
+.va-hero .intro em { color: var(--ink); font-style: italic; }
+.va-hero-img { aspect-ratio: 4/5; border-radius: var(--radius-l); }
+
+.va-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.va-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+/* ============================================================
+   VARIANT B — מאוזן (magazine)
+   ============================================================ */
+.vb-hero {
+  padding-block: clamp(56px, 7vw, 120px);
+  background:
+    radial-gradient(circle at 18% 30%, var(--soil-wash) 0%, transparent 55%),
+    radial-gradient(circle at 88% 70%, var(--soil-wash-2) 0%, transparent 50%),
+    var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.vb-hero-grid {
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px;
+  align-items: end;
+}
+.vb-hero h1 {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: clamp(72px, 11vw, 180px); line-height: .85;
+  margin: 0; font-weight: 900; letter-spacing: -.04em;
+  color: var(--w-soil-deep);
+}
+.vb-eyebrow {
+  font-family: "JetBrains Mono", monospace; font-size: 12px;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--w-soil); margin-bottom: 18px;
+  display: inline-flex; gap: 14px;
+}
+.vb-eyebrow .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--w-soil); margin-block: auto; }
+.vb-hero .quote {
+  font-family: "Frank Ruhl Libre", serif; font-size: 22px; line-height: 1.45;
+  color: var(--ink); margin: 0; max-width: 30ch; padding: 22px 0 0;
+  border-top: 2px solid var(--w-soil-deep);
+}
+.vb-hero .quote em { font-style: italic; color: var(--w-soil-deep); font-weight: 700; }
+.vb-hero-band {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
+  margin-top: 56px; padding-top: 28px; border-top: 1px dashed var(--line);
+}
+.vb-hero-band .cell { display: flex; flex-direction: column; gap: 4px; }
+.vb-hero-band .k { font-family: "JetBrains Mono", monospace; font-size: 10px; color: var(--ink-soft); letter-spacing: .1em; text-transform: uppercase; }
+.vb-hero-band .v { font-family: "Frank Ruhl Libre", serif; font-size: 20px; font-weight: 700; color: var(--ink); }
+
+/* Magazine ליבה layout: featured big + 3 small */
+.vb-core {
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px;
+  align-items: stretch;
+}
+.vb-core .featured { display: flex; flex-direction: column; }
+.vb-core .featured .img-ph { aspect-ratio: 4/3; flex: 1; border-radius: var(--radius-l); }
+.vb-core .featured .head {
+  padding: 24px 0 0;
+  display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: end;
+}
+.vb-core .featured h3 {
+  font-family: "Frank Ruhl Libre", serif; font-size: clamp(28px, 3vw, 40px);
+  margin: 0; font-weight: 700; line-height: 1.1;
+}
+.vb-core .featured p { font-size: 16px; color: var(--ink-soft); margin: 10px 0 0; line-height: 1.6; max-width: 50ch; }
+.vb-core .featured .meta {
+  font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--ink-soft);
+  text-align: end; letter-spacing: .04em;
+}
+.vb-core .stack { display: grid; gap: 16px; grid-template-rows: repeat(3, 1fr); }
+.vb-core .stack .svc-mini {
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-m);
+  padding: 20px 22px; display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center;
+}
+.vb-core .stack .svc-mini h4 {
+  font-family: "Frank Ruhl Libre", serif; font-size: 19px; margin: 0 0 4px; font-weight: 700;
+}
+.vb-core .stack .svc-mini p { font-size: 13.5px; color: var(--ink-soft); margin: 0; line-height: 1.5; }
+.vb-core .stack .svc-mini .arrow { font-family: "JetBrains Mono", monospace; color: var(--w-soil-deep); font-size: 22px; }
+
+.vb-bridges { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+
+.vb-projects { display: grid; grid-template-columns: 1.6fr 1fr; gap: 24px; }
+.vb-projects .big { display: flex; flex-direction: column; }
+.vb-projects .big .img-ph { aspect-ratio: 16/9; border-radius: var(--radius-l); }
+.vb-projects .big .body { padding: 22px 0 0; }
+.vb-projects .small-stack { display: grid; gap: 18px; }
+
+.vb-posts {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 36px 48px;
+}
+
+/* ============================================================
+   VARIANT C — נסיוני (strata · recursion)
+   ============================================================ */
+.vc-shell {
+  background:
+    linear-gradient(to bottom, var(--paper) 0 5%,
+      var(--soil-wash) 5% 22%,
+      var(--paper) 22% 38%,
+      var(--soil-wash-2) 38% 58%,
+      var(--paper) 58% 78%,
+      var(--soil-wash) 78% 100%);
+  position: relative;
+}
+.vc-hero { padding-block: clamp(48px, 6vw, 96px); position: relative; }
+.vc-hero-stack {
+  font-family: "Frank Ruhl Libre", serif; font-weight: 900;
+  font-size: clamp(72px, 12vw, 180px); line-height: .85; letter-spacing: -.04em;
+  margin: 0; position: relative;
+  color: var(--w-soil-deep);
+  text-align: center;
+}
+.vc-hero-stack .echo {
+  position: absolute; inset-inline: 0; text-align: center;
+  opacity: .08; pointer-events: none; user-select: none;
+  color: var(--w-soil-deep);
+}
+.vc-hero-stack .e1 { top: -9%;  font-size: 78%; opacity: .12; }
+.vc-hero-stack .e2 { top: -24%; font-size: 60%; opacity: .06; }
+.vc-hero-stack .e3 { display: none; } /* C3: mockup has e1/e2 only */
+.vc-hero .gloss {
+  margin-top: 26px;
+  display: grid; grid-template-columns: 1fr auto 1fr; gap: 28px; align-items: center;
+}
+.vc-hero .gloss .rule { height: 1px; background: var(--w-soil-deep); opacity: .35; }
+.vc-hero .gloss .word {
+  font-family: "Frank Ruhl Libre", serif; font-style: italic;
+  font-size: clamp(22px, 2.4vw, 30px); color: var(--w-soil-deep); white-space: nowrap;
+}
+.vc-hero .intro {
+  margin-top: 38px;
+  display: grid; grid-template-columns: 1fr 1.5fr; gap: 48px; align-items: end;
+}
+.vc-hero .intro p { font-size: 16.5px; line-height: 1.7; color: var(--ink); max-width: 56ch; margin: 0; }
+.vc-hero .intro .marker {
+  font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: .14em;
+  color: var(--w-soil); text-transform: uppercase;
+  border-block: 1px solid var(--w-soil); padding: 8px 0; max-width: 280px;
+}
+
+/* Lattice: hydro center, services orbit */
+.vc-lattice {
+  display: grid; gap: 18px;
+  grid-template-columns: 1fr 1.4fr 1fr;
+  grid-template-rows: auto auto;
+}
+.vc-lattice .lat-anchor {
+  grid-column: 2 / 3; grid-row: 1 / 3;
+  background: var(--w-soil-deep); color: var(--paper);
+  border-radius: var(--radius-l); padding: 32px;
+  display: flex; flex-direction: column; gap: 14px;
+  position: relative; overflow: hidden;
+}
+.vc-lattice .lat-anchor .anchor-img {
+  position: absolute; inset: 0; opacity: .25; z-index: 0;
+}
+.vc-lattice .lat-anchor > * { position: relative; z-index: 1; }
+.vc-lattice .lat-anchor h3 {
+  font-family: "Frank Ruhl Libre", serif; font-size: clamp(28px, 3vw, 38px);
+  margin: 0; font-weight: 700; line-height: 1.15; color: var(--paper);
+}
+.vc-lattice .lat-anchor .anchor-eye {
+  font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: .12em;
+  text-transform: uppercase; color: rgba(255,255,255,.7);
+}
+.vc-lattice .lat-anchor p { color: rgba(245,243,236,.92); line-height: 1.6; margin: 0; max-width: 44ch; }
+.vc-lattice .lat-anchor .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: auto; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.2); }
+.vc-lattice .lat-anchor .facts .k { font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: .08em; color: rgba(255,255,255,.6); text-transform: uppercase; }
+.vc-lattice .lat-anchor .facts .v { font-family: "Frank Ruhl Libre", serif; font-size: 22px; font-weight: 700; color: var(--paper); margin-top: 4px; }
+.vc-lattice .lat-anchor .links { display: flex; gap: 16px; flex-wrap: wrap; }
+.vc-lattice .lat-anchor .links a { color: var(--paper); border-bottom: 1px solid var(--paper); text-decoration: none; font-size: 14px; }
+
+.vc-lattice .lat-side {
+  background: var(--paper); border: 1px solid var(--w-soil);
+  border-radius: var(--radius-m); padding: 20px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.vc-lattice .lat-side h4 { font-family: "Frank Ruhl Libre", serif; font-size: 18px; margin: 0; font-weight: 700; }
+.vc-lattice .lat-side p { font-size: 14.5px; color: var(--ink-soft); margin: 0; line-height: 1.5; }
+.vc-lattice .lat-side .tag-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: auto; padding-top: 8px; font-family: "JetBrains Mono", monospace; font-size: 10.5px; color: var(--ink-soft); }
+
+.vc-principle {
+  margin-top: 44px; padding: 34px;
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-l);
+  display: grid; grid-template-columns: .9fr 1.4fr; gap: 40px; align-items: center;
+}
+.vc-principle .label { font-family: "JetBrains Mono", monospace; font-size: 10.5px; letter-spacing: .12em; color: var(--ink-soft); text-transform: uppercase; margin-bottom: 8px; }
+.vc-principle h4 { font-family: "Frank Ruhl Libre", serif; font-size: 25px; font-weight: 700; margin: 0 0 12px; line-height: 1.2; }
+.vc-principle p { font-family: "Assistant", sans-serif; font-size: 15.5px; color: var(--ink-soft); margin: 0; line-height: 1.55; }
+.vc-principle p em { color: var(--spark); font-style: normal; font-weight: 600; }
+.vc-principle .ph { border-radius: var(--radius-m); aspect-ratio: 4/3; }
+
+.vc-bridges { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; } /* C1: mockup 2-up */
+
+.vc-projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+/* C2: mockup is flat — rotate tilts removed */
+
+.vc-posts {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px 56px;
+}
+.vc-posts .post-card { border-bottom: 1px dashed var(--ink-soft); }
+
+/* ============================================================
+   RESPONSIVE — collapse to single column under 900px
+   ============================================================ */
+@media (max-width: 900px) {
+  .anchor-card { grid-template-columns: 1fr; }
+  .anchor-card .img-ph { aspect-ratio: 16/9; min-height: 220px; }
+  .va-grid-3, .vb-bridges, .vb-posts, .vc-bridges, .vc-projects, .vc-posts { grid-template-columns: 1fr 1fr; }
+  .vb-core, .vb-projects, .vb-hero-grid, .va-hero-grid, .vc-principle, .vc-lattice { grid-template-columns: 1fr; }
+  .vc-lattice .lat-anchor { grid-column: 1; grid-row: auto; }
+  .vc-hero .intro { grid-template-columns: 1fr; gap: 18px; }
+  .va-hero h1 { font-size: clamp(56px, 14vw, 96px); }
+  .vb-hero h1 { font-size: clamp(64px, 17vw, 120px); }
+  .vc-hero-stack { font-size: clamp(72px, 19vw, 140px); }
+  .va-hero-img { aspect-ratio: 16/10; }
+  .shell-links { gap: 14px; font-size: 13.5px; }
+  .shell-links a.contact { padding: 7px 14px; }
+}
+@media (max-width: 720px) {
+  .va-grid-3, .va-grid-2, .vb-bridges, .vb-posts, .vc-bridges, .vc-projects, .vc-posts { grid-template-columns: 1fr; }
+  .shell-foot .cols { grid-template-columns: 1fr 1fr; }
+}
+
+/* Seam signal — locked for V200 (body attribute not required) */
+.bridge-card.seam { border-color: var(--bridge-a, var(--w-soil)); }
+.bridge-card.seam::before {
+  content: ""; position: absolute; top: -1px; inset-inline-end: -1px;
+  width: 60px; height: 60px;
+  background: var(--bridge-b, var(--w-know));
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+.bridge-card .bridge-signal-seam { display: none; }
+
+/* Hero test hooks */
+.t1-hero.hero-variant-c .t1-hero-echo { /* echoes */ }
+.t1-hero.hero-variant-c h1,
+.t1-hero.hero-variant-c .vc-hero-stack {
+  font-size: clamp(80px, 11vw, 220px);
+}
+@media (max-width: 768px) {
+  .vc-lattice { grid-template-columns: 1fr !important; }
+  .vc-bridges { grid-template-columns: 1fr !important; }
+}
+
+/* ===== MOBILE — P009-WP002 (team_35 spec §3) ===== */
+/* T1 World page (Variant C). Append-only; logical properties; RTL/LTR safe. */
+
+@media (max-width: 900px) {
+  /* Hero: drop the recursion echoes, scale the title down */
+  .vc-hero-stack .echo { display: none !important; } /* mobile override — intentional (clutter) */
+  .vc-hero-stack { font-size: clamp(56px, 14vw, 80px); }
+
+  /* Gloss row collapses to a single column; decorative rules drop out */
+  .vc-hero .gloss { grid-template-columns: 1fr; gap: 14px; }
+  .vc-hero .gloss .rule { display: none; }
+
+  /* Lattice: anchor on top (full width), sides as 2-col grid.
+     Reset children placement so the inline grid-column:3/4 on the
+     "קריאה מבפנים" .lat-side (t1-body.php) does not force a phantom
+     column and crush the anchor into a sliver at narrow widths.
+     (G1 precision fix, team_35 2026-06-03) */
+  .vc-lattice {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  .vc-lattice > * { grid-column: auto !important; grid-row: auto !important; }
+  .vc-lattice .lat-anchor {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+    order: -1;
+  }
+
+  /* Projects: remove desktop rotations (clutter) */
+  .vc-projects .proj-card { transform: none !important; } /* mobile override — intentional (grid de-clutter) */
+}
+
+@media (max-width: 640px) {
+  .vc-lattice { grid-template-columns: 1fr; }
+  .vc-bridges, .vc-projects, .vc-posts { grid-template-columns: 1fr; }
+}
+
+/* Hover/touch guards (spec §13) — desktop hover only; tap = scale-down */
+@media (hover: hover) {
+  .svc-card:hover    { transform: translateY(-2px); box-shadow: var(--shadow-l); }
+  .bridge-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-l); }
+  .proj-card:hover   { transform: translateY(-2px); box-shadow: var(--shadow-l); }
+}
+@media (hover: none) {
+  .svc-card:active    { transform: scale(0.98); }
+  .bridge-card:active { transform: scale(0.98); }
+  .proj-card:active   { transform: scale(0.98); }
+}
+
+/* ============================================================
+   PROJECTS ARCHIVE — /projects/ (archive-project.php) · G1 2026-06-03
+   Canonical proj-card grid (mockup parity: .ph + .scope-row + .stage-stamp),
+   scoped to .projects-archive so it does not disturb the legacy
+   .proj-card .img-ph / h4 variant used elsewhere in the t1 family.
+   ============================================================ */
+.projects-archive { padding-block: clamp(48px, 6vw, 80px); }
+.projects-archive .archive-head { margin-bottom: clamp(32px, 4vw, 52px); max-width: 60ch; }
+.projects-archive .projects-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: clamp(18px, 2.2vw, 24px); align-items: stretch;
+}
+.projects-archive .proj-card .ph { aspect-ratio: 16/10; overflow: hidden; }
+.projects-archive .proj-card .ph > img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.projects-archive .proj-card .body {
+  padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1;
+}
+.projects-archive .proj-card .scope-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.projects-archive .proj-card .scope {
+  font-family: "JetBrains Mono", monospace; font-size: 10.5px; letter-spacing: .04em;
+  padding: 3px 9px; border-radius: 100px; font-weight: 600;
+}
+.projects-archive .proj-card .scope.client  { background: var(--paper-3); color: var(--ink); }
+.projects-archive .proj-card .scope.venture { background: var(--w-soil); color: var(--paper); }
+.projects-archive .proj-card h3 {
+  font-family: "Frank Ruhl Libre", serif; font-size: 20px; font-weight: 700;
+  line-height: 1.2; margin: 0;
+}
+.projects-archive .proj-card p {
+  font-family: "Assistant", sans-serif; font-size: 14.5px; color: var(--ink-soft);
+  line-height: 1.5; margin: 0;
+}
+.projects-archive .proj-card .meta {
+  font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--ink-soft);
+  letter-spacing: .04em; margin-top: auto; padding-top: 4px; display: flex; gap: 8px; flex-wrap: wrap;
+}
+.projects-archive .empty-state { text-align: center; padding-block: clamp(40px, 6vw, 72px); }
+@media (max-width: 1000px) { .projects-archive .projects-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px)  { .projects-archive .projects-grid { grid-template-columns: 1fr; } }

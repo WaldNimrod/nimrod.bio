@@ -508,7 +508,7 @@ work_packages:
   assigned_validator: nimrodbio_val
   created_at: "2026-05-29"
   milestone_ref: V200
-  spec_ref: "_COMMUNICATION/team_35/MANDATE_NB-S002-P009-WP001_UI_PRECISION_2026-05-29_v1.0.0.md"
+  spec_ref: "_aos/work_packages/NB-S002-P009-WP001/LOD400_NB-S002-P009-WP001.md"
   gate_history:
   - gate: L-GATE_ELIGIBILITY
     result: PASS
@@ -518,7 +518,11 @@ work_packages:
     result: PASS
     date: "2026-05-29"
     notes: "MANDATE issued to team_35 by team_110 on behalf of team_00 (MANDATE_NB-S002-P009-WP001_UI_PRECISION_2026-05-29_v1.0.0). Design package canon is SSoT."
-  notes: "IN_PROGRESS — team_35 working (team_00 confirmed 2026-05-29: 'will take time'). Awaiting COMPLETION → L-GATE_BUILD sign by team_100. T-04 logo still blocked on T-07 (basket file, team_00). This WP gates Phase B of P009-WP002."
+  - gate: L-GATE_SPEC
+    result: PASS
+    date: "2026-06-03"
+    notes: "LOD400 RE-AUTHORED by team_100 (ADR034 R9, L2 spoke) for the V200 precision package — team_35 HANDOFF_CLAUDE_CODE_V200_2026-06-03 (2 new templates: home §06 recent-posts + /projects/ archive; fixes from 3 sources: team_00/team_35/team_50). spec_ref re-pointed to _aos/work_packages/NB-S002-P009-WP001/LOD400_NB-S002-P009-WP001.md. Quantified change inventory + 11-point acceptance criteria + external-validation phase (team_50 + team_190). Per team_00 directive: characterize the move + LOD400 + external validation. NEXT: route LOD400 to external validation before Phase 2 land."
+  notes: "IN_PROGRESS — V200 precision package received from team_35 (2026-06-03, on baseline a35a67df). team_100 authored LOD400 (land-spec + acceptance + external validation). Awaiting external validation of the LOD400/package → then team_100-orchestrated atomic land+deploy (Iron Rule #4) → L-GATE_BUILD → L-GATE_VALIDATE (team_190). Open carry-forward gaps G2 (T2/T3/T4/T5 precision walk), G3 (know/code world variants + heritage), C2 (img-overflow localize). T-04 logo still blocked on T-07 basket (team_00). This WP gates Phase B of P009-WP002."
 
 - id: NB-S002-P009-WP002
   label: "nimrod-bio — Mobile Responsiveness (T-02 implementation)"

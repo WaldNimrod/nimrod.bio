@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>§06 Recent Posts — render-parity preview (front-page.php + t7.css)</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&family=Frank+Ruhl+Libre:wght@500;700;900&family=JetBrains+Mono:wght@400;500&display=swap');
+/* tokens lifted from theme system.css / Precision Mockup v4 :root */
+:root{
+  --paper:#f5f3ec; --paper-2:#e8e7df; --paper-3:#dedccf; --line:#d6d2c2;
+  --ink:#1f1e1c; --ink-soft:#4a4844; --soil:#5b483a;
+  --w-soil-deep:#3a5220; --w-soil:#6a8a3a; --w-know:#c46a3e; --w-code:#2d8a8c;
+  --radius-m:14px; --shadow-m:0 10px 30px -16px rgba(60,40,10,.20);
+  --max:1240px; --gutter:clamp(22px,4vw,56px);
+}
+*{box-sizing:border-box;}
+body{margin:0; background:var(--paper); color:var(--ink); font-family:"Assistant",sans-serif; font-size:17px; line-height:1.55; direction:rtl;}
+.note{font-family:"JetBrains Mono",monospace; font-size:12px; color:var(--ink-soft); max-width:var(--max); margin:0 auto; padding:24px var(--gutter) 0; letter-spacing:.02em;}
+.note b{color:var(--ink);}
+/* theme section chrome (so the preview matches t7 spacing) */
+.t7-section{padding-block:clamp(52px,6.5vw,92px);}
+.t7-wrap{max-width:var(--max); margin:0 auto; padding-inline:var(--gutter);}
+.t7-sec-head{margin-bottom:48px; max-width:66ch;}
+.t7-eyebrow{font-family:"JetBrains Mono",monospace; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--w-soil-deep); margin:0 0 14px; display:flex; gap:10px; align-items:baseline;}
+.t7-eyebrow .num{color:var(--ink-soft);}
+.t7-sec-title{font-family:"Frank Ruhl Libre",serif; font-weight:700; font-size:clamp(28px,3.4vw,44px); line-height:1.1; letter-spacing:-.015em; margin:0;}
+.img-ph.clean{background:var(--paper-2); display:grid; place-items:center;}
+.img-ph .subj{font-size:14px; color:var(--soil); opacity:.7; padding:7px 16px; text-align:center;}
+
+/* ════════ CANONICAL §06 CSS — copied verbatim from the patched t7.css ════════ */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  gap: clamp(18px, 2.2vw, 24px);
+  align-items: stretch;
+}
+.rp-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .18s, box-shadow .18s;
+}
+.rp-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-m); }
+.rp-card:hover h4 { color: var(--w-soil-deep); }
+.rp-card .ph { aspect-ratio: 16 / 10; overflow: hidden; }
+.rp-card .ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.rp-card.feat { grid-column: 1 / 3; grid-row: 1 / 3; }
+.rp-card.feat .ph { aspect-ratio: auto; flex: 1; min-height: 200px; }
+.rp-card .body {
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+.rp-card .meta {
+  font-family: "JetBrains Mono", monospace; font-size: 11px;
+  color: var(--ink-soft); letter-spacing: .03em;
+  display: flex; gap: 8px;
+}
+.rp-card h4 {
+  font-family: "Frank Ruhl Libre", serif; font-size: 19px;
+  font-weight: 700; margin: 0; line-height: 1.22;
+  transition: color .15s;
+}
+.rp-card.feat h4 { font-size: 26px; }
+.rp-card p {
+  font-family: "Assistant", sans-serif; font-size: 14.5px;
+  color: var(--ink-soft); line-height: 1.5; margin: 0;
+}
+.rp-card .chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: auto; }
+.wc {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 10.5px; letter-spacing: .05em;
+  padding: 3px 9px; border-radius: 100px; border: 1px solid var(--line); color: var(--ink-soft);
+}
+.wc i { width: 7px; height: 7px; border-radius: 50%; }
+.wc.soil i { background: var(--w-soil); }
+.wc.know i { background: var(--w-know); }
+.wc.code i { background: var(--w-code); }
+
+@media (max-width: 1000px) {
+  .posts-grid { grid-template-columns: repeat(2, 1fr); }
+  .rp-card.feat { grid-column: 1 / 3; grid-row: auto; }
+  .rp-card.feat .ph { aspect-ratio: 16 / 9; min-height: 0; }
+}
+@media (max-width: 640px) {
+  .posts-grid { grid-template-columns: 1fr; }
+  .rp-card.feat { grid-column: 1; grid-row: auto; }
+}
+</style>
+</head>
+<body>
+
+<p class="note">PARITY PREVIEW · <b>front-page.php §06</b> markup + <b>t7.css</b> canonical <b>.posts-grid</b> block, rendered standalone. Dynamic stand-ins shown (newest = <b>.rp-card.feat</b> with excerpt; the rest are title + world-chips). Live WP output replaces these with real recent posts.</p>
+
+<!-- mirrors the exact markup emitted by the patched front-page.php loop -->
+<section class="t7-section t7-posts">
+  <div class="t7-wrap">
+    <header class="t7-sec-head">
+      <p class="t7-eyebrow"><span class="num">06</span><span>מהבלוג</span></p>
+      <h2 class="t7-sec-title">מחשבות שיורדות לאדמה</h2>
+    </header>
+    <div class="posts-grid">
+      <a class="rp-card feat" href="#">
+        <div class="ph"><img src="../../../images/raw/farm-b.jpg" alt=""></div>
+        <div class="body">
+          <div class="meta"><span>03·05·26</span></div>
+          <h4>למה ״אין ייעוץ שלא נוסה בבוץ״</h4>
+          <p>על הפער בין מצגת לבין עונה שלמה באדמה — ולמה הניסיון בשטח הוא תנאי לכל ייעוץ.</p>
+          <div class="chips"><span class="wc soil"><i></i>אדמה</span><span class="wc know"><i></i>ידע</span></div>
+        </div>
+      </a>
+      <a class="rp-card" href="#">
+        <div class="ph"><img src="../../../images/raw/cand-f.jpeg" alt=""></div>
+        <div class="body"><div class="meta"><span>21·04·26</span></div><h4>כשעקרונות עוברים בין תחומים</h4><div class="chips"><span class="wc code"><i></i>דיגיטל</span></div></div>
+      </a>
+      <a class="rp-card" href="#">
+        <div class="ph"><img src="../../../images/raw/cand-h.jpg" alt=""></div>
+        <div class="body"><div class="meta"><span>09·04·26</span></div><h4>הידרופוניקה היא תרגיל בקשב</h4><div class="chips"><span class="wc soil"><i></i>אדמה</span></div></div>
+      </a>
+      <a class="rp-card" href="#">
+        <div class="ph"><img src="../../../images/raw/wide-field-1.jpeg" alt=""></div>
+        <div class="body"><div class="meta"><span>28·03·26</span></div><h4>SFA — קוד שנכתב מהשטח</h4><div class="chips"><span class="wc code"><i></i>דיגיטל</span></div></div>
+      </a>
+      <a class="rp-card" href="#">
+        <div class="ph"><img src="../../../images/raw/greenhouse-1.jpg" alt=""></div>
+        <div class="body"><div class="meta"><span>15·03·26</span></div><h4>עונה, לא רבעון</h4><div class="chips"><span class="wc soil"><i></i>אדמה</span></div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
