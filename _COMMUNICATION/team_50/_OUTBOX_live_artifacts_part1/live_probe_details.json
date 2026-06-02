@@ -1,0 +1,1278 @@
+[
+  {
+    "screen": "t7",
+    "viewport": "375",
+    "url": "/",
+    "path": "/?nc=1780426544140",
+    "title": "בית - נמרוד ולד · Unless",
+    "lockHits": [],
+    "lockPass": true,
+    "overflow": [
+      {
+        "selector": "img",
+        "overflowPx": 26,
+        "clientWidth": 375,
+        "scrollWidth": 375
+      }
+    ],
+    "overflowPass": false,
+    "scrollWidth": 375,
+    "clientWidth": 375,
+    "themeVersion": "0.7.15",
+    "assetSample": "https://nimrod-bio-2026.s887.upress.link/wp-content/themes/nimrod-bio-2026/assets/css/system.css?ver=0.7.15",
+    "computed": {
+      "eyebrow": {
+        "selector": ".eyebrow, .t7-eyebrow, .page-hero .eyebrow",
+        "found": true,
+        "fontFamily": "\"JetBrains Mono\", monospace",
+        "fontSize": "12px",
+        "letterSpacing": "1.68px",
+        "textTransform": "uppercase",
+        "color": "rgb(58, 82, 32)"
+      },
+      "waBtn": {
+        "selector": ".wa-btn",
+        "found": false
+      },
+      "waBtnHover": null,
+      "bridgesGrid": {
+        "selector": ".bridges-grid",
+        "found": true,
+        "gridTemplateColumns": "331px",
+        "display": "grid",
+        "gap": "18px"
+      },
+      "vcBridges": {
+        "selector": ".vc-bridges",
+        "found": false
+      },
+      "contactDump": {
+        "form": false,
+        "social": false,
+        "formSelectors": [],
+        "socialSelectors": []
+      },
+      "aboutProse": {
+        "selector": ".about-prose",
+        "found": false
+      },
+      "finalCta": {
+        "selector": ".t8-final-cta, .final-cta",
+        "found": true,
+        "display": "block"
+      },
+      "bodyLineHeight": "26.35px",
+      "sectionLineHeight": "26.35px",
+      "tokens": {
+        "--radius-s": "8px",
+        "--radius-m": "14px",
+        "--radius-l": "20px",
+        "--shadow-s": "0 1px 2px rgba(60,40,10,.05), 0 4px 12px -8px rgba(60,40,10,.12)",
+        "--shadow-m": "0 10px 30px -16px rgba(60,40,10,.20)",
+        "--shadow-l": "0 24px 50px -28px rgba(60,40,10,.28)"
+      }
+    },
+    "section06": {
+      "postsGrid": null,
+      "postsGridClass": null,
+      "rpCardCount": 0,
+      "rpFeatCount": 0,
+      "cards": [],
+      "placement": {
+        "sectionOrder": [
+          {
+            "tag": "ASIDE",
+            "cls": "nav-drawer"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "hero-poster"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t7-section t7-worlds"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t7-section t7-systems"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t7-section t7-services services-end"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t7-section t7-bridges bridges-band"
+          },
+          {
+            "tag": "ASIDE",
+            "cls": "unless-lockup"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t7-section t7-projects"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "manifesto"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t7-section final-cta"
+          }
+        ],
+        "hasProjects": true,
+        "hasPostsGrid": false,
+        "hasManifesto": true,
+        "hasFinalCta": true,
+        "betweenProjectsAndFinalCta": false
+      }
+    },
+    "screenshot": "live_t7_375.png"
+  },
+  {
+    "screen": "t1",
+    "viewport": "375",
+    "url": "/world/soil/",
+    "path": "/world/soil/?nc=1780426548540",
+    "title": "אדמה - נמרוד ולד · Unless",
+    "lockHits": [],
+    "lockPass": true,
+    "overflow": [],
+    "overflowPass": true,
+    "scrollWidth": 375,
+    "clientWidth": 375,
+    "themeVersion": "0.7.15",
+    "assetSample": "https://nimrod-bio-2026.s887.upress.link/wp-content/themes/nimrod-bio-2026/assets/css/system.css?ver=0.7.15",
+    "computed": {
+      "eyebrow": {
+        "selector": ".eyebrow, .t7-eyebrow, .page-hero .eyebrow",
+        "found": false
+      },
+      "waBtn": {
+        "selector": ".wa-btn",
+        "found": false
+      },
+      "waBtnHover": null,
+      "bridgesGrid": {
+        "selector": ".bridges-grid",
+        "found": false
+      },
+      "vcBridges": {
+        "selector": ".vc-bridges",
+        "found": true,
+        "gridTemplateColumns": "335px",
+        "display": "grid"
+      },
+      "contactDump": {
+        "form": false,
+        "social": false,
+        "formSelectors": [],
+        "socialSelectors": []
+      },
+      "aboutProse": {
+        "selector": ".about-prose",
+        "found": false
+      },
+      "finalCta": {
+        "selector": ".t8-final-cta, .final-cta",
+        "found": false
+      },
+      "bodyLineHeight": "26.35px",
+      "sectionLineHeight": "26.35px",
+      "tokens": {
+        "--radius-s": "8px",
+        "--radius-m": "14px",
+        "--radius-l": "20px",
+        "--shadow-s": "0 1px 2px rgba(60,40,10,.05), 0 4px 12px -8px rgba(60,40,10,.12)",
+        "--shadow-m": "0 10px 30px -16px rgba(60,40,10,.20)",
+        "--shadow-l": "0 24px 50px -28px rgba(60,40,10,.28)"
+      }
+    },
+    "section06": {
+      "postsGrid": null,
+      "postsGridClass": null,
+      "rpCardCount": 0,
+      "rpFeatCount": 0,
+      "cards": [],
+      "placement": {
+        "sectionOrder": [
+          {
+            "tag": "ASIDE",
+            "cls": "nav-drawer"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t1-wrap t1-hero hero-variant-c"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t1-wrap t1-section"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t1-wrap t1-section"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t1-wrap t1-section"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t1-wrap t1-section"
+          }
+        ],
+        "hasProjects": false,
+        "hasPostsGrid": false,
+        "hasManifesto": false,
+        "hasFinalCta": false,
+        "betweenProjectsAndFinalCta": false
+      }
+    },
+    "screenshot": "live_t1_375.png"
+  },
+  {
+    "screen": "contact",
+    "viewport": "375",
+    "url": "/contact/",
+    "path": "/contact/?nc=1780426552611",
+    "title": "צור קשר - נמרוד ולד · Unless",
+    "lockHits": [],
+    "lockPass": true,
+    "overflow": [],
+    "overflowPass": true,
+    "scrollWidth": 375,
+    "clientWidth": 375,
+    "themeVersion": "0.7.15",
+    "assetSample": "https://nimrod-bio-2026.s887.upress.link/wp-content/themes/nimrod-bio-2026/assets/css/system.css?ver=0.7.15",
+    "computed": {
+      "eyebrow": {
+        "selector": ".eyebrow, .t7-eyebrow, .page-hero .eyebrow",
+        "found": true,
+        "fontFamily": "\"JetBrains Mono\", monospace",
+        "fontSize": "12px",
+        "letterSpacing": "1.68px",
+        "textTransform": "uppercase",
+        "color": "rgb(31, 94, 96)"
+      },
+      "waBtn": {
+        "selector": ".wa-btn",
+        "found": true,
+        "backgroundColor": "rgb(31, 138, 76)"
+      },
+      "waBtnHover": "rgb(31, 138, 76)",
+      "bridgesGrid": {
+        "selector": ".bridges-grid",
+        "found": false
+      },
+      "vcBridges": {
+        "selector": ".vc-bridges",
+        "found": false
+      },
+      "contactDump": {
+        "form": true,
+        "social": true,
+        "formSelectors": [
+          "FORM.contact-form",
+          "INPUT",
+          "INPUT",
+          "INPUT",
+          "INPUT.hp-field",
+          "DIV.contact-status",
+          "H3",
+          "P.form-intro",
+          "EM",
+          "DIV.field",
+          "LABEL",
+          "SPAN.opt"
+        ],
+        "socialSelectors": [
+          {
+            "href": "https://www.facebook.com/NimrodGarden",
+            "text": "Facebook · הגינה"
+          },
+          {
+            "href": "https://www.facebook.com/Wald.Nimrod",
+            "text": "Facebook · אישי"
+          },
+          {
+            "href": "https://www.youtube.com/@waldnimrod",
+            "text": "YouTube · ‎@waldnimrod"
+          }
+        ]
+      },
+      "aboutProse": {
+        "selector": ".about-prose",
+        "found": false
+      },
+      "finalCta": {
+        "selector": ".t8-final-cta, .final-cta",
+        "found": false
+      },
+      "bodyLineHeight": "26.35px",
+      "sectionLineHeight": "26.35px",
+      "tokens": {
+        "--radius-s": "8px",
+        "--radius-m": "14px",
+        "--radius-l": "20px",
+        "--shadow-s": "0 1px 2px rgba(60,40,10,.05), 0 4px 12px -8px rgba(60,40,10,.12)",
+        "--shadow-m": "0 10px 30px -16px rgba(60,40,10,.20)",
+        "--shadow-l": "0 24px 50px -28px rgba(60,40,10,.28)"
+      }
+    },
+    "section06": {
+      "postsGrid": null,
+      "postsGridClass": null,
+      "rpCardCount": 0,
+      "rpFeatCount": 0,
+      "cards": [],
+      "placement": {
+        "sectionOrder": [
+          {
+            "tag": "ASIDE",
+            "cls": "nav-drawer"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "page-hero"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t8-wrap"
+          },
+          {
+            "tag": "ASIDE",
+            "cls": "contact-side"
+          }
+        ],
+        "hasProjects": false,
+        "hasPostsGrid": false,
+        "hasManifesto": false,
+        "hasFinalCta": false,
+        "betweenProjectsAndFinalCta": false
+      }
+    },
+    "screenshot": "live_contact_375.png"
+  },
+  {
+    "screen": "about",
+    "viewport": "375",
+    "url": "/about/",
+    "path": "/about/?nc=1780426556702",
+    "title": "על נמרוד - נמרוד ולד · Unless",
+    "lockHits": [],
+    "lockPass": true,
+    "overflow": [],
+    "overflowPass": true,
+    "scrollWidth": 375,
+    "clientWidth": 375,
+    "themeVersion": "0.7.15",
+    "assetSample": "https://nimrod-bio-2026.s887.upress.link/wp-content/themes/nimrod-bio-2026/assets/css/system.css?ver=0.7.15",
+    "computed": {
+      "eyebrow": {
+        "selector": ".eyebrow, .t7-eyebrow, .page-hero .eyebrow",
+        "found": true,
+        "fontFamily": "\"JetBrains Mono\", monospace",
+        "fontSize": "12px",
+        "letterSpacing": "1.68px",
+        "textTransform": "uppercase",
+        "color": "rgb(31, 94, 96)"
+      },
+      "waBtn": {
+        "selector": ".wa-btn",
+        "found": false
+      },
+      "waBtnHover": null,
+      "bridgesGrid": {
+        "selector": ".bridges-grid",
+        "found": false
+      },
+      "vcBridges": {
+        "selector": ".vc-bridges",
+        "found": false
+      },
+      "contactDump": {
+        "form": false,
+        "social": false,
+        "formSelectors": [],
+        "socialSelectors": []
+      },
+      "aboutProse": {
+        "selector": ".about-prose",
+        "found": true,
+        "maxWidth": "502.247px",
+        "fontFamily": "Assistant, sans-serif",
+        "lineHeight": "29.75px",
+        "fontSize": "17px"
+      },
+      "finalCta": {
+        "selector": ".t8-final-cta, .final-cta",
+        "found": true,
+        "display": "block"
+      },
+      "bodyLineHeight": "26.35px",
+      "sectionLineHeight": "24px",
+      "tokens": {
+        "--radius-s": "8px",
+        "--radius-m": "14px",
+        "--radius-l": "20px",
+        "--shadow-s": "0 1px 2px rgba(60,40,10,.05), 0 4px 12px -8px rgba(60,40,10,.12)",
+        "--shadow-m": "0 10px 30px -16px rgba(60,40,10,.20)",
+        "--shadow-l": "0 24px 50px -28px rgba(60,40,10,.28)"
+      }
+    },
+    "section06": {
+      "postsGrid": null,
+      "postsGridClass": null,
+      "rpCardCount": 0,
+      "rpFeatCount": 0,
+      "cards": [],
+      "placement": {
+        "sectionOrder": [
+          {
+            "tag": "ASIDE",
+            "cls": "nav-drawer"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "page-hero t8-about-hero"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t8-wrap t8-section"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t8-wrap t8-section"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t8-wrap t8-section"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t8-wrap t8-section"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t8-section sea"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t8-section t8-final-cta"
+          }
+        ],
+        "hasProjects": false,
+        "hasPostsGrid": false,
+        "hasManifesto": false,
+        "hasFinalCta": false,
+        "betweenProjectsAndFinalCta": false
+      }
+    },
+    "screenshot": "live_about_375.png"
+  },
+  {
+    "screen": "sys404",
+    "viewport": "375",
+    "url": "/nb-precision-404-probe-2026/",
+    "path": "/nb-precision-404-probe-2026/?nc=1780426560757",
+    "title": "Page not found - נמרוד ולד · Unless",
+    "lockHits": [],
+    "lockPass": true,
+    "overflow": [],
+    "overflowPass": true,
+    "scrollWidth": 375,
+    "clientWidth": 375,
+    "themeVersion": "0.7.15",
+    "assetSample": "https://nimrod-bio-2026.s887.upress.link/wp-content/themes/nimrod-bio-2026/assets/css/system.css?ver=0.7.15",
+    "computed": {
+      "eyebrow": {
+        "selector": ".eyebrow, .t7-eyebrow, .page-hero .eyebrow",
+        "found": false
+      },
+      "waBtn": {
+        "selector": ".wa-btn",
+        "found": false
+      },
+      "waBtnHover": null,
+      "bridgesGrid": {
+        "selector": ".bridges-grid",
+        "found": false
+      },
+      "vcBridges": {
+        "selector": ".vc-bridges",
+        "found": false
+      },
+      "contactDump": {
+        "form": false,
+        "social": false,
+        "formSelectors": [],
+        "socialSelectors": []
+      },
+      "aboutProse": {
+        "selector": ".about-prose",
+        "found": false
+      },
+      "finalCta": {
+        "selector": ".t8-final-cta, .final-cta",
+        "found": false
+      },
+      "bodyLineHeight": "26.35px",
+      "sectionLineHeight": "26.35px",
+      "tokens": {
+        "--radius-s": "8px",
+        "--radius-m": "14px",
+        "--radius-l": "20px",
+        "--shadow-s": "0 1px 2px rgba(60,40,10,.05), 0 4px 12px -8px rgba(60,40,10,.12)",
+        "--shadow-m": "0 10px 30px -16px rgba(60,40,10,.20)",
+        "--shadow-l": "0 24px 50px -28px rgba(60,40,10,.28)"
+      }
+    },
+    "section06": {
+      "postsGrid": null,
+      "postsGridClass": null,
+      "rpCardCount": 0,
+      "rpFeatCount": 0,
+      "cards": [],
+      "placement": {
+        "sectionOrder": [
+          {
+            "tag": "ASIDE",
+            "cls": "nav-drawer"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t8-section"
+          }
+        ],
+        "hasProjects": false,
+        "hasPostsGrid": false,
+        "hasManifesto": false,
+        "hasFinalCta": false,
+        "betweenProjectsAndFinalCta": false
+      }
+    },
+    "screenshot": "live_sys404_375.png"
+  },
+  {
+    "screen": "syssearch",
+    "viewport": "375",
+    "url": "/?s=%D7%A0%D7%99%D7%9E%D7%A8%D7%95%D7%93",
+    "path": "/?s=%D7%A0%D7%99%D7%9E%D7%A8%D7%95%D7%93&nc=1780426564775",
+    "title": "You searched for נימרוד - נמרוד ולד · Unless",
+    "lockHits": [],
+    "lockPass": true,
+    "overflow": [],
+    "overflowPass": true,
+    "scrollWidth": 375,
+    "clientWidth": 375,
+    "themeVersion": "0.7.15",
+    "assetSample": "https://nimrod-bio-2026.s887.upress.link/wp-content/themes/nimrod-bio-2026/assets/css/system.css?ver=0.7.15",
+    "computed": {
+      "eyebrow": {
+        "selector": ".eyebrow, .t7-eyebrow, .page-hero .eyebrow",
+        "found": false
+      },
+      "waBtn": {
+        "selector": ".wa-btn",
+        "found": false
+      },
+      "waBtnHover": null,
+      "bridgesGrid": {
+        "selector": ".bridges-grid",
+        "found": false
+      },
+      "vcBridges": {
+        "selector": ".vc-bridges",
+        "found": false
+      },
+      "contactDump": {
+        "form": false,
+        "social": false,
+        "formSelectors": [],
+        "socialSelectors": []
+      },
+      "aboutProse": {
+        "selector": ".about-prose",
+        "found": false
+      },
+      "finalCta": {
+        "selector": ".t8-final-cta, .final-cta",
+        "found": false
+      },
+      "bodyLineHeight": "26.35px",
+      "sectionLineHeight": "26.35px",
+      "tokens": {
+        "--radius-s": "8px",
+        "--radius-m": "14px",
+        "--radius-l": "20px",
+        "--shadow-s": "0 1px 2px rgba(60,40,10,.05), 0 4px 12px -8px rgba(60,40,10,.12)",
+        "--shadow-m": "0 10px 30px -16px rgba(60,40,10,.20)",
+        "--shadow-l": "0 24px 50px -28px rgba(60,40,10,.28)"
+      }
+    },
+    "section06": {
+      "postsGrid": null,
+      "postsGridClass": null,
+      "rpCardCount": 0,
+      "rpFeatCount": 0,
+      "cards": [],
+      "placement": {
+        "sectionOrder": [
+          {
+            "tag": "ASIDE",
+            "cls": "nav-drawer"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t8-section"
+          }
+        ],
+        "hasProjects": false,
+        "hasPostsGrid": false,
+        "hasManifesto": false,
+        "hasFinalCta": false,
+        "betweenProjectsAndFinalCta": false
+      }
+    },
+    "screenshot": "live_syssearch_375.png"
+  },
+  {
+    "screen": "t7",
+    "viewport": "1440",
+    "url": "/",
+    "path": "/?nc=1780426568883",
+    "title": "בית - נמרוד ולד · Unless",
+    "lockHits": [],
+    "lockPass": true,
+    "overflow": [
+      {
+        "selector": "img",
+        "overflowPx": 101,
+        "clientWidth": 1440,
+        "scrollWidth": 1440
+      }
+    ],
+    "overflowPass": false,
+    "scrollWidth": 1440,
+    "clientWidth": 1440,
+    "themeVersion": "0.7.15",
+    "assetSample": "https://nimrod-bio-2026.s887.upress.link/wp-content/themes/nimrod-bio-2026/assets/css/system.css?ver=0.7.15",
+    "computed": {
+      "eyebrow": {
+        "selector": ".eyebrow, .t7-eyebrow, .page-hero .eyebrow",
+        "found": true,
+        "fontFamily": "\"JetBrains Mono\", monospace",
+        "fontSize": "12px",
+        "letterSpacing": "1.68px",
+        "textTransform": "uppercase",
+        "color": "rgb(58, 82, 32)"
+      },
+      "waBtn": {
+        "selector": ".wa-btn",
+        "found": false
+      },
+      "waBtnHover": null,
+      "bridgesGrid": {
+        "selector": ".bridges-grid",
+        "found": true,
+        "gridTemplateColumns": "360px 360px 360px",
+        "display": "grid",
+        "gap": "24px"
+      },
+      "vcBridges": {
+        "selector": ".vc-bridges",
+        "found": false
+      },
+      "contactDump": {
+        "form": false,
+        "social": false,
+        "formSelectors": [],
+        "socialSelectors": []
+      },
+      "aboutProse": {
+        "selector": ".about-prose",
+        "found": false
+      },
+      "finalCta": {
+        "selector": ".t8-final-cta, .final-cta",
+        "found": true,
+        "display": "block"
+      },
+      "bodyLineHeight": "26.35px",
+      "sectionLineHeight": "26.35px",
+      "tokens": {
+        "--radius-s": "8px",
+        "--radius-m": "14px",
+        "--radius-l": "20px",
+        "--shadow-s": "0 1px 2px rgba(60,40,10,.05), 0 4px 12px -8px rgba(60,40,10,.12)",
+        "--shadow-m": "0 10px 30px -16px rgba(60,40,10,.20)",
+        "--shadow-l": "0 24px 50px -28px rgba(60,40,10,.28)"
+      }
+    },
+    "section06": {
+      "postsGrid": null,
+      "postsGridClass": null,
+      "rpCardCount": 0,
+      "rpFeatCount": 0,
+      "cards": [],
+      "placement": {
+        "sectionOrder": [
+          {
+            "tag": "ASIDE",
+            "cls": "nav-drawer"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "hero-poster"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t7-section t7-worlds"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t7-section t7-systems"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t7-section t7-services services-end"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t7-section t7-bridges bridges-band"
+          },
+          {
+            "tag": "ASIDE",
+            "cls": "unless-lockup"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t7-section t7-projects"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "manifesto"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t7-section final-cta"
+          }
+        ],
+        "hasProjects": true,
+        "hasPostsGrid": false,
+        "hasManifesto": true,
+        "hasFinalCta": true,
+        "betweenProjectsAndFinalCta": false
+      }
+    },
+    "screenshot": "live_t7_1440.png"
+  },
+  {
+    "screen": "t1",
+    "viewport": "1440",
+    "url": "/world/soil/",
+    "path": "/world/soil/?nc=1780426573418",
+    "title": "אדמה - נמרוד ולד · Unless",
+    "lockHits": [],
+    "lockPass": true,
+    "overflow": [],
+    "overflowPass": true,
+    "scrollWidth": 1440,
+    "clientWidth": 1440,
+    "themeVersion": "0.7.15",
+    "assetSample": "https://nimrod-bio-2026.s887.upress.link/wp-content/themes/nimrod-bio-2026/assets/css/system.css?ver=0.7.15",
+    "computed": {
+      "eyebrow": {
+        "selector": ".eyebrow, .t7-eyebrow, .page-hero .eyebrow",
+        "found": false
+      },
+      "waBtn": {
+        "selector": ".wa-btn",
+        "found": false
+      },
+      "waBtnHover": null,
+      "bridgesGrid": {
+        "selector": ".bridges-grid",
+        "found": false
+      },
+      "vcBridges": {
+        "selector": ".vc-bridges",
+        "found": true,
+        "gridTemplateColumns": "553px 553px",
+        "display": "grid"
+      },
+      "contactDump": {
+        "form": false,
+        "social": false,
+        "formSelectors": [],
+        "socialSelectors": []
+      },
+      "aboutProse": {
+        "selector": ".about-prose",
+        "found": false
+      },
+      "finalCta": {
+        "selector": ".t8-final-cta, .final-cta",
+        "found": false
+      },
+      "bodyLineHeight": "26.35px",
+      "sectionLineHeight": "26.35px",
+      "tokens": {
+        "--radius-s": "8px",
+        "--radius-m": "14px",
+        "--radius-l": "20px",
+        "--shadow-s": "0 1px 2px rgba(60,40,10,.05), 0 4px 12px -8px rgba(60,40,10,.12)",
+        "--shadow-m": "0 10px 30px -16px rgba(60,40,10,.20)",
+        "--shadow-l": "0 24px 50px -28px rgba(60,40,10,.28)"
+      }
+    },
+    "section06": {
+      "postsGrid": null,
+      "postsGridClass": null,
+      "rpCardCount": 0,
+      "rpFeatCount": 0,
+      "cards": [],
+      "placement": {
+        "sectionOrder": [
+          {
+            "tag": "ASIDE",
+            "cls": "nav-drawer"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t1-wrap t1-hero hero-variant-c"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t1-wrap t1-section"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t1-wrap t1-section"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t1-wrap t1-section"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t1-wrap t1-section"
+          }
+        ],
+        "hasProjects": false,
+        "hasPostsGrid": false,
+        "hasManifesto": false,
+        "hasFinalCta": false,
+        "betweenProjectsAndFinalCta": false
+      }
+    },
+    "screenshot": "live_t1_1440.png"
+  },
+  {
+    "screen": "contact",
+    "viewport": "1440",
+    "url": "/contact/",
+    "path": "/contact/?nc=1780426577589",
+    "title": "צור קשר - נמרוד ולד · Unless",
+    "lockHits": [],
+    "lockPass": true,
+    "overflow": [],
+    "overflowPass": true,
+    "scrollWidth": 1440,
+    "clientWidth": 1440,
+    "themeVersion": "0.7.15",
+    "assetSample": "https://nimrod-bio-2026.s887.upress.link/wp-content/themes/nimrod-bio-2026/assets/css/system.css?ver=0.7.15",
+    "computed": {
+      "eyebrow": {
+        "selector": ".eyebrow, .t7-eyebrow, .page-hero .eyebrow",
+        "found": true,
+        "fontFamily": "\"JetBrains Mono\", monospace",
+        "fontSize": "12px",
+        "letterSpacing": "1.68px",
+        "textTransform": "uppercase",
+        "color": "rgb(31, 94, 96)"
+      },
+      "waBtn": {
+        "selector": ".wa-btn",
+        "found": true,
+        "backgroundColor": "rgb(31, 138, 76)"
+      },
+      "waBtnHover": "rgb(31, 138, 76)",
+      "bridgesGrid": {
+        "selector": ".bridges-grid",
+        "found": false
+      },
+      "vcBridges": {
+        "selector": ".vc-bridges",
+        "found": false
+      },
+      "contactDump": {
+        "form": true,
+        "social": true,
+        "formSelectors": [
+          "FORM.contact-form",
+          "INPUT",
+          "INPUT",
+          "INPUT",
+          "INPUT.hp-field",
+          "DIV.contact-status",
+          "H3",
+          "P.form-intro",
+          "EM",
+          "DIV.field",
+          "LABEL",
+          "SPAN.opt"
+        ],
+        "socialSelectors": [
+          {
+            "href": "https://www.facebook.com/NimrodGarden",
+            "text": "Facebook · הגינה"
+          },
+          {
+            "href": "https://www.facebook.com/Wald.Nimrod",
+            "text": "Facebook · אישי"
+          },
+          {
+            "href": "https://www.youtube.com/@waldnimrod",
+            "text": "YouTube · ‎@waldnimrod"
+          }
+        ]
+      },
+      "aboutProse": {
+        "selector": ".about-prose",
+        "found": false
+      },
+      "finalCta": {
+        "selector": ".t8-final-cta, .final-cta",
+        "found": false
+      },
+      "bodyLineHeight": "26.35px",
+      "sectionLineHeight": "26.35px",
+      "tokens": {
+        "--radius-s": "8px",
+        "--radius-m": "14px",
+        "--radius-l": "20px",
+        "--shadow-s": "0 1px 2px rgba(60,40,10,.05), 0 4px 12px -8px rgba(60,40,10,.12)",
+        "--shadow-m": "0 10px 30px -16px rgba(60,40,10,.20)",
+        "--shadow-l": "0 24px 50px -28px rgba(60,40,10,.28)"
+      }
+    },
+    "section06": {
+      "postsGrid": null,
+      "postsGridClass": null,
+      "rpCardCount": 0,
+      "rpFeatCount": 0,
+      "cards": [],
+      "placement": {
+        "sectionOrder": [
+          {
+            "tag": "ASIDE",
+            "cls": "nav-drawer"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "page-hero"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t8-wrap"
+          },
+          {
+            "tag": "ASIDE",
+            "cls": "contact-side"
+          }
+        ],
+        "hasProjects": false,
+        "hasPostsGrid": false,
+        "hasManifesto": false,
+        "hasFinalCta": false,
+        "betweenProjectsAndFinalCta": false
+      }
+    },
+    "screenshot": "live_contact_1440.png"
+  },
+  {
+    "screen": "about",
+    "viewport": "1440",
+    "url": "/about/",
+    "path": "/about/?nc=1780426581936",
+    "title": "על נמרוד - נמרוד ולד · Unless",
+    "lockHits": [],
+    "lockPass": true,
+    "overflow": [],
+    "overflowPass": true,
+    "scrollWidth": 1440,
+    "clientWidth": 1440,
+    "themeVersion": "0.7.15",
+    "assetSample": "https://nimrod-bio-2026.s887.upress.link/wp-content/themes/nimrod-bio-2026/assets/css/system.css?ver=0.7.15",
+    "computed": {
+      "eyebrow": {
+        "selector": ".eyebrow, .t7-eyebrow, .page-hero .eyebrow",
+        "found": true,
+        "fontFamily": "\"JetBrains Mono\", monospace",
+        "fontSize": "12px",
+        "letterSpacing": "1.68px",
+        "textTransform": "uppercase",
+        "color": "rgb(31, 94, 96)"
+      },
+      "waBtn": {
+        "selector": ".wa-btn",
+        "found": false
+      },
+      "waBtnHover": null,
+      "bridgesGrid": {
+        "selector": ".bridges-grid",
+        "found": false
+      },
+      "vcBridges": {
+        "selector": ".vc-bridges",
+        "found": false
+      },
+      "contactDump": {
+        "form": false,
+        "social": false,
+        "formSelectors": [],
+        "socialSelectors": []
+      },
+      "aboutProse": {
+        "selector": ".about-prose",
+        "found": true,
+        "maxWidth": "576.107px",
+        "fontFamily": "Assistant, sans-serif",
+        "lineHeight": "34.125px",
+        "fontSize": "19.5px"
+      },
+      "finalCta": {
+        "selector": ".t8-final-cta, .final-cta",
+        "found": true,
+        "display": "block"
+      },
+      "bodyLineHeight": "26.35px",
+      "sectionLineHeight": "24px",
+      "tokens": {
+        "--radius-s": "8px",
+        "--radius-m": "14px",
+        "--radius-l": "20px",
+        "--shadow-s": "0 1px 2px rgba(60,40,10,.05), 0 4px 12px -8px rgba(60,40,10,.12)",
+        "--shadow-m": "0 10px 30px -16px rgba(60,40,10,.20)",
+        "--shadow-l": "0 24px 50px -28px rgba(60,40,10,.28)"
+      }
+    },
+    "section06": {
+      "postsGrid": null,
+      "postsGridClass": null,
+      "rpCardCount": 0,
+      "rpFeatCount": 0,
+      "cards": [],
+      "placement": {
+        "sectionOrder": [
+          {
+            "tag": "ASIDE",
+            "cls": "nav-drawer"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "page-hero t8-about-hero"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t8-wrap t8-section"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t8-wrap t8-section"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t8-wrap t8-section"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t8-wrap t8-section"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t8-section sea"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t8-section t8-final-cta"
+          }
+        ],
+        "hasProjects": false,
+        "hasPostsGrid": false,
+        "hasManifesto": false,
+        "hasFinalCta": false,
+        "betweenProjectsAndFinalCta": false
+      }
+    },
+    "screenshot": "live_about_1440.png"
+  },
+  {
+    "screen": "sys404",
+    "viewport": "1440",
+    "url": "/nb-precision-404-probe-2026/",
+    "path": "/nb-precision-404-probe-2026/?nc=1780426586210",
+    "title": "Page not found - נמרוד ולד · Unless",
+    "lockHits": [],
+    "lockPass": true,
+    "overflow": [],
+    "overflowPass": true,
+    "scrollWidth": 1440,
+    "clientWidth": 1440,
+    "themeVersion": "0.7.15",
+    "assetSample": "https://nimrod-bio-2026.s887.upress.link/wp-content/themes/nimrod-bio-2026/assets/css/system.css?ver=0.7.15",
+    "computed": {
+      "eyebrow": {
+        "selector": ".eyebrow, .t7-eyebrow, .page-hero .eyebrow",
+        "found": false
+      },
+      "waBtn": {
+        "selector": ".wa-btn",
+        "found": false
+      },
+      "waBtnHover": null,
+      "bridgesGrid": {
+        "selector": ".bridges-grid",
+        "found": false
+      },
+      "vcBridges": {
+        "selector": ".vc-bridges",
+        "found": false
+      },
+      "contactDump": {
+        "form": false,
+        "social": false,
+        "formSelectors": [],
+        "socialSelectors": []
+      },
+      "aboutProse": {
+        "selector": ".about-prose",
+        "found": false
+      },
+      "finalCta": {
+        "selector": ".t8-final-cta, .final-cta",
+        "found": false
+      },
+      "bodyLineHeight": "26.35px",
+      "sectionLineHeight": "26.35px",
+      "tokens": {
+        "--radius-s": "8px",
+        "--radius-m": "14px",
+        "--radius-l": "20px",
+        "--shadow-s": "0 1px 2px rgba(60,40,10,.05), 0 4px 12px -8px rgba(60,40,10,.12)",
+        "--shadow-m": "0 10px 30px -16px rgba(60,40,10,.20)",
+        "--shadow-l": "0 24px 50px -28px rgba(60,40,10,.28)"
+      }
+    },
+    "section06": {
+      "postsGrid": null,
+      "postsGridClass": null,
+      "rpCardCount": 0,
+      "rpFeatCount": 0,
+      "cards": [],
+      "placement": {
+        "sectionOrder": [
+          {
+            "tag": "ASIDE",
+            "cls": "nav-drawer"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t8-section"
+          }
+        ],
+        "hasProjects": false,
+        "hasPostsGrid": false,
+        "hasManifesto": false,
+        "hasFinalCta": false,
+        "betweenProjectsAndFinalCta": false
+      }
+    },
+    "screenshot": "live_sys404_1440.png"
+  },
+  {
+    "screen": "syssearch",
+    "viewport": "1440",
+    "url": "/?s=%D7%A0%D7%99%D7%9E%D7%A8%D7%95%D7%93",
+    "path": "/?s=%D7%A0%D7%99%D7%9E%D7%A8%D7%95%D7%93&nc=1780426590309",
+    "title": "You searched for נימרוד - נמרוד ולד · Unless",
+    "lockHits": [],
+    "lockPass": true,
+    "overflow": [],
+    "overflowPass": true,
+    "scrollWidth": 1440,
+    "clientWidth": 1440,
+    "themeVersion": "0.7.15",
+    "assetSample": "https://nimrod-bio-2026.s887.upress.link/wp-content/themes/nimrod-bio-2026/assets/css/system.css?ver=0.7.15",
+    "computed": {
+      "eyebrow": {
+        "selector": ".eyebrow, .t7-eyebrow, .page-hero .eyebrow",
+        "found": false
+      },
+      "waBtn": {
+        "selector": ".wa-btn",
+        "found": false
+      },
+      "waBtnHover": null,
+      "bridgesGrid": {
+        "selector": ".bridges-grid",
+        "found": false
+      },
+      "vcBridges": {
+        "selector": ".vc-bridges",
+        "found": false
+      },
+      "contactDump": {
+        "form": false,
+        "social": false,
+        "formSelectors": [],
+        "socialSelectors": []
+      },
+      "aboutProse": {
+        "selector": ".about-prose",
+        "found": false
+      },
+      "finalCta": {
+        "selector": ".t8-final-cta, .final-cta",
+        "found": false
+      },
+      "bodyLineHeight": "26.35px",
+      "sectionLineHeight": "26.35px",
+      "tokens": {
+        "--radius-s": "8px",
+        "--radius-m": "14px",
+        "--radius-l": "20px",
+        "--shadow-s": "0 1px 2px rgba(60,40,10,.05), 0 4px 12px -8px rgba(60,40,10,.12)",
+        "--shadow-m": "0 10px 30px -16px rgba(60,40,10,.20)",
+        "--shadow-l": "0 24px 50px -28px rgba(60,40,10,.28)"
+      }
+    },
+    "section06": {
+      "postsGrid": null,
+      "postsGridClass": null,
+      "rpCardCount": 0,
+      "rpFeatCount": 0,
+      "cards": [],
+      "placement": {
+        "sectionOrder": [
+          {
+            "tag": "ASIDE",
+            "cls": "nav-drawer"
+          },
+          {
+            "tag": "SECTION",
+            "cls": "t8-section"
+          }
+        ],
+        "hasProjects": false,
+        "hasPostsGrid": false,
+        "hasManifesto": false,
+        "hasFinalCta": false,
+        "betweenProjectsAndFinalCta": false
+      }
+    },
+    "screenshot": "live_syssearch_1440.png"
+  }
+]

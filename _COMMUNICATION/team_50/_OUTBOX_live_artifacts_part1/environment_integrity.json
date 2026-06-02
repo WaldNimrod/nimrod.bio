@@ -1,0 +1,17 @@
+{
+  "base": "https://nimrod-bio-2026.s887.upress.link",
+  "NB_THEME_VERSION_deployed": "0.7.15",
+  "cacheBustSample": "https://nimrod-bio-2026.s887.upress.link/wp-content/themes/nimrod-bio-2026/assets/css/system.css?ver=0.7.15",
+  "repoShaAtCapture": "a978d7b505409ade62fb1fad5871fd61f35286af",
+  "mandateBaselineSha": "a35a67df",
+  "shaDelta": "local repo a978d7b (aos-sync commits after baseline); theme constant unchanged at 0.7.15",
+  "themeVersionInRepo": "0.7.15",
+  "captureTimestamp": "2026-06-02T18:55:44.139Z",
+  "lockScanPass": true,
+  "byteParity": {
+    "t8.css": { "match": true, "sha256": "b5dbf34f606d1ed84bf6a1208c32ad82ccc350387714d5b7a86e7a7d0ad501de" },
+    "system.css": { "match": true, "sha256": "5825aaef57dbe244ebf28ccf512a890b64e8ef6c1203dde6bc9e1541e3b48166", "bytes": 14253 },
+    "functions.php": { "match": null, "note": "HTTP 403 — not directly fetchable" },
+    "front-page.php": { "match": null, "note": "HTTP 403; live DOM confirms no §06 block (consistent with repo)" }
+  }
+}

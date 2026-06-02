@@ -1,0 +1,313 @@
+{
+  "t7": {
+    "eyebrow": {
+      "selector": ".eyebrow, .t7-eyebrow, .page-hero .eyebrow",
+      "found": true,
+      "fontFamily": "\"JetBrains Mono\", monospace",
+      "fontSize": "12px",
+      "letterSpacing": "1.68px",
+      "textTransform": "uppercase",
+      "color": "rgb(58, 82, 32)"
+    },
+    "waBtn": {
+      "selector": ".wa-btn",
+      "found": false
+    },
+    "waBtnHover": null,
+    "bridgesGrid": {
+      "selector": ".bridges-grid",
+      "found": true,
+      "gridTemplateColumns": "360px 360px 360px",
+      "display": "grid",
+      "gap": "24px"
+    },
+    "vcBridges": {
+      "selector": ".vc-bridges",
+      "found": false
+    },
+    "contactDump": {
+      "form": false,
+      "social": false,
+      "formSelectors": [],
+      "socialSelectors": []
+    },
+    "aboutProse": {
+      "selector": ".about-prose",
+      "found": false
+    },
+    "finalCta": {
+      "selector": ".t8-final-cta, .final-cta",
+      "found": true,
+      "display": "block"
+    },
+    "bodyLineHeight": "26.35px",
+    "sectionLineHeight": "26.35px",
+    "tokens": {
+      "--radius-s": "8px",
+      "--radius-m": "14px",
+      "--radius-l": "20px",
+      "--shadow-s": "0 1px 2px rgba(60,40,10,.05), 0 4px 12px -8px rgba(60,40,10,.12)",
+      "--shadow-m": "0 10px 30px -16px rgba(60,40,10,.20)",
+      "--shadow-l": "0 24px 50px -28px rgba(60,40,10,.28)"
+    }
+  },
+  "t1": {
+    "eyebrow": {
+      "selector": ".eyebrow, .t7-eyebrow, .page-hero .eyebrow",
+      "found": false
+    },
+    "waBtn": {
+      "selector": ".wa-btn",
+      "found": false
+    },
+    "waBtnHover": null,
+    "bridgesGrid": {
+      "selector": ".bridges-grid",
+      "found": false
+    },
+    "vcBridges": {
+      "selector": ".vc-bridges",
+      "found": true,
+      "gridTemplateColumns": "553px 553px",
+      "display": "grid"
+    },
+    "contactDump": {
+      "form": false,
+      "social": false,
+      "formSelectors": [],
+      "socialSelectors": []
+    },
+    "aboutProse": {
+      "selector": ".about-prose",
+      "found": false
+    },
+    "finalCta": {
+      "selector": ".t8-final-cta, .final-cta",
+      "found": false
+    },
+    "bodyLineHeight": "26.35px",
+    "sectionLineHeight": "26.35px",
+    "tokens": {
+      "--radius-s": "8px",
+      "--radius-m": "14px",
+      "--radius-l": "20px",
+      "--shadow-s": "0 1px 2px rgba(60,40,10,.05), 0 4px 12px -8px rgba(60,40,10,.12)",
+      "--shadow-m": "0 10px 30px -16px rgba(60,40,10,.20)",
+      "--shadow-l": "0 24px 50px -28px rgba(60,40,10,.28)"
+    }
+  },
+  "contact": {
+    "eyebrow": {
+      "selector": ".eyebrow, .t7-eyebrow, .page-hero .eyebrow",
+      "found": true,
+      "fontFamily": "\"JetBrains Mono\", monospace",
+      "fontSize": "12px",
+      "letterSpacing": "1.68px",
+      "textTransform": "uppercase",
+      "color": "rgb(31, 94, 96)"
+    },
+    "waBtn": {
+      "selector": ".wa-btn",
+      "found": true,
+      "backgroundColor": "rgb(31, 138, 76)"
+    },
+    "waBtnHover": "rgb(31, 138, 76)",
+    "bridgesGrid": {
+      "selector": ".bridges-grid",
+      "found": false
+    },
+    "vcBridges": {
+      "selector": ".vc-bridges",
+      "found": false
+    },
+    "contactDump": {
+      "form": true,
+      "social": true,
+      "formSelectors": [
+        "FORM.contact-form",
+        "INPUT",
+        "INPUT",
+        "INPUT",
+        "INPUT.hp-field",
+        "DIV.contact-status",
+        "H3",
+        "P.form-intro",
+        "EM",
+        "DIV.field",
+        "LABEL",
+        "SPAN.opt"
+      ],
+      "socialSelectors": [
+        {
+          "href": "https://www.facebook.com/NimrodGarden",
+          "text": "Facebook · הגינה"
+        },
+        {
+          "href": "https://www.facebook.com/Wald.Nimrod",
+          "text": "Facebook · אישי"
+        },
+        {
+          "href": "https://www.youtube.com/@waldnimrod",
+          "text": "YouTube · ‎@waldnimrod"
+        }
+      ]
+    },
+    "aboutProse": {
+      "selector": ".about-prose",
+      "found": false
+    },
+    "finalCta": {
+      "selector": ".t8-final-cta, .final-cta",
+      "found": false
+    },
+    "bodyLineHeight": "26.35px",
+    "sectionLineHeight": "26.35px",
+    "tokens": {
+      "--radius-s": "8px",
+      "--radius-m": "14px",
+      "--radius-l": "20px",
+      "--shadow-s": "0 1px 2px rgba(60,40,10,.05), 0 4px 12px -8px rgba(60,40,10,.12)",
+      "--shadow-m": "0 10px 30px -16px rgba(60,40,10,.20)",
+      "--shadow-l": "0 24px 50px -28px rgba(60,40,10,.28)"
+    }
+  },
+  "about": {
+    "eyebrow": {
+      "selector": ".eyebrow, .t7-eyebrow, .page-hero .eyebrow",
+      "found": true,
+      "fontFamily": "\"JetBrains Mono\", monospace",
+      "fontSize": "12px",
+      "letterSpacing": "1.68px",
+      "textTransform": "uppercase",
+      "color": "rgb(31, 94, 96)"
+    },
+    "waBtn": {
+      "selector": ".wa-btn",
+      "found": false
+    },
+    "waBtnHover": null,
+    "bridgesGrid": {
+      "selector": ".bridges-grid",
+      "found": false
+    },
+    "vcBridges": {
+      "selector": ".vc-bridges",
+      "found": false
+    },
+    "contactDump": {
+      "form": false,
+      "social": false,
+      "formSelectors": [],
+      "socialSelectors": []
+    },
+    "aboutProse": {
+      "selector": ".about-prose",
+      "found": true,
+      "maxWidth": "576.107px",
+      "fontFamily": "Assistant, sans-serif",
+      "lineHeight": "34.125px",
+      "fontSize": "19.5px"
+    },
+    "finalCta": {
+      "selector": ".t8-final-cta, .final-cta",
+      "found": true,
+      "display": "block"
+    },
+    "bodyLineHeight": "26.35px",
+    "sectionLineHeight": "24px",
+    "tokens": {
+      "--radius-s": "8px",
+      "--radius-m": "14px",
+      "--radius-l": "20px",
+      "--shadow-s": "0 1px 2px rgba(60,40,10,.05), 0 4px 12px -8px rgba(60,40,10,.12)",
+      "--shadow-m": "0 10px 30px -16px rgba(60,40,10,.20)",
+      "--shadow-l": "0 24px 50px -28px rgba(60,40,10,.28)"
+    }
+  },
+  "sys404": {
+    "eyebrow": {
+      "selector": ".eyebrow, .t7-eyebrow, .page-hero .eyebrow",
+      "found": false
+    },
+    "waBtn": {
+      "selector": ".wa-btn",
+      "found": false
+    },
+    "waBtnHover": null,
+    "bridgesGrid": {
+      "selector": ".bridges-grid",
+      "found": false
+    },
+    "vcBridges": {
+      "selector": ".vc-bridges",
+      "found": false
+    },
+    "contactDump": {
+      "form": false,
+      "social": false,
+      "formSelectors": [],
+      "socialSelectors": []
+    },
+    "aboutProse": {
+      "selector": ".about-prose",
+      "found": false
+    },
+    "finalCta": {
+      "selector": ".t8-final-cta, .final-cta",
+      "found": false
+    },
+    "bodyLineHeight": "26.35px",
+    "sectionLineHeight": "26.35px",
+    "tokens": {
+      "--radius-s": "8px",
+      "--radius-m": "14px",
+      "--radius-l": "20px",
+      "--shadow-s": "0 1px 2px rgba(60,40,10,.05), 0 4px 12px -8px rgba(60,40,10,.12)",
+      "--shadow-m": "0 10px 30px -16px rgba(60,40,10,.20)",
+      "--shadow-l": "0 24px 50px -28px rgba(60,40,10,.28)"
+    }
+  },
+  "syssearch": {
+    "eyebrow": {
+      "selector": ".eyebrow, .t7-eyebrow, .page-hero .eyebrow",
+      "found": false
+    },
+    "waBtn": {
+      "selector": ".wa-btn",
+      "found": false
+    },
+    "waBtnHover": null,
+    "bridgesGrid": {
+      "selector": ".bridges-grid",
+      "found": false
+    },
+    "vcBridges": {
+      "selector": ".vc-bridges",
+      "found": false
+    },
+    "contactDump": {
+      "form": false,
+      "social": false,
+      "formSelectors": [],
+      "socialSelectors": []
+    },
+    "aboutProse": {
+      "selector": ".about-prose",
+      "found": false
+    },
+    "finalCta": {
+      "selector": ".t8-final-cta, .final-cta",
+      "found": false
+    },
+    "bodyLineHeight": "26.35px",
+    "sectionLineHeight": "26.35px",
+    "tokens": {
+      "--radius-s": "8px",
+      "--radius-m": "14px",
+      "--radius-l": "20px",
+      "--shadow-s": "0 1px 2px rgba(60,40,10,.05), 0 4px 12px -8px rgba(60,40,10,.12)",
+      "--shadow-m": "0 10px 30px -16px rgba(60,40,10,.20)",
+      "--shadow-l": "0 24px 50px -28px rgba(60,40,10,.28)"
+    }
+  }
+}

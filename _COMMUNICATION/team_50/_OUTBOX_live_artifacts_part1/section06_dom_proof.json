@@ -1,0 +1,56 @@
+{
+  "postsGrid": null,
+  "postsGridClass": null,
+  "rpCardCount": 0,
+  "rpFeatCount": 0,
+  "cards": [],
+  "placement": {
+    "sectionOrder": [
+      {
+        "tag": "ASIDE",
+        "cls": "nav-drawer"
+      },
+      {
+        "tag": "SECTION",
+        "cls": "hero-poster"
+      },
+      {
+        "tag": "SECTION",
+        "cls": "t7-section t7-worlds"
+      },
+      {
+        "tag": "SECTION",
+        "cls": "t7-section t7-systems"
+      },
+      {
+        "tag": "SECTION",
+        "cls": "t7-section t7-services services-end"
+      },
+      {
+        "tag": "SECTION",
+        "cls": "t7-section t7-bridges bridges-band"
+      },
+      {
+        "tag": "ASIDE",
+        "cls": "unless-lockup"
+      },
+      {
+        "tag": "SECTION",
+        "cls": "t7-section t7-projects"
+      },
+      {
+        "tag": "SECTION",
+        "cls": "manifesto"
+      },
+      {
+        "tag": "SECTION",
+        "cls": "t7-section final-cta"
+      }
+    ],
+    "hasProjects": true,
+    "hasPostsGrid": false,
+    "hasManifesto": true,
+    "hasFinalCta": true,
+    "betweenProjectsAndFinalCta": false
+  }
+}

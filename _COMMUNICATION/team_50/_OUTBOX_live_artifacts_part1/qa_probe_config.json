@@ -1,0 +1,35 @@
+{
+  "base": "https://nimrod-bio-2026.s887.upress.link",
+  "out": "_COMMUNICATION/team_50/_OUTBOX_live_artifacts_part1/cdp_probe",
+  "shots": true,
+  "viewports": [
+    { "name": "375", "w": 375, "h": 812 },
+    { "name": "1440", "w": 1440, "h": 900 }
+  ],
+  "pages": [
+    { "name": "t7_home", "path": "/" },
+    { "name": "t1_world_soil", "path": "/world/soil/" },
+    { "name": "contact", "path": "/contact/" },
+    { "name": "about", "path": "/about/" },
+    { "name": "sys_404", "path": "/nb-precision-404-probe-2026/" },
+    { "name": "sys_search", "path": "/?s=%D7%A0%D7%99%D7%9E%D7%A8%D7%95%D7%93" }
+  ],
+  "absent": [
+    "Micha",
+    "Micha OS",
+    "CDIP",
+    "Cross-Domain Isomorphism",
+    "cross-domain",
+    "אנטרופיה",
+    "נגנטרופיה",
+    "רקורסיה",
+    "פרמקלצר",
+    "3×",
+    "אינסטנסים",
+    "קואופרטיב",
+    "קומון",
+    "TBD",
+    "TBC",
+    "recursion"
+  ]
+}

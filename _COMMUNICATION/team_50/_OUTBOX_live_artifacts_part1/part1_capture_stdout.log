@@ -1,0 +1,16 @@
+{
+  "out": "_COMMUNICATION/team_50/_OUTBOX_live_artifacts_part1",
+  "shots": 12,
+  "lockPass": true,
+  "env": {
+    "base": "https://nimrod-bio-2026.s887.upress.link",
+    "NB_THEME_VERSION_deployed": "0.7.15",
+    "cacheBustSample": "https://nimrod-bio-2026.s887.upress.link/wp-content/themes/nimrod-bio-2026/assets/css/system.css?ver=0.7.15",
+    "repoShaAtCapture": "a978d7b505409ade62fb1fad5871fd61f35286af",
+    "mandateBaselineSha": "a35a67df",
+    "shaDelta": "local repo a978d7b505409ade62fb1fad5871fd61f35286af vs mandate baseline a35a67df",
+    "themeVersionInRepo": "0.7.15",
+    "captureTimestamp": "2026-06-02T18:53:15.298Z",
+    "lockScanPass": true
+  }
+}

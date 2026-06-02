@@ -1,0 +1,12 @@
+{
+  "url": "https://nimrod-bio-2026.s887.upress.link/contact/",
+  "viewport": 1440,
+  "selector": ".wa-btn",
+  "defaultBackgroundColor": "rgb(31, 138, 76)",
+  "defaultHex": "#1f8a4c",
+  "cdpForcedHoverBackgroundColor": "rgb(31, 138, 76)",
+  "liveStylesheetRule": ".contact-card .wa-btn:hover { background: #187a42; }",
+  "liveStylesheetSource": "https://nimrod-bio-2026.s887.upress.link/wp-content/themes/nimrod-bio-2026/assets/css/t8.css?ver=0.7.15",
+  "note": "Headless CDP forcePseudoState(:hover) did not change computed background; hover token #187a42 confirmed from live-served t8.css (byte-match vs repo).",
+  "capturedAt": "2026-06-02T18:55:00Z"
+}
