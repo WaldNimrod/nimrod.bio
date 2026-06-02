@@ -404,6 +404,76 @@ $nb_use_cpt = $nb_projects->found_posts >= 3;
 </section>
 
 <?php
+/* ── RECENT POSTS / BLOG TEASER (spec §06) — featured card + 4 small cards. ──
+ * team_00 DECISION 2026-06-01: build §06 to the Precision Mockup v4 structure
+ * (.posts-grid → 1 .rp-card.feat + 4 .rp-card) with REAL latest posts — newest
+ * is featured. Sits between §05 projects and the manifesto. World chips derive
+ * from each post's `world` taxonomy terms (soil/know/code → אדמה/ידע/דיגיטל).
+ */
+$nb_recent = new WP_Query(
+	array(
+		'post_type'           => 'post',
+		'post_status'         => 'publish',
+		'posts_per_page'      => 5,
+		'ignore_sticky_posts' => true,
+		'no_found_rows'       => true,
+	)
+);
+$nb_world_labels = array( 'soil' => 'אדמה', 'know' => 'ידע', 'code' => 'דיגיטל' );
+?>
+<?php if ( $nb_recent->have_posts() ) : ?>
+<section class="t7-section t7-posts">
+	<div class="t7-wrap">
+		<header class="t7-sec-head">
+			<p class="t7-eyebrow"><span class="num">06</span><span>מהבלוג</span></p>
+			<h2 class="t7-sec-title">מחשבות שיורדות לאדמה</h2>
+		</header>
+		<div class="posts-grid">
+			<?php
+			$nb_i = 0;
+			while ( $nb_recent->have_posts() ) :
+				$nb_recent->the_post();
+				$nb_pid    = get_the_ID();
+				$nb_feat   = ( 0 === $nb_i );
+				$nb_terms  = get_the_terms( $nb_pid, 'world' );
+				$nb_worlds = ( $nb_terms && ! is_wp_error( $nb_terms ) ) ? wp_list_pluck( $nb_terms, 'slug' ) : array();
+				?>
+				<a class="rp-card<?php echo $nb_feat ? ' feat' : ''; ?>" href="<?php the_permalink(); ?>">
+					<div class="ph<?php echo has_post_thumbnail( $nb_pid ) ? '' : ' img-ph clean'; ?>">
+						<?php if ( has_post_thumbnail( $nb_pid ) ) : ?>
+							<?php echo get_the_post_thumbnail( $nb_pid, 'large', array( 'loading' => 'lazy', 'decoding' => 'async' ) ); ?>
+						<?php else : ?>
+							<span class="subj"><?php echo esc_html( get_the_title() ); ?></span>
+						<?php endif; ?>
+					</div>
+					<div class="body">
+						<div class="meta"><span><?php echo esc_html( get_the_date( 'd·m·y' ) ); ?></span></div>
+						<h4><?php the_title(); ?></h4>
+						<?php if ( $nb_feat ) : ?>
+							<p><?php echo esc_html( wp_trim_words( get_the_excerpt(), 24, '…' ) ); ?></p>
+						<?php endif; ?>
+						<?php if ( ! empty( $nb_worlds ) ) : ?>
+							<div class="chips">
+								<?php foreach ( $nb_worlds as $nb_ws ) : ?>
+									<?php if ( isset( $nb_world_labels[ $nb_ws ] ) ) : ?>
+										<span class="wc <?php echo esc_attr( $nb_ws ); ?>"><i></i><?php echo esc_html( $nb_world_labels[ $nb_ws ] ); ?></span>
+									<?php endif; ?>
+								<?php endforeach; ?>
+							</div>
+						<?php endif; ?>
+					</div>
+				</a>
+				<?php
+				++$nb_i;
+			endwhile;
+			wp_reset_postdata();
+			?>
+		</div>
+	</div>
+</section>
+<?php endif; ?>
+
+<?php
 /* ── MANIFESTO (README §9) — dark band; portrait + basket emblem + watermark. ── */
 ?>
 <section class="manifesto">

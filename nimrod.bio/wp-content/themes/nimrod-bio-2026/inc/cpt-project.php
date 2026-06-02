@@ -25,7 +25,7 @@ add_action(
 				'menu_position' => 26,
 				'show_in_rest'  => true,
 				'rest_base'     => 'projects',
-				'has_archive'   => false,
+				'has_archive'   => 'projects',
 				'rewrite'       => array(
 					'slug'       => 'project',
 					'with_front' => false,

@@ -356,16 +356,41 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
 @keyframes pulse-spark { 0%,100%{opacity:1} 50%{opacity:.35} }
 
 /* ============================================================
-   RECENT POSTS — 4 from blog
+   RECENT POSTS — §06 blog teaser (Precision Mockup v4 parity)
+   featured 2×2 card + 4 cards, flush grid flow.
+   Markup: .posts-grid > a.rp-card[.feat] > .ph + .body
    ============================================================ */
-.recent-posts {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(20px, 2.5vw, 28px);
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  gap: clamp(18px, 2.2vw, 24px);
+  align-items: stretch;
 }
 .rp-card {
-  display: flex; flex-direction: column; gap: 12px;
-  text-decoration: none; color: inherit;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .18s, box-shadow .18s;
 }
-.rp-card .img-ph { aspect-ratio: 1; border-radius: var(--radius-m); }
+.rp-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-m); }
+.rp-card:hover h4 { color: var(--w-soil-deep); }
+.rp-card .ph { aspect-ratio: 16 / 10; overflow: hidden; }
+.rp-card .ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.rp-card.feat { grid-column: 1 / 3; grid-row: 1 / 3; }
+.rp-card.feat .ph { aspect-ratio: auto; flex: 1; min-height: 200px; }
+.rp-card .body {
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
 .rp-card .meta {
   font-family: "JetBrains Mono", monospace; font-size: 11px;
   color: var(--ink-soft); letter-spacing: .03em;
@@ -373,20 +398,33 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
 }
 .rp-card h4 {
   font-family: "Frank Ruhl Libre", serif; font-size: 19px;
-  font-weight: 700; margin: 0; line-height: 1.25;
+  font-weight: 700; margin: 0; line-height: 1.22;
   transition: color .15s;
 }
-.rp-card:hover h4 { color: var(--w-soil-deep); }
-.rp-card .tags { display: flex; gap: 6px; flex-wrap: wrap; }
-
-.posts-footer {
-  margin-top: 32px;
-  display: flex; justify-content: center;
+.rp-card.feat h4 { font-size: 26px; }
+.rp-card p {
+  font-family: "Assistant", sans-serif; font-size: 14.5px;
+  color: var(--ink-soft); line-height: 1.5; margin: 0;
 }
-.posts-footer a {
-  font-family: "Assistant", sans-serif; font-size: 14.5px; font-weight: 600;
-  color: var(--ink); text-decoration: none;
-  border-bottom: 1.5px solid var(--ink); padding-bottom: 2px;
+.rp-card .chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: auto; }
+.wc {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: "JetBrains Mono", monospace; font-size: 10.5px; letter-spacing: .05em;
+  padding: 3px 9px; border-radius: 100px; border: 1px solid var(--line); color: var(--ink-soft);
+}
+.wc i { width: 7px; height: 7px; border-radius: 50%; }
+.wc.soil i { background: var(--w-soil); }
+.wc.know i { background: var(--w-know); }
+.wc.code i { background: var(--w-code); }
+
+@media (max-width: 1000px) {
+  .posts-grid { grid-template-columns: repeat(2, 1fr); }
+  .rp-card.feat { grid-column: 1 / 3; grid-row: auto; }
+  .rp-card.feat .ph { aspect-ratio: 16 / 9; min-height: 0; }
+}
+@media (max-width: 640px) {
+  .posts-grid { grid-template-columns: 1fr; }
+  .rp-card.feat { grid-column: 1; grid-row: auto; }
 }
 
 /* ============================================================
@@ -461,14 +499,14 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
   .hero-statement .grid { grid-template-columns: 1fr; }
   .hero-poster .grid { grid-template-columns: 1fr; }
   .hero-poster .divider { display: none; }
-  .worlds-grid, .recent-posts { grid-template-columns: 1fr 1fr; }
+  .worlds-grid { grid-template-columns: 1fr 1fr; }
   .featured-projects { grid-template-columns: 1fr 1fr; }
   .fp-card.fp-large { grid-column: 1 / -1; grid-row: 1 / 2; }
   .cta-paths { grid-template-columns: 1fr; }
   .unless-block.ribbon .ribbon-inner { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
-  .worlds-grid, .recent-posts, .featured-projects { grid-template-columns: 1fr; }
+  .worlds-grid, .featured-projects { grid-template-columns: 1fr; }
   .fp-card.fp-large { grid-column: 1; }
 }
 
@@ -547,32 +585,10 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
 }
 .proj-card .stage-stamp { margin: 22px 22px 0; }
 
-.posts-grid-4 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: clamp(20px, 2.5vw, 28px);
-}
-.post-card.post-square {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  text-decoration: none;
-  color: inherit;
-}
-.post-card.post-square img {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: var(--radius-m);
-}
-.post-card.post-square h4 {
-  font-family: "Frank Ruhl Libre", serif;
-  font-size: 19px;
-  font-weight: 700;
-  margin: 0;
-  line-height: 1.25;
-}
-.post-card.post-square:hover h4 { color: var(--w-soil-deep); }
+/* §06 recent-posts now rendered via canonical .posts-grid / .rp-card.feat
+ * (see "RECENT POSTS — §06 blog teaser" block above). The legacy
+ * .posts-grid-4 / .post-card.post-square scaffold was retired 2026-06-02
+ * (never had matching markup; diverged from Precision Mockup v4). */
 
 .final-cta { text-align: center; }
 .final-cta h2 {
@@ -591,10 +607,9 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
 @media (max-width: 1000px) {
   .projects-grid { grid-template-columns: 1fr 1fr; }
   .projects-grid .proj-card:first-child { grid-column: 1 / -1; grid-row: 1 / 2; }
-  .posts-grid-4 { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 640px) {
-  .projects-grid, .posts-grid-4 { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
   .projects-grid .proj-card:first-child { grid-column: 1; }
 }
 
@@ -1138,6 +1153,8 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
 .t7-bridges .bridge-card h3 {
   font-family: "Frank Ruhl Libre", serif; font-weight: 700;
   font-size: 22px; line-height: 1.2; margin: 0;
+  text-decoration: underline; text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px; text-decoration-color: rgba(31,30,28,.32);
 }
 .t7-bridges .bridge-card .lede {
   font-family: "Assistant", sans-serif; font-size: 15px;
@@ -1159,24 +1176,23 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
   position: relative; overflow: hidden;
 }
 .unless-lockup .inner {
-  display: grid; grid-template-columns: auto 1fr;
-  gap: clamp(28px, 4vw, 64px); align-items: center;
+  display: block;
 }
 .unless-lockup .word {
   font-family: "Frank Ruhl Libre", serif; font-weight: 900;
   font-size: clamp(64px, 11vw, 168px); line-height: .9;
-  letter-spacing: -.045em; color: var(--paper); margin: 0; white-space: nowrap;
+  letter-spacing: -.045em; color: var(--paper); margin: 0 0 18px; white-space: nowrap;
 }
 .unless-lockup .word .pd { color: var(--spark); display: inline-block; }
 .unless-lockup .gloss {
-  border-inline-start: 2px solid rgba(245, 243, 236, .2);
-  padding-inline-start: clamp(20px, 3vw, 40px);
+  border-inline-start: none;
+  padding-inline-start: 0; max-width: 60ch;
 }
 .unless-lockup .he {
-  font-family: "Frank Ruhl Libre", serif; font-style: italic; font-weight: 500;
-  font-size: clamp(19px, 2.2vw, 28px); line-height: 1.45;
-  color: rgba(245, 243, 236, .92); margin: 0 0 14px; max-width: 26ch;
-  text-wrap: balance;
+  font-family: "Assistant", sans-serif; font-style: normal; font-weight: 500;
+  font-size: clamp(15px, 1.5vw, 18px); line-height: 1.5;
+  color: rgba(245, 243, 236, .62); margin: 0 0 8px; max-width: 48ch;
+  text-wrap: pretty;
 }
 .unless-lockup .he em { color: var(--spark); font-style: normal; font-weight: 700; }
 .unless-lockup .he .ul-spark {
@@ -1211,8 +1227,7 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
   .t7-systems .sys-card .media { min-height: 180px; }
   .unless-lockup .inner { grid-template-columns: 1fr; }
   .unless-lockup .gloss {
-    border-inline-start: none; border-top: 2px solid rgba(245, 243, 236, .2);
-    padding: 20px 0 0;
+    border-inline-start: none; padding: 0;
   }
 }
 @media (max-width: 600px) {
@@ -1595,8 +1610,8 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
  * which renders the spec's prototype classes under different names:
  *   spec .featured-projects   -> markup .projects-grid
  *   spec .fp-card.fp-large     -> markup .projects-grid .proj-card:first-child
- *   spec .recent-posts         -> markup .posts-grid-4
- *   spec .rp-card .img-ph       -> markup .post-card.post-square img
+ *   spec .recent-posts (§06)   -> markup .posts-grid (canonical, mockup parity)
+ *   spec .rp-card.feat          -> markup .rp-card.feat (featured 2×2 card)
  *   spec .unless-block.ribbon  -> markup .unless-ribbon (.ribbon-inner -> .t7-wrap p)
  *   spec .cta-paths/.cta-path  -> markup .final-cta .cta-paths (button row, not cards)
  *   spec .final-cta-home       -> markup .final-cta
@@ -1642,19 +1657,9 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
   .projects-grid .proj-card:first-child { grid-column: 1; }
 }
 
-/* ---- Recent posts — spec §8 (adapted to .posts-grid-4 / .post-card.post-square) ---- */
-@media (max-width: 900px) {
-  .recent-posts,
-  .posts-grid-4 { grid-template-columns: 1fr 1fr; }
-  .rp-card .img-ph,
-  .post-card.post-square img { aspect-ratio: 16/10; }
-}
-@media (max-width: 640px) {
-  .recent-posts,
-  .posts-grid-4 { grid-template-columns: 1fr; }
-  .rp-card .img-ph,
-  .post-card.post-square img { aspect-ratio: 1; max-height: 280px; }
-}
+/* ---- Recent posts §06 responsive lives in the canonical .posts-grid block
+ *      above; legacy .posts-grid-4 / .post-card.post-square breakpoints retired
+ *      2026-06-02. ---- */
 
 /* ---- Unless ribbon — spec §8 (adapted to .unless-ribbon / .t7-wrap p) ---- */
 @media (max-width: 900px) {

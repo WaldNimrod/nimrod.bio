@@ -277,6 +277,7 @@ body[data-bridge="seam"] .bridge-card::before {
   border-radius: var(--radius-m); padding: 24px;
   position: relative; overflow: hidden;
   display: flex; flex-direction: column; gap: 12px;
+  text-decoration: none; color: inherit;
   transition: transform .18s ease, box-shadow .18s ease;
 }
 .bridge-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-l); }
@@ -290,6 +291,8 @@ body[data-bridge="seam"] .bridge-card::before {
 .bridge-card h3 {
   font-family: "Frank Ruhl Libre", serif; font-size: 22px;
   margin: 0; font-weight: 700; line-height: 1.2;
+  text-decoration: underline; text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px; text-decoration-color: rgba(31,30,28,.32);
 }
 .bridge-card .lede { font-size: 15px; color: var(--ink-soft); line-height: 1.5; margin: 0; }
 .bridge-card .more {
@@ -636,14 +639,20 @@ body[data-bridge="seam"] .bridge-card::before {
   .vc-hero .gloss { grid-template-columns: 1fr; gap: 14px; }
   .vc-hero .gloss .rule { display: none; }
 
-  /* Lattice: anchor on top (full width), sides as 2-col grid */
+  /* Lattice: anchor on top (full width), sides as 2-col grid.
+     Reset children placement so the inline grid-column:3/4 on the
+     "קריאה מבפנים" .lat-side (t1-body.php) does not force a phantom
+     column and crush the anchor into a sliver at narrow widths.
+     (G1 precision fix, team_35 2026-06-03) */
   .vc-lattice {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
   }
+  .vc-lattice > * { grid-column: auto !important; grid-row: auto !important; }
   .vc-lattice .lat-anchor {
-    grid-column: 1 / -1;
-    grid-row: 1 / 2;
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+    order: -1;
   }
 
   /* Projects: remove desktop rotations (clutter) */
@@ -666,3 +675,43 @@ body[data-bridge="seam"] .bridge-card::before {
   .bridge-card:active { transform: scale(0.98); }
   .proj-card:active   { transform: scale(0.98); }
 }
+
+/* ============================================================
+   PROJECTS ARCHIVE — /projects/ (archive-project.php) · G1 2026-06-03
+   Canonical proj-card grid (mockup parity: .ph + .scope-row + .stage-stamp),
+   scoped to .projects-archive so it does not disturb the legacy
+   .proj-card .img-ph / h4 variant used elsewhere in the t1 family.
+   ============================================================ */
+.projects-archive { padding-block: clamp(48px, 6vw, 80px); }
+.projects-archive .archive-head { margin-bottom: clamp(32px, 4vw, 52px); max-width: 60ch; }
+.projects-archive .projects-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: clamp(18px, 2.2vw, 24px); align-items: stretch;
+}
+.projects-archive .proj-card .ph { aspect-ratio: 16/10; overflow: hidden; }
+.projects-archive .proj-card .ph > img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.projects-archive .proj-card .body {
+  padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1;
+}
+.projects-archive .proj-card .scope-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.projects-archive .proj-card .scope {
+  font-family: "JetBrains Mono", monospace; font-size: 10.5px; letter-spacing: .04em;
+  padding: 3px 9px; border-radius: 100px; font-weight: 600;
+}
+.projects-archive .proj-card .scope.client  { background: var(--paper-3); color: var(--ink); }
+.projects-archive .proj-card .scope.venture { background: var(--w-soil); color: var(--paper); }
+.projects-archive .proj-card h3 {
+  font-family: "Frank Ruhl Libre", serif; font-size: 20px; font-weight: 700;
+  line-height: 1.2; margin: 0;
+}
+.projects-archive .proj-card p {
+  font-family: "Assistant", sans-serif; font-size: 14.5px; color: var(--ink-soft);
+  line-height: 1.5; margin: 0;
+}
+.projects-archive .proj-card .meta {
+  font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--ink-soft);
+  letter-spacing: .04em; margin-top: auto; padding-top: 4px; display: flex; gap: 8px; flex-wrap: wrap;
+}
+.projects-archive .empty-state { text-align: center; padding-block: clamp(40px, 6vw, 72px); }
+@media (max-width: 1000px) { .projects-archive .projects-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px)  { .projects-archive .projects-grid { grid-template-columns: 1fr; } }
