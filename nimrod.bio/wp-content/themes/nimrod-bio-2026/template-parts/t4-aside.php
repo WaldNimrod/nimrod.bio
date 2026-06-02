@@ -27,10 +27,11 @@ foreach ( $worlds as $world ) {
 	}
 }
 ?>
-<aside class="post-aside">
+<!-- a11y P009-WP006: <aside>→<div> (nested complementary landmark, not top-level) -->
+<div class="post-aside">
 	<?php if ( $toc ) : ?>
 		<div class="aside-block">
-			<h4>תוכן עניינים</h4>
+			<h3>תוכן עניינים</h3>
 			<ul class="toc-list">
 				<?php foreach ( $toc as $item ) : ?>
 					<li><a href="#<?php echo esc_attr( $item['id'] ); ?>"><?php echo esc_html( $item['label'] ); ?></a></li>
@@ -40,13 +41,13 @@ foreach ( $worlds as $world ) {
 	<?php endif; ?>
 
 	<div class="aside-block">
-		<h4>שתף</h4>
+		<h3>שתף</h3>
 		<?php get_template_part( 'template-parts/t4-share', null, array( 'permalink' => $permalink ) ); ?>
 	</div>
 
 	<?php if ( $related_entities ) : ?>
 		<div class="aside-block">
-			<h4>קשור · באתר</h4>
+			<h3>קשור · באתר</h3>
 			<div class="related-entities">
 				<?php foreach ( $related_entities as $entity ) : ?>
 					<a href="<?php echo esc_url( $entity['href'] ); ?>" class="related-entity">
@@ -57,4 +58,4 @@ foreach ( $worlds as $world ) {
 			</div>
 		</div>
 	<?php endif; ?>
-</aside>
+</div><!-- a11y P009-WP006: was </aside> -->

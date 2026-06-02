@@ -27,6 +27,15 @@
   --w-know-light: #e08a5b;
   --w-code-light: #5cb8ba;
 
+  /* a11y-safe spark derivatives (P009-WP006). The LOCKED --spark #d23a2e
+     fails WCAG AA for small text: 3.48 on --ink (dark), 4.31 on --paper.
+     These two derivatives clear 4.5 in those two contexts WITHOUT touching
+     the locked token (spark stays #d23a2e for large headings + fills/dots).
+       --spark-on-dark  : 5.08 on --ink  (small spark emphasis on dark)
+       --spark-on-paper : 5.07 on --paper (stage-stamp seeking/pilot text) */
+  --spark-on-dark:  #e8645a;
+  --spark-on-paper: #c22f25;
+
   /* Wash fallbacks (locked values, README §Washes). t1.css defines
      these in its :root for world pages; mirror the literals here so
      shared components (e.g. .img-ph.clean per-world wash) work on
@@ -121,7 +130,9 @@
 .stage-stamp.stage-seeking-partners,
 .stage-stamp.stage-seed,
 .stage-stamp.stage-pilot {
-  background: var(--paper); color: var(--spark);
+  /* a11y (P009-WP006): spark text on paper is 4.31 (<AA); use the
+     a11y-safe spark for the label. Border + pulsing dot keep --spark. */
+  background: var(--paper); color: var(--spark-on-paper);
   border: 1px solid var(--spark);
 }
 .stage-stamp.seeking::before,

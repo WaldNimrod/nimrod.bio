@@ -120,6 +120,7 @@ get_template_part(
 <?php else : ?>
 	<section class="t5-section">
 		<div class="t5-wrap">
+			<h2 class="nb-sr-only">רשומות</h2><!-- a11y P009-WP006: sr-only heading restores h1→h2→h3 over the post flow -->
 			<?php if ( have_posts() ) : ?>
 				<div class="t5-flow post-flow">
 					<?php

@@ -127,7 +127,7 @@ switch ( $style ) {
 		<span>·</span>
 		<span><?php echo esc_html( $read ); ?></span>
 	</div>
-	<h4 class="flow-title-brief"><?php echo esc_html( $title ); ?></h4>
+	<h3 class="flow-title-brief"><?php echo esc_html( $title ); ?></h3><!-- a11y P009-WP006: h4→h3 (class-styled, visual unchanged) -->
 	<p class="flow-excerpt-brief"><?php echo esc_html( $excerpt ); ?></p>
 	<div class="flow-tags">
 		<?php foreach ( $worlds as $world ) : ?>

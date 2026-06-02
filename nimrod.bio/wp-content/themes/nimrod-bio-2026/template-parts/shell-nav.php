@@ -40,7 +40,9 @@ $active = nb_active_world();
 	</div>
 </nav>
 
-<aside class="nav-drawer" id="nav-drawer" aria-hidden="true">
+<!-- a11y P009-WP006: `inert` while closed removes the drawer links from focus
+     order + the a11y tree (fixes aria-hidden-focus). nav-drawer.js toggles it. -->
+<aside class="nav-drawer" id="nav-drawer" aria-hidden="true" inert>
 	<div class="drawer-head">
 		<span class="title">תפריט</span>
 		<button class="drawer-close" type="button" aria-label="סגור">&times;</button>

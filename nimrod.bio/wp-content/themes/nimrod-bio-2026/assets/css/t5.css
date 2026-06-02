@@ -409,6 +409,14 @@
   font-family: "JetBrains Mono", monospace; font-size: 10px;
   color: var(--ink-soft); letter-spacing: .03em;
 }
+/* a11y P009-WP006: the .flow-typo teaser card is dark (bg --ink). World
+   ghost-chips there render world-DEEP text on dark (2.2–2.8, <AA) and the
+   mono ftag renders --ink-soft on dark. Use the light world tints (≥6.3 on
+   ink) for chips and --paper for the ftag, scoped to the dark card only. */
+.flow-item.flow-typo .flow-tags .ftag { color: rgba(245,243,236,.7); }
+.flow-item.flow-typo .flow-tags .wc.wc-ghost.soil { color: var(--w-soil-light); border-color: var(--w-soil-light); }
+.flow-item.flow-typo .flow-tags .wc.wc-ghost.know { color: var(--w-know-light); border-color: var(--w-know-light); }
+.flow-item.flow-typo .flow-tags .wc.wc-ghost.code { color: var(--w-code-light); border-color: var(--w-code-light); }
 
 .flow-read-more {
   display: inline-block; align-self: start;

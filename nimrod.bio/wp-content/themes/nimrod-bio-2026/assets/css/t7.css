@@ -327,7 +327,7 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
   padding: 3px 9px; border-radius: 100px; font-weight: 600;
 }
 .fp-card .scope.client { background: var(--paper-3); color: var(--ink); }
-.fp-card .scope.venture { background: var(--w-soil); color: #fff; }
+.fp-card .scope.venture { background: var(--w-soil-deep); color: #fff; } /* a11y P009-WP006: deep variant (was --w-soil 3.56) */
 .fp-card h3 {
   font-family: "Frank Ruhl Libre", serif; font-size: 22px;
   font-weight: 700; margin: 0; line-height: 1.2;
@@ -379,7 +379,7 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
   transition: transform .18s, box-shadow .18s;
 }
 .rp-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-m); }
-.rp-card:hover h4 { color: var(--w-soil-deep); }
+.rp-card:hover h3 { color: var(--w-soil-deep); } /* a11y P009-WP006: card title h4→h3 */
 .rp-card .ph { aspect-ratio: 16 / 10; overflow: hidden; }
 .rp-card .ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .rp-card.feat { grid-column: 1 / 3; grid-row: 1 / 3; }
@@ -396,12 +396,12 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
   color: var(--ink-soft); letter-spacing: .03em;
   display: flex; gap: 8px;
 }
-.rp-card h4 {
+.rp-card h3 {
   font-family: "Frank Ruhl Libre", serif; font-size: 19px;
   font-weight: 700; margin: 0; line-height: 1.22;
   transition: color .15s;
 }
-.rp-card.feat h4 { font-size: 26px; }
+.rp-card.feat h3 { font-size: 26px; }
 .rp-card p {
   font-family: "Assistant", sans-serif; font-size: 14.5px;
   color: var(--ink-soft); line-height: 1.5; margin: 0;
@@ -625,7 +625,9 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
 /* Over the hero poster the nav goes transparent-dark with light links; the
    solid (default, in shell.css) state returns once the hero scrolls away. */
 .shell-nav.atop {
-  background: rgba(18, 17, 15, .5);
+  /* a11y P009-WP006: .5 scrim → light nav text only 3.45 over paper composite;
+     .72 darkens the bar for AA (7.24). This t7 rule wins over shell.css on home. */
+  background: rgba(18, 17, 15, .72);
   backdrop-filter: blur(6px);
   border-block-end-color: transparent;
 }
@@ -739,8 +741,8 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
 .hero-poster .hp-kicker .kc b { color: var(--w-soil-light, #9cc063); font-size: 1.12em; }
 .hero-poster .hp-cta { display: flex; gap: 14px; flex-wrap: wrap; }
 /* primary = know fill; ghost = light outline on dark */
-.hero-poster .hp-btn-primary { background: var(--w-know); color: var(--paper); }
-.hero-poster .hp-btn-primary:hover { background: var(--w-know-deep); }
+.hero-poster .hp-btn-primary { background: var(--w-know-deep); color: var(--paper); } /* a11y P009-WP006: paper on --w-know is 3.45 (<AA); deep = 5.36 */
+.hero-poster .hp-btn-primary:hover { background: #843f20; } /* a11y P009-WP006: hover darkens (rest is now --w-know-deep) */
 .hero-poster .hp-btn-ghost {
   background: transparent; color: var(--paper);
   border-color: rgba(245, 243, 236, .5);
@@ -1194,7 +1196,7 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
   color: rgba(245, 243, 236, .62); margin: 0 0 8px; max-width: 48ch;
   text-wrap: pretty;
 }
-.unless-lockup .he em { color: var(--spark); font-style: normal; font-weight: 700; }
+.unless-lockup .he em { color: var(--spark-on-dark); font-style: normal; font-weight: 700; } /* a11y P009-WP006: spark on dark is 3.48 (<AA); --spark-on-dark = 5.08 */
 .unless-lockup .he .ul-spark {
   display: inline-block; width: .82em; height: .82em;
   color: var(--spark); vertical-align: -.04em; margin-inline: .18em;
@@ -1203,7 +1205,7 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
 .unless-lockup .src {
   font-family: "JetBrains Mono", monospace; font-size: 11.5px;
   letter-spacing: .1em; text-transform: uppercase;
-  color: rgba(245, 243, 236, .42);
+  color: rgba(245, 243, 236, .55); /* a11y P009-WP006: .42 was 3.73 on ink; .55 = 5.43 */
 }
 
 /* ---- B2 motion (gated to restrained baseline + reduced-motion-safe) ---- */
@@ -1280,7 +1282,7 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
 }
 .t7-projects .proj-card .scope { padding: 3px 9px; border-radius: 100px; font-weight: 600; }
 .t7-projects .proj-card .scope.client { background: var(--paper-3); color: var(--ink); }
-.t7-projects .proj-card .scope.venture { background: var(--w-soil); color: var(--paper); }
+.t7-projects .proj-card .scope.venture { background: var(--w-soil-deep); color: var(--paper); } /* a11y P009-WP006: deep variant (was --w-soil 3.56) */
 .t7-projects .proj-card h3 {
   font-family: "Frank Ruhl Libre", serif; font-size: 21px; font-weight: 700;
   margin: 0; line-height: 1.18;
@@ -1305,7 +1307,7 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
   content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor;
 }
 .t7-projects .stage-stamp.stage-live { background: var(--paper); color: var(--w-soil-deep); border: 1px solid var(--w-soil-deep); }
-.t7-projects .stage-stamp.stage-seeking-partners { background: var(--paper); color: var(--spark); border: 1px solid var(--spark); }
+.t7-projects .stage-stamp.stage-seeking-partners { background: var(--paper); color: var(--spark-on-paper); border: 1px solid var(--spark); } /* a11y P009-WP006: spark text on paper 4.31 (<AA) → safe label, spark border */
 .t7-projects .stage-stamp.stage-legacy { background: var(--paper-2); color: var(--ink); border: 1px solid var(--ink-soft); }
 @media (prefers-reduced-motion: no-preference) {
   .t7-projects .stage-stamp.stage-seeking-partners::before { animation: nb-stamp-pulse 2.4s ease-in-out infinite; }
@@ -1364,7 +1366,7 @@ body[data-unless="scattered"]  .unless-block.scattered { display: block; }
   font-family: "JetBrains Mono", monospace; font-size: 12px; font-weight: 500;
   letter-spacing: .14em; text-transform: uppercase; color: rgba(245, 243, 236, .7);
 }
-.manifesto .t7-eyebrow.light .num { color: rgba(245, 243, 236, .45); }
+.manifesto .t7-eyebrow.light .num { color: rgba(245, 243, 236, .55); } /* a11y P009-WP006: .45 was 4.09 on ink; .55 = 5.43 */
 .manifesto h2 {
   font-family: "Frank Ruhl Libre", serif; font-weight: 900;
   font-size: clamp(32px, 4.4vw, 60px); line-height: 1.04;

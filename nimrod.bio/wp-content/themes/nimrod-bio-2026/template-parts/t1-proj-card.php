@@ -24,7 +24,7 @@ $worlds  = wp_get_post_terms( $post->ID, 'world', array( 'fields' => 'slugs' ) )
 				<span>· <?php echo esc_html( $year ); ?></span>
 			<?php endif; ?>
 		</div>
-		<h4><?php echo esc_html( get_the_title( $post ) ); ?></h4>
+		<h3><?php echo esc_html( get_the_title( $post ) ); ?></h3><!-- a11y P009-WP006: card title h4→h3 under section h2 -->
 		<?php if ( $summary ) : ?>
 			<p style="font-size:14px;color:var(--ink-soft);margin:8px 0 0;line-height:1.55"><?php echo esc_html( $summary ); ?></p>
 		<?php endif; ?>

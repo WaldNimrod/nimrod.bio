@@ -207,7 +207,7 @@ body[data-post="post-tomato-strain"] .t4-post.post-tomato-strain { display: bloc
   position: sticky; top: 88px; align-self: start;
   display: flex; flex-direction: column; gap: 28px;
 }
-.aside-block h4 {
+.aside-block h3 { /* a11y P009-WP006: h4→h3 */
   font-family: "JetBrains Mono", monospace; font-size: 10px;
   letter-spacing: .14em; text-transform: uppercase;
   color: var(--ink-soft); margin: 0 0 12px; font-weight: 500;

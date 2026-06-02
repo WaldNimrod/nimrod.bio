@@ -26,7 +26,8 @@ $nb_proj_archive = new WP_Query(
 	)
 );
 ?>
-<main id="main" class="t1-wrap projects-archive" aria-label="ארכיון פרויקטים">
+<!-- a11y P009-WP006: <main>→<section> (header.php already provides the page <main id="main">; this was a duplicate/nested main) -->
+<section class="t1-wrap projects-archive" aria-label="ארכיון פרויקטים">
 
 	<header class="archive-head">
 		<p class="s-eyebrow"><span class="num">פרויקטים ·</span> מהשטח</p>
@@ -51,7 +52,7 @@ $nb_proj_archive = new WP_Query(
 							<span class="scope <?php echo esc_attr( $nb_scope ); ?>"><?php echo 'client' === $nb_scope ? 'client-case' : 'own-venture'; ?></span>
 							<?php echo nb_stage_stamp( $nb_stage ); ?>
 						</div>
-						<h3><?php the_title(); ?></h3>
+						<h2><?php the_title(); ?></h2><!-- a11y P009-WP006: card title h3→h2 (primary content under archive h1) -->
 						<?php $nb_summary = nb_meta( $nb_pid, 'summary' ); ?>
 						<?php if ( $nb_summary ) : ?><p><?php echo esc_html( $nb_summary ); ?></p><?php endif; ?>
 						<?php if ( $nb_world ) : ?><div class="meta"><span><?php echo esc_html( $nb_world ); ?></span></div><?php endif; ?>
@@ -64,12 +65,12 @@ $nb_proj_archive = new WP_Query(
 		</div>
 	<?php else : ?>
 		<div class="empty-state">
-			<h3>עדיין אין פרויקטים שפורסמו.</h3>
+			<h2>עדיין אין פרויקטים שפורסמו.</h2><!-- a11y P009-WP006: h3→h2 under archive h1 -->
 			<p>הפרויקטים מהשטח יופיעו כאן כשיהיו מוכנים — מקרים שמספרים את התזה, לא לפי לוח.</p>
 			<div class="err-links"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">לדף הבית</a></div>
 		</div>
 	<?php endif; ?>
 
-</main>
+</section><!-- a11y P009-WP006: was </main> -->
 
 <?php get_footer(); ?>

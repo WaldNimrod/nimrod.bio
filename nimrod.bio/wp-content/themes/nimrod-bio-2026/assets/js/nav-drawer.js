@@ -26,6 +26,7 @@
 		function open() {
 			drawer.classList.add('is-open');
 			backdrop.classList.add('is-open');
+			drawer.removeAttribute('inert'); // a11y P009-WP006: focusable while open
 			drawer.setAttribute('aria-hidden', 'false');
 			backdrop.setAttribute('aria-hidden', 'false');
 			toggle.setAttribute('aria-expanded', 'true');
@@ -41,6 +42,7 @@
 		function shut() {
 			drawer.classList.remove('is-open');
 			backdrop.classList.remove('is-open');
+			drawer.setAttribute('inert', ''); // a11y P009-WP006: remove links from focus order when closed
 			drawer.setAttribute('aria-hidden', 'true');
 			backdrop.setAttribute('aria-hidden', 'true');
 			toggle.setAttribute('aria-expanded', 'false');

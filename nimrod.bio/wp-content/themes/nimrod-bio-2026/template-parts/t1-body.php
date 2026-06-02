@@ -152,7 +152,7 @@ $posts_q = nb_query_by_world( 'post', $world, 4 );
 					<a href="<?php the_permalink(); ?>" class="post-card">
 						<div class="date"><?php echo esc_html( get_the_date( 'M' ) ); ?><b><?php echo esc_html( $parts[0] ?? '' ); ?></b><?php echo esc_html( $parts[2] ?? '' ); ?></div>
 						<div>
-							<h5><?php the_title(); ?></h5>
+							<h3><?php the_title(); ?></h3><!-- a11y P009-WP006: journal post-card h5→h3 under section h2 -->
 							<div class="meta">
 								<?php foreach ( $p_worlds as $w ) : ?>
 									<?php echo nb_world_chip( $w, true ); ?>

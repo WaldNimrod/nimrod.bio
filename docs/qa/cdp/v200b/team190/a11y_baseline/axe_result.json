@@ -1,0 +1,1116 @@
+{
+  "base": "https://nimrod-bio-2026.s887.upress.link",
+  "ts": "2026-06-02T22:30:56.640Z",
+  "pages": 15,
+  "totalSerious": 15,
+  "byRule": {
+    "color-contrast": {
+      "impact": "serious",
+      "nodeCount": 78,
+      "pages": [
+        "home",
+        "about",
+        "contact",
+        "projects-archive",
+        "services-archive",
+        "world-soil",
+        "world-know",
+        "world-code",
+        "heritage",
+        "single-project",
+        "single-service",
+        "blog-index",
+        "single-post",
+        "search",
+        "notfound-404"
+      ]
+    },
+    "heading-order": {
+      "impact": "moderate",
+      "nodeCount": 24,
+      "pages": [
+        "home",
+        "about",
+        "contact",
+        "projects-archive",
+        "services-archive",
+        "world-soil",
+        "world-know",
+        "world-code",
+        "heritage",
+        "single-project",
+        "single-service",
+        "blog-index",
+        "single-post",
+        "search",
+        "notfound-404"
+      ]
+    },
+    "landmark-complementary-is-top-level": {
+      "impact": "moderate",
+      "nodeCount": 2,
+      "pages": [
+        "contact",
+        "single-post"
+      ]
+    },
+    "landmark-main-is-top-level": {
+      "impact": "moderate",
+      "nodeCount": 2,
+      "pages": [
+        "projects-archive",
+        "services-archive"
+      ]
+    },
+    "landmark-no-duplicate-main": {
+      "impact": "moderate",
+      "nodeCount": 2,
+      "pages": [
+        "projects-archive",
+        "services-archive"
+      ]
+    },
+    "page-has-heading-one": {
+      "impact": "moderate",
+      "nodeCount": 1,
+      "pages": [
+        "search"
+      ]
+    }
+  },
+  "perPage": [
+    {
+      "page": "home",
+      "path": "/",
+      "total": 2,
+      "serious": 1,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                ".wm > small"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 2.37 (foreground color: #4a4844, background color: #84827e, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".nav-world.soil > span"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.45 (foreground color: #f5f3ec, background color: #84827e, font size: 10.9pt (14.5px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".nav-world.know > span"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.45 (foreground color: #f5f3ec, background color: #84827e, font size: 10.9pt (14.5px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".nav-world.code > span"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.45 (foreground color: #f5f3ec, background color: #84827e, font size: 10.9pt (14.5px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".nav-secondary > a:nth-child(1)"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.45 (foreground color: #f5f3ec, background color: #84827e, font size: 10.1pt (13.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".nav-secondary > a:nth-child(2)"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.45 (foreground color: #f5f3ec, background color: #84827e, font size: 10.1pt (13.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".contact"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.45 (foreground color: #f5f3ec, background color: #84827e, font size: 10.1pt (13.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".btn-primary"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.45 (foreground color: #f5f3ec, background color: #c46a3e, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".he > em"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 13.5pt (18px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".src"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.72 (foreground color: #797773, background color: #1f1e1c, font size: 8.6pt (11.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".proj-card:nth-child(1) > .body > .scope-row > .venture.scope"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.56 (foreground color: #f5f3ec, background color: #6a8a3a, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".stage-pilot"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 4.31 (foreground color: #d23a2e, background color: #f5f3ec, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".proj-card:nth-child(2) > .body > .scope-row > .venture.scope"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.56 (foreground color: #f5f3ec, background color: #6a8a3a, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".proj-card:nth-child(3) > .body > .scope-row > .venture.scope"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.56 (foreground color: #f5f3ec, background color: #6a8a3a, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".light > .num"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 4.09 (foreground color: #7f7e7a, background color: #1f1e1c, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".unless-inline"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".bottom > span:nth-child(1)"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 4.09 (foreground color: #7f7e7a, background color: #1f1e1c, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".unless > em"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "help": "Heading levels should only increase by one",
+          "nodes": [
+            {
+              "target": [
+                ".feat > .body > h4"
+              ],
+              "summary": "Fix any of the following: Heading order invalid"
+            },
+            {
+              "target": [
+                "div:nth-child(2) > h6"
+              ],
+              "summary": "Fix any of the following: Heading order invalid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": "about",
+      "path": "/about/",
+      "total": 2,
+      "serious": 1,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                ".btn"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.83 (foreground color: #ffffff, background color: #c46a3e, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".unless-inline"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".bottom > span:nth-child(1)"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 4.09 (foreground color: #7f7e7a, background color: #1f1e1c, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".unless > em"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "help": "Heading levels should only increase by one",
+          "nodes": [
+            {
+              "target": [
+                ".principle-tile:nth-child(1) > h4"
+              ],
+              "summary": "Fix any of the following: Heading order invalid"
+            },
+            {
+              "target": [
+                "div:nth-child(2) > h6"
+              ],
+              "summary": "Fix any of the following: Heading order invalid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": "contact",
+      "path": "/contact/",
+      "total": 3,
+      "serious": 1,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                ".btn-wa"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 4.37 (foreground color: #ffffff, background color: #1f8a4c, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "label[for=\"nb-contact-name\"] > .opt"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.8 (foreground color: #7d7b76, background color: #f5f3ec, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "label[for=\"nb-contact-phone\"] > .opt"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.8 (foreground color: #7d7b76, background color: #f5f3ec, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".form-submit"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.83 (foreground color: #ffffff, background color: #c46a3e, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".wa-btn"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 4.37 (foreground color: #ffffff, background color: #1f8a4c, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".unless-inline"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".bottom > span:nth-child(1)"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 4.09 (foreground color: #7f7e7a, background color: #1f1e1c, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".unless > em"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "help": "Heading levels should only increase by one",
+          "nodes": [
+            {
+              "target": [
+                "h3"
+              ],
+              "summary": "Fix any of the following: Heading order invalid"
+            },
+            {
+              "target": [
+                "div:nth-child(2) > h6"
+              ],
+              "summary": "Fix any of the following: Heading order invalid"
+            }
+          ]
+        },
+        {
+          "id": "landmark-complementary-is-top-level",
+          "impact": "moderate",
+          "help": "Aside should not be contained in another landmark",
+          "nodes": [
+            {
+              "target": [
+                ".contact-side"
+              ],
+              "summary": "Fix any of the following: The null landmark is contained in another landmark."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": "projects-archive",
+      "path": "/projects/",
+      "total": 4,
+      "serious": 1,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                ".proj-card:nth-child(1) > .body > .scope-row > .venture.scope"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.56 (foreground color: #f5f3ec, background color: #6a8a3a, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".stage-pilot"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 4.31 (foreground color: #d23a2e, background color: #f5f3ec, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".proj-card:nth-child(2) > .body > .scope-row > .venture.scope"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.56 (foreground color: #f5f3ec, background color: #6a8a3a, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".proj-card:nth-child(3) > .body > .scope-row > .venture.scope"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.56 (foreground color: #f5f3ec, background color: #6a8a3a, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".unless-inline"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".bottom > span:nth-child(1)"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 4.09 (foreground color: #7f7e7a, background color: #1f1e1c, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".unless > em"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "help": "Heading levels should only increase by one",
+          "nodes": [
+            {
+              "target": [
+                ".proj-card:nth-child(1) > .body > h3"
+              ],
+              "summary": "Fix any of the following: Heading order invalid"
+            },
+            {
+              "target": [
+                "div:nth-child(2) > h6"
+              ],
+              "summary": "Fix any of the following: Heading order invalid"
+            }
+          ]
+        },
+        {
+          "id": "landmark-main-is-top-level",
+          "impact": "moderate",
+          "help": "Main landmark should not be contained in another landmark",
+          "nodes": [
+            {
+              "target": [
+                ".t1-wrap"
+              ],
+              "summary": "Fix any of the following: The main landmark is contained in another landmark."
+            }
+          ]
+        },
+        {
+          "id": "landmark-no-duplicate-main",
+          "impact": "moderate",
+          "help": "Document should not have more than one main landmark",
+          "nodes": [
+            {
+              "target": [
+                ".nb-main"
+              ],
+              "summary": "Fix any of the following: Document has more than one main landmark"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": "services-archive",
+      "path": "/services/",
+      "total": 4,
+      "serious": 1,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                ".unless-inline"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".bottom > span:nth-child(1)"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 4.09 (foreground color: #7f7e7a, background color: #1f1e1c, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".unless > em"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "help": "Heading levels should only increase by one",
+          "nodes": [
+            {
+              "target": [
+                ".svc-card.has-img:nth-child(1) > .body > h3"
+              ],
+              "summary": "Fix any of the following: Heading order invalid"
+            },
+            {
+              "target": [
+                "div:nth-child(2) > h6"
+              ],
+              "summary": "Fix any of the following: Heading order invalid"
+            }
+          ]
+        },
+        {
+          "id": "landmark-main-is-top-level",
+          "impact": "moderate",
+          "help": "Main landmark should not be contained in another landmark",
+          "nodes": [
+            {
+              "target": [
+                ".t1-wrap"
+              ],
+              "summary": "Fix any of the following: The main landmark is contained in another landmark."
+            }
+          ]
+        },
+        {
+          "id": "landmark-no-duplicate-main",
+          "impact": "moderate",
+          "help": "Document should not have more than one main landmark",
+          "nodes": [
+            {
+              "target": [
+                ".nb-main"
+              ],
+              "summary": "Fix any of the following: Document has more than one main landmark"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": "world-soil",
+      "path": "/soil/",
+      "total": 2,
+      "serious": 1,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                ".unless-inline"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".bottom > span:nth-child(1)"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 4.09 (foreground color: #7f7e7a, background color: #1f1e1c, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".unless > em"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "help": "Heading levels should only increase by one",
+          "nodes": [
+            {
+              "target": [
+                "div:nth-child(2) > h6"
+              ],
+              "summary": "Fix any of the following: Heading order invalid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": "world-know",
+      "path": "/know/",
+      "total": 2,
+      "serious": 1,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                ".unless-inline"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".bottom > span:nth-child(1)"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 4.09 (foreground color: #7f7e7a, background color: #1f1e1c, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".unless > em"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "help": "Heading levels should only increase by one",
+          "nodes": [
+            {
+              "target": [
+                "div:nth-child(2) > h6"
+              ],
+              "summary": "Fix any of the following: Heading order invalid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": "world-code",
+      "path": "/code/",
+      "total": 2,
+      "serious": 1,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                ".unless-inline"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".bottom > span:nth-child(1)"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 4.09 (foreground color: #7f7e7a, background color: #1f1e1c, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".unless > em"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "help": "Heading levels should only increase by one",
+          "nodes": [
+            {
+              "target": [
+                "div:nth-child(2) > h6"
+              ],
+              "summary": "Fix any of the following: Heading order invalid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": "heritage",
+      "path": "/heritage/",
+      "total": 2,
+      "serious": 1,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                ".unless-inline"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".bottom > span:nth-child(1)"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 4.09 (foreground color: #7f7e7a, background color: #1f1e1c, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".unless > em"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "help": "Heading levels should only increase by one",
+          "nodes": [
+            {
+              "target": [
+                "div:nth-child(2) > h6"
+              ],
+              "summary": "Fix any of the following: Heading order invalid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": "single-project",
+      "path": "/project/tiktrack/",
+      "total": 2,
+      "serious": 1,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                ".t3-hero-tags > .wc.code"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 4.09 (foreground color: #ffffff, background color: #2d8a8c, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".stage-pilot"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 4.31 (foreground color: #d23a2e, background color: #f5f3ec, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".wc-ghost"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 1.81 (foreground color: #1f5e60, background color: #2d8a8c, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".unless-inline"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".bottom > span:nth-child(1)"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 4.09 (foreground color: #7f7e7a, background color: #1f1e1c, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".unless > em"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "help": "Heading levels should only increase by one",
+          "nodes": [
+            {
+              "target": [
+                "h4"
+              ],
+              "summary": "Fix any of the following: Heading order invalid"
+            },
+            {
+              "target": [
+                "div:nth-child(2) > h6"
+              ],
+              "summary": "Fix any of the following: Heading order invalid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": "single-service",
+      "path": "/services/bcs/",
+      "total": 2,
+      "serious": 1,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                ".wc"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.95 (foreground color: #ffffff, background color: #6a8a3a, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".hero-cta-row > .primary.hero-cta"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.83 (foreground color: #ffffff, background color: #c46a3e, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".cta-side > .primary.hero-cta"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.83 (foreground color: #ffffff, background color: #c46a3e, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".unless-inline"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".bottom > span:nth-child(1)"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 4.09 (foreground color: #7f7e7a, background color: #1f1e1c, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".unless > em"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "help": "Heading levels should only increase by one",
+          "nodes": [
+            {
+              "target": [
+                ".col:nth-child(1) > h3"
+              ],
+              "summary": "Fix any of the following: Heading order invalid"
+            },
+            {
+              "target": [
+                "div:nth-child(2) > h6"
+              ],
+              "summary": "Fix any of the following: Heading order invalid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": "blog-index",
+      "path": "/blog/",
+      "total": 2,
+      "serious": 1,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                ".flow-typo > .flow-tags > .code.wc.wc-ghost"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 2.24 (foreground color: #1f5e60, background color: #1f1e1c, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".flow-typo > .flow-tags > .know.wc.wc-ghost"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 2.79 (foreground color: #9a4f2b, background color: #1f1e1c, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".unless-inline"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".bottom > span:nth-child(1)"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 4.09 (foreground color: #7f7e7a, background color: #1f1e1c, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".unless > em"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "help": "Heading levels should only increase by one",
+          "nodes": [
+            {
+              "target": [
+                ".flow-brief.post-flow-brief.flow-item:nth-child(1) > h4"
+              ],
+              "summary": "Fix any of the following: Heading order invalid"
+            },
+            {
+              "target": [
+                "div:nth-child(2) > h6"
+              ],
+              "summary": "Fix any of the following: Heading order invalid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": "single-post",
+      "path": "/blog/garden-bed-width-80cm/",
+      "total": 3,
+      "serious": 1,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                ".unless-inline"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".bottom > span:nth-child(1)"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 4.09 (foreground color: #7f7e7a, background color: #1f1e1c, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".unless > em"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "help": "Heading levels should only increase by one",
+          "nodes": [
+            {
+              "target": [
+                ".aside-block:nth-child(1) > h4"
+              ],
+              "summary": "Fix any of the following: Heading order invalid"
+            },
+            {
+              "target": [
+                "div:nth-child(2) > h6"
+              ],
+              "summary": "Fix any of the following: Heading order invalid"
+            }
+          ]
+        },
+        {
+          "id": "landmark-complementary-is-top-level",
+          "impact": "moderate",
+          "help": "Aside should not be contained in another landmark",
+          "nodes": [
+            {
+              "target": [
+                ".post-aside"
+              ],
+              "summary": "Fix any of the following: The null landmark is contained in another landmark."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": "search",
+      "path": "/?s=garden",
+      "total": 3,
+      "serious": 1,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                ".unless-inline"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".bottom > span:nth-child(1)"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 4.09 (foreground color: #7f7e7a, background color: #1f1e1c, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".unless > em"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "help": "Heading levels should only increase by one",
+          "nodes": [
+            {
+              "target": [
+                "div:nth-child(2) > h6"
+              ],
+              "summary": "Fix any of the following: Heading order invalid"
+            }
+          ]
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "help": "Page should contain a level-one heading",
+          "nodes": [
+            {
+              "target": [
+                "html"
+              ],
+              "summary": "Fix all of the following: Page must have a level-one heading"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "page": "notfound-404",
+      "path": "/no-such-page-xyz/",
+      "total": 2,
+      "serious": 1,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                ".unless-inline"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".bottom > span:nth-child(1)"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 4.09 (foreground color: #7f7e7a, background color: #1f1e1c, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".unless > em"
+              ],
+              "summary": "Fix any of the following: Element has insufficient color contrast of 3.47 (foreground color: #d23a2e, background color: #1f1e1c, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "help": "Heading levels should only increase by one",
+          "nodes": [
+            {
+              "target": [
+                "div:nth-child(2) > h6"
+              ],
+              "summary": "Fix any of the following: Heading order invalid"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

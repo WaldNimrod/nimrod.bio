@@ -236,9 +236,9 @@
   background: var(--paper-2); color: var(--ink-soft);
   flex-shrink: 0;
 }
-.media-kind.press   { background: var(--w-soil); color: #fff; }
-.media-kind.podcast { background: var(--w-know); color: #fff; }
-.media-kind.talk    { background: var(--w-code); color: #fff; }
+.media-kind.press   { background: var(--w-soil-deep); color: #fff; } /* a11y P009-WP006: deep variants (white on light world <AA) */
+.media-kind.podcast { background: var(--w-know-deep); color: #fff; }
+.media-kind.talk    { background: var(--w-code-deep); color: #fff; }
 .media-kind.write   { background: var(--ink); color: var(--paper); }
 .media-body { min-width: 0; }
 .media-meta {
@@ -278,7 +278,13 @@
   background: linear-gradient(180deg, var(--paper-2) 0%, var(--paper) 60%);
   border-bottom: 1px solid var(--line);
 }
-.t8-heritage-hero, .heritage-hero .stamp {
+/* a11y P009-WP006 — FIX pre-existing comma-selector bug: `.t8-heritage-hero,
+   .heritage-hero .stamp` applied the .stamp green background + child styles to
+   the bare .t8-heritage-hero CONTAINER, painting the whole hero soil-deep green
+   with inherited dark text (1.9 contrast). Corrected to descendant combinators
+   so the container keeps its paper gradient (line above) and the children get
+   their intended treatment on paper (all ≥AA). */
+.t8-heritage-hero .stamp, .heritage-hero .stamp {
   display: inline-flex; align-items: center; gap: 8px;
   font-family: "JetBrains Mono", monospace; font-size: 10px;
   background: var(--w-soil-deep); color: #fff;
@@ -286,25 +292,25 @@
   letter-spacing: .14em; text-transform: uppercase; font-weight: 700;
   margin-bottom: 24px;
 }
-.t8-heritage-hero, .heritage-hero h1 {
+.t8-heritage-hero h1, .heritage-hero h1 {
   font-family: "Frank Ruhl Libre", serif; font-weight: 900;
   font-size: clamp(48px, 7vw, 96px); line-height: .96;
   margin: 0 0 22px; letter-spacing: -.025em; color: var(--ink);
 }
-.t8-heritage-hero, .heritage-hero .span {
+.t8-heritage-hero .span, .heritage-hero .span {
   font-family: "Frank Ruhl Libre", serif; font-style: italic;
   font-size: clamp(20px, 2.2vw, 28px); line-height: 1.45;
   color: var(--ink-soft); margin: 0 0 32px;
   max-width: 38ch;
 }
-.t8-heritage-hero, .heritage-hero .meta-row {
+.t8-heritage-hero .meta-row, .heritage-hero .meta-row {
   display: flex; gap: 32px; flex-wrap: wrap;
   padding-top: 22px; border-top: 1px dashed var(--line);
   font-family: "JetBrains Mono", monospace; font-size: 12px;
   color: var(--ink-soft); letter-spacing: .03em;
 }
-.t8-heritage-hero, .heritage-hero .meta-row b { color: var(--ink); font-weight: 600; font-family: "Frank Ruhl Libre", serif; font-size: 16px; }
-.t8-heritage-hero, .heritage-hero .meta-row .row { display: flex; flex-direction: column; gap: 2px; }
+.t8-heritage-hero .meta-row b, .heritage-hero .meta-row b { color: var(--ink); font-weight: 600; font-family: "Frank Ruhl Libre", serif; font-size: 16px; }
+.t8-heritage-hero .meta-row .row, .heritage-hero .meta-row .row { display: flex; flex-direction: column; gap: 2px; }
 
 .heritage-image {
   aspect-ratio: 21/9; margin-top: 36px;
@@ -364,7 +370,7 @@
   letter-spacing: .12em; text-transform: uppercase;
   color: var(--ink-soft); margin-bottom: 6px;
 }
-.heritage-end h4 {
+.heritage-end h3 { /* a11y P009-WP006: h4→h3 */
   font-family: "Frank Ruhl Libre", serif; font-size: 22px;
   font-weight: 700; margin: 0; line-height: 1.3;
 }
@@ -392,7 +398,7 @@
   border-radius: var(--radius-l);
   padding: clamp(28px, 3vw, 40px);
 }
-.contact-form h3 {
+.contact-form h2 { /* a11y P009-WP006: h3→h2 */
   font-family: "Frank Ruhl Libre", serif; font-size: 26px;
   font-weight: 700; margin: 0 0 18px; line-height: 1.2;
 }
@@ -407,7 +413,7 @@
   letter-spacing: .06em; text-transform: uppercase;
   color: var(--ink-soft); margin-bottom: 6px;
 }
-.field label .opt { text-transform: none; letter-spacing: 0; color: var(--ink-soft); opacity: .7; font-size: 11px; }
+.field label .opt { text-transform: none; letter-spacing: 0; color: var(--ink-soft); opacity: .85; font-size: 11px; } /* a11y P009-WP006: opacity .7 was 3.80 on paper; .85 ≈ 5.5 */
 .field input, .field textarea, .field select {
   width: 100%;
   font-family: "Assistant", sans-serif; font-size: 16px;
@@ -450,12 +456,12 @@
 .form-submit, .contact-form .btn.btn-spark {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 14px 26px; border-radius: var(--radius-pill);
-  background: var(--w-know); color: #fff;
+  background: var(--w-know-deep); color: #fff; /* a11y P009-WP006: white on --w-know 3.83 (<AA); deep = 5.95 */
   font-family: "Assistant", sans-serif; font-weight: 600; font-size: 16px;
   border: none; cursor: pointer; width: 100%; justify-content: center;
   transition: background .15s, transform .15s;
 }
-.form-submit:hover, .contact-form .btn.btn-spark:hover { background: var(--w-know-deep); transform: translateY(-1px); }
+.form-submit:hover, .contact-form .btn.btn-spark:hover { background: #843f20; transform: translateY(-1px); }
 .form-foot {
   margin-top: 14px;
   font-family: "JetBrains Mono", monospace; font-size: 11px;
@@ -473,7 +479,7 @@
   font-family: "JetBrains Mono", monospace; font-size: 10px;
   letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft);
 }
-.contact-card h4 {
+.contact-card h3 { /* a11y P009-WP006: h4→h3 */
   font-family: "Frank Ruhl Libre", serif; font-size: 19px;
   font-weight: 700; margin: 0; line-height: 1.3;
 }
@@ -489,13 +495,13 @@
 .contact-card .wa-btn {
   display: inline-flex; align-items: center; gap: 9px;
   padding: 11px 20px; border-radius: var(--radius-pill);
-  background: #1f8a4c; color: #fff;
+  background: #187a42; color: #fff; /* a11y P009-WP006: #1f8a4c was 4.38 (<AA); #187a42 = 5.38 */
   font-family: "Assistant", sans-serif; font-weight: 600; font-size: 15px;
   text-decoration: none; align-self: start;
   border: none;
   transition: background .15s, transform .15s;
 }
-.contact-card .wa-btn:hover { background: #187a42; transform: translateY(-2px); }
+.contact-card .wa-btn:hover { background: #15703a; transform: translateY(-2px); }
 .contact-card .wa-btn svg { flex-shrink: 0; }
 .contact-card.response {
   background: var(--soil-wash); border-color: var(--soil-wash-2);
@@ -552,7 +558,7 @@
   color: var(--ink-soft); margin: 0; max-width: 50ch;
 }
 .contact-teaser-btn {
-  padding: 14px 28px; border-radius: 100px; background: var(--w-know); color: #fff;
+  padding: 14px 28px; border-radius: 100px; background: var(--w-know-deep); color: #fff; /* a11y P009-WP006: deep (white on --w-know 3.83 <AA) */
   text-decoration: none; font-family: "Assistant", sans-serif; font-weight: 600;
   font-size: 16px; white-space: nowrap;
 }
@@ -696,8 +702,8 @@ fieldset.topic-chips legend {
 .page-hero .hero-act,
 .hero-act { display: flex; gap: 14px; flex-wrap: wrap; margin-top: clamp(26px, 3vw, 38px); }
 .hero-act .btn svg { width: 19px; height: 19px; flex-shrink: 0; }
-.btn-wa { background: #1f8a4c; color: #fff; }
-.btn-wa:hover { background: #187a42; }
+.btn-wa { background: #187a42; color: #fff; } /* a11y P009-WP006: #1f8a4c was 4.38 (<AA); #187a42 = 5.38 */
+.btn-wa:hover { background: #15703a; }
 
 /* --- About hero (two-column portrait) --- */
 .about-hero {
@@ -779,7 +785,7 @@ fieldset.topic-chips legend {
   font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: .08em;
   text-transform: uppercase; color: var(--w-know-deep); margin-bottom: 10px;
 }
-.principle-tile h4 { font-family: "Frank Ruhl Libre", serif; font-weight: 700; font-size: 20px; line-height: 1.2; margin: 0 0 8px; }
+.principle-tile h3 { font-family: "Frank Ruhl Libre", serif; font-weight: 700; font-size: 20px; line-height: 1.2; margin: 0 0 8px; } /* a11y P009-WP006: h4→h3 */
 .principle-tile p { font-family: "Assistant", sans-serif; font-size: 14.5px; line-height: 1.55; color: var(--ink-soft); margin: 0; }
 
 /* --- §06 קצת ים (sea band) --- */

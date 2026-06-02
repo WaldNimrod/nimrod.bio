@@ -80,12 +80,12 @@ while ( have_posts() ) :
 									<span>· <?php echo esc_html( $p_year ); ?></span>
 								<?php endif; ?>
 							</div>
-							<h4>
+							<h3>
 								<?php echo esc_html( get_the_title( $project ) ); ?>
 								<?php if ( $name_tbc ) : ?>
 									<?php echo nb_render_tbc(); ?>
 								<?php endif; ?>
-							</h4>
+							</h3>
 							<?php if ( $p_summary ) : ?>
 								<p style="font-size:14px;color:var(--ink-soft);margin:0;line-height:1.55"><?php echo esc_html( $p_summary ); ?></p>
 							<?php endif; ?>

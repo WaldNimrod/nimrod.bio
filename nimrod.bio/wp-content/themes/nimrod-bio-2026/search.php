@@ -32,6 +32,7 @@ $nb_kind = function ( $post_id ) {
 ?>
 <section class="t8-section">
 	<div class="t8-wrap">
+		<h1 class="search-h1"><?php echo $nb_q ? esc_html( sprintf( 'חיפוש · "%s"', $nb_q ) ) : 'חיפוש'; ?></h1><!-- a11y P009-WP006: page-has-heading-one -->
 		<form class="search-field" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
 			<input type="search" name="s" value="<?php echo esc_attr( $nb_q ); ?>" aria-label="חיפוש" placeholder="חיפוש באתר…">
@@ -54,7 +55,7 @@ $nb_kind = function ( $post_id ) {
 					<a class="result-row" href="<?php the_permalink(); ?>">
 						<span class="r-kind"><?php echo esc_html( $nb_kind( $nb_id ) ); ?></span>
 						<div>
-							<h4><?php the_title(); ?></h4>
+							<h2><?php the_title(); ?></h2><!-- a11y P009-WP006: result h4→h2 under page h1 -->
 							<?php $nb_ex = get_the_excerpt(); ?>
 							<?php if ( $nb_ex ) : ?>
 								<p><?php echo esc_html( wp_trim_words( $nb_ex, 24, '…' ) ); ?></p>
@@ -78,7 +79,7 @@ $nb_kind = function ( $post_id ) {
 				<div class="es-emblem">
 					<img src="<?php echo esc_url( NB_THEME_URI . '/assets/img/basket-paper.png' ); ?>" alt="" width="60" height="60" loading="lazy" decoding="async">
 				</div>
-				<h3>לא מצאתי כלום על <?php echo esc_html( $nb_q ); ?>.</h3>
+				<h2>לא מצאתי כלום על <?php echo esc_html( $nb_q ); ?>.</h2><!-- a11y P009-WP006: h3→h2 under page h1 -->
 				<p>אולי נסה ניסוח אחר, או התחל מאחד העולמות.</p>
 				<div class="err-links">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>">לדף הבית</a>

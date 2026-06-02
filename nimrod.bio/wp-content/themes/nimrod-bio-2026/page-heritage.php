@@ -108,7 +108,7 @@ get_header();
 			<div class="heritage-end">
 				<div>
 					<div class="label">היום</div>
-					<h4>התוצרת המקצועית היא ההמשך הישיר.</h4>
+					<h3>התוצרת המקצועית היא ההמשך הישיר.</h3><!-- a11y P009-WP006: h4→h3 under section h2 -->
 				</div>
 				<a href="<?php echo esc_url( home_url( '/services/produce/' ) ); ?>" class="btn">לעמוד תוצרת מקצועית ←</a>
 			</div>

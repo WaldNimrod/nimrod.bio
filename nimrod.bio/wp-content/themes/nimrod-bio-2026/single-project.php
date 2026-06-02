@@ -118,7 +118,7 @@ while ( have_posts() ) :
 									<?php echo nb_world_chip( $w ); ?>
 								<?php endforeach; ?>
 							</div>
-							<h4><?php echo esc_html( get_the_title( $service ) ); ?></h4>
+							<h3><?php echo esc_html( get_the_title( $service ) ); ?></h3><!-- a11y P009-WP006: related-card h4→h3 under section h2 -->
 							<p><?php echo esc_html( nb_meta( $service->ID, 'lede' ) ); ?></p>
 							<span class="more">לעמוד הפעילות</span>
 						</a>
@@ -150,7 +150,7 @@ while ( have_posts() ) :
 									<?php echo nb_world_chip( $w ); ?>
 								<?php endforeach; ?>
 							</div>
-							<h4><?php echo esc_html( get_the_title( $service ) ); ?></h4>
+							<h3><?php echo esc_html( get_the_title( $service ) ); ?></h3><!-- a11y P009-WP006: related-card h4→h3 under section h2 -->
 							<p><?php echo esc_html( nb_meta( $service->ID, 'lede' ) ); ?></p>
 							<span class="more">לעמוד הפעילות</span>
 						</a>

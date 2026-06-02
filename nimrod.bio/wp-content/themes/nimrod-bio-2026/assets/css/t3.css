@@ -153,7 +153,7 @@
 }
 .ls-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-l); }
 .ls-card .tags { display: flex; gap: 6px; flex-wrap: wrap; }
-.ls-card h4 { font-family: "Frank Ruhl Libre", serif; font-size: 21px; margin: 0; font-weight: 700; line-height: 1.25; }
+.ls-card h3 { font-family: "Frank Ruhl Libre", serif; font-size: 21px; margin: 0; font-weight: 700; line-height: 1.25; } /* a11y P009-WP006: h4→h3 */
 .ls-card p { font-size: 14.5px; color: var(--ink-soft); margin: 0; line-height: 1.55; }
 .ls-card .more {
   margin-top: auto; padding-top: 6px;
@@ -382,11 +382,11 @@
   display: inline-flex; align-items: center; gap: 6px;
   font-family: "Assistant"; font-size: 12px; font-weight: 600;
   padding: 4px 10px 4px 8px; border-radius: 100px;
-  background: var(--w-soil); color: #fff;
+  background: var(--w-soil-deep); color: #fff; /* a11y P009-WP006: white on light world fails AA; deep variants pass (8.72/5.95/7.43) */
 }
 .wc::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,.75); }
-.wc.know { background: var(--w-know); }
-.wc.code { background: var(--w-code); }
+.wc.know { background: var(--w-know-deep); }
+.wc.code { background: var(--w-code-deep); }
 .wc.ghost {
   background: transparent; color: var(--ink); border: 1px solid currentColor;
 }

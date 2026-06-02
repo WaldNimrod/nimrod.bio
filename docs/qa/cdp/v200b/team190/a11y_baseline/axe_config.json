@@ -1,0 +1,21 @@
+{
+  "base": "https://nimrod-bio-2026.s887.upress.link",
+  "out": "docs/qa/cdp/v200b/team190/a11y_baseline",
+  "pages": [
+    { "name": "home", "path": "/" },
+    { "name": "about", "path": "/about/" },
+    { "name": "contact", "path": "/contact/" },
+    { "name": "projects-archive", "path": "/projects/" },
+    { "name": "services-archive", "path": "/services/" },
+    { "name": "world-soil", "path": "/soil/" },
+    { "name": "world-know", "path": "/know/" },
+    { "name": "world-code", "path": "/code/" },
+    { "name": "heritage", "path": "/heritage/" },
+    { "name": "single-project", "path": "/project/tiktrack/" },
+    { "name": "single-service", "path": "/services/bcs/" },
+    { "name": "blog-index", "path": "/blog/" },
+    { "name": "single-post", "path": "/blog/garden-bed-width-80cm/" },
+    { "name": "search", "path": "/?s=garden" },
+    { "name": "notfound-404", "path": "/no-such-page-xyz/" }
+  ]
+}

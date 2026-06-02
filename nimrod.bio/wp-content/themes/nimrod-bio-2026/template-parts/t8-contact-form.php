@@ -15,7 +15,7 @@ $topics = array(
 
 	<div id="nb-contact-status" class="contact-status" hidden></div>
 
-	<h3>טופס פנייה</h3>
+	<h2>טופס פנייה</h2><!-- a11y P009-WP006: h3→h2 (was skipping under page h1) -->
 	<p class="form-intro">אני קורא הכל. בדרך כלל חוזר תוך 48 שעות. <em>אם זה דחוף — WhatsApp בצד.</em></p>
 
 	<div class="field">

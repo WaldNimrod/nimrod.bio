@@ -13,7 +13,7 @@ $layout  = $args['layout'] ?? 'card';
 if ( 'lattice' === $layout ) {
 	?>
 	<div class="lat-side svc-card">
-		<h4><a href="<?php echo esc_url( get_permalink( $post ) ); ?>"><?php echo esc_html( get_the_title( $post ) ); ?></a></h4>
+		<h3><a href="<?php echo esc_url( get_permalink( $post ) ); ?>"><?php echo esc_html( get_the_title( $post ) ); ?></a></h3><!-- a11y P009-WP006: lattice card h4→h3 under world section h2 -->
 		<?php if ( $lede ) : ?>
 			<p><?php echo esc_html( $lede ); ?></p>
 		<?php endif; ?>
@@ -38,7 +38,7 @@ if ( 'lattice' === $layout ) {
 		<?php echo nb_img_placeholder( get_the_title( $post ), get_the_title( $post ), '16/10' ); ?>
 	<?php endif; ?>
 	<div class="body">
-		<h3><?php echo esc_html( get_the_title( $post ) ); ?></h3>
+		<h2><?php echo esc_html( get_the_title( $post ) ); ?></h2><!-- a11y P009-WP006: card title h3→h2 (primary content under archive h1) -->
 		<?php if ( $lede ) : ?>
 			<p class="lede"><?php echo esc_html( $lede ); ?></p>
 		<?php endif; ?>

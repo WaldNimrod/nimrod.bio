@@ -124,10 +124,10 @@
   text-decoration: none; cursor: pointer; border: none;
   transition: transform .15s, box-shadow .15s, background .15s;
 }
-.hero-cta.primary { background: var(--w-know); color: #fff; }
-.hero-cta.primary:hover { background: var(--w-know-deep); transform: translateY(-1px); box-shadow: var(--shadow-m); }
-.hero-cta.primary.free { background: var(--w-code); }
-.hero-cta.primary.free:hover { background: var(--w-code-deep); }
+.hero-cta.primary { background: var(--w-know-deep); color: #fff; } /* a11y P009-WP006: white on --w-know 3.83 (<AA); deep = 5.95 */
+.hero-cta.primary:hover { background: #843f20; transform: translateY(-1px); box-shadow: var(--shadow-m); }
+.hero-cta.primary.free { background: var(--w-code-deep); } /* a11y P009-WP006: white on --w-code 4.09 (<AA); deep = 7.43 */
+.hero-cta.primary.free:hover { background: #154446; }
 .hero-cta.primary.waitlist { background: var(--ink); }
 .hero-cta.ghost {
   background: transparent; color: var(--ink); border: 1.5px solid var(--ink);
@@ -251,7 +251,7 @@
   font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--ink-soft);
   letter-spacing: .04em; display: flex; gap: 10px; align-items: center;
 }
-.lp-card h4 { font-family: "Frank Ruhl Libre", serif; font-size: 20px; margin: 4px 0 0; font-weight: 700; line-height: 1.25; }
+.lp-card h3 { font-family: "Frank Ruhl Libre", serif; font-size: 20px; margin: 4px 0 0; font-weight: 700; line-height: 1.25; } /* a11y P009-WP006: h4→h3 */
 
 /* ============================================================
    RELATED POSTS
@@ -422,11 +422,11 @@
   display: inline-flex; align-items: center; gap: 6px;
   font-family: "Assistant"; font-size: 12px; font-weight: 600;
   padding: 4px 10px 4px 8px; border-radius: 100px;
-  background: var(--w-soil); color: #fff;
+  background: var(--w-soil-deep); color: #fff; /* a11y P009-WP006: white on light world fails AA; deep variants pass (8.72/5.95/7.43) */
 }
 .wc::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,.75); }
-.wc.know { background: var(--w-know); }
-.wc.code { background: var(--w-code); }
+.wc.know { background: var(--w-know-deep); }
+.wc.code { background: var(--w-code-deep); }
 .wc.ghost {
   background: transparent; color: var(--ink); border: 1px solid currentColor;
 }

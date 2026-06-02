@@ -26,18 +26,18 @@ if ( ! defined( 'NB_ICON_SPRITE_DONE' ) ) {
 				<div class="tag">שורש אחד, שלושה עולמות. <em class="unless-inline">Unless</em>.</div>
 			</div>
 			<div>
-				<h6>עולמות</h6>
+				<h2>עולמות</h2>
 				<a href="<?php echo esc_url( home_url( '/world/soil/' ) ); ?>">אדמה</a>
 				<a href="<?php echo esc_url( home_url( '/world/know/' ) ); ?>">ייעוץ והוראה <small>· ידע</small></a>
 				<a href="<?php echo esc_url( home_url( '/world/code/' ) ); ?>">דיגיטל / מיזו</a>
 			</div>
 			<div>
-				<h6>תוכן</h6>
+				<h2>תוכן</h2>
 				<a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">בלוג</a>
 				<a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">על נמרוד</a>
 			</div>
 			<div>
-				<h6>קשר</h6>
+				<h2>קשר</h2>
 				<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">צור קשר</a>
 			</div>
 		</div>

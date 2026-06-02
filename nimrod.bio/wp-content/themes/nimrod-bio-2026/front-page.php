@@ -448,7 +448,7 @@ $nb_world_labels = array( 'soil' => 'אדמה', 'know' => 'ידע', 'code' => '�
 					</div>
 					<div class="body">
 						<div class="meta"><span><?php echo esc_html( get_the_date( 'd·m·y' ) ); ?></span></div>
-						<h4><?php the_title(); ?></h4>
+						<h3><?php the_title(); ?></h3><!-- a11y P009-WP006: h4→h3 under §06 h2 -->
 						<?php if ( $nb_feat ) : ?>
 							<p><?php echo esc_html( wp_trim_words( get_the_excerpt(), 24, '…' ) ); ?></p>
 						<?php endif; ?>

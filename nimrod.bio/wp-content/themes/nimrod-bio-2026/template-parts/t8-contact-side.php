@@ -1,15 +1,16 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 ?>
-<aside class="contact-side">
+<!-- a11y P009-WP006: <aside>→<div> (was a nested complementary landmark, not top-level) -->
+<div class="contact-side">
 	<div class="contact-card response">
 		<div class="label">תגובה</div>
-		<h4>תוך 48 שעות. עונות שטח — לפעמים יומיים נוספים.</h4>
+		<h3>תוך 48 שעות. עונות שטח — לפעמים יומיים נוספים.</h3><!-- a11y P009-WP006: h4→h3 under form h2 -->
 	</div>
 
 	<div class="contact-card">
 		<div class="label">WhatsApp · מענה מהיר</div>
-		<h4>אם זה דחוף — שלח WhatsApp.</h4>
+		<h3>אם זה דחוף — שלח WhatsApp.</h3><!-- a11y P009-WP006: h4→h3 -->
 		<p>הודעה קצרה ועניינית, ואני חוזר במהלך היום. גם אם אני בשטח.</p>
 		<a href="https://wa.me/972547776770" class="wa-btn" target="_blank" rel="noopener noreferrer">
 			<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
@@ -34,4 +35,4 @@ defined( 'ABSPATH' ) || exit;
 			<li><a href="https://www.youtube.com/@waldnimrod" target="_blank" rel="noopener noreferrer">YouTube · ‎@waldnimrod</a></li>
 		</ul>
 	</div>
-</aside>
+</div>

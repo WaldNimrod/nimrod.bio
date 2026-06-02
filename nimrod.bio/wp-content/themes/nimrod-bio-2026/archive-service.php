@@ -22,7 +22,8 @@ $services_query = new WP_Query(
 	)
 );
 ?>
-<main id="main" class="t1-wrap" style="padding-block: clamp(48px, 6vw, 80px);" aria-label="ארכיון שירותים">
+<!-- a11y P009-WP006: <main>→<section> (header.php already provides the page <main id="main">; this was a duplicate/nested main) -->
+<section class="t1-wrap" style="padding-block: clamp(48px, 6vw, 80px);" aria-label="ארכיון שירותים">
 
 	<header class="archive-head" style="margin-bottom: clamp(32px, 4vw, 52px);">
 		<p class="s-eyebrow">
@@ -48,11 +49,11 @@ $services_query = new WP_Query(
 		</div>
 	<?php else : ?>
 		<div class="empty-state">
-			<h3>אין שירותים זמינים כרגע.</h3>
+			<h2>אין שירותים זמינים כרגע.</h2><!-- a11y P009-WP006: h3→h2 under archive h1 -->
 			<p>פרטים יופיעו כאן בקרוב.</p>
 		</div>
 	<?php endif; ?>
 
-</main>
+</section><!-- a11y P009-WP006: was </main> -->
 
 <?php get_footer(); ?>

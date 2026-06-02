@@ -18,7 +18,8 @@ if ( ! $cols ) {
 	return;
 }
 ?>
-<section class="t2-wrap t2-section">
+<section class="t2-wrap t2-section" aria-labelledby="nb-svc-overview">
+	<h2 id="nb-svc-overview" class="nb-sr-only">סקירת השירות</h2><!-- a11y P009-WP006: sr-only section heading restores h1→h2→h3 order -->
 	<div class="three-col">
 		<?php foreach ( $cols as $col ) : ?>
 			<div class="col">

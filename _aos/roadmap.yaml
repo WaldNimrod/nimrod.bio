@@ -662,16 +662,25 @@ work_packages:
 
 - id: NB-S002-P009-WP006
   label: "nimrod-bio — Accessibility (a11y) sweep — site-wide"
-  status: PLANNED
+  status: IN_PROGRESS
   track: A
-  current_lean_gate: L-GATE_SPEC
-  lod_status: LOD300
-  assigned_builder: team_35
+  current_lean_gate: L-GATE_VALIDATE
+  lod_status: LOD400
+  assigned_builder: team_100
   assigned_validator: nimrodbio_val
   created_at: "2026-06-03"
   milestone_ref: V200
-  spec_ref: "_COMMUNICATION/team_100/OPEN_ITEMS_REGISTER_V200_2026-06-01_v1.md"
-  notes: "OPENED 2026-06-03 by team_100 (ADR034 R9, L2 spoke) on team_00 approval. Origin: team_190 L-GATE_VALIDATE advisory on P009-WP001 (VERDICT_NB-S002-P009-WP001_DEPLOYED_2026-06-03_v1) — Lighthouse flags color-contrast / heading-order / aria-hidden-focus on /, /projects/ AND untouched /about/ → PRE-EXISTING, site-wide, NOT introduced by any single WP. Scope: dedicated a11y remediation — run axe-core (scripts/qa/axe_runner.py if playwright available, else CDP/Lighthouse a11y category via docs/QA_HARNESS) across all 12+ pages; fix contrast ratios (worlds deep/light + spark on paper), heading-order (h1→h2→h3 sequence), aria-hidden focusable, alt/aria completeness. Edits in module CSS/templates only (no inline/no overrides). Honors super-locks. Cross-engine validation (team_50 axe re-run + team_190). Target: Lighthouse a11y ≥95 on key pages, 0 serious axe violations. team_35 build env."
+  spec_ref: "_aos/work_packages/NB-S002-P009-WP006/LOD400_NB-S002-P009-WP006.md"
+  gate_history:
+  - gate: L-GATE_SPEC
+    result: PASS
+    date: "2026-06-03"
+    notes: "LOD400 authored by team_100 (ADR034 R9, L2 spoke). Baseline measured this WP (axe-core CDP sweep + Lighthouse + deterministic WCAG token math): color-contrast 78 nodes (serious) all 15 pages, heading-order 24, aria-hidden-focus 1, landmark 6, page-has-h1 1. Root cause: locked 'light' world tokens + spark fail AA for small text on paper; fix points text/chip/CTA uses at the existing 'deep' variants (no system.css edit). 9 ATs + per-page criteria + verified target table. spec_ref re-pointed to LOD400."
+  - gate: L-GATE_BUILD
+    result: PASS
+    date: "2026-06-03"
+    notes: "team_100 atomic land+deploy (Iron Rule #4 single writer; ADR034 R9 L2 spoke, file-based SSoT). Remediation in module CSS + template-parts ONLY (no inline / no overrides layer / system.css byte-identical). Contrast: world light→deep on CTAs/chips/scope; new theme-local --spark-on-dark #e8645a (5.08) + --spark-on-paper #c22f25 (5.07); WhatsApp #187a42; nav .atop scrim .5→.72 (fixed in BOTH shell.css and the winning t7.css rule); muted greys lifted; ghost chips on dark use --w-*-light tints. Heading-order: footer h6→h2 (site-wide), archive card h3→h2, contact/search/three-col sr-only h2, ~9 card h4/h5→h3. ARIA: nav-drawer inert-when-closed; archive duplicate <main>→<section>; contact/post <aside>→<div>; search <h1> added. Plus FIXED a pre-existing comma-selector bug that painted the heritage hero green w/ dark text (1.9→AA). Theme 0.7.16→0.7.18; deployed FTPS (174 files, byte-parity 8/8 served==repo). Versions 0.7.17 (rounds 1-2) + 0.7.18 (round 3: world/heritage pages absent from first baseline — /soil/ had 404'd vs /world/soil/)."
+  notes: "AWAITING cross-engine L-GATE_VALIDATE (Iron Rule #1: build=Claude/team_100 → validate must be Codex/team_190 + team_50). RESULT (team_100 self-measured, NOT the gate): axe-core 0 violations of ANY impact across 15 pages (home, about, contact, projects, services, world soil/know/code, heritage, single-project, single-service, blog, single-post, search, 404); Lighthouse accessibility = 100 on all 6 key pages (home/about/contact/projects/single-project/single-service); CDP 0 horizontal overflow + 0 forbidden terms (rendered DOM); byte-parity 8/8; system.css unchanged. VALIDATE_REQUEST → _COMMUNICATION/team_190/. Closure (ADR042) PENDING team_190 verdict. SEO/Perf = dev edge artifacts (out of scope). Super-locks honored in every changed byte incl. alt/aria/comments. Pre-existing non-rendered comment terms (t1.css 'recursion', t7.css/front-page 'negentropy') untouched — tracked as DRIFT_REGISTER A13 cleanup, not this WP."
 
 - id: NB-S002-P009-WP007
   label: "nimrod-bio — Precision walk G2+G3 (T2/T3/T4/T5 templates + world variants + heritage)"
