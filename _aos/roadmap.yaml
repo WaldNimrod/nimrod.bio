@@ -692,19 +692,19 @@ work_packages:
 
 - id: NB-S002-P009-WP007
   label: "nimrod-bio — Precision walk G2+G3 (T2/T3/T4/T5 templates + world variants + heritage)"
-  status: PLANNED
+  status: IN_PROGRESS
   track: A
-  current_lean_gate: L-GATE_SPEC
-  lod_status: LOD300
-  assigned_builder: team_35
+  current_lean_gate: L-GATE_BUILD
+  lod_status: LOD400
+  assigned_builder: team_100
   assigned_validator: nimrodbio_val
   created_at: "2026-06-03"
   milestone_ref: V200
   spec_ref: "_aos/work_packages/NB-S002-P009-WP007/LOD400_NB-S002-P009-WP007.md"
   gate_history:
   - gate: L-GATE_SPEC
-    result: REQUESTED
+    result: PASS_WITH_FINDINGS
     date: "2026-06-03"
-    notes: "LOD400 authored by team_100 (full design implementation / precision walk vs Precision Mockup v5). Per-screen ATs: G2 (T2 index+single, T3, T4, T5) + G3 (know/code accent variants + land G3a t1.css override, heritage). a11y non-regression GATE (axe 0 / Lighthouse ≥95, WP006 baseline). Routed to team_190 (Cursor, cross-engine) for L-GATE_SPEC: VALIDATE_REQUEST_NB-S002-P009-WP007_LOD400_2026-06-03_v1. On PASS → HANDOFF to implementation session."
+    notes: "LOD400 authored by team_100 (full design impl / precision walk vs Precision Mockup v5; ATs AT-1..AT-7 = G2 T2 index+single/T3/T4/T5 + G3 know-code accents+G3a/heritage; a11y non-regression GATE). team_190 Cursor cross-engine spec review (VERDICT_NB-S002-P009-WP007_LOD400_2026-06-03_v1): 6/6 checks, coverage+G1-exclusion+a11y-gate+constraints+phasing PASS. Non-blocking F1 (AT numeric/selector drift vs v5 — folded into LOD400: AT-1 grid 2-col, AT-2 hero 1.2fr/.85fr + feat 2×2, AT-3 h1 clamp(34,5vw,64), AT-4 no numbered h2; + explicit 'v5 wins on conflict' rule) + F2 (G3a source corrected → Precision_Mockup_v5.html L896-913) + F3 (G1 stale in team_35 reply — LOD400 exclusion correct). LOD400 amended this commit. assigned_builder team_35→team_100 (Claude-orchestrated per §6). NEXT: implementation-session HANDOFF (§9)."
   notes: "2026-06-03 UPDATE (team_100): LOD400 AUTHORED + routed to L-GATE_SPEC (team_190 Cursor). team_35 delivered the FULL v5 precision package (Precision Mockup v5.html) answering the design-completeness request — EVERY page-type now has a current precision authority incl. the 3 prior gaps: T2 single-service (screen t2s), heritage (screen heritage), know/code accent-only (T1 world-switcher, confirmed). SSoT consolidated = Precision Mockup v5.html. Reply: _COMMUNICATION/team_35/HANDOFF_v5_2026-06-03/DESIGN_COMPLETENESS_REPLY_team_100_2026-06-03_v1.md. Full package (gitignored): sources/team_35_design_package/HANDOFF_v5_2026-06-03/. NOTE: team_35's flagged 'G1 projects archive' open item is STALE — already built in WP001 (repo cpt-project has_archive='projects', dev/local /projects/ 200). REAL WP007 scope = pixel-precision walk of T2(index+single)/T3/T4/T5/heritage + know/code accents vs v5 + land the G3a +25-line t1.css override (row 5). Local env = 100% dev mirror (WP7.0+plugins+DB+uploads). | ORIGINAL: team_35 handoff §5 carry-forward G2+G3 (+ TEMPLATE_COVERAGE_AUDIT). G2 = precision walk vs Precision Mockup v4 for templates NOT in the v4 pass: T2 Services (index + single), T3 Project single, T4 Post single, T5 Blog index — exist as theme PHP + design files but never precision-aligned. G3 = know/code world-page variant parity + heritage page parity check. Method: same mockup-diff workflow as the home/world/about/contact pass (DRIFT_REGISTER_MOCKUP_V4) — per-template drift scan → fix in module CSS/templates (no inline/no overrides) → CDP+lock verify → external validation. team_35 may also fold C2 (home sub-document img-overflow localize, contained/non-blocking) here. NEEDS: TEMPLATE_COVERAGE_AUDIT_2026-06-02 from team_35 (referenced, not yet in repo) to scope precisely; team_35 to supply or team_100 to request. Larger effort — candidate to split G2/G3 into sub-WPs if scope warrants. team_35 build env. Production cutover (P005-WP002) does NOT block on this — these are polish/parity, schedulable pre- or post-cutover per team_00."
 
