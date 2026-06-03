@@ -12,11 +12,12 @@
 |---|---|---|
 | **git / repo** | main @ 55f57ea3, tree clean, pushed to origin | ✅ |
 | **dev (uPress)** `nimrod-bio-2026.s887.upress.link` | v0.7.19 live, HTTP 200 | ✅ **byte-parity 14/14** (all CSS+JS) repo==dev |
-| **local Docker** `nimrod-bio-wp:8085` / `nimrod-bio-db:3309` | up 17h; theme from repo; **DB is an independent volume — NOT synced to dev** (galleries wired on dev only) | ⚠ data-layer divergent (see below) |
+| **local Docker** `nimrod-bio-wp:8085` / `nimrod-bio-db:3309` | **ALIGNED to dev/V200 2026-06-03** via targeted import from uPress dev backup `nimrod-bio-2026...bm1780507230dm.zip` (DB `databases/sb0233051_up1.sql` + 1.1G uploads). prefix rewritten `zgt_`→`qvj_`; URL replaced dev→localhost:8085. project=4 / service=7 publish, galleries match seed, all V200 routes 200. | ✅ data-layer aligned |
 
-## Data-layer (durability captured)
-- Live gallery/featured wiring captured to **`docs/data-seed/gallery_wiring_seed_2026-06-03.md`** (durable; was dev-DB-only).
-- Wired & live on dev: project 49 (גינה, 7) · project 31 (חממה+שומית, 14) · service 24 (BCS, 17 incl. tiller/pak-bung). featured_media for all CPTs captured.
+## Data-layer (durability captured + local aligned)
+- Live gallery/featured wiring captured to **`docs/data-seed/gallery_wiring_seed_2026-06-03.md`** (durable).
+- Wired & live on dev AND local: project 49 (גינה, 7) · project 31 (חממה+שומית, 14) · service 24 (BCS, 17 incl. tiller/pak-bung). featured_media for all CPTs captured.
+- **Local DB now mirrors dev/V200** (was old-prod era: flatsome/WooCommerce). Targeted import only — repo git tree stayed clean (0 drift); theme already == dev (byte-parity), so untouched. Known minor divergence: dev `active_plugins` referencing plugins absent in the local tree are silently skipped — non-blocking for theme/design QA (CPTs are theme-registered).
 
 ## Build/QA convention (unchanged)
 Canonical = **build → FTPS deploy to dev → CDP/Lighthouse/axe QA on dev**. Local Docker is available but its DB is not the SSoT; if local-first testing is wanted for the incoming package, sync the dev DB first (`scripts/restore-production-from-backup.sh` workflow) — otherwise keep the dev pattern.
