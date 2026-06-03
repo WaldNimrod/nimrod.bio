@@ -71,3 +71,9 @@ Thumbs.db
 __pycache__/
 *.pyc
 sources/photos/_owner_dropbox_2026-06-01/
+
+# === Transient QA scratch (qa_probe.mjs default out-dir) ===
+# Team validation evidence lives under versioned subdirs (docs/qa/cdp/v*/team*/) and IS tracked;
+# these root-level ad-hoc run outputs are scratch and regenerate every run.
+docs/qa/cdp/qa_probe_result.json
+docs/qa/cdp/screenshots/

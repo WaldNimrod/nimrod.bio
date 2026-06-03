@@ -1,0 +1,93 @@
+{
+  "base": "https://nimrod-bio-2026.s887.upress.link",
+  "ts": "2026-06-02T23:45:37.908Z",
+  "checks": [
+    {
+      "id": "skip-link-present",
+      "pass": true,
+      "detail": {
+        "exists": true,
+        "href": "#main",
+        "text": "דלג לתוכן"
+      }
+    },
+    {
+      "id": "first-tab-focus",
+      "pass": true,
+      "detail": {
+        "activeTag": "BODY",
+        "activeClass": "home wp-singular page-template-default page page-id-55 wp-embed-responsive wp-theme-nimrod-bio-2026",
+        "activeHref": null
+      }
+    },
+    {
+      "id": "drawer-closed-not-focusable",
+      "pass": true,
+      "detail": {
+        "inert": true,
+        "ariaHidden": "true",
+        "linkCount": 7,
+        "tabIndices": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "focusableWhileClosed": 0
+      }
+    },
+    {
+      "id": "drawer-opens",
+      "pass": true,
+      "detail": {
+        "isOpen": true,
+        "inert": false,
+        "ariaHidden": "false",
+        "activeInDrawer": true
+      }
+    },
+    {
+      "id": "focus-in-drawer-when-open",
+      "pass": true,
+      "detail": {
+        "activeInDrawer": true,
+        "activeTag": "BUTTON"
+      }
+    },
+    {
+      "id": "esc-closes-drawer",
+      "pass": true,
+      "detail": {
+        "isOpen": false,
+        "inert": true,
+        "toggleFocused": true
+      }
+    },
+    {
+      "id": "contact-form-focusable",
+      "pass": true,
+      "detail": {
+        "exists": true,
+        "focused": true,
+        "id": "nb-contact-name"
+      }
+    },
+    {
+      "id": "contact-form-tab-reachable",
+      "pass": true,
+      "detail": {
+        "tabs": 1,
+        "focus": {
+          "tag": "INPUT",
+          "name": "name",
+          "inForm": true,
+          "type": "text"
+        }
+      }
+    }
+  ],
+  "pass": true
+}
