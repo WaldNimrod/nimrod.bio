@@ -1,0 +1,16 @@
+{
+  "base": "http://localhost:8085",
+  "ts": "2026-06-03T20:02:26.017Z",
+  "pages": 1,
+  "totalSerious": 0,
+  "byRule": {},
+  "perPage": [
+    {
+      "page": "_blog_garden_bed_width_80cm_",
+      "path": "/blog/garden-bed-width-80cm/",
+      "total": 0,
+      "serious": 0,
+      "violations": []
+    }
+  ]
+}

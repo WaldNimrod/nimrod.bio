@@ -1,0 +1,35 @@
+{
+  "base": "http://localhost:8085",
+  "ts": "2026-06-03T20:09:29.511Z",
+  "total": 2,
+  "failures": 0,
+  "verdict": "PASS",
+  "results": [
+    {
+      "viewport": "mobile",
+      "page": "_services_",
+      "url": "/services/",
+      "http_rendered": true,
+      "scrollWidth": 375,
+      "clientWidth": 375,
+      "overflow": false,
+      "forbiddenFound": [],
+      "title": "פעילויות Archive - נמרוד ולד · Unless",
+      "screenshot": "docs/qa/cdp/v200b/team190/wp007_phase3/t2idx_shots/screenshots/_services__mobile.png",
+      "pass": true
+    },
+    {
+      "viewport": "desktop",
+      "page": "_services_",
+      "url": "/services/",
+      "http_rendered": true,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "overflow": false,
+      "forbiddenFound": [],
+      "title": "פעילויות Archive - נמרוד ולד · Unless",
+      "screenshot": "docs/qa/cdp/v200b/team190/wp007_phase3/t2idx_shots/screenshots/_services__desktop.png",
+      "pass": true
+    }
+  ]
+}

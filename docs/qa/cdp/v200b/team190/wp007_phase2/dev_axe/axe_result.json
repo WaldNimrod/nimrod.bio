@@ -1,0 +1,37 @@
+{
+  "base": "https://nimrod-bio-2026.s887.upress.link",
+  "ts": "2026-06-03T19:40:55.787Z",
+  "pages": 4,
+  "totalSerious": 0,
+  "byRule": {},
+  "perPage": [
+    {
+      "page": "_services_consulting_hydro_",
+      "path": "/services/consulting-hydro/",
+      "total": 0,
+      "serious": 0,
+      "violations": []
+    },
+    {
+      "page": "_services_bcs_",
+      "path": "/services/bcs/",
+      "total": 0,
+      "serious": 0,
+      "violations": []
+    },
+    {
+      "page": "_services_teaching_",
+      "path": "/services/teaching/",
+      "total": 0,
+      "serious": 0,
+      "violations": []
+    },
+    {
+      "page": "_services_produce_",
+      "path": "/services/produce/",
+      "total": 0,
+      "serious": 0,
+      "violations": []
+    }
+  ]
+}

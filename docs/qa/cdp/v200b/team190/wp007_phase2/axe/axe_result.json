@@ -1,0 +1,23 @@
+{
+  "base": "http://localhost:8085",
+  "ts": "2026-06-03T19:37:46.036Z",
+  "pages": 2,
+  "totalSerious": 0,
+  "byRule": {},
+  "perPage": [
+    {
+      "page": "_services_consulting_hydro_",
+      "path": "/services/consulting-hydro/",
+      "total": 0,
+      "serious": 0,
+      "violations": []
+    },
+    {
+      "page": "_services_bcs_",
+      "path": "/services/bcs/",
+      "total": 0,
+      "serious": 0,
+      "violations": []
+    }
+  ]
+}

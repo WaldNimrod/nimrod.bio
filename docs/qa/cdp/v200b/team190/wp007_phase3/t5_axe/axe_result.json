@@ -1,0 +1,23 @@
+{
+  "base": "http://localhost:8085",
+  "ts": "2026-06-03T20:03:44.568Z",
+  "pages": 2,
+  "totalSerious": 0,
+  "byRule": {},
+  "perPage": [
+    {
+      "page": "_blog_",
+      "path": "/blog/",
+      "total": 0,
+      "serious": 0,
+      "violations": []
+    },
+    {
+      "page": "_blog_view_grid",
+      "path": "/blog/?view=grid",
+      "total": 0,
+      "serious": 0,
+      "violations": []
+    }
+  ]
+}

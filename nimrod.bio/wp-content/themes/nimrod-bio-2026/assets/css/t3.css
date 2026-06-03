@@ -51,8 +51,8 @@
 
 .t3-hero-title {
   font-family: "Frank Ruhl Libre", serif; font-weight: 900;
-  font-size: clamp(40px, 6vw, 80px); line-height: .98;
-  margin: 0 0 18px; letter-spacing: -.02em; color: var(--ink);
+  font-size: clamp(34px, 5vw, 64px); line-height: 1.02; /* WP007: v5 t3 scale (L822) */
+  margin: 0 0 16px; letter-spacing: -.025em; color: var(--ink); text-wrap: balance;
 }
 .t3-hero-summary {
   font-family: "Frank Ruhl Libre", serif; font-style: italic;

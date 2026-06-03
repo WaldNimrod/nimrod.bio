@@ -715,3 +715,34 @@ body[data-bridge="seam"] .bridge-card::before {
 .projects-archive .empty-state { text-align: center; padding-block: clamp(40px, 6vw, 72px); }
 @media (max-width: 1000px) { .projects-archive .projects-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px)  { .projects-archive .projects-grid { grid-template-columns: 1fr; } }
+
+/* ════════════ G3a · T1 WORLD-ACCENT VARIANTS (know=orange · code=teal · soil=base) ════════════ */
+/* WP007 Phase 1 — lifted from Precision_Mockup_v5.html L896–913 (L-GATE_SPEC F2 authoritative source),
+   selector-mapped to the live theme vocabulary: v5 .post-row→.post-card, .eyebrow→.s-eyebrow,
+   .post-row:hover h5→.post-card:hover h3 (WP006 heading-order), .lat-anchor/.lat-side→.vc-lattice scope.
+   Worlds share ONE layout; only accent surfaces recolour. soil = base (no override). */
+/* page wash recolours via the --soil-wash tokens the .vc-shell gradient already reads */
+.t1-world-know { --soil-wash: var(--know-wash); --soil-wash-2: #efdcc6; }
+.t1-world-code { --soil-wash: var(--code-wash); --soil-wash-2: #cce0e0; }
+
+.t1-world-know .vc-hero-stack,
+.t1-world-know .vc-hero-stack .echo,
+.t1-world-know .vc-hero .gloss .word,
+.t1-world-know .post-card .date,
+.t1-world-know .s-eyebrow { color: var(--w-know-deep); }
+.t1-world-know .vc-hero .gloss .rule { background: var(--w-know-deep); }
+.t1-world-know .vc-hero .intro .marker { color: var(--w-know); border-color: var(--w-know); }
+.t1-world-know .vc-lattice .lat-anchor { background: var(--w-know-deep); }
+.t1-world-know .vc-lattice .lat-side { border-color: var(--w-know); }
+.t1-world-know .post-card:hover h3 { color: var(--w-know-deep); }
+
+.t1-world-code .vc-hero-stack,
+.t1-world-code .vc-hero-stack .echo,
+.t1-world-code .vc-hero .gloss .word,
+.t1-world-code .post-card .date,
+.t1-world-code .s-eyebrow { color: var(--w-code-deep); }
+.t1-world-code .vc-hero .gloss .rule { background: var(--w-code-deep); }
+.t1-world-code .vc-hero .intro .marker { color: var(--w-code); border-color: var(--w-code); }
+.t1-world-code .vc-lattice .lat-anchor { background: var(--w-code-deep); }
+.t1-world-code .vc-lattice .lat-side { border-color: var(--w-code); }
+.t1-world-code .post-card:hover h3 { color: var(--w-code-deep); }

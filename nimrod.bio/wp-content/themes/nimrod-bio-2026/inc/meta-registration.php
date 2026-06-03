@@ -43,6 +43,11 @@ add_action(
 		}
 		register_post_meta( 'service', '_nb_sections', $string_meta );
 		register_post_meta( 'service', '_nb_meta_strip', $string_meta );
+		// WP007 Phase 2 — v5 t2s structured content (JSON strings parsed via nb_json_meta;
+		// svc_pull is a plain string). team_00-authorized scope expansion 2026-06-03.
+		foreach ( array( 'feat_tiles', 'svc_steps', 'svc_pull', 'bridge' ) as $key ) {
+			register_post_meta( 'service', '_nb_' . $key, $string_meta );
+		}
 
 		foreach ( array( 'scope', 'stage', 'year', 'location', 'duration', 'summary', 'seeking_note', 'legacy_of', 'seeking_cta_h', 'seeking_cta_p', 'seeking_cta_label', 'seeking_cta_hint', 'outcomes_note', 'external_url', 'external_label' ) as $key ) {
 			register_post_meta( 'project', '_nb_' . $key, $string_meta );

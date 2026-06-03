@@ -28,9 +28,8 @@ function nb_prepare_post_body_html( string $content ): string {
 			if ( ! preg_match( '#\bid="#', $attrs ) ) {
 				$attrs .= ' id="section-' . $section . '"';
 			}
-			if ( ! preg_match( '#class="num"#', $inner ) && false === strpos( $inner, '<span class="num">' ) ) {
-				$inner = '<span class="num">' . esc_html( str_pad( (string) $section, 2, '0', STR_PAD_LEFT ) ) . '</span>' . $inner;
-			}
+			// WP007 AT-4 (F1): post-body h2 carry NO numeral — numbering is
+			// heritage-only. Keep the id (ToC anchors); drop the .num prefix.
 			return '<h2' . $attrs . '>' . $inner . '</h2>';
 		},
 		$content

@@ -1,0 +1,38 @@
+{
+  "base": "http://localhost:8085",
+  "ts": "2026-06-03T20:09:01.345Z",
+  "pages": 1,
+  "totalSerious": 0,
+  "byRule": {
+    "heading-order": {
+      "impact": "moderate",
+      "nodeCount": 1,
+      "pages": [
+        "_services_"
+      ]
+    }
+  },
+  "perPage": [
+    {
+      "page": "_services_",
+      "path": "/services/",
+      "total": 1,
+      "serious": 0,
+      "violations": [
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "help": "Heading levels should only increase by one",
+          "nodes": [
+            {
+              "target": [
+                ".product-card:nth-child(1) > .pbody > h3"
+              ],
+              "summary": "Fix any of the following: Heading order invalid"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
