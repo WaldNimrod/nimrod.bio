@@ -1,9 +1,9 @@
 {
   "base": "https://nimrod-bio-2026.s887.upress.link",
-  "ts": "2026-06-03T19:12:17.295Z",
+  "ts": "2026-06-03T20:12:36.784Z",
   "total": 30,
-  "failures": 1,
-  "verdict": "FAIL",
+  "failures": 0,
+  "verdict": "PASS",
   "results": [
     {
       "viewport": "mobile",
@@ -166,13 +166,13 @@
       "page": "single-post",
       "url": "/blog/garden-bed-width-80cm/",
       "http_rendered": true,
-      "scrollWidth": 1044,
+      "scrollWidth": 375,
       "clientWidth": 375,
-      "overflow": true,
+      "overflow": false,
       "forbiddenFound": [],
       "title": "למה ערוגה ברוחב 80 ס״מ — התרגום שלנו לסטנדרט של JM Fortier - נמרוד ולד · Unless",
       "screenshot": null,
-      "pass": false
+      "pass": true
     },
     {
       "viewport": "mobile",
