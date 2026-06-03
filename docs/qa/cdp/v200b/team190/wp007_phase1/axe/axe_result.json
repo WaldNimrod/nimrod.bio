@@ -1,0 +1,37 @@
+{
+  "base": "http://localhost:8085",
+  "ts": "2026-06-03T18:48:12.397Z",
+  "pages": 4,
+  "totalSerious": 0,
+  "byRule": {},
+  "perPage": [
+    {
+      "page": "_world_soil_",
+      "path": "/world/soil/",
+      "total": 0,
+      "serious": 0,
+      "violations": []
+    },
+    {
+      "page": "_world_know_",
+      "path": "/world/know/",
+      "total": 0,
+      "serious": 0,
+      "violations": []
+    },
+    {
+      "page": "_world_code_",
+      "path": "/world/code/",
+      "total": 0,
+      "serious": 0,
+      "violations": []
+    },
+    {
+      "page": "_about_heritage_",
+      "path": "/about/heritage/",
+      "total": 0,
+      "serious": 0,
+      "violations": []
+    }
+  ]
+}

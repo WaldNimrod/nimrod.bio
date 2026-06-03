@@ -1,0 +1,35 @@
+{
+  "base": "http://localhost:8085",
+  "ts": "2026-06-03T19:44:35.136Z",
+  "total": 2,
+  "failures": 0,
+  "verdict": "PASS",
+  "results": [
+    {
+      "viewport": "mobile",
+      "page": "_project_rest_x_greenhouse_",
+      "url": "/project/rest-x-greenhouse/",
+      "http_rendered": true,
+      "scrollWidth": 375,
+      "clientWidth": 375,
+      "overflow": false,
+      "forbiddenFound": [],
+      "title": "חממה הידרופונית — מסעדת המחתרת התאילנדית - נמרוד ולד · Unless",
+      "screenshot": "docs/qa/cdp/v200b/team190/wp007_phase2/t3_shots/screenshots/_project_rest_x_greenhouse__mobile.png",
+      "pass": true
+    },
+    {
+      "viewport": "desktop",
+      "page": "_project_rest_x_greenhouse_",
+      "url": "/project/rest-x-greenhouse/",
+      "http_rendered": true,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "overflow": false,
+      "forbiddenFound": [],
+      "title": "חממה הידרופונית — מסעדת המחתרת התאילנדית - נמרוד ולד · Unless",
+      "screenshot": "docs/qa/cdp/v200b/team190/wp007_phase2/t3_shots/screenshots/_project_rest_x_greenhouse__desktop.png",
+      "pass": true
+    }
+  ]
+}

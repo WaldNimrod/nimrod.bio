@@ -1,0 +1,35 @@
+{
+  "base": "http://localhost:8085",
+  "ts": "2026-06-03T19:38:02.059Z",
+  "total": 2,
+  "failures": 0,
+  "verdict": "PASS",
+  "results": [
+    {
+      "viewport": "mobile",
+      "page": "_services_consulting_hydro_",
+      "url": "/services/consulting-hydro/",
+      "http_rendered": true,
+      "scrollWidth": 375,
+      "clientWidth": 375,
+      "overflow": false,
+      "forbiddenFound": [],
+      "title": "ייעוץ תכנון חממה · נמרוד ולד · Unless",
+      "screenshot": "docs/qa/cdp/v200b/team190/wp007_phase2/shots/screenshots/_services_consulting_hydro__mobile.png",
+      "pass": true
+    },
+    {
+      "viewport": "desktop",
+      "page": "_services_consulting_hydro_",
+      "url": "/services/consulting-hydro/",
+      "http_rendered": true,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "overflow": false,
+      "forbiddenFound": [],
+      "title": "ייעוץ תכנון חממה · נמרוד ולד · Unless",
+      "screenshot": "docs/qa/cdp/v200b/team190/wp007_phase2/shots/screenshots/_services_consulting_hydro__desktop.png",
+      "pass": true
+    }
+  ]
+}

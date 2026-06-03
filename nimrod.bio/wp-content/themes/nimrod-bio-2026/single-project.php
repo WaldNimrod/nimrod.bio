@@ -213,6 +213,19 @@ while ( have_posts() ) :
 					</div>
 				</div>
 			</section>
+		<?php else : ?>
+			<?php // WP007 AT-3: v5 t3 closes with a final-CTA band (.final-cta from t2.css, enqueued on t3). ?>
+			<section class="final-cta">
+				<div class="final-cta-inner">
+					<div>
+						<h2>יש לך פרויקט <em>דומה</em>?</h2>
+						<p>תכנון אספקה, חממה ייעודית, או ליווי גידול — בואו נראה אם זה מתאים.</p>
+					</div>
+					<div class="cta-side">
+						<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="hero-cta primary">דבר איתי</a>
+					</div>
+				</div>
+			</section>
 		<?php endif; ?>
 	</article>
 	<?php

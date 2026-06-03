@@ -1,0 +1,113 @@
+{
+  "base": "http://localhost:8085",
+  "ts": "2026-06-03T18:46:37.468Z",
+  "total": 8,
+  "failures": 0,
+  "verdict": "PASS",
+  "results": [
+    {
+      "viewport": "mobile",
+      "page": "world-soil",
+      "url": "/world/soil/",
+      "http_rendered": true,
+      "scrollWidth": 375,
+      "clientWidth": 375,
+      "overflow": false,
+      "forbiddenFound": [],
+      "title": "אדמה - נמרוד ולד · Unless",
+      "screenshot": "docs/qa/cdp/v200b/team190/wp007_phase1/screenshots/world-soil_mobile.png",
+      "pass": true
+    },
+    {
+      "viewport": "mobile",
+      "page": "world-know",
+      "url": "/world/know/",
+      "http_rendered": true,
+      "scrollWidth": 375,
+      "clientWidth": 375,
+      "overflow": false,
+      "forbiddenFound": [],
+      "title": "ייעוץ והוראה - נמרוד ולד · Unless",
+      "screenshot": "docs/qa/cdp/v200b/team190/wp007_phase1/screenshots/world-know_mobile.png",
+      "pass": true
+    },
+    {
+      "viewport": "mobile",
+      "page": "world-code",
+      "url": "/world/code/",
+      "http_rendered": true,
+      "scrollWidth": 375,
+      "clientWidth": 375,
+      "overflow": false,
+      "forbiddenFound": [],
+      "title": "דיגיטל - נמרוד ולד · Unless",
+      "screenshot": "docs/qa/cdp/v200b/team190/wp007_phase1/screenshots/world-code_mobile.png",
+      "pass": true
+    },
+    {
+      "viewport": "mobile",
+      "page": "heritage",
+      "url": "/about/heritage/",
+      "http_rendered": true,
+      "scrollWidth": 375,
+      "clientWidth": 375,
+      "overflow": false,
+      "forbiddenFound": [],
+      "title": "הגינה של נמרוד · הסיפור - נמרוד ולד · Unless",
+      "screenshot": "docs/qa/cdp/v200b/team190/wp007_phase1/screenshots/heritage_mobile.png",
+      "pass": true
+    },
+    {
+      "viewport": "desktop",
+      "page": "world-soil",
+      "url": "/world/soil/",
+      "http_rendered": true,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "overflow": false,
+      "forbiddenFound": [],
+      "title": "אדמה - נמרוד ולד · Unless",
+      "screenshot": "docs/qa/cdp/v200b/team190/wp007_phase1/screenshots/world-soil_desktop.png",
+      "pass": true
+    },
+    {
+      "viewport": "desktop",
+      "page": "world-know",
+      "url": "/world/know/",
+      "http_rendered": true,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "overflow": false,
+      "forbiddenFound": [],
+      "title": "ייעוץ והוראה - נמרוד ולד · Unless",
+      "screenshot": "docs/qa/cdp/v200b/team190/wp007_phase1/screenshots/world-know_desktop.png",
+      "pass": true
+    },
+    {
+      "viewport": "desktop",
+      "page": "world-code",
+      "url": "/world/code/",
+      "http_rendered": true,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "overflow": false,
+      "forbiddenFound": [],
+      "title": "דיגיטל - נמרוד ולד · Unless",
+      "screenshot": "docs/qa/cdp/v200b/team190/wp007_phase1/screenshots/world-code_desktop.png",
+      "pass": true
+    },
+    {
+      "viewport": "desktop",
+      "page": "heritage",
+      "url": "/about/heritage/",
+      "http_rendered": true,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "overflow": false,
+      "forbiddenFound": [],
+      "title": "הגינה של נמרוד · הסיפור - נמרוד ולד · Unless",
+      "screenshot": "docs/qa/cdp/v200b/team190/wp007_phase1/screenshots/heritage_desktop.png",
+      "pass": true
+    }
+  ]
+}

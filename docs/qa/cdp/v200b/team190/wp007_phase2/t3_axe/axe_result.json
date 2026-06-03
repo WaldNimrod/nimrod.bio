@@ -1,0 +1,23 @@
+{
+  "base": "http://localhost:8085",
+  "ts": "2026-06-03T19:44:02.647Z",
+  "pages": 2,
+  "totalSerious": 0,
+  "byRule": {},
+  "perPage": [
+    {
+      "page": "_project_rest_x_greenhouse_",
+      "path": "/project/rest-x-greenhouse/",
+      "total": 0,
+      "serious": 0,
+      "violations": []
+    },
+    {
+      "page": "_project_tiktrack_",
+      "path": "/project/tiktrack/",
+      "total": 0,
+      "serious": 0,
+      "violations": []
+    }
+  ]
+}
