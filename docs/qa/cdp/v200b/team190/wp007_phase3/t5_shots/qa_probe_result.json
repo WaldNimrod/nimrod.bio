@@ -1,0 +1,35 @@
+{
+  "base": "http://localhost:8085",
+  "ts": "2026-06-03T20:04:13.961Z",
+  "total": 2,
+  "failures": 0,
+  "verdict": "PASS",
+  "results": [
+    {
+      "viewport": "mobile",
+      "page": "_blog_view_grid",
+      "url": "/blog/?view=grid",
+      "http_rendered": true,
+      "scrollWidth": 375,
+      "clientWidth": 375,
+      "overflow": false,
+      "forbiddenFound": [],
+      "title": "בלוג - נמרוד ולד · Unless",
+      "screenshot": "docs/qa/cdp/v200b/team190/wp007_phase3/t5_shots/screenshots/_blog_view_grid_mobile.png",
+      "pass": true
+    },
+    {
+      "viewport": "desktop",
+      "page": "_blog_view_grid",
+      "url": "/blog/?view=grid",
+      "http_rendered": true,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "overflow": false,
+      "forbiddenFound": [],
+      "title": "בלוג - נמרוד ולד · Unless",
+      "screenshot": "docs/qa/cdp/v200b/team190/wp007_phase3/t5_shots/screenshots/_blog_view_grid_desktop.png",
+      "pass": true
+    }
+  ]
+}

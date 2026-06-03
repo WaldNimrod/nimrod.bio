@@ -80,6 +80,11 @@ add_action(
 	function () {
 		if ( is_singular( 'post' ) ) {
 			wp_enqueue_style( 'nb-t4', NB_THEME_URI . '/assets/css/t4.css', array( 'nb-shell' ), NB_THEME_VERSION );
+			// WP007 AT-4: the related-posts block reuses the t5 post-grid part
+			// (.posts-grid/.post-tile/.post-thumb), styled only in t5.css. Without
+			// it those cards were unstyled and overflowed at 375. Load t5 after t4
+			// so the shared selectors resolve (t4's more-specific hero rules still win).
+			wp_enqueue_style( 'nb-t5', NB_THEME_URI . '/assets/css/t5.css', array( 'nb-t4' ), NB_THEME_VERSION );
 		}
 		if ( is_home() ) {
 			wp_enqueue_style( 'nb-t5', NB_THEME_URI . '/assets/css/t5.css', array( 'nb-shell' ), NB_THEME_VERSION );

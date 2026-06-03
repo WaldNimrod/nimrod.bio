@@ -661,6 +661,46 @@
   .feat-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 760px) {
-  .projects-row { grid-template-columns: 1fr; }
   .svc-bridge { grid-template-columns: 1fr; }
+}
+
+/* ════════════════ T2 · SERVICES INDEX (archive-service.php · v5 AT-1 · WP007 Phase 3) ════════════════
+   v5 source: Precision_Mockup_v5.html t2 screen (L1303–1418) + svc-grid CSS (L739–751).
+   page-hero → svc-grid 2-col cards (svc-ic + svc-points + CTA) → bridges-band → final-cta.
+   Reuses .ssh-meta (hero stats) + .svc-bridge (bridge cards). */
+.page-hero { padding-block: clamp(34px, 4.4vw, 60px) 0; }
+.page-hero .eyebrow { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 14px; }
+.page-hero .eyebrow .num { color: var(--w-soil-deep); }
+.page-hero h1 { font-family: "Frank Ruhl Libre", serif; font-weight: 900; font-size: clamp(40px, 6.2vw, 84px); line-height: 1; letter-spacing: -.03em; margin: 0 0 18px; text-wrap: balance; }
+.page-hero h1 .under { color: var(--w-soil-deep); }
+.page-hero .lede { font-family: "Assistant", sans-serif; font-size: clamp(17px, 1.7vw, 21px); line-height: 1.6; color: var(--ink-soft); margin: 0; max-width: 60ch; text-wrap: pretty; }
+.page-hero .ssh-meta { margin-top: clamp(24px, 3vw, 36px); }
+.page-hero .ssh-meta .m .mv { color: var(--w-soil-deep); }
+
+.svc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(18px, 2.2vw, 28px); }
+.product-card {
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-l);
+  overflow: hidden; display: flex; flex-direction: column; text-decoration: none; color: inherit;
+  box-shadow: var(--shadow-s); transition: transform .18s ease, box-shadow .18s ease;
+}
+.product-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-l); }
+.product-card .pimg { aspect-ratio: 16/10; }
+.product-card .pimg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.product-card .pbody { padding: clamp(22px, 2.4vw, 30px); display: flex; flex-direction: column; gap: 11px; }
+.product-card .svc-ic { width: 32px; height: 32px; border-radius: 9px; background: var(--w-soil-deep); }
+.product-card .svc-ic.know { background: var(--w-know-deep); }
+.product-card .svc-ic.code { background: var(--w-code-deep); }
+.product-card h3 { font-family: "Frank Ruhl Libre", serif; font-weight: 700; font-size: clamp(21px, 2.2vw, 26px); line-height: 1.18; margin: 0; }
+.product-card .pmeta { font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: .03em; color: var(--ink-soft); margin: 0; }
+.svc-points { list-style: none; padding: 0; margin: 4px 0 0; display: flex; flex-direction: column; gap: 7px; font-family: "Assistant", sans-serif; font-size: 14.5px; color: var(--ink); }
+.svc-points li { display: flex; align-items: flex-start; gap: 9px; line-height: 1.4; }
+.svc-points li::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--w-soil); margin-top: 6px; flex: none; }
+.product-card .prow { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); }
+.product-card .frm { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
+.product-card .add { font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: .04em; color: var(--w-soil-deep); }
+
+.svc-bridges-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(16px, 2vw, 24px); }
+@media (max-width: 760px) {
+  .svc-grid { grid-template-columns: 1fr; }
+  .svc-bridges-grid { grid-template-columns: 1fr; }
 }
