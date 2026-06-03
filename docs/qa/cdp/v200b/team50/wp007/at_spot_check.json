@@ -1,0 +1,114 @@
+{
+  "ts": "2026-06-03T21:26:40.099Z",
+  "base": "https://nimrod-bio-2026.s887.upress.link",
+  "checks": [
+    {
+      "name": "AT-1-services",
+      "path": "/services/",
+      "value": {
+        "pageHero": true,
+        "svcGrid": true,
+        "gridCols": "550px 550px",
+        "bridges": 0,
+        "finalCta": true,
+        "srOnlyH2": false,
+        "h1FontSize": "84px"
+      }
+    },
+    {
+      "name": "AT-2-consulting-hydro",
+      "path": "/services/consulting-hydro/",
+      "value": {
+        "svcSingleHero": true,
+        "heroGrid": "627.5px 444.484px",
+        "featTiles": 4,
+        "svcSteps": 4,
+        "svcPull": true,
+        "linkedProjects": 3,
+        "finalCta": true
+      }
+    },
+    {
+      "name": "AT-2-teaching-fallback",
+      "path": "/services/teaching/",
+      "value": {
+        "svcSingleHero": true,
+        "featTiles": 0,
+        "svcSteps": 0,
+        "svcPull": false,
+        "finalCta": true,
+        "brokenSections": 0
+      }
+    },
+    {
+      "name": "AT-2-bcs-fallback",
+      "path": "/services/bcs/",
+      "value": {
+        "svcSingleHero": true,
+        "featTiles": 0,
+        "gallery": false,
+        "metaStrip": true
+      }
+    },
+    {
+      "name": "AT-3-greenhouse",
+      "path": "/project/rest-x-greenhouse/",
+      "value": {
+        "outcomes": 4,
+        "finalCta": true,
+        "h1FontSize": "64px",
+        "letterSpacing": "-1.6px"
+      }
+    },
+    {
+      "name": "AT-4-single-post",
+      "path": "/blog/garden-bed-width-80cm/",
+      "value": {
+        "metaTop": true,
+        "numberedH2": 0,
+        "plainH2": 1,
+        "hasAside": true,
+        "articleShell": false
+      }
+    },
+    {
+      "name": "AT-5-blog",
+      "path": "/blog/",
+      "value": {
+        "blogHeader": true,
+        "filter": false,
+        "postsGrid": false,
+        "blogEnd": true,
+        "srOnlyH2": false
+      }
+    },
+    {
+      "name": "AT-6-world-know",
+      "path": "/world/know/",
+      "value": {
+        "t1WorldKnow": true,
+        "bodyClass": "wp-singular page-template-default page page-id-10 page-child parent-pageid-8 wp-embed-responsive wp-theme-nimrod-bio-2026",
+        "glossColor": "rgb(154, 79, 43)",
+        "latAnchor": true
+      }
+    },
+    {
+      "name": "AT-6-world-code",
+      "path": "/world/code/",
+      "value": {
+        "t1WorldCode": true,
+        "glossColor": "rgb(31, 94, 96)"
+      }
+    },
+    {
+      "name": "AT-7-heritage",
+      "path": "/about/heritage/",
+      "value": {
+        "heritageHero": true,
+        "dropcap": false,
+        "numberedH2": 6,
+        "heritageEnd": true
+      }
+    }
+  ]
+}

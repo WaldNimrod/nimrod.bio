@@ -1,0 +1,97 @@
+{
+  "ts": "2026-06-03T20:31:40.183Z",
+  "base": "https://nimrod-bio-2026.s887.upress.link",
+  "checks": [
+    {
+      "name": "AT-1-services",
+      "path": "/services/",
+      "value": {
+        "pageHero": true,
+        "svcGrid": true,
+        "gridCols": "359px 359px",
+        "bridges": 2,
+        "finalCta": true,
+        "srOnlyH2": true,
+        "h1FontSize": "49.6px"
+      }
+    },
+    {
+      "name": "AT-2-consulting-hydro",
+      "path": "/services/consulting-hydro/",
+      "value": {
+        "svcSingleHero": true,
+        "featTiles": 4,
+        "svcSteps": 4,
+        "svcPull": true,
+        "projectsRow": 0,
+        "finalCta": true
+      }
+    },
+    {
+      "name": "AT-2-bcs-fallback",
+      "path": "/services/bcs/",
+      "value": {
+        "svcSingleHero": true,
+        "featTiles": 0,
+        "gallery": true
+      }
+    },
+    {
+      "name": "AT-3-tiktrack",
+      "path": "/project/tiktrack/",
+      "value": {
+        "outcomes": 0,
+        "finalCta": true,
+        "h1FontSize": "40px",
+        "letterSpacing": "-1px"
+      }
+    },
+    {
+      "name": "AT-4-single-post",
+      "path": "/blog/garden-bed-width-80cm/",
+      "value": {
+        "metaTop": true,
+        "numberedH2": false,
+        "plainH2": 0,
+        "hasAside": true
+      }
+    },
+    {
+      "name": "AT-5-blog",
+      "path": "/blog/",
+      "value": {
+        "blogHeader": true,
+        "filter": false,
+        "postsGrid": false,
+        "blogEnd": true
+      }
+    },
+    {
+      "name": "AT-6-world-know",
+      "path": "/world/know/",
+      "value": {
+        "t1WorldKnow": false,
+        "glossColor": "rgb(154, 79, 43)",
+        "latAnchor": true
+      }
+    },
+    {
+      "name": "AT-6-world-code",
+      "path": "/world/code/",
+      "value": {
+        "t1WorldCode": false,
+        "glossColor": "rgb(31, 94, 96)"
+      }
+    },
+    {
+      "name": "AT-7-heritage",
+      "path": "/about/heritage/",
+      "value": {
+        "heritageHero": false,
+        "dropcap": true,
+        "numberedH2": 6,
+        "heritageEnd": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "base": "https://nimrod-bio-2026.s887.upress.link",
+  "out": "docs/qa/cdp/v200b/team50/wp007",
+  "viewports": [
+    { "name": "mobile", "w": 375, "h": 812 },
+    { "name": "desktop", "w": 1440, "h": 900 }
+  ],
+  "pages": [
+    { "name": "home", "path": "/" },
+    { "name": "about", "path": "/about/" },
+    { "name": "contact", "path": "/contact/" },
+    { "name": "projects-archive", "path": "/projects/" },
+    { "name": "services-archive", "path": "/services/" },
+    { "name": "world-soil", "path": "/world/soil/" },
+    { "name": "world-know", "path": "/world/know/" },
+    { "name": "world-code", "path": "/world/code/" },
+    { "name": "heritage", "path": "/about/heritage/" },
+    { "name": "single-project", "path": "/project/rest-x-greenhouse/" },
+    { "name": "single-service-bcs", "path": "/services/bcs/" },
+    { "name": "single-service-anchor", "path": "/services/consulting-hydro/" },
+    { "name": "single-service-teaching", "path": "/services/teaching/" },
+    { "name": "blog-index", "path": "/blog/" },
+    { "name": "single-post", "path": "/blog/garden-bed-width-80cm/" },
+    { "name": "search", "path": "/?s=garden" },
+    { "name": "notfound-404", "path": "/no-such-page-xyz/" }
+  ],
+  "absent": [
+    "Micha",
+    "מיכה",
+    "אנטרופיה",
+    "נגנטרופיה",
+    "רקורסיה",
+    "CDIP",
+    "cross-domain",
+    "פרמקלצר",
+    "TBD"
+  ],
+  "shots": false
+}

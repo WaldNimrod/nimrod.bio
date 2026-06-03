@@ -1,0 +1,30 @@
+{
+  "base": "https://nimrod-bio-2026.s887.upress.link",
+  "out": "docs/qa/cdp/v200b/team50/wp007",
+  "viewports": [
+    { "name": "mobile", "w": 375, "h": 812 },
+    { "name": "desktop", "w": 1440, "h": 900 }
+  ],
+  "pages": [
+    { "name": "t2-services", "path": "/services/" },
+    { "name": "t2s-consulting-hydro", "path": "/services/consulting-hydro/" },
+    { "name": "t3-greenhouse", "path": "/project/rest-x-greenhouse/" },
+    { "name": "t4-post", "path": "/blog/garden-bed-width-80cm/" },
+    { "name": "t5-blog", "path": "/blog/" },
+    { "name": "heritage", "path": "/about/heritage/" },
+    { "name": "t1-know", "path": "/world/know/" },
+    { "name": "t1-code", "path": "/world/code/" }
+  ],
+  "absent": [
+    "Micha",
+    "מיכה",
+    "אנטרופיה",
+    "נגנטרופיה",
+    "רקורסיה",
+    "CDIP",
+    "cross-domain",
+    "פרמקלצר",
+    "TBD"
+  ],
+  "shots": true
+}
