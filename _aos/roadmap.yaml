@@ -636,29 +636,51 @@ work_packages:
 
 - id: NB-S002-P009-WP005
   label: "nimrod-bio — Media wiring (CPT galleries) + open visual-asset swap"
-  status: IN_PROGRESS
+  status: COMPLETE
   track: A
-  current_lean_gate: L-GATE_BUILD
-  lod_status: LOD300
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
   assigned_builder: nimrodbio_build
   assigned_validator: nimrodbio_val
   created_at: "2026-06-01"
   milestone_ref: V200
   spec_ref: "_COMMUNICATION/team_100/OPEN_ITEMS_REGISTER_V200_2026-06-01_v1.md"
-  notes: "OPENED 2026-06-01 by team_100 (ADR034 R9: L2 spoke-native WP, direct roadmap edit + git audit; no hub DB row) on team_00 approval. Scope: wire confirmed photo selections into project/service CPT galleries via _nb_gallery attachment IDs — BCS tools (x2), עירית שומית (x2), Garden (x7), Greenhouse (x13) — now feasible (Stage D confirmed projects rest_base accepts meta). Plus hot-swap of open visual assets when delivered (logo SVG master, favicon, OG, watercolor washes, real SFA/tiktrack screenshots). Source photo files: Drive archive per SITE_PHOTO_REPORT_2026-06-01 + sources/photos/SHORTLIST_*. 5 owner-pending photo gaps + hero-code stay .ph.clean (NOT substituted). Honors both super-locks (incl. alt-text). | 2026-06-01 PROGRESS (data-layer, no repo files — WP Media + CPT meta over REST): Garden gallery WIRED — project 49 _nb_gallery=[1065..1071] (7), featured 1065. Greenhouse+עירית שומית WIRED — project 31 _nb_gallery=[1072..1084] (13), featured 1072. BCS HERO wired — service 24 featured_media=1085 (flail/box mower); all WebP q82 ≤2400px, EXIF stripped, Hebrew lock-clean alt. Verified rendered: 3 pages HTTP 200, TBD=0, locks=0. BCS GALLERY (beyond hero) DEFERRED → team_35: single-service.php has NO gallery part + _nb_gallery not registered on 'service' CPT — needs a design+meta change (routed via REPORT). Remaining open-asset swap still pending delivery. | 2026-06-03 RECONCILIATION (team_100, filesystem+live ground truth — prior note was DRIFTED): the 'DEFERRED' + 'pending' status is STALE. team_35 COMPLETED the BCS gallery 2026-06-01 (COMPLETION_BCS_GALLERY): service CPT _nb_gallery meta registered + single-service gallery part + t3 enqueue — all CODE COMMITTED in repo; gallery LIVE (service 24 _nb_gallery=17 IDs incl. tiller 1101-1108 + pak-bung). Garden (project 49=7) + Greenhouse/שומית (project 31=14) LIVE. v6 open-assets (logo/favicon/OG/watercolors) DELIVERED + integrated in WP004. ALL V4-precision-README tasks (1-7) implemented across WP001/003/004. → Media-wiring scope is DONE+LIVE. RESIDUAL (carry-forward, not blocking): (a) real SFA/tiktrack screenshots — sfa-demo.svg/tiktrack-demo.svg are DEMO placeholders, owner-pending; (b) DATA-LAYER DURABILITY — gallery meta+media (1065-1108) live on dev DB only, no repo seed → flag to P005-WP002 cutover. Full ledger: _COMMUNICATION/team_100/RECONCILIATION_TEAM35_PACKAGES_2026-06-03_v1.md. Recommend close (team_00 acceptance like WP004, or light validate) with (a)+(b) as carry-forward. Design-precision WALK (G2/G3) = WP007, separate."
+  gate_history:
+  - gate: L-GATE_BUILD
+    result: PASS
+    date: "2026-06-01"
+    notes: "Garden (project 49=7), Greenhouse/שומית (project 31=14), BCS hero+gallery (service 24=17 IDs) wired via REST on dev. WebP, Hebrew alt, super-locks honored."
+  - gate: COMPLETE
+    result: CLOSED_BY_TEAM_100
+    date: "2026-06-15"
+    notes: "ADR042 closure after reconciliation 2026-06-03 confirmed scope DONE+LIVE (prior roadmap drift corrected). team_00 session directive. COMPLETION_CANONICAL: _COMMUNICATION/team_100/COMPLETION_CANONICAL_NB-S002-P009-WP005_v1.0.0.md. Step 3 skipped (theme/data-layer only). Carry-forward: real SFA/tiktrack screenshots; dev DB gallery durability → P005-WP002."
+  notes: "COMPLETE (LOD500). Media wiring LIVE on dev — Garden, Greenhouse, BCS galleries + v6 assets (WP004). Closed 2026-06-15 by team_100. Carry-forward: DEMO SFA/tiktrack placeholders; gallery meta 1065–1108 dev-DB-only until cutover."
 
 - id: NB-S002-P005-WP001B
   label: "nimrod-bio — Pre-cutover full QA re-run (design A–D + media) + Lighthouse"
-  status: IN_PROGRESS
+  status: COMPLETE
   track: A
-  current_lean_gate: L-GATE_VALIDATE
-  lod_status: LOD300
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
   assigned_builder: nimrodbio_build
   assigned_validator: nimrodbio_val
   created_at: "2026-06-01"
   milestone_ref: V200
   spec_ref: "_COMMUNICATION/team_100/OPEN_ITEMS_REGISTER_V200_2026-06-01_v1.md"
-  notes: "OPENED 2026-06-01 by team_100 (ADR034 R9) on team_00 approval. Scope: full-system QA re-run after design build A–D + photo wiring — extends team_50's earlier QA_REPORT_V200 (text-site PASS_WITH_FINDINGS) to cover the new 404/search/empty-state templates, media degradation, counts, external links, Contact hero, About timeline/קצת ים, and wired galleries. Adds Lighthouse/performance pass + 375px independent visual sweep + contact-form live-delivery confirmation to nimrod@mezoo.co (F-001 close-out). Cross-engine: validator (team_50/team_190) != builders. Gates the team_190 constitutional L-GATE_VALIDATE that precedes P005-WP002 cutover."
+  gate_history:
+  - gate: L-GATE_BUILD
+    result: PASS_WITH_CONDITIONS
+    date: "2026-06-01"
+    notes: "team_50 QA_REPORT_V200B PASS_WITH_FINDINGS; F-002/F-003/F-004 routed to team_35 fixes + Lighthouse tooling by team_100."
+  - gate: L-GATE_VALIDATE
+    result: PASS_WITH_DEFERRALS
+    date: "2026-06-01"
+    notes: "team_190 VERDICT v1.0.0 — constitutional gate PASS. Baseline theme v0.7.13. Deferrals: primary-domain Lighthouse, owner media, BCS gallery note (superseded — gallery now live), contact inbox owner-verify."
+  - gate: COMPLETE
+    result: CLOSED_BY_TEAM_100
+    date: "2026-06-15"
+    notes: "ADR042 formal closure. Post-gate WP006/WP007 independently validated theme to v0.7.24. COMPLETION_CANONICAL: _COMMUNICATION/team_100/COMPLETION_CANONICAL_NB-S002-P005-WP001B_v1.0.0.md. P005-WP002 technically unblocked; operationally deferred until content wave final approval (team_00 2026-06-15)."
+  notes: "COMPLETE (LOD500). Pre-cutover QA gate satisfied (team_190 PASS_WITH_DEFERRALS 2026-06-01). Closed 2026-06-15. Superseding validation: WP006 a11y + WP007 precision (v0.7.24). Cutover authorization holds on content writing wave, not technical QA."
 
 - id: NB-S002-P009-WP006
   label: "nimrod-bio — Accessibility (a11y) sweep — site-wide"
