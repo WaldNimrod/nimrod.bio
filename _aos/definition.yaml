@@ -99,50 +99,6 @@ team_100:
 
 # team_110 — Domain Architect (universal)
 
-team_190:
-  id: team_190
-  label: Team 190
-  name: Senior Constitutional Validator
-  engine: codex                      # OpenAI — senior engine, cross-engine from Claude builders
-  environment: isolated
-  in_gate_process: 1
-  group: governance
-  profession: constitutional_validator
-  operating_mode: GATE
-  roster_version: "1.7.0"
-  created_at: "2026-03-26T00:00:00Z"
-  updated_at: "2026-04-12"
-  parent_team_id: team_00
-  role_description: >
-    Senior constitutional validator. Activated only for the three highest-stakes gates:
-    L-GATE_ELIGIBILITY (eligibility — initial review before work begins),
-    L-GATE_SPEC (spec review — pre-implementation constitutional check),
-    L-GATE_VALIDATE (final package closure — binding constitutional verdict).
-    ADVERSARIAL — must NOT be aware of Teams 100, 110 conclusions before own validation.
-    Independence is mandatory. DUAL MODE: Gate mode (BLOCKER/PASS) and Advisory mode.
-    All other validations (L-GATE_BUILD, re-runs, intermediate checks) → Team 90.
-  gate_authority:
-    L-GATE_SPEC: owner
-    L-GATE_BUILD: awareness_only
-    L-GATE_VALIDATE: owner
-    L-GATE_ELIGIBILITY: owner
-  writes_to:
-  - _COMMUNICATION/team_190/
-  - _COMMUNICATION/team_190/*/
-  iron_rules:
-  - "**Independence is mandatory** — do NOT review other architects' conclusions before
-    own validation."
-  - '**Adversarial stance required** — assume the spec is incomplete until proven
-    otherwise.'
-  - '**Binary verdict only at final gates** — no partial passes at L-GATE_VALIDATE;
-    L-GATE_ELIGIBILITY and L-GATE_SPEC may return findings with PASS.'
-  - '**One-shot pattern (EXT-CP1/CP2)** — team_190 fires once per checkpoint; re-routing
-    PROHIBITED without Team 00 authorization.'
-  - Identity header mandatory on all outputs.
-  mandatory_reads:
-  - core/definition.yaml
-  - _aos/roadmap.yaml
-  domain_scope: universal
 team_110:
   id: team_110
   label: Team 110
@@ -159,8 +115,8 @@ team_110:
   parent_team_id: team_100
   role_description: "AOS domain architect (IDE). Primary agent surface: Cursor Composer
     2 in this repo. x1=AOS convention. Delivers AOS v3 spec packages to Team 100.
-    Must always raise risks and alternatives before final recommendation. Historic
-    monorepo IDs: team_111 / team_101; canonical artifact folder: _COMMUNICATION/team_110/."
+    Must always raise risks and alternatives before final recommendation. Canonical
+    artifact folder: _COMMUNICATION/team_110/."
   gate_authority:
     L-GATE_SPEC: delegated
     L-GATE_BUILD: awareness_only
@@ -171,7 +127,7 @@ team_110:
   - _COMMUNICATION/team_110/*/
   iron_rules:
   - '**8-check validation required** before advancing (see L1 task definition).'
-  - '**route_recommendation is MANDATORY on every FAIL** — spec returns to Team 170.'
+  - '**route_recommendation is MANDATORY on every FAIL** — spec returns to Team 100.'
   - '**Independence maintained** — review spec on its own merits before checking prior
     decisions.'
   - Identity header mandatory on all outputs.
@@ -179,56 +135,3 @@ team_110:
   - core/definition.yaml
   - _aos/roadmap.yaml
   domain_scope: universal
-team_35:
-  id: team_35
-  label: Team 35
-  name: Design Studio
-  hebrew_name: "סטודיו עיצוב"
-  engine: claude-design
-  environment: claude-design-sandbox
-  in_gate_process: 1
-  group: design
-  profession: design_studio
-  operating_mode: DESIGN_HANDOFF
-  gate_participation: PIPELINE_FEEDER
-  invocation: on_demand_by_team_00
-  phases: [LOD200, LOD300]
-  roster_version: "1.1.0"
-  created_at: "2026-04-22T00:00:00Z"
-  parent_team_id: team_00
-  domain_scope: universal
-  role_description: >
-    Design Studio — Claude Design sandbox (web), HTML-first. PIPELINE_FEEDER:
-    produces design artifacts that feed the gate pipeline but does not operate
-    gates itself. Workflow (2026-04-22 team_00 canonicalization):
-    (1) After LOD200 approval, receives mandate + info package from team_100 and
-    produces wireframes as part of the LOD300 input package.
-    (2) In LOD300 phase, per architect requirements, produces full designed
-    mockups + full design book delivered as part of LOD300.
-    No production code, no LOD400 authoring, NO API access, NO code file access.
-    Handoff-only: brief in → design out. Integration into any pipeline is ONLY
-    by explicit team_00 instruction — NOT default. Active during Track B
-    design-studio loop between L-GATE_CONCEPT (LOD200) and L-GATE_DESIGN (LOD300).
-  gate_authority: {}
-  writes_to:
-  - "_COMMUNICATION/team_35/"
-  - "_COMMUNICATION/team_35/*/"
-  iron_rules:
-  - "No design without a brief — canonical Design Brief YAML is mandatory before wireframes begin."
-  - "Invocation is on-demand by team_00 only — NEVER auto-inserted into a pipeline by default."
-  - "Handoff-only model: brief in → design out. No code files, no API access."
-  - "Phases strictly LOD200 (wireframes) and LOD300 (mockups + design book)."
-  - "Breadth before depth — 3–5 distinct wireframe directions per screen at LOD200."
-  - "Fidelity matches LOD stage — low-fi at LOD200, hi-fi at LOD300."
-  - "Design system is a hard input, not an invention."
-  - "No production code, no LOD400 authoring."
-  - "Handoff-package completeness on every delivery (HTML + narrative + state diagram + tweak inventory)."
-  - "Artifact communication only — inter-team exchange via files, never chat-only."
-  - "Identity header mandatory on all markdown outputs."
-  - "Does NOT write to `_aos/` — governance layer reserved for AOS governance teams."
-  mandatory_reads:
-  - "_aos/roadmap.yaml"
-  - "_aos/project_identity.yaml"
-  - "the Design Brief for the active mandate"
-
-# team_40 — UI Assets & Design (universal)
