@@ -1,0 +1,25 @@
+# ARCHIVE MANIFEST — NB-S002-P009-WP006
+
+**WP:** NB-S002-P009-WP006 — nimrod-bio — Accessibility (a11y) sweep — site-wide
+**Milestone:** V200 · **Status:** COMPLETE (lod_status: LOD500)
+**Archived by:** team_120 (DOMAIN_DOC_ARCHIVE_SWEEP_PROCEDURE_v1.0.0) · **Archive date:** 2026-07-09
+**Source:** `_COMMUNICATION/team_*/` (mechanical filename-substring match on WP-ID `NB-S002-P009-WP006`)
+**File count:** 4
+
+## Archived files
+- `_COMMUNICATION/team_100/HANDOFF_SELF_100_NB-S002-P009-WP006_2026-06-02_v1.md`
+- `_COMMUNICATION/team_190/VALIDATE_REQUEST_NB-S002-P009-WP006_2026-06-03_v1.md`
+- `_COMMUNICATION/team_190/VERDICT_NB-S002-P009-WP006_DEPLOYED_2026-06-03_v1.md`
+- `_COMMUNICATION/team_50/QA_REPORT_NB-S002-P009-WP006_2026-06-03_v1.md`
+
+## Path redirects
+
+| Former path (before archive) | Archived path |
+|-------------------------------|----------------|
+| `_COMMUNICATION/team_100/HANDOFF_SELF_100_NB-S002-P009-WP006_2026-06-02_v1.md` | `_archive/NB-S002-P009-WP006/team_100/HANDOFF_SELF_100_NB-S002-P009-WP006_2026-06-02_v1.md` |
+| `_COMMUNICATION/team_190/VALIDATE_REQUEST_NB-S002-P009-WP006_2026-06-03_v1.md` | `_archive/NB-S002-P009-WP006/team_190/VALIDATE_REQUEST_NB-S002-P009-WP006_2026-06-03_v1.md` |
+| `_COMMUNICATION/team_190/VERDICT_NB-S002-P009-WP006_DEPLOYED_2026-06-03_v1.md` | `_archive/NB-S002-P009-WP006/team_190/VERDICT_NB-S002-P009-WP006_DEPLOYED_2026-06-03_v1.md` |
+| `_COMMUNICATION/team_50/QA_REPORT_NB-S002-P009-WP006_2026-06-03_v1.md` | `_archive/NB-S002-P009-WP006/team_50/QA_REPORT_NB-S002-P009-WP006_2026-06-03_v1.md` |
+
+---
+*Archived by team_120 (sweep) · 2026-07-09 · DOMAIN_DOC_ARCHIVE_SWEEP_PROCEDURE_v1.0.0*

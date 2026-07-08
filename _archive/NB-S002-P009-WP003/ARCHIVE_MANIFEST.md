@@ -35,3 +35,78 @@ G-01 5fa7da6a → … → D2 fix 2bf47ba4 → close (this commit)
 - F2 (hero h1 `.poster-h1` vs `.t-display`, tracking equiv present).
 
 *Archived by team_100 · 2026-05-30 · ADR042 · cross-engine validated*
+
+
+---
+
+## COMPLETION PASS — 2026-07-09 (DOMAIN_DOC_ARCHIVE_SWEEP_PROCEDURE_v1.0.0, team_120)
+
+**Finding:** the original archival above created this manifest but did not physically move the source artifacts listed in "Key artifacts" — they remained live under `_COMMUNICATION/team_*/` (a domain-hygiene gap; 61 files, including QA screenshot evidence). This sweep pass completes the move (git mv only; nothing deleted) and adds the mandatory Path-redirects table below.
+
+## Path redirects
+
+| Former path (before archive) | Archived path |
+|-------------------------------|----------------|
+| `_COMMUNICATION/team_100/COMPLETION_CANONICAL_NB-S002-P009-WP003_v1.0.0.md` | `_archive/NB-S002-P009-WP003/team_100/COMPLETION_CANONICAL_NB-S002-P009-WP003_v1.0.0.md` |
+| `_COMMUNICATION/team_190/VERDICT_NB-S002-P009-WP003_VALIDATE_v1.0.0.md` | `_archive/NB-S002-P009-WP003/team_190/VERDICT_NB-S002-P009-WP003_VALIDATE_v1.0.0.md` |
+| `_COMMUNICATION/team_190/VALIDATE_REQUEST_NB-S002-P009-WP003_2026-05-29_v1.0.0.md` | `_archive/NB-S002-P009-WP003/team_190/VALIDATE_REQUEST_NB-S002-P009-WP003_2026-05-29_v1.0.0.md` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/run-rerun-v1.2.mjs` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/run-rerun-v1.2.mjs` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/rerun-worlds-375.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/rerun-worlds-375.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/run-rerun-v1.1.mjs` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/run-rerun-v1.1.mjs` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/home-top-768.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/home-top-768.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-07-projects-375.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-07-projects-375.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-10-footer-375.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-10-footer-375.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/home-top-1440.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/home-top-1440.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-05-bridges-768.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-05-bridges-768.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-08-manifesto-1440.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-08-manifesto-1440.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-03-systems-375.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-03-systems-375.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-01-nav-hero-1440.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-01-nav-hero-1440.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/audit-results.json` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/audit-results.json` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/drawer-closed-375-home.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/drawer-closed-375-home.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-02-worlds-375.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-02-worlds-375.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/rerun-carousel-services-1440.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/rerun-carousel-services-1440.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/home-full-1440.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/home-full-1440.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/audit-results-v1.1.0.json` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/audit-results-v1.1.0.json` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-09-final-cta-1440.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-09-final-cta-1440.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/inner-contact-375.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/inner-contact-375.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-09-final-cta-375.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-09-final-cta-375.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-04-services-1440.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-04-services-1440.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-06-unless-1440.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-06-unless-1440.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-01-nav-hero-768.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-01-nav-hero-768.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-04-services-768.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-04-services-768.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-06-unless-375.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-06-unless-375.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-10-footer-1440.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-10-footer-1440.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-03-systems-1440.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-03-systems-1440.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-08-manifesto-375.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-08-manifesto-375.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/home-full-768.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/home-full-768.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/home-full-375.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/home-full-375.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/run-wp003-audits.mjs` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/run-wp003-audits.mjs` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-08-manifesto-768.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-08-manifesto-768.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-04-services-375.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-04-services-375.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-01-nav-hero-375.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-01-nav-hero-375.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-06-unless-768.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-06-unless-768.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-09-final-cta-768.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-09-final-cta-768.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/rerun-carousel-projects-1440.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/rerun-carousel-projects-1440.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-02-worlds-768.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-02-worlds-768.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/rerun-d2-worlds-375.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/rerun-d2-worlds-375.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-02-worlds-1440.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-02-worlds-1440.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-05-bridges-1440.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-05-bridges-1440.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-05-bridges-375.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-05-bridges-375.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/rerun-drawer-open-375.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/rerun-drawer-open-375.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-03-systems-768.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-03-systems-768.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/inner-world-soil-375.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/inner-world-soil-375.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-10-footer-768.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-10-footer-768.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/drawer-open-375-home.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/drawer-open-375-home.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/capture-sections.mjs` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/capture-sections.mjs` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-07-projects-768.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-07-projects-768.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/home-top-375.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/home-top-375.png` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/audit-results-v1.2.0.json` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/audit-results-v1.2.0.json` |
+| `_COMMUNICATION/team_50/screenshots/NB-S002-P009-WP003/section-07-projects-1440.png` | `_archive/NB-S002-P009-WP003/team_50/screenshots/NB-S002-P009-WP003/section-07-projects-1440.png` |
+| `_COMMUNICATION/team_50/RERUN_REQUEST_NB-S002-P009-WP003_2026-05-29_v1.1.0.md` | `_archive/NB-S002-P009-WP003/team_50/RERUN_REQUEST_NB-S002-P009-WP003_2026-05-29_v1.1.0.md` |
+| `_COMMUNICATION/team_50/DEVICE_CHECK_NB-S002-P009-WP003_2026-05-30_v1.2.0.md` | `_archive/NB-S002-P009-WP003/team_50/DEVICE_CHECK_NB-S002-P009-WP003_2026-05-30_v1.2.0.md` |
+| `_COMMUNICATION/team_50/DEVICE_CHECK_REQUEST_NB-S002-P009-WP003_2026-05-29_v1.0.0.md` | `_archive/NB-S002-P009-WP003/team_50/DEVICE_CHECK_REQUEST_NB-S002-P009-WP003_2026-05-29_v1.0.0.md` |
+| `_COMMUNICATION/team_50/DEVICE_CHECK_NB-S002-P009-WP003_2026-05-29_v1.1.0.md` | `_archive/NB-S002-P009-WP003/team_50/DEVICE_CHECK_NB-S002-P009-WP003_2026-05-29_v1.1.0.md` |
+| `_COMMUNICATION/team_50/DEVICE_CHECK_NB-S002-P009-WP003_2026-05-29_v1.0.0.md` | `_archive/NB-S002-P009-WP003/team_50/DEVICE_CHECK_NB-S002-P009-WP003_2026-05-29_v1.0.0.md` |
+| `_COMMUNICATION/team_50/RERUN_REQUEST_NB-S002-P009-WP003_2026-05-29_v1.2.0.md` | `_archive/NB-S002-P009-WP003/team_50/RERUN_REQUEST_NB-S002-P009-WP003_2026-05-29_v1.2.0.md` |
+
+*Completion pass by team_120 (sweep) · 2026-07-09*

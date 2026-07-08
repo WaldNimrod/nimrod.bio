@@ -26,3 +26,18 @@ v0.7.0 (assets) → 0.7.1 (WebP) → 0.7.2 (demo screens) → 0.7.3 (v7 spacing)
 - **NEXT PHASE (team_00): content precision.**
 
 *Archived by team_100 · 2026-05-30*
+
+
+---
+
+## COMPLETION PASS — 2026-07-09 (DOMAIN_DOC_ARCHIVE_SWEEP_PROCEDURE_v1.0.0, team_120)
+
+**Finding:** the original archival above created this manifest but did not physically move the source artifacts listed in "Key artifacts" — they remained live under `_COMMUNICATION/team_*/` (a domain-hygiene gap; 1 files, including QA screenshot evidence). This sweep pass completes the move (git mv only; nothing deleted) and adds the mandatory Path-redirects table below.
+
+## Path redirects
+
+| Former path (before archive) | Archived path |
+|-------------------------------|----------------|
+| `_COMMUNICATION/team_100/COMPLETION_CANONICAL_NB-S002-P009-WP004_v1.0.0.md` | `_archive/NB-S002-P009-WP004/team_100/COMPLETION_CANONICAL_NB-S002-P009-WP004_v1.0.0.md` |
+
+*Completion pass by team_120 (sweep) · 2026-07-09*
