@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>גל 02 · עולמות — ביקורת תוכן</title>
+  <link rel="stylesheet" href="_shared/wave-review.css">
+</head>
+<body>
+  <nav class="wave-nav">
+    <a href="index.html" data-page="index.html">גל 02</a>
+    <a href="soil.html" data-page="soil.html">אדמה</a>
+    <a href="know.html" data-page="know.html">ייעוץ והוראה</a>
+    <a href="code.html" data-page="code.html">דיגיטל</a>
+    <button type="button" class="btn-export" id="btn-export-json">העתק JSON הערות</button>
+    <span class="export-status" id="export-status"></span>
+    <a href="../../review-hub/index.html" style="margin-right:0.5rem;font-size:0.85rem">מרכז ביקורת</a>
+    <span class="wave-label">גל 02 · עולמות (T1)</span>
+  </nav>
+
+  <div class="page-wrap">
+    <header class="page-header">
+      <h1>גל 02 — עולמות</h1>
+      <p class="template-tag">3 עמודי T1 · מיזוג Composer+gpt-5.5-high · ביקורת מרוכזת</p>
+    </header>
+
+    <section class="copy-section" data-section-id="wave02.index.instructions">
+      <span class="section-id">wave02.index.instructions</span>
+      <h2>הוראות ביקורת</h2>
+      <div class="copy-block">
+        <p>1. עברו על כל עמוד בתפריט העליון.</p>
+        <p>2. בכל סקשן — קראו את הקופי והוסיפו הערות בשדה האדום.</p>
+        <p>3. ההערות נשמרות אוטומטית בדפדפן (localStorage).</p>
+        <p>4. בסיום — לחצו <strong>העתק JSON הערות</strong> והדביקו בצ׳אט team_100.</p>
+        <p>כל <code>section_id</code> ב-JSON מזהה בדיוק סקשן (למשל <code>wave02.soil.hero</code>).</p>
+        <p><strong>slug גינה · זוגות פוסטים:</strong> <a href="../../owner-supply/index.html">טופס אספקה מרוכז →</a></p>
+      </div>
+      <label class="review-label">הערות כלליות על הגל</label>
+      <textarea class="review-note" data-section-id="wave02.index.instructions" rows="3" placeholder="הערות על הגל כולו…"></textarea>
+    </section>
+
+    <section class="copy-section" data-section-id="wave02.index.pages">
+      <span class="section-id">wave02.index.pages</span>
+      <h2>עמודים בגל</h2>
+      <div class="copy-block">
+        <ul>
+          <li><a href="soil.html">אדמה</a> — /world/soil/ · מיזוג v1+v2</li>
+          <li><a href="know.html">ייעוץ והוראה</a> — /world/know/ · מיזוג v1+v2 · בלי TikTrack</li>
+          <li><a href="code.html">דיגיטל</a> — /world/code/ · עוגן SFA · מיזוג v1+v2</li>
+        </ul>
+        <p><strong>נעילות:</strong> אין 3×/אינסטנסים · אין קואופרטיב · גשר אדמה×דיגיטל = SFA בלבד</p>
+      </div>
+      <label class="review-label">הערות על רשימת העמודים</label>
+      <textarea class="review-note" data-section-id="wave02.index.pages" rows="2"></textarea>
+    </section>
+  </div>
+
+  <script>
+    window.WAVE_REVIEW_CONFIG = {
+      waveId: 'wave-02-worlds',
+      waveLabel: 'גל 02 · עולמות',
+      pageId: 'index',
+      pageUrl: '/wave-02-worlds/'
+    };
+  </script>
+  <script src="_shared/wave-review.js"></script>
+</body>
+</html>

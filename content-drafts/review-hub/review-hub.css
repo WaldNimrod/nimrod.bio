@@ -1,0 +1,58 @@
+.hub-wrap { max-width: 42rem; }
+
+.page-lede { font-size: 1.05rem; line-height: 1.65; color: var(--ink); }
+
+.hub-meta { font-size: 0.85rem; color: var(--muted); }
+
+.hub-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.hub-card--active { border-right: 4px solid var(--spark); }
+
+.hub-card--supply { border-right: 4px solid #c9a227; background: #fffdf5; }
+
+.hub-card--planned { opacity: 0.85; border-right: 4px solid var(--muted); }
+
+.hub-card h2 { margin: 0 0 0.5rem; font-size: 1.15rem; color: var(--soil); }
+
+.hub-status { font-size: 0.88rem; color: var(--muted); margin: 0 0 0.5rem; }
+
+.hub-checklist {
+  margin: 0.5rem 0 1rem;
+  padding-right: 1.25rem;
+  font-size: 0.92rem;
+}
+
+.hub-note { font-size: 0.88rem; color: var(--muted); font-style: italic; }
+
+.hub-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--soil);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.hub-btn:hover { background: var(--spark); color: #fff; }
+
+.hub-btn--accent { background: var(--spark); }
+
+.hub-btn--muted { background: var(--muted); }
+
+.hub-workflow {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--border);
+}
+
+.hub-workflow h2 { font-size: 1rem; color: var(--soil); }
+
+.hub-workflow ol { line-height: 1.8; }

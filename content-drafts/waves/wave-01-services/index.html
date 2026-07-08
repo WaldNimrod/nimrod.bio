@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>גל 01 · שירותים — ביקורת תוכן</title>
+  <link rel="stylesheet" href="_shared/wave-review.css">
+</head>
+<body>
+  <nav class="wave-nav">
+    <a href="index.html" data-page="index.html">גל 01</a>
+    <a href="bcs.html" data-page="bcs.html">BCS</a>
+    <a href="produce.html" data-page="produce.html">תוצרת</a>
+    <a href="consulting-hydro.html" data-page="consulting-hydro.html">ייעוץ חממה</a>
+    <a href="sfa.html" data-page="sfa.html">SFA</a>
+    <button type="button" class="btn-export" id="btn-export-json">העתק JSON הערות</button>
+    <span class="export-status" id="export-status"></span>
+    <a href="../../review-hub/index.html" style="margin-right:0.5rem;font-size:0.85rem">מרכז ביקורת</a>
+    <span class="wave-label">גל 01 · שירותים (T2)</span>
+  </nav>
+
+  <div class="page-wrap">
+    <header class="page-header">
+      <h1>גל 01 — שירותים</h1>
+      <p class="template-tag">4 עמודי T2 · ביקורת מרוכזת לפני אישור גל</p>
+    </header>
+
+    <section class="copy-section" data-section-id="wave01.index.instructions">
+      <span class="section-id">wave01.index.instructions</span>
+      <h2>הוראות ביקורת</h2>
+      <div class="copy-block">
+        <p>1. עברו על כל עמוד בתפריט העליון.</p>
+        <p>2. בכל סקשן — קראו את הקופי והוסיפו הערות בשדה האדום.</p>
+        <p>3. ההערות נשמרות אוטומטית בדפדפן (localStorage).</p>
+        <p>4. בסיום — לחצו <strong>העתק JSON הערות</strong> והדביקו בצ׳אט team_100.</p>
+        <p>כל <code>section_id</code> ב-JSON מזהה בדיוק סקשן (למשל <code>wave01.bcs.hero</code>).</p>
+        <p><strong>חומרים חסרים (תמונות BCS, תמחור produce…):</strong> <a href="../../owner-supply/index.html">טופס אספקה מרוכז →</a></p>
+      </div>
+      <label class="review-label">הערות כלליות על הגל</label>
+      <textarea class="review-note" data-section-id="wave01.index.instructions" rows="3" placeholder="הערות על הגל כולו…"></textarea>
+    </section>
+
+    <section class="copy-section" data-section-id="wave01.index.pages">
+      <span class="section-id">wave01.index.pages</span>
+      <h2>עמודים בגל</h2>
+      <div class="copy-block">
+        <ul>
+          <li><a href="bcs.html">BCS</a> — /services/bcs/ · סטטוס: עריכה + החלטות נמרוד (כותרת נעולה)</li>
+          <li><a href="produce.html">תוצרת</a> — מיזוג v1+v2 (מאושר)</li>
+          <li><a href="consulting-hydro.html">ייעוץ חממה</a> — /services/consulting-hydro/ · גשר אדמה×ידע</li>
+          <li><a href="sfa.html">SFA</a> — /services/sfa/ · גשר אדמה×דיגיטל</li>
+        </ul>
+      </div>
+      <label class="review-label">הערות על רשימת העמודים / סדר הגל</label>
+      <textarea class="review-note" data-section-id="wave01.index.pages" rows="2"></textarea>
+    </section>
+  </div>
+
+  <script>
+    window.WAVE_REVIEW_CONFIG = {
+      waveId: 'wave-01-services',
+      waveLabel: 'גל 01 · שירותים',
+      pageId: 'index',
+      pageUrl: '/wave-01-services/'
+    };
+  </script>
+  <script src="_shared/wave-review.js"></script>
+</body>
+</html>

@@ -1,0 +1,358 @@
+/* wave-review.css — RTL review shell for nimrod.bio content waves */
+:root {
+  --paper: #f6f1e8;
+  --ink: #1a1a1a;
+  --muted: #5c5c5c;
+  --soil: #4a6741;
+  --know: #b86b1f;
+  --code: #1f6f78;
+  --spark: #c22f25;
+  --border: #d9d0c4;
+  --note-bg: #fffef8;
+  --nav-h: 3.25rem;
+  font-family: "Assistant", "Segoe UI", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  direction: rtl;
+  lang: he;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 1.05rem;
+}
+
+.wave-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  min-height: var(--nav-h);
+  padding: 0.5rem 1rem;
+  background: var(--ink);
+  color: #fff;
+  border-bottom: 3px solid var(--soil);
+}
+
+.wave-nav .wave-label {
+  font-weight: 700;
+  font-size: 0.85rem;
+  opacity: 0.85;
+  margin-left: auto;
+}
+
+.wave-nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.35rem 0.65rem;
+  border-radius: 4px;
+  font-size: 0.92rem;
+}
+
+.wave-nav a:hover { background: rgba(255,255,255,0.12); }
+.wave-nav a.is-active { background: var(--soil); }
+
+.wave-nav .btn-export {
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.45);
+  background: var(--spark);
+  color: #fff;
+  padding: 0.4rem 0.85rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+.wave-nav .btn-export:hover { filter: brightness(1.08); }
+
+.wave-nav .export-status {
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.wave-nav .export-status.show { opacity: 1; }
+
+.page-wrap {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.page-header .url-badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-family: ui-monospace, monospace;
+  direction: ltr;
+  background: #e8e2d8;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  margin-bottom: 0.5rem;
+}
+
+.page-header h1 {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  margin: 0 0 0.35rem;
+  line-height: 1.2;
+}
+
+.page-header .template-tag {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.copy-section {
+  margin-bottom: 1.75rem;
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.copy-section .section-id {
+  display: block;
+  font-size: 0.72rem;
+  font-family: ui-monospace, monospace;
+  direction: ltr;
+  text-align: left;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+
+.copy-section h2 {
+  font-size: 1rem;
+  margin: 0 0 0.75rem;
+  color: var(--soil);
+  font-weight: 700;
+}
+
+.copy-block {
+  margin-bottom: 0.85rem;
+}
+
+.copy-block .label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 0.15rem;
+}
+
+.copy-block p,
+.copy-block li {
+  margin: 0.25rem 0;
+}
+
+.copy-block ul {
+  margin: 0.35rem 0;
+  padding-right: 1.25rem;
+}
+
+.copy-block .tagline {
+  font-style: italic;
+  color: var(--muted);
+}
+
+.copy-block .tbc {
+  background: #fff3cd;
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.review-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  color: var(--spark);
+}
+
+.review-note {
+  width: 100%;
+  min-height: 2.5rem;
+  padding: 0.5rem 0.65rem;
+  border: 2px dashed var(--spark);
+  border-radius: 4px;
+  background: var(--note-bg);
+  font: inherit;
+  resize: vertical;
+  direction: rtl;
+}
+
+.review-note:focus {
+  outline: 2px solid var(--spark);
+  outline-offset: 1px;
+}
+
+.heritage-strip {
+  background: #eef3ea;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+.bridge-badge {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--soil), var(--know));
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  margin-bottom: 0.5rem;
+}
+
+.cta-preview {
+  background: var(--ink);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+}
+
+.cta-preview .btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.cta-preview .fake-btn {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  background: var(--soil);
+  color: #fff;
+}
+
+.cta-preview .fake-btn.wa { background: #187a42; }
+
+.cta-preview .hint {
+  font-size: 0.8rem;
+  opacity: 0.75;
+  margin-top: 0.5rem;
+}
+
+.draft-banner {
+  background: #fff3cd;
+  border: 1px solid #e6c200;
+  padding: 0.65rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.owner-lock {
+  background: #e8f4ea;
+  border: 1px solid var(--soil);
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.88rem;
+  margin-bottom: 0.75rem;
+}
+
+.option-block {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  background: #faf8f4;
+}
+
+.option-block.is-locked {
+  border-color: var(--soil);
+  background: #eef6ee;
+  box-shadow: inset 3px 0 0 var(--soil);
+}
+
+.option-block h3 {
+  font-size: 0.88rem;
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+}
+
+.option-block .demo {
+  font-family: "Frank Ruhl Libre", Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  padding: 0.65rem 0.85rem;
+  border-right: 3px solid var(--know);
+  background: #fff;
+  margin: 0.35rem 0;
+}
+
+.option-block .demo.sea { border-right-color: var(--code); }
+
+.img-ph {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 2px dashed var(--border);
+  margin: 0.5rem 0;
+  background: #e8e2d8;
+}
+
+.img-ph-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.5rem 0;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #fff;
+  font-size: 0.88rem;
+}
+
+.chip.is-selected {
+  border-color: var(--soil);
+  background: #eef6ee;
+  font-weight: 600;
+}
+
+.journal-slot {
+  background: #f0ebe3;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 0.75rem 0;
+}
+
+.journal-slot cite {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+  font-style: normal;
+}
+
+@media (max-width: 600px) {
+  .wave-nav { padding: 0.5rem; }
+  .wave-nav .wave-label { width: 100%; margin-left: 0; }
+}

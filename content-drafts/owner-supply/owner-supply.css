@@ -1,0 +1,228 @@
+/* owner-supply.css — טופס אספקה לנמרוד (על גבי wave-review.css) */
+
+.page-wrap { max-width: 52rem; }
+
+.locked-panel {
+  background: #f0f7f0;
+  border: 1px solid #a5d6a7;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.locked-panel h2 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+  color: var(--soil);
+}
+
+.locked-lede { font-size: 0.88rem; color: var(--muted); margin: 0 0 0.75rem; }
+
+.locked-list {
+  margin: 0;
+  padding-right: 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.locked-links { font-size: 0.88rem; margin: 0.75rem 0 0; }
+
+.locked-links a { color: var(--spark); }
+
+.supply-toc {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.supply-toc h2 {
+  font-size: 0.95rem;
+  margin: 0 0 0.75rem;
+  color: var(--soil);
+}
+
+.supply-toc ul {
+  margin: 0;
+  padding-right: 1.25rem;
+  columns: 2;
+  column-gap: 2rem;
+}
+
+.supply-toc a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.supply-toc a:hover { color: var(--spark); text-decoration: underline; }
+
+.supply-section {
+  margin-bottom: 2rem;
+  padding: 1.25rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.supply-section .section-id {
+  display: block;
+  font-size: 0.72rem;
+  font-family: ui-monospace, monospace;
+  direction: ltr;
+  text-align: left;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+
+.supply-section h2 {
+  font-size: 1.15rem;
+  margin: 0 0 0.35rem;
+  color: var(--soil);
+}
+
+.supply-section .section-lede {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+
+.field-group {
+  margin-bottom: 1.1rem;
+}
+
+.field-group label.field-label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.field-group .field-hint {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin: 0 0 0.35rem;
+}
+
+.field-group input[type="text"],
+.field-group input[type="url"],
+.field-group input[type="email"],
+.field-group input[type="tel"],
+.field-group select {
+  width: 100%;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font: inherit;
+  direction: rtl;
+}
+
+.field-group input.mono { direction: ltr; text-align: left; }
+
+.field-group textarea {
+  width: 100%;
+  min-height: 4.5rem;
+  padding: 0.5rem 0.65rem;
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  font: inherit;
+  resize: vertical;
+  direction: rtl;
+  background: var(--note-bg);
+}
+
+.field-group textarea:focus,
+.field-group input:focus,
+.field-group select:focus {
+  outline: 2px solid var(--soil);
+  outline-offset: 1px;
+}
+
+.field-group textarea.filled,
+.field-group input.filled {
+  border-color: var(--soil);
+}
+
+.radio-row,
+.check-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-top: 0.35rem;
+}
+
+.radio-row label,
+.check-row label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  font-size: 0.92rem;
+  cursor: pointer;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #faf8f4;
+}
+
+.radio-row label:has(:checked),
+.check-row label:has(:checked) {
+  border-color: var(--soil);
+  background: #eef6ee;
+  font-weight: 600;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.checklist-item:last-child { border-bottom: none; }
+
+.checklist-item input { margin-top: 0.35rem; flex-shrink: 0; }
+
+.checklist-item .item-body { flex: 1; }
+
+.checklist-item .item-title { font-weight: 600; font-size: 0.92rem; }
+
+.checklist-item .item-hint { font-size: 0.8rem; color: var(--muted); }
+
+.save-hint {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  background: var(--ink);
+  color: #fff;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: opacity 0.25s;
+  pointer-events: none;
+  z-index: 200;
+}
+
+.save-hint.show { opacity: 0.92; }
+
+.progress-bar {
+  height: 4px;
+  background: #e8e2d8;
+  border-radius: 2px;
+  margin-top: 0.5rem;
+  overflow: hidden;
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  background: var(--soil);
+  width: 0%;
+  transition: width 0.3s;
+}
+
+@media (max-width: 600px) {
+  .supply-toc ul { columns: 1; }
+}

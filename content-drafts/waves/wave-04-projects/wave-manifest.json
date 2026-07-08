@@ -1,0 +1,21 @@
+{
+  "wave_id": "wave-04-projects",
+  "wave_label": "גל 04 · פרויקטים (T3)",
+  "status": "planned",
+  "review_bundle": "content-drafts/waves/wave-04-projects/",
+  "entry_point": "index.html",
+  "prerequisite": "waves_01-03_owner_approved",
+  "mandate": "_COMMUNICATION/team_100/MANDATE_WAVE_04_PROJECTS_T3_2026-06-24_v1.md",
+  "pages": [
+    { "page_id": "index", "page_url": "/wave-04-projects/", "html": "index.html", "status": "skeleton" },
+    { "page_id": "bcs-case", "page_url": "/project/bcs-client-case/", "html": "bcs-case.html", "status": "blocked_until_farm_details" },
+    { "page_id": "sfa-project", "page_url": "/project/sfa/", "html": "sfa-project.html", "status": "planned" },
+    { "page_id": "garden", "page_url": "/project/nimrodsgarden/", "html": "garden.html", "status": "planned" },
+    { "page_id": "greenhouse", "page_url": "/project/rest-x-greenhouse/", "html": "greenhouse.html", "status": "planned" },
+    { "page_id": "tiktrack", "page_url": "/project/tiktrack/", "html": "tiktrack.html", "status": "planned" }
+  ],
+  "sections": [
+    "wave04.index.instructions",
+    "wave04.index.pages"
+  ]
+}

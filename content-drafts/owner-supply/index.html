@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>אספקה מנמרוד — nimrod.bio</title>
+  <link rel="stylesheet" href="../waves/wave-03-about/_shared/wave-review.css" />
+  <link rel="stylesheet" href="owner-supply.css" />
+</head>
+<body>
+  <nav class="wave-nav">
+    <span class="wave-label">owner-supply · v1</span>
+    <a href="../review-hub/index.html">מרכז ביקורת</a>
+    <a href="#bcs-case">BCS חווה</a>
+    <a href="#architecture">ארכיטקטורה</a>
+    <a href="#wave03">גל 03</a>
+    <a href="#wave02">גל 02</a>
+    <a href="#wave01">גל 01</a>
+    <a href="#media">תמונות</a>
+    <a href="#press">מדיה</a>
+    <button type="button" class="btn-export" id="btn-export-json">העתק JSON לצ׳אט</button>
+    <span class="export-status" id="export-status"></span>
+    <button type="button" class="btn-export" id="btn-clear" style="background:transparent;border-color:rgba(255,255,255,.35)">נקה הכל</button>
+  </nav>
+
+  <div class="page-wrap">
+    <header class="page-header">
+      <h1>מה צריך ממך — רשימת אספקה</h1>
+      <p class="page-lede">
+        מלא מה שאפשר. הכל נשמר אוטומטית בדפדפן. כשסיימת — לחץ <strong>העתק JSON לצ׳אט</strong> והדבק בשיחה.
+        ביקורת טקסט לגלים נשארת בחבילות <code>wave-01/02/03</code> — כאן רק חומרים חסרים והחלטות.
+      </p>
+      <p id="progress-label" style="font-size:0.85rem;color:var(--muted);margin:0.25rem 0 0">0% מולא</p>
+      <div class="progress-bar"><span id="progress-fill"></span></div>
+    </header>
+
+    <nav class="supply-toc" aria-label="תוכן עניינים">
+      <h2>קפיצה מהירה</h2>
+      <ul>
+        <li><a href="#locked">0 · החלטות נעולות</a></li>
+        <li><a href="#bcs-case">1 · דוגמת חווה BCS (גל 04)</a></li>
+        <li><a href="#architecture">2 · ארכיטקטורה (shook · agro)</a></li>
+        <li><a href="#wave03">3 · גל 03 — החלטות פתוחות</a></li>
+        <li><a href="#wave02">4 · גל 02 — slug ופוסטים</a></li>
+        <li><a href="#wave01">5 · גל 01 — BCS · produce</a></li>
+        <li><a href="#media">6 · סבב תמונות</a></li>
+        <li><a href="#press">7 · §05 מדיה / כתבות</a></li>
+        <li><a href="#general">8 · הערות כלליות</a></li>
+      </ul>
+    </nav>
+
+    <section class="locked-panel" id="locked" aria-label="החלטות נעולות">
+      <h2>החלטות שכבר נעולות</h2>
+      <p class="locked-lede">אלה לא דורשות מילוי — מוצגות לעיון. TBCים פתוחים מסומנים בטופס למטה.</p>
+      <ul class="locked-list">
+        <li><strong>גל 02:</strong> slug גינה <code>nimrodsgarden</code> · CTA «דברו איתי על ייעוץ» · TikTrack כרטיס מלא</li>
+        <li><strong>גל 03:</strong> בלי TikTrack בציר אודות · טופס: שם + (טלפון או אימייל) · כרטיס סיום heritage C</li>
+        <li><strong>ארכיטקטורה:</strong> BCS service+case נפרד · SFA project/service · shook→heritage</li>
+      </ul>
+      <p class="locked-links">
+        <a href="../review-hub/index.html">מרכז ביקורת גלים 01–03 →</a>
+        · דוח: <code>STATUS_REPORT_WRITING_ROLE_2026-06-24_v1.md</code>
+      </p>
+    </section>
+
+    <!-- 1 · BCS CASE -->
+    <section class="supply-section" id="bcs-case" data-section-id="supply.bcs_case">
+      <span class="section-id">supply.bcs_case</span>
+      <h2>דוגמת חווה BCS — עמוד פרויקט T3</h2>
+      <p class="section-lede">
+        יעד: <code>/project/[slug]/</code> (זמני: bcs-client-case). סיפור יום עבודה — לא קייס שיווקי.
+        מנדט: <code>MANDATE_WRITE_BCS_CASE_T3_2026-06-23_v1</code>
+      </p>
+
+      <div class="field-group">
+        <label class="field-label" for="bcs-farm-name">שם החווה / כינוי</label>
+        <p class="field-hint">או «חווה ב…» אם אנונימי</p>
+        <input type="text" id="bcs-farm-name" data-field-id="supply.bcs_case.farm_name" placeholder="לדוגמה: משק X בגליל" />
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="bcs-slug">slug סופי באנגלית</label>
+        <p class="field-hint">יישב ב-URL: /project/<strong>slug</strong>/</p>
+        <input type="text" id="bcs-slug" class="mono" data-field-id="supply.bcs_case.slug" placeholder="farm-name-region" dir="ltr" />
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="bcs-region">אזור / מיקום כללי</label>
+        <input type="text" id="bcs-region" data-field-id="supply.bcs_case.region" placeholder="גליל מערבי, שפלה…" />
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="bcs-work-type">סוג העבודה ביום המתועד</label>
+        <textarea id="bcs-work-type" data-field-id="supply.bcs_case.work_type" placeholder="מה עשיתם באותו יום? הכנה לעונה, שטח פתוח, מעבר בין כלים…"></textarea>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="bcs-tools">כלים ששימשו</label>
+        <textarea id="bcs-tools" data-field-id="supply.bcs_case.tools" placeholder="BCS, מכסחת, Power Harrow, Ground Blaster…"></textarea>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="bcs-facts">2–4 עובדות מספריות (לא חובה)</label>
+        <p class="field-hint">לאריחים בעמוד — דונם, שעות, מרחק, עומק…</p>
+        <textarea id="bcs-facts" data-field-id="supply.bcs_case.numeric_facts" placeholder="שורה לכל עובדה"></textarea>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="bcs-narrative">סיפור / זיכרון מהשטח (חופשי)</label>
+        <textarea id="bcs-narrative" data-field-id="supply.bcs_case.narrative" rows="6" placeholder="מה שחשוב לספר על החווה והיום הזה"></textarea>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="bcs-photos">נתיבי תמונות (4–6)</label>
+        <p class="field-hint">שורה לכל קובץ — מ-Drive, מאגר מקומי, או תיאור «צלם ביום X»</p>
+        <textarea id="bcs-photos" data-field-id="supply.bcs_case.photo_paths" rows="5" placeholder="sources/photos/…&#10;או: תמונה מהיום — טרקטור בשדה"></textarea>
+      </div>
+
+      <div class="field-group">
+        <span class="field-label">אישור פרסום שם החווה</span>
+        <div class="radio-row">
+          <label><input type="radio" name="bcs-anon" value="named" data-field-id="supply.bcs_case.anonymity" /> שם מלא מותר</label>
+          <label><input type="radio" name="bcs-anon" value="region_only" data-field-id="supply.bcs_case.anonymity" /> רק אזור, בלי שם</label>
+          <label><input type="radio" name="bcs-anon" value="anonymous" data-field-id="supply.bcs_case.anonymity" /> אנונימי לגמרי</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 · ARCHITECTURE -->
+    <section class="supply-section" id="architecture" data-section-id="supply.architecture">
+      <span class="section-id">supply.architecture</span>
+      <h2>ארכיטקטורה — החלטות מבנה</h2>
+      <p class="section-lede">מקור: OWNER_DECISIONS_SITE_ARCHITECTURE_2026-06-23</p>
+
+      <div class="field-group">
+        <span class="field-label">שוק הירוקה (shook) — איפה במורשת?</span>
+        <div class="radio-row">
+          <label><input type="radio" name="shook-place" value="section03" data-field-id="supply.architecture.shook_placement" /> §03 לקוחות / סיפור</label>
+          <label><input type="radio" name="shook-place" value="gallery" data-field-id="supply.architecture.shook_placement" /> גלריה + משפט</label>
+          <label><input type="radio" name="shook-place" value="both" data-field-id="supply.architecture.shook_placement" /> שניהם</label>
+          <label><input type="radio" name="shook-place" value="minimal" data-field-id="supply.architecture.shook_placement" /> מינימלי — משפט אחד בלבד</label>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="shook-note">טקסט / זיכרון לשוק (אם יש)</label>
+        <textarea id="shook-note" data-field-id="supply.architecture.shook_content" placeholder="יום בשוק, לקוחות קבועים, מה חשוב לשמור…"></textarea>
+      </div>
+
+      <div class="field-group">
+        <span class="field-label">hydro-greenhouse — אחרי איחוד ל-consulting-agro</span>
+        <div class="radio-row">
+          <label><input type="radio" name="hydro-merge" value="section" data-field-id="supply.architecture.hydro_greenhouse" /> סקשן מלא בעמוד החקלאות</label>
+          <label><input type="radio" name="hydro-merge" value="paragraph" data-field-id="supply.architecture.hydro_greenhouse" /> פסקה קצרה + קישור</label>
+          <label><input type="radio" name="hydro-merge" value="redirect_only" data-field-id="supply.architecture.hydro_greenhouse" /> רק redirect, בלי תוכן חדש עכשיו</label>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="nursery-note">משתלה — מה לשמור בפסקה המאוחדת?</label>
+        <textarea id="nursery-note" data-field-id="supply.architecture.nursery_background" placeholder="רקע היסטורי, לא עסק פעיל — משפטים שאתה מאשר"></textarea>
+      </div>
+    </section>
+
+    <!-- 3 · WAVE 03 -->
+    <section class="supply-section" id="wave03" data-section-id="supply.wave03">
+      <span class="section-id">supply.wave03</span>
+      <h2>גל 03 — החלטות פתוחות</h2>
+      <p class="section-lede">
+        אופציות מלאות ב-<a href="../waves/wave-03-about/about.html">about.html</a> ·
+        <a href="../waves/wave-03-about/heritage.html">heritage.html</a>
+      </p>
+
+      <div class="field-group">
+        <span class="field-label">Pullquote — אודות (שאלה 2)</span>
+        <div class="radio-row">
+          <label><input type="radio" name="pullquote" value="A" data-field-id="supply.wave03.pullquote" /> A — גשר בין דרכי חשיבה</label>
+          <label><input type="radio" name="pullquote" value="B" data-field-id="supply.wave03.pullquote" /> B — אותה מערכת, חומר אחר</label>
+          <label><input type="radio" name="pullquote" value="C" data-field-id="supply.wave03.pullquote" /> C — A ב-§01 + B ב-§03</label>
+          <label><input type="radio" name="pullquote" value="D" data-field-id="supply.wave03.pullquote" /> D — B ב-§01 + «איך לשחרר» ב-§06</label>
+          <label><input type="radio" name="pullquote" value="custom" data-field-id="supply.wave03.pullquote" /> טקסט משלי ↓</label>
+        </div>
+        <textarea data-field-id="supply.wave03.pullquote_custom" placeholder="אם בחרת «טקסט משלי» — כתוב כאן"></textarea>
+      </div>
+
+      <div class="field-group">
+        <span class="field-label">MeZoo / מיזו בציר (שאלה 19)</span>
+        <div class="radio-row">
+          <label><input type="radio" name="mezoo" value="A" data-field-id="supply.wave03.mezoo" /> A — מיזו (עברית)</label>
+          <label><input type="radio" name="mezoo" value="B" data-field-id="supply.wave03.mezoo" /> B — MeZoo (מועדף)</label>
+          <label><input type="radio" name="mezoo" value="C" data-field-id="supply.wave03.mezoo" /> C — Mezoo (כמו mezoo.co)</label>
+          <label><input type="radio" name="mezoo" value="D" data-field-id="supply.wave03.mezoo" /> D — מיזו (MeZoo)</label>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <span class="field-label">תאריך סיום הגינה (שאלה 12)</span>
+        <p class="field-hint">התכוונו: חודש/שנה סגירת הגינה בירושלים — לא תאריך אחר</p>
+        <div class="radio-row">
+          <label><input type="radio" name="garden-end" value="years_only" data-field-id="supply.wave03.garden_end_date" /> רק שנים: 2014–2023</label>
+          <label><input type="radio" name="garden-end" value="oct_2023" data-field-id="supply.wave03.garden_end_date" /> אוקטובר 2023 (או חודש אחר ↓)</label>
+        </div>
+        <input type="text" data-field-id="supply.wave03.garden_end_custom" placeholder="אם לא אוקטובר 2023 — כתוב חודש ושנה" />
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="heritage-journal">יומן שטח — טקסט נוסף / עריכה</label>
+        <p class="field-hint">ברירת מחדל: ציטוט מ-page-heritage.php — סמן אם צריך שינוי</p>
+        <textarea id="heritage-journal" data-field-id="supply.wave03.heritage_journal_edit" rows="4"></textarea>
+      </div>
+    </section>
+
+    <!-- 4 · WAVE 02 -->
+    <section class="supply-section" id="wave02" data-section-id="supply.wave02">
+      <span class="section-id">supply.wave02</span>
+      <h2>גל 02 — עולמות</h2>
+      <p class="section-lede">חבילה: <a href="../waves/wave-02-worlds/index.html">wave-02-worlds</a></p>
+
+      <div class="field-group">
+        <span class="field-label">slug פרויקט הגינה</span>
+        <div class="radio-row">
+          <label><input type="radio" name="garden-slug" value="nimrodsgarden" data-field-id="supply.wave02.garden_slug" /> nimrodsgarden (נעול גל 03)</label>
+          <label><input type="radio" name="garden-slug" value="hagina-shel-nimrod" data-field-id="supply.wave02.garden_slug" /> hagina-shel-nimrod (ישן)</label>
+          <label><input type="radio" name="garden-slug" value="other" data-field-id="supply.wave02.garden_slug" /> אחר ↓</label>
+        </div>
+        <input type="text" class="mono" data-field-id="supply.wave02.garden_slug_custom" placeholder="slug אחר" dir="ltr" />
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="w02-connectivity">אופציות קישוריות 18+19 (know/code)</label>
+        <p class="field-hint">אם סימנת בחבילת wave-02 — אפשר לסכם כאן בקצרה</p>
+        <textarea id="w02-connectivity" data-field-id="supply.wave02.connectivity_18_19"></textarea>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="w02-post-pairs">זוגות פוסטים סופיים (soil/know/code)</label>
+        <textarea id="w02-post-pairs" data-field-id="supply.wave02.post_pairs" placeholder="עולם → כותרת פוסט A + כותרת פוסט B (או «אין עדיין»)"></textarea>
+      </div>
+    </section>
+
+    <!-- 5 · WAVE 01 -->
+    <section class="supply-section" id="wave01" data-section-id="supply.wave01">
+      <span class="section-id">supply.wave01</span>
+      <h2>גל 01 — שירותים</h2>
+      <p class="section-lede">חבילה: <a href="../waves/wave-01-services/index.html">wave-01-services</a></p>
+
+      <div class="field-group">
+        <label class="field-label" for="bcs-hero">BCS — תמונת Hero סופית</label>
+        <input type="text" id="bcs-hero" data-field-id="supply.wave01.bcs_hero_image" placeholder="נתיב או תיאור תמונה" />
+      </div>
+
+      <div class="field-group">
+        <span class="field-label">IMG_20180123_130615 — מתייגים Ground Blaster?</span>
+        <div class="radio-row">
+          <label><input type="radio" name="gb-label" value="yes" data-field-id="supply.wave01.ground_blaster_label" /> כן</label>
+          <label><input type="radio" name="gb-label" value="no" data-field-id="supply.wave01.ground_blaster_label" /> לא / תמונה אחרת</label>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="bcs-missing-photos">תמונות חסרות BCS (מתחחת · Power Harrow)</label>
+        <textarea id="bcs-missing-photos" data-field-id="supply.wave01.bcs_missing_photos" placeholder="יש לי / אין / צלם מאוחר יותר"></textarea>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="produce-pricing">produce — מבנה תמחור עונתי</label>
+        <textarea id="produce-pricing" data-field-id="supply.wave01.produce_pricing" placeholder="מה מוצג באתר: טווחים, עונות, תדירות…"></textarea>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="fatbung-photo">produce — תמונת פאטבונג</label>
+        <input type="text" id="fatbung-photo" data-field-id="supply.wave01.fatbung_image" />
+      </div>
+    </section>
+
+    <!-- 6 · MEDIA -->
+    <section class="supply-section" id="media" data-section-id="supply.media">
+      <span class="section-id">supply.media</span>
+      <h2>סבב תמונות (נפרד מטקסט)</h2>
+      <p class="section-lede">placeholder ב-HTML עד שמגיעים קבצים / בחירות</p>
+
+      <div class="checklist-item">
+        <input type="checkbox" data-field-id="supply.media.avatar_done" id="chk-avatar" />
+        <div class="item-body">
+          <label class="item-title" for="chk-avatar">Avatar אודות — נבחר / סופק</label>
+          <span class="item-hint">שדה, בערך — סבב נפרד</span>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="avatar-path">Avatar — נתיב או הערה</label>
+        <input type="text" id="avatar-path" data-field-id="supply.media.avatar_path" />
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="about-gallery">גלריה אודות — קבצים / בחירה</label>
+        <textarea id="about-gallery" data-field-id="supply.media.about_gallery" rows="4"></textarea>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="sea-photos">§06 ים — תמונות</label>
+        <textarea id="sea-photos" data-field-id="supply.media.sea_photos" rows="3"></textarea>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="heritage-cover">Hero cover מורשת — תמונה</label>
+        <input type="text" id="heritage-cover" data-field-id="supply.media.heritage_cover" placeholder="שדה רחב — נעול; קובץ כאן" />
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="heritage-gallery">גלריה מורשת — שלד → מלא</label>
+        <textarea id="heritage-gallery" data-field-id="supply.media.heritage_gallery" rows="4"></textarea>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="shook-photos">שוק — תמונות לשילוב</label>
+        <textarea id="shook-photos" data-field-id="supply.media.shook_photos" rows="3"></textarea>
+      </div>
+    </section>
+
+    <!-- 7 · PRESS -->
+    <section class="supply-section" id="press" data-section-id="supply.press">
+      <span class="section-id">supply.press</span>
+      <h2>§05 במדיה — כתבות וקישורים</h2>
+      <p class="section-lede">מהאתר הישן + השלמה · שורה לכל פריט: כותרת | URL | הערה</p>
+
+      <div class="field-group">
+        <textarea data-field-id="supply.press.media_links" rows="8" placeholder="כותרת | https://… | פעיל / ארכיון / צריך בדיקה"></textarea>
+      </div>
+
+      <div class="field-group">
+        <span class="field-label">הצגת §05 באתר החדש</span>
+        <div class="radio-row">
+          <label><input type="radio" name="press-show" value="skeleton" data-field-id="supply.press.display_mode" /> שלד + «בהשלמה»</label>
+          <label><input type="radio" name="press-show" value="partial" data-field-id="supply.press.display_mode" /> חלקי — רק מה שמאומת</label>
+          <label><input type="radio" name="press-show" value="hide" data-field-id="supply.press.display_mode" /> להסתיר עד שמוכן</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 · GENERAL -->
+    <section class="supply-section" id="general" data-section-id="supply.general">
+      <span class="section-id">supply.general</span>
+      <h2>הערות כלליות</h2>
+      <p class="section-lede">כל דבר שלא נכנס למעלה — עדיפויות, «לא עכשיו», שאלות לצוות</p>
+
+      <div class="field-group">
+        <textarea data-field-id="supply.general.notes" rows="6" placeholder="חופשי"></textarea>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="contact-pref">איך להגיע אליך אם חסר משהו דחוף?</label>
+        <input type="text" id="contact-pref" data-field-id="supply.general.urgent_contact" placeholder="טלפון / וואטסאפ / «רק בצ׳אט»" />
+      </div>
+    </section>
+
+    <footer class="page-footer" style="text-align:center;padding:2rem 0;border-top:2px solid var(--border)">
+      <button type="button" class="btn-export" id="btn-export-json-footer" onclick="document.getElementById('btn-export-json').click()" style="background:var(--spark);color:#fff;border:none;padding:0.65rem 1.25rem;border-radius:6px;font-weight:700;cursor:pointer;font-size:1rem">
+        העתק JSON לצ׳אט team_100
+      </button>
+      <p style="font-size:0.85rem;color:var(--muted);margin-top:0.75rem">
+        נשמר מקומית · לא נשלח לשרת · פתח ב-Chrome/Safari: <code>content-drafts/owner-supply/index.html</code>
+      </p>
+    </footer>
+  </div>
+
+  <div class="save-hint" id="save-hint" aria-live="polite">נשמר ✓</div>
+  <script src="owner-supply.js"></script>
+</body>
+</html>

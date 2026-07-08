@@ -1,0 +1,43 @@
+{
+  "wave_id": "wave-03-about",
+  "wave_label": "גל 03 · אודות (T8)",
+  "review_bundle": "content-drafts/waves/wave-03-about/",
+  "entry_point": "index.html",
+  "pages": [
+    { "page_id": "index", "page_url": "/wave-03-about/", "html": "index.html" },
+    { "page_id": "about", "page_url": "/about/", "html": "about.html" },
+    { "page_id": "heritage", "page_url": "/about/heritage/", "html": "heritage.html" },
+    { "page_id": "contact", "page_url": "/contact/", "html": "contact.html" }
+  ],
+  "sections": [
+    "wave03.index.instructions",
+    "wave03.index.pages",
+    "wave03.about.hero",
+    "wave03.about.meta",
+    "wave03.about.gallery",
+    "wave03.about.s01",
+    "wave03.about.s02",
+    "wave03.about.s03",
+    "wave03.about.s04",
+    "wave03.about.s05",
+    "wave03.about.s06",
+    "wave03.about.contact",
+    "wave03.heritage.stamp",
+    "wave03.heritage.hero",
+    "wave03.heritage.meta",
+    "wave03.heritage.s01",
+    "wave03.heritage.s02",
+    "wave03.heritage.journal",
+    "wave03.heritage.s03",
+    "wave03.heritage.s04",
+    "wave03.heritage.s05",
+    "wave03.heritage.s06",
+    "wave03.heritage.numbers",
+    "wave03.heritage.gallery",
+    "wave03.heritage.end",
+    "wave03.contact.hero",
+    "wave03.contact.form",
+    "wave03.contact.right",
+    "wave03.contact.messages"
+  ]
+}

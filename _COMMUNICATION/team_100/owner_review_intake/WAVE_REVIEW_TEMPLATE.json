@@ -1,0 +1,18 @@
+{
+  "export_type": "nimrod_bio_wave_review",
+  "version": "1",
+  "exported_at": "YYYY-MM-DDTHH:mm:ss.sssZ",
+  "wave_id": "wave-NN-slug",
+  "wave_label": "גל NN · …",
+  "page_id": "page_id",
+  "page_url": "/path/",
+  "instruction": "הדבק JSON זה בצ׳אט team_100 — הערות ביקורת לסקשן.",
+  "sections": [
+    {
+      "section_id": "waveNN.page.section",
+      "section_title": "כותרת סקשן",
+      "note": "הערת נמרוד כאן",
+      "updated_at": "YYYY-MM-DDTHH:mm:ss.sssZ"
+    }
+  ]
+}

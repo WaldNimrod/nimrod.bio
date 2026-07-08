@@ -1,0 +1,23 @@
+{
+  "bundle_id": "owner-supply",
+  "version": "1",
+  "label": "אספקה מנמרוד",
+  "entry": "index.html",
+  "export_type": "nimrod_bio_owner_supply",
+  "sections": [
+  "supply.bcs_case",
+  "supply.architecture",
+  "supply.wave03",
+  "supply.wave02",
+  "supply.wave01",
+  "supply.media",
+  "supply.press",
+  "supply.general"
+  ],
+  "related_waves": [
+    "wave-01-services",
+    "wave-02-worlds",
+    "wave-03-about"
+  ],
+  "instruction": "מלא index.html → העתק JSON → הדבק בצ׳אט team_100"
+}
