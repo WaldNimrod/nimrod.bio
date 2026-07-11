@@ -68,7 +68,7 @@ work_packages:
     result: PASS
     date: "2026-05-10"
     notes: "OPS/Express: project skeleton created (execute_project_create), ports 8085/3309 registered in hub port-registry.yaml (Team 00 sign-off), projects.yaml updated (hub), validate_aos.sh 32 PASS 0 FAIL. Team 100 self-reviewed per Express track."
-  notes: "OPS/Express track — COMPLETE. No L-GATE_VALIDATE required (Express). All deliverables committed to main."
+  notes: "OPS/Express track — COMPLETE. No L-GATE_VALIDATE required (Express). All deliverables committed to main. D2 DISPOSITION (team_60, 2026-07-12): spec_ref TBD is WAIVED — OPS/Express track WP, no as-built required, per CENTRALIZED_SWEEP_REVIEW_team_120_M11_FLEET_HYGIENE_2026-07-10_v1.0.0.md §6."
 
 - id: NB-S001-P002-WP001
   label: "nimrod-bio — Environment Bootstrap (uPress pull + local dev setup)"
@@ -632,7 +632,7 @@ work_packages:
     result: ACCEPTED_BY_TEAM_00
     date: "2026-05-30"
     notes: "Closed on team_00 (Principal) acceptance 2026-05-30 ('can close this round'). Formal cross-engine L-GATE_VALIDATE (team_190/team_50) NOT run for this round — changes are CSS/asset polish on the already-VALIDATED WP003 base (PASS_WITH_FINDINGS); recommend folding a visual + Lighthouse QA into the pre-cutover pass. ARCHIVE_MANIFEST: _archive/NB-S002-P009-WP004/ARCHIVE_MANIFEST.md. COMPLETION_CANONICAL: _COMMUNICATION/team_100/COMPLETION_CANONICAL_NB-S002-P009-WP004_v1.0.0.md. core/governance not modified (Step 3 skipped)."
-  notes: "COMPLETE. Closed by team_00 acceptance. v6/v7 asset integration + image optimization (WebP, ~87% lighter) + dummy SFA/tiktrack screens + v7 client-tightened spacing — LIVE on dev 0.7.3. Still open (carry-forward): real SFA/tiktrack screenshots (team_35), Lighthouse/visual QA pre-cutover, system.css body line-height 1.65 vs spec 1.55 (LOCKED — GCR if needed). NEXT PHASE per team_00: content precision. P005-WP002 cutover still deferred."
+  notes: "COMPLETE. Closed by team_00 acceptance. v6/v7 asset integration + image optimization (WebP, ~87% lighter) + dummy SFA/tiktrack screens + v7 client-tightened spacing — LIVE on dev 0.7.3. Still open (carry-forward): real SFA/tiktrack screenshots (team_35), Lighthouse/visual QA pre-cutover, system.css body line-height 1.65 vs spec 1.55 (LOCKED — GCR if needed). NEXT PHASE per team_00: content precision. P005-WP002 cutover still deferred. D2 DISPOSITION (team_60, 2026-07-12): spec_ref RE-VERIFIED — the referenced file `sources/team_35_design_package/design_handoff_home/assets/ASSETS_README.md` EXISTS on disk at this exact path (test -f confirmed; mtime 2026-05-30, predates both the 2026-07-09 sweep and 2026-07-10 review). The sweep's 'never existed' classification was a false positive: the file is gitignored (design-source package, .gitignore L52 `sources/team_35_design_package/`) so a git-tracked-file existence check would not see it, even though it is real on the local filesystem. Disposition = FIX-CONFIRMED — spec_ref already points at the correct, real, existing file; no repoint needed. This is a verification-confirmed FIX, not a WAIVE, so per CENTRALIZED_SWEEP_REVIEW_team_120_M11_FLEET_HYGIENE_2026-07-10_v1.0.0.md §10 item 3 (team_100 sign-off requirement applies to WAIVERs) no additional sign-off is required for this disposition. Full detail: _COMMUNICATION/team_60/D2_SPEC_REF_DISPOSITION_nimrod-bio_2026-07-12_v1.0.0.md."
 
 - id: NB-S002-P009-WP005
   label: "nimrod-bio — Media wiring (CPT galleries) + open visual-asset swap"
@@ -741,4 +741,215 @@ work_packages:
     date: "2026-06-03"
     notes: "ADR042 closure by team_100. Cross-engine L-GATE_VALIDATE PASS confirmed (team_190 Cursor constitutional VERDICT + closure route; build=Claude Code → validate=Cursor, Iron Rule #1 maintained). L0 spoke (ADR034 R9): terminal state set in roadmap + git audit (file-based SSoT, consistent with WP001/WP006 closed same program). Step 3 (multi-engine governance propagation) SKIPPED — core/governance NOT modified (theme CSS/PHP + inc/ + 1 roadmap edit only). Merge wp007-design-impl → main. LOD500_LOCKED. Carry-forward (NOT this WP, → team_00 backlog): per-service t2s structured content for 6 non-anchor services → P008 SERVICE_CONTENT_FILL; T5/.projects-row class-name parity advisory; DRIFT_REGISTER A13 comment cleanup."
   notes: "COMPLETE (LOD500). 2026-06-03 UPDATE (team_100): LOD400 AUTHORED + routed to L-GATE_SPEC (team_190 Cursor). team_35 delivered the FULL v5 precision package (Precision Mockup v5.html) answering the design-completeness request — EVERY page-type now has a current precision authority incl. the 3 prior gaps: T2 single-service (screen t2s), heritage (screen heritage), know/code accent-only (T1 world-switcher, confirmed). SSoT consolidated = Precision Mockup v5.html. Reply: _COMMUNICATION/team_35/HANDOFF_v5_2026-06-03/DESIGN_COMPLETENESS_REPLY_team_100_2026-06-03_v1.md. Full package (gitignored): sources/team_35_design_package/HANDOFF_v5_2026-06-03/. NOTE: team_35's flagged 'G1 projects archive' open item is STALE — already built in WP001 (repo cpt-project has_archive='projects', dev/local /projects/ 200). REAL WP007 scope = pixel-precision walk of T2(index+single)/T3/T4/T5/heritage + know/code accents vs v5 + land the G3a +25-line t1.css override (row 5). Local env = 100% dev mirror (WP7.0+plugins+DB+uploads). | ORIGINAL: team_35 handoff §5 carry-forward G2+G3 (+ TEMPLATE_COVERAGE_AUDIT). G2 = precision walk vs Precision Mockup v4 for templates NOT in the v4 pass: T2 Services (index + single), T3 Project single, T4 Post single, T5 Blog index — exist as theme PHP + design files but never precision-aligned. G3 = know/code world-page variant parity + heritage page parity check. Method: same mockup-diff workflow as the home/world/about/contact pass (DRIFT_REGISTER_MOCKUP_V4) — per-template drift scan → fix in module CSS/templates (no inline/no overrides) → CDP+lock verify → external validation. team_35 may also fold C2 (home sub-document img-overflow localize, contained/non-blocking) here. NEEDS: TEMPLATE_COVERAGE_AUDIT_2026-06-02 from team_35 (referenced, not yet in repo) to scope precisely; team_35 to supply or team_100 to request. Larger effort — candidate to split G2/G3 into sub-WPs if scope warrants. team_35 build env. Production cutover (P005-WP002) does NOT block on this — these are polish/parity, schedulable pre- or post-cutover per team_00."
+
+# ─── RETROACTIVE BACKFILL (team_60, M11 fleet version-hygiene sweep, 2026-07-12) ───
+# The 10 WP-IDs below were executed + evidenced (COMPLETION/VERDICT artifacts in _COMMUNICATION/)
+# but never registered in this file (registration gap under the header rule "WP MUST be in
+# roadmap.yaml no later than L-GATE_SPEC"). Backfilled per ruling A2-b:
+# CENTRALIZED_SWEEP_REVIEW_team_120_M11_FLEET_HYGIENE_2026-07-10_v1.0.0.md §3 — "nimrod-bio — 10
+# unregistered NB-S00x-Pxxx-WPxxx IDs (39 files, carry COMPLETION/VERDICT evidence) → backfill
+# retroactive status: CLOSED rows (note: reconstructed 2026-07-10) → then Phase-3 archive."
+# VOCABULARY NOTE: this domain's roadmap uses COMPLETE as its only terminal status (zero uses of
+# `status: CLOSED` anywhere in this file across the 21 already-archived WPs) — status: COMPLETE
+# used below for consistency with the file's own existing convention, not the review's literal
+# "CLOSED" string. See _COMMUNICATION/team_60/D2_SPEC_REF_DISPOSITION_nimrod-bio_2026-07-12_v1.0.0.md
+# for the paired D2 spec_ref dispositions applied in the same pass.
+
+- id: NB-S001-P003-WP001
+  label: "nimrod-bio — MU Plugin Deployment + Stack Activation"
+  status: COMPLETE
+  track: A
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
+  assigned_builder: nimrodbio_build
+  assigned_validator: nimrodbio_arch
+  created_at: "2026-05-11"
+  milestone_ref: V100
+  stage_mapping: ""
+  spec_ref: "_archive/NB-S001-P003-WP001/team_10/COMPLETION_NB-S001-P003-WP001.md"
+  gate_history:
+  - gate: L-GATE_BUILD
+    result: PASS
+    date: "2026-05-11"
+    notes: "Reconstructed from _COMMUNICATION evidence. MU plugin sfagent-file-upload.php deployed to git, GitHub, and production; endpoint returns 401 as expected; validate_aos.sh 0 FAIL. Source: MANDATE_NB-S001-P003-WP001_v1.0.0.md (team_100→team_10) + COMPLETION_NB-S001-P003-WP001.md (team_10, status DONE)."
+  notes: "COMPLETE. reconstructed 2026-07-12 — backfilled per A2-b, ref CENTRALIZED_SWEEP_REVIEW_team_120_M11_FLEET_HYGIENE_2026-07-10_v1.0.0.md §3. No L-GATE_VALIDATE artifact found — direct team_100/team_10 build+close pattern, consistent with this WP's small OPS-adjacent scope. 2 files archived to _archive/NB-S001-P003-WP001/."
+
+- id: NB-S002-P006-WP001
+  label: "nimrod-bio — Content Batch 001 (P006 content expansion phase)"
+  status: COMPLETE
+  track: A
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
+  assigned_builder: nimrodbio_build
+  assigned_validator: nimrodbio_val
+  created_at: "2026-05-26"
+  milestone_ref: V200
+  stage_mapping: ""
+  spec_ref: "_archive/NB-S002-P006-WP001/team_190/VERDICT_NB-S002-P006-WP001_L-GATE_VALIDATE_v1.0.0.md"
+  gate_history:
+  - gate: L-GATE_SPEC
+    result: PASS
+    date: "2026-05-26"
+    notes: "Reconstructed from _COMMUNICATION evidence. LOD400_DRAFT_NB-S002-P006-WP001_v1.0.0.md (team_110)."
+  - gate: L-GATE_VALIDATE
+    result: PASS_WITH_FINDINGS
+    date: "2026-05-27"
+    notes: "Reconstructed from _COMMUNICATION evidence. team_190 VERDICT v1.0.0 — route_recommendation PASS_WITH_FINDINGS -> team_100 gate advancement on feat/p006-wp001-content-batch-001; carry-forward Yoast meta polish + WP registration + theme SFA dead-code cleanup as non-blocking advisories (the WP registration gap the advisory itself flagged is the gap this backfill closes)."
+  notes: "COMPLETE. reconstructed 2026-07-12 — backfilled per A2-b, ref CENTRALIZED_SWEEP_REVIEW_team_120_M11_FLEET_HYGIENE_2026-07-10_v1.0.0.md §3. 5 files archived to _archive/NB-S002-P006-WP001/ (39-file Cluster A count +1 fold-in: team_110/p006_wp001_post_creates_result.json names this WP but lacked the NB-S002- filename prefix, folded in per the sweep report's own precedent)."
+
+- id: NB-S002-P006-WP002
+  label: "nimrod-bio — Media Migration (P006 content expansion phase)"
+  status: COMPLETE
+  track: A
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
+  assigned_builder: nimrodbio_build
+  assigned_validator: nimrodbio_val
+  created_at: "2026-05-26"
+  milestone_ref: V200
+  stage_mapping: ""
+  spec_ref: "_archive/NB-S002-P006-WP002/team_190/VERDICT_NB-S002-P006-WP002_L-GATE_VALIDATE_v1.0.0.md"
+  gate_history:
+  - gate: L-GATE_SPEC
+    result: PASS
+    date: "2026-05-26"
+    notes: "Reconstructed from _COMMUNICATION evidence. LOD400_DRAFT_NB-S002-P006-WP002_v1.0.0.md (team_110); MANDATE_NB-S002-P006-WP002_MEDIA_MIGRATION_2026-05-26_v1.0.0.md (team_10)."
+  - gate: L-GATE_VALIDATE
+    result: PASS_WITH_FINDINGS
+    date: "2026-05-27"
+    notes: "Reconstructed from _COMMUNICATION evidence. team_190 VERDICT v1.0.0 — 'Route may continue to team_50 pre-cutover QA, with findings logged for team_110/team_00 acceptance.' ACCEPTANCE_F-001_NB-S002-P006-WP002_2026-05-27_v1.0.0.md + COMPLETION_NB-S002-P006-WP002_2026-05-27_v1.0.0.md (team_110) close the loop."
+  notes: "COMPLETE. reconstructed 2026-07-12 — backfilled per A2-b, ref CENTRALIZED_SWEEP_REVIEW_team_120_M11_FLEET_HYGIENE_2026-07-10_v1.0.0.md §3. 7 files archived to _archive/NB-S002-P006-WP002/."
+
+- id: NB-S002-P007-WP001
+  label: "nimrod-bio — MCP Browser QA + Design Fidelity (P007 Wave 1 of 4)"
+  status: COMPLETE
+  track: A
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
+  assigned_builder: team_50
+  assigned_validator: nimrodbio_val
+  created_at: "2026-05-27"
+  milestone_ref: V200
+  stage_mapping: ""
+  spec_ref: "_archive/NB-S002-P007-WP001/team_50/COMPLETION_NB-S002-P007-WP001_2026-05-28_v1.0.0.md"
+  gate_history:
+  - gate: L-GATE_BUILD
+    result: PASS_WITH_FINDINGS
+    date: "2026-05-28"
+    notes: "Reconstructed from _COMMUNICATION evidence. COMPLETION_NB-S002-P007-WP001_2026-05-28_v1.0.0.md (team_50, MCP-extended QA): status DONE — PASS_WITH_FINDINGS. AT-Q1..AT-Q10: 9 PASS + 1 PASS_WITH_NOTE (AT-Q8, resource 404 console noise), 0 FAIL. 31 screenshots + 8 visual diffs captured. 12 findings routed to Wave 2 (NB-S002-P007-WP002)."
+  notes: "COMPLETE. reconstructed 2026-07-12 — backfilled per A2-b, ref CENTRALIZED_SWEEP_REVIEW_team_120_M11_FLEET_HYGIENE_2026-07-10_v1.0.0.md §3. P007 Wave 1 of 4 — precedes WP002 (Wave 2). 3 files archived to _archive/NB-S002-P007-WP001/."
+
+- id: NB-S002-P007-WP002
+  label: "nimrod-bio — Completion Inventory decisions/media/texts (P007 Wave 2 of 4)"
+  status: COMPLETE
+  track: A
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
+  assigned_builder: team_110
+  assigned_validator: nimrodbio_val
+  created_at: "2026-05-27"
+  milestone_ref: V200
+  stage_mapping: ""
+  spec_ref: "_archive/NB-S002-P007-WP002/team_00/RESPONSE_INVENTORY_P007_2026-05-28_v1.0.0.md"
+  gate_history:
+  - gate: L-GATE_BUILD
+    result: PASS
+    date: "2026-05-28"
+    notes: "Reconstructed from _COMMUNICATION evidence. team_110 issued INVENTORY_{DECISIONS,MEDIA,TEXTS}_NB-S002-P007-WP002_2026-05-28_v1.0.0.md to team_00; team_00 responded RESPONSE_INVENTORY_P007_2026-05-28_v1.0.0.md (D-01..D-07 decision log, wp_id: NB-S002-P007-WP002 in its own frontmatter — discovered on re-inspection, filename lacked the WP-ID substring so the mechanical sweep scan missed it, folded into this WP's archive set). Response records D-04 (SFA/TikTrack double-link) as still open on OI-1/OI-2 at time of writing, but Wave 3 (NB-S002-P007-WP003) evidence shows the same-day 2026-05-28 unblock and execution — inventory-gathering deliverable itself is complete."
+  notes: "COMPLETE. reconstructed 2026-07-12 — backfilled per A2-b, ref CENTRALIZED_SWEEP_REVIEW_team_120_M11_FLEET_HYGIENE_2026-07-10_v1.0.0.md §3. P007 Wave 2 of 4 — decision-gathering gate feeding Wave 3 content fill. 5 files archived to _archive/NB-S002-P007-WP002/ (4-file Cluster A count +1 fold-in, see gate_history note)."
+
+- id: NB-S002-P007-WP003
+  label: "nimrod-bio — Content Fill batches A-D (P007 Wave 3 of 4)"
+  status: COMPLETE
+  track: A
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
+  assigned_builder: nimrodbio_build
+  assigned_validator: team_110
+  created_at: "2026-05-27"
+  milestone_ref: V200
+  stage_mapping: ""
+  spec_ref: "_archive/NB-S002-P007-WP003/team_110/COMPLETION_NB-S002-P007-WP003_2026-05-28_v1.0.0.md"
+  gate_history:
+  - gate: L-GATE_BUILD
+    result: PASS_WITH_FINDINGS
+    date: "2026-05-28"
+    notes: "Reconstructed from _COMMUNICATION evidence. COMPLETION_NB-S002-P007-WP003_2026-05-28_v1.0.0.md: overall_status PASS_WITH_FINDINGS, team_10 (Builder) + team_110 (orchestrator/consolidation), 4 sub-batches (BATCH-A/B/C/D) each with own COMPLETION doc, gated on Haiku internal QA before Wave 4. MANDATE v1.0.0/v2.0.0 (team_10, CONTENT_FILL) supersession trail preserved."
+  notes: "COMPLETE. reconstructed 2026-07-12 — backfilled per A2-b, ref CENTRALIZED_SWEEP_REVIEW_team_120_M11_FLEET_HYGIENE_2026-07-10_v1.0.0.md §3. P007 Wave 3 of 4. 7 files archived to _archive/NB-S002-P007-WP003/."
+
+- id: NB-S002-P007-WP004
+  label: "nimrod-bio — Final Validation (P007 Wave 4 of 4, cumulative gate)"
+  status: COMPLETE
+  track: A
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
+  assigned_builder: team_50
+  assigned_validator: nimrodbio_val
+  created_at: "2026-05-27"
+  milestone_ref: V200
+  stage_mapping: ""
+  spec_ref: "_archive/NB-S002-P007-WP004/team_190/VERDICT_NB-S002-P007-WP004_L-GATE_VALIDATE_v2.0.0.md"
+  gate_history:
+  - gate: L-GATE_VALIDATE
+    result: PASS_WITH_FINDINGS
+    date: "2026-05-28"
+    notes: "Reconstructed from _COMMUNICATION evidence. team_190 VERDICT v1.0.0 round 1, then v2.0.0 round 2 — cumulative validation of P007: WP001+WP002+WP003, Wave 4b constitutional revalidation, final gate before COMPLETION_CONTENT_PHASE v2.0.0. team_50 MANDATE_FINAL_VALIDATION_v1.0.0 + MANDATE_REVALIDATION_ROUND2_v1.0.0 + MCP_QA_FINAL_NB-S002-P007-WP004_2026-05-28_v1.0.0.md close the functional half."
+  notes: "COMPLETE. reconstructed 2026-07-12 — backfilled per A2-b, ref CENTRALIZED_SWEEP_REVIEW_team_120_M11_FLEET_HYGIENE_2026-07-10_v1.0.0.md §3. P007 Wave 4 of 4 — closes the whole P007 program (registration gap covers all 4 waves: WP001-WP004). 5 files archived to _archive/NB-S002-P007-WP004/."
+
+- id: NB-S002-P008-WP001
+  label: "nimrod-bio — Service Content Fill (P008 SEO+about+media phase)"
+  status: COMPLETE
+  track: A
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
+  assigned_builder: nimrodbio_build
+  assigned_validator: team_110
+  created_at: "2026-05-28"
+  milestone_ref: V200
+  stage_mapping: ""
+  spec_ref: "_archive/NB-S002-P008-WP001/team_110/COMPLETION_NB-S002-P008-WP001_2026-05-28_v1.0.0.md"
+  gate_history:
+  - gate: L-GATE_BUILD
+    result: PASS
+    date: "2026-05-28"
+    notes: "Reconstructed from _COMMUNICATION evidence. COMPLETION_NB-S002-P008-WP001_2026-05-28_v1.0.0.md: 7 service pages patched via WP REST API with Hebrew content (direct, field-specific, no marketing fluff), 2-3 Gutenberg paragraphs each, 645-765 rendered chars, status publish, live HTTP 200. MANDATE_SERVICE_CONTENT_FILL_v1.0.0.md (team_110→team_10), predecessor NB-S002-P007-WP004 COMPLETE."
+  notes: "COMPLETE. reconstructed 2026-07-12 — backfilled per A2-b, ref CENTRALIZED_SWEEP_REVIEW_team_120_M11_FLEET_HYGIENE_2026-07-10_v1.0.0.md §3. Opens P008 (SEO+about+media phase), noted in the pre-existing roadmap REGISTRATION GAP comment above P009 ('P007 ... and P008 ... were executed + completed by team_110 but NOT registered'). 2 files archived to _archive/NB-S002-P008-WP001/."
+
+- id: NB-S002-P008-WP002
+  label: "nimrod-bio — Yoast SEO Meta Patch (P008 SEO+about+media phase)"
+  status: COMPLETE
+  track: A
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
+  assigned_builder: nimrodbio_build
+  assigned_validator: team_110
+  created_at: "2026-05-28"
+  milestone_ref: V200
+  stage_mapping: ""
+  spec_ref: "_archive/NB-S002-P008-WP002/team_110/COMPLETION_NB-S002-P008-WP002_SEO_2026-05-28_v1.0.0.md"
+  gate_history:
+  - gate: L-GATE_BUILD
+    result: PASS
+    date: "2026-05-28"
+    notes: "Reconstructed from _COMMUNICATION evidence. COMPLETION_NB-S002-P008-WP002_SEO_2026-05-28_v1.0.0.md: 26/26 Yoast SEO meta fields patched, 0 failures. Pre-flight bug found+fixed: nb-yoast-rest-meta.php + meta-registration.php registered against plural CPT slugs ('services'/'projects') which do not exist — corrected to singular ('service'/'project') and redeployed via FTPS before patching."
+  notes: "COMPLETE. reconstructed 2026-07-12 — backfilled per A2-b, ref CENTRALIZED_SWEEP_REVIEW_team_120_M11_FLEET_HYGIENE_2026-07-10_v1.0.0.md §3. P008 phase, single-file WP (self-contained SEO patch). 1 file archived to _archive/NB-S002-P008-WP002/."
+
+- id: NB-S002-P008-WP003
+  label: "nimrod-bio — About/Images/Media-migration content (P008 SEO+about+media phase)"
+  status: COMPLETE
+  track: A
+  current_lean_gate: COMPLETE
+  lod_status: LOD500
+  assigned_builder: team_110
+  assigned_validator: nimrodbio_val
+  created_at: "2026-05-28"
+  milestone_ref: V200
+  stage_mapping: ""
+  spec_ref: "_archive/NB-S002-P008-WP003/team_110/COMPLETION_NB-S002-P008-WP003_ABOUT_2026-05-28_v1.0.0.md"
+  gate_history:
+  - gate: L-GATE_BUILD
+    result: PASS
+    date: "2026-05-28"
+    notes: "Reconstructed from _COMMUNICATION evidence. 3-part COMPLETION set: ABOUT (team_110, self-executed, status PASS, chars_before 72 -> chars_after 1648), IMAGES, and MEDIA_MIGRATION, all _2026-05-28_v1.0.0.md (team_110 orchestrator, nimrod-book domain session inline for the /about/ content per D-05 of NB-S002-P007-WP002's RESPONSE_INVENTORY)."
+  notes: "COMPLETE. reconstructed 2026-07-12 — backfilled per A2-b, ref CENTRALIZED_SWEEP_REVIEW_team_120_M11_FLEET_HYGIENE_2026-07-10_v1.0.0.md §3. Closes P008 phase (last of the 3 P008 backfilled WPs). 3 files archived to _archive/NB-S002-P008-WP003/."
 
