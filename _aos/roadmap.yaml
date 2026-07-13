@@ -19,7 +19,7 @@ project:
   name: "nimrod.bio — Personal Site (WordPress)"
   profile: L0
   lifecycle_archetype: SOFTWARE
-  lean_kit_version: "3.3.0+163b156"
+  lean_kit_version: "3.4.0+20e2011"
   created: "2026-05-09"
   owner: "nimrodbio_sd"
   active_milestone: "V200"
