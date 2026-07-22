@@ -17,7 +17,6 @@ hosting: upress
 # Hub-spoke topology
 is_hub: false
 managed_projects: []
-hub_path: /Users/nimrod/Documents/agents-os
 
 # Boundary enforcement
 boundaries:
